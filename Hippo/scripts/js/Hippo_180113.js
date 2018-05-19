@@ -1,0 +1,14 @@
+$('document').ready(function(){
+	$('.title').click(function(){
+		$('b').toggleClass('clear');
+	});
+	$('b').click(function(){
+		$(this).toggleClass('clear');
+	});
+	$('nav').click(function(){
+		$('b').toggleClass('clear');
+	});
+	/**$('.section').click(function(){
+		$(this).find('b').toggleClass('clear');
+	});**/
+});

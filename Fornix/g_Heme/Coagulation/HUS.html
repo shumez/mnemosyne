@@ -1,0 +1,1766 @@
+<!--
+@Author: shume
+@Date:   2016-09-12 18:41:00
+@Filename: HUS.html
+@Last modified by:   shume
+@Last modified time: 2017-11-07 21:39:06
+-->
+<!DOCTYPE html>
+<!--
+03.03.04	17 Nov. 05	meta revised
+03.03.03	17 Nov. 04	a.qb
+03.03.02	17 Nov. 03	card-header.110, card-header.111
+03.03.01	17 Nov. 02	div.card, table.table, ul.list-group: margin-bottom, small.nav-title
+03.02.09	17 Nov. 01	.night .card-body u, js var now
+03.02.08	17 Oct. 31	.quiz-card margin-bottom, q_alert_done, .night
+03.02.07	17 Oct. 30	.quiz-card
+03.02.06	17 Oct. 27	nav-tabs js
+03.02.05	17 Oct. 26	button js
+03.02.04	17 Oct. 25	button js
+03.02.03	17 Oct. 24	js css correct-show
+03.02.02	17 Oct. 21	js card-body
+03.02.01	17 Oct. 20	code.q_alert_done
+03.02.00	17 Oct. 13	.progress css js
+03.01.03	17 Oct. 11	#q button req 
+03.01.02	17 Sep. 25	js hit/rev/cau/mis
+03.01.01	17 Aug. 20	#ex .card
+03.01.00	17 Aug. 16	#q card-group
+03.00.02	17 Aug. 11	#q span-q_alert
+03.00.01	17 Aug. 02	#q span badge
+03.00.00	17 Jul. 18	#key word
+02.01.03	17 Jul. 01	#q a href="https://qb.medilink-study.com/#/Answer/"
+02.01.02	17 Jun. 10	nav brand img
+02.01.01	17 Jun. 05	Favicon
+02.01.00	17 Mar. 10	Quiz card
+02.00.01	17 Mar. 09	span.navbar-brand
+02.00.00	17 Feb. 25	etiology
+01.02.04	17 Feb. 04	id s/s Ex; hidden; nav
+01.02.03	17 Feb. 02	js
+01.02.02	17 Feb. 02	u color
+01.02.01	17 Jan. 23	id rx
+01.02.00	17 Jan. 22	Stylesheet edit
+-->
+<html>
+<head>
+	<title>HUS</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="shume">
+	<meta name="revised" content="2017-11-07 21:39:02" scheme="YYYY-MM-DD hh:mm:ss">
+	<link rel="icon" href="../../scripts/img/favicon.png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../../scripts/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+	
+	<style type="text/css">
+		body{padding-bottom: 70px; position: relative}
+		/*{padding-top: 100px; }*/
+		h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+		h2{font-size: 24px;}
+		h4{font-size: 20px}
+		p, li, dt, dd, th, td{font-size: 14px}
+		a{color: black;};
+		/**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
+		a:hover{color: rgb(126, 64, 177);
+		text-decoration-style: underline;
+		/**font-weight: bold;**/}
+		b{color: rgb(88, 211, 184);}
+		/**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
+		u{color: rgb(126, 64, 177)}
+		
+		span.mis{background-color: rgb(88, 211, 184);}
+		span.cau{background-color: rgb(126, 64, 177);}
+		span.rev{background-color: grey;}
+		span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
+		span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
+		span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
+		code.q_alert_done{color: rgb(126, 64, 177)}
+		#q div.card-group{margin-bottom: 20px}
+		div.card-body{padding: 10px 10px 10px 10px;}
+		td > ul{padding-left: 12px;}
+		div.card, table.table, ul.list-group{margin-bottom: 30px}
+
+		/*.nav-pills*/
+		ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
+		ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
+		ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
+		ul.nav-pills .active span.q_alert_hit_n, 
+		ul.nav-pills .active span.q_alert_rev_n, 
+		ul.nav-pills .active span.q_alert_all_n, 
+		ul.nav-pills .active span.q_alert_untag_n, 
+		ul.nav-pills .active span.q_alert_done_n, 
+		ul.nav-pills .active span.q_alert_pri_n, 
+		ul.nav-pills .active span.q_alert_req_n, 
+		ul.nav-pills .active span.q_alert_qb_n, 
+		ul.nav-pills .active span.q_alert_110_n, 
+		ul.nav-pills .active span.q_alert_111_n{color: black;} 
+
+		/*.night*/
+		body.night{background-color: rgb(33, 36, 44);}
+		.night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
+		.night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
+		.night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
+		.night .card, .night .card-header{border-color: white}
+		.night li.correct-show{color: rgb(88, 211, 184); font-weight: bold;}
+
+		span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
+		span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
+
+		li.correct-show{color: rgb(126, 64, 177); font-weight: bold;}
+		.clear{color: white;}
+		.card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
+		.card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
+		.card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
+		/*print*/
+		@media print {
+			a[href]:after {content: none !important;}
+			h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+			h1, h2, h3, h4, h5, p, a,li, th, td{font-family: myFont1;}
+			h2{font-size: 24px}
+			td > ul{padding-left: 20px}
+			b{color: rgb(88, 211, 184);}
+			u{color: rgb(126, 64, 177)}}
+	</style>
+	<link rel="stylesheet" type="text/css" href="../../scripts/css/Hippo.css">
+</head>
+<body data-spy="scroll" data-target="#navbar-example">
+<div class="container">
+	<div class="page-header">
+		<h1 class="title">HUS <small class="hidden-xs-down">Hemolytic Uremic Syndrome</small></h1>
+	</div>
+
+	<div class="section" id="key">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Keyword</h2>
+			<h2 class="hidden-sm-up">Key</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<ul class="list-group">
+						<li class="list-group-item">病因<ul>
+							<li>O-157</li>
+						</ul></li>
+						<li class="list-group-item">検査<ul>
+							<li>&darr; ハプトグロビン</li>
+							<li>&uarr;β<sub>2</sub>-Microglobin</li>
+							<br>
+							<li>&darr;Plt</li>
+							<li>&uarr;Breeding time</li>
+							<li>破砕赤血球</li>
+							<li>&uarr;LD</li>
+							<li>&uarr;Ind-Bil</li>
+						</ul></li>
+						<li class="list-group-item">症候<ul>
+							<li>CNS</li>
+						</ul></li>
+						<!-- <li class="list-group-item"><b></b></li>
+						<li class="list-group-item"><b></b></li>
+						<li class="list-group-item"><b></b></li> -->
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="card">
+						<img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/103/img/103A031.jpg" class="card-img-top img-fluid">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="section" id="def">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Definition</h2>
+			<h2 class="hidden-sm-up">Def</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<ul class="list-group">
+						<li class="list-group-item"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div class="section" id="cls">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Classification</h2>
+			<h2 class="hidden-sm-up">Cls</h2>
+		</div>
+
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<table class="table table-condensed">
+
+					</table>
+					<ul class="list-group">
+						<li class="list-group-item"></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="section" id="eti">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Etiology</h2>
+			<h2 class="hidden-sm-up">Eti</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<ul class="list-group">
+						<li class="list-group-item"><b>Hemorrhagic E. coli</b> (O-157)</li>
+						<p>&dArr;</p>
+						<li class="list-group-item"><b>Vero toxin</b></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section" id="epi">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Epidemiology</h2>
+			<h2 class="hidden-sm-up">Epi</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<div class="section" id="ss">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Sign & Symptom</h2>
+			<h2 class="hidden-sm-up">S/S</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<ul class="list-group">
+						<li class="list-group-item">Prior<ul>
+							<li>Hemorrhagic Diarrhea</li>
+							<li>Fever</li>
+						</ul></li>
+						<li class="list-group-item">Triad<ul>
+							<li>Acute Renal Failure</li>
+							<li>Arteriolal Hemolytic Anemia</li>
+							<li>&darr; Plt</li>
+						</ul></li>
+						<li class="list-group-item"><b>CNS</b></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="section" id="ex">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Examination</h2>
+			<h2 class="hidden-sm-up">Ex</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<ul class="list-group">
+						<li class="list-group-item">Hema<ul>
+							<li><b>&darr; Plt</b></li>
+							<li><b>&uarr; Breeding time</b></li>
+							<li><b>&darr; Hb</b></li>
+							<li><b>&uarr; 破砕RBC</b> <b>&uarr; Reticulo</b></li>
+						</ul></li>
+						<li class="list-group-item">Biochem<ul>
+							<li><b>&uarr; BUN</b></li>
+							<li><b>&uarr; Cre</b></li>
+							<li><b>&uarr; LDH</b></li>
+							<li><b>&uarr; Indirect Bil</b></li>
+							<li><b>&darr; Hapto</b></li>
+						</ul></li>
+						<li class="list-group-item">U/A<ul>
+							<li>UP(+)</li>
+							<li>UB(+)</li>
+							<li><b>&uarr; &beta;<sub>2</sub>-Microglobin</b></li>
+						</ul></li>
+						<li class="list-group-item">Stool<ul>
+							<li>Vero toxin (+)</li>
+							<li><b>O-157 (+)</b></li>
+						</ul></li>
+					</ul>
+				</div>
+			
+				<div class="col-xs-12 col-sm-6 col-md-4">
+					<div class="card">
+						<img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/103/img/103A031.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<h4><b>Schizocytes <small>破砕赤血球</small></b></h4>
+							<p></p>
+							<a href="" class="btn btn-secondary" role="button" target="_blank">REF</a>
+							<small></small>
+						</div>
+					</div>
+
+					<!--
+					<div class="card">
+						<img src="" class="card-img-top">
+						<div class="card-body">
+							<h4 class="card-title"></h4>
+							<p class="card-text"></p>
+							<a href="" class="btn btn-secondary">REF</a>
+						</div>
+					</div>
+					-->
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<div class="section" id="dx">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Diagnosis</h2>
+			<h2 class="hidden-sm-up">Dx</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-10 col-md-8">
+					<h4>DDx: <a href="TTP.html">TTP</a> & <a href="">HUS</a></h4>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Dx</th>
+								<th><a href="TTP.html">TTP</a></th>
+								<th><a href="">HUS</a></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Commmon S/S</td>
+								<td colspan="2"><ul>
+									<li>Thrombocytepenia</li>
+									<li>破砕RBC</li>
+									<li>Renal dysfunction</li>
+									<li>HA</li>
+								</ul></td>
+							</tr>
+							<tr>
+								<td>Epid</td>
+								<td>Young F</td>
+								<td>Infant</td>
+							</tr>
+							<tr>
+								<td>Early Sx</td>
+								<td><ul>
+									<li>Fever</li>
+									<li><u>動揺する精神症状</u> <!-- Pertubated CNS --></li>
+								</ul></td>
+								<td><ul>
+									<li>URI</li>
+									<li>GI infxn</li>
+									<li><u>血便</u> <!-- Blood stool --></li>
+									<li><u>腎障害</u> <!-- Renal dysfunction --></li>
+								</ul></td>
+							</tr>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<div class="section" id="rx">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Treatment</h2>
+			<h2 class="hidden-sm-up">Rx</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+				<ul class="list-group">
+					<li class="list-group-item"><b>Dialysis</b></li>
+					<li class="list-group-item">Tranfusion</li>
+					<li class="list-group-item">Diazepin / Phenytoin</li>
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section" id="app">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Appendix</h2>
+			<h2 class="hidden-sm-up">App</h2>
+		</div>
+
+		<div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<h4>TMA <small>Thrombtic Microangipathy</small><br>
+						STEC HUS / 
+						aHUS <small>Atypical HUS</small> / 
+						TTP</h4>
+
+					<div class="card">
+						<img src="http://ars.els-cdn.com/content/image/1-s2.0-S1473050216300143-trasci1992-fig-0001.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<a href="http://www.sciencedirect.com/science/article/pii/S1473050216300143" class="btn btn-secondary">REF</a>
+						</div>
+					</div>					
+				</div>
+
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="card">
+						<img src="http://www.pathologyportal.org/105th/images/rena0106.jpg" class="card-img-top img-fluid">
+						<div class="card-body">
+							<a href="http://materials.uscap.org/specrena-h4.asp" class="btn btn-secondary">REF</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe src="" frameborder="0" allowfullscreen></iframe>
+			</div>
+			-->
+		</div>
+	</div>
+
+	<div class="section" id="q">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Quiz</h2>
+			<h2 class="hidden-sm-up">Q</h2>
+		</div>
+
+		<div>
+			<p><code class="q_alert_done"></code> Qs / {15} 19 (19)</p>
+
+			<ul class="nav nav-pills" id="q-tab">
+				<li class="nav-item">
+					<a class="nav-link hit">
+						<span class="badge badge-pill q_alert_hit_n"></span><br>
+						Hit
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link rev">
+						<span class="badge badge-pill q_alert_rev_n"></span><br>
+						Rev
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link cau">
+						<span class="badge badge-pill q_alert_cau_n"></span><br>
+						Cau
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mis">
+						<span class="badge badge-pill q_alert_mis_n"></span><br>
+						Mis
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link all">
+						<span class="badge badge-pill q_alert_all_n"></span><br>
+						All
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link untag">
+						<span class="badge badge-pill q_alert_untag_n"></span><br>
+						Un
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link done">
+						<span class="badge badge-pill q_alert_done_n"></span><br>
+						Do
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link pri">
+						<span class="badge badge-pill q_alert_pri_n"></span><br>
+						#1
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link req">
+						<span class="badge badge-pill q_alert_req_n"></span><br>
+						Req
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link qb">
+						<span class="badge badge-pill q_alert_qb_n"></span><br>
+						QB
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link 110">
+						<span class="badge badge-pill q_alert_110_n"></span><br>
+						110
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link 111">
+						<span class="badge badge-pill q_alert_111_n"></span><br>
+						111
+					</a>
+				</li>
+			</ul>
+			<br><br>
+
+			<!-- 01 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header hit">
+						<a href="https://qb.medilink-study.com/#/Answer/96H39">96H39</a> 細菌感染
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill hit"> </span>
+						<br>
+						<p class="card-text">
+							
+							細菌感染が発症に関与するのはどれか．2つ選べ．</p>
+
+						<ol type="a">
+							<li class="ans_t">急性糸球体腎炎</li>
+							<li>膜性腎症</li>
+							<li>巣状糸球体硬化症</li>
+							<li>ループス腎炎</li>
+							<li class="ans_t">溶血性尿毒症症候群</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a,e</p><br><br>
+
+						<ol type="a">
+							<li>PSAGN</li>
+							<li>MN: HBV</li>
+							<li>FSGS: HIV</li>
+							<li>Lupus: Autoimmune</li>
+							<li>HUS: O157</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+		
+			<!-- 02 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header cau">
+						<a href="https://qb.medilink-study.com/#/Answer/103A31">103A31</a> 1yo, F 発熱, 血便 
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill cau"> </span>
+						<br>
+						
+						<p><u>1歳の女児</u>．<br>
+							<u>発熱</u>と<u>血便</u>とを主訴に入院した．<br>
+							<u>2日前から発熱と頻回の下痢</u>とがあり，<br>
+							本日，<u>血便</u>がみられた．<br>
+							<u>顔面は蒼白</u>で，皮膚に<u>軽度の黄疸</u>と<u>点状出血</u>とを認める．<u>眼瞼と四肢とに浮腫</u>を認める．<br>
+							尿所見：<u>蛋白3＋</u>，<u>潜血3＋</u>．<br>
+							血液所見：赤血球270万，Hb 7.0g/dL，白血球12,300，血小板2.2万．<br>
+							血液生化学所見：尿素窒素30mg/dL，クレアチニン1.3mg/dL，総ビリルビン2.5mg/dL，AST 40IU/L，ALT 32IU/L，<u>LD 2,860IU/L</u>（基準260～530）．末梢血塗抹May-Giemsa染色標本を次に示す．<br>
+							考えられるのはどれか．</p>
+
+						<img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/103/img/103A031.jpg" class="img-fluid">
+
+						<ol type="a">
+							<li>腸重積症</li>
+							<li>遺伝性球状赤血球症</li>
+							<li class="ans_t">溶血性尿毒症症候群</li>
+							<li>Schönlein-Henoch紫斑病</li>
+							<li>特発性血小板減少性紫斑病〈ITP〉</li>
+						</ol>
+						
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: c</p><br><br>
+
+						<img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/103/img/103A031_ima_g_010.jpg" class="img-fluid">
+
+						<ol type="a">
+							<li>腸重積 blood stool</li>
+							<li>HS HA</li>
+							<li></li>
+							<li>IgA angitis: 出血斑, 関節痛, 腹痛</li>
+							<li>ITP: &darr; Plt</li>
+						</ul>
+
+						<p>&darr; Plt, HA, 腎障害 &rAarr; HUS<br>
+						DDx: TTP</p>
+
+					</div>
+				</div>
+			</div>
+			
+			<!-- 03 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header cau pri">
+						<a href="https://qb.medilink-study.com/#/Answer/106A60">106A60</a> 4yo M, 腹痛,血便 #1 
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill cau"> </span>
+						<br>
+						<p class="card-text">	
+							<u>4歳の男児</u>．<br>
+							5日前から続く強い<u>腹痛</u>と<u>血便</u>とを主訴に来院した．<br>
+							<u>昨日から尿量が減少</u>したという．<br>
+							体温38.2℃．脈拍120/分，整．血圧120/86mmHg．呼吸数18/分．SpO2 96％（room air）．<br>
+							<u>顔面は蒼白</u>である．<u>眼球結膜に軽度の黄染</u>を認める．前脛骨部に<u>pitting edema</u>を認める．<br>
+							尿所見：<u>蛋白3＋</u>，糖（－），沈渣に赤血球多数/1視野．<br>
+							血液所見：赤血球298万，<u>Hb 7.0g/dL</u>，Ht 23％，白血球23,000（桿状核好中球8％，分葉核好中球55％，単球7％，リンパ球30％），<u>血小板5万</u>．末梢血塗抹標本で<u>破砕赤血球</u>を認める．<br>
+							血液生化学所見：尿素窒素40mg/dL，<u>クレアチニン1.1mg/dL</u>（基準0.2～0.4），<u>総ビリルビン3.5mg/dL</u>，AST 45IU/L，ALT 16IU/L，Na 128mEq/L，K 5.5mEq/L，Cl 97mEq/L．<br>
+							保護者への説明で適切なのはどれか．3つ選べ．</p>
+
+						<ol type="a">
+							<li class="ans_f">「抗菌薬が有効です」</li>
+							<li class="ans_t">「まず，点滴で治療を開始します」</li>
+							<li class="ans_t">「脳に障害が出ることがあります」</li>
+							<li class="ans_t">「病原菌のつくる毒素が原因です」</li>
+							<li class="ans_f">「ほとんどの患者さんには透析が必要になります」</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: b,c,d</p><br><br>
+
+						<ol type="a">
+							<li>ABx は増悪させることも</li>
+							<li></li>
+							<li>意識障害 / けいれん</li>
+							<li>Vero toxin</li>
+							<li>透析 < 10%</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 04 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header mis pri">
+						<a href="https://qb.medilink-study.com/#/Answer/109D55">109D55</a> 検査 #1
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill mis"> </span>
+						<br>
+						<p><u>7歳の男児</u>．<br>
+							<u>腹痛</u>，<u>下痢</u>および<u>顔色不良</u>を主訴に母親に連れられて来院した．<br>
+							4日前から下痢が始まり，<br>
+							昨晩から腹痛を伴う<u>血便</u>が認められた．<br>
+							今朝から<u>排尿がない</u>のに気付かれ受診した．<br>
+							<u>7日前に家族で焼肉</u>を食べに行った．<u>母親，父親および兄も軽い下痢</u>を呈している．<br>
+							意識は清明．身長115cm，体重22kg（<u>1週前は20.5kg</u>）．<u>体温37.1℃</u>．脈拍124/分，整．血圧130/76mmHg．呼吸数24/分．SpO2 98％（room air）．<br>
+							心音と呼吸音とに異常を認めない．腹部は平坦で，自発痛と圧痛とを認めるが，筋性防御は認めない．肝・脾を触知しない．<br>
+							尿所見：<u>蛋白2＋</u>，ケトン体1＋，潜血3＋．<br>
+							この患児の血液検査所見で予測されるのはどれか．2つ選べ．</p>
+
+						<ol type="a">
+							<li class="ans_t">LD高値</li>
+							<li>血小板数増加</li>
+							<li class="ans_t">クレアチニン高値</li>
+							<li>直接ビリルビン高値</li>
+							<li>血清補体価（CH50）低値</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a,c</p><br><br>
+
+						<ul>
+							<li>Diarrhea, abdominal pain, blood stool, fever</li>
+							<li>s/o Anemia</li>
+							<li>&darr; urine, UP+, UB+ &rAarr; renal dysfunction</li>
+						</ul>
+
+
+						<ol type="a">
+							<li>破砕赤血球 &rarr; HA &rArr; &uarr; LD</li>
+							<li>&darr; Plt</li>
+							<li></li>
+							<li>HA &rarr; &uarr;Ind-Bil</li>
+							<li>&darr; CH50</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 05 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header rev">
+						<a href="https://qb.medilink-study.com/#/Answer/102I6">102I6</a> 検査
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill rev"> </span>
+						<br>
+						
+						<p>溶血性尿毒症症候群でみられるのはどれか．</p>
+
+						<ol type="a">
+							<li class="ans_t">破砕赤血球</li>
+							<li>血小板増多</li>
+							<li>IgG低下</li>
+							<li>血清カリウム値低下</li>
+							<li>血清補体値低下</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a</p><br><br>
+
+
+						<ol type="a">
+							<li></li>
+							<li>&darr;Plt</li>
+							<li>nl IgG</li>
+							<li>&uarr;K</li>
+							<li>nl Comp</li>
+						</ol>
+
+						<p>破砕赤血球</p>
+						<ul>
+							<li><b>DIC</b></li>
+							<li><b>人工弁</b></li>
+							<li><b>HUS</b></li>
+							<li>行軍Hb尿症</li>
+							<li>TTP</li>
+						</ul>
+
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 06 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header cau">
+						<a href="https://qb.medilink-study.com/#/Answer/92A66">92A66</a> 出血時間&uarr;
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill cau"> </span>
+						<br>
+						
+						<p>出血時間が延長するのはどれか．3つ選べ．</p>
+
+						<ol type="a">
+							<li class="ans_t">Glanzmann病</li>
+							<li class="ans_t">von Willebrand病</li>
+							<li class="ans_f">血友病A</li>
+							<li class="ans_f">ビタミンK欠乏症</li>
+							<li class="ans_t">溶血性尿毒症症候群</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a,b,e</p><br><br>
+
+						<ol type="a">
+							<li>Glanzmann Plt無力症: &darr; 凝集能</li>
+							<li>vWD: Plt粘着 阻害</li>
+							<li></li>
+							<li></li>
+							<li>&darr; #Plt</li>
+						</ul>
+
+						<a href="https://qb.medilink-study.com/#/Answer/92A66">&uarr; Breeding time</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 07 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header cau">
+						<a href="https://qb.medilink-study.com/#/Answer/98G77">98G77</a> &darr;Plt
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill cau"> </span>
+						<br>
+						<p class="card-text">
+							血小板減少がみられるのはどれか．2つ選べ．</p>
+
+							<ol type="a">
+								<li class="ans_f">血小板無力症</li>
+								<li class="ans_f">von Willebrand病 </li>
+								<li class="ans_f">アレルギー性紫斑病</li>
+								<li class="ans_t">Kasabach-Merritt症候群</li>
+								<li class="ans_t">溶血性尿毒症症候群〈HUS〉</li>
+							</ol>
+						</p>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: d,e</p><br><br>
+
+						<ol type="a">
+							<li></li>
+							<li></li>
+							<li>血管病変による出血傾向<br>
+							&darr;Plt, abnl Plt をr/o</li>
+							<li>Kasabacn-Merritt &rArr; DIC</li>
+							<li></li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 08 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header rev">
+						<a href="https://qb.medilink-study.com/#/Answer/103D13">103D13</a> Plt破壊
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill rev"> </span>
+						<br>
+						
+						<p>破壊の亢進によって血小板数が減少するのはどれか．2つ選べ．</p>
+
+							<ol type="a">
+								<li class="ans_f">急性白血病</li>
+								<li class="ans_f">再生不良性貧血</li>
+								<li class="ans_f">von Willebrand病</li>
+								<li class="ans_t">溶血性尿毒症症候群</li>
+								<li class="ans_t">特発性血小板減少性紫斑病</li>
+							</ol>
+						</p>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: d,e</p><br><br>
+
+						<ol type="a">
+							<li>AL 正常造血が抑制されて &darr;Plt</li>
+							<li>AA 造血幹細胞の異常, Pancytopenia</li>
+							<li>vWD Plt 粘着能低下</li>
+							<li>Vero toxin によって, 破壊</li>
+							<li>Immunologic にPlt 破壊</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 09 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header mis">
+						<a href="https://qb.medilink-study.com/#/Answer/97B44">97B44</a> PBS &rAarr; 診断
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill mis"> </span>
+						<br>
+						<p class="card-text">
+							末梢血塗抹標本の所見が診断に有用なのはどれか．3つ選べ．</p>
+
+							<ol type="a">
+								<li class="ans_t">無脾症</li>
+								<li class="ans_t">溶血性尿毒症症候群〈HUS〉 </li>
+								<li class="ans_f">von Willebrand病</li>
+								<li class="ans_f">アレルギー性紫斑病</li>
+								<li class="ans_t">マラリア</li>
+							</ol>
+						</p>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a,b,e</p><br><br>
+
+						<ol type="a">
+							<li>Howell-Jolly body in RBC</li>
+							<li>HUS 破砕RBC</li>
+							<li></li>
+							<li></li>
+							<li>マラリア in RBC</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 10 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header cau">
+						<a href="https://qb.medilink-study.com/#/Answer/93A64" target="_blank">93A64</a> &uarr;LD 
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill cau"> </span>
+						<br>
+						
+						<p>血清乳酸脱水素酵素（LD）が増加するのはどれか．3つ選べ．</p>
+
+						<ol type="a">
+							<li class="ans_t">悪性貧血</li>
+							<li class="ans_f">赤芽球癆</li>
+							<li class="ans_f">無顆粒球症</li>
+							<li class="ans_t">悪性リンパ腫</li>
+							<li class="ans_t">溶血性尿毒症症候群（HUS）</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a,d,e</p><br><br>
+
+						<p>&uarr; LD</p>
+						<ul>
+							<li>心筋障害</li>
+							<li>血液障害</li>
+							<li>悪性腫瘍</li>
+							<li>組織障害</li>
+							<li>肝障害</li>
+							<li>shock</li>
+						</ul>
+
+						<ol type="a">
+							<li>骨髄内溶血</li>
+							<li>&darr; #RBC</li>
+							<li></li>
+							<li>Lymph 破壊亢進</li>
+							<li>溶血</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 11 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header mis">
+						<a href="https://qb.medilink-study.com/#/Answer/98D57">98D57</a> 治療 
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill hit"> </span>
+						<span class="badge badge-pill mis"> </span>
+						<br>
+						<p><u>72歳の男性</u>．<br>
+							<u>腹部全体の激痛</u>と<u>出血性下痢</u>とを主訴に来院した．昨日昼ころから腹痛と下痢とが始まった．便中から<u>ベロ毒素産生菌</u>が検出され入院した．入院後も下痢症状が続いている．<br>
+							血液所見：赤血球290万，Hb 10.0g/dL，Ht 28％．<u>破砕赤血球</u>を認める．<br>
+							血清生化学所見：尿素窒素34mg/dL，クレアチニン1.8mg/dL．<br>
+							適切な治療方針はどれか．</p>
+
+						<ol type="a">
+							<li class="ans_f">強力な止痢薬を投与する．</li>
+							<li class="ans_f">広域スペクトル抗菌薬を投与する．</li>
+							<li class="ans_t">補液で水分と電解質とを補う．</li>
+							<li class="ans_f">透析療法を速やかに行う．</li>
+							<li class="ans_f">輸血でヘモグロビン12g/dLを保つ．</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: c</p><br><br>
+
+						<p>TTP/HUSによる腎障害よりも<br>
+						脱水による, 腎前性腎障害のRx</p>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 12 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header rev pri">
+						<a href="https://qb.medilink-study.com/#/Answer/107I15">107I15</a> 感染症-腎病変 #1
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">
+
+						</h4>
+
+						<p class="card-text">
+							<span class="badge badge-pill rev"> </span><br>
+							感染症と腎病変の組合せで正しいのはどれか．
+
+							<ol type="a">
+								<li>HIV感染症 － 紫斑病性腎炎</li>
+								<li>C型慢性肝炎 － 慢性間質性腎炎</li>
+								<li>緑膿菌感染症 － IgA腎症</li>
+								<li>溶連菌感染症 － 巣状分節性糸球体硬化症</li>
+								<li class="ans_t">腸管出血性大腸菌感染症 － 溶血性尿毒症症候群</li>
+							</ol>
+						</p>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: e</p><br><br>
+
+						<ol type="a">
+							<li>HIV - FSGS</li>
+							<li>HCV - MPGN (Cryoglobulin)</li>
+							<li> -</li>
+							<li>Streptococcus - 管内増殖性GN</li>
+							<li>O-157 - HUS</li>
+						</ol>
+						<br>
+
+						<p></p>
+						<ul>
+							<li>HBV - MN</li>
+							<li>Parvovirus - 管内増殖性GN</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- 13 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header mis pri">
+						<a href="https://qb.medilink-study.com/#/Answer/104I80">104I80</a> 検査 #1 
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill mis"> </span>
+						<br>
+						<p class="card-text">
+							2歳の女児．<br>
+							4日前から続く<u>発熱</u>，<u>下痢</u>および<u>血便</u>を主訴に来院した．<br>
+							前日から<u>尿回数が減少</u>しており，今朝から排尿を認めない．<br>
+							意識は清明．顔色は不良で活気がない．眼瞼結膜に<u>貧血</u>を認める．眼球結膜に<u>軽度の黄染</u>を認める．眼瞼と下腿前面とに浮腫を認める．顔面と前胸部とに<u>出血斑</u>を認める．呼吸音に異常を認めない．腹部はやや膨隆し全体に圧痛を認める．<u>腸雑音は減弱</u>している．右肋骨弓下に肝を1cm触知する．脾を触知しない．<br>
+							この患児の血液検査所見として考えにくいのはどれか．</p>
+
+						<ol type="a">
+							<li class="ans_t">血小板　2.5万</li>
+							<li class="ans_t">尿素窒素　37mg/dL</li>
+							<li class="ans_t">総蛋白　4.0g/dL</li>
+							<li class="ans_t">総ビリルビン　3.6mg/dL</li>
+							<li class="ans_t">Hb　6.8g/dL</li>
+							<li class="ans_t">AST　356IU/L</li>
+							<li class="ans_t">クレアチニン　2.1mg/dL</li>
+							<li class="ans_t">LD　4,033IU/L（基準334～742）</li>
+							<li class="ans_f">ハプトグロビン　246mg/dL（基準38～179）</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: i</p><br><br>
+
+						<ol type="a">
+							<li>Plt &darr;</li>
+							<li>BUN &uarr;</li>
+							<li>TP &darr;</li>
+							<li>Ind-Bil &uarr;</li>
+							<li>Anemia</li>
+							<li>肝機能 &darr;</li>
+							<li>Cr &uarrr;</li>
+							<li>HA &rarr; LD &uarr;</li>
+							<li>HA &rArr; &darr; Hapto</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+			
+			<!-- 14 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header rev">
+						<a href="https://qb.medilink-study.com/#/Answer/91F25">91F25</a> 検査
+					</div>
+					<div class="card-body">
+						<span class="badge badge-pill rev"> </span>
+						<br>
+
+						<p><u>3歳の女児</u>．<br>
+							5日前から1日5，6回の<u>下痢</u>があり，近医で治療を受けていた．<br>
+							今朝から<u>下痢便に血</u>が混じるようになった．<br>
+							昨夕から<u>尿量が減り</u>，今朝1回<u>暗赤褐色の尿</u>が少量出た．元気がなく，<u>顔色不良</u>となってきたため来院した．<br>
+							体温37.6℃．血圧132/88mmHg．意識は清明．顔面蒼白で，眼瞼結膜は<u>貧血状</u>である．肝，脾は触知しない．<br>
+							赤血球240万，<u>Hb 7.2g/dL</u>，白血球10,200，血小板6万．<br>
+							血清生化学所見：尿素窒素46mg/dL，クレアチニン3.0mg/dL．末梢血塗抹May-Giemsa染色標本を次に示す．<br>
+							この患児で予想される検査所見はどれか．3つ選べ．</p>
+
+						<img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/91/img/91F025.jpg" class="img-fluid">
+
+						<ol type="a">
+							<li class="ans_t">尿中β2-ミクログロブリン高値</li>
+							<li class="ans_t">網赤血球増加</li>
+							<li class="ans_t">血清LD高値</li>
+							<li class="ans_f">血清ハプトグロビン高値</li>
+							<li class="ans_f">直接Coombs試験陽性</li>
+						</ol>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: a,b,c</p><br><br>
+
+						<ol type="a">
+							<li>尿細管-糸球体の障害</li>
+							<li>HA</li>
+							<li>溶血による</li>
+							<li>&darr; Hapto</li>
+							<li>RBC Ab (-)</li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 15 -->
+			<div class="card-group">
+				<div class="card">
+					<div class="card-header hit pri">
+						<a href="https://qb.medilink-study.com/#/Answer/105D5">105D5</a> HUSの原因 #1
+					</div>
+					<div class="card-body">
+						<p class="card-text">
+							<span class="badge badge-pill hit"> </span><br>
+							小児の溶血性尿毒症症候群〈HUS〉の原因疾患として最も頻度が高いのはどれか．
+
+							<ol type="a">
+								<li>赤痢</li>
+								<li>サルモネラ感染症</li>
+								<li class="ans_t">腸管出血性大腸菌感染症</li>
+								<li>Kasabach-Merritt症候群</li>
+								<li>血栓性血小板減少性紫斑病〈TTP〉</li>
+							</ol>
+						</p>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card-body">
+						<p>True: c</p><br><br>
+
+						<ol type="a">
+							<li></li>
+							<li>sepsis, 脳症</li>
+							<li></li>
+							<li>DIC</li>
+							<li>HA, &darr;Plt, thrombosis</li>
+						</ol>
+
+					</div>
+				</div>
+			</div>
+
+
+			<!-- <div class="col-xs-12 col-sm-12 col-md-6">
+				<div class="card">
+					<div class="card-header miscaurevhit">
+						<a href="https://qb.medilink-study.com/#/Answer/"></a>
+					</div>
+					<div class="card-body">
+						<h4 class="card-title">
+
+						</h4>
+
+						<p class="card-text">
+							<i>miscaurevhit</i><br>
+
+
+							<ol type="a">
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ol>
+						</p>
+					</div>
+				</div>
+				<div class="card answer">
+					<div class="card">
+						True: <br><br>
+
+
+
+					</div>
+				</div>
+			</div> -->
+			
+			<!-- <div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="card">
+						<div class="card-header miscaurevhit">
+							<a href="https://qb.medilink-study.com/#/Answer/"></a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">
+
+							</h4>
+
+							<p class="card-text">
+								<i>miscaurevhit</i><br>
+
+
+								<ol type="a">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ol>
+							</p>
+						</div>
+					</div>
+					<div class="card answer">
+						<div class="card">
+							True: <br><br>
+
+
+
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="card">
+						<div class="card-header miscaurevhit">
+							<a href="https://qb.medilink-study.com/#/Answer/"></a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">
+
+							</h4>
+
+							<p class="card-text">
+								<i>miscaurevhit</i><br>
+
+
+								<ol type="a">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ol>
+							</p>
+						</div>
+					</div>
+					<div class="card answer">
+						<div class="card">
+							True: <br><br>
+
+
+
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="card">
+						<div class="card-header miscaurevhit">
+							<a href="https://qb.medilink-study.com/#/Answer/"></a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">
+
+							</h4>
+
+							<p class="card-text">
+								<i>miscaurevhit</i><br>
+
+
+								<ol type="a">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ol>
+							</p>
+						</div>
+					</div>
+					<div class="card answer">
+						<div class="card">
+							True: <br><br>
+
+
+
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<div class="card">
+						<div class="card-header miscaurevhit">
+							<a href="https://qb.medilink-study.com/#/Answer/"></a>
+						</div>
+						<div class="card-body">
+							<h4 class="card-title">
+
+							</h4>
+
+							<p class="card-text">
+								<i>miscaurevhit</i><br>
+
+
+								<ol type="a">
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+									<li></li>
+								</ol>
+							</p>
+						</div>
+					</div>
+					<div class="card answer">
+						<div class="card">
+							True: <br><br>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div><!--row-->
+		</div>
+
+	</div>
+
+
+	<div class="section" id="ref">
+		<div class="page-header">
+			<h2 class="hidden-xs-down">Reference</h2>
+			<h2 class="hidden-sm-up">Ref</h2>
+		</div>
+
+		<div>
+			<ol>
+				<li><a href=""></a></li>
+			</ol>
+		</div>
+	</div>
+
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<!--
+			<span class="navbar-brand">Hippo</span>
+			-->
+			<img src="../../scripts/img/favicon.png" class="navbar-brand" alt="Hiipo">
+			<!-- <a class="navbar-brand nav-title"></a> -->
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="nav-item"><a class="nav-link nav-title"></a></li>
+				<li class="nav-item"><a class="nav-link nav-revised"></a></li>
+				<li class="nav-item dropdown">
+					<a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+					<div class="dropdown-menu">
+						<a href="#key" class="dropdown-item">Key</a>
+						<a href="#def" class="dropdown-item">Def</a>
+						<a href="#cls" class="dropdown-item">Cls</a>
+						<a href="#eti" class="dropdown-item">Eti</a>
+						<a href="#epi" class="dropdown-item">Epi</a>
+						<a href="#ss" class="dropdown-item">S/S</a>
+						<a href="#ex" class="dropdown-item">Ex</a>
+						<a href="#dx" class="dropdown-item">Dx</a>
+						<a href="#rx" class="dropdown-item">Rx</a>
+						<a href="#app" class="dropdown-item">App</a>
+						<a href="#q" class="dropdown-item">Q</a>
+					</div></li>
+				<li class="nav-item"><a class="nav-link">
+					<span class="glyphicon glyphicon-eye-open day"> </span>
+					<span class="glyphicon glyphicon-eye-close night"> </span>
+				</a></li>
+					
+					
+			<!--
+	        <li class="active"><a href="#">Prev <span class="sr-only">(current)</span></a></li>
+	        <li><a href="#">Next</a></li>
+			-->
+	        <!--
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Chap. <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">One more separated link</a></li>
+	          </ul>
+	        </li>
+	        -->
+			</ul>
+		</div>
+	</div>
+	<div class="progress" style="height: 3px">
+		<div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		<div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+		<div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>		
+		<div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>		
+	</div>
+</nav>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../../scripts/js/Hippo.js"></script>
+<script type="text/javascript">
+$('document').ready(function(){
+	// title
+	var title = document.title;
+	$('.nav-title').html(title);
+	// revised
+	var revised_date = $('meta[name="revised"]').attr('content');
+	$('.nav-revised').html(revised_date);
+
+	// time
+	var now = new Date();
+	var hr = now.getHours();
+	var mi = now.getMinutes();
+	hr = hr + mi/60;
+	if (hr < 5.5 || 23.5 < hr ) {
+		$('body').addClass('night');
+	} 
+
+	$('span.day').hide();
+	$('span.day').click(function(){
+		$('body').toggleClass('night');
+		$('span.night').toggle();
+		$('span.day').toggle();
+	});
+	$('span.night').click(function(){
+		$('body').toggleClass('night');
+		$('span.night').toggle();
+		$('span.day').toggle();
+	});
+
+	$('.answer').find('.card-body').hide();
+
+	$('.card-body').click(function(){
+		$(this).parent().next().find('.card-body').toggle();
+		$(this).find('.correct').toggleClass('correct-show');
+		$(this).find('.ans_t').toggleClass('correct-show');
+	});
+
+
+	$('li.nav-item >a.mis').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.mis)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.cau').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.cau)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.rev').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.rev)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.hit').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.hit)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.all').click(function(){
+		$('div.card-group').show();
+	});
+	$('li.nav-item >a.untag').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.miscaurevhit)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.done').click(function(){
+		$('div.card-group').show();
+		$('div.card-header.miscaurevhit').parent().parent().toggle();
+	});
+	$('li.nav-item >a.pri').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.pri)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.req').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.req)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.qb').click(function(){
+		$('div.card-group').show();
+		$('div.card-header.notqb').parent().parent().toggle();
+	});
+	$('li.nav-item >a.110').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.110)').parent().parent().toggle();
+	});
+	$('li.nav-item >a.111').click(function(){
+		$('div.card-group').show();
+		$('div.card-header:not(.111)').parent().parent().toggle();
+	});
+	
+	var n_mis = $('div.mis').size();
+	var n_cau = $('div.cau').size();
+	var n_rev = $('div.rev').size();
+	var n_hit = $('div.hit').size();
+	var n_untag = $('div.miscaurevhit').size();
+	var n_all;
+	var n_pri = $('div.pri').size();
+	var n_req = $('div.req').size();
+	var n_notqb = $('div.notqb').size();
+	var n_110 = $('div.110').size();
+	var n_111 = $('div.111').size();
+
+	var n_done = n_mis + n_cau + n_rev + n_hit;
+	var n_untag = n_untag;
+	var n_quiz = n_done + n_untag;
+	var n_qb = n_quiz - n_notqb;
+	var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
+	var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
+	var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
+	var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
+	var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
+
+	// var alert_mis = n_mis + "<br>" + per_mis;
+	// var alert_cau = n_cau + "<br>" + per_cau;
+	// var alert_rev = n_rev + "<br>" + per_rev;
+	// var alert_hit = n_hit + "<br>" + per_hit;
+
+	$('span.q_alert_mis_n').html(n_mis);
+	$('span.q_alert_cau_n').html(n_cau);
+	$('span.q_alert_rev_n').html(n_rev);
+	$('span.q_alert_hit_n').html(n_hit);
+	$('span.q_alert_untag_n').html(n_untag);
+	$('span.q_alert_done_n').html(n_done);
+	$('span.q_alert_all_n').html(n_quiz);
+	$('span.q_alert_pri_n').html(n_pri);
+	$('span.q_alert_req_n').html(n_req);
+	$('span.q_alert_qb_n').html(n_qb);
+	$('span.q_alert_110_n').html(n_110);
+	$('span.q_alert_111_n').html(n_111);
+
+	$('span.q_alert_mis_per').html(per_mis);
+	$('span.q_alert_cau_per').html(per_cau);
+	$('span.q_alert_rev_per').html(per_rev);
+	$('span.q_alert_hit_per').html(per_hit);
+
+	$('code.q_alert_done').html(n_done);
+
+
+	$('#q-tab a').on('click', function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	})
+
+
+
+
+	$('button.a_GE').click(function(){
+		$('div.card-group:not(.a_GE)').toggle();
+	});
+	$('button.b_Hepa').click(function(){
+		$('div.card-group:not(.b_Hepa)').toggle();
+	});
+	$('button.c_CV').click(function(){
+		$('div.card-group:not(.c_CV)').toggle();
+	});
+	$('button.d_Endo').click(function(){
+		$('div.card-group:not(.d_Endo)').toggle();
+	});
+	$('button.d_Meta').click(function(){
+		$('div.card-group:not(.d_Meta)').toggle();
+	});
+	$('button.e_Elctr').click(function(){
+		$('div.card-group:not(.e_Elctr)').toggle();
+	});
+	$('button.e_GU').click(function(){
+		$('div.card-group:not(.e_GU)').toggle();
+	});
+	$('button.e_Nephro').click(function(){
+		$('div.card-group:not(.e_Nephro)').toggle();
+	});
+	$('button.f_Immune').click(function(){
+		$('div.card-group:not(.f_Immune)').toggle();
+	});
+	$('button.g_Heme').click(function(){
+		$('div.card-group:not(.g_Heme)').toggle();
+	});
+	$('button.h_Infxn').click(function(){
+		$('div.card-group:not(.h_Infxn)').toggle();
+	});
+	$('button.i_Pulmo').click(function(){
+		$('div.card-group:not(.i_Pulmo)').toggle();
+	});
+	$('button.i_Thorax').click(function(){
+		$('div.card-group:not(.i_Thorax)').toggle();
+	});
+	$('button.j_Neuro').click(function(){
+		$('div.card-group:not(.j_Neuro)').toggle();
+	});
+	$('button.k_Tox').click(function(){
+		$('div.card-group:not(.k_Tox)').toggle();
+	});
+	$('button.l_ER').click(function(){
+		$('div.card-group:not(.l_ER)').toggle();
+	});
+	$('button.m_Ans').click(function(){
+		$('div.card-group:not(.m_Ans)').toggle();
+	});
+	$('button.n_Geri').click(function(){
+		$('div.card-group:not(.n_Geri)').toggle();
+	});
+	$('button.o_').click(function(){
+		$('div.card-group:not(.o_)').toggle();
+	});
+	$('button.p_OB').click(function(){
+		$('div.card-group:not(.p_OB)').toggle();
+	});
+	$('button.q_GYN').click(function(){
+		$('div.card-group:not(.q_GYN)').toggle();
+	});
+	$('button.r_Oph').click(function(){
+		$('div.card-group:not(.r_Oph)').toggle();
+	});
+	$('button.s_ENT').click(function(){
+		$('div.card-group:not(.s_ENT)').toggle();
+	});
+	$('button.t_Ortho').click(function(){
+		$('div.card-group:not(.t_Ortho)').toggle();
+	});
+	$('button.u_Ψ').click(function(){
+		$('div.card-group:not(.u_Ψ)').toggle();
+	});
+	$('button.v_Derm').click(function(){
+		$('div.card-group:not(.v_Derm)').toggle();
+	});
+	$('button.w_').click(function(){
+		$('div.card-group:not(.w_)').toggle();
+	});
+	$('button.x_Radio').click(function(){
+		$('div.card-group:not(.x_Radio)').toggle();
+	});
+	$('button.y_Health').click(function(){
+		$('div.card-group:not(.y_Health)').toggle();
+	});
+
+	var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
+	$('button.a_GE').html(n_a_GE);
+	var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
+	$('button.b_Hepa').html(n_b_Hepa);
+	var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
+	$('button.c_CV').html(n_c_CV);
+	var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
+	$('button.d_Endo').html(n_d_Endo);
+	var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
+	$('button.d_Meta').html(n_d_Meta);
+	var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
+	$('button.e_Nephro').html(n_e_Nephro);
+	var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
+	$('button.e_GU').html(n_e_GU);
+	var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
+	$('button.e_Elctr').html(n_e_Elctr);
+	var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
+	$('button.f_Immune').html(n_f_Immune);
+	var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
+	$('button.g_Heme').html(n_g_Heme);
+	var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
+	$('button.h_Infxn').html(n_h_Infxn);
+	var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
+	$('button.i_Pulmo').html(n_i_Pulmo);
+	var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
+	$('button.i_Thorax').html(n_i_Thorax);
+	var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
+	$('button.j_Neuro').html(n_j_Neuro);
+	var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
+	$('button.k_Tox').html(n_k_Tox);
+	var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
+	$('button.l_ER').html(n_l_ER);
+	var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
+	$('button.m_Ans').html(n_m_Ans);
+	var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
+	$('button.n_Geri').html(n_n_Geri);
+	var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
+	$('button.o_Ped').html(n_o_Ped);
+	var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
+	$('button.p_OB').html(n_p_OB);
+	var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
+	$('button.q_GYN').html(n_q_GYN);
+	var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
+	$('button.r_Oph').html(n_r_Oph);
+	var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
+	$('button.s_ENT').html(n_s_ENT);
+	var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
+	$('button.t_Ortho').html(n_t_Ortho);
+	var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
+	$('button.u_Ψ').html(n_u_Ψ);
+	var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
+	$('button.v_Derm').html(n_v_Derm);
+	var n_w_ = 'w_: ' + $('div.card-group.w_').size();
+	$('button.w_').html(n_w_);
+	var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
+	$('button.x_Radio').html(n_x_Radio);
+	var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
+	$('button.y_Health').html(n_y_Health);
+	
+	$('div.progress > .progress-mis').width(per_mis).html(n_mis);
+	$('div.progress > .progress-cau').width(per_cau).html(n_cau);
+	$('div.progress > .progress-rev').width(per_rev).html(n_rev);
+	$('div.progress > .progress-hit').width(per_hit).html(n_hit);
+
+
+});
+</script>
+</body>
+</html>

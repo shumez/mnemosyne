@@ -16,6 +16,8 @@
 
 ## [4.1.4] - 2018-05-28
 - ```meta viewport```
+- ```meta name="author"```
+- ```meta name="version"```
 
 ## [4.1.3] - 2018-05-26
 - .q #q##

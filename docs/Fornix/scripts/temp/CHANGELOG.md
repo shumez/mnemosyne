@@ -13,7 +13,7 @@
 
 ## [Unreleased]
 
-- [ ] ...
+- [ ] push section header &xrArr; toggle .q
 
 
 ## [4.1.4] - 2018-05-28
@@ -32,25 +32,33 @@
 
 ## [4.1.3] - 2018-05-26
 
-- ```.q > #q##```
+```html
+<div id="q##"></div>
+```
 
 ## [4.1.2] - 2018-05-09
-- js span.now addClass
+```js
+$('span.now').addClass();
+```
 
 ## [4.1.1] - 2018-04-23
-- js #q card click
+```js
+$('#q card').click();
+```
 
 ## [4.1.0] - 2018-04-23
 - material design for bootstrap
 
 ## [4.0.1] - 2018-04-18
-- fix marigin
+- fix margin
 
 ## [4.0.0] - 2018-04-09
 - index.html
 
 ## [3.4.10] - 2018-02-09
-- .glyphicon-education
+```html
+<span class="glyphicon-education"></span>
+```
 
 ## [3.4.9] - 2018-01-20
 - .q id
@@ -110,25 +118,35 @@ text-decoration: line-through;
 ```
 
 ## [3.3.9] - 2017-11-20
-- font-family: "Helvetica Neue"
+```css
+font-family: "Helvetica Neue"
+```
 
 ## [3.3.8] - 2017-11-19
-- font-family: "Fira Code"
+```css
+font-family: "Fira Code"
+```
 
 ## [3.3.7] - 2017-11-15
 - .correct-hide
 
 ## [3.3.6] - 2017-11-10
-- js slideToggle
+```js
+.slideToggle();
+```
 
 ## [3.3.5] - 2017-11-09
 - .correct-show
 
 ## [3.3.4] - 2017-11-05
-- meta revised
+```html
+<meta name="revised">
+```
 
 ## [3.3.3] - 2017-11-04
-- a.qb
+```css
+a.qb
+```
 
 ## [3.3.2] - 2017-11-03
 - card-header.110, card-header.111
@@ -144,7 +162,9 @@ text-decoration: line-through;
 - .quiz-card margin-bottom, q_alert_done, .night
 
 ## [3.2.7] - 2017-10-30
-- .quiz-card
+```css
+.quiz-card
+```
 
 ## [3.2.6] - 2017-10-27
 - nav-tabs js

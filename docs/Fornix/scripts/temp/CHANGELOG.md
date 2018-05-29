@@ -13,14 +13,26 @@
 
 ## [Unreleased]
 
+- [ ] ...
+
 
 ## [4.1.4] - 2018-05-28
-- ```meta viewport```
-- ```meta name="author"```
-- ```meta name="version"```
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+```html
+<meta name="author" content="">
+```
+
+```html
+<meta name="version" content="">
+```
 
 ## [4.1.3] - 2018-05-26
-- .q #q##
+
+- ```.q > #q##```
 
 ## [4.1.2] - 2018-05-09
 - js span.now addClass
@@ -221,7 +233,18 @@ text-decoration: line-through;
 ### Security
 -->
 
+[Keep a Changelog]: http://keepachangelog.com/en/1.0.0/
+[Semantic Versioning]: http://semver.org/spec/v2.0.0.html
 
+
+<!--
+* Added: for new features.
+* Changed: for changes in existing functionality.
+* Deprecated: for soon-to-be removed features.
+* Removed: for now removed features.
+* Fixed: for any bug fixes.
+* Security: in case of vulnerabilities.
+-->
 
 
 [Unreleased]: .
@@ -286,16 +309,3 @@ text-decoration: line-through;
 [4.1.2]: .
 [4.1.3]: .
 [4.1.4]: .
-
-[Keep a Changelog]: http://keepachangelog.com/en/1.0.0/
-[Semantic Versioning]: http://semver.org/spec/v2.0.0.html
-
-
-<!--
-* Added: for new features.
-* Changed: for changes in existing functionality.
-* Deprecated: for soon-to-be removed features.
-* Removed: for now removed features.
-* Fixed: for any bug fixes.
-* Security: in case of vulnerabilities.
--->

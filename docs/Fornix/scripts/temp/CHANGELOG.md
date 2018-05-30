@@ -18,7 +18,7 @@
 ```js
 $('.section').click(function(){
     $('#q > .card-group').toggle();
-    $(this).attr("id");
+    var this_id = $(this).attr("id");
 });
 ```
 

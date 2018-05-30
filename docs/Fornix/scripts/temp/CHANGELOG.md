@@ -15,6 +15,12 @@
 
 - [ ] push section header &xrArr; toggle .q
 
+```js
+$('.section').click(function(){
+    $('#q > .card-group').toggle();
+    $(this).attr("id");
+});
+```
 
 ## [4.1.4] - 2018-05-28
 
@@ -23,17 +29,18 @@
 ```
 
 ```html
-<meta name="author" content="">
+<meta name="author" content="shumez">
 ```
 
 ```html
-<meta name="version" content="">
+<meta name="version" content="4.1.4">
 ```
 
 ## [4.1.3] - 2018-05-26
 
 ```html
-<div id="q##"></div>
+<div class="card-group" id="q##">
+</div>
 ```
 
 ## [4.1.2] - 2018-05-09

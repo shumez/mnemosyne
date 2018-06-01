@@ -21,6 +21,20 @@ $('.section').click(function(){
     var this_id = $(this).attr("id");
 });
 ```
+## [4.1.5] - 2018-06-01
+
+```html
+<p class="q_dx"></p>
+<p class="q_answer_true"></p>
+```
+
+```js
+$('p.q_dx').prepend('<code>Dx</code>: ');
+
+$('p.q_answer_true').prepend('True: ');
+$('p.q_answer_false').prepend('False: ');
+```
+
 
 ## [4.1.4] - 2018-05-28
 
@@ -336,3 +350,4 @@ a.qb
 [4.1.2]: .
 [4.1.3]: .
 [4.1.4]: .
+[4.1.5]: .

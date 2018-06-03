@@ -21,6 +21,13 @@ $('.section').click(function(){
     var this_id = $(this).attr("id");
 });
 ```
+
+## [4.1.6] - 2018-06-03
+
+```html
+<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+```
+
 ## [4.1.5] - 2018-06-01
 
 ```html

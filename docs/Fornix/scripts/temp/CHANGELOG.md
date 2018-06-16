@@ -22,6 +22,16 @@ $('.section').click(function(){
 });
 ```
 
+## [4.1.7] - 2018-06-16
+
+```js
+// tack
+$('span.rtack').append('⊣');
+$('span.ltack').append('⊢');
+$('span.utack').append('⊤');
+$('span.dtack').append('⊥');
+```
+
 ## [4.1.6] - 2018-06-03
 
 ```html
@@ -359,3 +369,4 @@ a.qb
 [4.1.4]: .
 [4.1.5]: .
 [4.1.6]: .
+[4.1.7]: .

@@ -14,6 +14,8 @@
 ## [Unreleased]
 
 - [ ] push section header &xrArr; toggle .q
+- [ ] prepend #q id
+
 
 ```js
 $('.section').click(function(){

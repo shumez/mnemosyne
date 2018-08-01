@@ -10,4 +10,10 @@ $(document).ready(function(){
 	$('.my-uarr').click(function(){
 		$(this).parent().toggleClass('active');
 	});
+
+	$('ul.my-tab > li').click(function(){
+		var this_id = $(this).attr('id');
+		this_id = '.' + this_id;
+		$(this_id).toggleClass('active');
+	});
 });

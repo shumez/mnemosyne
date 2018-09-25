@@ -4,12 +4,28 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-07-19 18:23:18
+@Last modified time: 2018-09-25 15:26:36
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
 04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
@@ -80,8 +96,8 @@
     <title>General</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-07-19 18:23:28" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.7">
+    <meta name="revised" content="2018-09-25 15:27:08" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.22">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -140,6 +156,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -180,23 +198,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -245,162 +272,266 @@
         </div>
     </div>
 
-    <!-- <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2> 
-            <span class="badge badge-pill mis"> </span>
-            <span class="badge badge-pill cau"> </span>
-            <span class="badge badge-pill rev"> </span>
-            <span class="badge badge-pill hit"> </span>
-            <script type="text/javascript"></script>
-        </div>
+        
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="blind_loop">
+                <div class="page-header">
+                    <h2>Blind Loop syndrome <small><code></code></small></h2>
                 </div>
+
             </div>
-
-        </div>
-    </div> -->
-
-    <div class="section" id="BLS">
-        <div class="page-header">
-            <h2>Blind Loop syndrome <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="AD">
+                <div class="page-header">
+                    <h2>Amebic Dysentery <small class="hidden-xs-down">AD</small><small> アメーバ赤痢</small></h2>
                 </div>
+
             </div>
-
-        </div>
-    </div>
-    
-    <div class="section" id="AD">
-        <div class="page-header">
-            <h2>Amebic Dysentery <small class="hidden-xs-down">AD</small><small> アメーバ赤痢</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MAS">
+                <div class="page-header">
+                    <h2>Malabsorption Syndrome <small class="hidden-xs-down">MAS</small></h2>
                 </div>
+
+                <h6>吸収障害</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ol>
+                            <li>脂肪</li>
+                            <li>タンパク</li>
+                            <li>糖</li>
+                        </ol>
+                    </li>
+                </ul>
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="MAS">
-        <div class="page-header">
-            <h2>Malabsorption Syndrome <small class="hidden-xs-down">MAS</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>低蛋白血症</h6>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>機序</th>
+                        <th>病態</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>蛋白素材の不足</td>
+                        <td><ul>
+                            <li>飢餓</li>
+                            <li>吸収不良症候群</li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <td>蛋白合成能の低下</td>
+                        <td><ul>
+                            <li>肝硬変</li>
+                            <li>無アルブミン血症</li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <td>血液の希釈</td>
+                        <td><ul>
+                            <li>妊娠</li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <td>蛋白の体腔内への移行</td>
+                        <td><ul>
+                            <li>胸水</li>
+                            <li>腹水</li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <td>蛋白の体外への移行</td>
+                        <td><ul>
+                            <li>ネフローゼ</li>
+                            <li>蛋白漏出性胃腸症</li>
+                            <li>熱傷</li>
+                            <li>失血</li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <td>蛋白の異化亢進</td>
+                        <td><ul>
+                            <li>炎症性疾患</li>
+                            <li>悪性腫瘍</li>
+                            <li>甲状腺機能亢進症</li>
+                        </ul></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="card">
+                <img src="https://www.qb-online.com/img_kaisetsu/90A050_bas_a_010.jpg" class="card-img-top img-fluid">
             </div>
-
-        </div>
-    </div>
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>内視鏡的硬化療法</h6>
+            <ul class="list-group">
+                <li class="list-group-item">①オレイン酸モノエタノールアミン (EO):<br>
+                    静脈瘤内に注入し，静脈瘤を血栓化する．</li>
+                <li class="list-group-item">②エトキシスクレロール (AS):<br>
+                    静脈瘤の周囲粘膜に注入し，粘膜を線維組織で置換させて硬くする．</li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>経口腸管洗浄薬 <code>C/I</code></h6>
+            <ul class="list-group">
+                <li class="list-group-item">s/o 胃腸管閉塞症, 腸閉塞<br>
+                    &rArr; 腸管穿孔</li>
+                <li class="list-group-item">腸管穿孔<br>
+                    &rArr; 腹膜炎</li>
+                <li class="list-group-item">中毒性巨大結腸症<br>
+                    &rArr; 腸管穿孔<br>
+                    &rArr; 腹膜炎, 腸管出血</li>
+            </ul>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-9 col-md-9">
+            <h6>McBurney交叉切開 傍腹直筋切開</h6>
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/110B039_bas_010.jpg" class="card-img-top img-fluid">
             </div>
-
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <td>術前絶食</td>
+                        <td>POD -1</td>
+                    </tr>
+                    <tr>
+                        <td>術後絶食</td>
+                        <td>POD 2-3</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>腸管麻痺</h6>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <td>胃</td>
+                        <td>24h</td>
+                    </tr>
+                    <tr>
+                        <td>小腸</td>
+                        <td>-10h</td>
+                    </tr>
+                    <tr>
+                        <td>大腸</td>
+                        <td>2-3d</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>消化液 分泌量 (/day)</h6>
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <td>唾液</td>
+                        <td>1.5 L</td>
+                    </tr>
+                    <tr>
+                        <td>胃液</td>
+                        <td>1.5 - 3 L</td>
+                    </tr>
+                    <tr>
+                        <td>腸液</td>
+                        <td>2 - 4 L</td>
+                    </tr>
+                    <tr>
+                        <td>胆汁</td>
+                        <td>500 mL</td>
+                    </tr>
+                    <tr>
+                        <td>膵液</td>
+                        <td>700 mL</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>人工肛門</h6>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    腹腔内で固定されていない腸管を使用
+                    <ul>
+                        <li>小腸</li>
+                        <li>横行結腸</li>
+                        <li>S状結腸</li>
                     </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </li>
+            </ul>
 
         </div>
+
     </div>
-    -->
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>            
+        </div>
+    </div>
 
 
     <div class="section" id="app">
@@ -426,7 +557,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 39 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 39</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -564,14 +695,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group ANA" id="q01">
+            <div class="card-group ANA info " id="q01">
                 <div class="card">
-                    <div class="card-header info ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106E16" target="_blank">106E16</a> 解剖
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:52:33"> </span>
                         <br>
                         <p>成人の解剖で正しいのはどれか．</p>
 
@@ -609,14 +741,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group HrThyro UC " id="q02">
+            <div class="card-group HrThyro UC norovirus ileus obstruction pri 111" id="q02">
                 <div class="card">
-                    <div class="card-header pri 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A12" target="_blank">111A12</a> 疾患 - 症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:30:33"> </span>
                         <br>
                         <p>疾患と症状の組合せで誤っているのはどれか．</p>
 
@@ -636,10 +769,12 @@
 
                         <ol type="a">
                             <li></li>
-                            <li><ul>
-                                <li>甲状腺機能亢進症: 下痢</li>
-                                <li>甲状腺機能低下症: 慢性便秘</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>甲状腺機能亢進症: 下痢</li>
+                                    <li>甲状腺機能低下症: 慢性便秘</li>
+                                </ul>
+                            </li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -649,14 +784,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group BLS CP" id="q03">
+            <div class="card-group blind_loop  CP" id="q03">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/89A58" target="_blank">89A58</a> 脂肪性下痢
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:53:08"> </span>
                         <br>
                         <p>脂肪性下痢がみられるのはどれか．2つ選べ．</p>
 
@@ -690,14 +826,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group CRC PMC AD" id="q04">
+            <div class="card-group CRC PMC AD Behcet ITB" id="q04">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/88A59" target="_blank">88A59</a> テネスムス
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:31:56"> </span>
                         <br>
 
                         <p>しぶり腹（テネスムス）をきたすのはどれか．3つ選べ．</p>
@@ -731,14 +868,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group AAP " id="q05">
+            <div class="card-group AAP MWS GDU info" id="q05">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/90A50" target="_blank">90A50</a> 疾患 - 関連痛・放散痛の部位
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:33:21"> </span>
                         <br>
                         <p>疾患と関連痛・放散痛の部位との組合せで正しいのはどれか．3つ選べ．</p>
 
@@ -784,7 +922,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:58:04"> </span>
                         <br>
                         <p>吸収障害の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -813,7 +952,7 @@
                         </ol>
 
                         <h6>吸収部位</h6>
-                        <table class="table-condensed">
+                        <table class="table table-condensed">
                             <tbody>
                                 <tr>
                                     <th rowspan="2">十二指腸 - 空腸<br>
@@ -833,19 +972,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group MAS" id="q07">
+            <div class="card-group MAS info" id="q07">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/86B8" target="_blank">86B8</a> 吸収不良症候群
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:35:06"> </span>
                         <br>
                         <p>吸収不良症候群と特に関連性のないのはどれか．</p>
 
@@ -863,13 +1006,17 @@
                     <div class="card-body">
 
                         <h6>吸収障害</h6>
-                        <ol>
-                            <li>脂肪</li>
-                            <li>タンパク</li>
-                            <li>糖</li>
-                        </ol>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <ol>
+                                    <li>脂肪</li>
+                                    <li>タンパク</li>
+                                    <li>糖</li>
+                                </ol>
+                            </li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_false">e</p>
 
@@ -885,14 +1032,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group HoAlb HC CD Mentrier" id="q08">
+            <div class="card-group HoAlb HC CD Mentrier info" id="q08">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103I18" target="_blank">103I18</a> 低蛋白血症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill rev now" id="2018-09-25_15:58:59"> </span>
                         <br>
                         <p>低蛋白血症をきたすのはどれか．3つ選べ．</p>
 
@@ -1102,7 +1250,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:00:27"> </span>
                         <br>
                         <p>疾患と腹部X線単純写真の所見の組合せで誤っているのはどれか．</p>
 
@@ -1124,7 +1273,10 @@
                             <li></li>
                             <li></li>
                             <li>S状結腸軸捻転: coffee-bean sign</li>
-                            <li>急性膵炎: 限局性空腸麻痺 &rArr; 横行結腸の攣縮 &rArr; 右結腸の限局性ガス colon cut-off sign</li>
+                            <li>急性膵炎:<br>
+                                限局性空腸麻痺<br>
+                                &rArr; 横行結腸の攣縮<br>
+                                &rArr; 右結腸の限局性ガス colon cut-off sign</li>
                         </ol>
                     </div>
                 </div>
@@ -1138,7 +1290,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:01:33"> </span>
                         <br>
                         <p>誤っている組合せはどれか．</p>
 
@@ -1153,6 +1306,8 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_false">d</p>
 
                         <ol type="a">
@@ -1175,7 +1330,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:04:47"> </span>
                         <br>
                         <p>糞便検査について正しいのはどれか．2つ選べ．</p>
 
@@ -1215,7 +1371,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:36:27"> </span>
                         <br>
                         <p>消化管内視鏡下の粘膜生検が診断に有用なのはどれか．</p>
 
@@ -1240,24 +1397,30 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>HP<ul>
-                                <li>ウレアーゼ試験</li>
-                                <li>組織学的検査</li>
-                            </ul></li>
+                            <li>HP
+                                <ul>
+                                    <li>内視鏡下生検粘膜を用いたウレアーゼ試験</li>
+                                    <li>組織学的検査</li>
+                                    <li>尿素呼気試験</li>
+                                    <li>血中抗体測定</li>
+                                </ul>
+                            </li>
                         </ol>
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group verices cholelithiasis" id="q15">
+            <div class="card-group endoscopy verices cholelithiasis" id="q15">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/102G35" target="_blank">102G35</a> 内視鏡治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:05:27"> </span>
                         <br>
                         <p>消化管内視鏡による治療が適応となるのはどれか．2つ選べ．</p>
 
@@ -1295,14 +1458,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group endoscopy diver verices GDU" id="q16">
+            <div class="card-group endoscopy diver verices GDU pri print" id="q16">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G28" target="_blank">109G28</a> 診断 - 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:07:06"> </span>
                         <br>
                         <p>疾患と内視鏡治療の組合せで正しいのはどれか．</p>
 
@@ -1317,6 +1481,8 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_true">c</p>
 
                         <ol type="a">
@@ -1331,14 +1497,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group verices GDU intussusception" id="q17">
+            <div class="card-group endoscopy verices GDU intussusception info" id="q17">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G115" target="_blank">98G115</a> 疾患 - 内視鏡治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill rev now" id="2018-09-25_16:08:38"> </span>
                         <br>
                         <p>疾患と内視鏡治療の組合せで誤っているのはどれか．</p>
 
@@ -1367,9 +1534,9 @@
 
                         <h6>内視鏡的硬化療法</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①オレイン酸モノエタノールアミン（EO）：<br>
+                            <li class="list-group-item">①オレイン酸モノエタノールアミン (EO):<br>
                                 静脈瘤内に注入し，静脈瘤を血栓化する．</li>
-                            <li class="list-group-item">②エトキシスクレロール（AS）：<br>
+                            <li class="list-group-item">②エトキシスクレロール (AS):<br>
                                 静脈瘤の周囲粘膜に注入し，粘膜を線維組織で置換させて硬くする．</li>
                         </ul>
                     </div>
@@ -1377,14 +1544,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group endoscopy verices GDU GC" id="q18">
+            <div class="card-group endoscopy verices GDU GC pri" id="q18">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E19" target="_blank">108E19</a> 内視鏡治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:10:04"> </span>
                         <br>
                         <p>内視鏡治療と使用する機器の組合せで正しいのはどれか．</p>
 
@@ -1416,13 +1584,14 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group IVR RADIO GDU " id="q19">
+            <div class="card-group IVR RADIO GDU info 111" id="q19">
                 <div class="card">
-                    <div class="card-header 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B11" target="_blank" id="">111B11</a> IVR 十二指腸潰瘍出血
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:39:18"> </span>
                         <br>
                         <p>内視鏡による止血が困難であった十二指腸潰瘍出血に対するインターベンショナルラジオロジー〈IVR〉で使用するのはどれか．</p>
 
@@ -1454,23 +1623,33 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">①クリッピング：確実性・非侵襲性の面から最も優れており，汎用されている．ただし出血多量で出血部位の固定が困難な場合や，広範囲の場合には不適．</li>
-                            <li class="list-group-item">②インターベンショナルラジオロジー（IVR）：出血部位の同定と治療を兼ねる．塞栓にはコイルやゼラチンスポンジなどが用いられる．</li>
-                            <li class="list-group-item">③外科的手術：①，②で効果が得られない場合に，出血部位を含めた切除術を行う．胃癌からの動脈性出血では，根治目的に開腹手術が第一選択となることもある．</li>
+                            <li class="list-group-item">①クリッピング:<br>
+                                確実性・非侵襲性の面から最も優れており，汎用されている．ただし出血多量で出血部位の固定が困難な場合や，広範囲の場合には不適．
+                            </li>
+                            <li class="list-group-item">②インターベンショナルラジオロジー（IVR）:<br>
+                                出血部位の同定と治療を兼ねる．塞栓にはコイルやゼラチンスポンジなどが用いられる．
+                            </li>
+                            <li class="list-group-item">③外科的手術:<br>
+                                ①，②で効果が得られない場合に，出血部位を含めた切除術を行う．胃癌からの動脈性出血では，根治目的に開腹手術が第一選択となることもある．
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group CD diver  CRC " id="q20">
+            <div class="card-group CD diver CRC info" id="q20">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/101B91" target="_blank">101B91</a> 経口腸管洗浄薬
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:10:56"> </span>
                         <br>
                         <p>大腸内視鏡検査で経口腸管洗浄薬による前処置が可能なのはどれか．2つ選べ．</p>
 
@@ -1506,7 +1685,8 @@
                             <li class="list-group-item">腸管穿孔<br>
                                 &rArr; 腹膜炎</li>
                             <li class="list-group-item">中毒性巨大結腸症<br>
-                                &rArr; 腸管穿孔 &rArr; 腹膜炎, 腸管出血</li>
+                                &rArr; 腸管穿孔<br>
+                                &rArr; 腹膜炎, 腸管出血</li>
                         </ul>
                     </div>
                 </div>
@@ -1524,14 +1704,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group endoscopy gla " id="q21">
+            <div class="card-group endoscopy gla BPH info" id="q21">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/97G103" target="_blank">97G103</a> 内視鏡の禁忌
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:41:17"> </span>
                         <br>
                         <p>上部消化管内視鏡検査で行ってよいのはどれか．2つ選べ．</p>
 
@@ -1571,13 +1752,14 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group APP ANA" id="q22">
+            <div class="card-group APP ANA pri 110 info" id="q22">
                 <div class="card">
-                    <div class="card-header pri 110 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B39" target="_blank" id="">110B39</a> McBurney交叉切開
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:12:07"> </span>
                         <br>
                         <p>McBurney交叉切開で虫垂切除術を行う際に切開する筋はどれか．3つ選べ．</p>
 
@@ -1596,7 +1778,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">b d e</p>
 
@@ -1657,14 +1839,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group GC " id="q24">
+            <div class="card-group GC  pri" id="q24">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E56" target="_blank">109E56</a> 胃全摘後 ドレーン留置部位
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:42:37"> </span>
                         <br>
                         <p>82歳の男性．<br>
                             胃体上部の進行胃癌に対し，胃全摘術，リンパ節郭清術および空腸瘻造設術を行った．<br>
@@ -1673,7 +1856,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/109E056.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/109E056.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/109E056.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1800,13 +1983,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group NGT " id="q27">
+            <div class="card-group NGT  110 pri" id="q27">
                 <div class="card">
-                    <div class="card-header 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110I39" target="_blank" id="">110I39</a> 汎発性腹膜炎手術 AXR
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:13:14"> </span>
                         <br>
                         <p>消化管穿孔による汎発性腹膜炎手術の終了後，手術室を退室する前に腹部X線撮影を行った．<br>
                             確認すべきなのはどれか．3つ選べ．</p>
@@ -1842,14 +2026,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group EC achalasia GC CRC" id="q28">
+            <div class="card-group EC achalasia GC CRC info" id="q28">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/105A18" target="_blank">105A18</a> ope合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_16:17:35"> </span>
                         <br>
                         <p>疾患と術後早期に起こり得る合併症の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -1955,14 +2140,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group ope " id="q30">
+            <div class="card-group ope  pri info" id="q30">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107A13" target="_blank">107A13</a> 回盲部癌 周術期管理
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:19:26"> </span>
                         <br>
                         <p>消化管閉塞のない回盲部癌の周術期管理について適切なのはどれか．</p>
 
@@ -2007,14 +2193,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group infusion" id="q31">
+            <div class="card-group infusion CRC 111 info" id="q31">
                 <div class="card">
-                    <div class="card-header 111 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I44" target="_blank">111I44</a> 大腸術後
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:45:31"> </span>
                         <br>
                         <p>65歳の男性．<br>
                             <u>大腸癌の手術後</u>で入院中である．<br>
@@ -2223,14 +2410,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group neutrition" id="q35">
+            <div class="card-group neutrition pri" id="q35">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D10" target="_blank">109D10</a> 経皮的胃瘻造設術
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_16:20:47"> </span>
                         <br>
                         <p>バルーン型胃瘻カテーテルを用いた経皮的胃瘻造設術後について正しいのはどれか．</p>
 
@@ -2267,14 +2455,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group neutrition" id="q36">
+            <div class="card-group neutrition ileus obstruction" id="q36">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/99D104" target="_blank">99D104</a> 経管栄養 適応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_15:47:48"> </span>
                         <br>
                         <p>経管栄養の適応でないのはどれか．</p>
 
@@ -2303,20 +2492,22 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">経管栄養 = 経腸栄養</li>
+                            <li class="list-group-item">経管栄養 = 経腸栄養<br>
+                                胃または腸に栄養チューブを通して，栄養剤を注入する栄養法</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group stoma" id="q37">
+            <div class="card-group stoma 111 pri info" id="q37">
                 <div class="card">
-                    <div class="card-header 111 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I11" target="_blank" id="">111I11</a> Stoma
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-25_16:22:38"> </span>
                         <br>
                         <p>腹壁の模式図を次に示す．<br>
                             腹会陰式直腸切断術を行う際に人工肛門を造設する部位はどれか．</p>
@@ -2410,14 +2601,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group IVR" id="q39">
+            <div class="card-group IVR pri" id="q39">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D8" target="_blank">109D8</a> 経動脈的塞栓術 適応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-25_15:50:46"> </span>
                         <br>
                         <p>経動脈的塞栓術の適応でないのはどれか．</p>
 
@@ -2562,6 +2754,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2583,27 +2778,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2625,11 +2827,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2673,35 +2877,35 @@ $('document').ready(function(){
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').toggle('slow');
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').toggle('slow');
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').toggle('slow');
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').toggle('slow');
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').toggle('slow');
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').toggle('slow');
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2934,6 +3138,27 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+    $('#blind_loop h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.blind_loop)').toggle();
+    });
+    $('#blind_loop').find('code').html($('div.blind_loop').size());
+
+
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

@@ -4,12 +4,37 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-04-09 13:20:17
+@Last modified time: 2018-09-27 20:31:49
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
+04.01.04    18 05 28    meta viewport
+04.01.03    18 05 26    .q #q##
+04.01.02    18 05 09    js span.now addClass
+04.01.01    18 04 23    js #q card click
+04.01.00    18 04 23    material design for bootstrap
+04.00.01    18 04 18    fix marigin
+
 04.00.00    18 04 09    index.html
 03.04.10    18 02 09    .glyphicon-education
 03.04.09    18 01 20    .q id
@@ -70,16 +95,26 @@
 <head>
     <title>CV - Intro</title>
     <meta charset="UTF-8">
-    <meta name="author" content="shume">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="author" content="shumez">
+    <meta name="revised" content="2018-09-27 20:32:46" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.22">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../../scripts/img/favicon.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../scripts/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+
+    <!-- Material Design -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous"> -->
+
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -121,6 +156,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -159,23 +196,34 @@
 
         /*print*/
         @media print{
+            .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 24px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -185,8 +233,8 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title hidden-xs-down">Cardiovascular - Intro <small></small></h1>
-        <h1 class="title hidden-sm-up">CV</h1>
+        <h1 class="title hidden-xs-down">Intro <small>CV</small></h1>
+
     </div>
 <!-- </nav> -->
 
@@ -437,102 +485,102 @@
     </div>
 
 
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2 class="hidden-xs-down">#dx</h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3></h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
+    
 
     <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ANA">
+                <div class="page-header">
+                    <h2>Anatomy <small><code></code></small></h2>
+                </div>
 
-        <!--
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>            
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PHYSIO">
+                <div class="page-header">
+                    <h2>Physiology  <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>            
+        </div>
+
+
+
+
+
+
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="">
                 <div class="page-header">
-                    <h2 class="hidden-xs-down">#dx</h2>
-                    <h2 class="hidden-sm-up">#d</h2>
+                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
-                <div class="body">
-                    <h3 class="">section</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
 
-                    <h3></h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-
-                    <h3></h3>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h3></h3>
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src=""></iframe>
-                    </div>
-                </div>
-            </div>
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>            
         </div>
-        -->
-        <!--
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
-                <div class="page-header">
-                    <h2 class="hidden-xs-down">#Dx</h2>
-                    <h2 class="hidden-sm-up">#dx</h2>
-                </div>
-                <div class="body">
-                    <h3 class="">section</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        -->
     </div>
 
 
@@ -559,7 +607,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {} 43 ()</p>
+            <p><code class="q_alert_done"></code> Qs / 43</p>
 
             <ul class="nav nav-pills" id="q-tab">
                 <li class="nav-item">
@@ -643,13 +691,14 @@
             </ul>
 
             <!-- 01 -->
-            <div class="card-group">
+            <div class="card-group ANA info">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B13" target="_blank">96B13</a> 心臓 解剖
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_20:40:40"> </span>
                         <br>
                         <p>正しい位置関係はどれか．</p>
 
@@ -813,13 +862,14 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group">
+            <div class="card-group ANA pri">
                 <div class="card">
-                    <div class="card-header mis pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106B13" target="_blank">106B13</a> 弁
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_20:57:22"> </span>
                         <br>
                         <p>心臓の弁について正しいのはどれか．</p>
 
@@ -835,7 +885,7 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: e</p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li>MV: 2尖</li>
@@ -867,13 +917,14 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group">
+            <div class="card-group ANA pri">
                 <div class="card">
-                    <div class="card-header mis pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B32" target="_blank">109B32</a> 弁
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_20:59:47"> </span>
                         <br>
                         <p>心臓について正しいのはどれか．2つ選べ．</p>
 
@@ -888,15 +939,20 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: b,c</p>
+
+
+
+                        <p class="q_answer_true">b c</p>
 
                         <ol type="a">
-                            <li><ul>
-                                <li>AoV, PV: 半月弁</li>
-                                <li>MV, TV: 弁尖, 弁輪, 腱索, 乳頭筋の複合体</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>AoV, PV: 半月弁</li>
+                                    <li>MV, TV: 弁尖, 弁輪, 腱索, 乳頭筋の複合体</li>
+                                </ul>
+                            </li>
                             <li></li>
-                            <li></li>
+                            <li>MV前尖, 心室中隔によって左室流出路</li>
                             <li>MVの腱索は前 / 後乳頭筋から起始</li>
                             <li></li>
                         </ol>
@@ -994,13 +1050,14 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group">
+            <div class="card-group PHYSIO">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102B39" target="_blank">102B39</a> 灌流
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:04:38"> </span>
                         <br>
                         <p>安静時に心拍出量の約5％が灌流する臓器はどれか．</p>
 
@@ -1016,7 +1073,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: b</p>
+
+
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li>脳: 15%</li>
@@ -1195,14 +1254,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group">
+            <div class="card-group PHYSIO ANA pri">
                 <div class="card">
-                    <div class="card-header mis pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G34" target="_blank">98G34</a> 刺激伝導系
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-27_21:06:25"> </span>
                         <br>
                         <p>心臓の刺激伝導系で正しいのはどれか．</p>
 
@@ -1232,14 +1292,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group">
+            <div class="card-group PHYSIO info">
                 <div class="card">
-                    <div class="card-header mis info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E34" target="_blank">103E34</a> 刺激伝導
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:14:42"> </span>
                         <br>
                         <p>刺激伝導に最も時間がかかるのはどれか．</p>
 
@@ -1266,9 +1327,11 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/103E034_bas_c_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103E034_bas_c_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/103E034_bas_c_010.jpg" class="card-img-top img-fluid"> -->
+
                     </div>
                 </div>
             </div>
@@ -1363,14 +1426,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group">
+            <div class="card-group PHYSIO info">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B33" target="_blank">101B33</a> &uarr;心拍出量
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:15:54"> </span>
                         <br>
                         <p>心拍出量が増加するのはどれか．</p>
 
@@ -1386,7 +1450,10 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: e</p>
+
+
+
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1402,18 +1469,21 @@
                             <li class="list-group-item">Afterload</li>
                             <li class="list-group-item">収縮力</li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group">
+            <div class="card-group PHYSIO pri info">
                 <div class="card">
-                    <div class="card-header mis pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97B21" target="_blank">97B21</a> 心筋酸素消費量
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-27_21:17:25"> </span>
                         <br>
                         <p>心筋酸素消費量の主な決定因子はどれか．3つ選べ．</p>
 
@@ -1497,20 +1567,21 @@
 
 
             <!-- 01 -->
-            <div class="card-group">
+            <div class="card-group PHYSIO info">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E15" target="_blank">103E15</a> S<sub>3</sub>
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:21:10"> </span>
                         <br>
                         <p>心電図と左心の心周期とを図に示す．<br>
                         Ⅲ音を聴取するのはどこか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/103E015.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/103E015.jpg" class="card-img-top img-fluid">
+                    <img src="https://qb.medilink-study.com/images/103E015.jpg" class="card-img-top img-fluid" width="70%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1524,7 +1595,7 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: e</p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li>IV音<br>
@@ -1757,13 +1828,14 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group">
+            <div class="card-group MS TR info">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D80" target="_blank" id="2018-01-20_23:14:26">99D80</a> 聴診 - 心疾患
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:24:40"> </span>
                         <br>
                         <p>組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -1782,15 +1854,44 @@
 
                         <p></p>
 
-                        <p>True: a,e</p>
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
-                            <li></li>
+                            <li>MS: MV固い &rArr;　閉鎖するとき大きな音</li>
                             <li>固定性分裂: ASD </li>
                             <li>僧帽弁開放音: MS</li>
-                            <li></li>
+                            <li>拡張期漸減性: AR</li>
                             <li></li>
                         </ol>
+
+
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <th>Ⅰ音↑</th>
+                                    <td>
+                                        <ul>
+                                            <li>①心収縮力の亢進状態（hyperdynamic state）</li>
+                                            <li><u>②MS</u></li>
+                                            <li>③TS（弁が硬くなったとき）</li>
+                                            <li>④PQ時間短縮時（WPW）</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Ⅰ音↓</th>
+                                    <td>
+                                        <ul>
+                                            <li>①心収縮力が減少している時（<u>心筋梗塞</u>）</li>
+                                            <li>②<u>MR</u></li>
+                                            <li>③PQ時間延長時</li>
+                                            <li>④心囊液貯留</li>
+                                            <li>⑤AR</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -1802,7 +1903,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110D19" target="_blank" id="">110D19</a> 2LSB 収縮早期雑音
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:35:53"> </span>
                         <br>
                         <p>心疾患のない女性で，胸骨左縁第2肋間を最強点とする収縮早期雑音の原因となるのはどれか．3つ選べ．</p>
 
@@ -1819,9 +1921,10 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <p>&uarr;COutput<br>
+                            &rArr; 収縮早期雑音</p>
 
-                        <p>True: a,b,e</p>
+                        <p class="q_answer_true">a b e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1835,14 +1938,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group">
+            <div class="card-group DCM tamponade">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G75" target="_blank" id="2018-01-20_22:30:11">98G75</a> 脈 - 疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:39:55"> </span>
                         <br>
                         <p>正しい組合せはどれか．2つ選べ．</p>
 
@@ -1857,7 +1961,10 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: d,e</p>
+
+
+
+                        <p class="q_answer_true">d e</p>
 
                         <ol type="a">
                             <li>AS: 遅脈</li>
@@ -1872,13 +1979,14 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group">
+            <div class="card-group pulse PHYSIO ">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93A49" target="_blank" id="2018-01-20_22:59:26">93A49</a> 脈 - 疾患
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-27_21:42:00"> </span>
                         <br>
                         <p>脈と疾患との組合せで正しいのはどれか．3つ選べ．</p>
 
@@ -2106,14 +2214,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group">
+            <div class="card-group ECG 110 info pri req">
                 <div class="card">
-                    <div class="card-header mis pri req">
-                        <a href="https://qb.medilink-study.com/#/Answer/110F7">110F7</a> ECG
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/110F7" target="_blank">110F7</a> ECG
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:43:52"> </span>
                         <br>
                         <p>心電図を次に示す．<br>
                         認められる所見はどれか．</p>
@@ -2454,13 +2563,14 @@
 
 
             <!-- 01 -->
-            <div class="card-group">
+            <div class="card-group BP PHYSIO info">
                 <div class="card">
-                    <div class="card-header mis info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B32" target="_blank">101B32</a> 圧 異常値
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-27_21:46:23"> </span>
                         <br>
                         <p>成人における異常値はどれか．</p>
 
@@ -2476,7 +2586,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>Flase: d</p>
+
+
+                        <p class="q_answer_false">d</p>
 
                         <ol type="a">
                             <li>中心静脈圧: 4-8</li>
@@ -2650,7 +2762,7 @@
 
 
 
-            <h4>General</h4>
+            <!-- <h4>General</h4> -->
 
 
             <!-- 01 -->
@@ -2730,14 +2842,15 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group">
+            <div class="card-group AP">
 				<div class="card">
-					<div class="card-header mis">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/94B67" target="_blank" id="2018-01-20_22:29:07">94B67</a> 脳塞栓の原因
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-09-27_21:47:33"> </span>
 						<br>
 						<p>脳塞栓の原因として頻度が低い心疾患はどれか．</p>
 
@@ -2752,7 +2865,7 @@
 				</div>
 				<div class="card answer">
 					<div class="card-body">
-						<p>False: a</p>
+						<p class="q_answer_false">a</p>
 
 						<ol type="a">
 							<li>APでは, 心腔内の血栓はない</li>
@@ -2766,13 +2879,14 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group PH SSc PE-PI MS AMI ">
+            <div class="card-group PH SSc PE-PI MS AMI pri info">
 				<div class="card">
-					<div class="card-header mis pri info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108D4" target="_blank" id="2018-01-20_22:52:27">108D4</a> 肺高血圧
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-09-27_21:48:54"> </span>
 						<br>
 						<p>肺高血圧を伴わないのはどれか．</p>
 
@@ -3424,6 +3538,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3472,11 +3587,11 @@
             </ul>
         </div>
     </div>
-    <div class="progress" style="height: 3px;">
-        <div class="progress-bar progress-mis" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="font-size: 10px; vertical-align: top"></div>
-        <div class="progress-bar progress-cau" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="font-size: 10px; vertical-align: middle"></div>
-        <div class="progress-bar progress-rev" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="font-size: 10px; vertical-align: middle"></div>
-        <div class="progress-bar progress-hit" role="progressbar" style="background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="font-size: 10px; vertical-align: middle"></div>
+    <div class="progress" style="height: 3px">
+        <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 </nav>
 </div>
@@ -3491,6 +3606,9 @@ $('document').ready(function(){
     // revised
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
+
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
 
     // time
     var now = new Date();
@@ -3513,27 +3631,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3546,8 +3671,8 @@ $('document').ready(function(){
 
     $('.answer').find('.card-body').hide();
 
-    $('.card-body').click(function(){
-        $(this).parent().next().find('.card-body').slideToggle(100);
+    $('#q .card').click(function(){
+        $(this).next().find('.card-body').slideToggle(100);
 
         $(this).find('.correct').toggleClass('correct-show');
         $(this).find('.ans_t').toggleClass('correct-show');
@@ -3555,17 +3680,24 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
-    $('div.mis').next().find('span.now').addClass('mis');
-    $('div.cau').next().find('span.now').addClass('cau');
-    $('div.rev').next().find('span.now').addClass('rev');
-    $('div.hit').next().find('span.now').addClass('hit');
+    // $('div.mis').next().find('span.now').addClass('mis');
+    // $('div.cau').next().find('span.now').addClass('cau');
+    // $('div.rev').next().find('span.now').addClass('rev');
+    // $('div.hit').next().find('span.now').addClass('hit');
+
+    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
+    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
+    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
+    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
 
     // $('.card .pri').find('.card-header').html('#1');
 
@@ -3598,35 +3730,35 @@ $('document').ready(function(){
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').toggle('slow');
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').toggle('slow');
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').toggle('slow');
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').toggle('slow');
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').toggle('slow');
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').toggle('slow');
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -3679,6 +3811,19 @@ $('document').ready(function(){
     $('code.q_alert_done').html(n_done);
 
 
+    $('p.q_dx').prepend('<code>Dx</code>: ');
+
+    $('p.q_answer_true').prepend('True: ');
+    $('p.q_answer_false').prepend('False: ');
+
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
+
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -3846,6 +3991,34 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#ANA h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ANA)').toggle();
+    });
+    $('#ANA').find('code').html($('div.ANA').size());
+
+
+
+    $('#PHYSIO h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PHYSIO)').toggle();
+    });
+    $('#PHYSIO').find('code').html($('div.PHYSIO').size());
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

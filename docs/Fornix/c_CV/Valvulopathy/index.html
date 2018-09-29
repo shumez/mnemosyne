@@ -4,12 +4,34 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-04-18 16:11:13
+@Last modified time: 2018-09-29 17:14:11
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
+04.01.04    18 05 28    meta viewport
+04.01.03    18 05 26    .q #q##
+04.01.02    18 05 09    js span.now addClass
+
 04.01.01    18 04 23    js #q card click
 04.01.00    18 04 23    material design for bootstrap
 04.00.01    18 04 18    fix marigin
@@ -73,8 +95,11 @@
 <head>
     <title>Valvulopathy</title>
     <meta charset="UTF-8">
-    <meta name="author" content="shume">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="author" content="shumez">
+    <meta name="revised" content="2018-09-29 17:14:31" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.22">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../../scripts/img/favicon.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -87,6 +112,9 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -128,6 +156,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -168,23 +198,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -233,525 +272,115 @@
         </div>
     </div>
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>MS <small class="hidden-xs-down">Mitral valve Stenosis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MS">
+                <div class="page-header">
+                    <h2>MS <small><code></code></small></h2>
+                </div>
 
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
+                
             </div>
-
-        </div>
-    </div>
-
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>MR <small class="hidden-xs-down">Mitral valve Regurgitation</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MR">
+                <div class="page-header">
+                    <h2>MR <small class="hidden-xs-down">Mitral valve Regurgitation</small></h2>
+                </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
+                
             </div>
-
-        </div>
-    </div>
-
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>MVP <small class="hidden-xs-down"></small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MVP">
+                <div class="page-header">
+                    <h2>MVP <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
+               
             </div>
-
-        </div>
-    </div>
-
-
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>AS <small class="hidden-xs-down"></small></h2>
-            <h2 class="hidden-sm-up"></h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2>AS <small class="hidden-xs-down"></small></h2>
+                </div>
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
+                
             </div>
+        </div>
 
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2>AR <small class="hidden-xs-down"></small></h2>
+                    <h2 class="hidden-sm-up">#d</h2>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="IE">
+                <div class="page-header">
+                    <h2>IE <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
         </div>
     </div>
 
 
 
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>AR <small class="hidden-xs-down"></small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
+    
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
 
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
 
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </div>
-                </div> -->
+    <div class="row">
 
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="IE">
-        <div class="page-header">
-            <h2>IE <small class="hidden-xs-down">Infectious Endocarditis</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
         </div>
     </div>
 
 
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down"></small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
-
-        </div>
-    </div>
+    
 
 
 
@@ -780,7 +409,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 50 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 48</p>
 
             <ul class="nav nav-pills" id="q-tab">
                 <li class="nav-item">
@@ -923,13 +552,14 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group">
+            <div class="card-group  111 pri info">
                 <div class="card">
-                    <div class="card-header mis 111 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A15" target="_blank" id="">111A15</a> 人工弁置換術
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-29_17:50:02"> </span>
                         <br>
                         <p>人工弁置換術について正しいのはどれか．2つ選べ．</p>
 
@@ -948,7 +578,7 @@
 
                         <!-- <p></p> -->
 
-                        <p>True: d,e</p>
+                        <p class="q_answer_true">d e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1187,11 +817,11 @@
             <!-- 06 -->
             <div class="card-group">
                 <div class="card">
-                    <div class="card-header cau">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95A73" target="_blank">95A73</a> MS 聴診
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau now"> </span>
                         <br>
                         <p>僧帽弁狭窄症にみられない所見はどれか．</p>
@@ -1229,13 +859,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group">
+            <div class="card-group MS">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103D57" target="_blank">103D57</a> U/S &xrArr; 聴診
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-29_17:56:30"> </span>
                         <br>
                         <p>55歳の女性．<br>
                             息切れを主訴に来院した．<br>
@@ -1252,13 +883,13 @@
 
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_f"></li>
-                            <li class="ans_f"></li>
-                            <li class="ans_f"></li>
-                            <li class="ans_f"></li>
-                            <li class="ans_f"></li>
-                            <li class="ans_t"></li>
-                            <li class="ans_f"></li>
+                            <li class="ans_f">a</li>
+                            <li class="ans_f">b</li>
+                            <li class="ans_f">c</li>
+                            <li class="ans_f">d</li>
+                            <li class="ans_f">e</li>
+                            <li class="ans_t">f</li>
+                            <li class="ans_f">g</li>
                         </ol>
                     </div>
                 </div>
@@ -1268,9 +899,9 @@
                         <!-- <img src="https://www.qb-online.com/img/103D057_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/103D057_ima_c_010.jpg" class="card-img-top img-fluid">
 
-                        <p>MS</p>
+                        <p class="q_dx">MS</p>
 
-                        <p>True: f</p>
+                        <p class="q_answer_true">f</p>
 
                         <ol type="a">
                             <li>Sys 駆出性雑音</li>
@@ -1406,13 +1037,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group">
+            <div class="card-group MS pri info">
                 <div class="card">
-                    <div class="card-header mis pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/83E30" target="_blank">83E30</a> 拡張期雑音 手術
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-09-29_17:58:41"> </span>
                         <br>
                         <p>45歳の女性．<br>
                             20歳のころ<u>微熱</u>が続き，治療を受けたことがある．<br>
@@ -1447,9 +1079,9 @@
                         <!-- <img src="https://www.qb-online.com/img/83E030_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/83E030_ima_c_010.jpg" class="card-img-top img-fluid">
 
-                        <p>MS</p>
+                        <p class="q_dx">MS</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>MS
@@ -1532,8 +1164,7 @@
                 </div>
             </div>
 
-            <h4>MR</h4>
-
+            
             <!-- 02 -->
             <div class="card-group">
                 <div class="card">
@@ -1866,14 +1497,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group">
+            <div class="card-group MVP MR">
                 <div class="card">
-                    <div class="card-header mis">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100A23" target="_blank">100A23</a> 聴診所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-09-29_18:04:30"> </span>
                         <br>
                         <p>26歳の女性．<br>
                             会社の健康診断で心雑音を指摘され来院した．<br>
@@ -2850,13 +2482,14 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group AR">
+            <div class="card-group AR pri info mnemonics">
 				<div class="card">
-					<div class="card-header mis pri info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109I36" target="_blank">109I36</a> AR 症候
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-09-29_18:07:09"> </span>
 						<br>
 						<p>大動脈弁閉鎖不全症の進行を示唆する徴候はどれか．2つ選べ</p>
 
@@ -2871,7 +2504,7 @@
 				</div>
 				<div class="card answer">
 					<div class="card-body">
-						<p>True: b,e</p>
+						<p class="q_answer_true">b e</p>
 
 						<ol type="a">
 							<li>Dia: 血流がAo &rarr; LV へ逆流する &rArr; &darr;DBP<br>
@@ -2886,28 +2519,64 @@
 						</ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">LV容量負荷&uarr; &rArr; 遠心性肥大<ul>
-                                <li>拡張期雑音</li>
-                                <li>脈圧&uarr;</li>
-                                <li>心尖拍動の外側偏位</li>
-                            </ul></li>
+                            <li class="list-group-item">LV容量負荷&uarr; &rArr; 遠心性肥大
+                                <ul>
+                                    <li>拡張期雑音</li>
+                                    <li>脈圧&uarr;</li>
+                                    <li>心尖拍動の外側偏位</li>
+                                </ul>
+                            </li>
                         </ul>
 
 
-						<h6>AR 症候<br>
-							<u>ある 昼, とあるママ, 出店で 不倫し, たい そう 愉快</u></h6>
-						<ul class="list-group">
-							<li class="list-group-item">AR</li>
-							<li class="list-group-item">Hill's sign</li>
-							<li class="list-group-item">to & fro murmur</li>
-							<li class="list-group-item">de Musset's sign<br>
-								頭部のゆれ</li>
-							<li class="list-group-item">Austin Flint</li>
-							<li class="list-group-item">大脈</li>
-							<li class="list-group-item">速脈</li>
-							<li class="list-group-item">床<br>
-								爪床部の毛細血管拍動 (Quincke)</li>
-						</ul>
+						<h6>AR 症候</h6>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>ある 昼, とあるママ, 出店で 不倫し, たい そう 愉快</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ある</td>
+                                    <td>AR<</td>
+                                </tr>
+                                <tr>
+                                    <td>昼</td>
+                                    <td>Hill's sign</td>
+                                </tr>
+                                <tr>
+                                    <td>とあるママ</td>
+                                    <td>to & fro murmur</td>
+                                </tr>
+                                <tr>
+                                    <td>出店で</td>
+                                    <td>de Musset's sign<br>
+                                        頭部のゆれ</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Austin Flint</td>
+                                </tr>
+                                <tr>
+                                    <td>たい</td>
+                                    <td>大脈</td>
+                                </tr>
+                                <tr>
+                                    <td>そう</td>
+                                    <td>速脈</td>
+                                </tr>
+                                <tr>
+                                    <td>愉快</td>
+                                    <td>床<br>
+                                        爪床部の毛細血管拍動 (Quincke)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
 					</div>
 				</div>
 			</div>
@@ -3320,16 +2989,20 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group">
+            <div class="card-group IE">
 				<div class="card">
-					<div class="card-header mis IE">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/104D25" target="_blank">104D25</a> 診断 &xrArr; 合併症
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-09-29_18:14:31"> </span>
 						<br>
 						<p>34歳の女性．<br>
-							3週前から持続する発熱と易疲労感とを主訴に来院した．体温37.6℃．脈拍92/分，整．血圧136/72mmHg．心尖部で3/6度の収縮期雑音を聴取する．赤沈62mm/1時間．血液所見：赤血球382万，Hb 11.0g/dL，Ht 31％，白血球9,800，血小板10万．CRP 11.8mg/dL．<br>
+							3週前から持続する発熱と易疲労感とを主訴に来院した．<br>
+                            体温37.6℃．脈拍92/分，整．血圧136/72mmHg．心尖部で3/6度の収縮期雑音を聴取する．赤沈62mm/1時間．<br>
+                            血液所見：<br>
+                            赤血球382万，Hb 11.0g/dL，Ht 31％，白血球9,800，血小板10万．CRP 11.8mg/dL．<br>
 							来院時の心エコー図（A，B）を次に示す．<br>
 							合併する病態として考えにくいのはどれか．</p>
                     </div>
@@ -3355,9 +3028,9 @@
 						<!-- <img src="https://www.qb-online.com/img/104D025_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/104D025_ima_c_010.jpg" class="card-img-top img-fluid">
 
-						<p>感染性心内膜炎, MR</p>
+						<p class="q_dx">感染性心内膜炎, MR</p>
 
-						<p>False: e</p>
+						<p class="q_answer_false">e</p>
 
 						<ol type="a">
 							<li></li>
@@ -3366,6 +3039,9 @@
 							<li>慢性炎症 &rArr; 貧血</li>
 							<li>感染症: &uarr;&gamma;-グロブリン, &uarr;FBG</li>
 						</ol>
+
+
+
 					</div>
 				</div>
 			</div>
@@ -3448,13 +3124,14 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group IE">
+            <div class="card-group IE info">
 				<div class="card">
-					<div class="card-header mis info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/94F6" target="_blank">94F6</a> 診断 &xrArr; Qs
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-09-29_18:17:45"> </span>
 						<br>
 						<p>29歳の女性．<br>
 							3ヵ月前から頭痛と微熱とが出現し，近医にて感冒の診断で内服治療を続けていた．<br>
@@ -3483,9 +3160,9 @@
 						<!-- <img src="https://www.qb-online.com/img/94F006_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/94F006_ima_c_010.jpg" class="card-img-top img-fluid">
 
-						<p>亜急性型の感染性心内膜炎</p>
+						<p class="q_dx">亜急性型の感染性心内膜炎</p>
 
-						<p>True: b,c,d</p>
+						<p class="q_answer_true">b c d</p>
 
 						<ol type="a">
 							<li>急性型: 黄色ブドウ球菌</li>
@@ -3496,16 +3173,21 @@
 						</ol>
 
 						<ul class="list-group">
-							<li class="list-group-item">急性<ul>
-								<li>黄色ブドウ球菌</li>
-								<li>表皮ブドウ球菌</li>
-								<li>溶連菌</li>
-							</ul></li>
-							<li class="list-group-item">亜急性<ul>
-								<li>緑色レンサ球菌</li>
-								<li>腸球菌</li>
-							</ul></li>
+							<li class="list-group-item">急性
+                                <ul>
+    								<li>黄色ブドウ球菌</li>
+    								<li>表皮ブドウ球菌</li>
+    								<li>溶連菌</li>
+    							</ul>
+                            </li>
+							<li class="list-group-item">亜急性
+                                <ul>
+    								<li>緑色レンサ球菌</li>
+    								<li>腸球菌</li>
+    							</ul>
+                            </li>
 						</ul>
+
 
                         <table class="table table-condensed">
                             <thead>
@@ -3782,13 +3464,14 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group IE">
+            <div class="card-group IE info">
 				<div class="card">
-					<div class="card-header mis info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/92B23" target="_blank">92B23</a> 感染性心内膜炎 手術適応
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-09-29_18:19:17"> </span>
 						<br>
 						<p>感染性心内膜炎の急性期に手術適応となるのはどれか．3つ選べ．</p>
 
@@ -3871,6 +3554,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3939,6 +3623,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3960,27 +3647,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -4002,17 +3696,24 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
-    $('div.mis').next().find('span.now').addClass('mis');
-    $('div.cau').next().find('span.now').addClass('cau');
-    $('div.rev').next().find('span.now').addClass('rev');
-    $('div.hit').next().find('span.now').addClass('hit');
+    // $('div.mis').next().find('span.now').addClass('mis');
+    // $('div.cau').next().find('span.now').addClass('cau');
+    // $('div.rev').next().find('span.now').addClass('rev');
+    // $('div.hit').next().find('span.now').addClass('hit');
+
+    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
+    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
+    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
+    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
 
     // $('.card .pri').find('.card-header').html('#1');
 
@@ -4045,35 +3746,35 @@ $('document').ready(function(){
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').toggle('slow');
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').toggle('slow');
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').toggle('slow');
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').toggle('slow');
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').toggle('slow');
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').toggle('slow');
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -4126,6 +3827,19 @@ $('document').ready(function(){
     $('code.q_alert_done').html(n_done);
 
 
+    $('p.q_dx').prepend('<code>Dx</code>: ');
+
+    $('p.q_answer_true').prepend('True: ');
+    $('p.q_answer_false').prepend('False: ');
+
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
+
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -4293,6 +4007,41 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#MS h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MS)').toggle();
+    });
+    $('#MS').find('code').html($('div.MS').size());
+
+
+    $('#MVP h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MVP)').toggle();
+    });
+    $('#MVP').find('code').html($('div.MVP').size());
+
+
+    $('#IE h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.IE)').toggle();
+    });
+    $('#IE').find('code').html($('div.IE').size());
+
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

@@ -4,12 +4,29 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-06-15 20:17:36
+@Last modified time: 2018-10-04 17:21:31
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
 04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
@@ -80,8 +97,8 @@
     <title>Hypothalamus - Pituitary</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-06-15 20:17:43" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.7">
+    <meta name="revised" content="2018-10-04 17:21:42" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.23">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -140,6 +157,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -180,23 +199,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -245,300 +273,234 @@
         </div>
     </div>
 
-    <div class="section" id="HPRL">
-        <div class="page-header">
-            <h2>HPRL <small class="hidden-xs-down">HyperProlactin</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h6>&darr;Thyr &rArr; &uarr;PRL</h6>
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <th>Hypo</th>
-                                <td>feedback &rArr;</td>
-                                <td>&uarr;TRH</td>
-                            </tr>
-                            <tr>
-                                <th>Pit</th>
-                                <td></td>
-                                <td>&uarr;TSH, &uarr;PRL</td>
-                            </tr>
-                            <tr>
-                                <th>Thyro</th>
-                                <td>&darr;T4</td>
-                                <td></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HPRL">
+                <div class="page-header">
+                    <h2>&uarr;PRL <small class="hidden-xs-down">HyperProlactin</small> <small><code></code></small></h2>
                 </div>
+
+
+                <h6>&darr;Thyr &rArr; &uarr;PRL</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Hypo</th>
+                            <td>feedback &rArr;</td>
+                            <td>&uarr;TRH</td>
+                        </tr>
+                        <tr>
+                            <th>Pit</th>
+                            <td></td>
+                            <td>&uarr;TSH, &uarr;PRL</td>
+                        </tr>
+                        <tr>
+                            <th>Thyro</th>
+                            <td>&darr;T4</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
 
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="acromegaly">
+                <div class="page-header">
+                    <h2>Acromegaly <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">&uarr;P</li>
+                    <li class="list-group-item">&darr;Ca</li>
+                </ul>
+
+                <h3>Rx</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">ソマトスタチン誘導体 (Octreotide)</li>
+                </ul>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2>LH <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">LH<br>
+                        &dArr;<br>
+                        Lyedig <br>
+                        &dArr;<br>
+                        &uarr;LH</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Sheehan">
+                <div class="page-header">
+                    <h2>Sheehan <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">T4 &rarr; 副腎ステロイド<br>
+                        &xrArr; 副腎クリーゼ</li>
+                    <li class="list-group-item">下垂体機能低下症:<br>
+                    Ald 不変 &rArr; K 不変</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Chiari-Frommel">
+                <div class="page-header">
+                    <h2>Chiari-Frommel <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="LH">
+                <div class="page-header">
+                    <h2>LH <small>リンパ球性下垂体炎</small> <small class="hidden-xs-down">Lymphocytic Hypophysitis</small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">抗サイログロブリン抗体</li>
+                    <li class="list-group-item">妊娠後期-分娩早期に好発</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="DI">
+                <div class="page-header">
+                    <h2>DI <small class="hidden-xs-down">Diabetes Insipidus</small> <small><code></code></small></h2>
+                </div>
+
+
+                <h3 id="NDI">NDI <small class="hidden-xs-down">Nephrotic DI</small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">&uarr;Ca</li>
+                    <li class="list-group-item">&darr;K</li>
+                </ul>
+
+                <h3 id="MDI">MDI <small>Masked DI</small> <small><code></code></small></h3>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PPD">
+                <div class="page-header">
+                    <h2>PPD <small>心因性多飲症</small> <small class="hidden-xs-down">Psychogenic Polydipsia</small> <small><code></code></small></h2>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SIADH">
+                <div class="page-header">
+                    <h2>SIADH <small>Syndrome of Inappropriate ADH</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">&rarr;BP HTN(-)</li>
+                    <li class="list-group-item">尿量不変</li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">化学療法中に, &darr;Na<br>
+                        血清Osm < 尿Osm</li>
+                </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">水制限</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ANP">
+                <div class="page-header">
+                    <h2>ANP <small class="hidden-xs-down"></small></h2>
+                </div>
+            </div>
         </div>
     </div>
 
 
-    <div class="section" id="acro">
-        <div class="page-header">
-            <h2>Acromegaly <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">&uarr;P</li>
-                        <li class="list-group-item">&darr;Ca</li>
-                    </ul>
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>Rx</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">ソマトスタチン誘導体 (Octreotide)</li>
-                    </ul>
-                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
             </div>
-
         </div>
     </div>
-
-    <div class="section" id="LH">
-        <div class="page-header">
-            <h2>LH <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">LH<br>
-                            &dArr;<br>
-                            Lyedig <br>
-                            &dArr;<br>
-                            &uarr;LH</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="Sheehan">
-        <div class="page-header">
-            <h2>Sheehan <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">T4 &rarr; 副腎ステロイド<br>
-                            &xrArr; 副腎クリーゼ</li>
-                        <li class="list-group-item">下垂体機能低下症:<br>
-                        Ald 不変 &rArr; K 不変</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="LH">
-        <div class="page-header">
-            <h2>LH <small class="hidden-xs-down">Lymphocytic Hypophysitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">抗サイログロブリン抗体</li>
-                        <li class="list-group-item">妊娠後期-分娩早期に好発</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="DI">
-        <div class="page-header">
-            <h2>DI <small class="hidden-xs-down">Diabetes Insipidus</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="NDI">NDI <small class="hidden-xs-down">Nephrotic DI</small></h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">&uarr;Ca</li>
-                        <li class="list-group-item">&darr;K</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="PPD">
-        <div class="page-header">
-            <h2>PPD <small class="hidden-xs-down">Psychogenic Polydipsia</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="SIADH">
-        <div class="page-header">
-            <h2>SIADH <small class="hidden-xs-down">Syndrome of Inappropriate ADH</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">&rarr;BP HTN(-)</li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item">化学療法中に, &darr;Na<br>
-                            血清Osm < 尿Osm</li>
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item">水制限</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="ANP">
-        <div class="page-header">
-            <h2>ANP <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
 
 
     <div class="section" id="app">
@@ -564,7 +526,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 44 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 43</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -702,14 +664,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group PHYSIO PRL DA" id="q01">
+            <div class="card-group PHYSIO PRL DA info" id="q01">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/98G43" target="_blank" id="2018-01-28_19:57:23">98G43</a> 視床下部 <span class="rtack"></span> 下垂体
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:36:30"> </span>
                         <br>
                         <p>視床下部が障害されると分泌が増加するのはどれか．</p>
                         
@@ -739,34 +702,44 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">ソマトスタチン <span class="rtack"></span><ul>
-                                <li>TSH</li>
-                                <li>GH</li>
-                            </ul></li>
-                            <li class="list-group-item">DA <span class="rtack"></span><ul>
-                                <li>PRL</li>
-                                <li>TSH</li>
-                                <li>Gonad</li>
-                            </ul></li>
+                            <li class="list-group-item">ソマトスタチン <span class="rtack"></span>
+                                <ul>
+                                    <li>TSH</li>
+                                    <li>GH</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">DA <span class="rtack"></span>
+                                <ul>
+                                    <li>PRL</li>
+                                    <li>TSH</li>
+                                    <li>Gonad</li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <h6>H - P</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/98G043_bas_d_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/98G043_bas_d_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/98G043_bas_d_010.jpg" class="card-img-top img-fluid"> -->
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group PHYSIO PRL DA" id="q02">
+            <div class="card-group PHYSIO PRL DA info 111" id="q02">
                 <div class="card">
-                    <div class="card-header 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B37" target="_blank" id="">111B37</a> 乳汁分泌 抑制
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_17:12:45"> </span>
                         <br>
                         <p>乳汁分泌を抑制するのはどれか．2つ選べ．</p>
 
@@ -806,14 +779,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group GH SST" id="q03">
+            <div class="card-group GH SST PHYSIO" id="q03">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100B63" target="_blank" id="2018-01-28_20:17:27">100B63</a> GH 抑制
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:38:04"> </span>
                         <br>
                         <p>成長ホルモン分泌を抑制するのはどれか．</p>
                         
@@ -888,14 +862,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group ACTH GH TSH PRL GnRH" id="q05">
+            <div class="card-group ACTH GH TSH PRL GnRH info" id="q05">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/94A60" target="_blank" id="2018-01-28_20:08:48">94A60</a>  下垂体ホルモン 抑制
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:41:02"> </span>
                         <br>
                         <p>下垂体ホルモンとその分泌を抑制するものの組合せで正しいのはどれか．2つ選べ．</p>
                         
@@ -925,25 +900,32 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">DA <span class="rtack"></span><ul>
-                                <li>PRL</li>
-                                <li>TSH</li>
-                                <li>Gonad</li>
-                            </ul></li>
+                            <li class="list-group-item">DA <span class="rtack"></span>
+                                <ul>
+                                    <li>PRL</li>
+                                    <li>TSH</li>
+                                    <li>Gonad</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group ACTH GH PRL LH FSH" id="q06">
+            <div class="card-group ACTH GH PRL LH FSH info" id="q06">
                 <div class="card">
-                    <div class="card-header  ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105B33" target="_blank" id="2018-01-28_20:20:34">105B33</a> ストレス ホルモン
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_17:25:58"> </span>
                         <br>
                         <p>急性ストレスによって血中濃度が低下するのはどれか．2つ選べ．</p>
                         
@@ -1075,7 +1057,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:42:42"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
                         
@@ -1113,14 +1096,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group PRL DA HPRL" id="q09">
+            <div class="card-group PRL DA HPRL pri info" id="q09">
                 <div class="card">
-                    <div class="card-header pri">
-                        <a href="https://qb.medilink-study.com/#/Answer/107A15" target="_blank" id="2018-01-28_19:26:05">107A15</a> HPRL 原因
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/107A15" target="_blank" id="2018-01-28_19:26:05">107A15</a> &uarr;PRL 原因
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:51:57"> </span>
                         <br>
                         <p>高プロラクチン血症をきたすのはどれか．2つ選べ．</p>
 
@@ -1150,9 +1134,11 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/107A015_bas_d_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107A015_bas_d_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/107A015_bas_d_010.jpg" class="card-img-top img-fluid"> -->
+
                         
                     </div>
                 </div>
@@ -1166,7 +1152,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:52:53"> </span>
                         <br>
                         <p>乳汁漏出がみられるのはどれか．2つ選べ．</p>
                         
@@ -1216,7 +1203,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:14:37"> </span>
                         <br>
                         <p>高プロラクチン血症と関連するのはどれか．2つ選べ．</p>
 
@@ -1225,7 +1213,7 @@
                             <li class="ans_t">不妊</li>
                             <li class="ans_t">視覚障害</li>
                             <li class="ans_f">難聴</li>
-                            <li class="ans_f">難聴</li>
+                            <li class="ans_f">片麻痺</li>
                         </ol>
                     </div>
                 </div>
@@ -1248,7 +1236,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group HPRL HoThyr" id="q12">
+            <div class="card-group HPRL HoThyr info" id="q12">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/100A54" target="_blank" id="2018-01-28_18:30:46">100A54</a> T4 PRL
@@ -1371,7 +1359,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_17:34:18"> </span>
                         <br>
                         <p>29歳の女性．<br>
                             <u>無月経</u>と<u>易疲労感</u>とを訴えて来院した．<br>
@@ -1391,9 +1380,15 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>&darr;T<sub>3</sub>, T<sub>4</sub><br>
-                            &rArr; &uarr;TRH<br>
-                            &rArr; &uarr;TSH, &uarr;PRL</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                &darr;T<sub>3</sub>, &darr;T<sub>4</sub><br>
+                                &dArr; feedback<br>
+                                &uarr;TRH<br>
+                                &dArr;<br>
+                                &uarr;TSH, &uarr;PRL
+                            </li>
+                        </ul>
 
                         <p class="q_dx">原発性甲状腺機能低下症 &rArr; &uarr;PRL</p>
 
@@ -1411,7 +1406,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group acro" id="q15">
+            <div class="card-group acromegaly " id="q15">
                 <div class="card">
                     <div class="card-header  pri">
                         <a href="https://qb.medilink-study.com/#/Answer/105E28" target="_blank" id="2018-01-28_18:26:48">105E28</a> ホルモン
@@ -1459,15 +1454,16 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group acro GH" id="q16">
+            <div class="card-group acromegaly GH" id="q16">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102I23" target="_blank" id="2018-01-28_18:27:27">102I23</a> 先端巨大症 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_17:37:54"> </span>
                         <br>
                         
                         <p>先端巨大症について正しいのはどれか．2つ選べ．</p>
@@ -1502,14 +1498,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group acro GH HrP" id="q17">
+            <div class="card-group acromegaly GH HrP  pri info" id="q17">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B38" target="_blank" id="2018-01-26_14:56:33">96B38</a> 高リン血症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_19:04:03"> </span>
                         <br>
                         
                         <p>高リン血症がみられるのはどれか．</p>
@@ -1526,7 +1523,7 @@
                 <div class="card answer">
                     <div class="card-body">
                         
-                        <p>&uarr;P 内分泌疾患</p>
+                        <h6>&uarr;P 内分泌疾患</h6>
                         <ul class="list-group">
                             <li class="list-group-item">&darr;PTH</li>
                             <li class="list-group-item">&uarr;Thyr</li>
@@ -1554,44 +1551,57 @@
                             <tbody>
                                 <tr>
                                     <th>&uarr;Ca</th>
-                                    <td><ul>
-                                        <li><u>Malignancy Meta</u> / <a href=""><u>MM</u></a></li>
-                                        <li>長期臥床 &rArr; 骨萎縮</li>
-                                        <li><b>Vit.D 中毒</b> &uarr;吸収</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li><a href=""><b>Primary &uarr;PTH</b></a></li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li><u>Malignancy Meta</u> / <a href=""><u>MM</u></a></li>
+                                            <li>長期臥床<br>
+                                                &rArr; 骨萎縮</li>
+                                            <li><u>Vit.D 中毒</u><br>
+                                                &uarr;吸収</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li><u>Primary &uarr;PTH</u></li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>&darr;Ca</th>
-                                    <td><ul>
-                                        <li><a href=""><b>&darr;PTH</b></a></li>
-                                        <li><a href=""><b>CKI</b></a></li>
-                                        <li><a href=""><b>Acromegaly</b></a></li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li><u>吸収不良症候群</u></li>
-                                        <li><a href=""><b>Vit.D 欠乏症</b></a></li>
-                                        <li><a href=""><b>尿細管Acid</b></a></li>
-                                    </ul></td>
-                                    <td></td>
+                                    <td>
+                                        <ul>
+                                            <li><u>&darr;PTH</u></li>
+                                            <li><u>CKI</u></li>
+                                            <li><u>Acromegaly</u></a></li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li><u>吸収不良症候群</u></li>
+                                            <li><u>Vit.D 欠乏症</u></li>
+                                            <li><u>尿細管Acid</u></li>
+                                        </ul>
+                                    </td>
                                 </tr>
-                                <tr><td></td><td></td><td></td></tr>
                             </tbody>
                         </table>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group acro HrP" id="q18">
+            <div class="card-group acromegaly HrP" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99A48" target="_blank" id="">99A48</a> Dx &xrArr; 症候
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_21:19:26"> </span>
                         <br>
                         <p>46歳の女性．<br>
                             発汗と頭痛とを主訴に来院した．<br>
@@ -1719,10 +1729,10 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group acro" id="q20">
+            <div class="card-group acromegaly pri info" id="q20">
                 <div class="card">
-                    <div class="card-header  pri">
-                        <a href="https://qb.medilink-study.com/#/Answer/109B56-58" target="_blank" id="2018-01-28_18:09:14">109B56-58</a> 検査 / Rx / 合併症
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/109B56" target="_blank" id="2018-01-28_18:09:14">109B56-58</a> 検査 / Rx / 合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
@@ -1734,7 +1744,8 @@
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_19:29:46"> </span>
                         <br>
                         
                         <p>次の文を読み，56～58の問いに答えよ．<br><br>
@@ -1742,15 +1753,24 @@
                             67歳の男性．<br>
                             人間ドックで異常を指摘され来院した．<br>
                             現病歴：5年前に退職してから健康診断を受けていなかった．妻に勧められて初めて受診した人間ドックで<u>肥満</u>，<u>耐糖能障害</u>および<u>脂質異常症</u>を指摘され，妻とともに来院した．<br>
-                            既往歴：特記すべきことはない．<br>
-                            生活歴：喫煙歴はない．飲酒は機会飲酒．<br>
-                            家族歴：父親が胃癌．<br>
-                            現症：意識は清明．身長170cm，体重80kg．体温36.5℃．脈拍68/分，整．血圧130/94mmHg．呼吸数18/分．眉弓部の膨隆，<u>下顎の突出</u>，<u>鼻と口唇の肥大</u>および<u>巨大舌</u>を認める．<br>
+                            既往歴：<br>
+                            特記すべきことはない．<br>
+                            生活歴：<br>
+                            喫煙歴はない．飲酒は機会飲酒．<br>
+                            家族歴：<br>
+                            父親が胃癌．<br>
+                            現症：<br>
+                            意識は清明．身長170cm，体重80kg．体温36.5℃．脈拍68/分，整．血圧130/94mmHg．呼吸数18/分．眉弓部の膨隆，<u>下顎の突出</u>，<u>鼻と口唇の肥大</u>および<u>巨大舌</u>を認める．<br>
                             眼瞼結膜と眼球結膜とに異常を認めない．咽頭に発赤を認めない．頸静脈の怒張を認めない．甲状腺腫と頸部リンパ節とを触知しない．心音と呼吸音とに異常を認めない．<u>手足の体積の増大</u>を認める．腹部は平坦，軟で，肝・脾を触知しない．腱反射に異常を認めない．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（－），ケトン体（－），潜血（±），沈渣に白血球を認めない．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），ケトン体（－），潜血（±），沈渣に白血球を認めない．<br>
                             血液所見：赤血球487万，Hb 14.6g/dL，Ht 43％，白血球4,000，血小板23万，PT 115％（基準80～120）．<br>
-                            血液生化学所見：総蛋白7.2g/dL，アルブミン4.2g/dL，総ビリルビン0.6mg/dL，AST 21IU/L，ALT 28IU/L，LD 185IU/L（基準176～353），ALP 277IU/L（基準115～359），γ-GTP 34IU/L（基準8～50），アミラーゼ76IU/L（基準37～160），CK 135IU/L（基準30～140），尿素窒素14mg/dL，クレアチニン0.7mg/dL，尿酸5.9mg/dL，血糖127mg/dL，<u>HbA1c 7.0％</u>（基準4.6～6.2），トリグリセリド162mg/dL，HDLコレステロール75mg/dL，LDLコレステロール146mg/dL，Na 142mEq/L，K 4.6mEq/L，Cl 102mEq/L，Ca 9.3mg/dL，P 4.0mg/dL，TSH 0.6μU/mL（基準0.4～4.0），FT4 1.1ng/dL（基準0.8～1.8）．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.2g/dL，アルブミン4.2g/dL，総ビリルビン0.6mg/dL，AST 21IU/L，ALT 28IU/L，LD 185IU/L（基準176～353），ALP 277IU/L（基準115～359），γ-GTP 34IU/L（基準8～50），アミラーゼ76IU/L（基準37～160），CK 135IU/L（基準30～140），<br>
+                            尿素窒素14mg/dL，クレアチニン0.7mg/dL，尿酸5.9mg/dL，血糖127mg/dL，<u>HbA1c 7.0％</u>（基準4.6～6.2），トリグリセリド162mg/dL，HDLコレステロール75mg/dL，LDLコレステロール146mg/dL，<br>
+                            Na 142mEq/L，K 4.6mEq/L，Cl 102mEq/L，Ca 9.3mg/dL，P 4.0mg/dL，<br>
+                            TSH 0.6μU/mL（基準0.4～4.0），FT4 1.1ng/dL（基準0.8～1.8）．<br>
                             心電図に異常を認めない．胸部X線写真で心胸郭比54％．<br>
                             頭部X線写真を次に示す．<u>頭部MRIで下垂体に限局した腫瘤</u>を認める．</p>
                     </div>
@@ -1791,7 +1811,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p class="q_answer_false">c</p>
+                        <p class="q_answer_false q_answer_false_1">c</p>
                         <ol type="a">
                             <li></li>
                             <li>GH産生腫瘍はPRLを同時に産生</li>
@@ -1801,7 +1821,7 @@
                         </ol>
                         <br>
 
-                        <p class="q_answer_true">b</p>
+                        <p class="q_answer_true q_answer_true_2">b</p>
                         <ol type="a">
                             <li></li>
                             <li>1st choice</li>
@@ -1811,7 +1831,7 @@
                         </ol>
                         <br>
 
-                        <p class="q_answer_false">c</p>
+                        <p class="q_answer_false q_answer_false_3">c</p>
                         <ol type="a">
                             <li>Polyp, 大腸がん</li>
                             <li></li>
@@ -1863,7 +1883,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group acro GH" id="q21">
+            <div class="card-group acromegaly GH" id="q21">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/98A48" target="_blank" id="2018-01-28_18:25:44">98A48</a> 治療
@@ -1871,7 +1891,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:22:14"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             労作時の<u>呼吸困難</u>を訴えて来院した．<br>
@@ -1909,14 +1930,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group Sheehan" id="q22">
+            <div class="card-group Sheehan info" id="q22">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103D17" target="_blank" id="2018-01-28_21:10:04">103D17</a> Sheehan s/s
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:24:20"> </span>
                         <br>
                         <p>Sheehan症候群でみられるのはどれか．3つ選べ．</p>
                         
@@ -1944,6 +1966,26 @@
                             <li>&darr;PRL &rArr; 乳汁分泌障害</li>
                             <li></li>
                         </ol>
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                &darr;下垂体機能
+                                <ul>
+                                    <li>低血糖</li>
+                                    <li>低ナトリウム血症</li>
+                                    <li>食欲低下</li>
+                                    <li>体重減少</li>
+                                    <li>倦怠感</li>
+                                    <li>陰毛・腋毛の脱落（特に女性）</li>
+                                </ul>
+                                Sheehan
+                                <ul>
+                                    <li>産後の無月経</li>
+                                    <li>乳汁分泌不全</li>
+                                </ul>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -2000,21 +2042,23 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group" id="q24">
+            <div class="card-group Sheehan HoThyr  pri" id="q24">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106D37" target="_blank" id="2018-01-28_21:08:49">106D37</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:29:11"> </span>
                         <br>
                         <p>35歳の女性．<br>
                             2ヵ月前からの全身倦怠感を主訴に来院した．<br>
-                            1年前に会社の健康診断で貧血と高コレステロール血症とを指摘されたが，精査を受けたことはない．2年前に，分娩時に大量出血し，輸血を受けたことがある．授乳経験はない．月経周期は不整である．<br>
+                            1年前に会社の健康診断で貧血と高コレステロール血症とを指摘されたが，精査を受けたことはない．2年前に，<u>分娩時に大量出血</u>し，輸血を受けたことがある．授乳経験はない．月経周期は不整である．<br>
                             身長162cm，体重50kg．脈拍60/分，整．血圧84/60mmHg．心音と呼吸音とに異常を認めない．<br>
                             血液所見：赤血球350万，Hb 9.1g/dL，Ht 25％，白血球6,800，血小板18万．<br>
-                            血液生化学所見：空腹時血糖68mg/dL，総コレステロール269mg/dL，AST 26IU/L，ALT 21IU/L，CK 297IU/L（基準30～140），Na 126mEq/L，K 4.9mEq/L，Cl 94mEq/L，Fe 18μg/dL，TSH 0.3μU/mL（基準0.2～4.0），FT4 0.6ng/dL（基準0.8～2.2），<u>コルチゾール1.6μg/dL</u>（基準5.2～12.6）．<br>
+                            血液生化学所見：空腹時血糖68mg/dL，総コレステロール269mg/dL，AST 26IU/L，ALT 21IU/L，CK 297IU/L（基準30～140），<br>
+                            Na 126mEq/L，K 4.9mEq/L，Cl 94mEq/L，Fe 18μg/dL，TSH 0.3μU/mL（基準0.2～4.0），FT4 0.6ng/dL（基準0.8～2.2），<u>コルチゾール1.6μg/dL</u>（基準5.2～12.6）．<br>
                             まず選択すべき治療薬として適切なのはどれか．</p>
                         
 
@@ -2032,7 +2076,9 @@
 
                         <p class="q_dx">Sheehan</p>
 
-                        <p>ステロイド &rarr; 甲状腺ホルモン</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">ステロイド &rarr; 甲状腺ホルモン</li>
+                        </ul>
 
                         <p class="q_answer_true">b</p>
 
@@ -2044,19 +2090,23 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group" id="q25">
+            <div class="card-group Sheehan HoPit HoThyr pri" id="q25">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108D59" target="_blank" id="2018-01-28_19:28:42">108D59</a> &darr;下垂体機能 &rArr; 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_19:35:33"> </span>
                         <br>
                         <p>39歳の女性．<br>
                             全身倦怠感を主訴に来院した．<br>
@@ -2103,14 +2153,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group LH" id="q26">
+            <div class="card-group LH pri info" id="q26">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108A34" target="_blank" id="2018-01-28_19:30:11">108A34</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_19:38:22"> </span>
                         <br>
                         <p>36歳の女性．<br>
                             分娩後の頭痛と視野障害を主訴に来院した．<br>
@@ -2219,14 +2270,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group LH DI Cushing acro" id="q27">
+            <div class="card-group LH DI Cushing acromegaly info" id="q27">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103I35" target="_blank" id="2018-01-28_19:30:42">103I35</a> 疾患 - 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_19:41:46"> </span>
                         <br>
                         <p>組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -2246,23 +2298,62 @@
                         <ol type="a">
                             <li></li>
                             <li>リンパ球性下垂体炎: 妊娠後期-分娩早期に好発</li>
-                            <li></li>
+                            <li>抗利尿ホルモン産生部位:
+                                <ul>
+                                    <li>室傍核</li>
+                                    <li>視索上核</li>
+                                </ul>
+                            </li>
                             <li>Cushing: タンパク異化作用</li>
                             <li></li>
                         </ol>
+
+
+
+                        <h6>リンパ球性下垂体炎</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                自己免疫的機序により下垂体前葉を中心とした炎症を生ずる疾患
+                            </li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>下垂体の腫大</li>
+                                    <li>下垂体機能低下</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>女性に多く</li>
+                                    <li>妊娠後期～分娩早期の発症</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                下垂体腫瘍との鑑別点としては
+                                <ul>
+                                    <li>MRI: 下垂体の対称性腫大</li>
+                                    <li>ガドリニウム: 均一な造影効果</li>
+                                    <li>(腫瘍では腫瘍側の腫大を示し，造影効果は周囲の正常下垂体部分より弱い)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group" id="q28">
+            <div class="card-group PPD DEHYD SIADH DI LC info" id="q28">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/105I6" target="_blank" id="2018-01-28_19:38:02">105I6</a> &darr;ADH
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:32:55"> </span>
                         <br>
                         <p>血漿ADHが低値を示すのはどれか．</p>
 
@@ -2277,6 +2368,8 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_true">d</p>
 
                         <ol type="a">
@@ -2309,9 +2402,9 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group DI" id="q29">
+            <div class="card-group DI MDI info" id="q29">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94B77" target="_blank" id="2018-01-28_19:35:56">94B77</a> 尿崩症 Qs
                     </div>
                     <div class="card-body">
@@ -2346,9 +2439,25 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/94B077_bas_d_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/94B077_bas_d_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                仮面尿崩症:<br>
+                                中枢性尿崩症 & 下垂体前葉機能低下症<br>
+                                &darr;ACTH<br>
+                                &rArr; &darr;Glucocorticoid<br>
+                                &rArr; &darr;水利尿<br>
+                                &rArr; &darr;尿量
+                            </li>
+                        </ul>
+
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/94B077_bas_d_010.jpg" class="card-img-top img-fluid"> -->
+
                         
                     </div>
                 </div>
@@ -2362,7 +2471,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_21:36:35"> </span>
                         <br>
                         <p>35歳の男性．<br>
                             <u>口渇</u>を主訴に来院した．<br>
@@ -2416,9 +2526,9 @@
 
 
             <!-- 01 -->
-            <div class="card-group DI" id="q31">
+            <div class="card-group DI info pri" id="q31">
                 <div class="card">
-                    <div class="card-header info pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108B49" target="_blank" id="2018-01-28_19:33:13">108B49</a> 診断 &xrArr; 検査
                     </div>
                     <div class="card-body">
@@ -2472,25 +2582,31 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/108B049_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group DI" id="q32">
+            <div class="card-group DI CDI pri info" id="q32">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105D53" target="_blank">105D53</a> 診断 &xrArr; 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_21:41:44"> </span>
                         <br>
                         <p>45歳の女性．<br>
                             <u>多飲</u>と<u>多尿</u>とを主訴に来院した．<br>
                             6ヵ月前からコップ1，2杯の水を飲んでも，すぐにのどが乾くようになった．<br>
                             夜間に何度も尿意を催すため，睡眠不足になっているという．<br>
-                            身長155cm，体重55kg．体温37.0℃．呼吸数20/分．脈拍72/分，整．血圧118/76mmHg．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．尿所見：尿量4,500mL/日，<u>浸透圧35mOsm/L</u>（基準50～1,300），糖（－）．<br>
+                            身長155cm，体重55kg．体温37.0℃．呼吸数20/分．脈拍72/分，整．血圧118/76mmHg．<br>
+                            心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．<br>
+                            尿所見：尿量4,500mL/日，<u>浸透圧35mOsm/L</u>（基準50～1,300），糖（－）．<br>
                             次に行う検査として適切なのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -2530,7 +2646,7 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
-                                    <th></th>
+                                    <th colspan="2"></th>
                                     <th>正常</th>
                                     <th>心因性多飲症</th>
                                     <th>中枢性尿崩症</th>
@@ -2574,14 +2690,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group DI NDI HrK HoCa" id="q33">
+            <div class="card-group PHA DI NDI HrK HoCa 111 info" id="q33">
                 <div class="card">
-                    <div class="card-header 111 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B41" target="_blank">111B41</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_20:02:00"> </span>
                         <br>
                         <p>46歳の女性．<br>
                             <u>多尿</u>を主訴に来院した．<br>
@@ -2589,8 +2706,10 @@
                             2年前から<u>肝疾患で内服治療中</u>である．<br>
                             身長156cm，体重54kg．脈拍68/分，整．血圧144/92mmHg．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．四肢に異常を認めない．<br>
                             尿所見：<u>比重1.004</u>，蛋白（－），糖（－），ケトン体（－）．<br>
-                            血液所見：赤血球421万，Hb 13.2g/dL，Ht 40％．<br>
-                            血液生化学所見：アルブミン4.2g/dL，AST 38U/L，ALT 42U/L，血糖124mg/dL，HbA1c 6.2％（基準4.6〜6.2），<br>
+                            血液所見：<br>
+                            赤血球421万，Hb 13.2g/dL，Ht 40％．<br>
+                            血液生化学所見：<br>
+                            アルブミン4.2g/dL，AST 38U/L，ALT 42U/L，血糖124mg/dL，HbA1c 6.2％（基準4.6〜6.2），<br>
                             Na 143mEq/L，<u>K 2.7mEq/L</u>，Cl 102mEq/L，Ca 10.0mg/dL，P 3.2mg/dL．<br>
                             多尿の原因として最も考えられるのはどれか．</p>
                         
@@ -2609,8 +2728,8 @@
 
                         <ul>
                             <li>飲水 &xrArr; s/o 心因性</li>
-                            <li>肝疾患で内服治療中</li>
-                            <li>尿比重 &darr;</li>
+                            <li>肝疾患で内服治療中 &xrArr; s/o グリチルリチン, 甘草の服用</li>
+                            <li>尿比重 1.004 &xrArr; &darr;尿比重</li>
                             <li>&darr;K</li>
                         </ul>
 
@@ -2642,14 +2761,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group DI CDI" id="q34">
+            <div class="card-group DI CDI info" id="q34">
                 <div class="card">
                     <div class="card-header info">
                         <a href="https://qb.medilink-study.com/#/Answer/102I7" target="_blank" id="2018-01-28_19:35:13">102I7</a> &uarr;Na
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:43:23"> </span>
                         <br>
                         <p>血清ナトリウム値が160mEq/Lの場合に考えられるのはどれか．</p>
 
@@ -2683,14 +2803,17 @@
                             <li class="list-group-item">副腎不全</li>
                             <li class="list-group-item">&darr;Thyr</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group PPD" id="q35">
+            <div class="card-group PPD pri" id="q35">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104D34" target="_blank">104D34</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
@@ -2701,9 +2824,12 @@
                             <u>多尿</u>と<u>易疲労感</u>とを主訴に来院した．<br>
                             1年前の離婚を契機に，<u>頻回に飲水</u>を行うようになった．<br>
                             <u>夜間の排尿は1回程度</u>，<u>日中は30分から1時間ごと</u>である．<br>
-                            意識は清明．身長165cm，体重46kg．脈拍64/分，整．血圧96/62mmHg．胸部と腹部とに異常を認めない．下腿に浮腫を認めない．<br>
-                            尿所見：蛋白（－），<u>糖（－）</u>．<br>
-                            尿浸透圧検査：来院時120mOsm/kgH2O，水制限試験後650mOsm/kgH2O，バゾプレシン5単位皮下注射後680mOsm/kgH2O．<br>
+                            意識は清明．身長165cm，体重46kg．脈拍64/分，整．血圧96/62mmHg．<br>
+                            胸部と腹部とに異常を認めない．下腿に浮腫を認めない．<br>
+                            尿所見：<br>
+                            蛋白（－），<u>糖（－）</u>．<br>
+                            尿浸透圧検査：<br>
+                            来院時120mOsm/kgH2O，水制限試験後650mOsm/kgH2O，バゾプレシン5単位皮下注射後680mOsm/kgH2O．<br>
                             治療として適切なのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -2741,14 +2867,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group DI CDI NDI PPD" id="q36">
+            <div class="card-group DI CDI NDI PPD HrCa pri info" id="q36">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109A20" target="_blank" id="2018-01-28_21:14:36">109A20</a> 多飲・多尿
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:45:18"> </span>
                         <br>
                         <p>多飲・多尿の患者を診る際，検査項目でまず注目すべきなのはどれか．3つ選べ．</p>
                         
@@ -2791,28 +2918,35 @@
 
                         <h6>尿崩症 原因</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/109A020_bas_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109A020_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
                         
                         <h6>DDx: 多尿</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/109A020_sup_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109A020_sup_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109A020_bas_010.jpg" class="card-img-top img-fluid"> -->
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109A020_sup_010.jpg" class="card-img-top img-fluid"> -->
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group DI inf" id="q37">
+            <div class="card-group DI inf pri" id="q37">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107B28" target="_blank" id="2018-01-28_19:38:33">107B28</a> ブドウ糖液 輸液
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_21:46:46"> </span>
                         <br>
                         <p>5％ブドウ糖液の輸液が適応となる病態はどれか．</p>
 
@@ -2844,14 +2978,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group SIADH" id="q38">
+            <div class="card-group SIADH info" id="q38">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102I21" target="_blank" id="2018-01-28_19:50:10">102I21</a> 病態
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:11:48"> </span>
                         <br>
                         <p>バゾプレシン分泌過剰症〈SIADH〉について正しいのはどれか．</p>
 
@@ -2879,28 +3014,41 @@
 
                         <h6>SIADH 原因</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">異所性ADH-oma<ul>
-                                <li>SCLC</li>
-                                <li>膵癌</li>
-                            </ul></li>
-                            <li class="list-group-item">中枢神経疾患<ul>
-                                <li>脳炎</li>
-                                <li>髄膜炎</li>
-                                <li>脳腫瘍</li>
-                                <li>外傷</li>
-                            </ul></li>
-                            <li class="list-group-item">呼吸器疾患<ul>
-                                <li>肺炎</li>
-                                <li>結核</li>
-                                <li>気管支喘息</li>
-                                <li>COPD</li>
-                            </ul></li>
-                            <li class="list-group-item">薬剤性<ul>
-                                <li>ビンクリスチン</li>
-                                <li>クロフィブラート</li>
-                                <li>SSRI</li>
-                            </ul></li>
+                            <li class="list-group-item">異所性ADH-oma
+                                <ul>
+                                    <li>SCLC</li>
+                                    <li>膵癌</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">中枢神経疾患
+                                <ul>
+                                    <li>脳炎</li>
+                                    <li>髄膜炎</li>
+                                    <li>脳腫瘍</li>
+                                    <li>外傷</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">呼吸器疾患
+                                <ul>
+                                    <li>肺炎</li>
+                                    <li>結核</li>
+                                    <li>気管支喘息</li>
+                                    <li>COPD</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">薬剤性
+                                <ul>
+                                    <li>ビンクリスチン</li>
+                                    <li>クロフィブラート</li>
+                                    <li>SSRI</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -2949,7 +3097,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_20:27:29"> </span>
                         <br>
                         <p>バゾプレシン分泌過剰症に合致する血液検査所見はどれか．2つ選べ．</p>
 
@@ -2988,7 +3137,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group SIADH" id="q41">
+            <div class="card-group SIADH " id="q41">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/100F51" target="_blank" id="2018-01-28_19:48:13">100F51</a> 診断 &xrArr; 検査値
@@ -3035,19 +3184,22 @@
                             <li>&uarr;循環血漿量 &rArr; &darr;RAAs</li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group SIADH" id="q42">
+            <div class="card-group SIADH pri" id="q42">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103I67" target="_blank" id="2018-01-28_19:47:56">103I67</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:33:14"> </span>
                         <br>
                         <p>45歳の男性．<br>
                             <u>全身倦怠感</u>と<u>頭痛</u>とを主訴に来院した．<br>
@@ -3077,8 +3229,8 @@
                         <ul>
                             <li>倦怠感, 頭痛 &rAarr; HoNa emia</li>
                             <li>r/o 摂取低下 消化管からの喪失</li>
-                            <li>低浸透圧血症 & nl 尿浸透圧 &rAarr; SIADH</li>
-                            <li>HoNaemia & Na排出低下(-) &rAarr; SIADH</li>
+                            <li>低浸透圧血症 & nl 尿浸透圧 &xrArr; SIADH</li>
+                            <li>&darr;Na & Na排出低下(-) &xrArr; SIADH</li>
                             <li>AVP 抑制不十分 &rAarr; SIADH</li>
                         </ul>
                             
@@ -3146,14 +3298,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group ANP " id="q44">
+            <div class="card-group ANP info" id="q44">
                 <div class="card">
-                    <div class="card-header  info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100G50" target="_blank" id="2018-01-28_21:27:20">100G50</a> 体液量&uarr;
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_20:35:02"> </span>
                         <br>
                         <p>体液量が増加すると血中で上昇するのはどれか．</p>
                         
@@ -3241,6 +3394,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3309,6 +3463,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3330,27 +3487,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3372,11 +3536,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3393,62 +3559,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -3512,7 +3678,8 @@ $('document').ready(function(){
     $('span.utack').append('⊤');
     $('span.dtack').append('⊥');
 
-
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -3680,6 +3847,99 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#HPRL h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HPRL)').toggle();
+    });
+    $('#HPRL').find('code').html($('div.HPRL').size());
+
+
+    $('#HoThyr h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HoThyr)').toggle();
+    });
+    $('#HoThyr').find('code').html($('div.HoThyr').size());
+
+
+    $('#acromegaly h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.acromegaly)').toggle();
+    });
+    $('#acromegaly').find('code').html($('div.acromegaly').size());
+
+
+    $('#LH h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.LH)').toggle();
+    });
+    $('#LH').find('code').html($('div.LH').size());
+
+
+    $('#Sheehan h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Sheehan)').toggle();
+    });
+    $('#Sheehan').find('code').html($('div.Sheehan').size());
+
+
+
+    $('#DI h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.DI)').toggle();
+    });
+    $('#DI').find('code').html($('div.DI').size());
+
+
+    $('#NDI').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.NDI)').toggle();
+    });
+    $('#NDI').find('code').html($('div.NDI').size());
+
+
+    $('#MDI').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MDI)').toggle();
+    });
+    $('#MDI').find('code').html($('div.MDI').size());
+
+
+    $('#PPD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PPD)').toggle();
+    });
+    $('#PPD').find('code').html($('div.PPD').size());
+
+
+    $('#SIADH h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SIADH)').toggle();
+    });
+    $('#SIADH').find('code').html($('div.SIADH').size());
+
+
+    $('#Chiari-Frommel h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Chiari-Frommel)').toggle();
+    });
+    $('#Chiari-Frommel').find('code').html($('div.Chiari-Frommel').size());
+
+
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

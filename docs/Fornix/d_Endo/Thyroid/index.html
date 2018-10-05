@@ -4,12 +4,29 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-06-19 18:12:47
+@Last modified time: 2018-10-05 20:30:39
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
 04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
@@ -80,8 +97,8 @@
     <title>Thyroid</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-06-19 18:12:56" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.7">
+    <meta name="revised" content="2018-10-05 20:30:50" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.23">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -140,6 +157,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -180,23 +199,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -245,239 +273,145 @@
         </div>
     </div>
 
-    <div class="section" id="Basedow">
-        <div class="page-header">
-            <h2>Basedow <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Basedow">
+                <div class="page-header">
+                    <h2>Basedow <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+
+                <h3 id="PP">PP <small class="hidden-xs-down">Periodic Paralysis</small></h3>
+
+
+                <h3 id="TED">TED <small class="hidden-xs-down">Thyroid Eye Disease</small></h3>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">Wolff-Chaikoff effect:<br>
+                        KI (ヨード製剤)<br>
+                        &rArr; 急性に&darr;Thyro</li>
+                </ul>
+
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="PP">PP <small class="hidden-xs-down">Periodic Paralysis</small></h3>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Plummer">
+                <div class="page-header">
+                    <h2>Plummer <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="TED">TED <small class="hidden-xs-down">Thyroid Eye Disease</small></h3>
+        
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SAT">
+                <div class="page-header">
+                    <h2>SAT <small class="hidden-xs-down">SubAcute Thyroiditis</small> <small><code></code></small></h2>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">Wolff-Chaikoff effect:<br>
-                            KI (ヨード製剤)<br>
-                            &rArr; 急性に&darr;Thyro</li>
-                    </ul>
+
+                <ul class="list-group">
+                    <li class="list-group-item">&uarr;ESR</li>
+                </ul>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PT">
+                <div class="page-header">
+                    <h2>PT <small class="hidden-xs-down">Painless Thyroiditis</small></h2>
                 </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HoThyro">
+                <div class="page-header">
+                    <h2>&darr;Thyro <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">&uarr;CK<br>
+                        </li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                </ul>
+
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="Plummer">
-        <div class="page-header">
-            <h2>Plummer <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="TC">
+                <div class="page-header">
+                    <h2>TC <small class="hidden-xs-down">Thyroid Carcinoma</small> <small><code></code></small></h2>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="SAT">
-        <div class="page-header">
-            <h2>SAT <small class="hidden-xs-down">SubAcute Thyroiditis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">&uarr;ESR</li>
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PTC">
+                <div class="page-header">
+                    <h2>PTC <small class="hidden-xs-down">Papillary Thyroid Carcinoma</small> <small><code></code></small></h2>
                 </div>
+
+
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="PT">
-        <div class="page-header">
-            <h2>PT <small class="hidden-xs-down">Painless Thyroiditis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ATC">
+                <div class="page-header">
+                    <h2>ATC <small class="hidden-xs-down">Anaplastic Thyroid Carcinoma</small> <small><code></code></small></h2>
                 </div>
+
+
             </div>
-
         </div>
     </div>
 
-    <div class="section" id="HoThyro">
-        <div class="page-header">
-            <h2>&darr;Thyro <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">&uarr;CK<br>
-                            </li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
             </div>
-
         </div>
     </div>
-
-    <div class="section" id="TC">
-        <div class="page-header">
-            <h2>TC <small class="hidden-xs-down">Thyroid Carcinoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="PTC">
-        <div class="page-header">
-            <h2>PTC <small class="hidden-xs-down">Papillary Thyroid Carcinoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="ATC">
-        <div class="page-header">
-            <h2>ATC <small class="hidden-xs-down">Anaplastic Thyroid Carcinoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
 
 
     <div class="section" id="app">
@@ -503,7 +437,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 44 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 44</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -640,15 +574,24 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group Basedow" id="q01">
+            <div class="card-group Basedow Graves req info " id="q01">
                 <div class="card">
-                    <div class="card-header req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103F25" target="_blank" id="2018-01-28_22:09:56">103F25</a> Goiter
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:27:51"> </span>
                         <br>
                         <p>20歳の女性．<br>
                             <u>前頸部の腫大</u>を主訴に来院した．半年前から次第に増大する前頸部腫大に気付き，<u>動悸</u>と<u>発汗増加</u>とを自覚した．最近，<u>手指が震える</u>ようになった．<br>
@@ -687,9 +630,12 @@
 
                         <h6>DDx: 甲状腺腫</h6>
                         <div class="card">
-                            <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/103/F025/103F025_sup_d_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103F025_sup_d_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/103/F025/103F025_sup_d_010.jpg" class="img-fluid"> -->
+
 
 
                     </div>
@@ -697,14 +643,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PEx" id="q02">
+            <div class="card-group PEx req pri 110 info" id="q02">
                 <div class="card">
-                    <div class="card-header req pri 110">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110H8" target="_blank" id="2018-02-03_16:35:48">110H8</a> 甲状腺 診察
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:29:57"> </span>
                         <br>
                         <p>甲状腺の診察で正しいのはどれか．</p>
 
@@ -719,6 +666,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
+
                         <p class="q_answer_true">c</p>
 
                         <ol type="a">
@@ -736,7 +686,6 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/110H008_bas_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/110H008_bas_010.jpg" class="card-img-top img-fluid">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">硬 / 軟</li>
@@ -746,19 +695,25 @@
                                 <li class="list-group-item">可動性(+/-)</li>
                             </ul>
                         </div>
+
+                        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/110H008_bas_010.jpg" class="card-img-top img-fluid"> -->
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group Graves " id="q03">
+            <div class="card-group HrThyro Basedow Graves " id="q03">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103G30" target="_blank" id="2018-01-28_23:02:37">103G30</a> 甲状腺機能亢進症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:31:17"> </span>
                         <br>
                         <p>甲状腺機能亢進症でみられるのはどれか．</p>
                         
@@ -831,14 +786,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group AF HrThyro" id="q05">
+            <div class="card-group AFib HrThyro req" id="q05">
                 <div class="card">
-                    <div class="card-header req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100D14" target="_blank">100D14</a> 合併症の確認
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:39:03"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             高血圧で通院中，自覚症状はなかったが不整脈が発見された．<br>
@@ -871,7 +827,7 @@
 
                         <p>AFib &xrArr; <u>甲状腺機能の確認</u></p>
 
-                        <p class="q_dx">AF &rArr; &uarr;甲状腺</p>
+                        <p class="q_dx">AFib &xrArr; &uarr;甲状腺</p>
 
                         <p class="q_answer_true">b</p>
 
@@ -888,14 +844,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group" id="q06">
+            <div class="card-group HoThyro Basedow Graves Plummer" id="q06">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/91A63" target="_blank" id="2018-01-28_23:06:47">91A63</a> TSH&darr;
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_20:25:30"> </span>
                         <br>
                         <p>血清TSHが低値を示すのはどれか．3つ選べ．</p>
                         
@@ -973,16 +930,21 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group HrThyro Basedow" id="q08">
+            <div class="card-group HrThyro Basedow Graves" id="q08">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/91F41" target="_blank" id="2018-01-28_23:14:43">91F41</a> 検査値
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:41:55"> </span>
                         <br>
-                        <p>24歳の女性．動悸と手の震えとを主訴として来院した．2ヵ月前から体重の減少，発汗の増加および下肢の脱力感を自覚している．近医で両眼瞼部の腫脹と前頸部の腫脹とを指摘されている．発熱や頸部の疼痛はない．母親が以前に同様の症状を呈したことがある．<br>
+                        <p>24歳の女性．<br>
+                            <u>動悸</u>と<u>手の震え</u>とを主訴として来院した．<br>
+                            2ヵ月前から<u>体重の減少</u>，<u>発汗の増加</u>および<u>下肢の脱力感</u>を自覚している．<br>
+                            近医で両眼瞼部の腫脹と前頸部の腫脹とを指摘されている．発熱や頸部の疼痛はない．<br>
+                            母親が以前に同様の症状を呈したことがある．<br>
                             予想される血清の検査所見はどれか．2つ選べ．</p>
                         
 
@@ -1009,20 +971,23 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group Graves HrThyro " id="q09">
+            <div class="card-group Graves Basedow HrThyro pri" id="q09">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101A48" target="_blank" id="2018-01-28_22:20:18">101A48</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_20:33:16"> </span>
                         <br>
                         <p>25歳の女性．<br>
                             <u>動悸</u>と<u>手の震え</u>とを主訴に来院した．<br>
@@ -1053,21 +1018,29 @@
                             <li>&beta;B: palpitation, tremor</li>
                             <li></li>
                             <li></li>
-                            <li>Graves: メチマゾール, プロピルチオウラシル</li>
+                            <li>Graves:
+                                <ul>
+                                    <li>メチマゾール</li>
+                                    <li>プロピルチオウラシル</li>
+                                </ul>
+                            </li>
                             <li>抗甲状腺薬が使えないときに</li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group HrThyro Basedow" id="q0">
+            <div class="card-group HrThyro Basedow Graves 110 pri" id="q10">
                 <div class="card">
-                    <div class="card-header 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A44" target="_blank" id="">110A44</a> Dx &xrArr; 検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:45:41"> </span>
                         <br>
                         <p>32歳の初妊婦．<br>
                             甲状腺機能の検査を希望して来院した．<br>
@@ -1091,7 +1064,7 @@
 
                         <ul>
                             <li>&darr;TSH, &uarr;FT4 &xrArr; 甲状腺中毒症</li>
-                            <li>&uarr;hCG &xrArr; s/o 多胎, 胞状奇胎</li>
+                            <li>&uarr;&uarr;hCG &xrArr; s/o 多胎, 胞状奇胎</li>
                         </ul>
 
                         
@@ -1358,20 +1331,24 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group Basedow HrThyro" id="q14">
+            <div class="card-group Basedow HrThyro ANCA 111 pri" id="q14">
                 <div class="card">
-                    <div class="card-header 111 pri">
-                        <a href="https://qb.medilink-study.com/#/Answer/111D37" target="_blank">111D37</a> プロピルチオウラシル 診断 &xrArr; Ab
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/111D37" target="_blank">111D37</a> PPU 診断 &xrArr; Ab
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:49:50"> </span>
                         <br>
                         <p>35歳の女性．<br>
                             血痰と発熱とを主訴に来院した．<br>
-                            約2週間前から咳嗽と発熱とが出現し，昨日から血痰と呼吸困難とを自覚するようになった．6年前から甲状腺機能亢進症でプロピルチオウラシルを内服している．<br>
-                            体温38.3℃．脈拍104/分，整．血圧128/72mmHg．呼吸数20/分．SpO2 93％（room air）．眼瞼結膜は貧血様である．背部にfine cracklesを聴取する．<br>
-                            血液所見： Hb 6.2g/dL．CRP 3.6mg/dL．<br>
+                            約2週間前から咳嗽と発熱とが出現し，昨日から血痰と呼吸困難とを自覚するようになった．<br>
+                            6年前から甲状腺機能亢進症で<u>プロピルチオウラシル</u>を内服している．<br>
+                            体温38.3℃．脈拍104/分，整．血圧128/72mmHg．呼吸数20/分．SpO2 93％（room air）．<br>
+                            眼瞼結膜は貧血様である．背部にfine cracklesを聴取する．<br>
+                            血液所見： <br>
+                            Hb 6.2g/dL．CRP 3.6mg/dL．<br>
                             胸部X線写真（A）と肺野条件の胸部CT（B，C）とを次に示す．<br>
                             喀痰の塗抹，培養検査は一般細菌，抗酸菌ともに陰性で，結核菌のPCR検査も陰性である．気管支肺胞洗浄液は鮮紅色で，<u>ヘモジデリン貪食マクロファージ</u>を認める．<br>
                             現在の症状に最も関連するのはどれか．</p>
@@ -1522,7 +1499,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group" id="q17">
+            <div class="card-group Graves Basedow TED info" id="q17">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/99G48" target="_blank" id="2018-01-28_22:14:47">99G48</a> 眼症
@@ -1612,7 +1589,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:52:57"> </span>
                         <br>
                         <p>甲状腺眼症でみられるのはどれか．2つ選べ．</p>
 
@@ -1653,7 +1631,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_20:36:31"> </span>
                         <br>
                         <p>25歳の女性．<br>
                             会社の健康診断で甲状腺腫瘤を指摘され精密検査のため来院した．<br>
@@ -1696,20 +1675,24 @@
                                 <sup>131</sup>I: 難治例, 中高年に対して</li>
                         </ol>
 
-                        <h6>PEIT Percutenous Ethanol Injection Therapy</h6>
+                        <h6>PEIT <small>Percutenous Ethanol Injection Therapy</small></h6>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group SAT" id="q20">
+            <div class="card-group SAT pri" id="q20">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105I70" target="_blank" id="2018-01-28_22:34:49">105I70</a> 診断 &xrArr; 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_20:40:30"> </span>
                         <br>
                         <p>48歳の女性．<br>
                             <u>前頸部の疼痛</u>を主訴に来院した．<br>
@@ -1769,24 +1752,29 @@
 
 
             <!-- 01 -->
-            <div class="card-group SAT" id="q21">
+            <div class="card-group SAT pri" id="q21">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I70" target="_blank" id="2018-01-28_22:36:30">108I70</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_20:51:56"> </span>
                         <br>
                         <p>42歳の女性．<br>
                             「<u>風邪がいつまでも治らない</u>」と訴えて来院した．<br>
                             <u>2週前から微熱</u>が出始め，その後38℃程度まで上昇，同じころから「のど」も痛くなり，寝るのもつらいほどだという．<br>
                             以前，風邪で処方された鎮痛薬を飲んでみたが改善しなかった．<br>
                             既往歴と生活歴とに特記すべきことはない．<br>
-                            体温38.5℃．脈拍84/分，整．血圧122/80mmHg．<u>前頸部で気管の左外側に圧痛</u>を認める．咽頭に発赤と腫脹とを認めない．心音と呼吸音とに異常を認めない．<br>
-                            血液所見：赤血球420万，Hb 13.5g/dL，Ht 39％，白血球8,000，血小板19万．<br>
-                            血液生化学所見：<u>TSH 0.02μU/mL</u>（基準0.2～4.0），<u>FT4 3.3ng/dL</u>（基準0.8～1.7）．<br>
-                            免疫血清学所見：<u>CRP 5.5mg/dL</u>，抗TSH受容体抗体陰性．<br>
+                            体温38.5℃．脈拍84/分，整．血圧122/80mmHg．<br>
+                            <u>前頸部で気管の左外側に圧痛</u>を認める．咽頭に発赤と腫脹とを認めない．心音と呼吸音とに異常を認めない．<br>
+                            血液所見：<br>
+                            赤血球420万，Hb 13.5g/dL，Ht 39％，白血球8,000，血小板19万．<br>
+                            血液生化学所見：<br>
+                            <u>TSH 0.02μU/mL</u>（基準0.2～4.0），<u>FT4 3.3ng/dL</u>（基準0.8～1.7）．<br>
+                            免疫血清学所見：<br>
+                            <u>CRP 5.5mg/dL</u>，抗TSH受容体抗体陰性．<br>
                             頸部超音波検査で疼痛部に一致した<u>低エコー域</u>を認める．<br>
                             治療薬として最も適切なのはどれか．</p>
 
@@ -1820,19 +1808,22 @@
                             <li>無効</li>
                             <li>軽症ではNSAIDs</li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group SAT" id="q22">
+            <div class="card-group SAT URI " id="q22">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B81" target="_blank" id="2018-01-29_10:58:46">93B81</a> 亜急性甲状腺炎
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-05_21:53:59"> </span>
                         <br>
                         <p>亜急性甲状腺炎について正しいのはどれか．2つ選べ．</p>
                         
@@ -1872,21 +1863,24 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PT" id="q23">
+            <div class="card-group PT pri 110" id="q23">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D32" target="_blank" id="">110D32</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:57:04"> </span>
                         <br>
                         <p>26歳の女性．<br>
                             2週前から<u>動悸</u>が続くことを主訴に来院した．<br>
                             階段昇降時に息切れが出現する．喘息の既往はない．<br>
                             体温37.3℃．<u>脈拍120/分</u>，整．<u>血圧158/60mmHg</u>．<br>
                             頸部に弾性硬のびまん性の甲状腺腫を認める．甲状腺に圧痛はない．心音に異常を認めない．赤沈15mm/1時間．<br>
-                            血液所見：赤血球420万，Hb 13.0g/dL，Ht 42％，白血球6,000．<br>
-                            血液生化学所見：<u>TSH 0.1μU/mL</u>（基準0.2〜4.0），<u>FT4 4.6ng/dL</u>（基準0.8〜2.2），TRAb 1.0IU/L（基準1.0以下）．CRP 0.2mg/dL．<br>
+                            血液所見：<br>
+                            赤血球420万，Hb 13.0g/dL，Ht 42％，白血球6,000．<br>
+                            血液生化学所見：<br>
+                            <u>TSH 0.1μU/mL</u>（基準0.2〜4.0），<u>FT4 4.6ng/dL</u>（基準0.8〜2.2），TRAb 1.0IU/L（基準1.0以下）．CRP 0.2mg/dL．<br>
                             心電図は洞頻脈．胸部X線写真で心胸郭比は42％，肺野に異常を認めない．<br>
                             99mTcO4－甲状腺シンチグラムを次に示す．<br>
                             治療薬として適切なのはどれか．</p>
@@ -2135,14 +2129,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group HrThyro " id="q28">
+            <div class="card-group HrThyro crisis pri info" id="q28">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107A48" target="_blank" id="2018-01-28_22:42:35">107A48</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:04:20"> </span>
                         <br>
                         <p>23歳の女性．<br>
                             <u>嘔吐</u>と<u>意識障害</u>のため搬入された．<br>
@@ -2157,7 +2152,7 @@
                             <li class="ans_t">輸液</li>
                             <li class="ans_t">β遮断薬の投与</li>
                             <li class="ans_f">ヨード摂取の制限</li>
-                            <li class="ans_t">メチマゾールの投与</li>
+                            <li class="ans_tf">メチマゾールの投与</li>
                             <li class="ans_t">副腎皮質ステロイドの投与</li>
                         </ol>
                     </div>
@@ -2178,9 +2173,10 @@
                         <p class="q_answer_true">c</p>
 
                         <ol type="a">
+                            <li>脱水の補正</li>
                             <li></li>
-                            <li></li>
-                            <li>KI (ヨード製剤) &rArr; 急性に&darr;Thyro<br>
+                            <li>KI (ヨード製剤)<br>
+                                &rArr; 急性に&darr;Thyro<br>
                                 ThyrHの急速に分泌抑制</li>
                             <li>即効性はない</li>
                             <li>Corticosteroid: <span class="rtack"></span> T4 &rarr; T3 </li>
@@ -2191,6 +2187,40 @@
                                 KI (ヨード製剤)<br>
                                 &rArr; 急性に&darr;Thyro</li>
                         </ul>
+
+                        <h6>甲状腺クリーゼ</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                概念<br>
+                                甲状腺機能亢進症の経過中に感染，外傷，手術，ストレスなどが契機で症状が極度に進行し，重篤な心不全や中枢神経症状などをきたす病態．直ちに治療を開始しないと死に至る危険性がある．
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Symptom</h6>
+                                <ul>
+                                    <li>甲状腺中毒症（遊離T3および遊離T4の少なくともいずれか一方が高値）</li>
+                                    <li>①中枢神経症状（不穏，せん妄，精神異常，傾眠，けいれん，昏睡），②発熱（38度以上），③頻脈（130回/分以上），④心不全症状，⑤消化器症状（嘔気・嘔吐，下痢，黄疸を伴う肝障害）</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Diagnosis</h6>
+                                甲状腺中毒症に加えて，①中枢神経症状と②～⑤の1つ以上，あるいは②～⑤の3つ以上を満たす．
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Treatment</h6>
+                                甲状腺ホルモンの検査結果を待たずに治療を開始する．
+                                <ul>
+                                    <li>ショック<br>
+                                        気道確保，輸液，O2投与，ステロイド投与（T4→T3を抑制する作用もある）</li>
+                                    <li>甲状腺中毒症<br>
+                                        抗甲状腺薬（PTUが第一選択）大量投与（T4→T3を抑制），無機ヨード（甲状腺ホルモン分泌を抑制）</li>
+                                    <li>高度な頻脈<br>
+                                        β-blocker（低拍出性心不全を呈している場合は禁忌 don't）</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -2516,17 +2546,19 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group HoThyro" id="q35">
+            <div class="card-group HoThyro info pri" id="q35">
                 <div class="card">
-                    <div class="card-header pri">
-                        <a href="https://qb.medilink-study.com/#/Answer/108B53-55" target="_blank" id="2018-01-29_11:50:42">108B53-55</a> &uarr;CK / 症候 / 甲状腺ホルモン補充後
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/108B53" target="_blank" id="2018-01-29_11:50:42">108B53-55</a> &uarr;CK / 症候 / 甲状腺ホルモン補充後
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:08:39"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-05_21:08:45"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill rev"> </span>
@@ -2723,12 +2755,13 @@
             <!-- 08 -->
             <div class="card-group TC" id="q38">
                 <div class="card">
-                    <div class="card-header  q-qs">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H56" target="_blank" id="2018-01-28_22:52:40">97H56</a> 甲状腺癌
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:10:25"> </span>
                         <br>
                         <p>甲状腺癌について正しいのはどれか．2つ選べ．</p>
 
@@ -2917,7 +2950,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:17:24"> </span>
                         <br>
                         <p>甲状腺乳頭癌の診断に最も有用なのはどれか．</p>
 
@@ -3032,14 +3066,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group HoThyro ML" id="q42">
+            <div class="card-group HoThyro ML pri info" id="q42">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102I57" target="_blank" id="2018-01-28_22:44:23">102I57</a> 診断 低エコー
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:20:40"> </span>
                         <br>
                         <p>72歳の女性．<br>
                             <u>前頸部腫瘤</u>を主訴に来院した．<br>
@@ -3093,71 +3128,93 @@
                                 <tr>
                                     <td rowspan="5">びまん性</td>
                                     <td rowspan="3">&uarr;甲状腺刺激</td>
-                                    <td>TRAb:<ul>
-                                        <li>Basedow</li>
-                                    </ul></td>
+                                    <td>TRAb:
+                                        <ul>
+                                            <li>Basedow</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>TSH:<ul>
-                                        <li>TSH産生腫瘍</li>
-                                        <li>原発性甲状腺機能低下症<ul>
-                                            <li>橋本</li>
-                                            <li>ホルモン合成障害</li>
-                                            <li>抗甲状腺薬の過剰投与</li>
-                                        </ul></li>
-                                    </ul></td>
+                                    <td>TSH:
+                                        <ul>
+                                            <li>TSH産生腫瘍</li>
+                                            <li>原発性甲状腺機能低下症
+                                                <ul>
+                                                    <li>橋本</li>
+                                                    <li>ホルモン合成障害</li>
+                                                    <li>抗甲状腺薬の過剰投与</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <td>hCG: <ul>
-                                        <li>hCG産生腫瘍</li>
-                                    </ul></td>
+                                    <td>hCG: 
+                                        <ul>
+                                            <li>hCG産生腫瘍</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>自己免疫性</td>
-                                    <td><ul>
-                                        <li>橋本病</li>
-                                        <li>無痛性甲状腺炎</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>橋本病</li>
+                                            <li>無痛性甲状腺炎</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>原因不明</td>
-                                    <td><ul>
-                                        <li>単純性甲状腺腫</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>単純性甲状腺腫</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td rowspan="4">結節性</td>
                                     <td>炎症</td>
-                                    <td><ul>
-                                        <li>亜急性甲状腺炎</li>
-                                        <li>急性化膿性</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>亜急性甲状腺炎</li>
+                                            <li>急性化膿性</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>過形成</td>
-                                    <td><ul>
-                                        <li>腺腫様甲状腺腫</li>
-                                        <li>中毒性他結節性甲状腺腫</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>腺腫様甲状腺腫</li>
+                                            <li>中毒性他結節性甲状腺腫</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>良性腫瘍</td>
-                                    <td><ul>
-                                        <li>Plummer</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>Plummer</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>悪性腫瘍</td>
-                                    <td><ul>
-                                        <li>乳頭腺癌</li>
-                                        <li>濾胞腺癌</li>
-                                        <li>髄様癌</li>
-                                        <li>未分化癌</li>
-                                        <li>悪性リンパ腫</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>乳頭腺癌</li>
+                                            <li>濾胞腺癌</li>
+                                            <li>髄様癌</li>
+                                            <li>未分化癌</li>
+                                            <li>悪性リンパ腫</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
 
                         <h6>慢性甲状腺炎の合併</h6>
                         <ul class="list-group">
@@ -3169,6 +3226,9 @@
                             <li class="list-group-item">Sjogren synd</li>
                             <li class="list-group-item">ML</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3180,7 +3240,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/85E28" target="_blank" id="">85E28</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:24:12"> </span>
                         <br>
                         <p>57歳の男性．<br>
                             1ヵ月前から前頸部の腫瘤に気付いた．<br>
@@ -3227,14 +3288,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group SAT ATC ML" id="q44">
+            <div class="card-group SAT ATC ML MTC" id="q44">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/91B80" target="_blank" id="2018-01-28_22:54:32">91B80</a> 急速に腫大
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-05_21:25:46"> </span>
                         <br>
                         <p>急速に腫大する甲状腺腫を示すのはどれか．3つ選べ．</p>
 
@@ -3312,6 +3374,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3380,6 +3443,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3401,27 +3467,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3443,11 +3516,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3464,62 +3539,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -3752,6 +3827,73 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#HoThyro h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HoThyro)').toggle();
+    });
+    $('#HoThyro').find('code').html($('div.HoThyro').size());
+
+
+    $('#Graves h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Graves)').toggle();
+    });
+    $('#Graves').find('code').html($('div.Graves').size());
+
+
+    $('#Basedow h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Basedow)').toggle();
+    });
+    $('#Basedow').find('code').html($('div.Basedow').size());
+
+
+    $('#TED h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.TED)').toggle();
+    });
+    $('#TED').find('code').html($('div.TED').size());
+
+
+    $('#Plummer h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Plummer)').toggle();
+    });
+    $('#Plummer').find('code').html($('div.Plummer').size());
+
+
+    $('#SAT h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SAT)').toggle();
+    });
+    $('#SAT').find('code').html($('div.SAT').size());
+
+
+    $('#PTC h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PTC)').toggle();
+    });
+    $('#PTC').find('code').html($('div.PTC').size());
+
+
+    $('#ATC h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ATC)').toggle();
+    });
+    $('#ATC').find('code').html($('div.ATC').size());
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

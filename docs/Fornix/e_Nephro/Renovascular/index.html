@@ -4,12 +4,30 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-06-13 16:14:42
+@Last modified time: 2018-10-10 15:34:39
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+
 04.01.06    18 06 03    js latex
 04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
 04.01.04    18 05 28    meta viewport
@@ -79,8 +97,8 @@
     <title>Renovascular</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-06-13 16:14:47" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.6">
+    <meta name="revised" content="2018-10-10 15:34:59" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.23">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -139,6 +157,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -179,23 +199,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -245,142 +274,216 @@
     </div>
 
 
-    <div class="section" id="RVHT">
-        <div class="page-header">
-            <h2>RVHT <small class="hidden-xs-down">Renovascular Hypertension</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="RVHT">
+                <div class="page-header">
+                    <h2>RVHT <small class="hidden-xs-down">Renovascular Hypertension</small> <small><code></code></small></h2>
                 </div>
+
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>粥状硬化症</th>
+                            <th>線維筋性異形成</th>
+                            <th>大動脈炎症候群</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>好発年齢</th>
+                            <td>中年以降</td>
+                            <td>若・中年</td>
+                            <td>若年</td>
+                        </tr>
+                        <tr>
+                            <th>性別</th>
+                            <td>男性に多い</td>
+                            <td>女性に多い</td>
+                            <td>女性に多い</td>
+                        </tr>
+                        <tr>
+                            <th>狭窄部位（腎動脈）</th>
+                            <td>起始部</td>
+                            <td>遠位2/3に多い</td>
+                            <td>起始部</td>
+                        </tr>
+                        <tr>
+                            <th>患側</th>
+                            <td>両側が多い</td>
+                            <td>片側が多い</td>
+                            <td>両側が多い</td>
+                        </tr>
+                        <tr>
+                            <th>その他</th>
+                            <td>高脂血症</td>
+                            <td>―</td>
+                            <td>炎症所見（＋）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108D028_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+
+                <h3 id="FMD">FMD <small><code></code></small></h3>
+
+                
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="RI">
-        <div class="page-header">
-            <h2>RI <small class="hidden-xs-down">Renal Infarction</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="CholI">
-        <div class="page-header">
-            <h2>CholI <small class="hidden-xs-down">Cholesterol Infarcion</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="RI">
+                <div class="page-header">
+                    <h2>RI <small>腎梗塞</small> <small><code></code></small></h2>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li>血尿 &uarr;BP / </li>
+                            <li>&uarr;LD</li>
                         </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li><u>抗凝固療法</u></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CholI">
+                <div class="page-header">
+                    <h2>CholI <small>コレステロール塞栓症</small><small class="hidden-xs-down"> / Cholesterol Infarcion</small> <small><code></code></small></h2>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Etiology</h6>
+                        <ul>
+                            <!-- <li>大動脈壁の粥腫の破綻により，コレステロール結晶が散布され全身の小動脈を閉塞する</li>
+                            <li>血管内操作や心大血管手術，抗凝固療法を誘因</li> -->
+                            <li><u>カテーテル操作</u></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        危険因子
+                        <ul>
+                            <li>60 歳以上</li>
+                            <li>男性</li>
+                            <li>高血圧</li>
+                            <li>喫煙</li>
+                            <li>糖尿病</li>
+                            <li>心血管疾患の存在</li>
+                        </ul>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li>腎不全</li>
+                            <li>皮膚症状（網状皮斑，壊疽，チアノーゼ，潰瘍など）</li>
+                            <li><u>BTS：Blue toe syndrome（足趾動脈に塞栓）</u><br>
+                            全身の小動脈の閉塞</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        L/D
+                        <ul>
+                            <li>&uarr;CRP, &uarr;ESR, <u>&darr;補体</u></li>
+                            <li><u>&uarr;Eos</u><!-- 好酸球増多 --></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Diagnosis</h6>
+                        <u>皮膚生検</u>
+                        <ul>
+                            <li>コレステロール結晶 小動脈 紡錘形または針状の裂隙（cholesterol cleft）</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li><!-- 十分なエビデンスがあるものはないが， -->プロスタグランジン製剤</li>
+                            <li>HMG-CoA 還元酵素阻害剤の投与</li><!-- などが行われる． -->
+                        </ul>
+                        経過が改善しない症例:<!-- では， -->
+                        <ul>
+                            <li>ステロイド療法</li>
+                            <li>LDLアフェレーシス</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        予後
+                        <ul>
+                            <li>多臓器障害を伴う本症の１年死亡率は64～87％と高く，極めて予後不良である．</li>
+                        </ul>
+                    </li> -->
+                </ul>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106D040_ima_e_010.jpg" class="card-img-top img-fluid">
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>
     </div>
-    -->
+
+    
+
+
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div class="section" id="app">
@@ -406,7 +509,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 10 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 10</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -543,6 +646,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group RVHT FMD HTN " id="q01">
                 <div class="card">
@@ -580,7 +691,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group" id="q02">
+            <div class="card-group RVHT info" id="q02">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/99G22" target="_blank" id="2018-01-21_22:07:33">99G22</a> 検査
@@ -641,11 +752,16 @@
                         <br>
                         <p>62歳の女性．<br>
                             高血圧を主訴に来院した．<br>
-                            10年前から高血圧を指摘され，様々な降圧薬を内服したが，正常血圧の維持が困難であった．<br>
-                            意識は清明．身長154cm，体重40kg．体温36.4℃，脈拍76/分，整．血圧160/96mmHg．心尖部にⅣ音を聴取する．肝・脾を触知しない．<u>臍周囲に血管性雑音</u>を認める．下肢に浮腫を認めない．<br>
-                            尿所見：蛋白（－），糖（－）．<br>
-                            血液所見：赤血球416万，Hb 12.2g/dL，Ht 32％，白血球6,800，血小板28万．<br>
-                            血液生化学所見：血糖96mg/dL，総蛋白7.2g/dL，アルブミン4.6g/dL，尿素窒素20mg/dL，クレアチニン1.0mg/dL，尿酸6.0mg/dL，総コレステロール272mg/dL，トリグリセリド160mg/dL，Na 140mEq/L，K 3.4mEq/L，Cl 106mEq/L．<br>
+                            10年前から<u>高血圧</u>を指摘され，様々な降圧薬を内服したが，正常血圧の維持が困難であった．<br>
+                            意識は清明．身長154cm，体重40kg．体温36.4℃，脈拍76/分，整．<u>血圧160/96mmHg</u>．<br>
+                            心尖部にⅣ音を聴取する．肝・脾を触知しない．<u>臍周囲に血管性雑音</u>を認める．下肢に浮腫を認めない．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．<br>
+                            血液所見：<br>
+                            赤血球416万，Hb 12.2g/dL，Ht 32％，白血球6,800，血小板28万．<br>
+                            血液生化学所見：<br>
+                            血糖96mg/dL，総蛋白7.2g/dL，アルブミン4.6g/dL，尿素窒素20mg/dL，クレアチニン1.0mg/dL，尿酸6.0mg/dL，総コレステロール272mg/dL，トリグリセリド160mg/dL，<br>
+                            Na 140mEq/L，K 3.4mEq/L，Cl 106mEq/L．<br>
                             腹部造影CT血管写真〈腹部CTA〉を次に示す．<br>
                             異常値が予測されるのはどれか．2つ選べ．</p>
                     </div>
@@ -685,27 +801,34 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group RVHT" id="q04">
+            <div class="card-group RVHT FMD pri info" id="q04">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108D28" target="_blank" id="2018-01-21_22:09:56">108D28</a> 診断 &xrArr; Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-10_15:59:50"> </span>
                         <br>
                         <p>33歳の女性．<br>
-                            2ヵ月前の健康診断で高血圧を指摘され来院した．<br>
+                            2ヵ月前の健康診断で<u>高血圧</u>を指摘され来院した．<br>
                             1年前の健康診断時は正常血圧であった．<br>
                             既往歴と家族歴とに特記すべきことはない．<br>
-                            脈拍76/分，整．血圧180/110mmHg．<br>
-                            尿所見：蛋白（－），糖（－），潜血（－）．<br>
-                            血液所見：赤血球455万，Hb 12.8g/dL，Ht 38％，白血球5,800．血液生化学所見：総蛋白6.7g/dL，アルブミン4.3g/dL，尿素窒素14mg/dL，クレアチニン0.8mg/dL，総コレステロール208mg/dL，Na 143mEq/L，K 3.6mEq/L，Cl 102mEq/L，ACTH 14.4pg/mL（基準60以下），コルチゾール8.3μg/dL（基準5.2～12.6），アルドステロン15ng/dL（基準5～10），血漿レニン活性51ng/mL/時間（基準1.2～2.5）．CRP 0.2mg/dL．腹部大動脈造影像（A）と左腎動脈造影像（B）とを次に示す．<br>
+                            脈拍76/分，整．<u>血圧180/110mmHg</u>．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），潜血（－）．<br>
+                            血液所見：<br>
+                            赤血球455万，Hb 12.8g/dL，Ht 38％，白血球5,800．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.7g/dL，アルブミン4.3g/dL，尿素窒素14mg/dL，クレアチニン0.8mg/dL，総コレステロール208mg/dL，<br>
+                            <u>Na 143mEq/L，K 3.6mEq/L</u>，Cl 102mEq/L，ACTH 14.4pg/mL（基準60以下），コルチゾール8.3μg/dL（基準5.2～12.6），<u>アルドステロン15ng/dL</u>（基準5～10），<u>血漿レニン活性51ng/mL/時間</u>（基準1.2～2.5）．CRP 0.2mg/dL．<br>
+                            腹部大動脈造影像（A）と左腎動脈造影像（B）とを次に示す．<br>
                             この病態について正しいのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/108D028A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108D028B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108D028A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108D028B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -789,14 +912,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group AGN MN DN" id="q05">
+            <div class="card-group AGN MN DN info" id="q05">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B25" target="_blank" id="2018-01-26_16:48:43">96B25</a> 浮腫(-)
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-10_15:39:16"> </span>
                         <br>
                         <p>浮腫が主な症候でないのはどれか．</p>
 
@@ -824,17 +948,24 @@
 
                         <h6>全身性浮腫</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">腎疾患<ul>
-                                <li>AGN</li>
-                                <li>NS</li>
-                                <li>AKI</li>
-                                <li>CKD</li>
-                            </ul></li>
-                            <li class="list-group-item"><ul>
-                                <li>肝硬変</li>
-                                <li>心不全</li>
-                            </ul></li>
+                            <li class="list-group-item">腎疾患
+                                <ul>
+                                    <li>AGN</li>
+                                    <li>NS</li>
+                                    <li>AKI</li>
+                                    <li>CKD</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>肝硬変</li>
+                                    <li>心不全</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -847,7 +978,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-10_15:43:10"> </span>
                         <br>
                         <p>腎梗塞について誤っているのはどれか．</p>
 
@@ -876,9 +1008,9 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group AF RI " id="q07">
+            <div class="card-group AFib RI 110 pri" id="q07">
                 <div class="card">
-                    <div class="card-header  110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A27" target="_blank">110A27</a> 治療 
                     </div>
                     <div class="card-body">
@@ -899,8 +1031,8 @@
                     <!-- <img src="https://www.qb-online.com/img/110A027B.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/110A027C.jpg" class="img-fluid"> -->
                     <img src="https://qb.medilink-study.com/images/110A027A.jpg" class="card-img-top img-fluid" width="">
-                    <img src="https://qb.medilink-study.com/images/110A027A.jpg" class="card-img-top img-fluid" width="">
-                    <img src="https://qb.medilink-study.com/images/110A027A.jpg" class="card-img-top img-fluid" width="">
+                    <img src="https://qb.medilink-study.com/images/110A027B.jpg" class="card-img-top img-fluid" width="">
+                    <img src="https://qb.medilink-study.com/images/110A027C.jpg" class="card-img-top img-fluid" width="">
 
                     <div class="card-body">
                         <ol type="a">
@@ -935,20 +1067,31 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group CholI" id="q08">
+            <div class="card-group CholI pri" id="q08">
                 <div class="card">
-                    <div class="card-header  pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106D40" target="_blank" id="2018-01-21_22:13:05">106D40</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-10_16:03:01"> </span>
                         <br>
                         <p>72歳の男性．<br>
                             1週前から続く両下肢の冷感と痛みとを主訴に来院した．<br>
                             1ヵ月前に不安定狭心症に対する<u>冠動脈ステント留置術を受けた</u>．15年前から糖尿病と高血圧症とで治療中である．<br>
-                            喫煙は15本/日を50年間．体温36.6℃．脈拍84/分，整．血圧140/88mmHg．呼吸数18/分．両下腿に網状皮斑を認める．足趾にチアノーゼを認める．<br>
-                            尿所見：蛋白（－），潜血（±）．血液所見：赤血球380万，Hb 11.8g/dL，Ht 35％，白血球6,600（桿状核好中球5％，分葉核好中球60％，好酸球15％，単球5％，リンパ球15％），血小板26万．血液生化学所見：アルブミン4.0g/dL，尿素窒素42mg/dL，クレアチニン3.0mg/dL（冠動脈ステント留置術前：1.2mg/dL）．免疫学所見：CRP 1.5mg/dL．リウマトイド因子〈RF〉陰性，抗核抗体陰性．CH50 19U/mL（基準30～40）．<br>
+                            喫煙は15本/日を50年間．<br>
+                            体温36.6℃．脈拍84/分，整．血圧140/88mmHg．呼吸数18/分．<br>
+                            両下腿に<u>網状皮斑</u>を認める．足趾に<u>チアノーゼ</u>を認める．<br>
+                            尿所見：<br>
+                            蛋白（－），潜血（±）．<br>
+                            血液所見：<br>
+                            赤血球380万，Hb 11.8g/dL，Ht 35％，白血球6,600（桿状核好中球5％，分葉核好中球60％，<u>好酸球15％</u>，単球5％，リンパ球15％），血小板26万．<br>
+                            血液生化学所見：<br>
+                            アルブミン4.0g/dL，尿素窒素42mg/dL，クレアチニン3.0mg/dL<br>
+                            （冠動脈ステント留置術前：1.2mg/dL）．<br>
+                            免疫学所見：<br>
+                            <u>CRP 1.5mg/dL</u>．リウマトイド因子〈RF〉陰性，抗核抗体陰性．<u>CH50 19U/mL</u>（基準30～40）．<br>
                             下腿の皮膚生検のH-E染色標本を次に示す．<br>
                             診断として考えられるのはどれか．</p>
                     </div>
@@ -989,14 +1132,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group CholI" id="q09">
+            <div class="card-group CholI info" id="q09">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103A50" target="_blank" id="2018-01-21_22:13:29">103A50</a> 検査所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-10_15:44:23"> </span>
                         <br>
                         <p>60歳の男性．<br>
                             腎機能の低下について他科からのコンサルテーションを受けた．<br>
@@ -1007,9 +1151,12 @@
                             30歳から高血圧で降圧薬の投与を受けている．40歳から糖尿病で経口糖尿病薬の投与を受けている．<br>
                             喫煙は30本/日を30年間．飲酒はビール大瓶2本/日を25年間．<br>
                             意識は清明．身長170cm，体重95kg．体温37.2℃．脈拍72/分，整．血圧160/90mmHg．<br>
-                            尿所見：蛋白1＋，糖1＋，潜血3＋．<br>
-                            血液所見：赤血球420万，Hb 14g/dL，Ht 42％，白血球7,000，血小板14万．<br>
-                            血液生化学所見：血糖180mg/dL，HbA1c（NGSP）7.9％，総蛋白7.0g/dL，アルブミン4.5g/dL，尿素窒素70mg/dL，クレアチニン5.2mg/dL，尿酸8.0mg/dL，総コレステロール310mg/dL，トリグリセリド220mg/dL，総ビリルビン1.0mg/dL，直接ビリルビン0.5mg/dL，AST 32IU/L，ALT 25IU/L，LD 480IU/L（基準176～353），ALP 250IU/L（基準115～359），Na 141mEq/L，K 5.2mEq/L，Cl 102mEq/L，Ca 9.0mg/dL，P 5.1mg/dL．CRP 1.2mg/dL．<br>
+                            尿所見：<br>
+                            <u>蛋白1＋</u>，<u>糖1＋</u>，<u>潜血3＋</u>．<br>
+                            血液所見：<br>
+                            赤血球420万，Hb 14g/dL，Ht 42％，白血球7,000，血小板14万．<br>
+                            血液生化学所見：<br>
+                            <u>血糖180mg/dL</u>，HbA1c（NGSP）7.9％，総蛋白7.0g/dL，アルブミン4.5g/dL，尿素窒素70mg/dL，クレアチニン5.2mg/dL，尿酸8.0mg/dL，総コレステロール310mg/dL，トリグリセリド220mg/dL，総ビリルビン1.0mg/dL，直接ビリルビン0.5mg/dL，AST 32IU/L，ALT 25IU/L，<u>LD 480IU/L</u>（基準176～353），ALP 250IU/L（基準115～359），Na 141mEq/L，K 5.2mEq/L，Cl 102mEq/L，Ca 9.0mg/dL，P 5.1mg/dL．CRP 1.2mg/dL．<br>
                             この病態でみられるのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -1040,21 +1187,83 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item">臨床像<ul>
-                                <li>腎不全</li>
-                                <li>Blue Toe SYndrome (BTS)</li>
-                            </ul></li>
-                            <li class="list-group-item">Ex<ul>
-                                <li>&uarr;CRP</li>
-                                <li>&uarr;ESR</li>
-                                <li>&darr;C</li>
-                                <li>&uarr;Eos</li>
-                            </ul></li>
-                            <li class="list-group-item">Rx<ul>
-                                <li>PG</li>
-                                <li>HMG-CoA RI</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                臨床像
+                                <ul>
+                                    <li>腎不全</li>
+                                    <li>Blue Toe SYndrome (BTS)</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                Ex
+                                <ul>
+                                    <li>&uarr;CRP</li>
+                                    <li>&uarr;ESR</li>
+                                    <li>&darr;C</li>
+                                    <li>&uarr;Eos</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                Rx
+                                <ul>
+                                    <li>PG</li>
+                                    <li>HMG-CoA RI</li>
+                                </ul>
+                            </li>
                         </ul>
+
+                        <h6>コレステロール塞栓症</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                病態
+                                <ul>
+                                    <li>大動脈壁の粥腫の破綻により，コレステロール結晶が散布され全身の小動脈を閉塞する</li>
+                                    <li>血管内操作や心大血管手術，抗凝固療法を誘因</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                危険因子
+                                <ul>
+                                    <li>60 歳以上</li>
+                                    <li>男性</li>
+                                    <li>高血圧</li>
+                                    <li>喫煙</li>
+                                    <li>糖尿病</li>
+                                    <li>心血管疾患の存在</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                臨床像
+                                <ul>
+                                    <li>腎不全</li>
+                                    <li>皮膚症状（網状皮斑，壊疽，チアノーゼ，潰瘍など）</li>
+                                    <li>BTS：Blue toe syndrome（足趾動脈に塞栓）<br>
+                                    全身の小動脈の閉塞</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                検査
+                                <ul>
+                                    <li>炎症反応（CRP↑，赤沈↑，補体↓）</li>
+                                    <li>好酸球増多</li>
+                                    <li>確定診断は生検によるコレステロール塞栓の証明．皮膚生検ではコレステロール結晶が真皮から皮下脂肪織内の小動脈の内腔に紡錘形または針状の裂隙（cholesterol cleft）として観察される．
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                治療
+                                <ul>
+                                    <li>十分なエビデンスがあるものはないが，プロスタグランジン製剤，HMG-CoA 還元酵素阻害剤の投与などが行われる．経過が改善しない症例では，ステロイド療法とLDLアフェレーシスの併用が有効である可能性がある．</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                予後
+                                <ul>
+                                    <li>多臓器障害を伴う本症の１年死亡率は64～87％と高く，極めて予後不良である．</li>
+                                </ul>
+                            </li>
+                        </ul>
+
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/103A050_bas_e_010.jpg" class="card-img-top img-fluid">
                         </div>
@@ -1063,14 +1272,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group CholI" id="q10">
+            <div class="card-group CholI 111 pri" id="q10">
                 <div class="card">
-                    <div class="card-header  111 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111D42" target="_blank">111D42</a> 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-10_16:05:18"> </span>
                         <br>
                         <p>77歳の男性．<br>
                             食欲不振と腎機能低下のため紹介されて来院した．<br>
@@ -1078,9 +1288,14 @@
                             1ヵ月前の血清クレアチニン値は1.7mg/dLであったが，3.0mg/dLへ上昇したため紹介されて受診した．<br>
                             15年前から高血圧症，脂質異常症および高尿酸血症のため内服治療中である．<br>
                             10年前，3年前および1ヵ月前にそれぞれ<u>冠動脈にステント留置術</u>が行われた．<br>
-                            身長166cm，体重68kg．体温36.0℃．脈拍64/分，整．血圧128/70mmHg．下腿に浮腫と把握痛とを認めない．足背動脈の触知は良好である．<u>左第4，第5趾が暗紫色</u>である．足関節上腕血圧比〈ABI〉の低下を認めない．<br>
-                            尿所見：蛋白1＋，糖（－），潜血（－）．<br>
-                            血液所見：赤血球321万，Hb 10.0g/dL，Ht 31％，白血球11,300（好中球70％，好酸球12％，好塩基球5％，リンパ球13％），血小板24万．血液生化学所見：総蛋白6.0g/dL，アルブミン3.2g/dL，AST 9U/L，ALT 19U/L，LD 175U/L（基準176〜353），尿素窒素42mg/dL，クレアチニン3.2mg/dL，尿酸6.8mg/dL，HbA1c 6.2％（基準4.6〜6.2），総コレステロール162mg/dL，トリグリセリド150mg/dL，HDLコレステロール38mg/dL．<br>
+                            身長166cm，体重68kg．体温36.0℃．脈拍64/分，整．血圧128/70mmHg．<br>
+                            下腿に浮腫と把握痛とを認めない．足背動脈の触知は良好である．<u>左第4，第5趾が暗紫色</u>である．足関節上腕血圧比〈ABI〉の低下を認めない．<br>
+                            尿所見：<br>
+                            <u>蛋白1＋</u>，糖（－），潜血（－）．<br>
+                            血液所見：<br>
+                            赤血球321万，Hb 10.0g/dL，Ht 31％，白血球11,300（好中球70％，<u>好酸球12％</u>，好塩基球5％，リンパ球13％），血小板24万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.0g/dL，アルブミン3.2g/dL，AST 9U/L，ALT 19U/L，LD 175U/L（基準176〜353），尿素窒素42mg/dL，クレアチニン3.2mg/dL，尿酸6.8mg/dL，HbA1c 6.2％（基準4.6〜6.2），総コレステロール162mg/dL，トリグリセリド150mg/dL，HDLコレステロール38mg/dL．<br>
                             左足の写真（A）及び腹部単純MRIの水平断像（B）と冠状断像（C）とを次に示す．<br>
                             診断に最も有用な検査はどれか．</p>
                     </div>
@@ -1173,6 +1388,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1241,6 +1457,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1262,27 +1481,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -1304,11 +1530,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1325,62 +1553,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -1438,7 +1666,14 @@ $('document').ready(function(){
     $('p.q_answer_true').prepend('True: ');
     $('p.q_answer_false').prepend('False: ');
 
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
 
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -1606,6 +1841,44 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#RVHT h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.RVHT)').toggle();
+    });
+    $('#RVHT').find('code').html($('div.RVHT').size());
+
+
+    $('#FMD').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.FMD)').toggle();
+    });
+    $('#FMD').find('code').html($('div.FMD').size());
+
+
+    $('#RI h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.RI)').toggle();
+    });
+    $('#RI').find('code').html($('div.RI').size());
+
+
+    $('#CholI h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CholI)').toggle();
+    });
+    $('#CholI').find('code').html($('div.CholI').size());
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

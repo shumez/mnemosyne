@@ -4,12 +4,19 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-24 15:55:55
+@Last modified time: 2018-10-12 14:54:12
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+
 04.01.17    18 08 26    .section layout
 04.01.16    18 08 26    print table-bordered
 04.01.15    18 08 23    version
@@ -90,8 +97,8 @@
     <title>Immunodef</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-24 15:57:18" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.17">
+    <meta name="revised" content="2018-10-12 14:54:34" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.23">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -150,6 +157,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -190,26 +199,31 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
             }
 
         }
@@ -414,29 +428,38 @@
                     <h2>DiGeorge <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <!-- <ul class="list-group"> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    <!-- </ul> -->
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6>Association</h6>
+                        <ul>
+                            <li>&uarr;PTH</li>
+                            <li>胸腺低形成</li>
+                            <li>先天性心疾患
+                                <ul>
+                                    <li>TOF</li>
+                                </ul></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
 
-                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -445,30 +468,30 @@
                     <h2>XLA <small>無ガンマグロブリン血症</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <!-- <ul class="list-group"> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    <!-- </ul> -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>X-linked</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
 
-
-                </div>
             </div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -477,92 +500,90 @@
                     <h2>WAS <small>Wiskott-Aldrich</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"><u>T I E</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>T</td>
-                                <td>Thrombopenia</td>
-                            </tr>
-                            <tr>
-                                <td>I</td>
-                                <td>Infexn</td>
-                            </tr>
-                            <tr>
-                                <td>E</td>
-                                <td>Eczema</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!-- <ul class="list-group"> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    <!-- </ul> -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li>&darr;T cell</li>
+                        </ul>
+                    </li>
+                </ul>
 
-                </div>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>T I E</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>T</td>
+                            <td>Thrombopenia</td>
+                        </tr>
+                        <tr>
+                            <td>I</td>
+                            <td>Infexn</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <td>Eczema</td>
+                        </tr>
+                    </tbody>
+                </table>
+                    
             </div>
         </div>
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="CGD">
                 <div class="page-header">
                     <h2>CGD <small>慢性肉芽腫症</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                            <ul>
-                                <li>黄色ブドウ球菌<br>
-                                    カタラーゼ(+)</li>
-                            </ul>
-                        </li>
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                    <ul class="list-group">
-                        <li class="list-group-item">Neut<ul>
-                            <li>慢性肉芽腫症</li>
-                            <li>Chédiak-Higashi症候群</li>
-                        </ul></li>
-                    </ul>
 
-                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>NADPH oxydase異常<br>
+                                &rArr; Neutro / M&Phi; 活性酸素産生能&darr;</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>黄色ブドウ球菌<br>
+                                カタラーゼ(+)</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    Neut 障害
+                    <ul>
+                        <li>慢性肉芽腫症</li>
+                        <li>Chédiak-Higashi症候群</li>
+                    </ul>
+                </li>
+            </ul>
+
         </div>
     </div>
 
@@ -623,7 +644,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 11 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 11</p>
 
             
 
@@ -745,15 +766,24 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group PHYSIO" id="q01">
+            <div class="card-group CLL HIV AIDS steroid PHYSIO" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/81B49" target="_blank">81B49</a> 続発性免疫不全症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-24_16:03:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_16:03:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-12_15:02:41"> </span>
                         <br>
                         <p>続発性免疫不全症をきたすのはどれか．3つ選べ．</p>
                         
@@ -786,14 +816,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group XLA" id="q02">
+            <div class="card-group XLA DiGeorge SCID WAS AT" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99E69" target="_blank">99E69</a> &darr;細胞性免疫
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-24_16:10:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_16:10:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-12_15:02:57"> </span>
                         <br>
                         <p>細胞性免疫が低下しないのはどれか．</p>
 
@@ -822,13 +853,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group CGD info" id="q03">
+            <div class="card-group CGD DiGeorge WAS SCID AIDS HIV info" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://www.qb-online.com/#/list/98H68" target="_blank">98H68</a> T cell 異常
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_16:30:40"> </span>
                         <span class="badge badge-pill cau now" id="2018-08-24_16:30:40"> </span>
                         <br>
                         <p>Tリンパ球に異常がみられないのはどれか．</p>
@@ -978,7 +1010,7 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
-                                    <th colspan="2"><u>TIE</u></th>
+                                    <th colspan="2"><u>T I E</u></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1008,7 +1040,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-24_16:56:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_16:56:02"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-12_15:07:07"> </span>
                         <br>
                         <p>Wiskott-Aldrich症候群でみられるのはどれか．</p>
 
@@ -1128,7 +1161,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-24_17:03:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_17:03:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-12_15:08:19"> </span>
                         <br>
                         <p>好中球の異常によるのはどれか．</p>
 
@@ -1143,7 +1177,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a</p>
+
+
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>NADPH oxydase 異常 <br>
@@ -1198,7 +1234,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-24_17:22:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_17:22:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-12_15:11:45"> </span>
                         <br>
                         <p>慢性肉芽腫症で感染の原因となりやすいのはどれか．</p>
                         
@@ -1227,8 +1264,12 @@
                         </ol>
 
 
-                        <p>慢性肉芽腫症:<br>
-                            活性酸素の産生障害</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                慢性肉芽腫症:<br>
+                                活性酸素の産生障害
+                            </li>
+                        </ul>
 
                     </div>
                 </div>
@@ -1238,10 +1279,11 @@
             <div class="card-group CGD 110 pri print" id="q10">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110I1" target="_blank" id="">110I1</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110I1" target="_blank" id="">110I1</a> アスペルギルス症
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-24_17:27:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_17:27:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-12_15:12:51"> </span>
                         <br>
                         <p>アスペルギルス症が最も合併しやすいのはどれか．</p>
 
@@ -1293,7 +1335,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-24_17:31:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-24_17:31:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-12_15:14:29"> </span>
                         <br>
                         <p>アデノシンデアミナーゼ（ADA）欠損が原因となるのはどれか．</p>
 
@@ -1512,8 +1555,8 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
@@ -1535,54 +1578,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 

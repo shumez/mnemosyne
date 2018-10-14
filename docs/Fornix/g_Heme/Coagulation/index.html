@@ -4,12 +4,32 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-05-09 20:18:55
+@Last modified time: 2018-10-14 21:03:33
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+
 04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
 04.01.04    18 05 28    meta viewport
 04.01.03    18 05 26    .q #q##
@@ -78,8 +98,8 @@
     <title>Coagulation</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.5">
+    <meta name="revised" content="2018-10-14 21:04:19" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.24">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -94,6 +114,9 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -135,6 +158,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -175,23 +203,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -266,13 +303,7 @@
             <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
     <div class="section" id="HSP">
@@ -281,13 +312,7 @@
             <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
     <div class="section" id="ITP">
@@ -296,13 +321,7 @@
             <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
     <div class="section" id="TTP">
@@ -311,13 +330,7 @@
             <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
     <div class="section" id="HUS">
@@ -326,13 +339,7 @@
             <h2 class="hidden-sm-up">#d</h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
     <div class="section" id="SP">
@@ -341,106 +348,110 @@
             <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
+        
     </div>
 
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
+
+
+
+
+
+
+    <div class="row">
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="vWD">
+                <div class="page-header">
+                    <h2>vWD <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
 
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="hemophilia">
+                <div class="page-header">
+                    <h2>Hemophilia <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
 
 
     <div class="section" id="app">
@@ -466,7 +477,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 43 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 43</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -601,6 +612,14 @@
                     </a>
                 </li>
             </ul>
+
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
 
             <!-- 01 -->
@@ -2229,7 +2248,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group" id="q28">
+            <div class="card-group vWD" id="q28">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/98A35" target="_blank">98A35</a> 診断
@@ -2273,30 +2292,55 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group" id="q9">
+            <div class="card-group vWD info" id="q29">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/97D35" target="_blank">97D35</a> 鼻出血 遺伝性 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-14_21:09:33"> </span>
                         <br>
-                        <p></p>
-
+                        <p>18歳の男子．<br>
+                            抜歯後の出血が続くために来院した．</p>
+                        <p>乳児期からときどき鼻出血を繰り返している．<br>
+                            10歳ころ下血のために輸血を受けたことがある．</p>
+                        <p>母親に出血傾向がある．皮膚は蒼白であるが，黄染と紫斑とは認めない．</p>
+                        <p>尿所見：<br>
+                            蛋白（－），糖（－）．便潜血反応1＋．</p>
+                        <p>血液所見：<br>
+                            赤血球380万，Hb 9.6g/dL，Ht 34％，網赤血球15‰，白血球5,200，血小板23万．</p>
+                        <p>予想される検査所見はどれか．2つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_t">出血時間延長</li>
+                            <li class="ans_f">血餅退縮不良</li>
+                            <li class="ans_f">巨大血小板出現</li>
+                            <li class="ans_f">プロトロンビン時間延長</li>
+                            <li class="ans_t">活性化部分トロンボプラスチン時間延長</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>先天性</li>
+                            <li>粘膜出血</li>
+                            <li>遺伝性</li>
+                            <li>Plt nl &xrArr; Plt機能異常</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p>&xrArr; Plt機能異常, 凝固異常</p>
+                        <p>遺伝性<br>
+                            &xrArr; vWD, Plt無力症</p>
 
-                        <p class="q_answer_true"></p>
+                        <p>母親 (+)<br>
+                            &xrArr; AD vWD</p>
+
+                        <p class="q_dx">vWD</p>
+
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
                             <li></li>
@@ -2305,43 +2349,147 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
+                        <h6>APTT / PT</h6>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>&rarr;PT</th>
+                                    <th>&uarr;PT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>&rarr;APTT</th>
+                                    <td>nl</td>
+                                    <td>
+                                        <ul>
+                                            <li>f-VII欠損症</li>
+                                            <li>肝障害</li>
+                                            <li>vit.K欠乏初期</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>&uarr;APTT</th>
+                                    <td>
+                                        <ul>
+                                            <li>血友病A/B</li>
+                                            <li>vWD</li>
+                                            <li>APS</li>
+                                            <li>fVIII inh</li>
+                                            <li>ヘパリン投与</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>非代償性肝硬変</li>
+                                            <li>劇症肝炎</li>
+                                            <li>DIC</li>
+                                            <li>vit.K欠乏症</li>
+                                            <li>先天性f-X,V,II欠乏症</li>
+                                            <li>無フィブリノゲン血症</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group" id="q0">
+            <div class="card-group hemophilia info" id="q30">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/103D55" target="_blank">103D55</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-14_21:16:47"> </span>
                         <br>
-                        <p></p>
+                        <p>19歳の男性．<br>
+                            臀部の腫脹と疼痛とを主訴に来院した．</p>
+                        <p>3日前に椅子で臀部を打ち，2日前から徐々に腫脹と疼痛とが強くなってきた．幼少時から同様のエピソードを何回か繰り返し，病院を受診している．</p>
+                        <p>意識は清明．体温37.8℃．脈拍92/分，整．血圧 118/62mmHg．皮膚に出血斑を認めない．心音と呼吸音とに異常を認めない．腹部は平坦，軟．<u>両膝関節の腫脹と屈曲制限</u>とを認める．左臀部は腫脹，緊満し，圧痛を認めるが，発赤は認めない．</p>
+                        <p>尿所見：<br>
+                            蛋白（－），糖（－）．</p>
+                        <p>血液所見：<br>
+                            赤血球342万，Hb 11g/dL，Ht 33％，網赤血球 4.1％，白血球 9,400，血小板 38万．</p>
+                        <p>血液生化学所見：<br>
+                            総蛋白7.5g/dL，アルブミン4.8g/dL，尿素窒素20mg/dL，クレアチニン0.9mg/dL，尿酸 5.6mg/dL，総コレステロール164mg/dL，総ビリルビン1.8mg/dL，直接ビリルビン0.4mg/dL，AST 52IU/L，ALT 38IU/L，LD 402IU/L（基準176～353）．CRP 0.5mg/dL．</p>
+                        <p>異常がみられるのはどれか．</p>
 
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">出血時間</li>
+                            <li class="ans_f">PT</li>
+                            <li class="ans_t">APTT</li>
+                            <li class="ans_f">血小板粘着能</li>
+                            <li class="ans_f">血小板凝集能</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>関節内出血</li>
+                            <li>M</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p class="q_dx">血友病</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li></li>
+                            <li>血友病 &rArr; &uarr;APTT</li>
                             <li></li>
                         </ol>
+
+                        <h6>一次止血, 二次止血</h6>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>一次止血<br>
+                                        血管/血小板</th>
+                                    <th>二次止血<br>
+                                        凝固因子</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e.g.</td>
+                                    <td>ITP</td>
+                                    <td>血友病</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -2358,36 +2506,49 @@
 
 
             <!-- 01 -->
-            <div class="card-group" id="q1">
+            <div class="card-group vWD" id="q31">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/93F27" target="_blank">93F27</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-14_21:22:53"> </span>
                         <br>
-                        <p></p>
-
+                        <p>18歳の女子．<br>
+                            幼児期から鼻出血と歯肉出血とを繰り返し，小児科で診療を受けていた．<br>
+                            初経以後ずっとホルモン薬によって月経を止めていたが，ホルモン薬を減量したところ，14日前から性器出血がはじまり止血しないため来院した．</p>
+                        <p>関節内出血と筋肉内出血との既往はない．</p>
+                        <p>脈拍100/分，整．血圧120/70mmHg．眼瞼結膜は軽度貧血様だが，眼球結膜に黄疸はない．胸腹部に異常なく，両下肢に数個の出血斑を認める．</p>
+                        <p>赤血球320万，Hb 10.0g/dL，Ht 31％，網赤血球56‰，白血球11,000，血小板34万．<br>
+                            出血時間20分以上（基準7分以下），PT 11.0秒（基準対照11.3），APTT 45.5秒（基準対照32.2），血漿フィブリノゲン240mg/dL（基準200～400），血清FDP 3μg/mL（基準5以下）．血小板形態は正常，血小板粘着能は低下，ADP凝集は正常．</p>
+                        <p>適切な治療法はどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">副腎皮質ステロイド薬</li>
+                            <li class="ans_f">赤血球濃厚液</li>
+                            <li class="ans_f">濃厚血小板</li>
+                            <li class="ans_t">血液凝固第Ⅷ因子製剤</li>
+                            <li class="ans_f">血漿交換</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>&uarr;BT, &rarr;PT, &uarr;APTT</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p class="q_dx">vWD</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li></li>
+                            <li>f-VIII 製剤: vWFが含まれる</li>
                             <li></li>
                         </ol>
                     </div>
@@ -2395,104 +2556,163 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group" id="q2">
+            <div class="card-group vWD pri" id="q32">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/100F38" target="_blank">100F38</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-14_21:27:21"> </span>
                         <br>
-                        <p></p>
-
+                        <p>5歳の男児．<br>
+                            半年前から<u>鼻出血</u>を繰り返すため来院した．</p>
+                        <p>他部位に出血傾向は認めない．</p>
+                        <p>体温36.6℃．脈拍88/分，整．眼瞼結膜と眼球結膜とに異常はない．心雑音はなく，呼吸音に異常を認めない．腹部は平坦で，肝・脾を触れない．</p>
+                        <p>血液所見：<br>
+                            赤血球380万，Hb 10.4g/dL，白血球8,000，血小板15万，<u>出血時間10分</u>（基準7分以下），プロトロンビン時間12秒（基準10～14），<u>APTT 56.4秒</u>（基準対照32.2），血小板粘着能に軽度の低下がみられる．</p>
+                        <p>止血療法に最も適しているのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">第Ⅸ因子</li>
+                            <li class="ans_f">第XⅢ因子</li>
+                            <li class="ans_f">ビタミンK</li>
+                            <li class="ans_f">フィブリノゲン</li>
+                            <li class="ans_t">デスモプレシン〈DDAVP〉</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>粘膜出血</li>
+                            <li>関節内出血 &rAarr; r/o 血友病</li>
+                            <li>nl Plt, nl PT</li>
+                            <li>&uarr;APTT &rAarr; vWD, 血友病</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p class="q_dx">vWD</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
+                            <li>血友病B</li>
+                            <li>XIII因子欠乏</li>
                             <li></li>
                             <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>デスモプレシン: 血管内皮からvWFを放出させる</li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group" id="q3">
+            <div class="card-group hemophilia hemophiliaA hemophiliaB" id="q33">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/106A55" target="_blank">106A55</a>PT, APTT, BT #1
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-14_21:32:57"> </span>
                         <br>
-                        <p></p>
+                        <p>生後6日の男児．<br>
+                            <u>頭部の腫瘤</u>を主訴に新生児搬送された．</p>
+                        <p>在胎39週2日，3,120gで頭位自然分娩で出生した．仮死はなかった．<u>出生直後に頭部の腫瘤</u>を認めていた．腫瘤は増大傾向にあり，<u>黄疸と貧血</u>とが出現して次第に増悪してきたため転院した．</p>
+                        <p>意識は清明．身長51.0cm，体重3,080g．両側の頭頂側頭部に径5cmの軟らかい腫瘤を触知する．大泉門の膨隆を認めない．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．</p>
+                        <p>血液所見：<br>
+                            赤血球233万，<u>Hb 8.7g/dL</u>，Ht 23％，白血球28,400，血小板28万，<u>出血時間正常</u>，PT 11秒（基準10～14），<u>APTT 70秒</u>（基準対照27～40），フィブリノゲン322mg/dL（基準130～380）．</p>
+                        <p>血液生化学所見：<br>
+                            総ビリルビン16.2mg/dL，直接ビリルビン0.1mg/dL，AST 45IU/L，ALT 12IU/L，<u>LD 700IU/L</u>（基準335～666）．</p>
+                        <p>入院時の頭部単純CT冠状断像を次に示す．</p>
+                        <p>確定診断に必要な検査項目はどれか．2つ選べ．</p>
+                    </div>
 
+                    <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/106/img/106A055.jpg" width="45%"> -->
+                    <img src="https://qb.medilink-study.com/images/106A055.jpg" class="card-img-top img-fluid">
 
+                    <div class="card-body">
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">第Ⅶ因子活性</li>
+                            <li class="ans_t">第Ⅷ因子活性</li>
+                            <li class="ans_t">第Ⅸ因子活性</li>
+                            <li class="ans_f">第ⅩⅢ因子活性</li>
+                            <li class="ans_f">von Willebrand因子活性</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>nl Pt, &uarr; APTT, 内因系凝固因子の機能低下</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <img src="https://qb.medilink-study.com/images/106A055_ima_g_010.jpg" class="card-img-top img-fluid">
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_dx">Hemophilia A/B</p>
+
+                        <p class="q_answer_true">b c</p>
 
                         <ol type="a">
+                            <li>f-VII(-): &uarr;PT</li>
+                            <li>f-VIII(-) hemophilia A: &uarr;APTT</li>
+                            <li>f-IX(-) hemophilia B: &uarr;APTT</li>
                             <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>vWD: &uarr;APTT, &uarr;出血時間</li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group" id="q4">
+            <div class="card-group hemophilia pri" id="q34">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/109I56" target="_blank">109I56</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-14_21:38:23"> </span>
                         <br>
-                        <p></p>
+                        <p>68歳の男性．<br>
+                            左下肢の<u>紫斑</u>を主訴に来院した．</p>
+                        <p>2週前から<u>左下肢に紫斑</u>が出現し徐々に拡大した．<br>
+                            1週前から<u>左下肢に疼痛</u>も自覚するようになったため受診した．</p>
+                        <p>これまでに<u>出血症状の既往はない</u>．</p>
+                        <p>意識は清明．体温36.4℃．血圧154/88mmHg．腹部は平坦，軟で，圧痛や抵抗を認めない．</p>
+                        <p>血液所見：<br>
+                            赤血球210万，Hb 6.8g/dL，Ht 20％，白血球6,400（桿状核好中球6％，分葉核好中球54％，好酸球2％，単球6％，リンパ球32％），血小板30万，出血時間3分20秒（基準7分以下），PT 90％（基準80～120），<u>APTT 64.7秒</u>（基準対照32.2），血漿フィブリノゲン256mg/dL（基準200～400），血清FDP 4μg/mL（基準10以下）．</p>
+                        <p>凝固因子検査の結果は<u>第Ⅷ因子活性6％</u>（基準78～165），第Ⅸ因子活性92％（基準67～152），von Willebrand因子活性は正常であった．</p>
+                        <p>左大腿から膝関節部内側の写真を次に示す．</p>
+                        <p>最も考えられるのはどれか．</p>
+                    </div>
 
+                    <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/109/img/109I056.jpg" width="45%"> -->
+                    <img src="https://qb.medilink-study.com/images/109I056.jpg" class="card-img-top img-fluid">
 
+                    <div class="card-body">
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">血友病A</li>
+                            <li class="ans_f">血友病B</li>
+                            <li class="ans_t">後天性血友病</li>
+                            <li class="ans_f">播種性血管内凝固〈DIC〉</li>
+                            <li class="ans_f">特発性血小板減少性紫斑病</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>APTT</li>
+                            <li>fVIII</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p class="q_dx">後天性血友病</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -2501,35 +2721,101 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>疾患</th>
+                                    <th>血友病A</th>
+                                    <th>後天性血友病</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                </tr>
+                                <tr>
+                                    <th>遺伝形式</th>
+                                    <td>伴性劣性（男性のみ）</td>
+                                    <td>後天性（男女ともにあり）</td>
+                                </tr>
+                                <tr>
+                                    <th>出血部位</th>
+                                    <td>関節内出血，筋肉内出血</td>
+                                    <td>皮下出血，紫斑，筋肉内出血（関節内出血はまずない）</td>
+                                </tr>
+                                <tr>
+                                    <th>出血時間，PT，FDP</th>
+                                    <td>正常</td>
+                                    <td>正常（ただし血腫の吸収に伴いFDPが上昇することあり）</td>
+                                </tr>
+                                <tr>
+                                    <th>APTT/第Ⅷ因子活性</th>
+                                    <td>延長/低下</td>
+                                    <td>延長/低下</td>
+                                </tr>
+                                <tr>
+                                    <th>第Ⅷ因子インヒビター</th>
+                                    <td>第Ⅷ因子製剤の使用に伴いインヒビター「同種抗体」が出現することがある．</td>
+                                    <td>第Ⅷ因子に対する「自己抗体」が出現する疾患．</td>
+                                </tr>
+                                <tr>
+                                    <th>治療</th>
+                                    <td>第Ⅷ因子製剤（ただし，インヒビター出現時にはバイパス製剤を使用）</td>
+                                    <td>1）止血治療：バイパス製剤<br>
+                                        2）免疫抑制療法：副腎皮質ステロイド，シクロホスファミド　など</tr>
+                                </tr>
+                                <tr>
+                                    <th>危険因子</th>
+                                    <td>－</td>
+                                    <td>膠原病，悪性腫瘍，高齢，薬物，女性では妊娠・出産　など</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group" id="q5">
+            <div class="card-group f-VIIIinh" id="q35">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/93F28" target="_blank">93F28</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-14_21:45:06"> </span>
                         <br>
-                        <p></p>
+                        <p>79歳の男性．<br>
+                            生来健康であった．2週前から四肢に出血斑が出現していたが，数日前から出血斑が全身に広がったため来院した．</p>
+                        <p>家族に出血傾向を示す者はいない．</p>
+                        <p>血液所見：<br>
+                            赤血球453万，Hb 12.3g/dL，Ht 37.7％，白血球 6,700，血小板 19万．出血時間1分30秒（基準7分以下），PT 10.7秒（基準対照11.3），APTT 108秒（基準対照32.2），血漿フィブリノゲン444mg/dL（基準200～400），血清FDP 4μg/mL（基準5以下）．抗カルジオリピン抗体陰性．</p>
+                        <p>最も考えられるのはどれか．</p>
 
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">血友病A</li>
+                            <li class="ans_f">von Willebrand病</li>
+                            <li class="ans_f">抗リン脂質抗体症候群</li>
+                            <li class="ans_t">循環抗凝固因子による出血傾向</li>
+                            <li class="ans_f">播種性血管内凝固</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>高齢</li>
+                            <li>r/o vWD, Plt異常, s/o 凝固因子</li>
+                            <li>FBG, FDP &xrArr; r/o DIC</li>
+                            <li>r/o APS</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p class="q_dx">循環抗凝固因子</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -2543,30 +2829,48 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group" id="q6">
+            <div class="card-group hemophilia pri" id="q36">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/107E50" target="_blank">107E50</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-14_21:48:16"> </span>
                         <br>
-                        <p></p>
-
+                        <p>13歳の男子．<br>
+                        <u>左殿部の痛み</u>を主訴に来院した．<br>
+                        2日前，運動後に左殿部の痛みを自覚し，その後同部に腫れも出現した．<br>
+                        同様のエピソードは過去に経験したことがないという．<br>
+                        意識は清明．体温36.2℃．脈拍84/分，整．血圧116/72mmHg．左殿部は硬く腫脹し，圧痛を認める．発赤と皮疹とを認めない．<br>
+                        血液所見：<br>
+                        赤血球375万，Hb 11.2g/dL，Ht 35％，白血球6,800，血小板38万，PT 11.0秒（基準10～14），<u>APTT 56.0秒</u>（基準対照32.2），フィブリノゲン220mg/dL（基準200～400），<u>血清FDP 12μg/dL</u>（基準10以下）．CRP 0.3mg/dL．<br>
+                        殿部痛の原因として最も考えられるのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">帯状疱疹</li>
+                            <li class="ans_t">筋肉内出血</li>
+                            <li class="ans_f">坐骨神経痛</li>
+                            <li class="ans_f">腸腰筋膿瘍</li>
+                            <li class="ans_f">大腿骨頭壊死</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>APTT &rAarr; 血友病A/B, vWD</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <ul>
+                            <li>血友病: 関節内, 筋肉内出血</li>
+                            <li>vWD: 粘膜出血(鼻出血)</li>
+                        </ul>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_dx">血友病</p>
+
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -2575,35 +2879,89 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
+                        <h6>疾患特異性の高い出血症状</h6>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>出血症状</th>
+                                    <th>疾患</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>関節内出血</td>
+                                    <td>血友病A，血友病B</td>
+                                </tr>
+                                <tr>
+                                    <td>筋肉内出血</td>
+                                    <td>血友病A，血友病B，後天性血友病（第Ⅷ因子インヒビター）</td>
+                                </tr>
+                                <tr>
+                                    <td>粘膜出血</td>
+                                    <td>von Willebrand病など</td>
+                                </tr>
+                                <tr>
+                                    <td>四肢末梢の左右対称性紫斑</td>
+                                    <td>アレルギー性紫斑病（Schönlein-Henoch紫斑病）</td>
+                                </tr>
+                                <tr>
+                                    <td>高齢者の前腕伸側，手背に赤紫色で境界明瞭な紫斑，凝固検査は正常</td>
+                                    <td>加齢性紫斑</td>
+                                </tr>
+                                <tr>
+                                    <td>タール便（黒色便）</td>
+                                    <td>上部消化管出血（胃十二指腸潰瘍など）</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group" id="q7">
+            <div class="card-group " id="q37">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://qb.medilink-study.com/#/Answer/100I9" target="_blank">100I9</a> 症候
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-14_21:55:38"> </span>
                         <br>
-                        <p></p>
+                        <p>17歳の男子．<br>
+                            殿部の痛みを主訴に来院した．<br>
+                            2日前運動後，左殿部に痛みを自覚し，その後同部に腫れも出現した．<br>
+                            意識は清明．体温36.2℃．脈拍84/分，整．血圧116/72mmHg．左殿部は硬く腫脹し，圧痛を認める．<br>
+                            血液所見：<br>
+                            赤血球375万，Hb 11.2g/dL，Ht 35％，網赤血球42‰，白血球6,800，血小板38万，プロトロンビン時間11.0秒（基準対照11.3），APTT 56.0秒（基準対照32.2），フィブリノゲン220mg/dL（基準200～400），血清FDP 12μg/mL（基準10以下）．<br>
+                            血清生化学所見：<br>
+                            総蛋白7.6g/dL，尿素窒素12mg/dL，総コレステロール160mg/dL，トリグリセリド110mg/dL，総ビリルビン1.8mg/dL，ALT 28単位．CRP 0.3mg/dL．<br>
+                            この患者で最も考えられる症候はどれか．</p>
 
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_t">出血傾向</li>
+                            <li class="ans_f">易感染性</li>
+                            <li class="ans_f">運動麻痺</li>
+                            <li class="ans_f">間欠性跛行</li>
+                            <li class="ans_f">過粘稠度症候群</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <ul>
+                            <li>筋肉内出血</li>
+                            <li>&rarr;PT, &uarr;APTT, &uarr;FDP</li>
+                            <li>炎症(-)</li>
+                        </ul>
 
-                        <p class="q_dx"></p>
+                        <p class="q_dx">&uarr;APTT 先天性凝固異常</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li></li>
@@ -2617,30 +2975,31 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group" id="q8">
+            <div class="card-group info" id="q38">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/" target="_blank" id=""></a>
+                        <a href="https://www.qb-online.com/#/list/110B11" target="_blank">110B11</a> 出血部位
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill miscaurevhit now"> </span>
+                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-14_21:57:13"> </span>
                         <br>
-                        <p></p>
-
+                        <p>血友病に特徴的な出血部位はどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f"></li>
+                            <li class="ans_f">歯肉</li>
+                            <li class="ans_f">皮下</li>
+                            <li class="ans_t">関節内</li>
+                            <li class="ans_f">鼻粘膜</li>
+                            <li class="ans_f">口腔粘膜</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
 
-                        <p class="q_dx"></p>
-
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -2649,6 +3008,43 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+                        <table class="table table-condesed">
+                            <thead>
+                                <tr>
+                                    <th>部位</th>
+                                    <th>疾患</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>関節内</td>
+                                    <td>Hemophilia A / B</td>
+                                </tr>
+                                <tr>
+                                    <td>筋肉内</td>
+                                    <td>Hemophilia A / B /<br>
+                                    後天性血友病 (fVIII inh)</td>
+                                </tr>
+                                <tr>
+                                    <td>粘膜</td>
+                                    <td>vWD</td>
+                                </tr>
+                                <tr>
+                                    <td>四肢末梢</td>
+                                    <td>IgA angitis</td>
+                                </tr>
+                                <tr>
+                                    <td>前腕伸側, 手背</td>
+                                    <td>老人性紫斑病</td>
+                                </tr>
+                                <tr>
+                                    <td>臍帯出血</td>
+                                    <td>先天性f-XIII欠損症</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-condensed"></table>
                     </div>
                 </div>
             </div>
@@ -2892,6 +3288,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2960,6 +3357,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2981,27 +3381,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3023,11 +3430,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3044,62 +3453,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -3157,7 +3566,14 @@ $('document').ready(function(){
     $('p.q_answer_true').prepend('True: ');
     $('p.q_answer_false').prepend('False: ');
 
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
 
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -3325,6 +3741,37 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#vWD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.vWD)').toggle();
+    });
+    $('#vWD').find('code').html($('div.vWD').size());
+
+
+    $('#hemophilia h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.hemophilia)').toggle();
+    });
+    $('#hemophilia').find('code').html($('div.hemophilia').size());
+
+
+    $('#f-VIIIinh h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.f-VIIIinh)').toggle();
+    });
+    $('#f-VIIIinh').find('code').html($('div.f-VIIIinh').size());
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

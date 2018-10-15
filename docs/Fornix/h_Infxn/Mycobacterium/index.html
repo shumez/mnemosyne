@@ -4,12 +4,31 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-07-29 15:59:51
+@Last modified time: 2018-10-15 21:10:36
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
@@ -81,8 +100,8 @@
     <title>Mycobacterium</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-07-29 16:00:10" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.8">
+    <meta name="revised" content="2018-10-15 21:11:00" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.24">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -141,6 +160,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -181,23 +205,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -266,252 +299,228 @@
         </div>
     </div> -->
 
-        
-    <div class="section" id="TB">
-        <div class="page-header">
-            <h2>TB <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
-                </div> -->
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">INH <small>イソニアジド</small><ul>
-                            <li><u>N</u>europathy: 末梢神経障害</li>
-                            <li><u>H</u>epatitis: 肝障害</li>
-                        </ul></li>
-                        <li class="list-group-item">RFP <small>リファンピシン</small><ul>
-                            <li><u>R(L)</u>iver: 肝障害</li>
-                            <li><u>F</u>ever: 薬剤熱</li>
-                            <li><u>P</u>lt: 血小板減少</li>
-                        </ul></li>
-                        <li class="list-group-item">SM <small>ストレプトマイシン</small><ul>
-                            <li><u>S</u>yonben: 腎障害</li>
-                            <li><u>M</u>imi: 聴力, 平衡障害</li>
-                        </ul></li>
-                        <li class="list-group-item">EB <small>エタンブトール</small><ul>
-                            <li><u>E</u>ye <u>B</u>ack: 球後視神経炎</li>
-                        </ul></li>
-                        <li class="list-group-item">PZA <small>ピラジナミド</small><ul>
-                            <li><u>ピザ</u>食う: 高尿酸血症</li>
-                        </ul></li>
-                        <li class="list-group-item">3文字 肝障害<ul>
-                            <li>INH</li>
-                            <li>RFP</li>
-                            <li>PZA</li>
-                        </ul></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div> 
-
-    <div class="section" id="NTM">
-        <div class="page-header">
-            <h2>NonTubeculosis Mycobacterium <small class="hidden-xs-down">NTM</small><small> 非結核性抗酸菌症</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <!-- <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
-                </div> -->
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="Hansen">
-        <div class="page-header">
-            <h2>Hansen <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
     
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
+    <div class="section" id="TB">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>TB <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
             </div>
 
+                <!-- <ul class="list-group">
+                        <li class="list-group-item">
+                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                        </li>
+                        <li class="list-group-item">
+                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        </li>
+                    </ul> -->
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">INH <small>イソニアジド</small><ul>
+                        <li><u>N</u>europathy: 末梢神経障害</li>
+                        <li><u>H</u>epatitis: 肝障害</li>
+                    </ul></li>
+                    <li class="list-group-item">RFP <small>リファンピシン</small><ul>
+                        <li><u>R(L)</u>iver: 肝障害</li>
+                        <li><u>F</u>ever: 薬剤熱</li>
+                        <li><u>P</u>lt: 血小板減少</li>
+                    </ul></li>
+                    <li class="list-group-item">SM <small>ストレプトマイシン</small><ul>
+                        <li><u>S</u>yonben: 腎障害</li>
+                        <li><u>M</u>imi: 聴力, 平衡障害</li>
+                    </ul></li>
+                    <li class="list-group-item">EB <small>エタンブトール</small><ul>
+                        <li><u>E</u>ye <u>B</u>ack: 球後視神経炎</li>
+                    </ul></li>
+                    <li class="list-group-item">PZA <small>ピラジナミド</small><ul>
+                        <li><u>ピザ</u>食う: 高尿酸血症</li>
+                    </ul></li>
+                    <li class="list-group-item">3文字 肝障害<ul>
+                        <li>INH</li>
+                        <li>RFP</li>
+                        <li>PZA</li>
+                    </ul></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/96B019_bas_h_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="RFP">RFP <small>リファンピシン</small> <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6></h6>
+                        <ul>
+                            <li>&darr;ステロイド効果<br>
+                                &because; &uarr;ステロイド代謝</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>RFP 薬物作用</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        抗不整脈薬
+                        <ul>
+                            <li>β遮断薬</li>
+                            <li>ジゴキシン</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        抗菌薬・抗真菌薬
+                        <ul>
+                            <li>クラリスロマイシン</li>
+                            <li>イトラコナゾール</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        免疫抑制薬
+                        <ul>
+                            <li>タクロリムス</li>
+                            <li>シクロスポリン</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        抗凝固薬
+                        <ul>
+                            <li>ワルファリン</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>好発部位</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        TB: 
+                        <ul>
+                            <li>S<sup>1</sup>, S<sup>2</sup>, S<sup>6</sup></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        MAC: 
+                        <ul>
+                            <li>気管支拡張型: 中年F(++)</li>
+                            <li>結核類似型: 高齢M(++)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
         </div>
     </div>
-    -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="NTM">
+                <div class="page-header">
+                    <h2>NTM <!-- NonTubeculosis Mycobacterium  --><small class="hidden-xs-down"></small><small> 非結核性抗酸菌症</small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <u>クラリスロマイシン CAM</u>
+                    </li>
+                    <li class="list-group-item">
+                        RFP
+                    </li>
+                    <li class="list-group-item">
+                        EB
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Hansen">
+                <div class="page-header">
+                    <h2>Hansen <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        起因菌<br>
+                        らい菌Mycobacterium leprae（抗酸菌）</li>
+                    <li class="list-group-item">
+                        感染経路<br>
+                        皮膚創傷，鼻咽頭粘膜<br>
+                        感染には乳幼児期からの濃厚な接触が必要（成人にはほとんど感染のリスクはない）らい予防法は平成7年に廃止</li>
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        知覚麻痺（類結核型；T型）<br>
+                        免疫不全患者では全身のらい腫をきたし，失明，鞍鼻，獅子面様顔貌をきたす</li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        多剤併用療法<ul>
+                        <li>RFP</li>
+                        <li>DDS (サルファ剤)</li>
+                    </ul></li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
 
 
     <div class="section" id="app">
@@ -537,7 +546,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} # (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 21</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -674,6 +683,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group TB" id="q01">
                 <div class="card">
@@ -777,27 +794,30 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group TB" id="q03">
+            <div class="card-group TB info" id="q03">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97A58" target="_blank" id="2018-01-30_16:51:01">97A58</a> 検査結果
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-29_21:16:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-29_21:16:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:17:47"> </span>
                         <br>
                         <p>72歳の男性．<br>
                             2ヵ月前からの<u>咳</u>，<u>痰</u>および<u>微熱</u>を主訴に来院した．<br>
                             ときに<u>39℃台の発熱</u>もある．<br>
                             体温37.8℃．脈拍92/分，整．聴診上特に異常は認めない．<br>
-                            血液所見：赤血球380万，白血球6,240．<br>
-                            胸水所見：胸水・血清蛋白濃度比0.6，<u>アデノシンデアミナーゼ高値</u>．<u>セフェム系抗菌薬で症状は改善しなかった</u>．<br>
+                            血液所見：<br>
+                            赤血球380万，白血球6,240．<br>
+                            胸水所見：<br>
+                            胸水・血清蛋白濃度比0.6，<u>アデノシンデアミナーゼ高値</u>．<u>セフェム系抗菌薬で症状は改善しなかった</u>．<br>
                             胸部X線写真を次に示す．<br>
                             検査結果で考えにくいのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/97A058.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/97A058.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/97A058.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -848,9 +868,9 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group TB" id="q04">
+            <div class="card-group TB pri" id="q04">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103A27" target="_blank" id="2018-01-30_17:17:20">103A27</a> 検査
                     </div>
                     <div class="card-body">
@@ -920,9 +940,9 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group TB" id="q05">
+            <div class="card-group TB 110 pri" id="q05">
                 <div class="card">
-                    <div class="card-header 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B31" target="_blank" id="">110B31</a> 検査
                     </div>
                     <div class="card-body">
@@ -970,9 +990,9 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group TB Mycobacterium" id="q06">
+            <div class="card-group TB Mycobacterium info" id="q06">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102I73" target="_blank" id="2018-01-30_17:10:42">102I73</a> 対応
                     </div>
                     <div class="card-body">
@@ -1052,9 +1072,9 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group TB" id="q07">
+            <div class="card-group TB 111 pri" id="q07">
                 <div class="card">
-                    <div class="card-header 111 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E51" target="_blank" id="">111E51</a> 肺結核 対応
                     </div>
                     <div class="card-body">
@@ -1096,9 +1116,9 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group TB" id="q08">
+            <div class="card-group TB 111 pri" id="q08">
                 <div class="card">
-                    <div class="card-header 111 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I70" target="_blank" id="">111I70</a> 対応
                     </div>
                     <div class="card-body">
@@ -1142,9 +1162,9 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group TB" id="q09">
+            <div class="card-group TB info" id="q09">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104D15" target="_blank" id="2018-01-30_16:56:09">104D15</a> 入院 検査
                     </div>
                     <div class="card-body">
@@ -1203,14 +1223,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group TB" id="q10">
+            <div class="card-group TB RFP info" id="q10">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B19" target="_blank" id="2018-01-30_16:56:53">96B19</a> TB Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_14:09:32"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_14:09:32"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:18:57"> </span>
                         <br>
                         <p>肺結核について正しいのはどれか．</p>
 
@@ -1239,9 +1260,12 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/96B019_bas_h_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/96B019_bas_h_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/96B019_bas_h_010.jpg" class="card-img-top img-fluid"> -->
+
+
                         
                     </div>
                 </div>
@@ -1261,14 +1285,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group TB" id="q11">
+            <div class="card-group TB info" id="q11">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/82B40" target="_blank" id="2018-01-30_17:12:34">82B40</a> 予防 対策
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_14:13:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_14:13:25"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-15_21:20:53"> </span>
                         <br>
                         <p>6歳の女児．<br>
                             最近，ツベルクリン反応が強陽性となった．胸部X線写真は異常がない．母は空洞を伴う肺結核で入院中である．<br>
@@ -1344,7 +1369,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_14:24:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_14:24:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:21:42"> </span>
                         <br>
                         <p>45歳の男性．<br>
                             <u>咳嗽</u>が持続するため来院した．<br>
@@ -1383,13 +1409,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group TB RFP" id="q13">
+            <div class="card-group TB RFP 111 pri info" id="q13">
                 <div class="card">
-                    <div class="card-header 111 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E31" target="_blank" id="">111E31</a> ステロイド相互作用
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-07-30_14:32:43"> </span>
+                        <span class="badge badge-pill mis" id="2018-07-30_14:32:43"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-15_21:14:38"> </span>
                         <br>
                         <p>抗結核薬のうち副腎皮質ステロイドの効果を減弱させるのはどれか．</p>
 
@@ -1421,66 +1448,101 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">INH：<ul>
-                                <li>肝障害（高頻度）</li>
-                                <li>末梢神経炎（∵ビタミンB6欠乏）</li>
-                                <li>アレルギー症状（発疹，発熱）</li>
-                                <li>精神症状</li>
-                                <li>間質性肺炎</li>
-                            </ul></li>
-                            <li class="list-group-item">RFP：<ul>
-                                <li>アレルギー症状（発疹，発熱）</li>
-                                <li>消化器症状</li>
-                                <li>肝障害（軽度）</li>
-                                <li>間欠投与で貧血，血小板減少，急性腎不全，インフルエンザ様症状</li>
-                            </ul></li>
-                            <li class="list-group-item">PZA：<ul>
-                                <li>肝障害</li>
-                                <li>高尿酸血症（40〜60％）</li>
-                                <li>関節痛（妊婦では推奨しない）</li>
-                            </ul></li>
-                            <li class="list-group-item">EB：<ul>
-                                <li>球後視神経炎（視力障害→一般には可逆性だが，まれに不可逆性）</li>
-                            </ul></li>
-                            <li class="list-group-item">SM，KM：<ul>
-                                <li>第Ⅷ神経障害</li>
-                                <li>胎児の奇形</li>
-                                <li>中耳障害（妊婦に使用禁忌）</li>
-                                <li>腎機能障害</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                INH：
+                                <ul>
+                                    <li>肝障害（高頻度）</li>
+                                    <li>末梢神経炎（∵ビタミンB6欠乏）</li>
+                                    <li>アレルギー症状（発疹，発熱）</li>
+                                    <li>精神症状</li>
+                                    <li>間質性肺炎</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                RFP：
+                                <ul>
+                                    <li>アレルギー症状（発疹，発熱）</li>
+                                    <li>消化器症状</li>
+                                    <li>肝障害（軽度）</li>
+                                    <li>間欠投与で貧血，血小板減少，急性腎不全，インフルエンザ様症状</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                PZA：
+                                <ul>
+                                    <li>肝障害</li>
+                                    <li>高尿酸血症（40〜60％）</li>
+                                    <li>関節痛（妊婦では推奨しない）</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                EB：
+                                <ul>
+                                    <li>球後視神経炎（視力障害→一般には可逆性だが，まれに不可逆性）</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                SM，KM：
+                                <ul>
+                                    <li>第Ⅷ神経障害</li>
+                                    <li>胎児の奇形</li>
+                                    <li>中耳障害（妊婦に使用禁忌）</li>
+                                    <li>腎機能障害</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
 
                         <h6>RFP 薬物作用</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">抗不整脈薬<ul>
-                                <li>β遮断薬</li>
-                                <li>ジゴキシン</li>
-                            </ul></li>
-                            <li class="list-group-item">抗菌薬・抗真菌薬<ul>
-                                <li>クラリスロマイシン</li>
-                                <li>イトラコナゾール</li>
-                            </ul></li>
-                            <li class="list-group-item">免疫抑制薬<ul>
-                                <li>タクロリムス</li>
-                                <li>シクロスポリン</li>
-                            </ul></li>
-                            <li class="list-group-item">抗凝固薬<ul>
-                                <li>ワルファリン</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                抗不整脈薬
+                                <ul>
+                                    <li>β遮断薬</li>
+                                    <li>ジゴキシン</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                抗菌薬・抗真菌薬
+                                <ul>
+                                    <li>クラリスロマイシン</li>
+                                    <li>イトラコナゾール</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                免疫抑制薬
+                                <ul>
+                                    <li>タクロリムス</li>
+                                    <li>シクロスポリン</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                抗凝固薬
+                                <ul>
+                                    <li>ワルファリン</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group TB RFP" id="q14">
+            <div class="card-group TB RFP info mnemonics" id="q14">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95A99" target="_blank" id="2018-01-30_17:34:47">95A99</a> 抗結核薬 - 副作用
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_14:42:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_14:42:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:22:34"> </span>
                         <br>
                         <p>抗結核薬と副作用の組合せで誤っているのはどれか．</p>
                         
@@ -1512,58 +1574,83 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item">INH <small>イソニアジド</small><ul>
-                                <li><u>N</u>europathy: 末梢神経障害</li>
-                                <li><u>H</u>epatitis: 肝障害</li>
-                            </ul></li>
-                            <li class="list-group-item">RFP <small>リファンピシン</small><ul>
-                                <li><u>R(L)</u>iver: 肝障害</li>
-                                <li><u>F</u>ever: 薬剤熱</li>
-                                <li><u>P</u>lt: 血小板減少</li>
-                            </ul></li>
-                            <li class="list-group-item">SM <small>ストレプトマイシン</small><ul>
-                                <li><u>S</u>yonben: 腎障害</li>
-                                <li><u>M</u>imi: 聴力, 平衡障害</li>
-                            </ul></li>
-                            <li class="list-group-item">EB <small>エタンブトール</small><ul>
-                                <li><u>E</u>ye <u>B</u>ack: 球後視神経炎</li>
-                            </ul></li>
-                            <li class="list-group-item">PZA <small>ピラジナミド</small><ul>
-                                <li><u>ピザ</u>食う: 高尿酸血症</li>
-                            </ul></li>
-                            <li class="list-group-item">3文字 肝障害<ul>
-                                <li>INH</li>
-                                <li>RFP</li>
-                                <li>PZA</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                INH <small>イソニアジド</small>
+                                <ul>
+                                    <li><u>N</u>europathy: 末梢神経障害</li>
+                                    <li><u>H</u>epatitis: 肝障害</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                RFP <small>リファンピシン</small>
+                                <ul>
+                                    <li><u>R(L)</u>iver: 肝障害</li>
+                                    <li><u>F</u>ever: 薬剤熱</li>
+                                    <li><u>P</u>lt: 血小板減少</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                SM <small>ストレプトマイシン</small>
+                                <ul>
+                                    <li><u>S</u>yonben: 腎障害</li>
+                                    <li><u>M</u>imi: 聴力, 平衡障害</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                EB <small>エタンブトール</small>
+                                <ul>
+                                    <li><u>E</u>ye <u>B</u>ack: 球後視神経炎</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                PZA <small>ピラジナミド</small>
+                                <ul>
+                                    <li><u>ピザ</u>食う: 高尿酸血症</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                3文字 肝障害
+                                <ul>
+                                    <li>INH</li>
+                                    <li>RFP</li>
+                                    <li>PZA</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group NTM MAC" id="q15">
+            <div class="card-group NTM MAC pri info" id="q15">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107D27" target="_blank" id="2018-01-30_17:42:25">107D27</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_14:51:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_14:51:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:24:10"> </span>
                         <br>
                         <p>53歳の女性．<br>
                             血痰を主訴に来院した．<br>
                             半年前から咳嗽と喀痰とを自覚していたがそのままにしていた．2週前から血痰があった．発熱はない．毎年の健康診断時に胸部X線写真で異常を指摘されていたが，変化を認めないため治療は受けていなかった．<br>
                             身長150cm，体重37kg．体温36.8℃．脈拍68/分，整．血圧112/66mmHg．呼吸数16/分．SpO2 96％（room air）．右前胸部にcoarse cracklesを聴取する．<br>
-                            喀痰検査：Ziehl-Neelsen染色でGaffky3号．<br>
-                            血液所見：赤血球356万，Hb 12.1g/dL，Ht 32％，白血球5,700（桿状核好中球15％，分葉核好中球45％，好酸球1％，単球14％，リンパ球25％），血小板22万．CRP 1.0mg/dL．<br>
-                            結核菌特異的全血インターフェロンγ遊離測定法〈IGRA〉は陰性．胸部X線写真で気管支拡張所見を認めるが，1年前の健康診断時の所見と変化を認めない．<br>
+                            喀痰検査：<br>
+                            <u>Ziehl-Neelsen染色でGaffky3号</u>．<br>
+                            血液所見：<br>
+                            赤血球356万，Hb 12.1g/dL，Ht 32％，白血球5,700（桿状核好中球15％，分葉核好中球45％，好酸球1％，単球14％，リンパ球25％），血小板22万．CRP 1.0mg/dL．<br>
+                            <u>結核菌特異的全血インターフェロンγ遊離測定法〈IGRA〉は陰性</u>．<br>
+                            胸部X線写真で気管支拡張所見を認めるが，1年前の健康診断時の所見と変化を認めない．<br>
                             肺野条件の胸部単純CTを次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/107D027.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/107D027.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/107D027.jpg" class="card-img-top img-fluid" width="">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1621,28 +1708,32 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group NTM MAC" id="q16">
+            <div class="card-group NTM MAC info pri" id="q16">
                 <div class="card">
-                    <div class="card-header info pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108A37" target="_blank" id="2018-01-30_16:59:15">108A37</a> 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_15:09:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_15:09:58"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-15_21:26:22"> </span>
                         <br>
                         <p>78歳の男性．<br>
                             微熱と血痰とを主訴に来院した．<br>
-                            2ヵ月前から咳嗽と喀痰とを自覚していた．1ヵ月前から微熱と全身倦怠感とを自覚するようになり，1週前から血痰が出現するようになったため自宅近くの医療機関を受診し，胸部X線写真と胸部単純CTにて異常を指摘された．カルバペネム系抗菌薬で治療されたが改善がないため紹介されて受診した．既往歴に特記すべきことはない．<br>
+                            2ヵ月前から咳嗽と喀痰とを自覚していた．<br>
+                            1ヵ月前から微熱と全身倦怠感とを自覚するようになり，1週前から血痰が出現するようになったため自宅近くの医療機関を受診し，胸部X線写真と胸部単純CTにて異常を指摘された．カルバペネム系抗菌薬で治療されたが改善がないため紹介されて受診した．<br>
+                            既往歴に特記すべきことはない．<br>
                             身長162cm，体重60kg．体温37.6℃．脈拍72/分，整．血圧112/68mmHg．呼吸数16/分．SpO2 97％（room air）．心音と呼吸音とに異常を認めない．<br>
-                            血液所見：赤血球418万，Hb 14.5g/dL，Ht 41％，白血球9,300（桿状核好中球10％，分葉核好中球45％，好酸球1％，単球10％，リンパ球34％），血小板34万．CRP 5.0mg/dL．<br>
+                            血液所見：<br>
+                            赤血球418万，Hb 14.5g/dL，Ht 41％，白血球9,300（桿状核好中球10％，分葉核好中球45％，好酸球1％，単球10％，リンパ球34％），血小板34万．CRP 5.0mg/dL．<br>
                             自宅近くの医療機関での胸部X線写真（A）と肺野条件の胸部単純CT（B）とを次に示す．<br>
                             確定診断に有用な検査はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/108A037A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/108A037B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/108A037A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108A037B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108A037A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108A037B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1680,27 +1771,37 @@
 
                         <h6>好発部位</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">TB: <ul>
-                                <li>S<sup>1</sup>, S<sup>2</sup>, S<sup>6</sup></li>
-                            </ul>
-                            <li class="list-group-item">MAC: <ul>
-                                <li>気管支拡張型: 中年F(++)</li>
-                                <li>結核類似型: 高齢M(++)</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                TB: 
+                                <ul>
+                                    <li>S<sup>1</sup>, S<sup>2</sup>, S<sup>6</sup></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                MAC: 
+                                <ul>
+                                    <li>気管支拡張型: 中年F(++)</li>
+                                    <li>結核類似型: 高齢M(++)</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group NTM MAC" id="q17">
+            <div class="card-group NTM MAC info" id="q17">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/104D50" target="_blank" id="2018-01-30_17:02:27">104D50</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_15:19:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_15:19:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:28:18"> </span>
                         <br>
                         <p>58歳の女性．<br>
                             <u>咳</u>と<u>血痰</u>とを主訴に来院した．<br>
@@ -1708,11 +1809,14 @@
                             1ヵ月前から咳が強くなり，<br>
                             3日前から血痰が出たため受診した．<br>
                             13歳時に<u>副鼻腔炎</u>で両側を手術した．<br>
-                            体温37.2℃．両側の前胸下部に弱い<u>fine crackles</u>を聴取する．<br>血液所見：赤血球420万，Hb 11.8g/dL，Ht 40％，白血球6,800，血小板18万．<br>
+                            体温37.2℃．両側の前胸下部に弱い<u>fine crackles</u>を聴取する．<br>
+                            血液所見：<br>
+                            赤血球420万，Hb 11.8g/dL，Ht 40％，白血球6,800，血小板18万．<br>
                             血液生化学所見に異常を認めない．<br>
                             CRP 0.8mg/dL．<br>
                             喀痰の<u>抗酸菌塗抹検査が3回連続で陽性</u>となったが，同時に行った<u>結核菌PCR検査は陰性</u>だった．<br>
-                            胸部X線写真（A）と胸部単純CT（B）とを次に示す．止血剤の投与で血痰は消失したが，咳は増強し，1ヵ月後の画像は増悪していた．抗菌薬を3剤用いて治療を開始することとした．<br>
+                            胸部X線写真（A）と胸部単純CT（B）とを次に示す．<br>
+                            止血剤の投与で血痰は消失したが，咳は増強し，1ヵ月後の画像は増悪していた．抗菌薬を3剤用いて治療を開始することとした．<br>
                             リファンピシンとエタンブトールに加えて選択するのはどれか．</p>
                     </div>
 
@@ -1741,12 +1845,6 @@
 
                         <p class="q_dx">肺非結核性抗酸菌症 (e.g., MAC)</p>
 
-                        <ul class="list-group">
-                            <li class="list-group-item"><b>クラリスロマイシン CAM</b></li>
-                            <li class="list-group-item"><u>RFP</u></li>
-                            <li class="list-group-item"><u>EB</u></li>
-                        </ul>
-
                         <p class="q_answer_true">e</p>
 
                         <ol type="a">
@@ -1756,18 +1854,34 @@
                             <li>アスペルギルス</li>
                             <li></li>
                         </ol>
+
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <u>クラリスロマイシン CAM</u>
+                            </li>
+                            <li class="list-group-item">
+                                RFP
+                            </li>
+                            <li class="list-group-item">
+                                EB
+                            </li>
+                        </ul>
+
+                        
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group TB NTM MAC" id="q18">
+            <div class="card-group TB NTM MAC 110 pri " id="q18">
                 <div class="card">
-                    <div class="card-header 110 pri ">
-                        <a href="https://qb.medilink-study.com/#/Answer/110A2" target="_blank" id="">110A2</a> DDx: NTM & TB
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/110A2" target="_blank" id="">110A2</a> DDx: NTM / TB
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-07-30_15:33:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_15:33:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:30:15"> </span>
                         <br>
                         <p>非結核性肺抗酸菌症では頻度が低く，肺結核症で頻度が高い所見はどれか．</p>
 
@@ -1793,24 +1907,28 @@
                         <ol type="a">
                             <li></li>
                             <li></li>
-                            <li>NTM<ul>
-                                <li>空洞形成型</li>
-                                <li>気管支拡張型</li>
-                            </ul></li>
+                            <li>NTM
+                                <ul>
+                                    <li>空洞形成型</li>
+                                    <li>気管支拡張型</li>
+                                </ul>
+                            </li>
                             <li></li>
-                            <li>IGRA<ul>
-                                <li>TB: (+)</li>
-                                <li>NTM: (-)</li>
-                            </ul></li>
+                            <li>IGRA
+                                <ul>
+                                    <li>TB: (+)</li>
+                                    <li>NTM: (-)</li>
+                                </ul>
+                            </li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group Hansen NTM" id="q19">
+            <div class="card-group Hansen NTM pri info" id="q19">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96H72" target="_blank" id="2018-01-30_17:49:34">96H72</a> Hansen病 Qs
                     </div>
                     <div class="card-body">
@@ -1876,7 +1994,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_15:52:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_15:52:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:31:16"> </span>
                         <br>
                         <p>潜伏期が最も長い感染症はどれか．</p>
                         
@@ -1919,14 +2038,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group Hansen" id="q21">
+            <div class="card-group Hansen " id="q21">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/104I8" target="_blank" id="2018-01-30_17:56:01">104I8</a> 人工培地で発育しない
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-07-30_15:55:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-07-30_15:55:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-15_21:16:29"> </span>
                         <br>
                         <p>人工培地で発育しない菌はどれか．</p>
                         
@@ -2009,6 +2129,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2077,6 +2198,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2098,27 +2222,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2140,11 +2271,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2161,62 +2294,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2449,6 +2582,44 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#TB h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.TB)').toggle();
+    });
+    $('#TB').find('code').html($('div.TB').size());
+
+
+    $('#RFP').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.RFP)').toggle();
+    });
+    $('#RFP').find('code').html($('div.RFP').size());
+
+
+    $('#NTM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.NTM)').toggle();
+    });
+    $('#NTM').find('code').html($('div.NTM').size());
+
+
+    $('#Hansen h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Hansen)').toggle();
+    });
+    $('#Hansen').find('code').html($('div.Hansen').size());
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

@@ -4,12 +4,29 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-07 13:59:44
+@Last modified time: 2018-10-16 19:44:13
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
@@ -81,8 +98,8 @@
     <title>General</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-07 13:59:53" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.8">
+    <meta name="revised" content="2018-10-16 19:44:50" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.24">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -141,6 +158,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -181,23 +203,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -246,121 +277,373 @@
         </div>
     </div>
 
-    
+
+
 
     
-    <!-- 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small> </small> <small><code></code></small></h2>
                 </div>
             </div>
 
-        </div>
-    </div>
-    -->
-    
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>腎障害 感染症</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>病原性大腸菌</td>
+                            <td>HUS（溶血性尿毒症症候群）</td>
+                        </tr>
+                        <tr>
+                            <td>A群β連鎖球菌感染後遺症</td>
+                            <td>急性糸球体腎炎</td>
+                        </tr>
+                        <tr>
+                            <td>四日熱マラリア</td>
+                            <td>ネフローゼ症候群</td>
+                        </tr>
+                        <tr>
+                            <td>ハンタウイルス</td>
+                            <td>腎症候性出血熱</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">黄疸出血性レプトスピラ症（Weil病）</td>
+                        </tr>
+                        <tr>
+                            <td>B型肝炎</td>
+                            <td>膜性腎症</td>
+                        </tr>
+                        <tr>
+                            <td>C型肝炎</td>
+                            <td>膜性増殖性糸球体腎炎</td>
+                        </tr>
+                        <tr>
+                            <td>MRSA感染後腎炎</td>
+                            <td>ネフローゼ症候群</td>
+                        </tr>
+                        <tr>
+                            <td>HIV関連腎症</td>
+                            <td>巣状糸球体硬化症</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>寄生虫感染における中間宿主</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>中間宿主</th>
+                            <th>寄生虫</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ウシ</td>
+                            <td><ul>
+                                <li>肝蛭症</li>
+                                <li>無鉤条虫</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>ブタ</td>
+                            <td><ul>
+                                <li>有鉤条虫</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>イヌ, ネコ, キツネ</td>
+                            <td><ul>
+                                <li>包虫症</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>淡水魚 (フナ, アユ)</td>
+                            <td><ul>
+                                <li>肝ジストマ症</li>
+                                <li>横川吸虫症</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>サケ, マス</td>
+                            <td><ul>
+                                <li>広節裂頭条虫</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>サバ, イカ</td>
+                            <td><ul>
+                                <li>アニサキス</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>ライギョ</td>
+                            <td><ul>
+                                <li>顎口虫症</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>サワガニ</td>
+                            <td><ul>
+                                <li>ウェステルマン肺吸虫</li>
+                                <li>宮明肺吸虫症</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>近年の菌血症の主たる起因菌</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        GPC
+                        <ul>
+                            <li>黄色ブドウ球菌</li>
+                            <li>コアグラーゼ(-) ブドウ球菌</li>
                         </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="list-group-item">
+                        GNB
+                        <ul>
+                            <li>緑膿菌</li>
+                            <li>腸内細菌</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        真菌
+                        <ul>
+                            <li>カンジダ</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>細菌 毒素</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        外毒素（exotoxin）
+                        <ul>
+                            <li>概念<br>
+                                細菌（グラム陽性菌，グラム陰性菌）の菌体内で合成されて，菌体外へ放出される毒素．</li>
+                            <li>性質<br>
+                                毒性が強い．60 ℃を超えるとしばしば破壊される．通常，発熱はきたさない．<br>
+                                ※黄色ブドウ球菌の外毒素：エンテロトキシンは100 ℃の加熱でも破壊されない．</li>
+                            <li>種類<br>
+                                ブドウ球菌毒素，ストレプトリジンO，ボツリヌス毒素，ジフテリア毒素，破傷風毒素，コレラ毒素，志賀毒素（ベロ毒素）など</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        内毒素（endotoxin）
+                        <ul>
+                            <li>概念<br>
+                                グラム陰性菌の細胞壁構成成分のLPS（lipopolysaccharide；リポ多糖）のこと．主にLipidAの部分が関与する．</li>
+                            <li>性質<br>
+                                耐熱性（60 ℃以上にも）<ul>
+                                <li>エンドトキシンショックを引き起こす．</li>
+                                <li>インターロイキン2 などの放出により発熱などをきたす．</li>
+                            </ul></li>
+                            <li>種類<br>
+                                LPSの表面のO抗原により分類．</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
         </div>
     </div>
-    -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="pharyngitis">
+                <div class="page-header">
+                    <h2>Pharyngitis <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="sepsis">
+                <div class="page-header">
+                    <h2>Sepsis <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="ABx">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>ABx <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>濃度依存性</th>
+                            <td>
+                                <ul>
+                                    <li>キノロン</li>
+                                    <li>アミノグリコシド</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>時間依存</th>
+                            <td>
+                                <ul>
+                                    <li>&beta;-ラクタム</li>
+                                    <li>バンコマイシン</li>
+                                    <li>マクロライド系</li>
+                                    <li>クリンダマイシン</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>嫌気性菌 無効ABx</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <td colspan="2"><u>ア キ もの 嫌い</u></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ア</td>
+                            <td>アミノグリコシド</td>
+                        </tr>
+                        <tr>
+                            <td>キ</td>
+                            <td>キノロン系</td>
+                        </tr>
+                        <tr>
+                            <td>もの</td>
+                            <td>モノバクタム系</td>
+                        </tr>
+                        <tr>
+                            <td>嫌い</td>
+                            <td>嫌気性菌に無効</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+    
+
+    
+    
 
 
     <div class="section" id="app">
@@ -386,7 +669,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 40 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 40</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -523,15 +806,25 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
+
             <!-- 01 -->
-            <div class="card-group mphi PHYSIO" id="q01">
+            <div class="card-group Mphi PHYSIO INTRO info" id="q01">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B26" target="_blank" id="2018-01-31_15:12:20">103B26</a> M&Phi;
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_14:08:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_14:08:11"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-16_19:46:53"> </span>
                         <br>
                         <p>食細胞の機能がその感染に影響を与えないのはどれか．</p>
                         
@@ -582,14 +875,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PHYSIO" id="q02">
+            <div class="card-group epiglottitis croup HFMD herpangina PHYSIO INTRO" id="q02">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/104A19" target="_blank">104A19</a> 細菌感染
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_14:13:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_14:13:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:38:50"> </span>
                         <br>
                         <p>細菌感染が原因となる疾患はどれか．</p>
                         
@@ -781,7 +1075,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_14:53:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_14:53:49"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:41:27"> </span>
                         <br>
                         <p>ヘモフィルスによって起こる感染症はどれか．3つ選べ．</p>
 
@@ -819,14 +1114,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group HHV roseola HHV-6" id="q07">
+            <div class="card-group HHV roseola HHV-6 pri req info" id="q07">
                 <div class="card">
-                    <div class="card-header pri req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109F13" target="_blank" id="2018-01-31_13:46:46">109F13</a> ヒトヘルペスウイルス
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_14:57:54"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_14:57:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:52:14"> </span>
                         <br>
                         <p>ヒトヘルペスウイルスによる疾患はどれか．</p>
 
@@ -870,59 +1166,106 @@
                                 <tr>
                                     <th>HHV-1</th>
                                     <td>単純ヘルペスウイルス1型（HSV-1）</td>
-                                    <td>ヘルペス性歯肉口内炎，ヘルペス角膜炎，脳炎，口唇ヘルペス</td>
+                                    <td>
+                                        <ul>
+                                            <li>ヘルペス性歯肉口内炎</li>
+                                            <li>ヘルペス角膜炎</li>
+                                            <li>脳炎</li>
+                                            <li>口唇ヘルペス</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-2</th>
                                     <td>単純ヘルペスウイルス2型（HSV-2）</td>
-                                    <td>性器ヘルペス，無菌性髄膜炎，新生児ヘルペス</td>
+                                    <td>
+                                        <ul>
+                                            <li>性器ヘルペス</li>
+                                            <li>無菌性髄膜炎</li>
+                                            <li>新生児ヘルペス</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-3</th>
                                     <td>水痘･帯状疱疹ウイルス（VZV）</td>
-                                    <td>水痘，帯状疱疹</td>
+                                    <td>
+                                        <ul>
+                                            <li>水痘</li>
+                                            <li>帯状疱疹</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-4</th>
                                     <td>EBウイルス（EBV）</td>
-                                    <td>伝染性単核球症，Burkittリンパ腫，上咽頭癌</td>
+                                    <td>
+                                        <ul>
+                                            <li>伝染性単核球症</li>
+                                            <li>Burkittリンパ腫</li>
+                                            <li>上咽頭癌</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-5</th>
                                     <td>サイトメガロウイルス（CMV）</td>
-                                    <td>伝染性単核球症，先天性巨細胞封入体症，間質性肺炎，網膜炎</td>
+                                    <td>
+                                        <ul>
+                                            <li>伝染性単核球症</li>
+                                            <li>先天性巨細胞封入体症</li>
+                                            <li>間質性肺炎</li>
+                                            <li>網膜炎</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-6</th>
                                     <td>ヒトヘルペスウイルス6</td>
-                                    <td>突発性発疹</td>
+                                    <td>
+                                        <ul>
+                                            <li>突発性発疹</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-7</th>
                                     <td>ヒトヘルペスウイルス7</td>
-                                    <td>突発性発疹</td>
+                                    <td>
+                                        <ul>
+                                            <li>突発性発疹</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>HHV-8</th>
                                     <td>カポジ肉腫関連ヘルペスウイルス</td>
-                                    <td>カポジ肉腫</td>
+                                    <td>
+                                        <ul>
+                                            <li>カポジ肉腫</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group Shigella  PMC VP" id="q08">
+            <div class="card-group Shigella PMC VP pri" id="q08">
                 <div class="card">
-                    <div class="card-header  pri q-ss q-eti">
+                    <div class="card-header q-ss q-eti">
                         <a href="https://qb.medilink-study.com/#/Answer/108I15" target="_blank" id="2018-01-31_13:48:07">108I15</a> 原因菌 - 症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"></span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_15:06:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_15:06:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:56:01"> </span>
                         <br>
                         <p>感染症と原因菌の組合せで誤っているのはどれか．</p>
 
@@ -958,13 +1301,14 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group URI rhinovirus RS CMV parainfluenza" id="q09">
+            <div class="card-group URI rhinovirus RS CMV parainfluenza INTRO pri 110" id="q09">
                 <div class="card">
-                    <div class="card-header pri 110 ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D3" target="_blank" id="">110D3</a> 病態 - ウイルス
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-07_15:17:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_15:17:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_19:54:26"> </span>
                         <br>
                         <p>成人の病態と関連性が強いウイルスとの組合せで正しいのはどれか．</p>
 
@@ -983,16 +1327,18 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
-                            <li><ul>
-                                <li>成人: ライノウイルス</li>
-                                <li>小児: RS ウイルス</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>成人: ライノウイルス</li>
+                                    <li>小児: RS ウイルス</li>
+                                </ul>
+                            </li>
                             <li></li>
                             <li></li>
                             <li>クループ症候群: パラインフルエンザウイルス</li>
@@ -1002,14 +1348,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group Weil HUS " id="q10">
+            <div class="card-group Weil HUS Hantavirus info INTRO" id="q10">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/95B71" target="_blank" id="2018-01-31_15:46:27">95B71</a> 腎障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_15:20:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_15:20:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-16_19:56:32"> </span>
                         <br>
                         <p>腎障害を伴うことが多いのはどれか．3つ選べ．</p>
                         
@@ -1031,10 +1378,12 @@
                         <p class="q_answer_true">b c d</p>
 
                         <ol type="a">
-                            <li><ul>
-                                <li>３日熱: 腎障害まれ</li>
-                                <li>４日熱: ICが腎臓に沈着 &rArr; MPGN</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>３日熱: 腎障害まれ</li>
+                                    <li>４日熱: ICが腎臓に沈着 &rArr; MPGN</li>
+                                </ul>
+                            </li>
                             <li>レプトスピラ: 黄疸, 出血, 腎炎</li>
                             <li>病原性大腸菌: HUS</li>
                             <li>ハンタウイルス: 腎症候出血熱 (出血傾向, 腎機能不全)</li>
@@ -1151,14 +1500,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group VZV Aspergillus" id="q12">
+            <div class="card-group VZV Aspergillus info" id="q12">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94A27" target="_blank" id="2018-01-31_15:51:45">94A27</a> 気道 感染
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_15:30:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_15:30:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:01:05"> </span>
                         <br>
                         <p>気道を介して感染するのはどれか．2つ選べ．</p>
                         
@@ -1196,14 +1546,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group Lyme filaria" id="q13">
+            <div class="card-group Lyme filaria pri" id="q13">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B98" target="_blank" id="2018-01-31_13:52:16">93B98</a> 節足動物媒介
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_15:34:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_15:34:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:02:51"> </span>
                         <br>
                         <p>節足動物の媒介感染によるのはどれか．2つ選べ．</p>
 
@@ -1230,14 +1581,16 @@
                             <li>レプトスピラ: ネズミ</li>
                             <li>トキソプラズマ: ネコ</li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group " id="q14">
+            <div class="card-group pri info INTRO" id="q14">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/91A41" target="_blank" id="2018-01-31_13:53:22">91A41</a> 経皮感染
                     </div>
                     <div class="card-body">
@@ -1555,15 +1908,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group streptococcus " id="q16">
-                <div class="card-group">
+            <div class="card-group streptococcus pharyngitis info req" id="q16">
                 <div class="card">
-                    <div class="card-header info req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103H24" target="_blank" id="2018-01-31_13:59:04">103H24</a> 咽頭痛 & 発熱
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_16:12:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_16:12:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:08:38"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             咽頭痛と発熱とを主訴に来院した．2日前から咽頭痛が出現し，本日朝には発熱も加わった．<br>
@@ -1629,7 +1982,7 @@
                     <div class="card-body">
 
                         <p>ARI &xrArr; ABxは必要なし<br>
-                            溶連菌咽頭炎 &rAarr; ABx</p><br>
+                            溶連菌咽頭炎 &xrArr; ABx</p><br>
 
                         <p class="q_dx">溶連菌咽頭炎</p>
 
@@ -1637,7 +1990,13 @@
 
                         <ol type="a">
                             <li>s/o ウイルス感染症</li>
-                            <li>s/o 咽頭炎</li>
+                            <li>s/o 咽頭炎: 
+                                <ul>
+                                    <li>発熱(+)</li>
+                                    <li>咳(-)</li>
+                                    <li>リンパ節腫脹(+)</li>
+                                </ul>
+                            </li>
                             <li>s/o 急性気管支炎, 感冒</li>
                             <li>s/o 急性気管支炎, 感冒</li>
                             <li>s/o 急性気管支炎, 感冒</li>
@@ -1657,14 +2016,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group Legionella " id="q17">
+            <div class="card-group Legionella info mnemonics" id="q17">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94A33" target="_blank" id="2018-01-31_16:28:57">94A33</a> 比較的徐脈
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_16:17:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_16:17:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:06:35"> </span>
                         <br>
                         <p>成人患者の体温と脈拍数との経過図を次に示す．<br>
                             可能性が低いのはどれか．</p>
@@ -1702,27 +2062,76 @@
 
 
                         <h6>比較的徐脈</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>ブルセラ ず れ 落 ち 脈拍 下がる</u></li>
-                            <li class="list-group-item"><u>ブルセラ</u></li>
-                            <li class="list-group-item"><u>ず</u>: 髄膜炎菌</li>
-                            <li class="list-group-item"><u>れ</u>: レジオネラ</li>
-                            <li class="list-group-item"><u>お</u>: オウム病</li>
-                            <li class="list-group-item"><u>ち</u>: 腸チフス</li>
-                            <li class="list-group-item"><u>下がる</u>: サルモネラ</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>ブルセラ ず れ 落 ち 脈拍 下がる</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><u>ブルセラ</u></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><u>ず</u></td>
+                                    <td>髄膜炎菌</td>
+                                </tr>
+                                <tr>
+                                    <td><u>れ</u></td>
+                                    <td>レジオネラ</td>
+                                </tr>
+                                <tr>
+                                    <td><u>お</u></td>
+                                    <td>オウム病</td>
+                                </tr>
+                                <tr>
+                                    <td><u>ち</u></td>
+                                    <td>腸チフス</td>
+                                </tr>
+                                <tr>
+                                    <td><u>下がる</u></td>
+                                    <td>サルモネラ</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
 
                         <h6>稽留熱</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>渓流で わいらの チーフが 一度だけ 族を こづい た</u></li>
-                            <li class="list-group-item"><u>わいら</u>: Weil</li>
-                            <li class="list-group-item"><u>チーフ</u>: チフス</li>
-                            <li class="list-group-item"><u>一度</u>: ≤ 1&deg;C</li>
-                            <li class="list-group-item"><u>族</u>: 粟粒結核</li>
-                            <li class="list-group-item"><u></u></li>
-                            <li class="list-group-item"><u>こづ</u>: 骨髄炎</li>
-                            <li class="list-group-item"><u>た</u>: 大葉性肺炎</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>渓流で わいらの チーフが 一度だけ 族を こづい た</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><u>わいら</u></td>
+                                    <td>Weil</td>
+                                </tr>
+                                <tr>
+                                    <td><u>チーフ</u></td>
+                                    <td>チフス</td>
+                                </tr>
+                                <tr>
+                                    <td><u>一度</u></td>
+                                    <td>≤ 1&deg;C</td>
+                                </tr>
+                                <tr>
+                                    <td><u>族</u></td>
+                                    <td>粟粒結核</td>
+                                </tr>
+                                <tr>
+                                    <td><u>こづ</u></td>
+                                    <td>骨髄炎</td>
+                                </tr>
+                                <tr>
+                                    <td><u>た</u></td>
+                                    <td>大葉性肺炎</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
 
                         <table class="table table-condensed">
                             <thead>
@@ -1773,19 +2182,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group GAS" id="q18">
+            <div class="card-group GAS info" id="q18">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99E73" target="_blank" id="2018-01-31_16:30:54">99E73</a> 細菌 - 疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_16:34:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_16:34:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:14:19"> </span>
                         <br>
                         <p>組合せで誤っているのはどれか．</p>
 
@@ -1816,22 +2229,52 @@
                             <tbody>
                                 <tr>
                                     <td>ウェルシュ菌（C.perfringens）</td>
-                                    <td>ガス壊疽（急速な組織の壊死，大量のガス発生，悪臭），集団食中毒</td>
+                                    <td>
+                                        <ul>
+                                            <li>ガス壊疽
+                                                <ul>
+                                                    <li>急速な組織の壊死</li>
+                                                    <li>大量のガス発生</li>
+                                                    <li>悪臭</li>
+                                                </ul>
+                                            </li>
+                                            <li>集団食中毒</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>ボツリヌス菌（C.botulinum）</td>
-                                    <td>ボツリヌス症（瞳孔散大，嚥下困難，呼吸筋麻痺）</td>
+                                    <td>ボツリヌス症
+                                        <ul>
+                                            <li>瞳孔散大</li>
+                                            <li>嚥下困難</li>
+                                            <li>呼吸筋麻痺</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>破傷風菌（C.tetani）</td>
-                                    <td>破傷風（三叉神経支配筋の硬直，開口障害，嚥下困難，全身性痙攣）</td>
+                                    <td>破傷風
+                                        <ul>
+                                            <li>三叉神経支配筋の硬直</li>
+                                            <li>開口障害</li>
+                                            <li>嚥下困難</li>
+                                            <li>全身性痙攣</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>C.difficile</td>
-                                    <td>偽膜性腸炎</td>
+                                    <td>
+                                        <ul>
+                                            <li>偽膜性腸炎</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
                     </div>
                 </div>
             </div>
@@ -1877,9 +2320,9 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group " id="q20">
+            <div class="card-group s_typhi sepsis info" id="q20">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94A56" target="_blank" id="2018-01-31_17:13:10">94A56</a> 血液 病原菌
                     </div>
                     <div class="card-body">
@@ -1914,20 +2357,31 @@
                         </ol>
 
 
-                        <h6>菌血症</h6>
+                        <h6>近年の菌血症の主たる起因菌</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">GPC<ul>
-                                <li>黄色ブドウ球菌</li>
-                                <li>コアグラーゼ(-) ブドウ球菌</li>
-                            </ul></li>
-                            <li class="list-group-item">GNB<ul>
-                                <li>緑膿菌</li>
-                                <li>腸内細菌</li>
-                            </ul></li>
-                            <li class="list-group-item">真菌<ul>
-                                <li>カンジダ</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                GPC
+                                <ul>
+                                    <li>黄色ブドウ球菌</li>
+                                    <li>コアグラーゼ(-) ブドウ球菌</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                GNB
+                                <ul>
+                                    <li>緑膿菌</li>
+                                    <li>腸内細菌</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                真菌
+                                <ul>
+                                    <li>カンジダ</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -1944,14 +2398,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group " id="q21">
+            <div class="card-group INTRO info" id="q21">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/96G64" target="_blank" id="2018-01-31_17:31:03">96G64</a> 急性期蛋白
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_16:50:55"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_16:50:55"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:16:58"> </span>
                         <br>
                         <p>急性期蛋白〈急性相反応物質〉でないのはどれか．</p>
                         
@@ -2087,14 +2542,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group carbapenem ABx" id="q23">
+            <div class="card-group carbapenem ABx pri 110" id="q23">
                 <div class="card">
-                    <div class="card-header pri 110">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G31" target="_blank">110G31</a> 使用制限すべき ABx
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_17:05:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_17:05:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:19:19"> </span>
                         <br>
                         <p>適正使用のため感染対策部門が院内の使用を管理すべき抗菌薬はどれか．</p>
 
@@ -2109,6 +2565,7 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
                         <p class="q_answer_true">c</p>
 
                         <ol type="a">
@@ -2123,15 +2580,16 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group ABx" id="q24">
+            <div class="card-group ABx info" id="q24">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104G2" target="_blank" id="2018-01-31_14:38:20">104G2</a> 濃度依存　ABx
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_17:11:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_17:11:13"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-16_21:19:35"> </span>
                         <br>
                         <p>薬物動態と薬力学理論とを考慮して抗菌薬を使う場合，1日投与総量を同じにした際，分割投与よりも単回投与が治療効果をあげるのはどれか．</p>
 
@@ -2147,11 +2605,18 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>濃度依存</p>
                         <ul class="list-group">
-                            <li class="list-group-item"><b>ニューキノロン</b></li>
-                            <li class="list-group-item">アミノグリコシド</li>
+                            <li class="list-group-item">
+                                濃度依存
+                                <ul>
+                                    <li><u>ニューキノロン</u></li>
+                                    <li>アミノグリコシド</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                         
                         <p class="q_answer_true">a</p>
 
@@ -2167,30 +2632,37 @@
                             <tbody>
                                 <tr>
                                     <th>濃度依存性</th>
-                                    <td><ul>
-                                        <li>キノロン</li>
-                                        <li>アミノグリコシド</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>キノロン</li>
+                                            <li>アミノグリコシド</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>時間依存</th>
-                                    <td><ul>
-                                        <li>&beta;-ラクタム</li>
-                                        <li>バンコマイシン</li>
-                                        <li>マクロライド系</li>
-                                        <li>クリンダマイシン</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>&beta;-ラクタム</li>
+                                            <li>バンコマイシン</li>
+                                            <li>マクロライド系</li>
+                                            <li>クリンダマイシン</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group ABx" id="q25">
+            <div class="card-group ABx sepsis INTRO info" id="q25">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B20" target="_blank" id="2018-01-31_17:34:35">96B20</a> 感染症 Qs
                     </div>
                     <div class="card-body">
@@ -2221,18 +2693,33 @@
                             <li></li>
                             <li></li>
                             <li>エンドトキシン: GNBによって産生</li>
-                            <li><ul>
-                                <li>菌血症: 血液中に細菌(+)</li>
-                                <li>敗血症: 菌血症 & 全身症状</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>菌血症: 血液中に細菌(+)</li>
+                                    <li>敗血症: 菌血症 & 全身症状</li>
+                                </ul>
+                            </li>
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">①MIC（minimum inhibitory concentration）：最小発育阻止濃度<br>
-                                この濃度以上では供試菌が発育しない．（ただし，細菌が死んでいるとは限らない）</li>
-                            <li class="list-group-item">②MBC（mimimum bactericidal concentration）：最小殺菌濃度<br>
-                                この濃度以上で細菌が死滅する最小限度濃度．</li>
+                            <li class="list-group-item">
+                                MIC（minimum inhibitory concentration）
+                                <ul>
+                                    <li>最小発育阻止濃度</li>
+                                    <li>この濃度以上では供試菌が発育しない．（ただし，細菌が死んでいるとは限らない）</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                MBC（mimimum bactericidal concentration）
+                                <ul>
+                                    <li>最小殺菌濃度</li>
+                                    <li>この濃度以上で細菌が死滅する最小限度濃度．</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -2341,14 +2828,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group ABx" id="q28">
+            <div class="card-group ABx PERT ricketia info" id="q28">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B98" target="_blank" id="2018-01-31_14:39:57">101B98</a> ABx有効
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_17:41:01"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_17:41:01"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:20:24"> </span>
                         <br>
                         <p>抗菌薬が有効なのはどれか．2つ選べ．</p>
 
@@ -2377,24 +2865,33 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">G（＋）球菌，G（＋）桿菌，G（−）球菌<br>
-                                ペニシリン系を使う．</li>
-                            <li class="list-group-item">G（−）桿菌<br>
-                                ペニシリン系，セフェム，アミノグリコシドを使う．</li>
+                            <li class="list-group-item">
+                                GPC / GPB / GNC<br>
+                                &xrArr; ペニシリン系
+                            </li>
+                            <li class="list-group-item">
+                                GNB<br>
+                                &xrArr; ペニシリン系，セフェム，アミノグリコシド
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group ABx" id="q29">
+            <div class="card-group ABx info mnemonics" id="q29">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/88B95" target="_blank" id="2018-01-31_18:02:48">88B95</a> 嫌気性菌 無効ABx
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_17:44:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_17:44:46"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-16_20:26:29"> </span>
                         <br>
                         <p>嫌気性菌感染症に無効な抗菌薬はどれか．</p>
                         
@@ -2424,27 +2921,67 @@
                         </ol>
 
 
-                        <h6>嫌気性菌 無効ABx</h6>
+                        <h6>嫌気性菌に非常に有効な抗菌</h6>
                         <ul class="list-group">
-                            <li class="list-group-item"><u>ア キ もの</u></li>
-                            <li class="list-group-item">アミノグリコシド</li>
-                            <li class="list-group-item">キノロン系</li>
-                            <li class="list-group-item">モノバクタム系</li>
+                            <li class="list-group-item">
+                                メトロニダゾール
+                            </li>
+                            <li class="list-group-item">
+                                クリンダマイシン
+                            </li>
+                            <li class="list-group-item">
+                                カルバペネム系
+                                <ul>
+                                    <li>イミペネム</li>
+                                    <li>シラスタチン</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+                        <h6>嫌気性菌 無効ABx</h6>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <td colspan="2"><u>ア キ もの 嫌い</u></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ア</td>
+                                    <td>アミノグリコシド</td>
+                                </tr>
+                                <tr>
+                                    <td>キ</td>
+                                    <td>キノロン系</td>
+                                </tr>
+                                <tr>
+                                    <td>もの</td>
+                                    <td>モノバクタム系</td>
+                                </tr>
+                                <tr>
+                                    <td>嫌い</td>
+                                    <td>嫌気性菌に無効</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group MRSA ABx" id="q30">
+            <div class="card-group MRSA MSSA ABx pri info mnemonics" id="q30">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107D11" target="_blank" id="2018-01-31_14:40:39">107D11</a>  MSSA 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_18:02:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_18:02:07"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:28:44"> </span>
                         <br>
                         <p>メチシリン感受性黄色ブドウ球菌による蜂窩織炎の第一選択薬はどれか．</p>
 
@@ -2531,14 +3068,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group MRSA ABx" id="q31">
+            <div class="card-group MRSA ABx info" id="q31">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/85B31" target="_blank" id="2018-01-31_18:15:52">85B31</a> MRSA Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_18:07:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_18:07:25"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-16_21:34:26"> </span>
                         <br>
                         <p>メチシリン耐性黄色ブドウ球菌（MRSA）について誤っているのはどれか．</p>
                         
@@ -2584,14 +3122,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group ABx flu" id="q32">
+            <div class="card-group ABx flu info" id="q32">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100B68" target="_blank" id="2018-01-31_18:19:35">100B68</a> 肺感染症 - 治療薬
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_18:17:54"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_18:17:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:35:18"> </span>
                         <br>
                         <p>肺感染症の原因微生物と治療薬の組合せで正しいのはどれか．</p>
                         
@@ -2614,31 +3153,131 @@
 
                         <ol type="a">
                             <li>MRSA: バンコマイシン etc</li>
+                            <li>レジオネラ: キノロン / マクロライド</li>
+                            <li>緑膿菌: アミノグリコシド, ニューキノロン</li>
                             <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>真菌: フルコナゾール, アムホテリシンB</li>
                         </ol>
+
+
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    グラム陽性球菌〕
+                                    連鎖球菌
+                                    ペニシリンG（PCG），アンピシリン（ABPC）
+                                    肺炎球菌
+                                    ペニシリン，セフォタキシム
+                                    腸球菌
+                                    アンピシリン単独またはゲンタマイシン併用
+                                    MSSA
+                                    （メチシリン感受性黄色ブドウ球菌）
+                                    ペニシリナーゼ抵抗性ペニシリン（クロキサシリン（MCIPC），セファゾリン）
+                                    MRSA
+                                    （メチシリン耐性黄色ブドウ球菌）
+                                    バンコマイシン（VCM），テイコプラニン（タゴシッド®），アルベカシン（ABK），リネゾリド，ST合剤，ダプトマイシン
+                                    〔グラム陽性桿菌〕
+                                    ジフテリア
+                                    PCG，抗毒素血清
+                                    リステリア
+                                    ABPC＋ゲンタマイシン
+                                    ウェルシュ菌（ガス壊疽）
+                                    ペニシリン，セフェム系
+                                    破傷風菌
+                                    PCG，破傷風免疫グロブリン（TIG）＋破傷風トキソイド
+                                    偽膜性腸炎（C.difficile）
+                                    VCM，メトロニダゾール（抗原虫薬）
+                                    〔グラム陰性球菌〕
+                                    淋菌
+                                    セフトリアキソン（第3世代セフェム）
+                                    髄膜炎菌
+                                    セフトリアキソン，PCG
+                                    モラクセラ（ブランハメラ）
+                                    ニューキノロン，第2・第3世代セフェム
+                                    〔グラム陰性桿菌〕
+                                    大腸菌
+                                    アンピシリン・スルバクタム，アミノグリコシド，第1～3世代セフェム，モノバクタム，ニューキノロン
+                                    インフルエンザ菌
+                                    アンピシリン・スルバクタム，ニューキノロン，第2・第3世代セフェム　※第1世代セフェムは無効
+                                    肺炎桿菌（クレブシエラ）
+                                    第3世代セフェム，アミノグリコシド，ニューキノロン
+                                    セラチア
+                                    第3世代セフェム，モノバクタム，ニューキノロン，アミノグリコシド
+                                    プロテウス菌
+                                    インドール陽性
+                                    第3世代セフェム，モノバクタム，ニューキノロン，アミノグリコシド
+                                    インドール陰性
+                                    ABPC（アンピシリン）
+                                    緑膿菌
+                                    第3世代セフェム（セフタジジム），第4世代セフェム（セフェピム），ニューキノロン，モノバクタム，カルバペネム，アミノグリコシド
+                                    カンピロバクター
+                                    エリスロマイシン（EM），アジスロマイシン，ニューキノロン
+                                    百日咳
+                                    EM，アジスロマイシン，テトラサイクリン
+                                    レジオネラ
+                                    ニューキノロン，EM＋リファンピシン（RFP），アジスロマイシン
+                                    腸チフス菌（Salmonella typhi）
+                                    ニューキノロン，セフトリアキソン，アジスロマイシン
+                                    ペスト
+                                    ニューキノロン，ストレプトマイシン（SM），テトラサイクリン（TC）
+                                    バクテロイデス（嫌気性菌）
+                                    メトロニダゾール，クリンダマイシン（CLDM），セフメタゾール，アンピシリン・スルバクタム，ピペラシリン・タゾバクタム，カルバペネム
+                                    〔真菌〕
+                                    アスペルギルス症
+                                    アムホテリシンB（AMPH-B），リポソーマルアムホテリシンB，ボリコナゾール，イトラコナゾール
+                                    カンジダ症
+                                    AMPH-B＊，フルコナゾール，ミカファンギン，ボリコナゾール
+                                    クリプトコックス症
+                                    AMPH-B＊＋フルシトシン（5-FC），フルコナゾール
+                                    〔その他〕
+                                    放線菌症
+                                    PCG
+                                    ノカルジア症
+                                    ST合剤，カルバペネム
+                                    Weil病（レプトスピラ症）
+                                    （スピロヘータの一種）
+                                    TC，PCG，セフトリアキソン
+                                    ライム病（スピロヘータ）
+                                    TC，PCG，セフトリアキソン
+                                    ツツガムシ病（リケッチア）
+                                    TC，クロラムフェニコール
+                                    オウム病（クラミジア）
+                                    TC or EM
+                                    マイコプラズマ
+                                    EM，TC，ニューキノロン，アジスロマイシン
+                                    ニューモシスチス肺炎（真菌）
+                                    ST（スルファメトキサゾールとトリメトプリム）合剤，ペンタミジン
+                                    アメーバ赤痢（原虫）
+                                    メトロニダゾール
+                                    マラリア（原虫）
+                                    キニーネ，メフロキン，クロロキン（三日熱マラリア），アーテスネート
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group ABx " id="q33">
+            <div class="card-group ABx pri 110" id="q33">
                 <div class="card">
-                    <div class="card-header pri 110">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E42" target="_blank" id="">110E42</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-07_20:13:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_20:13:27"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:41:07"> </span>
                         <br>
                         <p>41歳の女性．<br>
                             尿路感染症の治療のため入院中である．<br>
-                            5日前に38.3℃の発熱で外来を受診した．左の肋骨脊柱角に叩打痛があり，尿検査で白血球が増加しGram陰性桿菌を認めた．即日入院となり，セフェム系抗菌薬の静脈内投与を開始した．<br>
+                            5日前に38.3℃の発熱で外来を受診した．<br>
+                            左の肋骨脊柱角に叩打痛があり，尿検査で白血球が増加しGram陰性桿菌を認めた．即日入院となり，セフェム系抗菌薬の静脈内投与を開始した．<br>
                             入院3日目に一旦解熱したが，入院4日目から再び38.5℃の発熱が出現した．このときは肋骨脊柱角に叩打痛を認めなかった．尿沈渣に白血球を認めず，血液検査にも異常を認めなかった．<br>
                             入院5日目に38.2℃，入院6日目の本日も38.6℃の発熱を認めている．<u>体温は一旦37℃前後に下がるが抗菌薬投与後に38℃以上に上昇することを繰り返している</u>．比較的元気な様子で食欲も良好である．<br>
-                            意識は清明．体温38.5℃．脈拍72/分，整．血圧122/76mmHg．呼吸数16/分．SpO2 98％（room air）．皮疹を認めない．眼瞼結膜と眼球結膜とに異常を認めない．咽頭に発赤や滲出液を認めない．項部硬直を認めない．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，圧痛を認めない．左右の肋骨脊柱角に叩打痛を認めない．<br>
-                            血液所見：赤血球460万，Hb 13.8g/dL，Ht 39％，白血球8,600（桿状核好中球21％，分葉核好中球45％，好酸球12％，好塩基球1％，単球5％，リンパ球16％），血小板20万．血液培養は陰性．<br>
+                            意識は清明．体温38.5℃．脈拍72/分，整．血圧122/76mmHg．呼吸数16/分．SpO2 98％（room air）．<br>
+                            皮疹を認めない．眼瞼結膜と眼球結膜とに異常を認めない．咽頭に発赤や滲出液を認めない．項部硬直を認めない．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，圧痛を認めない．左右の肋骨脊柱角に叩打痛を認めない．<br>
+                            血液所見：<br>
+                            赤血球460万，Hb 13.8g/dL，Ht 39％，白血球8,600（桿状核好中球21％，分葉核好中球45％，好酸球12％，好塩基球1％，単球5％，リンパ球16％），血小板20万．血液培養は陰性．<br>
                             胸部X線写真で異常を認めない．<br>
                             腹部超音波検査で肝膿瘍などの異常を認めない．<br>
                             現時点の対応として最も適切なのはどれか．</p>
@@ -2681,14 +3320,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group sepsis" id="q34">
+            <div class="card-group sepsis pri" id="q34">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G38" target="_blank" id="2018-01-31_14:45:34">106G38</a> 敗血症 &rArr; 多臓器機能障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_20:15:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_20:15:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:32:08"> </span>
                         <br>
                         <p>敗血症による多臓器機能障害の発生に関与するのはどれか．2つ選べ．</p>
 
@@ -2709,9 +3349,9 @@
 
                         <ol type="a">
                             <li>TNF 炎症性cytokine</li>
-                            <li>G(-) bac</li>
+                            <li>GNB</li>
                             <li>Free Hb と結合</li>
-                            <li>Cryogloblin 37&deg;Cで凝固</li>
+                            <li>Cryogloblin: 37&deg;Cで凝固</li>
                             <li></li>
                         </ol>
 
@@ -2720,13 +3360,14 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group exotxin GAS s_aureus" id="q35">
+            <div class="card-group exotxin SSSS TSS GAS s_aureus 110 pri info" id="q35">
                 <div class="card">
-                    <div class="card-header 110 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E35" target="_blank" id="">110E35</a> 外毒素
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-07_20:23:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_20:23:00"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-16_20:33:36"> </span>
                         <br>
                         <p>外毒素がショックの原因となるのはどれか．2つ選べ．</p>
 
@@ -2735,8 +3376,8 @@
                             <li class="ans_f">腸球菌</li>
                             <li class="ans_f">緑色連鎖球菌</li>
                             <li class="ans_f">表皮ブドウ球菌</li>
-                            <li class="ans_f">黄色ブドウ球菌</li>
-                            <li class="ans_f">A群β溶血性連鎖球菌</li>
+                            <li class="ans_t">黄色ブドウ球菌</li>
+                            <li class="ans_t">A群β溶血性連鎖球菌</li>
                         </ol>
                     </div>
                 </div>
@@ -2764,27 +3405,37 @@
 
                         <h6>細菌 毒素</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">外毒素（exotoxin）<ul>
-                                <li>概念<br>
-                                    細菌（グラム陽性菌，グラム陰性菌）の菌体内で合成されて，菌体外へ放出される毒素．</li>
-                                <li>性質<br>
-                                    毒性が強い．60 ℃を超えるとしばしば破壊される．通常，発熱はきたさない．<br>
-                                    ※黄色ブドウ球菌の外毒素：エンテロトキシンは100 ℃の加熱でも破壊されない．</li>
-                                <li>種類<br>
-                                    ブドウ球菌毒素，ストレプトリジンO，ボツリヌス毒素，ジフテリア毒素，破傷風毒素，コレラ毒素，志賀毒素（ベロ毒素）など</li>
-                                </ul></li>
-                            <li class="list-group-item">内毒素（endotoxin）<ul>
-                                <li>概念<br>
-                                    グラム陰性菌の細胞壁構成成分のLPS（lipopolysaccharide；リポ多糖）のこと．主にLipidAの部分が関与する．</li>
-                                <li>性質<br>
-                                    耐熱性（60 ℃以上にも）<ul>
-                                    <li>エンドトキシンショックを引き起こす．</li>
-                                    <li>インターロイキン2 などの放出により発熱などをきたす．</li>
-                                </ul></li>
-                                <li>種類<br>
-                                    LPSの表面のO抗原により分類．</li>
-                                </ul></li>
+                            <li class="list-group-item">
+                                外毒素（exotoxin）
+                                <ul>
+                                    <li>概念<br>
+                                        細菌（グラム陽性菌，グラム陰性菌）の菌体内で合成されて，菌体外へ放出される毒素．</li>
+                                    <li>性質<br>
+                                        毒性が強い．60 ℃を超えるとしばしば破壊される．通常，発熱はきたさない．<br>
+                                        ※黄色ブドウ球菌の外毒素：エンテロトキシンは100 ℃の加熱でも破壊されない．</li>
+                                    <li>種類<br>
+                                        ブドウ球菌毒素，ストレプトリジンO，ボツリヌス毒素，ジフテリア毒素，破傷風毒素，コレラ毒素，志賀毒素（ベロ毒素）など</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                内毒素（endotoxin）
+                                <ul>
+                                    <li>概念<br>
+                                        グラム陰性菌の細胞壁構成成分のLPS（lipopolysaccharide；リポ多糖）のこと．主にLipidAの部分が関与する．</li>
+                                    <li>性質<br>
+                                        耐熱性（60 ℃以上にも）<ul>
+                                        <li>エンドトキシンショックを引き起こす．</li>
+                                        <li>インターロイキン2 などの放出により発熱などをきたす．</li>
+                                    </ul></li>
+                                    <li>種類<br>
+                                        LPSの表面のO抗原により分類．</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -2869,14 +3520,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group HAI " id="q37">
+            <div class="card-group HAI pri req info" id="q37">
                 <div class="card">
-                    <div class="card-header pri req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106C13" target="_blank" id="2018-01-31_15:09:10">106C13</a> カテーテル関連感染症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_20:37:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_20:37:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_21:42:21"> </span>
                         <br>
                         <p>院内感染のリスクとなりにくいのはどれか．</p>
 
@@ -3052,14 +3704,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group HBV HCV GBS " id="q40">
+            <div class="card-group  HBV HCV GBS info" id="q40">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104G28" target="_blank" id="2018-01-31_15:11:20">104G28</a> 感染症 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_21:01:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_21:01:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-16_20:36:45"> </span>
                         <br>
                         <p>組合せで誤っているのはどれか．</p>
 
@@ -3095,14 +3748,24 @@
                             <li>Immunodeficiency</li>
                             <li>Age > 65 y/o</li>
                         </ul> -->
+
+
                         <h6>肺炎球菌ワクチン IND</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①脾臓摘出患者（保険適用）</li>
-                            <li class="list-group-item">②慢性臓器不全患者</li>
-                            <li class="list-group-item">③鎌状赤血球症患者</li>
-                            <li class="list-group-item">④免疫不全患者</li>
-                            <li class="list-group-item">⑤65歳以上の高齢者</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>脾臓摘出患者（保険適用）</li>
+                                    <li>慢性臓器不全患者</li>
+                                    <li>鎌状赤血球症患者</li>
+                                    <li>免疫不全患者</li>
+                                    <li>65歳以上の高齢者</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -3161,6 +3824,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3229,6 +3893,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3250,27 +3917,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3292,11 +3966,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3313,62 +3989,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -3601,6 +4277,45 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#INTRO h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.INTRO)').toggle();
+    });
+    $('#INTRO').find('code').html($('div.INTRO').size());
+
+
+    $('#pharyngitis h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.pharyngitis)').toggle();
+    });
+    $('#pharyngitis').find('code').html($('div.pharyngitis').size());
+
+
+    $('#ABx h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ABx)').toggle();
+    });
+    $('#ABx').find('code').html($('div.ABx').size());
+
+
+    $('#sepsis h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.sepsis)').toggle();
+    });
+    $('#sepsis').find('code').html($('div.sepsis').size());
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

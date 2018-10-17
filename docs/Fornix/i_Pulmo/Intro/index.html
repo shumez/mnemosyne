@@ -4,12 +4,28 @@
 @Project: Fornix/i_Pulmo/Intro
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-08 21:32:51
+@Last modified time: 2018-10-17 09:54:23
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
@@ -79,11 +95,11 @@
 -->
 <html>
 <head>
-    <title>Pulmo</title>
+    <title>Intro - Pulmo</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-08 21:33:30" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.9">
+    <meta name="revised" content="2018-10-17 09:58:06" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.24">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -142,6 +158,18 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+        table.table-bordered > thead, 
+        table.table-bordered > thead > tr > th, 
+        table.table-bordered > tbody > tr > th, 
+        table.table-bordered > tbody > tr > td{
+            border: 1px solid black;
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -182,23 +210,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -208,8 +245,8 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title hidden-xs-down">i Pulmo / Intro <small>Pulmo</small></h1>
-        <h1 class="title hidden-sm-up">Pulmo</h1>
+        <h1 class="title hidden-xs-down">Intro <small>Pulmo</small></h1>
+        <!-- <h1 class="title hidden-sm-up">Pulmo</h1> -->
     </div>
 <!-- </nav> -->
 
@@ -248,86 +285,374 @@
     </div>
 
 
+    
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="ANA">Anatomy <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">            
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        肺動脈, 気管支が並走
+                    </li>
+                    <li class="list-group-item">
+                        主気管支の長さ: Rt < Lt
+                    </li>
+                    <li class="list-group-item">
+                        気管 Th4-5 で分岐
+                    </li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>横隔N: 肺門前方</li>
+                            <li>迷走N: 肺門後方</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        小葉中心部
+                        <ul>
+                            <li>肺動脈</li>
+                            <li>細気管支</li>
+                        </ul>
+                        <br>
+                        小葉間隔壁
+                        <ul>
+                            <li>肺静脈</li>
+                            <li>リンパ管</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/103G027_bas_i_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>区域気管支</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/90D037_sup_i_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <h6>肺区域</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/90D037_bas_i_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="HISTO">Histology <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        杯細胞
+                    </li>
+                    <li class="list-group-item">
+                        細気管支
+                        &rarr; 終末細気管支
+                        &rarr; 呼吸細気管支
+                    </li>
+                    <li class="list-group-item">
+                        軟骨(-): 細気管支 -
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106G029_bas_i_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>肺胞壁</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/101B030_bas_i_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="PHYSIO">Physiology <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        コンプライアンス: 膨らみやすさ
+                    </li>
+                    <!-- <li class="list-group-item"></li> -->
+                    <!-- <li class="list-group-item"></li> -->
+                </ul>
+            <!-- </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6"> -->
+                <h6>死腔</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        解剖学的死腔:<br>
+                        鼻腔 - 細気管支
+                    </li>
+                    <li class="list-group-item">
+                        肺胞死腔:<br>
+                        換気血流比不均等分布<br>
+                        &rArr; ガス交換障害
+                    </li>
+                    <li class="list-group-item">
+                        生理学的死腔<br>
+                        = 解剖学的死腔 + 肺胞死腔</li>
+                </ul>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        生理学的死腔<br>
+                        = 解剖学的死腔(150mL) + 肺胞死腔 (0mL)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>右方シフト</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">&darr;pH</li>
+                    <li class="list-group-item">&uarr;PaCO<sub>2</sub></li>
+                    <li class="list-group-item">&uarr;体温</li>
+                    <li class="list-group-item">&uarr;2,3-DPG</li>
+                </ul>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/103G010_bas_i_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>呼吸筋</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111D004_sup_010.jpg" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <h6>呼気:</h6>
+                        <ul>
+                            <li><u>内肋間筋</u> (最内肋間筋)</li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>Hypoxia</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>PaO<sub>2</sub></th>
+                            <th>PaCO<sub>2</sub></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>I型</th>
+                            <td>≤ 60</td>
+                            <td>≤ 45</td>
+                            <td>
+                                <ul>
+                                    <li>シャント</li>
+                                    <li>拡散障害</li>
+                                    <li>換気血流比不均等</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>II型</th>
+                            <td>≤ 60</td>
+                            <td>> 45</td>
+                            </ul></td>
+                            <td>
+                                <ul>
+                                    <li>肺胞低換気</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>Hugh-Jones 分類</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>I</th>
+                            <td>
+                                <ul>
+                                    <li>同年齢の健常者と同様の労作ができ</li>
+                                    <li>歩行，階段の昇降も健常者なみにできる</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>II</th>
+                            <td>
+                                <ul>
+                                    <li>同年齢の<u>健常者と同様に歩行できる</u>が,</li>
+                                    <li><u>坂，階段の昇降は健常者なみにできない</u>．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>III</th>
+                            <td>
+                                <ul>
+                                    <li>平地でさえ健常者なみには歩けないが，</li>
+                                    <li>自分のペースでなら1マイル（約1.6km）以上歩ける．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>IV</th>
+                            <td>
+                                <ul>
+                                    <li>休みながらでなければ，50ヤード（約45.7m）以上歩けない．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>V</th>
+                            <td>
+                                <ul>
+                                    <li>会話，着物の着脱にも息切れがする．</li>
+                                    <li>息切れのため外出できない．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="CALC">Calc <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div lang="latex">
+                            \begin{align*}
+                                \text{A-aDO2} = 150 - \frac{\text{PaCO}_2}{0.8} - \text{PaO}_2
+                            \end{align*}
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div lang="latex">
+                            \begin{align*}
+                                \text{CaO}_2
+                                = 1.34 \times \text{Hb} \times \text{SaO}_2 + 0.003 \times \text{PaO}_2
+                            \end{align*}
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div lang="latex">
+                            \begin{align*}
+                                \text{FEV}_{1.0\%} = \frac{\text{FEV}_{1.0}}{\text{FVC}}
+                            \end{align*}
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        残気率
+                        <!-- <div lang="latex">
+                            \begin{align*}
+                                \frac{}{}
+                            \end{align*}
+                        </div> -->
+                    </li>
+                    <!-- <li class="list-group-item"></li> -->
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
+            <div class="section" id="RR">
                 <div class="page-header">
-                    <h2 class="hidden-xs-down">Respiratory Rhythm</h2>
-                    <h2 class="hidden-sm-up"></h2>
+                    <h2>Respiratory Rhythm</h2>
                 </div>
-                <div class="body">
-                    <!-- <h3 class="">section</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul> -->
 
-                    <!-- <h3></h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div> -->
-
-                    <h3></h3>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th><b>起座 Orthotic</b></th>
-                                <!-- <td></td> -->
-                                <td><ul>
-                                    <li><b>左心不全</b></li>
-                                    <li><b>肺水腫</b></li>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><b>起座 Orthotic</b></th>
+                            <!-- <td></td> -->
+                            <td>
+                                <ul>
+                                    <li><u>左心不全</u></li>
+                                    <li><u>肺水腫</u></li>
                                     <li>喘息</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th>Kussmaul</th>
-                                <!-- <td></td> -->
-                                <td><ul>
-                                    <li><b>DM Ketoacidosis</b></li>
-                                    <li><b>尿毒症</b></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Kussmaul</th>
+                            <!-- <td></td> -->
+                            <td>
+                                <ul>
+                                    <li><u>DM Ketoacidosis</u></li>
+                                    <li><u>尿毒症</u></li>
                                     <!-- <li></li> -->
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th><b>Cheyne-Stokes</b></th>
-                                <!-- <td></td> -->
-                                <td><ul>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><u>Cheyne-Stokes</u></th>
+                            <!-- <td></td> -->
+                            <td>
+                                <ul>
                                     <li>大脳の障害</li>
-                                    <li><b>重症心不全</b></li>
-                                    <li><b>高齢者</b></li>
+                                    <li><u>重症心不全</u></li>
+                                    <li><u>高齢者</u></li>
                                     <li>Pickwich synd</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th>Biot</th>
-                                <!-- <td></td> -->
-                                <td><ul>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Biot</th>
+                            <!-- <td></td> -->
+                            <td>
+                                <ul>
                                     <li>延髄の障害</li>
                                     <li>髄膜炎の末期</li>
                                     <!-- <li></li> -->
-                                </ul></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    
-                </div>
+
+
             </div>
         </div>
 
@@ -335,111 +660,140 @@
     </div>
 
     <div class="section" id="PFT">
-        <div class="page-header">
-            <h2>PFT <small class="hidden-xs-down">Pulmonary Function Test</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>PFT <small class="hidden-xs-down">Pulmonary Function Test</small> <small><code></code></small></h2>
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>肺気量分画</h6>
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>
+                                IRV<br>
+                                予備吸気量
+                            </td>
+                            <td rowspan="3">
+                                VC<br>
+                                肺活量<br>
+                                3 L
+                            </td>
+                            <td rowspan="2">
+                                IC<br>
+                                最大吸気量
+                            </td>
+                            <td rowspan="4">
+                                TLC<br>
+                                全肺気量
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                V<sub>T</sub><br>
+                                1回換気量<br>
+                                500 mL
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                ERV<br>
+                                予備呼気量
+                            </td>
+                            <td rowspan="2">
+                                FRC<br>
+                                機能的残気量
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                RV<br>
+                                残気量
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>肺気量分画</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111G038_sup_020.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>Flow-volume</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/107H004_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
         </div>
     </div>
 
+
+    
     <div class="section" id="auscultation">
-        <div class="page-header">
-            <h2>Auscultation <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Auscultation <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <!-- 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/103H002_bas_i_010.jpg" class="card-img-top img-fluid">
                 </div>
+        
             </div>
-
         </div>
     </div>
-    -->
+
+
+
+
+
+
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
 
 
     <div class="section" id="app">
@@ -465,7 +819,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} # (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 53</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -602,15 +956,24 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group ANA PHYSIO pri info" id="q01">
+            <div class="card-group ANA PHYSIO INTRO HISTO pri info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G29" target="_blank">106G29</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-08_21:44:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-08_21:44:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:01:14"> </span>
                         <br>
                         <p>肺の構造・機能について正しいのはどれか．</p>
 
@@ -638,22 +1001,27 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/106G029_bas_i_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/106G029_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/106G029_bas_i_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group ANA PHYSIO " id="q02">
+            <div class="card-group ANA PHYSIO INTRO" id="q02">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/104E24" target="_blank">104E24</a> 気道の解剖 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-08_21:55:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-08_21:55:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_11:32:04"> </span>
                         <br>
                         <p>気道の解剖について正しいのはどれか．</p>
 
@@ -688,14 +1056,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group ANA PHYSIO HISTO" id="q03">
+            <div class="card-group ANA PHYSIO HISTO INTRO" id="q03">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/98G31" target="_blank">98G31</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_13:02:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_13:02:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:04:44"> </span>
                         <br>
                         <p>正しいのはどれか．</p>
 
@@ -722,19 +1091,22 @@
                             <li>Kohn孔: 肺胞間の交通路</li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group info ANA PHYSIO HISTO" id="q04">
+            <div class="card-group info ANA PHYSIO HISTO INTRO" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103G27" target="_blank">103G27</a> 肺小葉
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_13:25:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_13:25:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:06:43"> </span>
                         <br>
                         <p>肺の微細構造について正しいのはどれか．2つ選べ．</p>
 
@@ -761,9 +1133,12 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/103G027_bas_i_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103G027_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/103G027_bas_i_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -819,9 +1194,12 @@
 
                         <h6>肺胞壁</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/101B030_bas_i_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/101B030_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/101B030_bas_i_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -905,14 +1283,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group PHYSIO " id="q08">
+            <div class="card-group PHYSIO INTRO info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/92A25" target="_blank">92A25</a> 解剖学的死腔
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_13:55:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_13:55:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:08:35"> </span>
                         <br>
                         <p>肺の解剖学的死腔について正しいのはどれか．3つ選べ．</p>
 
@@ -933,26 +1312,39 @@
                         <p class="q_answer_true">a d e</p>
 
                         <ol type="a">
-                            <li></li>
+                            <li>&uarr;肺気量 &rArr; 肺が大きい &rArr; 鼻腔-細気管支の気道の容積&uarr;</li>
                             <li></li>
                             <li></li>
                             <li>立位 気道が伸びる &rArr; 死腔&uarr;</li>
                             <li>解剖学的死腔: 150mL</li>
                         </ol>
 
+                        <h6>死腔</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">解剖学的死腔:<br>
-                                鼻腔 - 細気管支</li>
-                            <li class="list-group-item">肺胞死腔:<br>
-                                換気血流比不均等分布 &rArr; ガス交換障害</li>
-                            <li class="list-group-item">生理学的死腔<br>
+                            <li class="list-group-item">
+                                解剖学的死腔:<br>
+                                鼻腔 - 細気管支
+                            </li>
+                            <li class="list-group-item">
+                                肺胞死腔:<br>
+                                換気血流比不均等分布<br>
+                                &rArr; ガス交換障害
+                            </li>
+                            <li class="list-group-item">
+                                生理学的死腔<br>
                                 = 解剖学的死腔 + 肺胞死腔</li>
                         </ul>
 
                         <ul class="list-group">
-                            <li class="list-group-item"><code>生理学的死腔<br>
-                                = 解剖学的死腔(150mL) + 肺胞死腔 (0mL)</code></li>
+                            <li class="list-group-item">
+                                <code>生理学的死腔<br>
+                                = 解剖学的死腔(150mL) + 肺胞死腔 (0mL)</code>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -1000,33 +1392,38 @@
                         </ul>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/103G010_bas_i_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103G010_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/103G010_bas_i_010.jpg" class="card-img-top img-fluid"> -->
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group pri calc" id="q10">
+            <div class="card-group pri CALC INTRO" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G69" target="_blank">106G69</a> CaO<sub>2</sub>
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_14:19:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_14:19:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:32:15"> </span>
                         <br>
                         <p>ある患者の動脈血ガス分析（自発呼吸，room air）の結果を示す．<br><br>
 
                             pH 7.40，PaCO2 50Torr，PaO2 45Torr，HCO3− 30mEq/L，SaO2 84％．<br>
-                            血液検査結果が赤血球310万，Hb 8.9g/dL，Ht 27％であるとき，動脈血100mL中の酸素含量を求めよ．<br>
+                            血液検査結果が赤血球310万，Hb 8.9g/dL，Ht 27％であるとき，<br>
+                            動脈血100mL中の酸素含量を求めよ．<br>
                             ただし，正常ヘモグロビン1gは1.34mLの酸素と結合し，血液中に溶存する酸素は無視できるものとする．なお，小数点以下第1位を四捨五入すること．<br>
                             解答：□□ mL<br>
                             （解答欄には単位を除いた数値を半角で入力）</p>
 
                         <form action="">
-                            <input type="number" name="">
+                            <input type="number" name="" >
                         </form>
                     </div>
                 </div>
@@ -1042,8 +1439,8 @@
 
                         <div lang="latex">
                             \begin{align*}
-                            \text{CaO}_2
-                            = 1.34 \times \text{Hb} \times \text{SaO}_2 + 0.003 \times \text{PaO}_2
+                                \text{CaO}_2
+                                = 1.34 \times \text{Hb} \times \text{SaO}_2 + 0.003 \times \text{PaO}_2
                             \end{align*}
                         </div>
                         
@@ -1105,19 +1502,23 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/111D004_sup_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group pri PHYSIO " id="q12">
+            <div class="card-group PHYSIO INTRO info pri" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105E5" target="_blank">105E5</a> 呼気筋
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_14:30:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_14:30:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_13:08:45"> </span>
                         <br>
                         <p>収縮が呼気に関与する筋はどれか．</p>
 
@@ -1146,9 +1547,11 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">外肋間筋:<br>
+                            <li class="list-group-item">
+                                外肋間筋:<br>
                                 吸気</li>
-                            <li class="list-group-item">内肋間筋:<br>
+                            <li class="list-group-item">
+                                内肋間筋:<br>
                                 呼気</li>
                         </ul>
                     </div>
@@ -1252,14 +1655,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group ANA PHYSIO pri" id="q15">
+            <div class="card-group ANA PHYSIO INTRO PTX pri" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107G33" target="_blank">107G33</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_14:44:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_14:44:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_13:10:28"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
 
@@ -1286,6 +1690,7 @@
                             <li>肋間A/V, Nは肋間下縁を走行</li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
@@ -1298,7 +1703,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_14:47:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_14:47:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_13:11:17"> </span>
                         <br>
                         <p>低酸素血症の原因とならないのはどれか．</p>
 
@@ -1339,38 +1745,47 @@
                                     <th>I型</th>
                                     <td>≤ 60</td>
                                     <td>≤ 45</td>
-                                    <td><ul>
-                                        <li>シャント</li>
-                                        <li>拡散障害</li>
-                                        <li>換気血流比不均等</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>シャント</li>
+                                            <li>拡散障害</li>
+                                            <li>換気血流比不均等</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>II型</th>
                                     <td>≤ 60</td>
                                     <td>> 45</td>
                                     </ul></td>
-                                    <td><ul>
-                                        <li>肺胞低換気</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>肺胞低換気</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group PHYSIO hypoxia AaDO2 info" id="q17">
+            <div class="card-group PHYSIO  hypoxia AaDO2 info" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H20" target="_blank">97H20</a> 呼吸不全
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_14:53:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_14:53:47"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_13:12:40"> </span>
                         <br>
-                        <p>動脈血ガス分析（自発呼吸，room air）がpH 7.31，PaO2 45Torr，PaCO2 76Torr，A-aDO2 10Torr（基準20以下）である．<br>
+                        <p>動脈血ガス分析（自発呼吸，room air）が<br>
+                            pH 7.31，PaO2 45Torr，PaCO2 76Torr，A-aDO2 10Torr（基準20以下）である．<br>
                             考えられるのはどれか．</p>
 
 
@@ -1401,22 +1816,26 @@
 
                         <h6>A-aDO<sub>2</sub>開大</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/97H020_bas_i_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/97H020_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/97H020_bas_i_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group PHYSIO hypoxia" id="q18">
+            <div class="card-group PHYSIO hypoxia INTRO info" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102G21" target="_blank">102G21</a> 呼気二酸化炭素濃度
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_14:58:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_14:58:56"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_10:34:57"> </span>
                         <br>
                         <p>呼吸ガスモニター上，呼気二酸化炭素濃度が上昇するのはどれか．</p>
 
@@ -1445,22 +1864,28 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">呼気二酸化炭素濃度が上昇する要因<ul>
-                                <li>肺胞低換気<br>
-                                    動脈血二酸化炭素濃度が上昇するため</li>
-                                <li>体温上昇，悪性高熱症など<br>
-                                    二酸化炭素産生量増加のため</li>
-                            </ul></li>
-                            <li class="list-group-item">呼気二酸化炭素濃度が低下する要因<ul>
-                                <li>肺胞過換気<br>
-                                    動脈血二酸化炭素濃度が低下するため</li>
-                                <li>死腔換気量の増加<br>
-                                    ガス交換に関わっていない肺胞からの呼気が混合するため</li>
-                            </ul></li>
-                            <li class="list-group-item">呼気二酸化炭素濃度が測定できない要因<ul>
-                                <li>食道挿管</li>
-                                <li>呼吸回路の接続不良</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                呼気二酸化炭素濃度が上昇する要因
+                                <ul>
+                                    <li>肺胞低換気<br>
+                                        動脈血二酸化炭素濃度が上昇するため</li>
+                                    <li>体温上昇，悪性高熱症など<br>
+                                        二酸化炭素産生量増加のため</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                呼気二酸化炭素濃度が低下する要因
+                                <ul>
+                                    <li>肺胞過換気<br>
+                                        動脈血二酸化炭素濃度が低下するため</li>
+                                    <li>死腔換気量の増加<br>
+                                        ガス交換に関わっていない肺胞からの呼気が混合するため</li>
+                                </ul></li>
+                                <li class="list-group-item">呼気二酸化炭素濃度が測定できない要因<ul>
+                                    <li>食道挿管</li>
+                                    <li>呼吸回路の接続不良</li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1521,14 +1946,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group AaDO2 calc pri 111 " id="q20">
+            <div class="card-group AaDO2 CALC pri 111 info" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E69" target="_blank">111E69</a> A-aDO<sub>2</sub>
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_15:14:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_15:14:22"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_13:37:37"> </span>
                         <br>
                         <p>室内空気で呼吸している患者の動脈血ガス分析のデータを示す．<br><br>
 
@@ -1538,7 +1964,7 @@
                             解答：□□ Torr<br>
                             （解答欄には単位を除いた数値を半角で入力）</p>
                         <form>
-                            <input type="number" name="">
+                            <input type="number" name="" max="99" min="1" step="1">
                         </form>
                     </div>
                 </div>
@@ -1553,6 +1979,13 @@
                         <form>
                             <input type="number" name="" value="39">
                         </form>
+
+                        <div lang="latex">
+                            \begin{align*}
+                                \text{A-aDO2} = 150 - \frac{\text{PaCO}_2}{0.8} - \text{PaO}_2
+                            \end{align*}
+                        </div>
+
                         <!-- <ol type="a">
                             <li></li>
                             <li></li>
@@ -1576,14 +2009,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group PFT calc " id="q21">
+            <div class="card-group PFT CALC " id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B62" target="_blank">103B62</a> 全肺気量
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_15:28:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_15:28:24"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_10:41:06"> </span>
                         <br>
                         <p>呼吸機能検査の結果を示す．<br>
                             肺活量2.85L，機能的残気量1.80L，吸気予備量2.13L，呼気予備量0.35L<br>
@@ -1629,19 +2063,56 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
+                        <h6>肺気量分画</h6>
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>IRV<br>
+                                        予備吸気量</td>
+                                    <td rowspan="2">IC<br>
+                                        最大吸気量</td>
+                                    <td rowspan="3">VC<br>
+                                        肺活量</td>
+                                    <td rowspan="4">TLC<br>
+                                        全肺気量</td>
+                                </tr>
+                                <tr>
+                                    <td>V<sub>T</sub><br>
+                                        1回換気量</td>
+                                </tr>
+                                <tr>
+                                    <td>ERV<br>
+                                        予備呼気量</td>
+                                    <td rowspan="2">FRC<br>
+                                        機能的残気量</td>
+                                </tr>
+                                <tr>
+                                    <td>RV<br>
+                                        残気量</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group FEV PFT calc info" id="q22">
+            <div class="card-group FEV PFT CALC info" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B62" target="_blank">104B62</a> 1秒率
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_15:47:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_15:47:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:48:09"> </span>
                         <br>
                         <p>肺機能検査の結果を示す．<br>
                             肺活量3,200mL，予測肺活量3,600mL，1回換気量576mL，努力肺活量3,000mL，1秒量1,920mL<br>
@@ -1701,13 +2172,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PFT calc pri 110" id="q23">
+            <div class="card-group PFT CALC pri 110" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D60" target="_blank" id="">110D60</a> 残気率
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-09_15:58:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_15:58:32"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:49:33"> </span>
                         <br>
                         <p>65歳の男性．<br>
                             労作時呼吸困難を主訴に来院し，慢性閉塞性肺疾患が疑われた．呼吸機能検査を行った結果，全肺気量〈TLC〉は7,400mL，肺活量〈VC〉は3,600mL，一秒量〈FEV1〉は1,600mLであった．<br>
@@ -1751,14 +2223,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group PFT calc " id="q24">
+            <div class="card-group PFT" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D98" target="_blank">99D98</a> スパイロメトリ 計測不能
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_16:09:35"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_16:09:35"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:50:31"> </span>
                         <br>
                         <p>スパイロメトリで計測できないのはどれか．</p>
 
@@ -1773,6 +2246,8 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_true">e</p>
 
                         <ol type="a">
@@ -1789,14 +2264,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group PFT geri 111 info pri" id="q25">
+            <div class="card-group PFT geri INTRO 111 info pri" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G38" target="_blank">111G38</a> 呼吸機能 加齢
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_16:14:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_16:14:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_10:52:35"> </span>
                         <br>
                         <p>加齢に伴い増加するのはどれか．2つ選べ．</p>
 
@@ -1830,15 +2306,21 @@
 
                         <h6>呼気窒素曲線</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/111G038_sup_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/111G038_sup_010.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <h6>肺気量分画</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/111G038_sup_020.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/111G038_sup_020.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/111G038_sup_010.jpg" class="img-fluid"> -->
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/111G038_sup_020.jpg" class="img-fluid"> -->
+
+
+
                     </div>
                 </div>
             </div>
@@ -1891,14 +2373,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group PHYSIO PFT AaDO2" id="q27">
+            <div class="card-group PHYSIO PFT AaDO2 INTRO" id="q27">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D42" target="_blank">99D42</a> 呼吸生理 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:03:07"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:03:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_10:57:43"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
 
@@ -1919,7 +2402,7 @@
 
                         <ol type="a">
                             <li></li>
-                            <li></li>
+                            <li>&uarr;死腔 &rArr; &uarr;機能的残気量 &rArr; &darr;換気効率</li>
                             <li></li>
                             <li>コンプライアンス: 膨らみやすさ</li>
                             <li>R&rarr;L shuntで開大</li>
@@ -1929,14 +2412,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group PHYSIO PFT " id="q28">
+            <div class="card-group PHYSIO PFT INTRO" id="q28">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/100G102" target="_blank">100G102</a> FEV<sub>1%</sub> VC
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:07:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:07:02"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_10:59:40"> </span>
                         <br>
                         <p>呼吸機能について正しいのはどれか．</p>
 
@@ -1969,14 +2453,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group PFT flowvolume COPD req info" id="q29">
+            <div class="card-group PFT flowvolume COPD INTRO req info" id="q29">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107H4">107H4</a> Flow volume
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:10:47"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:10:47"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_11:01:21"> </span>
                         <br>
                         <p>flow-volume曲線を次に示す．<br>
                             長年の喫煙習慣と関連する閉塞性障害を示すのはどれか．</p>
@@ -1985,6 +2470,15 @@
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/107/img/107H004.jpg" alt="no connection..." width="90%"> -->
                     <img src="https://qb.medilink-study.com/images/107H004.jpg" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <ol type="a">
+                            <li class="ans_t"></li>
+                            <li class="ans_f"></li>
+                            <li class="ans_f"></li>
+                            <li class="ans_f"></li>
+                            <li class="ans_f"></li>
+                        </ol>
+                    </div>
 
                 </div>
                 <div class="card answer">
@@ -2004,22 +2498,26 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/107H004_bas_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107H004_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/107H004_bas_010.jpg" class="card-img-top img-fluid"> -->
+
                         
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group GDU PTX COPD req" id="q30">
+            <div class="card-group GDU PTX COPD INTRO req" id="q30">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98E20" target="_blank" id="">98E20</a> 肺肝境界 消失
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:17:39"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:17:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_11:02:48"> </span>
                         <br>
                         <p>肺肝境界が消失するのはどれか．</p>
 
@@ -2038,7 +2536,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">d</p>
 
@@ -2114,12 +2612,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:26:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:26:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_11:04:09"> </span>
                         <br>
                         <p>62歳の男性．<br>
                             呼吸困難を主訴に来院した．<br>
-                            1ヵ月前に労作時呼吸困難が出現し増強してきたため受診した．喫煙は30本/日を40年間．<br>
-                            体温36.4℃．脈拍104/分，整．血圧132/86mmHg．呼吸数24/分．SpO2 94％（room air）．<u>呼吸時に胸郭の動きに左右差</u>を認める．心音に異常を認めず，<u>呼吸音は左肺で減弱</u>している．<u>左胸部の打診は濁音</u>を呈している．<br>
+                            1ヵ月前に労作時呼吸困難が出現し増強してきたため受診した．<br>
+                            喫煙は30本/日を40年間．<br>
+                            体温36.4℃．脈拍104/分，整．血圧132/86mmHg．呼吸数24/分．SpO2 94％（room air）．<br>
+                            <u>呼吸時に胸郭の動きに左右差</u>を認める．心音に異常を認めず，<u>呼吸音は左肺で減弱</u>している．<u>左胸部の打診は濁音</u>を呈している．<br>
                             考えられるのはどれか．</p>
 
                         <ol type="a">
@@ -2257,9 +2758,12 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/103H002_bas_i_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103H002_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/103H002_bas_i_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -2348,7 +2852,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:45:25"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:45:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_11:05:05"> </span>
                         <br>
                         <p>20～40歳健常者と比較した65歳以上健常者の呼吸数で正しいのはどれか．</p>
 
@@ -2386,14 +2891,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group PLC ANA info" id="q37">
+            <div class="card-group PLC ANA info INTRO" id="q37">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90D37" target="_blank">90D37</a> 肺区域
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_17:49:49"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_17:49:49"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_11:17:22"> </span>
                         <br>
                         <p>53歳の女性．<br>
                             胸部X線写真の異常陰影を指摘され精密検査のため来院した．来院時の胸部X線写真（A）と胸部X線単純CT（B）とを次に示す．<br>
@@ -2402,8 +2908,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/90D037A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/90D037B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/90D037A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/90D037B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/90D037A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/90D037B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2418,8 +2924,8 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <img src="https://qb.medilink-study.com/images/90D037_ima_i_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/90D037_ima_i_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/90D037_ima_i_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/90D037_ima_i_020.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_answer_true">c</p>
 
@@ -2433,15 +2939,20 @@
 
                         <h6>肺区域</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/90D037_bas_i_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/90D037_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <h6>区域気管支</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/90D037_sup_i_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/90D037_sup_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/90D037_bas_i_010.jpg" class="img-fluid"> -->
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/90D037_sup_i_010.jpg" class="img-fluid"> -->
+
+
+
                     </div>
                 </div>
             </div>
@@ -2517,7 +3028,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_18:09:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_18:09:58"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_13:45:14"> </span>
                         <br>
                         <p>成人男性の胸部CTを次に示す．<br>
                             各部位の解剖名で誤っているのはどれか．</p>
@@ -2554,27 +3066,32 @@
 
                         <h6>肺動脈 / 肺静脈</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/107G011_bas_i_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107G011_bas_i_010.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <h6>肺のリンパの流れ</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/107G011_sup_i_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107G011_sup_i_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/107G011_bas_i_010.jpg" class="card-img-top img-fluid"> -->
+                        
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/107G011_sup_i_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group ANA bronchoscope pri 111 " id="q40">
+            <div class="card-group ANA bronchoscope pri 111 info" id="q40">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A59" target="_blank" id="">111A59</a> 気管支内視鏡 Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-09_18:17:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_18:17:14"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_11:20:21"> </span>
                         <br>
                         <p>68歳の女性．<br>
                             喀血を主訴に来院した．<br>
@@ -2582,8 +3099,8 @@
                             図の①〜④について，正しいのはどれか．3つ選べ．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111A059A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111A059B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111A059A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111A059B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2600,8 +3117,8 @@
 
                         <p></p>
 
-                        <img src="https://qb.medilink-study.com/images/111A059_ima_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/111A059_ima_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/111A059_ima_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/111A059_ima_020.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">Lt Squamous LC</p>
 
@@ -2743,15 +3260,17 @@
             <div class="card-group bronchoscope pri" id="q43">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/105G47" target="_blank">105G47</a> 気管支鏡中の出血 対応
+                        <a href="https://qb.medilink-study.com/#/Answer/105G47" target="_blank">105G47</a> 気管支鏡中の出血
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_19:52:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_19:52:48"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_11:24:20"> </span>
                         <br>
                         <p>68歳の女性．<br>
                             肺がん検診の胸部X線写真で異常を指摘されて来院した．<br>
-                            胸部CTで<u>右上葉に直径3.2cmの腫瘤影</u>を認める．確定診断のため経気管支肺生検を行ったところ<u>生検部位から出血</u>し，1分ほど経過しても止血しない．<br>
+                            胸部CTで<u>右上葉に直径3.2cmの腫瘤影</u>を認める．<br>
+                            確定診断のため経気管支肺生検を行ったところ<u>生検部位から出血</u>し，1分ほど経過しても止血しない．<br>
                             意識は清明．脈拍88/分，整．血圧110/80mmHg．経皮的動脈血酸素飽和度〈SpO2〉95％．<br>
                             まず行うべきなのはどれか．</p>
                         
@@ -2828,7 +3347,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_20:00:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_20:00:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_13:46:30"> </span>
                         <br>
                         <p>チアノーゼを起こすのはどれか．</p>
 
@@ -2858,31 +3378,47 @@
 
                         <h6>チアノーゼ</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">中枢性<ul>
-                                <li>心疾患: <ul>
-                                    <li>R&rarr;L shunt</li>
-                                </ul></li>
-                                <li>呼吸器:<ul>
-                                    <li>換気血流比不均衡</li>
-                                    <li>拡散障害</li>
-                                    <li>低換気</li>
-                                </ul></li>
-                            </ul></li>
-                            <li class="list-group-item">末梢性<ul>
-                                <li>動脈血供給不足<ul>
-                                    <li>寒冷</li>
-                                    <li>心拍出量&darr;</li>
-                                    <li>Ranaud</li>
-                                    <li>ASO</li>
-                                    <li>TAO</li>
-                                </ul></li>
-                                <li>静脈還流の遅延<ul>
-                                    <li>心不全</li>
-                                    <li>血栓性静脈炎</li>
-                                    <li>静脈瘤</li>
-                                </ul></li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                中枢性
+                                <ul>
+                                    <li>心疾患: 
+                                        <ul>
+                                            <li>R&rarr;L shunt</li>
+                                        </ul>
+                                    </li>
+                                    <li>呼吸器:
+                                        <ul>
+                                            <li>換気血流比不均衡</li>
+                                            <li>拡散障害</li>
+                                            <li>低換気</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                末梢性
+                                <ul>
+                                    <li>動脈血供給不足
+                                        <ul>
+                                            <li>寒冷</li>
+                                            <li>心拍出量&darr;</li>
+                                            <li>Ranaud</li>
+                                            <li>ASO</li>
+                                            <li>TAO</li>
+                                        </ul>
+                                    </li>
+                                    <li>静脈還流の遅延
+                                        <ul>
+                                            <li>心不全</li>
+                                            <li>血栓性静脈炎</li>
+                                            <li>静脈瘤</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -2934,13 +3470,14 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111G15" target="_blank" id="">111G15</a> Dx
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-09_20:09:08"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_20:09:08"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_11:25:57"> </span>
                         <br>
                         <p>手の写真を次に示す．<br>
                             この症候を呈するのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111G015.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/111G015.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2957,7 +3494,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">a</p>
 
@@ -3006,6 +3543,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3018,7 +3558,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_20:11:47"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_20:11:47"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_11:26:59"> </span>
                         <br>
                         <p>70歳の男性．<br>
                             労作時の息切れを主訴に来院した．<br>
@@ -3075,6 +3616,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3126,14 +3670,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group hypoxia " id="q50">
+            <div class="card-group hypoxia info" id="q50">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B32" target="_blank">103B32</a> パルスオキシメーター
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_20:27:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_20:27:11"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_13:48:21"> </span>
                         <br>
                         <p>経皮的動脈血酸素飽和度〈SpO2〉と動脈血酸素飽和度〈SaO2〉とが乖離を示した．<br>
                             原因として考えにくいのはどれか．</p>
@@ -3163,36 +3708,58 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">SpO2が低値となる病態：<ul>
-                                <li>①静脈が拍動する病態（動脈血の吸光として誤測定する）<ul>
-                                    <li>右心不全</li>
-                                    <li>三尖弁閉鎖不全</li>
-                                    <li>中心静脈圧高値</li>
-                                </ul></li>
-                                <li>②末梢動脈拍動の狭小化<ul>
-                                    <li>循環血液量減少</li>
-                                    <li>ショック</li>
-                                    <li>寒冷</li>
-                                    <li>末梢血管収縮・狭窄・閉塞</li>
-                                </ul></li>
-                                <li>③HbO2との区別がつかない病態<ul>
-                                    <li>メトヘモグロビン（MetHb）（HbO2よりも赤色光の吸光が多い）</li>
-                                </ul></li>
-                            </ul></li>
-                            <li class="list-group-item">SpO2が高値となる病態：<ul>
-                                <li>①HbO2との区別がつかない病態<ul>
-                                    <li>一酸化炭素ヘモグロビン（COHb）（HbO2よりも赤色光の吸光が少ない）</li>
-                                </ul></li>
-                            </ul></li>
-                            <li class="list-group-item">その他，測定に影響を与える因子：<ul>
-                                <li>①爪のマニキュア</li>
-                                <li>②高度の貧血・多血症，高ビリルビン血症</li>
-                                <li>③体動</li>
-                                <li>④血管内色素検査薬の使用<ul>
-                                    <li>（インドシアニングリーン（ICG），メチレンブルー，インジゴカルミン）</li>
-                                </ul></li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                SpO2が低値となる病態：
+                                <ul>
+                                    <li>①静脈が拍動する病態（動脈血の吸光として誤測定する）
+                                        <ul>
+                                            <li>右心不全</li>
+                                            <li>三尖弁閉鎖不全</li>
+                                            <li>中心静脈圧高値</li>
+                                        </ul>
+                                    </li>
+                                    <li>②末梢動脈拍動の狭小化
+                                        <ul>
+                                            <li>循環血液量減少</li>
+                                            <li>ショック</li>
+                                            <li>寒冷</li>
+                                            <li>末梢血管収縮・狭窄・閉塞</li>
+                                        </ul>
+                                    </li>
+                                    <li>③HbO2との区別がつかない病態
+                                        <ul>
+                                            <li>メトヘモグロビン（MetHb）（HbO2よりも赤色光の吸光が多い）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                SpO2が高値となる病態：
+                                <ul>
+                                    <li>①HbO2との区別がつかない病態
+                                        <ul>
+                                            <li>一酸化炭素ヘモグロビン（COHb）（HbO2よりも赤色光の吸光が少ない）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                その他，測定に影響を与える因子：
+                                <ul>
+                                    <li>①爪のマニキュア</li>
+                                    <li>②高度の貧血・多血症，高ビリルビン血症</li>
+                                    <li>③体動</li>
+                                    <li>④血管内色素検査薬の使用
+                                        <ul>
+                                            <li>（インドシアニングリーン（ICG），メチレンブルー，インジゴカルミン）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3205,14 +3772,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group geri info" id="q51">
+            <div class="card-group geri INTRO info" id="q51">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B20" target="_blank">103B20</a> 老化による変化
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_20:34:45"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_20:34:45"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_11:28:00"> </span>
                         <br>
                         <p>動脈血ガス分析で老化によって変化するのはどれか．</p>
 
@@ -3267,7 +3835,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group ABG" id="q52">
+            <div class="card-group ABG info" id="q52">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B31" target="_blank">101B31</a> ABG
@@ -3275,12 +3843,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-09_20:38:47"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-09_20:38:47"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_11:30:20"> </span>
                         <br>
                         <p>健常者安静時の値として異常なのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_t">動脈血pH</li>
+                            <li class="ans_t">動脈血pH － 7.40</li>
                             <li class="ans_t">動脈血酸素分圧 － 90Torr</li>
                             <li class="ans_f">中心静脈血酸素飽和度 － 40％</li>
                             <li class="ans_t">動脈血重炭酸イオン濃度 － 24mEq/L</li>
@@ -3303,21 +3872,24 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">混合静脈血 酸素分圧: 39-41 Torr (73-76%)</li>
+                            <li class="list-group-item">
+                                混合静脈血 酸素分圧:<br>
+                                39-41 Torr (73-76%)</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group PFT ABG" id="q53">
+            <div class="card-group PFT ABG INTRO" id="q53">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G33" target="_blank">98G33</a> 呼吸機能検査値
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-09_20:41:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-09_20:41:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_13:51:25"> </span>
                         <br>
                         <p>健常成人で正しい組合せはどれか．</p>
 
@@ -3402,6 +3974,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3470,6 +4043,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3491,27 +4067,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3533,11 +4116,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3554,54 +4139,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -3842,6 +4427,53 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+    $('#INTRO h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.INTRO)').toggle();
+    });
+    $('#INTRO').find('code').html($('div.INTRO').size());
+
+
+    $('#ANA').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ANA)').toggle();
+    });
+    $('#ANA').find('code').html($('div.ANA').size());
+
+
+    $('#PHYSIO').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PHYSIO)').toggle();
+    });
+    $('#PHYSIO').find('code').html($('div.PHYSIO').size());
+
+
+    $('#CALC').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CALC)').toggle();
+    });
+    $('#CALC').find('code').html($('div.CALC').size());
+
+
+    $('#PFT h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PFT)').toggle();
+    });
+    $('#PFT').find('code').html($('div.PFT').size());
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

@@ -4,12 +4,28 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-11 19:55:12
+@Last modified time: 2018-10-17 17:20:48
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
@@ -82,8 +98,8 @@
     <title>Interstinum</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-11 19:55:24" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.9">
+    <meta name="revised" content="2018-10-17 17:21:10" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.24">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -142,6 +158,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -182,23 +203,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -247,250 +277,182 @@
         </div>
     </div>
 
-    <div class="section" id="IPF">
-        <div class="page-header">
-            <h2>IPF <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6><ul>
-                                <li>&darr;%RV</li>
-                                <li><u>&uarr;LD</u></li>
-                            </ul>
-                        </li>
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="IPF">
+                <div class="page-header">
+                    <h2>IPF <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6><ul>
+                            <li>&darr;%RV</li>
+                            <li><u>&uarr;LD</u></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="pneumoconiosis">
-        <div class="page-header">
-            <h2>Pneumoconiosis <small class="hidden-xs-down">珪肺</small></h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="pneumoconiosis">
+                <div class="page-header">
+                    <h2>Pneumoconiosis <small>珪肺</small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+
+            </div>
         </div>
-    </div>
         
-    <div class="section" id="asbest">
-        <div class="page-header">
-            <h2>Asbest <small class="hidden-xs-down"></small></h2>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="asbest">
+                <div class="page-header">
+                    <h2>Asbest <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>間質性肺炎</td>
+                            <td>≥ 10y</td>
+                        </tr>
+                        <tr>
+                            <td>胸膜プラーク</td>
+                            <td>15-30y</td>
+                        </tr>
+                        <tr>
+                            <td>肺癌</td>
+                            <td>30-40y</td>
+                        </tr>
+                        <tr>
+                            <td>中皮腫</td>
+                            <td>≥ 40y</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="plaque">
+                <div class="page-header">
+                    <h2>Plaque <small class="hidden-xs-down">胸膜プラーク</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6><ul>
+                            <li>アスベスト</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6><ul>
+                            <li>治療必要なし</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111A010_ref_020.jpg" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <p>全周性に不整な胸膜の肥厚が認められる．</p>
+                    </div>
                 </div>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="plaque">
-        <div class="page-header">
-            <h2>Plaque <small class="hidden-xs-down">胸膜プラーク</small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6><ul>
-                                <li>アスベスト</li>
-                            </ul>
-                        </li>
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6><ul>
-                                <li>治療必要なし</li>
-                            </ul>
-                        </li>
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="RILD">
+                <div class="page-header">
+                    <h2>RILD <small class="hidden-xs-down">Radiation-Induced Lung Disease</small><small> 放射線肺炎</small> <small><code></code></small></h2>
                 </div>
+
+                
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="RILD">
-        <div class="page-header">
-            <h2>RILD <small class="hidden-xs-down">Radiation-Induced Lung Disease</small><small> 放射線肺炎</small></h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="DILD">
+                <div class="page-header">
+                    <h2>DILD <small class="hidden-xs-down">Drug-Induced Lung Disease</small> <small><code></code></small></h2>
                 </div>
+
+                
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="DILD">
-        <div class="page-header">
-            <h2>DILD <small class="hidden-xs-down">Drug-Induced Lung Disease</small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
 
 
 
-    <div class="section" id="">
-        <div class="page-header">
-            <!-- <h2>#dx <small class="hidden-xs-down">#diag</small></h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
    
@@ -521,7 +483,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 19 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 19</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -658,6 +620,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group PFT IPF IIP pri" id="q01">
                 <div class="card">
@@ -705,7 +675,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_20:06:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_20:06:33"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_17:47:53"> </span>
                         <br>
                         <p>68歳の男性．<br>
                         <u>労作時の呼吸困難</u>を主訴に来院した．<br>
@@ -714,17 +685,20 @@
                         既往歴と家族歴とに特記すべきことはない．<br>
                         意識は清明．身長172cm，体重73kg．脈拍72/分，整．血圧136/76mmHg．呼吸数18/分．<u>SpO2 95％</u>（room air）．<br>
                         聴診で両側の背下部に<u>fine crackles</u>を聴取する．<br>
-                        血液所見：赤血球461万，Hb 13.9g/dL，Ht 44％，白血球8,700（好中球58％，好酸球5％，単球6％，リンパ球31％），血小板26万．<br>
-                        血液生化学所見：総蛋白7.6g/dL，アルブミン4.1g/dL，尿素窒素14mg/dL，クレアチニン0.9mg/dL，AST 22IU/L，ALT 19IU/L，<u>LD 247IU/L</u>（基準130～235）．<br>
-                        免疫学所見：CRP 1.0mg/dL，<u>サーファクタントプロテインD〈SP-D〉240ng/mL</u>（基準0～109）．<br>
+                        血液所見：<br>
+                        赤血球461万，Hb 13.9g/dL，Ht 44％，白血球8,700（好中球58％，好酸球5％，単球6％，リンパ球31％），血小板26万．<br>
+                        血液生化学所見：<br>
+                        総蛋白7.6g/dL，アルブミン4.1g/dL，尿素窒素14mg/dL，クレアチニン0.9mg/dL，AST 22IU/L，ALT 19IU/L，<u>LD 247IU/L</u>（基準130～235）．<br>
+                        免疫学所見：<br>
+                        CRP 1.0mg/dL，<u>サーファクタントプロテインD〈SP-D〉240ng/mL</u>（基準0～109）．<br>
                         胸部X線写真（A）と胸部高分解能CT（B）とを次に示す．<br>
                         この患者で低下しているのはどれか．2つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/107/img/107D052A.jpg" width="45%"> -->
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/107/img/107D052B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/107D052A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/107D052B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/107D052A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/107D052B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -771,21 +745,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_20:10:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_20:10:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_17:50:37"> </span>
                         <br>
                         <p>66歳の男性．<br>
                             労作時呼吸困難を主訴に来院した．<br>
-                            約1年前から労作時の息切れを自覚するようになったが，徐々に増強するため受診した．会社の健康診断で3年前から胸部X線写真で両側の下肺野に淡い浸潤影を指摘されていた．喫煙は現在まで20本/日を46年間．粉塵曝露の生活歴はない．<br>
+                            約1年前から労作時の息切れを自覚するようになったが，徐々に増強するため受診した．会社の健康診断で3年前から胸部X線写真で両側の下肺野に淡い浸潤影を指摘されていた．<br>
+                            喫煙は現在まで20本/日を46年間．粉塵曝露の生活歴はない．<br>
                             意識は清明．身長170cm，体重65kg．体温36.3℃．脈拍64/分，整．血圧130/70mmHg．呼吸数20/分．SpO2 96％（room air）．<br>
                             心音に異常を認めない．両側の下背部でfine cracklesを聴取する．<br>
-                            血液所見：赤血球430万，Hb 14.9g/dL，Ht 42％，白血球7,300，血小板20万．<br>
-                            血液生化学所見：AST 28IU/L，ALT 18IU/L，LD 370IU/L（基準176〜353），CK 42IU/L（基準30〜140），尿素窒素12mg/dL，クレアチニン0.6mg/dL，<u>KL-6 780U/mL</u>（基準500未満）．CRP 0.2mg/dL．<br>
+                            血液所見：<br>
+                            赤血球430万，Hb 14.9g/dL，Ht 42％，白血球7,300，血小板20万．<br>
+                            血液生化学所見：<br>
+                            AST 28IU/L，ALT 18IU/L，LD 370IU/L（基準176〜353），CK 42IU/L（基準30〜140），尿素窒素12mg/dL，クレアチニン0.6mg/dL，<u>KL-6 780U/mL</u>（基準500未満）．CRP 0.2mg/dL．<br>
                             胸部X線写真（A）と胸部CT（B）とを次に示す．<br>
                             この患者の検査結果で予測されるのはどれか．2つ選べ．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/110I076A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/110I076B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/110I076A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/110I076B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -829,23 +807,29 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_20:17:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_20:17:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:51:38"> </span>
                         <br>
                         <p>78歳の男性．<br>
                         <u>労作時呼吸困難</u>を主訴に来院した．<br>
                         6年前から坂道や階段を昇る際に<u>息切れ</u>を自覚していた．<br>
                         1ヵ月前に<u>感冒様症状</u>があり，その後，呼吸困難が増強するため受診した．<br>
                         既往歴と家族歴とに特記すべきことはない．<br>
-                        <u>喫煙は60歳まで50本/日を35年間</u>．意識は清明．身長162cm，体重63kg．体温36.2℃．脈拍92/分，整．血圧132/66mmHg．<u>呼吸数28/分</u>．<u>SpO2 91％</u>（room air）．呼吸音は背部に<u>fine crackles</u>を聴取する．<u>ばち指</u>を認める．<br>
-                        血液所見：赤血球499万，Hb 16.2g/dL，Ht 47％，白血球8,900（桿状核好中球4％，分葉核好中球78％，好酸球1％，好塩基球0％，単球2％，リンパ球15％），血小板17万．<br>
-                        血液生化学所見：<u>LD 380IU/L</u>（基準176～353），尿素窒素22mg/dL，クレアチニン0.9mg/dL，<u>脳性ナトリウム利尿ペプチド〈BNP〉37pg/mL</u>（基準18.4以下），<u>KL-6 1,460U/mL</u>（基準500未満）．<u>CRP 1.2mg/dL</u>．胸部X線写真（A）と胸部CT（B）とを次に示す．<br>
+                        <u>喫煙は60歳まで50本/日を35年間</u>．<br>
+                        意識は清明．身長162cm，体重63kg．体温36.2℃．脈拍92/分，整．血圧132/66mmHg．<u>呼吸数28/分</u>．<u>SpO2 91％</u>（room air）．<br>
+                        呼吸音は背部に<u>fine crackles</u>を聴取する．<u>ばち指</u>を認める．<br>
+                        血液所見：<br>
+                        赤血球499万，Hb 16.2g/dL，Ht 47％，白血球8,900（桿状核好中球4％，分葉核好中球78％，好酸球1％，好塩基球0％，単球2％，リンパ球15％），血小板17万．<br>
+                        血液生化学所見：<br>
+                        <u>LD 380IU/L</u>（基準176～353），尿素窒素22mg/dL，クレアチニン0.9mg/dL，<u>脳性ナトリウム利尿ペプチド〈BNP〉37pg/mL</u>（基準18.4以下），<u>KL-6 1,460U/mL</u>（基準500未満）．<u>CRP 1.2mg/dL</u>．<br>
+                        胸部X線写真（A）と胸部CT（B）とを次に示す．<br>
                         検査結果として最も予想されるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/109A029A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/109A029B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/109A029A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/109A029B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/109A029A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/109A029B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -871,8 +855,8 @@
 
                         <!-- <img src="https://www.qb-online.com/img/109A029_ima_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/109A029_ima_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/109A029_ima_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/109A029_ima_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/109A029_ima_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/109A029_ima_020.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">IPF</p>
 
@@ -973,26 +957,28 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group asbest " id="q06">
+            <div class="card-group asbest info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99G15" target="_blank">99G15</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_20:27:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_20:27:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:22:23"> </span>
                         <br>
                         <p>56歳の男性．自動車整備工．<br>
                             咳嗽と労作時呼吸困難とを主訴に来院した．<br>
-                            症状は2年ほど前から出現し，徐々に増悪している．15本/日，30年間の喫煙歴がある．<br>
+                            症状は2年ほど前から出現し，徐々に増悪している．<br>
+                            15本/日，30年間の喫煙歴がある．<br>
                             胸部X線写真（A）と気管支肺胞洗浄液May-Giemsa染色標本（B）とを次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/99G015A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/99G015B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/99G015A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/99G015B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/99G015A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/99G015B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1031,25 +1017,29 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group asbest PLC pri info" id="q07">
+            <div class="card-group asbest PLC mesothelioma pri info" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105E56" target="_blank">105E56</a> 労作時呼吸困難
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_20:33:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_20:33:38"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_17:25:17"> </span>
                         <br>
                         <p>65歳の男性．<br>
-                        健康診断のために来院した．<br>
-                        半年前から<u>労作時に息苦しさ</u>を感じるようになったが，加齢によるものと思いそのままにしていた．<br>
-                        3年前の健康診断で胸部X線写真に経過観察が必要な陰影を指摘されたが，今回まで受診しなかった．<br>
-                        <u>喫煙は30本/日を40年間</u>．<br>
-                        20歳から55歳まで工場でボイラーの点検保守を行っていた．<br>
-                        家族歴に特記すべきことはない．<br>
-                        身長170cm，体重64kg．体温36.4℃．呼吸数16/分．脈拍64/分，整．血圧122/78mmHg．心音と呼吸音とに異常を認めない．<br>
-                        肺機能検査所見：％VC 78％，FEV1.0％ 75％．今回の胸部X線写真を次に示す．<br>
-                        この病態の原因に関連し，注意すべき疾患はどれか．2つ選べ.</p>
+                            健康診断のために来院した．</p>
+                        <p>半年前から<u>労作時に息苦しさ</u>を感じるようになったが，加齢によるものと思いそのままにしていた．<br>
+                            3年前の健康診断で胸部X線写真に経過観察が必要な陰影を指摘されたが，今回まで受診しなかった．</p>
+                        <p><u>喫煙は30本/日を40年間</u>．</p>
+                        <p>20歳から55歳まで工場でボイラーの点検保守を行っていた．</p>
+                        <p>家族歴に特記すべきことはない．</p>
+                        <p>身長170cm，体重64kg．体温36.4℃．呼吸数16/分．脈拍64/分，整．血圧122/78mmHg．<br>
+                            心音と呼吸音とに異常を認めない．</p>
+                        <p>肺機能検査所見：<br>
+                            ％VC 78％，FEV1.0％ 75％．</p>
+                        <p>今回の胸部X線写真を次に示す．<br>
+                            この病態の原因に関連し，注意すべき疾患はどれか．2つ選べ.</p>
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/105/img/105E056.jpg" class="img-fluid"> -->
@@ -1170,7 +1160,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_20:45:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_20:45:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:53:55"> </span>
                         <br>
                         <p>じん肺症について誤っているのはどれか．</p>
 
@@ -1209,7 +1200,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111A10" target="_blank" id="">111A10</a> 胸膜プラーク
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-11_20:51:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_20:51:42"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-17_17:27:15"> </span>
                         <br>
                         <p>胸膜プラークについて正しいのはどれか．</p>
 
@@ -1218,7 +1210,7 @@
                             <li class="ans_f">葉間胸膜に好発する．</li>
                             <li class="ans_f">胸膜中皮腫の発生母地である．</li>
                             <li class="ans_f">胸膜切除術が第一選択である．</li>
-                            <li class="ans_f">石綿曝露歴があったことを示す．</li>
+                            <li class="ans_t">石綿曝露歴があったことを示す．</li>
                             <li class="ans_f">飲酒が発症のリスクファクターとなる．</li>
                         </ol>
                     </div>
@@ -1246,6 +1238,8 @@
                                 <p>全周性に不整な胸膜の肥厚が認められる．</p>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -1258,7 +1252,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_20:56:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_20:56:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:54:32"> </span>
                         <br>
                         <p>石綿のばく露に起因する可能性が低いのはどれか．</p>
 
@@ -1274,6 +1269,8 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_false">c</p>
 
                         <ol type="a">
@@ -1285,12 +1282,30 @@
                         </ol>
 
                         <h6>アスベスト</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">間質性肺炎: ≥ 10y</li>
-                            <li class="list-group-item">胸膜プラーク: 15-30y</li>
-                            <li class="list-group-item">肺癌: 30-40y</li>
-                            <li class="list-group-item">中皮腫: ≥ 40y</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>間質性肺炎</td>
+                                    <td>≥ 10y</td>
+                                </tr>
+                                <tr>
+                                    <td>胸膜プラーク</td>
+                                    <td>15-30y</td>
+                                </tr>
+                                <tr>
+                                    <td>肺癌</td>
+                                    <td>30-40y</td>
+                                </tr>
+                                <tr>
+                                    <td>中皮腫</td>
+                                    <td>≥ 40y</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -1370,7 +1385,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_21:08:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_21:08:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:56:30"> </span>
                         <br>
                         <p>65歳の男性．<br>
                             咳と労作時の息切れとを主訴に来院した．<br>
@@ -1404,8 +1420,8 @@
 
                         <!-- <img src="https://www.qb-online.com/img/108E051_ima_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/108E051_ima_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/108E051_ima_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/108E051_ima_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/108E051_ima_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/108E051_ima_020.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">放射線肺炎</p>
 
@@ -1540,17 +1556,27 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_21:28:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_21:28:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:57:48"> </span>
                         <br>
                         <p>70歳の女性．<br>
                             呼吸困難を主訴に来院した．<br>
-                            3週前に感冒様症状が出現し，自宅近くの診療所で抗菌薬と漢方薬とを処方された．その後も症状は改善せず，乾性咳嗽と呼吸困難とが増悪したため，紹介されて受診した．紹介の時点で，診療所の医師から薬の内服を中止するよう指示されたという．<br>
+                            3週前に<u>感冒様症状</u>が出現し，自宅近くの診療所で<u>抗菌薬</u>と<u>漢方薬</u>とを処方された．<br>
+                            その後も症状は改善せず，乾性咳嗽と呼吸困難とが増悪したため，紹介されて受診した．<br>
+                            紹介の時点で，診療所の医師から薬の内服を中止するよう指示されたという．<br>
                             意識は清明．体温36.9℃．脈拍88/分，整．血圧122/86mmHg．呼吸数22/分．SpO2 92％（room air）．<br>
                             聴診で両側の胸部に<u>fine crackles</u>を聴取する．<br>
-                            喀痰検査：Gram染色で有意な菌を認めない．Ziehl-Neelsen染色でGaffky 0号．<br>
-                            血液所見：赤血球456万，Hb 12.5g/dL，Ht 42％，白血球13,140（桿状核好中球10％，分葉核好中球50％，好酸球26％，単球4％，リンパ球10％），血小板26万．血液生化学所見：総蛋白7.3g/dL，アルブミン3.5g/dL，総ビリルビン1.7mg/dL，AST 85IU/L，ALT 63IU/L，LD 619IU/L（基準176～353），ALP 385IU/L（基準115～359），γ-GTP 171IU/L（基準8～50）．<br>
-                            免疫学所見：CRP 5.2mg/dL．<u>KL-6 733U/mL</u>（基準500未満）．サイトメガロウイルス抗原血症〈C7-HRP〉（－），β-D-グルカン8pg/mL（基準10以下），アスペルギルス抗原陰性．クラミジア・ニューモニエ抗体価とマイコプラズマ抗体価との有意な上昇を認めない．<br>
-                            動脈血ガス分析（自発呼吸，room air）：pH 7.50，PaO2 65Torr，PaCO2 28Torr，HCO3− 21mEq/L．胸部X線写真で両肺野に浸潤影を認める．<br>
+                            喀痰検査：<br>
+                            Gram染色で有意な菌を認めない．Ziehl-Neelsen染色でGaffky 0号．<br>
+                            血液所見：<br>
+                            赤血球456万，Hb 12.5g/dL，Ht 42％，白血球13,140（桿状核好中球10％，分葉核好中球50％，好酸球26％，単球4％，リンパ球10％），血小板26万．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.3g/dL，アルブミン3.5g/dL，総ビリルビン1.7mg/dL，AST 85IU/L，ALT 63IU/L，LD 619IU/L（基準176～353），ALP 385IU/L（基準115～359），γ-GTP 171IU/L（基準8～50）．<br>
+                            免疫学所見：<br>
+                            CRP 5.2mg/dL．<u>KL-6 733U/mL</u>（基準500未満）．サイトメガロウイルス抗原血症〈C7-HRP〉（－），β-D-グルカン8pg/mL（基準10以下），アスペルギルス抗原陰性．クラミジア・ニューモニエ抗体価とマイコプラズマ抗体価との有意な上昇を認めない．<br>
+                            動脈血ガス分析（自発呼吸，room air）：<br>
+                            pH 7.50，PaO2 65Torr，PaCO2 28Torr，HCO3− 21mEq/L．<br>
+                            胸部X線写真で両肺野に浸潤影を認める．<br>
                             胸部単純CTを次に示す．<br>
                             治療薬として適切なのはどれか．</p>
                     </div>
@@ -1664,26 +1690,34 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_21:41:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_21:41:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_17:59:34"> </span>
                         <br>
                         <p>72歳の女性．<br>
                             <u>咳</u>と<u>労作時息切れ</u>とを主訴に来院した．<br>
                             1年前から<u>乾性咳嗽</u>と<u>労作時呼吸困難</u>とを自覚し，時に<u>朝方のこわばり</u>も自覚していた．<br>
                             1ヵ月前から増悪するため受診した．<br>
                             既往歴に特記すべきことはない．<br>
-                            意識は清明．身長162cm，体重62kg．体温36.8℃．脈拍76/分，整．血圧130/60mmHg．皮疹を認めない．心音に異常を認めない．両側の背下部に<u>fine crackles</u>を聴取する．両側手指の変形，腫脹および圧痛は認めない．<br>
-                            血液所見：赤血球269万，<u>Hb 8.7g/dL</u>，Ht 25％，白血球9,700（桿状核好中球5％，分葉核好中球74％，好酸球2％，単球4％，リンパ球13％），血小板22万．<br>
-                            血液生化学所見：総蛋白6.8g/dL，アルブミン2.8g/dL，AST 22IU/L，ALT 12IU/L，LD 253IU/L（基準176～353），尿素窒素18mg/dL，クレアチニン1.1mg/dL，尿酸5.9mg/dL，脳性ナトリウム利尿ペプチド〈BNP〉10pg/mL（基準18.4以下），<u>KL-6 996U/mL</u>（基準500未満）．<br>
-                            免疫血清学所見：<u>CRP 8.7mg/dL</u>，<u>リウマトイド因子〈RF〉315IU/mL</u>（基準20未満），<u>抗CCP抗体65U/mL</u>（基準4.5未満），<u>抗核抗体80倍</u>（基準20以下），<u>サーファクタントプロテインD〈SP-D〉178ng/mL</u>（基準0～109）．<br>
-                            動脈血ガス分析（room air）：pH 7.47，PaCO2 34Torr，<u>PaO2 63Torr</u>，HCO3- 24mEq/L．<br>
-                            呼吸機能検査所見：<u>％VC 63％</u>，FEV1％ 79％，％DLCO 35.6％．胸部X線写真（A）と肺野条件の胸部単純CT（B）とを次に示す．<br>
+                            意識は清明．身長162cm，体重62kg．体温36.8℃．脈拍76/分，整．血圧130/60mmHg．<br>
+                            皮疹を認めない．心音に異常を認めない．両側の背下部に<u>fine crackles</u>を聴取する．両側手指の変形，腫脹および圧痛は認めない．<br>
+                            血液所見：<br>
+                            赤血球269万，<u>Hb 8.7g/dL</u>，Ht 25％，白血球9,700（桿状核好中球5％，分葉核好中球74％，好酸球2％，単球4％，リンパ球13％），血小板22万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.8g/dL，アルブミン2.8g/dL，AST 22IU/L，ALT 12IU/L，LD 253IU/L（基準176～353），尿素窒素18mg/dL，クレアチニン1.1mg/dL，尿酸5.9mg/dL，脳性ナトリウム利尿ペプチド〈BNP〉10pg/mL（基準18.4以下），<u>KL-6 996U/mL</u>（基準500未満）．<br>
+                            免疫血清学所見：<br>
+                            <u>CRP 8.7mg/dL</u>，<u>リウマトイド因子〈RF〉315IU/mL</u>（基準20未満），<u>抗CCP抗体65U/mL</u>（基準4.5未満），<u>抗核抗体80倍</u>（基準20以下），<u>サーファクタントプロテインD〈SP-D〉178ng/mL</u>（基準0～109）．<br>
+                            動脈血ガス分析（room air）：<br>
+                            pH 7.47，PaCO2 34Torr，<u>PaO2 63Torr</u>，HCO3- 24mEq/L．<br>
+                            呼吸機能検査所見：<br>
+                            <u>％VC 63％</u>，FEV1％ 79％，％DLCO 35.6％．<br>
+                            胸部X線写真（A）と肺野条件の胸部単純CT（B）とを次に示す．<br>
                             治療薬として適切なのはどれか．2つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/108/img/108D058A.jpg" width="45%"> -->
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/108/img/108D058B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/108D058A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108D058B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108D058A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108D058B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1705,6 +1739,8 @@
                         <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/108/img/108D058_ima_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/108D058_ima_010.jpg" class="card-img-top img-fluid">
 
+                        <p class="q_dx">RA &rArr; IIP</p>
+
                         <p class="q_answer_true">c d</p>
 
                         <ol type="a">
@@ -1714,19 +1750,22 @@
                             <li>間質性肺炎</li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group pneumoconiosis IPF IIP info " id="q17">
+            <div class="card-group pneumoconiosis IPF IIP INTRO info " id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105B35" target="_blank">105B35</a> 拘束性障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_21:44:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_21:44:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_18:01:30"> </span>
                         <br>
                         <p>拘束性障害をきたす病態はどれか．2つ選べ．</p>
 
@@ -1819,14 +1858,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group IPF pneumoconiosis DILD collagen" id="q18">
+            <div class="card-group IPF pneumoconiosis DILD IIP collagen" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103I3" target="_blank">103I3</a> 特発性肺線維症 病理
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_21:49:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_21:49:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_18:02:06"> </span>
                         <br>
                         <p>特発性肺線維症〈IPF〉と類似した病理組織像を示す疾患はどれか．3つ選べ．</p>
 
@@ -1864,8 +1904,9 @@
                         <a href="https://qb.medilink-study.com/#/Answer/90B17" target="_blank">90B17</a> 慢性間質性肺炎
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis "> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_21:51:39"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_21:51:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-17_18:03:02"> </span>
                         <br>
                         <p>慢性間質性肺炎について正しいのはどれか．</p>
 
@@ -1950,6 +1991,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2018,6 +2060,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2039,27 +2084,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2081,11 +2133,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2102,54 +2156,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2390,6 +2444,67 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+    $('#IPF h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.IPF)').toggle();
+    });
+    $('#IPF').find('code').html($('div.IPF').size());
+
+
+    $('#pneumoconiosis h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.pneumoconiosis)').toggle();
+    });
+    $('#pneumoconiosis').find('code').html($('div.pneumoconiosis').size());
+
+
+    $('#asbest h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.asbest)').toggle();
+    });
+    $('#asbest').find('code').html($('div.asbest').size());
+
+
+    $('#mesothelioma h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.mesothelioma)').toggle();
+    });
+    $('#mesothelioma').find('code').html($('div.mesothelioma').size());
+
+
+    $('#plaque h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.plaque)').toggle();
+    });
+    $('#plaque').find('code').html($('div.plaque').size());
+
+
+    $('#RILD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.RILD)').toggle();
+    });
+    $('#RILD').find('code').html($('div.RILD').size());
+
+
+    $('#DILD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.DILD)').toggle();
+    });
+    $('#DILD').find('code').html($('div.DILD').size());
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

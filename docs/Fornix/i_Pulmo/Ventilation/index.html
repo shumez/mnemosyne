@@ -3,12 +3,29 @@
 @Date:   2018-08-15 15:55:49
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-15 15:55:55
+@Last modified time: 2018-10-18 14:33:13
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
@@ -81,8 +98,8 @@
     <title>Ventilation</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-15 15:56:05" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.9">
+    <meta name="revised" content="2018-10-18 14:33:36" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.25">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -141,6 +158,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -181,23 +203,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -281,113 +312,157 @@
         </div>
     </div>
 
-
-    <div class="section" id="SAS">
-        <div class="page-header">
-            <h2>SAS <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>PSG</h3>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SAS">
+                <div class="page-header">
+                    <h2>SAS <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
+
+
+                
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>日中 傾眠傾向</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li><u>睡眠中の血圧変動</u><br>
+                                &because; &darr;O<sub>2</sub> &uarr;CO<sub>2</sub> &rArr; &uarr;心負荷</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li><u>CPAP</u><br>
+                                &because; 上気道閉塞の防止</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3 id="OSAS">OSAS <small><code></code></small></h3>
+
             </div>
 
+        <!-- </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6"> -->
+            <div class="section" id="HrVent">
+                <div class="page-header">
+                    <h2>Hyperventilation <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PSG">
+                <div class="page-header">
+                    <h2>PSG <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111B009_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">筋電図 前脛骨筋</li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>ECG</li>
+                            <li>脈拍</li>
+                            <li>SpO<sub>2</sub></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        呼吸状態
+                        <ul>
+                            <li>口 / 鼻の気流</li>
+                            <li>胸部 / 腹部の運動</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        睡眠
+                        <ul>
+                            <li>EEG / EOG</li>
+                            <li>オトガイ筋筋電図</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
+    
+
+    
+    
+    <div class="row">
 
 
-    <div class="section" id="HrVent">
-        <div class="page-header">
-            <h2>Hyperventilation <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
             </div>
-
-        </div>
-    </div>
-    
-
-    
-    
-    <div class="section" id="">
-        <div class="page-header">
-            <!-- <h2>#dx <small class="hidden-xs-down">#diag</small></h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
    
@@ -418,7 +493,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 9 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 9</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -555,8 +630,16 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group SAS adenoid" id="q01">
+            <div class="card-group SAS OSAS adenoid" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101F22" target="_blank">101F22</a> いびき
@@ -589,7 +672,7 @@
                             <li>小児期, 夜間のいびきで気づかれる</li>
                             <li></li>
                             <li></li>
-                            <li>CSAS</li>
+                            <li>OSAS</li>
                         </ol>
                     </div>
                 </div>
@@ -641,7 +724,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_16:08:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_16:08:53"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-18_14:39:01"> </span>
                         <br>
                         <p>閉塞性睡眠時無呼吸症候群でみられるのはどれか．3つ選べ．</p>
 
@@ -673,17 +757,24 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group SAS 111 pri" id="q04">
+            <div class="card-group SAS OSAS 111 pri" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111D58" target="_blank" id="">111D58</a> 指導
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-15_16:15:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_16:15:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-18_14:40:39"> </span>
                         <br>
                         <p>52歳の女性．<br>
                             就寝中に呼吸が止まるのを夫に指摘されて来院した．<br>
-                            3ヵ月前から動悸と昼間の眠気とを感じている．4ヵ月前からうつ病で内服治療中である．喫煙は10本/日を30年間．飲酒はビール1,000mL/日を20年間．身長161cm，体重78kg．脈拍76/分，整．血圧156/104mmHg．心音と呼吸音とに異常を認めない．簡易モニター検査後のポリソムノグラフィで無呼吸低呼吸指数は26（基準5未満），無呼吸の最長持続時間は112秒（基準9未満），睡眠中のSpO2は最低値77％，平均値96％，いびきの回数は428/時間である．<br>
+                            3ヵ月前から動悸と<u>昼間の眠気</u>とを感じている．<br>
+                            4ヵ月前から<u>うつ病で内服治療中</u>である．<br>
+                            <u>喫煙は10本/日を30年間</u>．<u>飲酒はビール1,000mL/日を20年間</u>．<br>
+                            <u>身長161cm，体重78kg</u>．<br>
+                            脈拍76/分，整．血圧156/104mmHg．<br>
+                            心音と呼吸音とに異常を認めない．<br>
+                            簡易モニター検査後のポリソムノグラフィで無呼吸低呼吸指数は26（基準5未満），無呼吸の最長持続時間は112秒（基準9未満），睡眠中のSpO2は最低値77％，平均値96％，いびきの回数は428/時間である．<br>
                             この患者に対する働きかけとして適切なのはどれか．3つ選べ．</p>
 
 
@@ -717,19 +808,23 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group SAS  pri" id="q05">
+            <div class="card-group SAS OSAS CPAP pri info" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108A60" target="_blank">108A60</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_16:20:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_16:20:37"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-18_14:36:08"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             頑固な<u>不眠</u>と<u>日中の眠気</u>とを主訴に妻に伴われて来院した．<br>
-                            2年前から熟睡感がないと訴えるようになり，日中の疲労感が強く，よく居眠りをするようになった．職場では上司から仕事の能率低下を指摘されている．妻によると，2年前から夜間のいびきがひどく，<u>時々呼吸が止まったようになる</u>とのことであった．<br>
-                            意識は清明．抑うつ気分や不安を認めない．身長165cm，体重90kg．体温36.7℃．脈拍88/分，整．血圧140/88mmHg．呼吸数14/分．<u>SpO2 96％</u>（room air）．咽喉頭に異常を認めない．心音と呼吸音とに異常を認めない．ポリソムノグラフィにて無呼吸指数48（基準5未満）．<br>
+                            2年前から熟睡感がないと訴えるようになり，日中の疲労感が強く，<u>よく居眠り</u>をするようになった．職場では上司から仕事の能率低下を指摘されている．<br>
+                            妻によると，2年前から夜間のいびきがひどく，<u>時々呼吸が止まったようになる</u>とのことであった．<br>
+                            意識は清明．抑うつ気分や不安を認めない．<br>
+                            身長165cm，体重90kg．体温36.7℃．脈拍88/分，整．血圧140/88mmHg．呼吸数14/分．<u>SpO2 96％</u>（room air）．<br>
+                            咽喉頭に異常を認めない．心音と呼吸音とに異常を認めない．<u>ポリソムノグラフィにて無呼吸指数48</u>（基準5未満）．<br>
                             この患者に行うべき対応として適切なのはどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -764,18 +859,22 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group SAS Pickwick info" id="q06">
+            <div class="card-group SAS OSAS Pickwick info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99A18" target="_blank">99A18</a> SAS 所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_16:28:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_16:28:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-18_14:43:51"> </span>
                         <br>
                         <p>29歳の男性．<br>
                             日中の眠気を主訴に来院した．<br>
-                            1年前から睡眠中の激しいいびきと無呼吸とを家族に指摘されていた．最近，日中の眠気が強くなり，勤務に支障をきたしている．身長160cm，体重95kg．両側口蓋扁桃のⅡ度の腫大を認める．<br>
+                            1年前から睡眠中の激しいいびきと無呼吸とを家族に指摘されていた．<br>
+                            最近，日中の眠気が強くなり，勤務に支障をきたしている．<br>
+                            身長160cm，体重95kg．<br>
+                            両側口蓋扁桃のⅡ度の腫大を認める．<br>
                             予想されるのはどれか．2つ選べ．</p>
                         
 
@@ -819,67 +918,95 @@
                             <tbody>
                                 <tr>
                                     <th>正常呼吸</th>
-                                    <td><img src="https://qb.medilink-study.com/images/99A018_sup_i_010.jpg" class="card-img-top img-fluid" width="150px"></td>
-                                    <td><ul>
-                                        <li>規則正しいリズム</li>
-                                        <li>呼吸数：12〜20回/分（新生児では40〜50回/分）</li>
-                                    </ul></td>
+                                    <td>
+                                        <img src="https://qb.medilink-study.com/images/99A018_sup_i_010.jpg" class="card-img-top img-fluid" width="150px">
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>規則正しいリズム</li>
+                                            <li>呼吸数：12〜20回/分（新生児では40〜50回/分）</li>
+                                        </ul>
+                                    </td>
                                     <td>－</td>
                                 </tr>
                                 <tr>
                                     <th>起座呼吸</th>
-                                    <td><img src="https://qb.medilink-study.com/images/99A018_sup_i_020.jpg" class="card-img-top img-fluid" width="150px"></td>
-                                    <td><ul>
-                                        <li>臥位<br>
-                                            →静脈還流の増加<br>
-                                            →呼吸困難が増強</li>
-                                        <li>座位<br>
-                                            →静脈還流の減少<br>
-                                            →呼吸困難が緩和</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>①左心不全</li>
-                                        <li>②肺水腫</li>
-                                        <li>③喘息の大発作</li>
-                                    </ul></td>
+                                    <td>
+                                        <img src="https://qb.medilink-study.com/images/99A018_sup_i_020.jpg" class="card-img-top img-fluid" width="150px">
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>臥位<br>
+                                                →静脈還流の増加<br>
+                                                →呼吸困難が増強</li>
+                                            <li>座位<br>
+                                                →静脈還流の減少<br>
+                                                →呼吸困難が緩和</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>①左心不全</li>
+                                            <li>②肺水腫</li>
+                                            <li>③喘息の大発作</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Kussmaul呼吸</th>
-                                    <td><img src="https://qb.medilink-study.com/images/99A018_sup_i_030.jpg" class="card-img-top img-fluid" width="150px"></td>
-                                    <td><ul>
-                                        <li>代謝性アシドーシスの際などで，みられる代償性過換気<br>
-                                        （PaCO2↓させることで，アシドーシスの補正を行い，pH↓を戻そうとする．）</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>①糖尿病性アシドーシス</li>
-                                        <li>②尿毒症</li>
-                                        <li>③重症下痢（特に小児）</li>
-                                    </ul></td>
+                                    <td>
+                                        <img src="https://qb.medilink-study.com/images/99A018_sup_i_030.jpg" class="card-img-top img-fluid" width="150px">
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>代謝性アシドーシスの際などで，みられる代償性過換気<br>
+                                            （PaCO2↓させることで，アシドーシスの補正を行い，pH↓を戻そうとする．）</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>①糖尿病性アシドーシス</li>
+                                            <li>②尿毒症</li>
+                                            <li>③重症下痢（特に小児）</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Cheyne-Stokes呼吸</th>
-                                    <td><img src="https://qb.medilink-study.com/images/99A018_sup_i_040.jpg" class="card-img-top img-fluid" width="150px"></td>
-                                    <td><ul>
-                                        <li>数十秒間にわたる低換気（時に無換気）と，次第に深さと数を増し，やがて漸減する過換気が周期的（規則的）に出現する．</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>①呼吸中枢の障害（※）</li>
-                                        <li>②重症心不全</li>
-                                        <li>③高齢者（睡眠時）</li>
-                                        <li>④Pickwick症候群</li>
-                                    </ul></td>
+                                    <td>
+                                        <img src="https://qb.medilink-study.com/images/99A018_sup_i_040.jpg" class="card-img-top img-fluid" width="150px">
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>数十秒間にわたる低換気（時に無換気）と，次第に深さと数を増し，やがて漸減する過換気が周期的（規則的）に出現する．</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>①呼吸中枢の障害（※）</li>
+                                            <li>②重症心不全</li>
+                                            <li>③高齢者（睡眠時）</li>
+                                            <li>④Pickwick症候群</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Biot呼吸</th>
-                                    <td><img src="https://qb.medilink-study.com/images/99A018_sup_i_050.jpg" class="card-img-top img-fluid" width="150px"></td>
-                                    <td><ul>
-                                        <li>無呼吸と頻呼吸が不規則に繰り返される失調性呼吸<br>
-                                        （Cheyne-Stokes呼吸よりも周期が短く，不規則である．）</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>①呼吸中枢の障害（※）</li>
-                                        <li>②髄膜炎の末期</li>
-                                    </ul></td>
+                                    <td>
+                                        <img src="https://qb.medilink-study.com/images/99A018_sup_i_050.jpg" class="card-img-top img-fluid" width="150px">
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>無呼吸と頻呼吸が不規則に繰り返される失調性呼吸<br>
+                                            （Cheyne-Stokes呼吸よりも周期が短く，不規則である．）</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>①呼吸中枢の障害（※）</li>
+                                            <li>②髄膜炎の末期</li>
+                                        </ul>
+                                    </td>
                             </tbody>
                         </table>
 
@@ -973,10 +1100,11 @@
             <div class="card-group PSG 111 pri info" id="q07">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111B9" target="_blank" id="">111B9</a> ポリソムノグラフィ
+                        <a href="https://qb.medilink-study.com/#/Answer/111B9" target="_blank" id="">111B9</a> PSG
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-15_16:42:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_16:42:39"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-18_14:46:51"> </span>
                         <br>
                         <p>ポリソムノグラフィに含まれないのはどれか．</p>
 
@@ -995,7 +1123,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_false">b</p>
 
@@ -1016,14 +1144,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group " id="q08">
+            <div class="card-group hypoxia" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104A18" target="_blank">104A18</a> 急性呼吸不全 原因
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_16:46:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_16:46:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-18_14:47:50"> </span>
                         <br>
                         <p>急性呼吸不全の原因とならないのはどれか．</p>
 
@@ -1155,6 +1284,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1223,6 +1353,12 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1244,27 +1380,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -1286,11 +1429,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1307,54 +1452,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -1595,6 +1740,44 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#SAS h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SAS)').toggle();
+    });
+    $('#SAS').find('code').html($('div.SAS').size());
+
+
+    $('#OSAS').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.OSAS)').toggle();
+    });
+    $('#OSAS').find('code').html($('div.OSAS').size());
+
+
+    $('#HrVent h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HrVent)').toggle();
+    });
+    $('#HrVent').find('code').html($('div.HrVent').size());
+
+
+    $('#PSG h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PSG)').toggle();
+    });
+    $('#PSG').find('code').html($('div.PSG').size());
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

@@ -10,6 +10,8 @@
 
 <!DOCTYPE html>
 <!--
+04.01.26    18 10 19    print_date
+
 04.01.25    18 10 18    title + version
 04.01.24    18 10 13    style .list-group-item ul padding
 04.01.23    18 10 03    js .slideToggle()
@@ -99,8 +101,8 @@
     <title>Pleura</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-18 20:43:49" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.25">
+    <meta name="revised" content="2018-10-19 10:52:07" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.26">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -290,30 +292,37 @@
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>声音振盪</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        増強:
-                        <ul>
-                            <li>肺炎<br>
-                                (浸潤をおこした肺)</li>
-                            <li>肺結核<br>
-                                (肺内含気↓)</li>
-                            <li>小さな無気肺</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">
-                        減弱:
-                        <ul>
-                            <li>胸腔内の異物<br>
-                                (<u>胸水</u>，<u>気胸</u>)</li>
-                            <li>大気管支の閉塞</li>
-                            <li>圧縮された肺<br>
-                                (<u>大きな無気肺</u>)</li>
-                            <li>肺気腫<br>
-                                (肺腔内の気体・液体，肺内の含気↑)</li>
-                        </ul>
-                    </li>
-                </ul>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>&uarr;</td>
+                            <td>
+                                <ul>
+                                    <li>肺炎<br>
+                                        (浸潤をおこした肺)</li>
+                                    <li>肺結核<br>
+                                        (肺内含気↓)</li>
+                                    <li>小さな無気肺</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>&darr;</td>
+                            <td>
+                                <ul>
+                                    <li>胸腔内の異物<br>
+                                        (<u>胸水</u>，<u>気胸</u>)</li>
+                                    <li>大気管支の閉塞</li>
+                                    <li>圧縮された肺<br>
+                                        (<u>大きな無気肺</u>)</li>
+                                    <li>肺気腫<br>
+                                        (肺腔内の気体・液体，肺内の含気↑)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -3142,6 +3151,13 @@ $('document').ready(function(){
         $('body').addClass('night');
     }
 
+    var date = now.getDate();
+    var month = now.getMonth();
+    var year = now.getFullYear();
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append('<small class="print_date"></small>');
+    
+
     $('span.day').hide();
     $('span.day').click(function(){
         $('body').toggleClass('night');
@@ -3160,6 +3176,8 @@ $('document').ready(function(){
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
         $('#q ul.nav-pills').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
 
         // $('#def').toggle();
         // $('#cls').toggle();

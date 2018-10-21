@@ -4,12 +4,37 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-05-09 20:18:55
+@Last modified time: 2018-10-21 10:45:22
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
+04.01.04    18 05 28    meta viewport
+04.01.03    18 05 26    .q #q##
+
 04.01.02    18 05 09    js span.now addClass
 04.01.01    18 04 23    js #q card click
 04.01.00    18 04 23    material design for bootstrap
@@ -74,8 +99,11 @@
 <head>
     <title>Dementia</title>
     <meta charset="UTF-8">
-    <meta name="author" content="shume">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="author" content="shumez">
+    <meta name="revised" content="2018-10-21 10:45:45" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.26">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../../scripts/img/favicon.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -88,6 +116,9 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -129,6 +160,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -169,23 +205,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -232,190 +277,262 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>AD <small class="hidden-xs-down">Alzheimer's Disease</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-10">
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/108A038_sup_010.jpg" class="card-img-top img-fluid">
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/102E020_bas_j_010.jpg" class="card-img-top img-fluid">
             </div>
 
         </div>
     </div>
-
-    <div class="section" id="DLB">
-        <div class="page-header">
-            <h2>DLB <small class="hidden-xs-down">Dementia with Lewy Body</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="treatable">
+                <div class="page-header">
+                    <h2>Treatble Dementia <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
+
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>神経疾患</th>
+                            <td><ul>
+                                <li>iNPH</li>
+                                <li>脳腫瘍</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>内分泌</th>
+                            <td><ul>
+                                <li>&darr;Thy</li>
+                                <li>副腎不全</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>代謝</th>
+                            <td><ul>
+                                <li>Wernicke (vit.B<sub>1</sub> def)</li>
+                                <li>vit.B<sub>12</sub></li>
+                                <li>ベラグラ</li>
+                                <li>&darr;Glc</li>
+                                <li>肝不全</li>
+                                <li>腎不全</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>Infxn</th>
+                            <td><ul>
+                                <li>神経梅毒</li>
+                                <li>非ヘルペス性辺縁系脳炎</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>中毒</th>
+                            <td><ul>
+                                <li>アルコール脳症</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>Other</th>
+                            <td><ul>
+                                <li>うつ病 (仮面認知症)</li>
+                                <li>側頭葉てんかん</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+
             </div>
-
         </div>
-    </div>
-
-    <div class="section" id="FTD">
-        <div class="page-header">
-            <h2>FTD <small class="hidden-xs-down">FrontoTemporal Dementia</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="AD">
+                <div class="page-header">
+                    <h2>AD <small>Alzheimer's</small> <small><code></code></small></h2>
                 </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="VaD">
-        <div class="page-header">
-            <h2>VaD <small class="hidden-xs-down">Vascular Dementia</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>Treatble Dementia <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>PSP <small class="hidden-xs-down">#diag</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
+            
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li>+ 1-3y
+                                <ul>
+                                    <li>記銘力低下</li>
+                                    <li>時間の見当識障害</li>
+                                    <li>遂行機能障害</li>
+                                    <li>意欲/自発性の低下</li>
+                                </ul>
+                            </li>
+                            <li>+ 2-10y
+                                <ul>
+                                    <li>場所の見当識障害</li>
+                                    <li>物盗られ妄想</li>
+                                    <li>失語</li>
+                                    <li>失認</li>
+                                    <li>失算</li>
+                                    <li>感情障害</li>
+                                    <li><u>鏡像現象</u></li>
+                                </ul>
+                            </li>
+                            <li>+ 8-12y
+                                <ul>
+                                    <li>人物の見当識障害</li>
+                                    <li>着衣失行</li>
+                                    <li>尿失禁</li>
+                                    <li>便失禁</li>
+                                    <li>無動</li>
+                                    <li>無言</li>
+                                </ul>
+                            </li>
                         </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
 
+            
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="DLB">
+                <div class="page-header">
+                    <h2>DLB <small>w/ Lewy Body</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li><u>Donepezil ChoE Inh</u></li>
+                        </ul>
+                    </li>
+                </ul>    
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="FTD">
+                <div class="page-header">
+                    <h2>FTD <small class="hidden-xs-down">FrontoTemporal Dementia</small> <small><code></code></small></h2>
+                </div>
+
+    
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="VaD">
+                <div class="page-header">
+                    <h2>VaD <small class="hidden-xs-down">Vascular Dementia</small> <small><code></code></small></h2>
+                </div>
+
+    
+
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PSP">
+                <div class="page-header">
+                    <h2>PSP <small><code></code></small></h2>
+                </div>
+
+        
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="NS">
+                <div class="page-header">
+                    <h2>NS <small>Neurosyphilis</small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
-    -->
 
 
     <div class="section" id="app">
@@ -441,7 +558,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 20 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 20</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -578,6 +695,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group DEM">
                 <div class="card">
@@ -618,9 +743,9 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group AD">
+            <div class="card-group AD pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103D22">103D22</a> 診断
                     </div>
                     <div class="card-body">
@@ -675,14 +800,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group AD">
+            <div class="card-group AD pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D2">109D2</a> SPECT &xrArr; 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:07:12"> </span>
                         <br>
                         <p>脳血流SPECT（A，B）を次に示す．<br>
                             最も当てはまるのはどれか．</p>
@@ -709,7 +835,7 @@
                         <img src="https://qb.medilink-study.com/images/109D002_ima_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/109D002_ima_020.jpg" class="card-img-top img-fluid">
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -723,13 +849,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group AD">
+            <div class="card-group AD pri req 111 info">
                 <div class="card">
-                    <div class="card-header pri req 111">
-                        <a href="https://qb.medilink-study.com/#/Answer/111E10">111E10</a> AD S/S
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/111E10" target="_blank">111E10</a> AD S/S
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-21_11:08:13"> </span>
                         <br>
                         <p>Alzheimer型認知症でみられるのはどれか．</p>
 
@@ -745,7 +872,10 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: e</p>
+
+
+
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -785,14 +915,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group AD">
+            <div class="card-group AD pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107G51">107G51</a> 症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:09:56"> </span>
                         <br>
                         <p>81歳の女性．<br>
                             75歳ころから<u>記銘力の低下</u>がみられるようになり，物忘れ外来で<u>Alzheimer型認知症と診断</u>された．薬物療法や記憶回復訓練を受けたものの認知機能低下は進行し，2年前から介護保険施設に入所している．<br>
@@ -811,11 +942,15 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>鏡現象<br>
-                            Mirrored-self misidentification<br>
-                            Mirror agnosia</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                鏡現象<br>
+                                Mirrored-self misidentification<br>
+                                Mirror agnosia
+                            </li>
+                        </ul>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -829,28 +964,37 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group AD aphasia">
+            <div class="card-group AD aphasia pri info">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107E64">107E64-66</a> 症状 / 失語 / 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill hit"> </span> / 
-                        <span class="badge badge-pill mis"> </span> / 
+                        <span class="badge badge-pill hit"> </span>
+                         / 
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_10:57:22"> </span>
+                         / 
                         <span class="badge badge-pill hit"> </span>
                         <br>
                         <p>次の文を読み，64～66の問いに答えよ．<br><br>
 
                             65歳の男性．<br>
                             <u>物忘れ</u>が目立つようになったことを心配した妻に伴われて来院した．<br>
-                            現病歴：<u>1年前から</u>物忘れが多くなったことに妻が気付いた．本人も物忘れを多少は気にしているが，<u>異常とは考えていない</u>．<br>
-                            既往歴：30年前に交通事故で頭部外傷を負ったが，頭部CTでは異常が認められなかった．<br>
-                            生活歴：これまで税理士の仕事を大過なくこなしている．<br>
-                            家族歴：89歳の<u>母親が認知症</u>と診断されている．<br>
-                            現　症：意識は清明．身長170cm，体重65kg．体温36.5℃．脈拍84/分，整．呼吸数16/分．<br>
+                            現病歴：<br>
+                            <u>1年前から</u>物忘れが多くなったことに妻が気付いた．本人も物忘れを多少は気にしているが，<u>異常とは考えていない</u>．<br>
+                            既往歴：<br>
+                            30年前に交通事故で頭部外傷を負ったが，頭部CTでは異常が認められなかった．<br>
+                            生活歴：<br>
+                            これまで税理士の仕事を大過なくこなしている．<br>
+                            家族歴：<br>
+                            89歳の<u>母親が認知症</u>と診断されている．<br>
+                            現　症：<br>
+                            意識は清明．身長170cm，体重65kg．体温36.5℃．脈拍84/分，整．呼吸数16/分．<br>
                             礼節は保たれており，診察には協力的である．瞳孔は正円同大で対光反射は直接反射と間接反射とも正常である．他の脳神経に異常を認めない．四肢体幹に異常を認めない．<u>改訂長谷川式簡易知能評価スケールは26点</u>（30点満点）である．時計描画と透視立方体の模写とが正常に実施できる．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（±）．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（±）．<br>
                             血液検査と血液生化学検査とでアンモニアを含めて異常を認めない．<br>
                             頭部単純MRIで<u>軽度の側脳室拡大</u>が見られる．脳波は，基礎波で9ヘルツのα波であり，開眼によるα波抑制は良好である．</p>
                         
@@ -865,16 +1009,26 @@
 
                         <p>[E065] <br>
                             初診から1年後の診察では次のような会話が交わされた．<br>
-                            医　師「今日はどうやって来ましたか」<br>
-                            患　者「妻と一緒にA駅から電車で来ました．B駅で降りてそこからは歩いてきました」（妻がうなずく）<br>
-                            医　師「<u>次の言葉を繰り返して言って下さい．沖の方を客船と白い帆のヨットが走っています</u>」<br>
-                            患　者「<u>沖の方を（考えるようにして）船と（考えるようにして）ヨットが通っています</u>」<br>
-                            医　師（白紙と鉛筆とキーホルダーを患者の前のテーブル上に置いて）「私の言う通りにして下さい．キーホルダーと鉛筆を入れ替えて，紙を裏返して下さい」<br>
-                            患　者（キーホルダーと鉛筆を入れ替えて，紙を裏返す．）<br>
-                            医　師（鉛筆を示して）「これは何ですか」<br>
-                            患　者「えんぺつ」<br>
-                            医　師「学校はどういうところですか」<br>
-                            患　者「勉強するところです」</p>
+                            医　師<br>
+                            「今日はどうやって来ましたか」<br>
+                            患　者<br>
+                            「妻と一緒にA駅から電車で来ました．B駅で降りてそこからは歩いてきました」（妻がうなずく）<br>
+                            医　師<br>
+                            「<u>次の言葉を繰り返して言って下さい．沖の方を客船と白い帆のヨットが走っています</u>」<br>
+                            患　者<br>
+                            「<u>沖の方を（考えるようにして）船と（考えるようにして）ヨットが通っています</u>」<br>
+                            医　師<br>
+                            （白紙と鉛筆とキーホルダーを患者の前のテーブル上に置いて）「私の言う通りにして下さい．キーホルダーと鉛筆を入れ替えて，紙を裏返して下さい」<br>
+                            患　者<br>
+                            （キーホルダーと鉛筆を入れ替えて，紙を裏返す．）<br>
+                            医　師<br>
+                            （鉛筆を示して）「これは何ですか」<br>
+                            患　者<br>
+                            「えんぺつ」<br>
+                            医　師<br>
+                            「学校はどういうところですか」<br>
+                            患　者<br>
+                            「勉強するところです」</p>
 
                         <p>この患者で認められるのはどれか．</p>
                         <ol type="a">
@@ -885,7 +1039,8 @@
                             <li class="ans_f">語健忘</li>
                         </ol>
 
-                        <p>[E066] 定期的に受診するように説明していたが受診せず，前回受診時から1年後に受診した．妻の話では，同じ事を何度も尋ねるようになり，かかってきた電話の内容を忘れることが多くなったという．改訂長谷川式簡易知能評価スケールは20点に低下していた．頭部単純MRIのFLAIR冠状断像を次に示す．<br>
+                        <p>[E066] <br>
+                            定期的に受診するように説明していたが受診せず，前回受診時から1年後に受診した．妻の話では，同じ事を何度も尋ねるようになり，かかってきた電話の内容を忘れることが多くなったという．改訂長谷川式簡易知能評価スケールは20点に低下していた．頭部単純MRIのFLAIR冠状断像を次に示す．<br>
                             治療薬として適切なのはどれか．</p>
                     </div>
                     <!-- <img src="https://www.qb-online.com/img/107E066.jpg" class="img-fluid"> -->
@@ -902,7 +1057,10 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: e</p>
+
+                        <p class="q_dx">AD</p>
+
+                        <p class="q_answer_true q_answer_true_1">e</p>
                         <ol type="a">
                             <li></li>
                             <li></li>
@@ -912,7 +1070,7 @@
                         </ol>
 
 
-                        <p>True: c</p>
+                        <p class="q_answer_true q_answer_true_2">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -923,7 +1081,7 @@
                         </ol>
 
 
-                        <p>True: d</p>
+                        <p class="q_answer_true q_answer_true_3">d</p>
                         <ol type="a">
                             <li></li>
                             <li></li>
@@ -946,15 +1104,20 @@
                         <h6>失語</h6>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/107E064_sup_j_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107E064_sup_j_020.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <h6>失語</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/107E064_sup_j_020.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107E064_sup_j_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/107E064_sup_j_010.jpg" class="img-fluid"> -->
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/107E064_sup_j_020.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -1006,13 +1169,14 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group AD ">
+            <div class="card-group AD delirium info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102E20" target="_blank">102E20</a> DDx: AD / せん妄
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:00:57"> </span>
                         <br>
                         <p>Alzheimer型認知症〈痴呆〉とせん妄とを鑑別できる症候はどれか．</p>
 
@@ -1054,7 +1218,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/105I66" target="_blank" id="">105I66</a> 診断 &xrArr; 検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:11:08"> </span>
                         <br>
                         <p>70歳の男性．<br>
                             物忘れを心配した娘に伴われて来院した．<br>
@@ -1074,9 +1239,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <p class="q_dx">DLB</p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -1090,13 +1255,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group DLB">
+            <div class="card-group DLB pri info">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108A38" target="_blank" id="">108A38</a> Dx &xrArr; 検査所見
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:11:59"> </span>
                         <br>
                         <p>78歳の女性．<br>
                             手指振戦と動作緩慢とを主訴に来院した．<br>
@@ -1118,9 +1284,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>DLB</p>
+                        <p class="q_dx">DLB</p>
 
-                        <p>True: e</p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1145,31 +1311,47 @@
 
 
             <!-- 01 -->
-            <div class="card-group DLB">
+            <div class="card-group DLB 110">
                 <div class="card">
-                    <div class="card-header 110">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B53" target="_blank" id="">110B53</a> S/S / Dx / Rx
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        /
+                         /
                         <span class="badge badge-pill rev"> </span>
-                        /
-                        <span class="badge badge-pill mis now"> </span>
+                         / 
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_11:03:33"> </span>
                         <br>
-                        <p>次の文を読み，53〜55の問いに答えよ．<br><br>
-                            78歳の男性．<br>
-                            異常な言動を心配した家族に伴われて来院した．<br>
-                            現病歴：2年前から，前日の出来事を思い出せなかったり，当日の予定を30分おきに確認するようになった．同時期から夜間に大きな寝言を言ったり，手足をバタバタさせていることに家族が気付くようになった．1年前から，家にいるのに，家に帰らないといけない，亡くなった人が来ているというようになった．このころから動作が遅く，食事や着替えに時間がかかるようになった．数日前からは繰り返し，ものをとられた，隣人が自分の悪口を言っているといって騒ぎ立てるようになったため，困惑した家族に伴われて受診した．<br>
-                            既往歴：75歳時に両側の白内障手術．<br>
-                            家族歴：父親が脳梗塞．母親が胃癌．<br>
-                            生活歴：喫煙は65歳まで10本/日を45年間．13年前から禁煙している．飲酒は機会飲酒．76歳の妻と長女夫婦と同居している．<br>
-                            現症：意識は清明．身長168cm，体重62kg．体温36.3℃．脈拍72/分，整．血圧148/82mmHg．呼吸数16/分．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．改訂長谷川式簡易知能評価スケール12点（30点満点），Mini-Mental State Examination〈MMSE〉14点（30点満点）．脳神経に異常を認めない．四肢で左右対称性に軽度の筋強剛を認める．腱反射は正常で，Babinski徴候は陰性．運動麻痺，感覚障害および運動失調を認めない．歩行はやや不安定でつまずきやすい．<br>
-                            検査所見：<br>
-                            尿所見に異常を認めない．<br>
-                            血液所見：赤血球418万，Hb 13.2g/dL，Ht 42％，白血球6,300，血小板23万，PT 78％（基準80〜120）．<br>
-                            血液生化学所見：総蛋白7.2g/dL，アルブミン4.0g/dL，総ビリルビン0.8mg/dL，AST 22IU/L，ALT 38IU/L，LD 328IU/L（基準176〜353），ALP 254IU/L（基準115〜359），γ-GTP 26IU/L（基準8〜50），アミラーゼ95IU/L（基準37〜160），CK 96IU/L（基準30〜140），尿素窒素18mg/dL，クレアチニン0.8mg/dL，尿酸6.3mg/dL，血糖102mg/dL，HbA1c 5.8％（基準4.6〜6.2），総コレステロール242mg/dL，トリグリセリド186mg/dL，Na 136mEq/L，K 4.2mEq/L，Cl 98mEq/L，TSH 3.8μU/mL（基準0.2〜4.0），FT3 2.6pg/mL（基準2.5〜4.5），FT4 1.0ng/dL（基準0.8〜2.2）．CRP 0.4mg/dL．<br>
-                            脳血流SPECT（A）とドパミントランスポーターSPECT（B）とを次に示す．</p>
+                        <p>次の文を読み，53〜55の問いに答えよ．</p>
+                        <p>78歳の男性．<br>
+                            異常な言動を心配した家族に伴われて来院した．</p>
+                        <p>現病歴：<br>
+                            2年前から，前日の出来事を思い出せなかったり，当日の予定を30分おきに確認するようになった．同時期から<u>夜間に大きな寝言</u>を言ったり，手足をバタバタさせていることに家族が気付くようになった．<br>
+                            1年前から，家にいるのに，家に帰らないといけない，亡くなった人が来ているというようになった．このころから動作が遅く，食事や着替えに時間がかかるようになった．<br>
+                            数日前からは繰り返し，ものをとられた，隣人が自分の悪口を言っているといって騒ぎ立てるようになったため，困惑した家族に伴われて受診した．</p>
+                        <p>既往歴：<br>
+                            75歳時に両側の白内障手術．</p>
+                        <p>家族歴：<br>
+                            父親が脳梗塞．母親が胃癌．</p>
+                        <p>生活歴：<br>
+                            喫煙は65歳まで10本/日を45年間．13年前から禁煙している．飲酒は機会飲酒．76歳の妻と長女夫婦と同居している．</p>
+                        <p>現症：<br>
+                            意識は清明．身長168cm，体重62kg．体温36.3℃．脈拍72/分，整．血圧148/82mmHg．呼吸数16/分．<br>
+                            心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．<br>
+                            改訂長谷川式簡易知能評価スケール12点（30点満点），Mini-Mental State Examination〈MMSE〉14点（30点満点）．<br>
+                            脳神経に異常を認めない．<br>
+                            四肢で左右対称性に<u>軽度の筋強剛</u>を認める．腱反射は正常で，Babinski徴候は陰性．運動麻痺，感覚障害および運動失調を認めない．歩行はやや不安定でつまずきやすい．<br>
+                        <p>検査所見：<br>
+                            尿所見に異常を認めない．</p>
+                        <p>血液所見：<br>
+                            赤血球418万，Hb 13.2g/dL，Ht 42％，白血球6,300，血小板23万，PT 78％（基準80〜120）．</p>
+                        <p>血液生化学所見：<br>
+                            総蛋白7.2g/dL，アルブミン4.0g/dL，総ビリルビン0.8mg/dL，AST 22IU/L，ALT 38IU/L，LD 328IU/L（基準176〜353），ALP 254IU/L（基準115〜359），γ-GTP 26IU/L（基準8〜50），アミラーゼ95IU/L（基準37〜160），CK 96IU/L（基準30〜140），尿素窒素18mg/dL，クレアチニン0.8mg/dL，尿酸6.3mg/dL，血糖102mg/dL，HbA1c 5.8％（基準4.6〜6.2），総コレステロール242mg/dL，トリグリセリド186mg/dL，<br>
+                            Na 136mEq/L，K 4.2mEq/L，Cl 98mEq/L，<br>
+                            TSH 3.8μU/mL（基準0.2〜4.0），FT3 2.6pg/mL（基準2.5〜4.5），FT4 1.0ng/dL（基準0.8〜2.2）．CRP 0.4mg/dL．</p>
+                        <p>脳血流SPECT（A）とドパミントランスポーターSPECT（B）とを次に示す．</p>
                     </div>
 
                     <img src="https://qb.medilink-study.com/images/110B053-055A.jpg" class="card-img-top img-fluid"><!--  width="49%"> -->
@@ -1215,21 +1397,11 @@
                         <img src="https://qb.medilink-study.com/images/110B053_ima_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/110B053_ima_020.jpg" class="card-img-top img-fluid">
 
-                        <p>DLB</p>
+                        <p class="q_dx">DLB</p>
 
 
 
-                        <p>True: a,e</p>
-
-                        <ol type="a">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
-
-                        <p>True: d</p>
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1239,7 +1411,17 @@
                             <li></li>
                         </ol>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">d</p>
+
+                        <ol type="a">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -1259,7 +1441,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/106I14" target="_blank" id="">106I14</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:12:43"> </span>
                         <br>
                         <p><u>認知機能の動揺</u>と<u>抗精神病薬に対する感受性の亢進</u>とを特徴とするのはどれか．</p>
 
@@ -1276,9 +1459,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>DLB</p>
+                        <p class="q_dx">DLB</p>
 
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li>VaD:<br>
@@ -1294,9 +1477,9 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group FTD">
+            <div class="card-group FTD pri info">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107A2" target="_blank">107A2</a> 症候
                     </div>
                     <div class="card-body">
@@ -1334,13 +1517,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group FTD">
+            <div class="card-group FTD 111">
                 <div class="card">
-                    <div class="card-header 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I6" target="_blank">111I6</a> Pick s/s
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_11:05:37"> </span>
                         <br>
                         <p>記銘力低下を認める患者の家族の訴えで，Pick病を最も疑わせるのはどれか．</p>
                         
@@ -1356,23 +1540,32 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: e</p>
+
+
+
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
                             <li>鏡像現象: AD</li>
                             <li>物盗られ妄想: AD</li>
                             <li>AD</li>
-                            <li></li>
+                            <li>
+                                <ul>
+                                    <li>滞続言語</li>
+                                    <li>反復言語</li>
+                                    <li>反響言語</li>
+                                </ul>
+                            </li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group FTD">
+            <div class="card-group FTD pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109I43" target="_blank">109I43</a> 診断
                     </div>
                     <div class="card-body">
@@ -1458,13 +1651,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group VaD">
+            <div class="card-group VaD pri info">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90E34" target="_blank">90E34</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:14:19"> </span>
                         <br>
                         <p>66歳の男性．<br>
                             <u>頭痛</u>，<u>肩こり</u>及び<u>物忘れ</u>を主訴として来院した．<br>
@@ -1484,9 +1678,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>VaD</p>
+                        <p class="q_dx">VaD</p>
 
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -1499,25 +1693,31 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/90E034_bas_j_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group HoThyro">
+            <div class="card-group HoThyro treatable 110 pri info">
                 <div class="card">
-                    <div class="card-header 110 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A21" target="_blank" id="">110A21</a> 原因
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:15:08"> </span>
                         <br>
                         <p>65歳の女性．<br>
                             健忘を主訴に家族に連れられて来院した．<br>
                             3ヵ月前から家に引きこもりがちになり，倦怠感と不安とを訴えて外出しようとしなくなった．<br>
                             2週前からぼんやりして物忘れが目立つようになり，動作も緩慢になった．<br>
                             昨夜，誰もいないのに誰かを激しく叱っているところを家族が目撃した．<br>
-                            意識レベルはJCSⅠ-1．<u>活動性の低下</u>を認める．身長154cm，体重67kg．体温35.4℃．脈拍52/分，整．血圧94/48mmHg．呼吸数12/分．顔面と両側の下腿とに浮腫を認める．心音と呼吸音とに異常を認めない．改訂長谷川式簡易知能評価スケールは18点（30点満点），Mini-Mental State Examination〈MMSE〉は20点（30点満点）である．四肢の近位部に徒手筋力テストで4の筋力低下を認め，大腿四頭筋を叩打すると筋腹の膨隆が生じる．腱反射は打腱後の筋弛緩遅延を認め，Babinski徴候は陰性である．<br>
+                            意識レベルはJCSⅠ-1．<u>活動性の低下</u>を認める．<br>
+                            身長154cm，体重67kg．体温35.4℃．脈拍52/分，整．血圧94/48mmHg．呼吸数12/分．<br>
+                            顔面と両側の下腿とに浮腫を認める．心音と呼吸音とに異常を認めない．改訂長谷川式簡易知能評価スケールは18点（30点満点），Mini-Mental State Examination〈MMSE〉は20点（30点満点）である．四肢の近位部に徒手筋力テストで4の筋力低下を認め，大腿四頭筋を叩打すると筋腹の膨隆が生じる．腱反射は打腱後の筋弛緩遅延を認め，Babinski徴候は陰性である．<br>
                             原因として最も考えられるのはどれか．</p>
 
 
@@ -1533,9 +1733,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <p class="q_dx">&darr;Thyro</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li></li>
@@ -1669,17 +1869,22 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group NS">
+            <div class="card-group NS syphilis">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102A25" target="_blank" id="">102A25</a> 神経梅毒
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_11:17:45"> </span>
                         <br>
                         <p>52歳の男性．<br>
                             物忘れがひどくなったことを主訴に妻に伴われて来院した．<br>
-                            意識は清明．上機嫌で話し始めるが怒りっぽい．発語は不明瞭で音省略，音重複，語順序転倒および語脱落が混じる．瞳孔は左右不同で不正円である．対光反射は両側で欠如している．輻湊反射は正常である．両側上下肢の腱反射は軽度亢進し，手指に振戦を認める．歩行は正常で，<u>深部感覚の異常</u>は認めない．<u>血清梅毒反応陽性</u>．<br>
+                            意識は清明．上機嫌で話し始めるが怒りっぽい．<br>
+                            <u>発語は不明瞭で音省略，音重複，語順序転倒および語脱落</u>が混じる．<br>
+                            <u>瞳孔は左右不同で不正円</u>である．<u>対光反射は両側で欠如</u>している．輻湊反射は正常である．<br>
+                            <u>両側上下肢の腱反射は軽度亢進</u>し，<u>手指に振戦</u>を認める．歩行は正常で，<u>深部感覚の異常</u>は認めない．<br>
+                            <u>血清梅毒反応陽性</u>．<br>
                             この患者にみられるのはどれか．2つ選べ．</p>
 
 
@@ -1695,13 +1900,14 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>神経梅毒 (NS)</p>
+                        <p class="q_dx">神経梅毒 (NS)</p>
 
-                        <p>True: a,e</p>
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
                             <li></li>
-                            <li></li>
+                            <li>NS: 脊髄癆<br>
+                                この症例には見られない</li>
                             <li></li>
                             <li></li>
                             <li>Argyll Robertson瞳孔: <ul>
@@ -1714,13 +1920,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group PSP">
+            <div class="card-group PSP info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100B6" target="_blank" id="">100B6</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_11:20:12"> </span>
                         <br>
                         <p>認知症〈痴呆〉が主要な症状となるのはどれか．</p>
 
@@ -1737,9 +1944,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>PSP</p>
+                        <p class="q_dx">PSP</p>
 
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li>PDD (Parkinson Disease w/ Dementia)はあるが,  主要ではない</li>
@@ -1847,6 +2054,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1915,6 +2123,12 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1923,6 +2137,14 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+    
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1936,27 +2158,36 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('.page-header > h1 > small.print_date').html(print_date);
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -1978,11 +2209,13 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1999,62 +2232,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2107,6 +2340,19 @@ $('document').ready(function(){
     $('code.q_alert_done').html(n_done);
 
 
+    $('p.q_dx').prepend('<code>Dx</code>: ');
+
+    $('p.q_answer_true').prepend('True: ');
+    $('p.q_answer_false').prepend('False: ');
+
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
+
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -2272,8 +2518,69 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+
+    $('#AD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.AD)').slideToggle(100);
+    });
+    $('#AD').find('code').html($('div.AD').size());
+
+
+    $('#DLB h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.DLB)').slideToggle(100);
+    });
+    $('#DLB').find('code').html($('div.DLB').size());
+
+
+    $('#FTD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.FTD)').slideToggle(100);
+    });
+    $('#FTD').find('code').html($('div.FTD').size());
+
+
+    $('#VaD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.VaD)').slideToggle(100);
+    });
+    $('#VaD').find('code').html($('div.VaD').size());
+
+
+    $('#NS h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.NS)').slideToggle(100);
+    });
+    $('#NS').find('code').html($('div.NS').size());
+
+
+
+    $('#PSP h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PSP)').slideToggle(100);
+    });
+    $('#PSP').find('code').html($('div.PSP').size());
+
+
+    $('#treatable h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.treatable)').slideToggle(100);
+    });
+    $('#treatable').find('code').html($('div.treatable').size());
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

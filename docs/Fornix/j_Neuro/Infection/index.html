@@ -4,12 +4,38 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-05-09 20:18:55
+@Last modified time: 2018-10-21 17:19:41
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
+04.01.04    18 05 28    meta viewport
+04.01.03    18 05 26    .q #q##
+
 04.01.02    18 05 09    js span.now addClass
 04.01.01    18 04 23    js #q card click
 04.01.00    18 04 23    material design for bootstrap
@@ -72,10 +98,13 @@
 -->
 <html>
 <head>
-    <title>Infxn</title>
+    <title>Infxn - Neuro</title>
     <meta charset="UTF-8">
-    <meta name="author" content="shume">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="author" content="shumez">
+    <meta name="revised" content="2018-10-21 17:20:16" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.27">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../../scripts/img/favicon.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -88,6 +117,9 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -129,6 +161,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -169,23 +206,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -195,7 +241,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Infxn <small class="hidden-xs-down"></small></h1>
+        <h1 class="title">Infection <small>Neuro</small><small class="hidden-xs-down"></small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -234,207 +280,128 @@
         </div>
     </div>
 
-    <div class="section" id="BM">
-        <div class="page-header">
-            <h2>BM <small class="hidden-xs-down">Bacterial Miningitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>Sp <small>Streptococcus penumoniae</small></h3>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="BM">
+                <div class="page-header">
+                    <h2>BM <small class="hidden-xs-down">Bacterial Miningitis</small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>Nm <small>Neisseria meningitis</small></h3>
-                </div>
+
+
+                <h3 id="s_pneumoniae">S. Pneumoniae <small><code></code></small></h3>
+
+                <h3 id="n_meningitis">N. Meningitis <small><code></code></small></h3>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="CM">
-        <div class="page-header">
-            <h2>CM <small class="hidden-xs-down">Cryptococcal Meningitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CM">
+                <div class="page-header">
+                    <h2>Cryptococcal <small><code></code></small></h2>
                 </div>
+
+        
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>TBM <small class="hidden-xs-down">Tuberculous Meningitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">        
+            <div class="section" id="TBM">
+                <div class="page-header">
+                    <h2>TBM <small class="hidden-xs-down">Tuberculous Meningitis</small> <small><code></code></small></h2>
                 </div>
+
+        
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="FM">
-        <div class="page-header">
-            <h2>FM <small class="hidden-xs-down">Fungal Meningitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="FM">
+                <div class="page-header">
+                    <h2>FM <small class="hidden-xs-down">Fungal Meningitis</small> <small><code></code></small></h2>
                 </div>
+
+        
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>VM <small class="hidden-xs-down">Viral Meningitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="VM">
+                <div class="page-header">
+                    <h2>VM <small class="hidden-xs-down">Viral Meningitis</small> <small><code></code></small></h2>
                 </div>
+
+        
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="VE">
-        <div class="page-header">
-            <h2>VE <small class="hidden-xs-down">Viral Encephalitis</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="VE">
+                <div class="page-header">
+                    <h2>VE <small class="hidden-xs-down">Viral Encephalitis</small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+        
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CJD">
+                <div class="page-header">
+                    <h2>CJD <small class="hidden-xs-down">Creutzfeldt-Jakob</small> <small><code></code></small></h2>
+                </div>
+
+        
+            </div>
         </div>
     </div>
 
 
-    <div class="section" id="CJD">
-        <div class="page-header">
-            <h2>CJS <small class="hidden-xs-down">Creutzfeldt-Jakob</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
 
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
 
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
 
 
     <div class="section" id="app">
@@ -460,7 +427,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 27 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 27</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -597,14 +564,23 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group BM Sp">
+            <div class="card-group BM Sp s_pneumoniae info pri 111">
                 <div class="card">
-                    <div class="card-header info pri 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A11" target="_blank" id="">111A11</a> 細菌性髄膜炎 原因菌
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:44:32"> </span>
                         <br>
                         <p>成人における細菌性髄膜炎の原因菌として最も頻度が高いのはどれか．</p>
 
@@ -623,7 +599,7 @@
 
                         <p></p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -836,23 +812,30 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group Sp BM">
+            <div class="card-group Sp s_pneumoniae BM pri info">
                 <div class="card">
-                    <div class="card-header pri">
-                        <a href="https://qb.medilink-study.com/#/Answer/108I78">108I78</a> 28yo,F GPC 治療
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/108I78" target="_blank">108I78</a> GPC 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:24:08"> </span>
                         <br>
                         <p>28歳の女性．<br>
-                            激しい<u>頭痛</u>を主訴に来院した．<br>
-                            3日前から発熱とともに前頭部痛が生じ，次第に増強してきた．今朝はさらに高熱となり少しぼんやりしていた．<br>
-                            意識レベルはJCSⅡ-10．体温40.2℃．脈拍140/分，整．血圧126/72mmHg．<u>項部硬直とKernig徴候</u>とを認める．対光反射，眼球運動，四肢の運動および腱反射に異常なく，Babinski徴候も認めない．<br>
-                            血液所見：赤血球380万，Hb 12.0g/dL，Ht 38％，白血球16,000（桿状核好中球18％，分葉核好中球62％，単球4％，リンパ球16％），血小板18万．<u>CRP 26mg/dL</u>．頭部単純CTで異常を認めなかったので腰椎穿刺を行った．<br>
-                            脳脊髄液所見：初圧240mmH2O（基準70～170），外観は淡黄白色に混濁，細胞数5,600/mm3（基準0～2）（多形核球100％），蛋白230mg/dL（基準15～45），糖8mg/dL（基準50～75）．脳脊髄液のGram染色で<u>Gram陽性双球菌</u>が見られた．<br>
-                            治療薬として適切なのはどれか．2つ選べ．</p>
+                            激しい<u>頭痛</u>を主訴に来院した．</p>
+                        <p>3日前から発熱とともに前頭部痛が生じ，次第に増強してきた．今朝はさらに高熱となり少しぼんやりしていた．</p>
+                        <p>意識レベルはJCSⅡ-10．<br>
+                            体温40.2℃．脈拍140/分，整．血圧126/72mmHg．<br>
+                            <u>項部硬直とKernig徴候</u>とを認める．対光反射，眼球運動，四肢の運動および腱反射に異常なく，Babinski徴候も認めない．</p>
+                        <p>血液所見：<br>
+                            赤血球380万，Hb 12.0g/dL，Ht 38％，白血球16,000（桿状核好中球18％，分葉核好中球62％，単球4％，リンパ球16％），血小板18万．<u>CRP 26mg/dL</u>．<br>
+                            頭部単純CTで異常を認めなかったので腰椎穿刺を行った．</p>
+                        <p>脳脊髄液所見：<br>
+                            初圧240mmH2O（基準70～170），外観は淡黄白色に混濁，細胞数5,600/mm3（基準0～2）（多形核球100％），蛋白230mg/dL（基準15～45），糖8mg/dL（基準50～75）．<br>
+                            脳脊髄液のGram染色で<u>Gram陽性双球菌</u>が見られた．</p>
+                        <p>治療薬として適切なのはどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">メロペネム</li>
@@ -866,9 +849,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>肺炎双球菌</p>
+                        <p class="q_dx">肺炎双球菌</p>
 
-                        <p>True: a,e</p>
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
                             <li></li>
@@ -899,13 +882,14 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group CEF ABx">
+            <div class="card-group CEF ABx 111 pri info">
                 <div class="card">
-                    <div class="card-header 111 pri">
-                        <a href="https://qb.medilink-study.com/#/Answer/111I3" target="_blank" id="">111I3</a>
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/111I3" target="_blank" id="">111I3</a> セフェム無効
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_17:26:55"> </span>
                         <br>
                         <p>細菌性髄膜炎の原因菌でセフェム系抗菌薬が有効でないのはどれか．</p>
 
@@ -945,16 +929,19 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group BM Sp shock ">
+            <div class="card-group BM Sp s_pneumoniae shock autopsy pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108B50">108B50-52</a> 治療 / ショック治療 / 解剖
 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill rev"> </span> / 
-                        <span class="badge badge-pill cau now"> </span> / 
+                        <span class="badge badge-pill rev"> </span>
+                         / 
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_17:47:01"> </span>
+                         / 
                         <span class="badge badge-pill hit"> </span>
                         <br>
                         
@@ -1098,13 +1085,14 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group BM Sp Hi Nm">
+            <div class="card-group BM Sp s_pneumoniae h_influenzae n_meningitis Hi Nm pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106I29">106I29</a> 原因菌 
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_17:48:25"> </span>
                         <br>
                         <p>青壮年期における細菌性髄膜炎の主要な原因菌はどれか．2つ選べ．<br>
                         （※不適切問題のため複数の正答パターンがある）</p>
@@ -1122,7 +1110,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: b,c,e</p>
+
+
+                        <p class="q_answer_true">b c e</p>
 
                         <ol type="a">
                             <li>新生児に多い</li>
@@ -1144,12 +1134,14 @@
                         <a href="https://qb.medilink-study.com/#/Answer/94E26" target="_blank" id="">94E26</a> 検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:31:38"> </span>
                         <br>
                         <p>53歳の男性．<br>
                             1ヵ月前から頭痛と微熱とが続き，徐々に頭痛が強くなってきた．<br>
                             今朝から38℃の発熱があり，傾眠状態となったので，家族とともに来院した．意識混濁と項部硬直とを認める．<br>
-                            脳脊髄液検査：圧200mmH2O（基準70～170），細胞は全てリンパ球で細胞数350/mm3（基準0～2），糖18mg/dL（基準50～75），総蛋白152mg/dL（基準15～45）．<br>
+                            脳脊髄液検査：<br>
+                            圧200mmH2O（基準70～170），細胞は全てリンパ球で細胞数350/mm3（基準0～2），糖18mg/dL（基準50～75），総蛋白152mg/dL（基準15～45）．<br>
                             さらに行う脳脊髄液検査として診断的価値が高いのはどれか．3つ選べ．</p>
 
 
@@ -1165,14 +1157,14 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>亜急性髄膜炎</p>
+                        <p class="q_dx">亜急性髄膜炎</p>
                         <ul>
                             <li>結核性</li>
                             <li>真菌性</li>
                             <li>癌性</li>
                         </ul>
 
-                        <p>True: a,b,</p>
+                        <p class="q_answer_true">a b</p>
 
                         <ol type="a">
                             <li>墨汁染色: クリプトコッカス(+/-)</li>
@@ -1186,14 +1178,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group SAM TBM FM">
+            <div class="card-group SAM TBM FM info">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://www.qb-online.com/#/list/93F39">93F39</a> CSF
+                        <a href="https://www.qb-online.com/#/list/93F39" target="_blank">93F39</a> CSF
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:50:13"> </span>
                         <br>
                         <p><u>57歳</u>の男性．<br>
                             1ヵ月前から<u>頭痛</u>と<u>微熱</u>とが続いていた．<br>
@@ -1218,14 +1211,14 @@
                             <li>すべてリンパ球 &rAarr; r/o 細菌</li>
                             <li>&darr;糖 &rAarr; r/o ウイルス</li>
                         </ul>
-                        <p>&rAarr;</p>
+                        <p>&xrArr;</p>
                         <ul>
                             <li>結核性</li>
                             <li>真菌性</li>
                             <li>癌性</li>
                         </ul>
                         
-                        <p>True: b,c</p>
+                        <p class="q_answer_true">b c</p>
 
                         <ol type="a">
                             <li>&uarr;Neutro</li>
@@ -1266,14 +1259,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group TBM CSF">
+            <div class="card-group TBM CSF pri">
                 <div class="card">
-                    <div class="card-header pri">
-                        <a href="https://www.qb-online.com/#/list/107I24">107I24</a> CSF
+                    <div class="card-header">
+                        <a href="https://www.qb-online.com/#/list/107I24" target="_blank">107I24</a> CSF
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_17:52:26"> </span>
                         <br>
                         <p>未治療の結核性髄膜炎患者の脳脊髄液所見として当てはまるのはどれか．<br>
                         ただし，血糖値は98mg/dLである．</p>
@@ -1345,7 +1339,7 @@
                             <li>単核球&uarr;&uarr;</li>
                         </ul>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li>細菌: &uarr;&uarr;cell, 多核球優位</li>
@@ -1400,21 +1394,29 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group CM">
+            <div class="card-group CM 111 info">
                 <div class="card">
-                    <div class="card-header 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111D34" target="_blank" id="">111D34</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:56:55"> </span>
                         <br>
                         <p>72歳の女性．<br>
                             意識障害のため救急車で搬入された．<br>
-                            10日前から38℃台の発熱が出現し，4日前から健忘が目立つようになった．今朝，呼びかけに反応が悪いため家族が救急車を要請した．60歳台から糖尿病で内服治療中である．意識レベルはJCSⅡ-10．体温38.4℃．心拍数96/分，整．血圧142/88mmHg．呼吸数24/分．SpO2 98％（リザーバー付マスク10L/分　酸素投与下）．胸部聴診で両肺にrhonchiを聴取する．項部硬直を軽度に認める．腱反射は全般に低下しており，Babinski徴候は陰性である．<br>
-                            血液所見：赤血球398万，白血球6,500．<br>
-                            血液生化学所見：血糖179mg/dL，HbA1c 8.2％（基準4.6〜6.2）．<br>
-                            免疫血清学所見：CRP 4.3mg/dL，Tリンパ球CD4/CD8比1.9（基準0.6〜2.9），β-D-グルカン5.0pg/mL（基準10以下）．ツベルクリン反応陰性．<br>
-                            脳脊髄液所見：初圧320mmH2O（基準70〜170），細胞数86/mm3（基準0〜2）（単核球58，多形核球28），蛋白195mg/dL（基準15〜45），糖3mg/dL（基準50〜75）．脳脊髄液の細胞診は陰性．<br>
+                            10日前から38℃台の発熱が出現し，4日前から健忘が目立つようになった．<br>
+                            今朝，呼びかけに反応が悪いため家族が救急車を要請した．60歳台から<u>糖尿病</u>で内服治療中である．<br>
+                            意識レベルはJCSⅡ-10．体温38.4℃．心拍数96/分，整．血圧142/88mmHg．呼吸数24/分．SpO2 98％（リザーバー付マスク10L/分　酸素投与下）．<br>
+                            胸部聴診で両肺にrhonchiを聴取する．項部硬直を軽度に認める．腱反射は全般に低下しており，Babinski徴候は陰性である．<br>
+                            血液所見：<br>
+                            赤血球398万，白血球6,500．<br>
+                            血液生化学所見：<br>
+                            血糖179mg/dL，HbA1c 8.2％（基準4.6〜6.2）．<br>
+                            免疫血清学所見：<br>
+                            CRP 4.3mg/dL，Tリンパ球CD4/CD8比1.9（基準0.6〜2.9），β-D-グルカン5.0pg/mL（基準10以下）．ツベルクリン反応陰性．<br>
+                            脳脊髄液所見：<br>
+                            初圧320mmH2O（基準70〜170），細胞数86/mm3（基準0〜2）（単核球58，多形核球28），蛋白195mg/dL（基準15〜45），糖3mg/dL（基準50〜75）．脳脊髄液の細胞診は陰性．<br>
                             脳脊髄液の染色標本（A），肺野条件の胸部CT（B）及び頭部MRIの拡散強調像（C）を次に示す．<br>
                             治療薬はどれか．</p>
                     </div>
@@ -1440,9 +1442,9 @@
                         <img src="https://qb.medilink-study.com/images/111D034_ima_020.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/111D034_ima_030.jpg" class="card-img-top img-fluid">
 
-                        <p>Cryptococcal M</p>
+                        <p class="q_dx">Cryptococcal M</p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li>acyclovir: herpes, VZV</li>
@@ -1456,25 +1458,31 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/111D034_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group VM">
+            <div class="card-group VM 110">
                 <div class="card">
-                    <div class="card-header 110">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A32" target="_blank" id="">110A32</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_17:34:27"> </span>
                         <br>
                         <p>38歳の女性．<br>
                             頭痛，微熱，吐き気および羞明を主訴に来院した．<br>
                             3日前から頭痛と微熱があり，今朝から吐き気も出現して食事がとれなくなったため受診した．来院時，羞明を訴える．意識は清明．体温38.4℃．脈拍92/分，整．血圧142/82mmHg．脳神経と運動系とに異常を認めない．腱反射は正常でBabinski徴候は認めない．Kernig徴候を認める．<br>
-                            血液所見：赤血球410万，Hb 13.0g/dL，Ht 39％，白血球8,600，血小板21万．血液生化学所見に異常を認めない．<br>
-                            脳脊髄液所見：初圧180mmH2O（基準70〜170），水様透明，細胞数230/mm3（基準0〜2）（単核球55％，多形核球45％），蛋白82mg/dL（基準15〜45），糖68mg/dL（同時血糖86mg/dL），トリプトファン反応陰性，Gram染色で細菌を認めない．<br>
-                            頭部MRIで異常を認めない．直ちに，照明を落とした個室への入院となった．<br>
+                            血液所見：<br>
+                            赤血球410万，Hb 13.0g/dL，Ht 39％，白血球8,600，血小板21万．血液生化学所見に異常を認めない．<br>
+                            脳脊髄液所見：<br>
+                            初圧180mmH2O（基準70〜170），水様透明，細胞数230/mm3（基準0〜2）（単核球55％，多形核球45％），蛋白82mg/dL（基準15〜45），糖68mg/dL（同時血糖86mg/dL），トリプトファン反応陰性，Gram染色で細菌を認めない．<br>
+                            頭部MRIで異常を認めない．<br>
+                            直ちに，照明を落とした個室への入院となった．<br>
                             入院後の対応として適切なのはどれか．</p>
 
 
@@ -1492,9 +1500,9 @@
 
 
 
-                        <p>ウイルス性髄膜炎</p>
+                        <p class="q_dx">ウイルス性髄膜炎</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>ウイルス性髄膜炎は, 対症療法, 補液</li>
@@ -1552,16 +1560,17 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group ANA">
+            <div class="card-group ANA LP">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108B21" target="_blank" id="">108B21</a> Jacoby line
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:35:35"> </span>
                         <br>
                         <p>成人男性の背面を次に示す．<br>
-                            脊髄下端の位置に最も近いのはどれか．</p>
+                            <u>脊髄下端</u>の位置に最も近いのはどれか．</p>
                     </div>
 
                     <img src="https://qb.medilink-study.com/images/108B021.jpg" class="card-img-top img-fluid"> <!-- width="50%"> -->
@@ -1581,7 +1590,7 @@
 
                         <p></p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>脊髄下端部: L1/L2</li>
@@ -1595,13 +1604,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group LP">
+            <div class="card-group LP info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100G94" target="_blank" id="">100G94</a> LP
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:59:15"> </span>
                         <br>
                         <p>腰椎穿刺による脳脊髄液検査について正しいのはどれか．</p>
 
@@ -1620,7 +1630,7 @@
 
                         <p></p>
 
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li>L3/4, L4/5 腰椎間で穿刺</li>
@@ -1742,20 +1752,27 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group HSV VE">
+            <div class="card-group HSV HE VE 110 pri info">
                 <div class="card">
-                    <div class="card-header 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A22" target="_blank" id="">110A22</a> 病原体
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_18:01:11"> </span>
                         <br>
                         <p>62歳の女性．<br>
                             失見当のため来院した．<br>
-                            7日前から歯痛があり食欲不振となり，3日前から頭痛が出現した．今朝，自宅にいるのにコンビニの中と勘違いし，携帯電話をまんじゅうと思いかじりついたため，心配した家族に伴われて受診した．意識レベルはJCSⅠ-3．<br>
-                            身長156cm，体重45kg．体温38.2℃．脈拍76/分，整．血圧108/60mmHg．呼吸数18/分．心音と呼吸音とに異常を認めない．場所と時間の見当識障害がある．言語理解と物品呼称が障害されている．項部硬直を軽度に認める．脳神経，運動系および感覚系の異常を認めない．手に持ったものは何でも口に入れようとする．<br>
-                            血液所見：赤血球410万，Hb 13.1g/dL，Ht 40％，白血球6,600，血小板31万．血糖96mg/dL．CRP 0.2mg/dL．<br>
-                            脳脊髄液所見：初圧230mmH2O（基準70〜170），外観は無色透明，細胞数74/mm3（基準0〜2）（単核球96％，多形核球4％），蛋白62mg/dL（基準15〜45），糖60mg/dL（基準50〜75）．<br>
+                            7日前から歯痛があり食欲不振となり，3日前から頭痛が出現した．<br>
+                            今朝，自宅にいるのにコンビニの中と勘違いし，携帯電話をまんじゅうと思いかじりついたため，心配した家族に伴われて受診した．<br>
+                            意識レベルはJCSⅠ-3．<br>
+                            身長156cm，体重45kg．体温38.2℃．脈拍76/分，整．血圧108/60mmHg．呼吸数18/分．<br>
+                            心音と呼吸音とに異常を認めない．<br>
+                            <u>場所と時間の見当識障害</u>がある．<u>言語理解と物品呼称が障害</u>されている．項部硬直を軽度に認める．脳神経，運動系および感覚系の異常を認めない．手に持ったものは何でも口に入れようとする．<br>
+                            血液所見：<br>
+                            赤血球410万，Hb 13.1g/dL，Ht 40％，白血球6,600，血小板31万．血糖96mg/dL．CRP 0.2mg/dL．<br>
+                            脳脊髄液所見：<br>
+                            初圧230mmH2O（基準70〜170），外観は無色透明，細胞数74/mm3（基準0〜2）（単核球96％，多形核球4％），蛋白62mg/dL（基準15〜45），糖60mg/dL（基準50〜75）．<br>
                             頭部MRIの拡散強調冠状断像を次に示す．<br>
                             原因として考えられる病原体はどれか．</p>
                     </div>
@@ -1775,9 +1792,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>ヘルペス脳炎</p>
+                        <p class="q_dx">ヘルペス脳炎</p>
 
-                        <p>True: e</p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1788,12 +1805,17 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">単純ヘルペス脳炎<ul>
-                                <li>側頭葉内側部 高信号</li>
-                                <li>周期性一側性てんかん型放電</li>
-                                <li>Acyclovir</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                単純ヘルペス脳炎
+                                <ul>
+                                    <li>側頭葉内側部 高信号</li>
+                                    <li>周期性一側性てんかん型放電</li>
+                                    <li>Acyclovir</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -1816,11 +1838,14 @@
                         <a href="https://qb.medilink-study.com/#/Answer/98D55" target="_blank" id="">98D55</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:38:46"> </span>
                         <br>
                         <p>24歳の女性．<br>
-                            独語と興奮とが激しいために家族とともに救急車で来院した．既往歴と家族歴とに特記することはない．<br>
-                            大学卒業後商社に就職，未婚．1週前に咽頭痛，咳および発熱のために感冒薬の投与を受けたが，その後も咽頭痛が続いた．今朝37.5℃の発熱があり頭痛を訴えた．昼ころから多弁になり意味不明の言動が多くなり，興奮も強くなった．<br>
+                            独語と興奮とが激しいために家族とともに救急車で来院した．</p>
+                            既往歴と家族歴とに特記することはない．<br>
+                            大学卒業後商社に就職，未婚．1週前に咽頭痛，咳および発熱のために感冒薬の投与を受けたが，その後も咽頭痛が続いた．<br>
+                            <u>今朝37.5℃の発熱</u>があり頭痛を訴えた．昼ころから多弁になり<u>意味不明の言動</u>が多くなり，興奮も強くなった．<br>
                             来院時，急性錯乱状態で，話しかけても全く意思疎通ができない．運動麻痺はなく深部反射に異常を認めない．<br>
                             対応としてまず行うのはどれか．3つ選べ．</p>
 
@@ -1837,9 +1862,13 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>単純ヘルペス脳炎</p>
+                        <ul>
+                            <li>側頭葉 &xrArr; s/o HSV</li>
+                        </ul>
 
-                        <p>True: a,b,e</p>
+                        <p class="q_dx">単純ヘルペス脳炎</p>
+
+                        <p class="q_answer_true">a b e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1958,17 +1987,24 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group CJD">
+            <div class="card-group CJD pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109I69" target="_blank" id="">109I69</a> 感染防御
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_18:03:04"> </span>
                         <br>
                         <p>75歳の女性．<br>
                             意識混濁のため搬入された．<br>
-                            4ヵ月前から易怒性，興奮および不眠が出現し，健忘が急速に進行した．1ヵ月前から床上生活となり，幻視も出現して意思疎通が困難となった．昨日から意識が混濁し回復しないため救急搬送された．海外渡航歴，輸血歴および手術歴はない．意識レベルはJCSⅠ-3．開瞼しているが眼球は浮動しており，追視せず意思疎通は困難である．身長155cm，体重58kg．体温36.2℃．脈拍60/分，整．血圧112/68mmHg．呼吸数20/分．四肢に筋強剛を認め，両上肢と左下肢とにピクつくような素早い不随意運動を周期性に認める．腱反射は全般に亢進しているが，Babinski徴候は陰性である．尿所見，血液所見および血液生化学所見に異常を認めない．頭部MRIの拡散強調像を次に示す．<br>
+                            4ヵ月前から易怒性，興奮および不眠が出現し，健忘が急速に進行した．<br>
+                            1ヵ月前から床上生活となり，幻視も出現して意思疎通が困難となった．<br>
+                            昨日から意識が混濁し回復しないため救急搬送された．<br>
+                            海外渡航歴，輸血歴および手術歴はない．<br>
+                            意識レベルはJCSⅠ-3．開瞼しているが眼球は浮動しており，追視せず意思疎通は困難である．<br>
+                            身長155cm，体重58kg．体温36.2℃．脈拍60/分，整．血圧112/68mmHg．呼吸数20/分．<br>
+                            四肢に筋強剛を認め，両上肢と左下肢とにピクつくような素早い不随意運動を周期性に認める．腱反射は全般に亢進しているが，Babinski徴候は陰性である．尿所見，血液所見および血液生化学所見に異常を認めない．頭部MRIの拡散強調像を次に示す．<br>
                             この患者における感染防御で最も注意すべきなのはどれか．</p>
                     </div>
 
@@ -1978,7 +2014,7 @@
                         <ol type="a">
                             <li class="ans_f">脳波検査</li>
                             <li class="ans_f">喀痰培養</li>
-                            <li class="ans_f">脳脊髄液検査</li>
+                            <li class="ans_t">脳脊髄液検査</li>
                             <li class="ans_f">動脈血ガス分析</li>
                             <li class="ans_f">上部消化管内視鏡検査</li>
                         </ol>
@@ -1991,7 +2027,7 @@
 
                         <p></p>
 
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -2005,21 +2041,26 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group CJD">
+            <div class="card-group CJD pri">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107D42" target="_blank" id="">107D42</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_17:42:47"> </span>
                         <br>
                         <p>68歳の女性．<br>
                             料理の段取りができなくなったことを主訴に来院した．<br>
-                            6ヵ月前から料理に時間がかかるようになったが，本人も夫もあまり気にしていなかった．3ヵ月前からそれまで得意にしていた料理がうまくできなくなった．かかりつけ医でうつ病と診断され，抗うつ薬の投与が開始されたが改善せず，ぼーっとしていることが多くなったため紹介され受診した．28歳時に十二指腸潰瘍の既往がある．<br>
+                            6ヵ月前から料理に時間がかかるようになったが，本人も夫もあまり気にしていなかった．<br>
+                            3ヵ月前からそれまで得意にしていた料理がうまくできなくなった．かかりつけ医でうつ病と診断され，抗うつ薬の投与が開始されたが改善せず，ぼーっとしていることが多くなったため紹介され受診した．<br>
+                            28歳時に十二指腸潰瘍の既往がある．<br>
                             意識は清明．時間と場所の見当識障害を認める．身長152cm，体重48kg．体温36.3℃．脈拍84/分，整．血圧138/86mmHg．呼吸数20/分．<br>
                             神経学的診察では，脳神経系に異常を認めない．両上肢に軽度の<u>筋トーヌス亢進</u>と<u>ミオクローヌス</u>とを認める．四肢筋力低下を認めない．四肢腱反射亢進を認める．感覚障害と小脳失調とを認めない．歩行はやや不安定であるが自力歩行が可能である．<br>
-                            血液所見：赤血球410万，Hb 13.0g/dL，Ht 36％，白血球4,500，血小板22万．CRP 0.2mg/dL．<br>
-                            検査のため短期入院となった．初診時の頭部MRIの拡散強調像を次に示す．<br>
+                            血液所見：<br>
+                            赤血球410万，Hb 13.0g/dL，Ht 36％，白血球4,500，血小板22万．CRP 0.2mg/dL．<br>
+                            検査のため短期入院となった．<br>
+                            初診時の頭部MRIの拡散強調像を次に示す．<br>
                             対応として正しいのはどれか．</p>
                     </div>
 
@@ -2040,9 +2081,9 @@
 
                         <img src="https://qb.medilink-study.com/images/107D042_ima_j_010.jpg" class="card-img-top img-fluid">
 
-                        <p>CJD</p>
+                        <p class="q_dx">CJD</p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -2181,6 +2222,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2249,6 +2291,12 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2257,6 +2305,14 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+    
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2270,27 +2326,36 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('.page-header > h1 > small.print_date').html(print_date);
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2312,11 +2377,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2333,62 +2401,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2441,6 +2509,19 @@ $('document').ready(function(){
     $('code.q_alert_done').html(n_done);
 
 
+    $('p.q_dx').prepend('<code>Dx</code>: ');
+
+    $('p.q_answer_true').prepend('True: ');
+    $('p.q_answer_false').prepend('False: ');
+
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
+
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -2606,8 +2687,81 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#BM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.BM)').slideToggle(100);
+    });
+    $('#BM').find('code').html($('div.BM').size());
+
+
+    $('#s_pneumoniae').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.s_pneumoniae)').slideToggle(100);
+    });
+    $('#s_pneumoniae').find('code').html($('div.s_pneumoniae').size());
+
+
+    $('#n_meningitis').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.n_meningitis)').slideToggle(100);
+    });
+    $('#n_meningitis').find('code').html($('div.n_meningitis').size());
+
+
+    $('#CM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CM)').slideToggle(100);
+    });
+    $('#CM').find('code').html($('div.CM').size());
+
+
+    $('#TBM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.TBM)').slideToggle(100);
+    });
+    $('#TBM').find('code').html($('div.TBM').size());
+
+
+    $('#FM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.FM)').slideToggle(100);
+    });
+    $('#FM').find('code').html($('div.FM').size());
+
+
+    $('#VM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.VM)').slideToggle(100);
+    });
+    $('#VM').find('code').html($('div.VM').size());
+
+
+    $('#VE h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.VE)').slideToggle(100);
+    });
+    $('#VE').find('code').html($('div.VE').size());
+
+
+    $('#CJD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CJD)').slideToggle(100);
+    });
+    $('#CJD').find('code').html($('div.CJD').size());
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

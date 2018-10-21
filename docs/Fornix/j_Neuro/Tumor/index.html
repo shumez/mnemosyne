@@ -4,12 +4,38 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-05-09 20:18:55
+@Last modified time: 2018-10-21 13:13:55
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
+04.01.04    18 05 28    meta viewport
+04.01.03    18 05 26    .q #q##
+
 04.01.02    18 05 09    js span.now addClass
 04.01.01    18 04 23    js #q card click
 04.01.00    18 04 23    material design for bootstrap
@@ -74,8 +100,11 @@
 <head>
     <title>Tumor</title>
     <meta charset="UTF-8">
-    <meta name="author" content="shume">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="author" content="shumez">
+    <meta name="revised" content="2018-10-21 13:14:17" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.27">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../../scripts/img/favicon.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -88,6 +117,9 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -129,6 +161,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -169,23 +206,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -234,263 +280,501 @@
         </div>
     </div>
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>GBM <small class="hidden-xs-down">GlioBlastoma 膠芽腫</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+    
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small> </small> <small><code></code></small></h2>
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>SWM <small class="hidden-xs-down">Schwannoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/110D036_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>成人</th>
+                            <th>小児</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>テント下</th>
+                            <td>
+                                <ul>
+                                    <li>血管芽腫</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>MBM</li>
+                                    <li>神経膠腫</li>
+                                    <li>EPNM</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>小児 脳腫瘍</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>子供は 頭 上の 星を ずっと 見て 生きる</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>頭</td>
+                            <td>頭蓋咽頭腫</td>
+                        </tr>
+                        <tr>
+                            <td>上の</td>
+                            <td>上衣腫</td>
+                        </tr>
+                        <tr>
+                            <td>星を</td>
+                            <td>星細胞腫</td>
+                        </tr>
+                        <tr>
+                            <td>ずっと</td>
+                            <td>髄芽腫</td>
+                        </tr>
+                        <tr>
+                            <td>見て</td>
+                            <td>視神経膠腫</td>
+                        </tr>
+                        <tr>
+                            <td>生きる</td>
+                            <td>生殖細胞腫</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>リング状</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106I007_sup_j_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <table class="table table-condensed"> 
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">Ring(+) &xrArr;</td>
+                            <td rowspan="2">DWI</td>
+                            <td>Hi</td>
+                            <td>&xrArr;</td>
+                            <td><ul>
+                                <li>脳膿瘍</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>Lo</td>
+                            <td>&xrArr;</td>
+                            <td><ul>
+                                <li>神経膠芽腫</li>
+                                <li>転移性脳腫瘍</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <h6>リング状</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>リング 転がし ハメた のよ</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>転がし</td>
+                            <td>膠芽腫</td>
+                        </tr>
+                        <tr>
+                            <td>ハメた</td>
+                            <td>Meta</td>
+                        </tr>
+                        <tr>
+                            <td>のよ</td>
+                            <td>脳膿瘍</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>石灰化 脳腫瘍</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>C O G A M E</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>C</td>
+                            <td><u>C</u>raniopharyngioma</td>
+                        </tr>
+                        <tr>
+                            <td>O</td>
+                            <td><u>O</u>ligodendroglioma</td>
+                        </tr>
+                        <tr>
+                            <td>G</td>
+                            <td><u>G</u>erm cell tumor</td>
+                        </tr>
+                        <tr>
+                            <td>A</td>
+                            <td><u>A</u>strocytoma</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td><u>M</u>eningioma</td>
+                        </tr>
+                        <tr>
+                            <td>E</td>
+                            <td><u>E</u>pendymoma</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>CT造影効果</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">転移性</li>
+                    <li class="list-group-item">神経膠腫</li>
+                    <li class="list-group-item">脳膿瘍</li>
+                    <li class="list-group-item">髄膜腫</li>
+                </ul>
+            </div>
         </div>
     </div>
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>MBM <small class="hidden-xs-down">MedulloBlastoma 髄芽腫</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
+
+        
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="GBM">
+                <div class="page-header">
+                    <h2>GBM <small class="hidden-xs-down">GlioBlastoma 膠芽腫</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li><u>≥ 50yo</u></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ASTM">
+                <div class="page-header">
+                    <h2>Pilocytic Astrocytoma <small>毛様細胞性星細胞腫</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        <ul>
+                            <li><u>小脳</u></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6>Prognosis</h6>
+                        <ul>
+                            <li><u>予後良好</u></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="EPNM">
+                <div class="page-header">
+                    <h2>EPNM <small class="hidden-xs-down">Ependymoma</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li><u>石灰化</u></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MBM">
+                <div class="page-header">
+                    <h2>MBM <!-- <small class="hidden-xs-down">MedulloBlastoma</small>  --><small>髄芽腫</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li><u>小児</u></li>
+                        </ul>
+                    </li>
+                </ul>
+        
+            </div>
+        </div>
+    </div>
+
+
+        
+    <div class="section" id="MGM">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>MGM <small class="hidden-xs-down">Meningioma</small> <small><code></code></small></h2>
                 </div>
             </div>
 
-        </div>
-    </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li>動脈塞栓術</li>
+                        </ul>
+                    </li>
+                </ul>
+            <!-- </div>
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>EPNM <small class="hidden-xs-down">Ependymoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>PA <small class="hidden-xs-down">Pituitary Adenoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">PA</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>Pituitary Apoplexy <small class="hidden-xs-down">下垂体卒中</small></h3>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>CPM <small class="hidden-xs-down">CranyoPharyngioma</small> <small>頭蓋咽頭腫</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="GCT">
-        <div class="page-header">
-            <h2>GCT <small class="hidden-xs-down">Germ Cell Tumor</small> <small class="hidden-xs-down">IGM Intracranial Germinoma</small> <small class="hidden-sm-up">Germinoma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>MGM <small class="hidden-xs-down">Meningioma</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="card">
-                        <img src="">
-                        <div class="card-body">
-                            <h4>Sun-burst appearance</h4>
-                        </div>
+            <div class="col-xs-12 col-sm-6 col-md-6"> -->
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106G040_ima_j_020.jpg" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <p>Sun-burst appearance</p>
                     </div>
                 </div>
             </div>
 
-        </div>
-    </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="FKS">Foster-Kennedy <small><code></code></small></h3>
 
-    <div class="section" id="meta">
-        <div class="page-header">
-            <h2>Meta <small class="hidden-xs-down">Metastatic Tumor</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="FKS">
-        <div class="page-header">
-            <h2>FKS <small class="hidden-xs-down">Foster-Kennedy Syndrome</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">前頭蓋底部の腫瘍</li>
-                        <li class="list-group-item"><ul>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Definition</h6>
+                        <ul>
+                            <li>前頭蓋底部の腫瘍</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
                             <li>同側の嗅覚脱失</li>
                             <li>同側の視神経萎縮</li>
                             <li>対側のうっ血乳頭</li>
-                        </ul></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
                         </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         </div>
     </div>
-    -->
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SWM">
+                <div class="page-header">
+                    <h2>SWM <small class="hidden-xs-down">Schwannoma</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li>#1: CrN-VIII</li>
+                            <li>#2: CrN-V</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PA">
+                <div class="page-header">
+                    <h2>PA <small class="hidden-xs-down">Pituitary Adenoma</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Classification</h6>
+                        <ul>
+                            <li>機能性</li>
+                            <li>非機能性</li>
+                        </ul>
+                    </li>
+                </ul>
+        
+                <h3 id="pituitary_apoplexy">Pituitary Apoplexy <small>下垂体卒中</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">非分泌性腺腫, PRL分泌腺腫にみられる</li>
+                    <li class="list-group-item">腫瘍内出血<br>
+                        &dArr;<br> 
+                        腫瘍体積&uarr; / くも膜下腔への穿破<br>
+                        &dArr;<br> 
+                        急激な視力低下 & 突然の強い頭痛</li>
+                    <li class="list-group-item">CrN-III / IV / V<sub>1</sub> / V<sub>2</sub> / VI</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CPM">
+                <div class="page-header">
+                    <h2>CPM<!--  <small class="hidden-xs-down">CranyoPharyngioma</small> --> <small>頭蓋咽頭腫</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li><u>&darr;下垂体機能</u></li>
+                        </ul>
+                    </li>
+                </ul>
+        
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="GCT">
+                <div class="page-header">
+                    <h2>GCT <small class="hidden-xs-down">Germ Cell Tumor</small> <small class="hidden-xs-down">IGM Intracranial Germinoma</small> <small class="hidden-sm-up">Germinoma</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li><u>松果体</u></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li><u>放射線感受性</u></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108I077.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <h6>松果体の腫瘍</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">奇形腫</li>
+                    <li class="list-group-item">胚腫 Germinoma</li>
+                    <li class="list-group-item">embryonal carcinoma</li>
+                </ul>
+
+                
+            </div>
+        </div>
+
+
+        
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="meta">
+                <div class="page-header">
+                    <h2>Meta <small class="hidden-xs-down">Metastatic Tumor</small> <small><code></code></small></h2>
+                </div>
+
+        
+            </div>
+        </div>
+
+
+        
+
+
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+
+
+    </div>
 
 
     <div class="section" id="app">
@@ -516,7 +800,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 30 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 30</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -653,15 +937,24 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group GBM">
+            <div class="card-group GBM pri info mnemonics">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D41" target="_blank">109D41</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:23:25"> </span>
                         <br>
                         <p>64歳の男性．<br>
                             右片麻痺を主訴に来院した．<br>
@@ -697,9 +990,9 @@
 
                         <p>リング enhancement</p>
 
-                        <p>膠芽腫</p>
+                        <p class="q_dx">膠芽腫</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>膠芽腫: リング状, 病理 偽柵状</li>
@@ -711,18 +1004,35 @@
 
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/109D041_bas_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109D041_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
 
                         <h6>リング状</h6>
-                        <p><u>リング 転がし ハメた のよ</u></p>
-                        <ul class="list-group">
-                            <li class="list-group-item">膠芽腫</li>
-                            <li class="list-group-item">Meta</li>
-                            <li class="list-group-item">脳膿瘍</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>リング 転がし ハメた のよ</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>膠芽腫</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>Meta</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>脳膿瘍</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109D041_bas_010.jpg" class="img-fluid"> -->
+
                     </div>
                 </div>
             </div>
@@ -775,13 +1085,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group SWM">
+            <div class="card-group SWM 110 pri info fig">
                 <div class="card">
-                    <div class="card-header 110 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D36" target="_blank">110D36</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_13:26:28"> </span>
                         <br>
                         <p>56歳の女性．<br>
                             <u>右耳の聴力低</u>下と歩行障害とを主訴に来院した．<br>
@@ -824,9 +1135,9 @@
                         <img src="https://qb.medilink-study.com/images/110D036_ima_030.jpg" class="card-img-top img-fluid">
                         <p>柵状配列</p>
 
-                        <p>Rt 小脳橋角部神経鞘腫</p>
+                        <p class="q_dx">Rt 小脳橋角部神経鞘腫</p>
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li>膠芽腫: リング状, 脳実質内</li>
@@ -838,7 +1149,6 @@
 
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/110D036_bas_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/110D036_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
@@ -892,6 +1202,11 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/110D036_bas_010.jpg" class="img-fluid"> -->
+
                     </div>
                 </div>
             </div>
@@ -958,14 +1273,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group SWM">
+            <div class="card-group SWM info">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/89B75" target="_blank">89B75</a> 神経鞘腫 頻度
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_13:27:49"> </span>
                         <br>
                         <p>神経鞘腫が最も多く発生するのはどれか．</p>
 
@@ -981,7 +1297,7 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li>#2</li>
@@ -992,35 +1308,51 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">#1 CrN-VIII</li>
-                            <li class="list-group-item">#2 CrN-V</li>
+                            <li class="list-group-item">
+                                #1: CrN-VIII</li>
+                            <li class="list-group-item">
+                                #2: CrN-V
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group MBM">
+            <div class="card-group MBM pri req">
                 <div class="card">
-                    <div class="card-header pri req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101D45" target="_blank">101D45-46</a> 病変 / 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now"> </span> / 
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:29:52"> </span>
+                         / 
                         <span class="badge badge-pill rev"> </span>
                         <br>
                         <p>次の文を読み，45，46の問いに答えよ．<br><br>
                             
                             5歳の男児．<br>
                             頭痛と嘔吐とを主訴に来院した．<br>
-                            現病歴：1ヵ月前から頭痛が出現し，次第に増強してきた．10日前から毎朝嘔吐している．<br>
-                            既往歴・家族歴：特記すべきことはない．<br>
-                            現　症：意識は清明．精神発達は正常．身長120cm，体重28kg．体温36.8℃．呼吸数18/分．脈拍72/分，整．血圧96/56mmHg．口唇と舌とはやや乾燥している．<br>
+                            現病歴：<br>
+                            1ヵ月前から頭痛が出現し，次第に増強してきた．10日前から毎朝嘔吐している．<br>
+                            既往歴・家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            意識は清明．精神発達は正常．身長120cm，体重28kg．体温36.8℃．呼吸数18/分．脈拍72/分，整．血圧96/56mmHg．<br>
+                            口唇と舌とはやや乾燥している．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（－）．<br>
-                            血液所見：赤血球490万，Hb 14.6g/dL，Ht 45％，白血球7,200，血小板37万．<br>
-                            血清生化学所見：総蛋白7.2g/dL，アルブミン3.6g/dL，クレアチニン0.9mg/dL，Na 149mEq/L，K 4.8mEq/L，Cl 102mEq/L．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．<br>
+                            血液所見：<br>
+                            赤血球490万，Hb 14.6g/dL，Ht 45％，白血球7,200，血小板37万．<br>
+                            血清生化学所見：<br>
+                            総蛋白7.2g/dL，アルブミン3.6g/dL，クレアチニン0.9mg/dL，Na 149mEq/L，K 4.8mEq/L，Cl 102mEq/L．<br>
                             頭部造影MRIのT1強調矢状断像を次に示す．</p>
                     </div>
 
@@ -1054,9 +1386,19 @@
                         <!-- <img src="https://www.qb-online.com/img/101D045_ima_j_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/101D045_ima_j_010.jpg" class="card-img-top img-fluid">
 
-                        <p>小脳髄芽腫</p>
+                        <p class="q_dx">小脳髄芽腫</p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
+
+                        <ol type="a">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -1066,27 +1408,20 @@
                             <li></li>
                         </ol>
 
-                        <p>True: b</p>
 
-                        <ol type="a">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ol>
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group MBM EPNM">
+            <div class="card-group MBM EPNM info mnemonics">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93F40" target="_blank">93F40</a> T1WI 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_13:32:19"> </span>
                         <br>
                         <p>7歳の男児．<br>
                             数日前から頻回の嘔吐をきたすようになり，今朝から意識レベルが低下したため来院した．著明な頭蓋内圧亢進症候が認められる．<br>
@@ -1113,7 +1448,7 @@
                         <!-- <img src="https://www.qb-online.com/img/93F040_ima_j_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/93F040_ima_j_010.jpg" class="card-img-top img-fluid">
 
-                        <p>True: b,c</p>
+                        <p class="q_answer_true">b c</p>
 
                         <ol type="a">
                             <li></li>
@@ -1133,23 +1468,52 @@
 
 
                         <h6>小児 脳腫瘍</h6>
-                        <p><u>子供は 頭 上の 星を ずっと 見て 生きる</u></p>
-                        <ul class="list-group">
-                            <li class="list-group-item">頭蓋咽頭腫</li>
-                            <li class="list-group-item">上衣腫</li>
-                            <li class="list-group-item">星細胞腫</li>
-                            <li class="list-group-item">髄芽腫</li>
-                            <li class="list-group-item">視神経膠腫</li>
-                            <li class="list-group-item">生殖細胞腫</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>子供は 頭 上の 星を ずっと 見て 生きる</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>頭</td>
+                                    <td>頭蓋咽頭腫</td>
+                                </tr>
+                                <tr>
+                                    <td>上の</td>
+                                    <td>上衣腫</td>
+                                </tr>
+                                <tr>
+                                    <td>星を</td>
+                                    <td>星細胞腫</td>
+                                </tr>
+                                <tr>
+                                    <td>ずっと</td>
+                                    <td>髄芽腫</td>
+                                </tr>
+                                <tr>
+                                    <td>見て</td>
+                                    <td>視神経膠腫</td>
+                                </tr>
+                                <tr>
+                                    <td>生きる</td>
+                                    <td>生殖細胞腫</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group PA">
+            <div class="card-group PA pituitary_apoplexy info">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G54" target="_blank">109G54</a> 診断
                     </div>
                     <div class="card-body">
@@ -1215,19 +1579,23 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group PA">
+            <div class="card-group PA 111 info">
                 <div class="card">
-                    <div class="card-header 111 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A27" target="_blank">111A27</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:55:32"> </span>
                         <br>
                         <p>38歳の女性．<br>
                             眼が見えにくいことを主訴に来院した．<br>
-                            2年前から左眼の見えにくさを自覚し，3ヵ月前から右眼も見えにくくなっている．3年前から無月経になっている．<br>
-                            意識は清明．身長164cm，体重67kg．体温36.1℃．脈拍72/分，整．血圧132/76mmHg．呼吸数16/分．眼底は正常で，眼球運動に制限はなく，対光反射は正常である．血液所見に異常を認めない．<br>
-                            血液生化学所見：TSH 1.3μU/mL（基準0.2〜4.0），LH 2.4mIU/mL（基準1.8〜7.6），ACTH 29.5pg/mL（基準60以下），FSH 6.5mIU/mL（基準5.2〜14.4），<u>GH 0.1ng/mL</u>（基準5以下），<u>プロラクチン34.8ng/mL</u>（基準15以下），FT4 0.9ng/dL（基準0.8〜2.2），インスリン様成長因子-Ⅰ〈IGF-Ⅰ〉 178ng/mL（基準155〜588），コルチゾール 11.2μg/dL（基準5.2〜12.6）．<br>
+                            2年前から左眼の見えにくさを自覚し，3ヵ月前から右眼も見えにくくなっている．<br>
+                            3年前から無月経になっている．<br>
+                            意識は清明．身長164cm，体重67kg．体温36.1℃．脈拍72/分，整．血圧132/76mmHg．呼吸数16/分．<br>
+                            眼底は正常で，眼球運動に制限はなく，対光反射は正常である．血液所見に異常を認めない．<br>
+                            血液生化学所見：<br>
+                            TSH 1.3μU/mL（基準0.2〜4.0），LH 2.4mIU/mL（基準1.8〜7.6），ACTH 29.5pg/mL（基準60以下），FSH 6.5mIU/mL（基準5.2〜14.4），<u>GH 0.1ng/mL</u>（基準5以下），<u>プロラクチン34.8ng/mL</u>（基準15以下），FT4 0.9ng/dL（基準0.8〜2.2），インスリン様成長因子-Ⅰ〈IGF-Ⅰ〉 178ng/mL（基準155〜588），コルチゾール 11.2μg/dL（基準5.2〜12.6）．<br>
                             矯正視力は右0.1，左0.08．<br>
                             視野検査の結果（A），頭部造影MRIの冠状断像（B）及び矢状断像（C）を次に示す．<br>
                             適切な治療はどれか．</p>
@@ -1235,9 +1603,9 @@
 
                     <!-- <img src="https://www.qb-online.com/img/111A027A.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/111A027C.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/111A027A.jpg" class="card-img-top img-fluid" width="50%">
-                    <img src="https://qb.medilink-study.com/images/111A027B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111A027C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111A027A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111A027B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111A027C.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1265,8 +1633,10 @@
                         <p>軽度&uarr;PRL </p>
 
 
-                        <p>非機能性下垂体腺腫</p>
-                        <p>True: e</p>
+                        <p class="q_dx">非機能性下垂体腺腫</p>
+
+
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1278,13 +1648,21 @@
 
                         <h6>下垂体腺腫 Rx</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">PRL産生腫瘍: PRL ≥ 200<ul>
-                                <li>DA作動薬 (ブロモクリプチン)</li>
-                            </ul></li>
-                            <li class="list-group-item">その他 (GH産生 / 非機能性): <ul>
-                                <li>手術</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                PRL産生腫瘍: PRL ≥ 200
+                                <ul>
+                                    <li>DA作動薬 (ブロモクリプチン)</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                その他 (GH産生 / 非機能性): 
+                                <ul>
+                                    <li>手術</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
 
 
                         <h6>下垂体腺腫</h6>
@@ -1346,21 +1724,28 @@
                         /
                         <span class="badge badge-pill rev"> </span>
                         /
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:58:42"> </span>
                         <br>
                         <p>次の文を読み，8～10の問いに答えよ．<br><br>
 
                             45歳の女性．<br>
                             頭重感と視力低下とを訴えて来院した．<br>
-                            現病歴：30歳で第1子，32歳で第2子を出産した．妊娠，分娩および産褥期には異常がなかった．<br>
+                            現病歴：<br>
+                            30歳で第1子，32歳で第2子を出産した．妊娠，分娩および産褥期には異常がなかった．<br>
                             35歳頃から月経不順となり，次いで<u>無月経</u>となった．<br>
                             37歳頃から<u>手足が太くなり</u>，それまでの靴や指輪が合わなくなり，友人に<u>顔貌が変わった</u>と言われるようになった．<br>
                             40歳頃から両眼の<u>視力低下</u>に気付いた．同じ頃に<u>高血圧</u>と<u>高血糖</u>を指摘されたが，治療は受けなかった．最近，疲れやすく，頭重感が著しい．<br>
-                            既往歴：20歳のとき虫垂炎の手術を受けた．<br>
-                            家族歴：特記すべきことはない．<br>
-                            現　症：身長152cm，体重61kg．脈拍68/分，整．血圧168/96mmHg．<br>
+                            既往歴：<br>
+                            20歳のとき虫垂炎の手術を受けた．<br>
+                            家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            身長152cm，体重61kg．脈拍68/分，整．血圧168/96mmHg．<br>
                             意識は清明．<u>鼻・口唇の肥大</u>，<u>下顎の突出および手指の肥大</u>を認める．打聴診上，心肺に異常はない．腹部所見は正常．眼瞼下垂はない．<br>
-                            両眼の視野（A）を次に示す．視力は右0.8（矯正不能），左0.9（矯正不能）．眼底所見で両側視神経乳頭萎縮を認める．深部腱反射は正常，表在感覚障害はない．頭部造影MRI，T1強調画像の矢状断（B）を次に示す．</p>
+                            両眼の視野（A）を次に示す．視力は右0.8（矯正不能），左0.9（矯正不能）．眼底所見で両側視神経乳頭萎縮を認める．<br>
+                            深部腱反射は正常，表在感覚障害はない．<br>
+                            頭部造影MRI，T1強調画像の矢状断（B）を次に示す．</p>
 
                         <img src="https://qb.medilink-study.com/images/89C008-010A.jpg" class="card-img-top img-fluid" width="">
                         <img src="https://qb.medilink-study.com/images/89C008-010B.jpg" class="card-img-top img-fluid" width="">
@@ -1405,7 +1790,7 @@
 
                         <p></p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -1416,7 +1801,7 @@
                         </ol>
 
 
-                        <p>True: a,b</p>
+                        <p class="q_answer_true">a b</p>
 
                         <ol type="a">
                             <li></li>
@@ -1427,7 +1812,7 @@
                         </ol>
 
 
-                        <p>True: b,c</p>
+                        <p class="q_answer_true">b c</p>
 
                         <ol type="a">
                             <li></li>
@@ -1436,6 +1821,8 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
@@ -1451,18 +1838,21 @@
             <!-- 01 -->
             <div class="card-group CPM">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97A44" target="_blank">97A44</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:06:41"> </span>
                         <br>
                         <p>30歳の男性．<br>
                             頭痛とふらつきとを主訴に来院した．<br>
                             2年前から頭痛，易疲労感，物忘れ，<u>口渇</u>および<u>見えにくさ</u>が自覚され，徐々に悪化してきた．<br>
-                            身長158cm，体重56kg．脈拍64/分，整．血圧136/76mmHg．<u>両耳側半盲</u>，うっ血乳頭および記銘力障害を認める．<br>
-                            尿所見：<u>比重1.001</u>，蛋白（－），糖（－）．<u>尿中17-KS 0.5mg/日</u>（基準3～11）．<u>尿中17-OHCS 1.5mg/日</u>（基準3～8）．<br>
+                            身長158cm，体重56kg．脈拍64/分，整．血圧136/76mmHg．<br>
+                            <u>両耳側半盲</u>，うっ血乳頭および記銘力障害を認める．<br>
+                            尿所見：<br>
+                            <u>比重1.001</u>，蛋白（－），糖（－）．<u>尿中17-KS 0.5mg/日</u>（基準3～11）．<u>尿中17-OHCS 1.5mg/日</u>（基準3～8）．<br>
                             最も考えられるのはどれか．</p>
                         
 
@@ -1500,14 +1890,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group CPM">
+            <div class="card-group CPM pri info">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103A28" target="_blank">103A28</a> 脳腫瘍 &xrArr; 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:09:44"> </span>
                         <br>
                         <p>19歳の女性．<br>
                             半年前から出現した<u>右眼の視力低下</u>と1週前から続く<u>易疲労感</u>とを主訴に来院した．<br>
@@ -1538,34 +1929,38 @@
                         <img src="https://qb.medilink-study.com/images/103A028_ima_j_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/103A028_ima_j_020.jpg" class="card-img-top img-fluid">
 
-                        <p>頭蓋咽頭腫</p>
+                        <p class="q_dx">頭蓋咽頭腫</p>
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>AVP</li>
+                            <li>&darr;ADH</li>
                             <li></li>
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/103A028_bas_j_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103A028_bas_j_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/img_kaisetsu/103A028_bas_j_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group HTH">
+            <div class="card-group HTH HRPRL DI">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101F60" target="_blank" id="">101F60</a> 視床下部腫瘍
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:35:45"> </span>
                         <br>
                         <p>視床下部腫瘍でみられるのはどれか．2つ選べ．</p>
 
@@ -1584,10 +1979,10 @@
 
                         <p></p>
 
-                        <p>True: a,c</p>
+                        <p class="q_answer_true">a c</p>
 
                         <ol type="a">
-                            <li>DA -| PRL<br>
+                            <li>DA <span class="rtack"></span> PRL<br>
                                 &uarr;PRL</li>
                             <li>&darr;ACTH</li>
                             <li>渇中枢の障害 </li>
@@ -1599,13 +1994,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group GCT">
+            <div class="card-group GCT info">
                 <div class="card">
-                    <div class="card-header cau">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/86E38" target="_blank">86E38</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:12:36"> </span>
                         <br>
                         <p>19歳の男性．<br>
                             嘔吐，頭痛を主訴とし，独歩で来院した．<br>
@@ -1616,8 +2012,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/86E038A.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/86E038B.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/86E038A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/86E038B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/86E038A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/86E038B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1641,7 +2037,7 @@
                         <img src="https://qb.medilink-study.com/images/86E038_ima_j_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/86E038_ima_j_020.jpg" class="card-img-top img-fluid">
 
-                        <p>松果体の腫瘍</p>
+                        <h6>松果体の腫瘍</h6>
                         <ul class="list-group">
                             <li class="list-group-item">奇形腫</li>
                             <li class="list-group-item">胚腫 Germinoma</li>
@@ -1649,9 +2045,9 @@
                         </ul>
 
 
-                        <p>Gernoma</p>
+                        <p class="q_dx">Gernoma</p>
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li>髄膜腫: 松果体にはできにくい, 放射線感受性低い</li>
@@ -1674,13 +2070,14 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group GCT">
+            <div class="card-group GCT pri info">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I77" target="_blank">108I77</a> 診断 &xrArr; Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:14:29"> </span>
                         <br>
                         <p>12歳の男児．<br>
                             頭痛と嘔吐とを主訴に来院した．<br>
@@ -1708,9 +2105,9 @@
                         <!-- <img src="https://www.qb-online.com/img/108I077_ima_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/108I077_ima_010.jpg" class="card-img-top img-fluid">
 
-                        <p>松果体腫瘍 (胚細胞腫瘍)</p>
+                        <p class="q_dx">松果体腫瘍 (胚細胞腫瘍)</p>
 
-                        <p>True: a,e</p>
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1723,22 +2120,27 @@
 
                         <h6>脳腫瘍 好発部位</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/108I077_bas_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/108I077_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/108I077_bas_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group GCT">
+            <div class="card-group GCT MGM SWM PA CPM">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98D43" target="_blank">98D43</a> 診断 r/o 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:15:51"> </span>
                         <br>
                         <p>26歳の男性．<br>
                             最近ものが見えにくくなったため来院した．頭部単純MRIのT1強調矢状断像を次に示す．<br>
@@ -1764,7 +2166,7 @@
                         <!-- <img src="https://www.qb-online.com/img/98D043_ima_j_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/98D043_ima_j_010.jpg" class="card-img-top img-fluid">
 
-                        <p>False: e</p>
+                        <p class="q_answer_false">e</p>
 
                         <ol type="a">
                             <li>髄膜腫はトルコ鞍周囲にも起こりうる</li>
@@ -1773,22 +2175,26 @@
                             <li></li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group MGM">
+            <div class="card-group MGM fig">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G40" target="_blank">106G40</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:16:59"> </span>
                         <br>
                         <p>70歳の女性．<br>
                             <u>けいれん</u>のため搬入された．<br>
-                            意識レベルはJCSⅡ-10．体温36.8℃．脈拍98/分，整．血圧138/86mmHg．呼吸数16/分．SpO2 96％（room air）．対光反射と眼球運動とに異常を認めない．<br>
+                            意識レベルはJCSⅡ-10．体温36.8℃．脈拍98/分，整．血圧138/86mmHg．呼吸数16/分．SpO2 96％（room air）．<br>
+                            対光反射と眼球運動とに異常を認めない．<br>
                             左上下肢の不全麻痺を認める．<br>
                             来院時の頭部MRIのFLAIR像（A）と塞栓術のために施行した外頸動脈造影の写真（B）とを次に示す．<br>
                             診断として考えられるのはどれか</p>
@@ -1825,9 +2231,9 @@
                         <p>sun-burst appearance</p>
 
 
-                        <p>髄膜腫 </p>
+                        <p class="q_dx">髄膜腫</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li></li>
@@ -1849,7 +2255,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/101B112" target="_blank">101B112</a> 血管++ 髄膜腫 処置
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now"> </span>
                         <br>
                         <p>血管に富む髄膜腫の摘出手術前に行われるのはどれか．</p>
 
@@ -1872,7 +2279,7 @@
                             <li>髄膜腫: 良性</li>
                             <li>術中の出血を少なくする<br>
                                 中硬膜動脈の塞栓</li>
-                            <li></li>
+                            <li>髄膜腫: 良性</li>
                             <li></li>
                             <li></li>
                         </ol>
@@ -2010,13 +2417,14 @@
 
 
             <!-- 01 -->
-            <div class="card-group meta">
+            <div class="card-group meta pri info">
                 <div class="card">
-                    <div class="card-header pri">
+                    <div class="card-header">
                         <a href="https://www.qb-online.com/#/list/106I7" target="_blank">106I7</a> リング状 &xrArr; 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_14:21:47"> </span>
                         <br>
                         <p>高齢女性の頭部MRIの造影T1強調像（A）と病変のH-E染色標本（B）とを次に示す．<br>
                             考えられるのはどれか．</p>
@@ -2045,9 +2453,9 @@
                         <img src="https://qb.medilink-study.com/images/106I007_ima_j_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/106I007_ima_j_020.jpg" class="card-img-top img-fluid">
 
-                        <p>腺癌</p>
+                        <p class="q_dx">腺癌</p>
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -2059,21 +2467,25 @@
 
                         <h6>リング状</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/106I007_sup_j_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/106I007_sup_j_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/106I007_sup_j_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group ABS">
+            <div class="card-group ABS abscess">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/96D12" target="_blank" id="">96D12</a> 原因疾患
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:23:29"> </span>
                         <br>
                         <p>48歳の男性．<br>
                             昨夜から頭痛の悪化，嘔吐および意識障害がみられるようになったため救急車で搬入された．<br>
@@ -2100,9 +2512,9 @@
 
                         <img src="https://qb.medilink-study.com/images/96D012_ima_j_010.jpg" class="card-img-top img-fluid">
 
-                        <p>脳膿瘍</p>
+                        <p class="q_dx">脳膿瘍</p>
 
-                        <p>True: e</p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -2119,13 +2531,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group ABS">
+            <div class="card-group ABS abscess pri info">
                 <div class="card">
-                    <div class="card-header pri info">
-                        <a href="https://qb.medilink-study.com/#/Answer/105I42">105I42</a> Ring enhence
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/105I42" target="_blank">105I42</a> Ring enhence
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:24:50"> </span>
                         <br>
                         <p>61歳の女性．<br>
                         <u>頭痛</u>と<u>嘔吐</u>とを主訴に来院した．<br>
@@ -2139,8 +2552,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/105I042A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/105I042B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/105I042A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/105I042B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/105I042A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/105I042B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2165,7 +2578,9 @@
                             <!-- <li></li> -->
                         </ul>
 
-                        <p>True: b</p>
+                        <p class="q_dx"></p>
+
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -2176,7 +2591,11 @@
                         </ol>
 
                         <!-- <img src="https://www.qb-online.com/img_kaisetsu/105I042_bas_j_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/105I042_bas_j_010.jpg" class="card-img-top img-fluid">
+
+
+                        <div class="card">
+                            <img src="https://qb.medilink-study.com/images/105I042_bas_j_010.jpg" class="card-img-top img-fluid">
+                        </div>
 
                         <h6>Ring enhancement</h6>
                         <table class="table table-condensed"> 
@@ -2200,28 +2619,32 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group SoL">
+            <div class="card-group MGM SoL info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109F6" target="_blank" id="">109F6</a> 対麻痺
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:27:59"> </span>
                         <br>
                         <p>頭部造影MRI（①～⑤）を次に示す．<br>
                             対麻痺をきたすのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/109F006_1.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/109F006_2.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/109F006_3.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/109F006_4.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/109F006_5.jpg" class="card-img-top img-fluid" width="32%">
+                    <img src="https://qb.medilink-study.com/images/109F006_1.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/109F006_2.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/109F006_3.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/109F006_4.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/109F006_5.jpg" class="card-img-top img-fluid" width="49%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2244,7 +2667,7 @@
 
                         <p></p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li></li>
@@ -2257,18 +2680,22 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/109F006_sup_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group FKS">
+            <div class="card-group FKS 110 pri info">
                 <div class="card">
-                    <div class="card-header 110 pri info">
-                        <a href="https://qb.medilink-study.com/#/Answer/110E6" target="_blank" id="">110E6</a>
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/110E6" target="_blank" id="">110E6</a> CrN-I / II
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:39:31"> </span>
                         <br>
                         <p>頭部造影MRI（①〜⑤）を次に示す．<br>
                             右側の視神経萎縮と嗅覚脱失，左側のうっ血乳頭をきたしている患者のMRI像はどれか．</p>
@@ -2304,7 +2731,7 @@
 
                         <p></p>
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -2316,25 +2743,32 @@
 
                         <h6>Foster-Kennedy synd</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">前頭蓋底部の腫瘍</li>
-                            <li class="list-group-item"><ul>
-                                <li>同側の嗅覚脱失</li>
-                                <li>同側の視神経萎縮</li>
-                                <li>対側のうっ血乳頭</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                前頭蓋底部の腫瘍
+                            </li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>同側の嗅覚脱失</li>
+                                    <li>同側の視神経萎縮</li>
+                                    <li>対側のうっ血乳頭</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group GBM meta ABS">
+            <div class="card-group GBM meta ABS abscess info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90B76" target="_blank">90B76</a> リング状の増強効果
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:28:58"> </span>
                         <br>
                         <p>頭部X線造影CTでリング状の増強効果を示すのはどれか．3つ選べ．</p>
 
@@ -2350,7 +2784,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a,d,e</p>
+
+
+                        <p class="q_answer_true">a d e</p>
 
                         <ol type="a">
                             <li></li>
@@ -2400,14 +2836,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group MGM SWM CT">
+            <div class="card-group MGM SWM CT info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95A94" target="_blank">95A94</a> 造影効果
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis "> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_14:30:05"> </span>
                         <br>
                         <p>頭部造影CTで造影効果が高いのはどれか．2つ選べ．</p>
 
@@ -2422,7 +2859,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a,b</p>
+
+
+                        <p class="q_answer_true">a b</p>
 
                         <ol type="a">
                             <li>髄膜腫: 著明な均一な造影</li>
@@ -2439,18 +2878,22 @@
                             <li class="list-group-item">脳膿瘍</li>
                             <li class="list-group-item">髄膜腫</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group CPM ODGM GCT ASTM MGM EPNM">
+            <div class="card-group CPM ODGM GCT ASTM MGM EPNM info">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95B52" target="_blank">95B52</a> 石灰化 脳腫瘍
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-21_13:42:27"> </span>
                         <br>
                         <p>石灰化がみられるのはどれか．2つ選べ．</p>
 
@@ -2466,7 +2909,10 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a,e</p>
+
+
+
+                        <p class="q_answer_true">a e</p>
 
                         <ol type="a">
                             <li></li>
@@ -2477,29 +2923,55 @@
                         </ol>
 
 
-                        <h6>石灰化 脳腫瘍<br>
-                            <u>C O G A M E</u></h6>
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>C</u>raniopharyngioma</li>
-                            <li class="list-group-item"><u>O</u>ligodendroglioma</li>
-                            <li class="list-group-item"><u>G</u>erm cell tumor</li>
-                            <li class="list-group-item"><u>A</u>strocytoma</li>
-                            <li class="list-group-item"><u>M</u>eningioma</li>
-                            <li class="list-group-item"><u>E</u>pendymoma</li>
-                        </ul>
+                        <h6>石灰化 脳腫瘍</h6>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>C O G A M E</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>C</td>
+                                    <td><u>C</u>raniopharyngioma</td>
+                                </tr>
+                                <tr>
+                                    <td>O</td>
+                                    <td><u>O</u>ligodendroglioma</td>
+                                </tr>
+                                <tr>
+                                    <td>G</td>
+                                    <td><u>G</u>erm cell tumor</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td><u>A</u>strocytoma</td>
+                                </tr>
+                                <tr>
+                                    <td>M</td>
+                                    <td><u>M</u>eningioma</td>
+                                </tr>
+                                <tr>
+                                    <td>E</td>
+                                    <td><u>E</u>pendymoma</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group MBM">
+            <div class="card-group MBM pri info">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107I2" target="_blank">107I2</a> 小児 脳腫瘍
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:41:02"> </span>
                         <br>
                         <p>小児でよくみられる脳腫瘍はどれか．</p>
 
@@ -2514,7 +2986,10 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: b</p>
+
+
+
+                        <p class="q_answer_true">b</p>
 
                         <ol type="a">
                             <li>≥ 50yo</li>
@@ -2614,14 +3089,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group ASTM">
+            <div class="card-group ASTM glioma">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/84B51" target="_blank">84B51</a> 予後良好 脳腫瘍
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-21_13:52:29"> </span>
                         <br>
                         <p>小児脳腫瘍で最も予後良好なのはどれか．</p>
 
@@ -2637,7 +3113,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a</p>
+
+
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>全摘できて, prog good</li>
@@ -2696,6 +3174,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2764,6 +3243,12 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2772,6 +3257,14 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+    
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2785,27 +3278,36 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('.page-header > h1 > small.print_date').html(print_date);
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2827,11 +3329,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2848,62 +3353,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2956,6 +3461,19 @@ $('document').ready(function(){
     $('code.q_alert_done').html(n_done);
 
 
+    $('p.q_dx').prepend('<code>Dx</code>: ');
+
+    $('p.q_answer_true').prepend('True: ');
+    $('p.q_answer_false').prepend('False: ');
+
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
+
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -3121,8 +3639,114 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+    $('#INTRO h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.INTRO)').slideToggle(100);
+    });
+    $('#INTRO').find('code').html($('div.INTRO').size());
+
+
+    $('#ASTM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ASTM)').slideToggle(100);
+    });
+    $('#ASTM').find('code').html($('div.ASTM').size());
+
+
+    $('#GBM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.GBM)').slideToggle(100);
+    });
+    $('#GBM').find('code').html($('div.GBM').size());
+
+
+    $('#SWM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SWM)').slideToggle(100);
+    });
+    $('#SWM').find('code').html($('div.SWM').size());
+
+
+    $('#MBM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MBM)').slideToggle(100);
+    });
+    $('#MBM').find('code').html($('div.MBM').size());
+
+
+    $('#EPNM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.EPNM)').slideToggle(100);
+    });
+    $('#EPNM').find('code').html($('div.EPNM').size());
+
+
+    $('#PA h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.PA)').slideToggle(100);
+    });
+    $('#PA').find('code').html($('div.PA').size());
+
+
+    $('#pituitary_apoplexy').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.pituitary_apoplexy)').slideToggle(100);
+    });
+    $('#pituitary_apoplexy').find('code').html($('div.pituitary_apoplexy').size());
+
+
+
+    $('#CPM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CPM)').slideToggle(100);
+    });
+    $('#CPM').find('code').html($('div.CPM').size());
+
+
+
+    $('#GCT h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.GCT)').slideToggle(100);
+    });
+    $('#GCT').find('code').html($('div.GCT').size());
+
+
+
+    $('#MGM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MGM)').slideToggle(100);
+    });
+    $('#MGM').find('code').html($('div.MGM').size());
+
+
+    $('#meta h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.meta)').slideToggle(100);
+    });
+    $('#meta').find('code').html($('div.meta').size());
+
+
+    $('#FKS').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.FKS)').slideToggle(100);
+    });
+    $('#FKS').find('code').html($('div.FKS').size());
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

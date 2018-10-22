@@ -4,12 +4,20 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-28 15:57:42
+@Last modified time: 2018-10-22 15:57:18
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -93,8 +101,8 @@
     <title>Gas</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-28 15:48:22" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-10-22 15:59:13" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.27">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -153,6 +161,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -193,29 +206,31 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
+            h2, h3{font-size: 14px}
             h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
             }
 
         }
@@ -528,9 +543,12 @@
                         <!-- <li class="list-group-item">
                             <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                         </li> -->
-                        <!-- <li class="list-group-item">
+                        <li class="list-group-item">
                             <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
+                            <ul>
+                                <li>粘膜刺激</li>
+                            </ul>
+                        </li>
                         <!-- <li class="list-group-item">
                             <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                         </li> -->
@@ -588,7 +606,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 6 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 6</p>
 
             
             <!-- 
@@ -727,7 +745,8 @@
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis now" id="2018-08-28_16:07:47"> </span>
                         <br>
-                        <p>当直中に病院職員から電話があった．「帰宅したら，自宅の浴室に目張りがされており，浴室から卵が腐ったような臭いが漏れ出している．浴室では弟が倒れているようである．119番には通報している」という．<br>
+                        <p>当直中に病院職員から電話があった．<br>
+                            「帰宅したら，自宅の浴室に目張りがされており，浴室から<u>卵が腐ったような臭い</u>が漏れ出している．浴室では弟が倒れているようである．119番には通報している」という．<br>
                             適切な指示はどれか．</p>
                         
 
@@ -917,9 +936,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-28_16:26:01"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-28_16:26:01"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-22_16:03:53"> </span>
                         <br>
-                        <p>28歳の女性．自動車の排気ガスで自殺を図り意識不明で発見された．来院時，痛み刺激により体動があるが呼び掛けには応答しない．脈拍108/分，整．呼吸数28/分．血圧102/60mmHg．皮膚にチアノーゼを認めない．動脈血ガス分析：PaO2 96Torr，PaCO2 32Torr．胃洗浄を行ったが薬物は検出されない．<br>
+                        <p>28歳の女性．<br>
+                            <u>自動車の排気ガスで自殺</u>を図り意識不明で発見された．<br>
+                            来院時，痛み刺激により体動があるが呼び掛けには応答しない．<br>
+                            脈拍108/分，整．呼吸数28/分．血圧102/60mmHg．皮膚にチアノーゼを認めない．<br>
+                            動脈血ガス分析：<br>
+                            PaO2 96Torr，PaCO2 32Torr．<br>
+                            胃洗浄を行ったが薬物は検出されない．<br>
                             適切な処置はどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -1013,7 +1039,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-28_16:33:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-28_16:33:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-22_16:05:06"> </span>
                         <br>
                         <p>粘膜刺激症状を呈する有毒ガスはどれか．</p>
                         
@@ -1047,52 +1074,72 @@
                             <tbody>
                                 <tr>
                                     <th>メタノール</th>
-                                    <td><ul>
-                                        <li>胃</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>視力障害</li>
-                                        <li>視神経炎</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>胃</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>視力障害</li>
+                                            <li>視神経炎</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>エチレングリコール</th>
-                                    <td><ul>
-                                        <li>胃</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>腎障害</li>
-                                        <li>&darr;Ca</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>胃</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>腎障害</li>
+                                            <li>&darr;Ca</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>硫化水素<br>
                                         H<sub>2</sub>S</th>
-                                    <td><ul>
-                                        <li>眼</li>
-                                        <li>上気道</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>頭痛</li>
-                                        <li>悪心/嘔吐</li>
-                                        <li>全身倦怠感</li>
-                                        <li>ALI / ARDS</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>眼</li>
+                                            <li>上気道</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>頭痛</li>
+                                            <li>悪心/嘔吐</li>
+                                            <li>全身倦怠感</li>
+                                            <li>ALI / ARDS</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>トルエン/キシレン</th>
-                                    <td><ul>
-                                        <li>咽頭</li>
-                                        <li>喉頭</li>
-                                        <li>眼</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>麻酔作用</li>
-                                        <li>中枢神経抑制</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>咽頭</li>
+                                            <li>喉頭</li>
+                                            <li>眼</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>麻酔作用</li>
+                                            <li>中枢神経抑制</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -1214,6 +1261,9 @@ $('document').ready(function(){
     var version = $('meta[name="version"]').attr('content');
     $('.nav-version').html(version);
 
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1222,6 +1272,14 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+    
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1241,6 +1299,8 @@ $('document').ready(function(){
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
         $('#q ul.nav-pills').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1284,13 +1344,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1307,54 +1368,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -1593,8 +1654,11 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
 
     $('#H2S h2').click(function(){
         $('.card-group').show();

@@ -4,12 +4,33 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-14 15:41:07
+@Last modified time: 2018-10-25 19:54:21
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
@@ -82,8 +103,8 @@
     <title>Dev</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-14 15:41:17" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.9">
+    <meta name="revised" content="2018-10-25 19:54:48" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.29">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -142,6 +163,18 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+        table.table-bordered > thead, 
+        table.table-bordered > thead > tr > th, 
+        table.table-bordered > tbody > tr > th, 
+        table.table-bordered > tbody > tr > td{
+            border: 1px solid black;
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -182,23 +215,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.75px solid;}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -247,292 +289,893 @@
         </div>
     </div>
 
+
+    
     <div class="section" id="growth">
-        <div class="page-header">
-            <h2>Growth <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-10">
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/110G045_bas_010.jpg" class="card-img-top img-fluid">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="BW">BW</h3>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="BH">BH</h3>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Growth <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
             </div>
 
-        </div>
-    </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>yo</th>
+                            <th colspan="2">体重</th>
+                            <th colspan="2">身長</th>
+                            <th>頭囲</th>
+                            <th></th>
+                            <th>胸囲</th>
+                            <th colspan="2">表面積</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>出生時</th>
+                            <td align="right">3</td>
+                            <td></td>
+                            <td align="right">50</td>
+                            <td></td>
+                            <td align="right">33</td>
+                            <td align="right">></td>
+                            <td align="right">32</td>
+                            <td align="right">0.2</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>3mo</th>
+                            <td align="right">6</td>
+                            <td><small>&times;2</small></td>
+                            <td align="right">60</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>1yo</th>
+                            <td align="right">9</td>
+                            <td><small>&times;3</small></td>
+                            <td align="right">75</td>
+                            <td><small>&times;1.5</small></td>
+                            <td align="right">45</td>
+                            <td align="right">=</td>
+                            <td align="right">45</td>
+                            <td align="right">0.4</td>
+                            <td><small>&times;2</small></td>
+                        </tr>
+                        <tr>
+                            <th>2yo</th>
+                            <td align="right">12</td>
+                            <td><small>&times;4</small></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>3yo</th>
+                            <td align="right">15</td>
+                            <td><small>&times;5</small></td>
+                            <td align="right">95</td>
+                            <td></td>
+                            <td align="right">49</td>
+                            <td align="right"><</td>
+                            <td align="right">50</td>
+                            <td align="right">0.6</td>
+                            <td><small>&times;3</small></td>
+                        </tr>
+                        <tr>
+                            <th>4yo</th>
+                            <td></td>
+                            <td></td>
+                            <td align="right">100</td>
+                            <td><small>&times;2</small></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>12yo</th>
+                            <td></td>
+                            <td></td>
+                            <td align="right">150</td>
+                            <td><small>&times;3</small></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <div class="section" id="fontanel">
-        <div class="page-header">
-            <h2>Fontanel <small class="hidden-xs-down">大小泉門</small></h2>
-        </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>1y/o <small>BH / BW / 頭囲 / 胸囲</small></h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="3"><u>イ ナゴ くん ヨロ ヨロ</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>イ</td>
+                            <td></td>
+                            <td align="right">1 yo</td>
+                        </tr>
+                        <tr>
+                            <td>ナゴ</td>
+                            <td align="center">身長</td>
+                            <td align="right">75 cm</td>
+                        </tr>
+                        <tr>
+                            <td>くん</td>
+                            <td align="center">体重</td>
+                            <td align="right">9 kg</td>
+                        </tr>
+                        <tr>
+                            <td>ヨロ</td>
+                            <td align="center">頭囲</td>
+                            <td align="right">46 cm</td>
+                        </tr>
+                        <tr>
+                            <td>ヨロ</td>
+                            <td align="center">胸囲</td>
+                            <td align="right">46 cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+                <h6>1y6mo <small>BH / BW / 頭囲</small></h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="3"><u>ぱっ と 世直し</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ぱっ</td>
+                            <td>身長</td>
+                            <td>80cm</td>
+                        </tr>
+                        <tr>
+                            <td>と</td>
+                            <td>体重</td>
+                            <td>10kg</td>
+                        </tr>
+                        <tr>
+                            <td>世直し</td>
+                            <td>頭囲</td>
+                            <td>47cm</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>身体各部の釣合</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/88A040_bas_o_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
 
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/110G045_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div> -->
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="BW">BW <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        生理的体重減少
+                        <ul>
+                            <li>3-5day &darr;150-300g</li>
+                            <li>-7day で出生体重に戻る</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        - 3mo: 
+                        <ul>
+                            <li>+ 30 g/day</li>
+                            <li>+ 1 kg/mo</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="BH">BH <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        出生時: 4等身
+                    </li>
+                    <li class="list-group-item">
+                        思春期: 
+                        体幹の成長 > 下肢の成長
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="Kaup">Kaup <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Kaup ind: ref 15-18
+                        <div lang="latex">
+                            \begin{align*}
+                                \frac{\text{BW}}{\text{BH}^2} \times 10
+                            \end{align*}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
+
+        
     </div>
 
-    <div class="section" id="teeth">
-        <div class="page-header">
-            <h2>Teeth <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="fontanel">
+                <div class="page-header">
+                    <h2>Fontanel <small class="hidden-xs-down">大小泉門</small> <small><code></code></small></h2>
                 </div>
+
+                <h6>閉鎖</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">小泉門: 1-2mo</li>
+                    <li class="list-group-item">大泉門: 1.5yr</li>
+                </ul>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/104E026_bas_o_010.jpg" class="card-img-top img-fluid">
+                </div>
+
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="lang">
-        <div class="page-header">
-            <h2>Language <small class="hidden-xs-down"></small></h2>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="teeth">
+                <div class="page-header">
+                    <h2>Teeth <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        乳歯
+                        <!-- <p>歯 = 月齢 - 6</p> -->
+                        <div lang="latex">
+                            \begin{align*}
+                                \text{No. of teeth} = \text{Mo} - 6
+                            \end{align*}
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="organ">
+                <div class="page-header">
+                    <h2>Organ <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+                <h6>Scammon 臓器別発育曲線</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111H012_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
-
         </div>
     </div>
+
 
     <div class="section" id="reflex">
-        <div class="page-header">
-            <h2>Reflex <small class="hidden-xs-down"></small></h2>
-        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Reflex <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+            </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8">
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/110G022_bas_010.jpg" class="card-img-top img-fluid">
-                    </div>
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/110G022_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
+                
+            </div>
+
+
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        発生学的: 下位 &rarr; 上位 
+                        <ol>
+                            <li>原始反射: 脊髄-橋</li>
+                            <li>姿勢反射(パラシュート): 中脳</li>
+                            <li>平衡反応: 大脳</li>
+                        </ol>
+                    </li>
+                    <li class="list-group-item">
+                        見かけ上の発達: 頭側 &rarr; 尾側
+                        <ol>
+                            <li>3mo: 首がすわる</li>
+                            <li>6mo: お座り</li>
+                            <li>10mo: 立つ</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="Moro">Moro <small><code></code></small></h3>
+
+                <h3 id="sucking">Sucking <small><code></code></small></h3>
+
+                <h3 id="ATNR">ATNR <small>非対称性緊張性頸反射</small> <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        自発的な動きのなかで
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="Babinski">Babinski <small><code></code></small></h3>
+
+                <h3 id="Landau">Landau <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        3mo &rarr; 2yo
+                    </li>
+                </ul>
+
+                <h3 id="parachute">Parachute <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <u>7-9mo</u> &rarr; <u>一生</u>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>姿勢反射</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>六つ子 ランドは 六人一緒の パラダイス</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>六つ子</td>
+                            <td>６ヵ月 - ２歳</td>
+                        </tr>
+                        <tr>
+                            <td>ランドは</td>
+                            <td>Landau反射</td>
+                        </tr>
+                        <tr>
+                            <td>六人一緒の</td>
+                            <td>６ヵ月 - 一生持続</td>
+                        </tr>
+                        <tr>
+                            <td>パラダイス</td>
+                            <td>パラシュート反射</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>出生時に存在し2歳くらいまでに消失する反射</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>もろに おっ きな 手 足の ベイビー</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>もろに</td>
+                            <td>Moro反射</td>
+                        </tr>
+                        <tr>
+                            <td>おっ</td>
+                            <td>追いかけ反射</td>
+                        </tr>
+                        <tr>
+                            <td>きな</td>
+                            <td>吸啜反射</td>
+                        </tr>
+                        <tr>
+                            <td>手</td>
+                            <td>手掌把握反射</td>
+                        </tr>
+                        <tr>
+                            <td>足の</td>
+                            <td>足底把握反射</td>
+                        </tr>
+                        <tr>
+                            <td>ベイビー</td>
+                            <td>Babinski反射</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
     </div>
 
-    <div class="section" id="motor">
-        <div class="page-header">
-            <h2>Motor <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    
+    
+    <div class="section" id="psychomotor">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Psychomotor <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>年齢</th>
+                            <th>粗大運動<br>
+                                (体幹)</th>
+                            <th>微細運動<br>
+                                (四肢)</th>
+                            <th>言葉</th>
+                            <th>情緒<br>
+                                社会</th>
+                            <th>生活</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <th>2ヵ月</th>
+                           <td rowspan="3"><ul>
+                                <li><u>追視</u></li>
+                                <li><u>首がすわる</u></li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>手を口に持っていく</li>
+                                <li>ガラガラを握る</li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>「アーウー」などの発声</li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li><u>あやすと笑う</u></li>
+                                <li>音がする方を見る</li>
+                            </ul></td>
+                            <td rowspan="3">－</td>
+                        </tr>
+                        <tr>
+                            <th>3ヵ月</th>
+                        </tr>
+                        <tr>
+                            <th>4ヵ月</th>
+                        </tr>
+                        <tr>
+                            <th>5ヵ月</th>
+                            <td rowspan="3"><ul>
+                                <li><u>寝返り</u></li>
+                                <li><u>おすわり</u></li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>物を持ち替える</li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>意味のない言葉（喃語）</li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>母親が分かる</li>
+                                <li><u>人見知り</u></li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>離乳食開始</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>6ヵ月</th>
+                        </tr>
+                        <tr>
+                            <th>7ヵ月</th>
+                        </tr>
+                        <tr>
+                            <th>8ヵ月</th>
+                            <td rowspan="3"><ul>
+                                <li>ハイハイ</li>
+                                <li><u>つかまり立ち</u></li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li><u>親指と他の指で物を挟んで持つ</u></li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>「マンマ」などと言う</li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>名前を呼ぶと反応する</li>
+                                <li>バイバイする</li>
+                            </ul></td>
+                            <td rowspan="3"><ul>
+                                <li>哺乳瓶やコップを持とうとする</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>9ヵ月</th>
+                        </tr>
+                        <tr>
+                            <th>10ヵ月</th>
+                        </tr>
+                        <tr>
+                            <th>11ヵ月</th>
+                            <td rowspan="2"><ul>
+                                <li><u>つたい歩き</u></li>
+                                <li>独り立ち</li>
+                            </ul></td>
+                            <td rowspan="2"><ul>
+                                <li>母指と示指で物をつまむ</li>
+                            </ul></td>
+                            <td rowspan="2"><ul>
+                                <li><u>1語</u></li>
+                            </ul></td>
+                            <td rowspan="2"><ul>
+                                <li>簡単な命令実行</li>
+                            </ul></td>
+                            <td rowspan="2"><ul>
+                                <li>手づかみで食べる</li>
+                                <li><u>コップで水を飲む</u></li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>1歳</th>
+                        </tr>
+                        <tr>
+                            <th>1歳半</th>
+                            <td><ul>
+                                <li><u>独り歩き</u></li>
+                            </ul></td>
+                            <td><ul>
+                                <li><u>なぐり書き</u></li>
+                            </ul></td>
+                            <td><ul>
+                                <li>3〜10語</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>他の児に興味を示す</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>スプーンが使える</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>2歳</th>
+                            <td><ul>
+                                <li>階段上り</li>
+                                <li>走る</li>
+                                <li>ボールをける</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>本のページをめくる</li>
+                            </ul></td>
+                            <td><ul>
+                                <li><u>2語文</u></li>
+                            </ul></td>
+                            <td><ul>
+                                <li>自己主張が強くなる</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>大便を教える</li>
+                                <li>上着を脱げる</li>
+                                <li>排尿予告</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>3歳</th>
+                            <td><ul>
+                                <li>三輪車</li>
+                                <li>片足立ち</li>
+                            </ul></td>
+                            <td><ul>
+                                <li><u>◯</u>を書く</li>
+                                <li>鼻がかめる</li>
+                            </ul></td>
+                            <td><ul>
+                                <li><u>自分の名前</u>を言える</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>遊びの順番が待てる</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>排尿自立</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>4歳</th>
+                            <td></td>
+                            <td><ul>
+                                <li><u>▢</u>を書く</li>
+                            </ul></td>
+                            <td></td>
+                            <td></td>
+                            <td><ul>
+                                <li>排便自立</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>5歳</th>
+                            <td><ul>
+                                <li>スキップ</li>
+                            </ul></td>
+                            <td><ul>
+                                <li><u>△</u>を書く</li>
+                            </ul></td>
+                            <td></td>
+                            <td></td>
+                            <td><ul>
+                                <li>衣服の着脱 </li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-3 col-md-3">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>3 yo</th>
+                            <td>◯</td>
+                        </tr>
+                        <tr>
+                            <th>4 yo</th>
+                            <td>▢</td>
+                        </tr>
+                        <tr>
+                            <th>5 yo</th>
+                            <td>△</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
     </div>
 
-    <div class="section" id="1y6mo">
-        <div class="page-header">
-            <h2>1y 6mo <small class="hidden-xs-down">検診</small></h2>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="poverty">
+                <div class="page-header">
+                    <h2>Poverty <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        二次性徴: <u>骨年齢</u>に相関
+                    </li>
+                </ul>
+                <h6>二次性徴の出現と年齢</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>年齢</th>
+                            <th>男児</th>
+                            <th>女児</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>10 - 11</th>
+                            <td>睾丸腫大<br>
+                                陰茎発育</td>
+                            <td>乳房（発育開始）</td>
+                        </tr>
+                        <tr>
+                            <th>11 - 12</th>
+                            <td></td>
+                            <td>恥毛<br>
+                                身長増加促進</td>
+                        </tr>
+                        <tr>
+                            <th>12 - 13</th>
+                            <td>恥毛<br>
+                                身長増加促進</td>
+                            <td>腋毛</td>
+                        </tr>
+                        <tr>
+                            <th>13 - 14</th>
+                            <td></td>
+                            <td>初経</td>
+                        </tr>
+                        <tr>
+                            <th>14 - 15</th>
+                            <td>腋毛</td>
+                            <td>正常月経</td>
+                        </tr>
+                        <tr>
+                            <th>15 - 16</th>
+                            <td>精子成熟</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="lang">
+                <div class="page-header">
+                    <h2>Language <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="1y6mo">
+                <div class="page-header">
+                    <h2>1y 6mo <small class="hidden-xs-down">検診</small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>
+
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="vacc">
+                <div class="page-header">
+                    <h2>Vaccination <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Hib / 肺炎球菌: ≥ 2mo
+                    </li>
+                </ul>
+
+                <h3 id="BCG">BCG <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        - 10d に発赤<br>
+                        &xrArr; コッホ現象 s/o TB
+                    </li>
+                    <li class="list-group-item">
+                        10d - 2w に発赤<br>
+                        &xrArr; nl
+                    </li>
+                </ul>
             </div>
 
         </div>
     </div>
 
-    <div class="section" id="vacc">
-        <div class="page-header">
-            <h2>Vaccination <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="vital">
+                <div class="page-header">
+                    <h2>Vital <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+
+                <h6>新生児と乳児のバイタル</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>新生児</th>
+                            <th>乳児</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>HR</th>
+                            <td>120-160</td>
+                            <td>100-130</td>
+                        </tr>
+                        <tr>
+                            <th>RR</th>
+                            <td>30-50</td>
+                            <td>20-40</td>
+                        </tr>
+                        <tr>
+                            <th>BW (kg)</th>
+                            <td>3.1</td>
+                            <td>9.3</td>
+                        </tr>
+                        <tr>
+                            <th>BH (cm)</th>
+                            <td>50</td>
+                            <td>75</td>
+                        </tr>
+                        <tr>
+                            <th>頭囲 (cm)</th>
+                            <td>33</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <th>胸囲 (cm)</th>
+                            <td>32</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <th>BP</th>
+                            <td>70/40</td>
+                            <td>90/50</td>
+                        </tr>
+                        <tr>
+                            <th>BT</th>
+                            <td>37</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
+        
+
+        
+    <div class="row">
+        
+
+
+
+
     </div>
 
 
@@ -542,37 +1185,37 @@
 
     
     
-    <div class="section" id="">
-        <div class="page-header">
-            <!-- <h2>#dx <small class="hidden-xs-down">#diag</small></h2> -->
-        </div>
+    <div class="row">
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
    
@@ -603,7 +1246,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 48 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 48</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -740,6 +1383,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group growth BH PHYSIO info" id="q01">
                 <div class="card">
@@ -748,7 +1399,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_15:47:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_15:47:14"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:09:29"> </span>
                         <br>
                         <p>下肢に比べ体幹の伸びが大きい時期はどれか．</p>
                         
@@ -779,22 +1431,26 @@
 
                         <h6>身体各部の釣合</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/88A040_bas_o_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/88A040_bas_o_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/88A040_bas_o_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group growth PHYSIO BW pri req 110 info" id="q02">
+            <div class="card-group growth PHYSIO BW 1w 1mo 8mo 9mo 1yo pri req 110 info mnemonics" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://www.qb-online.com/#/list/110F5" target="_blank">110F5</a> 体重増加不良
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_15:54:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_15:54:48"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:09:13"> </span>
                         <br>
                         <p>正期産児における体重増加不良の所見はどれか．</p>
 
@@ -827,14 +1483,41 @@
                         </ul>
 
                         <h6>1歳の身長, 体重, 頭囲, 胸囲</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>イナゴくんヨロヨロ</u></li>
-                            <li class="list-group-item">イ: 1y/o</li>
-                            <li class="list-group-item">ナゴ:  身長 75cm</li>
-                            <li class="list-group-item">くん: 体重 9kg</li>
-                            <li class="list-group-item">ヨロ: 頭囲 46 cm</li>
-                            <li class="list-group-item">ヨロ: 胸囲 46 cm</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>イナゴくんヨロヨロ</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>イ</td>
+                                    <td>1y/o</td>
+                                </tr>
+                                <tr>
+                                    <td>ナゴ</td>
+                                    <td>身長</td>
+                                    <td>75cm</td>
+                                </tr>
+                                <tr>
+                                    <td>くん</td>
+                                    <td>体重</td>
+                                    <td>9kg</td>
+                                </tr>
+                                <tr>
+                                    <td>ヨロ</td>
+                                    <td>頭囲</td>
+                                    <td>46 cm</td>
+                                </tr>
+                                <tr>
+                                    <td>ヨロ</td>
+                                    <td>胸囲</td>
+                                    <td>46 cm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
 
                     </div>
                 </div>
@@ -848,7 +1531,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_16:01:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_16:01:04"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_21:03:50"> </span>
                         <br>
                         <p>身長について誤っているのはどれか．</p>
                         
@@ -900,14 +1584,16 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group BW BH PHYSIO pri info" id="q04">
+            <div class="card-group growth BW BH PHYSIO 1yo pri info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B30" target="_blank" id="2018-01-31_20:19:56">104B30</a> 生後1年間の成長
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_16:09:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_16:09:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-25_20:10:34"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_21:04:46"> </span>
                         <br>
                         <p>生後1年間の成長について正しいのはどれか．</p>
                         
@@ -969,7 +1655,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_16:15:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_16:15:45"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_21:05:56"> </span>
                         <br>
                         <p>乳児における頭蓋の図（①～⑤）を次に示す．<br>
                             縫合線で正しいのはどれか．</p>
@@ -1012,7 +1699,6 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/104E026_bas_o_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/104E026_bas_o_010.jpg" class="card-img-top img-fluid">
                         </div>
 
@@ -1022,12 +1708,16 @@
                             <li class="list-group-item">小泉門: 1-2mo</li>
                             <li class="list-group-item">大泉門: 1.5yr</li>
                         </ul>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/104E026_bas_o_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group growth pri req 111 info" id="q06">
+            <div class="card-group organ growth pri req 111 info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111H12" target="_blank" id="">111H12</a> 神経系発達
@@ -1084,7 +1774,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_16:28:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_16:28:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:07:00"> </span>
                         <br>
                         <p>乳歯について正しいのはどれか．</p>
                         
@@ -1102,6 +1793,11 @@
                     <div class="card-body">
 
                         <p>歯 = 月齢 - 6</p>
+                        <div lang="latex">
+                            \begin{align*}
+                                \text{No. of teeth} = \text{Mo} - 6
+                            \end{align*}
+                        </div>
 
                         <p class="q_answer_true">d</p>
 
@@ -1144,7 +1840,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_16:37:08"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_16:37:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_20:13:48"> </span>
                          / 
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill rev" id="2018-08-14_16:37:13"> </span>
@@ -1152,9 +1849,15 @@
                         <p>次の文を読み，39，40の問いに答えよ．<br><br>
                             1歳6ヵ月の男児．<br>
                             全体的な成長発達の遅れを心配した母親に連れられて来院した．<br>
-                            現病歴：在胎34週，出生体重2,380g，経腟分娩で出生．頸定4ヵ月，坐位8ヵ月，ひとり歩き16ヵ月であった．現在，「パパ，ママ」など2，3語が言える．母親の言うことは理解し，絵本の指差しはできる．1日に離乳食を3回と牛乳200mLとを摂取している．<br>
-                            既往歴：7ヵ月時に突発性発疹に罹患した．他に特記すべきことはない．<br>
-                            現　症：身長77.4cm，体重9,720g．大泉門は閉じている．胸部聴診で心雑音はなく，呼吸音に異常は認めない．腹部で右肋骨弓下に肝を2cm触知するが，脾は触知しない．生歯は12本．</p>
+                            現病歴：<br>
+                            在胎34週，出生体重2,380g，経腟分娩で出生．<br>
+                            <u>頸定4ヵ月，坐位8ヵ月，ひとり歩き16ヵ月</u>であった．<br>
+                            現在，<u>「パパ，ママ」など2，3語が言える</u>．母親の言うことは理解し，絵本の指差しはできる．<br>
+                            1日に離乳食を3回と牛乳200mLとを摂取している．<br>
+                            既往歴：<br>
+                            7ヵ月時に突発性発疹に罹患した．他に特記すべきことはない．<br>
+                            現　症：<br>
+                            <u>身長77.4cm，体重9,720g</u>．大泉門は閉じている．胸部聴診で心雑音はなく，呼吸音に異常は認めない．腹部で右肋骨弓下に肝を2cm触知するが，脾は触知しない．<u>生歯は12本</u>．</p>
 
                         <p>[C039] この児について正しいのはどれか．</p>
 
@@ -1252,17 +1955,19 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group motor reflex pri info" id="q10">
+            <div class="card-group reflex Landau parachute Moro Babinski   10mo pri info" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100I5" target="_blank" id="2018-01-31_20:40:41">100I5</a> 反射
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_16:47:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_16:47:46"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:17:19"> </span>
                         <br>
                         <p>10ヵ月の乳児．<br>
-                            母親が発達の遅れを心配して来院した．在胎38週，自然分娩で出生．母乳栄養である．定頸5ヵ月，坐位9ヵ月，寝返りはするが這い這いはできない．<br>
+                            母親が発達の遅れを心配して来院した．<br>
+                            在胎38週，自然分娩で出生．母乳栄養である．定頸5ヵ月，坐位9ヵ月，寝返りはするが這い這いはできない．<br>
                             この児に対する発達の評価に適しているのはどれか．2つ選べ．</p>
                         
 
@@ -1338,14 +2043,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group motor" id="q11">
+            <div class="card-group psychomotor motor info" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G86" target="_blank" id="2018-01-31_20:47:49">98G86</a> 乳幼児 運動発達評価
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_16:54:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_16:54:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:08:47"> </span>
                         <br>
                         <p>乳幼児の運動発達評価の目安で正しい組合せはどれか．</p>
                         
@@ -1397,7 +2103,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group motor 111 pri info" id="q12">
+            <div class="card-group psychomotor motor 111 pri info" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B45" target="_blank" id="">111B45</a> 発達遅滞
@@ -1649,19 +2355,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group motor " id="q13">
+            <div class="card-group psychomotor motor 4mo" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97G90" target="_blank" id="2018-01-31_21:10:03">97G90</a> 4mo 発達
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_17:21:40"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_17:21:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_20:18:45"> </span>
                         <br>
                         <p>満4ヵ月児の発達のチェック項目として用いられるのはどれか．</p>
                         
@@ -1686,7 +2396,7 @@
                             <li>追視: 2-3mo</li>
                             <li>聴力: 6mo</li>
                             <li>喃語: 2mo</li>
-                            <li></li>
+                            <li>寝返り: 5-6mo</li>
                             <li>座位: 6,7mo</li>
                         </ol>
                     </div>
@@ -1694,13 +2404,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group reflex motor Landau Babinski Moro 111 info" id="q14">
+            <div class="card-group psychomotor reflex motor Landau Babinski Moro 7mo 111 info mnemonics" id="q14">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111E35" target="_blank" id="">111E35</a> ヵ月の乳児
+                        <a href="https://qb.medilink-study.com/#/Answer/111E35" target="_blank" id="">111E35</a> 7ヵ月の乳児
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-14_17:28:22"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_17:28:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_20:20:17"> </span>
                         <br>
                         <p>7ヵ月の乳児の所見として異常を疑うのはどれか．2つ選べ．</p>
 
@@ -1739,18 +2450,37 @@
                             <img src="https://qb.medilink-study.com/images/111E035_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>ランドと言えば ミ ニーよ！</u></li>
-                            <li class="list-group-item">Landau</li>
-                            <li class="list-group-item">3Mo</li>
-                            <li class="list-group-item">24Mo</li>
-                        </ul>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>ランドと言えば ミ ニーよ！</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ランド</td>
+                                    <td>Landau</td>
+                                </tr>
+                                <tr>
+                                    <td>ミ</td>
+                                    <td>3Mo</td>
+                                </tr>
+                                <tr>
+                                    <td>ニーよ</td>
+                                    <td>24Mo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group motor lang  pri" id="q15">
+            <div class="card-group psychomotor motor lang  pri" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B54" target="_blank" id="2018-01-31_21:15:49">101B54</a> 10ヵ月の乳児 発達
@@ -1794,7 +2524,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group motor pri info" id="q16">
+            <div class="card-group psychomotor motor pri info" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B27" target="_blank" id="2018-01-31_21:16:09">104B27</a> 歩行のできない1歳2ヵ月
@@ -1850,7 +2580,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_17:42:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_17:42:38"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:24:50"> </span>
                         <br>
                         <p>標準的な1歳6ヵ月児の成長・発達の所見で正しいのはどれか．2つ選べ．</p>
                         
@@ -1897,7 +2628,7 @@
                                 <tr>
                                     <th>出生時</th>
                                     <td>3kg</td>
-                                    <div>50cm</div>
+                                    <td>50cm</td>
                                 </tr>
                                 <tr>
                                     <th>3mo</th>
@@ -1931,19 +2662,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group motor 1y6mo" id="q18">
+            <div class="card-group psychomotor motor 1y6mo" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104E13" target="_blank" id="2018-01-31_21:27:40">104E13</a> 1歳6ヵ月児 発達
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_17:46:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_17:46:51"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:31:33"> </span>
                         <br>
                         <p>1歳6ヵ月児で異常が疑われるのはどれか．2つ選べ．</p>
                         
@@ -1981,17 +2716,20 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group motor 110 pri info" id="q19">
+            <div class="card-group psychomotor motor 2yo  110 pri info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G45" target="_blank" id="">110G45</a> 2y1mo 
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-14_17:54:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_17:54:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:09:56"> </span>
                         <br>
                         <p>2歳1ヵ月の男児．<br>
                             発達の遅れを心配した父親に連れられて来院した．<br>
-                            身長85cm，体重12.5kg．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝を季肋下に0.5cm触知する．脾は触知しない．一人立ちはできるが，走れず，階段を上がることができない．スプーンをうまく使えない．積み木を2個積むことができる．言葉は2語文が話せる．<br>
+                            身長85cm，体重12.5kg．<br>
+                            心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝を季肋下に0.5cm触知する．脾は触知しない．<br>
+                            <u>一人立ちはできるが，走れず，階段を上がることができない</u>．スプーンをうまく使えない．積み木を2個積むことができる．言葉は2語文が話せる．<br>
                             この児について異常と考えられるのはどれか．</p>
 
 
@@ -2030,19 +2768,22 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/110G045_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group motor info" id="q20">
+            <div class="card-group psychomotor motor 3yo info" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104G1" target="_blank" id="2018-01-31_21:48:27">104G1</a> 3歳0ヵ月児
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_17:58:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_17:58:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:11:11"> </span>
                         <br>
                         <p>3歳0ヵ月児のほとんどが到達している発達レベルはどれか．</p>
                         
@@ -2075,19 +2816,22 @@
                         <table class="table table-condensed">
                             <tbody>
                                 <tr>
-                                    <td>3yo</td>
+                                    <th>3yo</th>
                                     <td>○</td>
                                 </tr>
                                 <tr>
-                                    <td>4yo</td>
+                                    <th>4yo</th>
                                     <td>□</td>
                                 </tr>
                                 <tr>
-                                    <td>5yo</td>
+                                    <th>5yo</th>
                                     <td>△</td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -2105,14 +2849,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group teeth BW BH motor " id="q21">
+            <div class="card-group teeth BW BH psychomotor motor 3yo" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D64" target="_blank" id="2018-01-31_21:51:59">99D64</a> 3歳0ヵ月児
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_18:01:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_18:01:49"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:12:44"> </span>
                         <br>
                         <p>3歳0ヵ月児で正常なのはどれか．</p>
                         
@@ -2141,18 +2886,21 @@
                             <li>3y: 自分の名前が<u>言える</u></li>
                             <li>新生児: 睡眠時間 15hrs</li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group parachute reflex info" id="q22">
+            <div class="card-group parachute reflex Landau grasp 3yo info" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G22" target="_blank" id="">110G22</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-14_18:04:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_18:04:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:13:57"> </span>
                         <br>
                         <p>健常な3歳児に認められる反射はどれか．</p>
 
@@ -2171,7 +2919,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">e</p>
 
@@ -2318,6 +3066,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -2371,14 +3122,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group lang motor " id="q24">
+            <div class="card-group lang motor psychomotor" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D116" target="_blank" id="2018-01-31_22:08:11">99D116</a> 小児で機能訓練の適応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_18:23:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_18:23:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_20:34:41"> </span>
                         <br>
                         <p>小児で機能訓練の適応となるのはどれか．</p>
                         
@@ -2418,7 +3170,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_19:35:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_19:35:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:15:27"> </span>
                         <br>
                         <p>正常新生児において自発的な動きのなかで観察できる反射はどれか．</p>
                         
@@ -2457,19 +3210,23 @@
                                 <h6>Asymmetric Tonic Neck Reflex (ATNR)</h6>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group reflex parachute Moro Babinski pri info" id="q26">
+            <div class="card-group reflex parachute Moro Babinski sucking grasp pri info" id="q26">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108G11" target="_blank" id="2018-01-31_22:25:48">108G11</a> 新生児・乳児の反射
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_19:48:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_19:48:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_20:35:52"> </span>
                         <br>
                         <p>新生児・乳児の反射について正しいのはどれか．</p>
                         
@@ -2505,31 +3262,40 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item">発生学的: 下位 &rarr; 上位 <ol>
-                                <li>原始反射: 脊髄-橋</li>
-                                <li>姿勢反射(パラシュート): 中脳</li>
-                                <li>平衡反応: 大脳</li>
-                            </ol></li>
-                            <li class="list-group-item">見かけ上の発達: 頭側 &rarr; 尾側<ol>
-                                <li>3mo: 首がすわる</li>
-                                <li>6mo: お座り</li>
-                                <li>10mo: 立つ</li>
-                            </ol></li>
-                            <li class="list-group-item"></li>
+                            <li class="list-group-item">
+                                発生学的: 下位 &rarr; 上位 
+                                <ol>
+                                    <li>原始反射: 脊髄-橋</li>
+                                    <li>姿勢反射(パラシュート): 中脳</li>
+                                    <li>平衡反応: 大脳</li>
+                                </ol>
+                            </li>
+                            <li class="list-group-item">
+                                見かけ上の発達: 頭側 &rarr; 尾側
+                                <ol>
+                                    <li>3mo: 首がすわる</li>
+                                    <li>6mo: お座り</li>
+                                    <li>10mo: 立つ</li>
+                                </ol>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group reflex Moro " id="q27">
+            <div class="card-group reflex Moro parachute Landau grasp " id="q27">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E30" target="_blank" id="2018-01-31_22:31:41">103E30</a> 反射 写真
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_19:53:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_19:53:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:16:37"> </span>
                         <br>
                         <p>写真に示すのはどれか．</p>
                     </div>
@@ -2572,7 +3338,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_19:57:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_19:57:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:17:42"> </span>
                         <br>
                         <p>一側上肢のMoro反射が減弱している新生児について考えられるのはどれか．</p>
                         
@@ -2590,9 +3357,16 @@
                     <div class="card-body">
 
                         <ul class="list-group">
-                            <li class="list-group-item">Erb麻痺 (腕神経叢麻痺)</li>
-                            <li class="list-group-item">Klumpke麻痺 (前腕麻痺)</li>
+                            <li class="list-group-item">
+                                Erb麻痺 (腕神経叢麻痺)
+                            </li>
+                            <li class="list-group-item">
+                                Klumpke麻痺 (前腕麻痺)
+                            </li>
                         </ul>
+
+
+
 
                         <p class="q_answer_true">e</p>
 
@@ -2648,18 +3422,21 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group vitK PHYSIO " id="q30">
+            <div class="card-group vitK milk 1mo PHYSIO " id="q30">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100I38" target="_blank" id="2018-01-31_22:41:18">100I38</a> 新生児 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_20:16:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_20:16:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:39:32"> </span>
                         <br>
                         <p>1ヵ月の乳児．<br>
                             1ヵ月健康診査で来院した．<br>
-                            在胎37週，自然分娩で出生した．出生体重2,700g，身長48.0cm．日齢6に<u>ビタミンKを内服</u>した．母乳栄養．排便回数1日5～7回．<u>便は黄色が多いが緑色を呈する</u>ことがある．便性は柔らかく粘液が混じることもあり，酸臭がする．哺乳時間は15分で，1日哺乳回数6～8回．母親は，<u>大きな音にびっくりしたように両手を大きく拡げて足をすくめる動作</u>が気になるという．<br>
+                            在胎37週，自然分娩で出生した．<br>
+                            出生体重2,700g，身長48.0cm．日齢6に<u>ビタミンKを内服</u>した．<br>
+                            母乳栄養．排便回数1日5～7回．<u>便は黄色が多いが緑色を呈する</u>ことがある．便性は柔らかく粘液が混じることもあり，酸臭がする．哺乳時間は15分で，1日哺乳回数6～8回．母親は，<u>大きな音にびっくりしたように両手を大きく拡げて足をすくめる動作</u>が気になるという．<br>
                             来院時体重3,600g．肋骨弓下に<u>肝を2cm触知</u>する．<br>
                             正しいのはどれか．</p>
                         
@@ -2709,13 +3486,14 @@
 
 
             <!-- 01 -->
-            <div class="card-group infant Moro 110 pri info" id="q31">
+            <div class="card-group infant Moro 1mo 110 pri info" id="q31">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G37" target="_blank" id="">110G37</a> 生後1ヵ月
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-14_20:28:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_20:28:42"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:41:04"> </span>
                         <br>
                         <p>生後1ヵ月の健康診査で経過観察として良いのはどれか．2つ選べ．</p>
 
@@ -2833,22 +3611,26 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group BW " id="q32">
+            <div class="card-group BW growth milk" id="q32">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103G45" target="_blank" id="2018-01-31_20:02:51">103G45</a> 体重増加曲線
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_20:31:52"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_20:31:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:19:08"> </span>
                         <br>
                         <p>4ヵ月の女児．<br>
-                            健康診査のために来院した．在胎39週，体重3,400g，Apgarスコア8点（1分）で出生した．身長60cm，体重5.3kg，頭囲40cm．母乳栄養である．首はすわっており，あやすと笑う．寝返りとお座りとはしない．体重増加曲線を次に示す．<br>
+                            健康診査のために来院した．<br>
+                            在胎39週，体重3,400g，Apgarスコア8点（1分）で出生した．<br>
+                            身長60cm，体重5.3kg，頭囲40cm．<br>
+                            母乳栄養である．首はすわっており，あやすと笑う．寝返りとお座りとはしない．体重増加曲線を次に示す．<br>
                             考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/103G045.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/103G045.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/103G045.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2877,9 +3659,11 @@
 
                         <h6>乳児の体重増加不良の原因</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．何らかの疾患による体重増加不良<br>
+                            <li class="list-group-item">
+                                1．何らかの疾患による体重増加不良<br>
                                 通常，哺乳困難，頻回嘔吐，慢性下痢，活気不良，精神運動発達の遅れなど，他の症状を伴うことが多い．先天性心疾患，先天性代謝異常（ライソゾーム病など），慢性腎臓病（先天性ネフローゼ症候群など），食物アレルギー（ミルクアレルギー），難治性下痢症などを考える．</li>
-                            <li class="list-group-item">2．栄養摂取量の不足による体重増加不良<br>
+                            <li class="list-group-item">
+                                2．栄養摂取量の不足による体重増加不良<br>
                                 前述のような症状がなく，機嫌も良好な場合には，母乳不足，調乳の誤り（濃度の薄いミルク），離乳方法の誤り，母子関係の障害（ネグレクトなど）を考える．</li>
                         </ul>
                     </div>
@@ -2887,19 +3671,23 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PHYSIO BCG Moro motor" id="q33">
+            <div class="card-group PHYSIO BCG Moro motor psychomotor" id="q33">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96I27" target="_blank" id="2018-01-31_22:41:56">96I27</a> 7mo 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_20:39:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_20:39:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:21:34"> </span>
                         <br>
                         <p>7ヵ月の乳児．<br>
                             健康診査で来院した．<br>
-                            在胎38週，自然分娩で出生した．出生体重3,000g，身長49.0cm．母乳栄養．5ヵ月時から離乳を開始した．離乳食は，舌でつぶせる固さにして1日2回与えている．寝返りするが，這い這いはしない．欲しいものに手を出してつかむ．名前を呼ぶと振り向き，お坐りができる．顔の上に布をかけると自由にとる．三種混合ワクチンの第1期とポリオワクチンの1回目とは接種済みである．<br>
-                            来院時体重8,900g．大泉門は2×2cmである．心雑音はない．肝は弾性軟で右肋骨弓下に3cm触知する．Moro反射はない．<br>
+                            在胎38週，自然分娩で出生した．<br>
+                            出生体重3,000g，身長49.0cm．母乳栄養．<br>
+                            5ヵ月時から離乳を開始した．離乳食は，舌でつぶせる固さにして1日2回与えている．寝返りするが，<u>這い這いはしない</u>．欲しいものに手を出してつかむ．名前を呼ぶと振り向き，お坐りができる．顔の上に布をかけると自由にとる．三種混合ワクチンの第1期とポリオワクチンの1回目とは接種済みである．<br>
+                            来院時体重8,900g．大泉門は2×2cmである．<br>
+                            心雑音はない．<u>肝は弾性軟で右肋骨弓下に3cm触知</u>する．<u>Moro反射はない</u>．<br>
                             この児で正しいのはどれか．2つ選べ．</p>
                         
 
@@ -2933,13 +3721,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group teeth motor milk 110 pri info" id="q34">
+            <div class="card-group teeth motor psychomotor milk 9mo 10mo 110 pri info" id="q34">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B38" target="_blank" id="">110B38</a> 9〜10ヵ月健康診査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-14_20:44:21"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_20:44:21"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:24:09"> </span>
                         <br>
                         <p>9〜10ヵ月健康診査で行われる項目はどれか．3つ選べ．</p>
 
@@ -3008,18 +3797,21 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group milk Kaup  1y6mo pri info" id="q35">
+            <div class="card-group milk Kaup 1y6mo pri info" id="q35">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107G45" target="_blank" id="2018-01-31_22:52:07">107G45</a> 異常所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_20:53:55"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_20:53:55"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:26:49"> </span>
                         <br>
                         <p>1歳6ヵ月の男児．<br>
                             健康診査のため来院した．<br>
-                            離乳は完了し，ミルクを1日2回与えられている．親の言うことを理解し，発語は4，5語である．1歳2ヵ月で独り歩きを始め，現在は小走りができる．意識は清明．身長80cm，体重16.0kg．頭囲47cm，胸囲48cm．咽頭に異常を認めない．歯は12本萌出している．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，右季肋下に肝を0.5cm触知する．脾を触知しない．<br>
+                            離乳は完了し，ミルクを1日2回与えられている．親の言うことを理解し，発語は4，5語である．<u>1歳2ヵ月で独り歩き</u>を始め，現在は<u>小走り</u>ができる．<br>
+                            意識は清明．<u>身長80cm，体重16.0kg</u>．頭囲47cm，胸囲48cm．<br>
+                            咽頭に異常を認めない．<u>歯は12本萌出</u>している．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，右季肋下に<u>肝を0.5cm触知</u>する．脾を触知しない．<br>
                             この児で異常なのはどれか．</p>
                         
 
@@ -3050,8 +3842,8 @@
 
                         <div lang="latex">
                             \begin{align*}
-                            \text{Kaup} &= \frac{\text{BW}_{(g)} \times 10}{\text{BH}_{(cm)}^2} \\
-                            & \text{Ref: } 15-19
+                                \text{Kaup} &= \frac{\text{BW}_{(g)} \times 10}{\text{BH}_{(cm)}^2} \\
+                                & \text{Ref: } 15-19
                             \end{align*}
                         </div>
 
@@ -3098,12 +3890,18 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110E53" target="_blank" id="">110E53</a> 発達
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-14_21:10:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_21:10:03"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:43:32"> </span>
                         <br>
                         <p>1歳6ヵ月の男児．<br>
                             定期健康診査で来院した．<br>
                             在胎40週，身長50cm，体重3,100g，正常分娩で出生した．<br>
-                            歩行は可能だが三輪車には乗れない．積み木を2，3個積める．スプーンを使った一人での食事はできない．排尿したことを伝えない．人見知りをして，親から離れて遊ぶことができない．単語を数語話すが，二語文や自分の年齢は言えない．声かけにすぐ反応するが，簡単な命令に対する行動はなく，聞かれた絵を指で示せない．<br>
+                            <u>歩行は可能</u>だが<u>三輪車には乗れない</u>．<br>
+                            <u>積み木を2，3個積める</u>．スプーンを使った一人での食事はできない．<br>
+                            排尿したことを伝えない．<br>
+                            人見知りをして，親から離れて遊ぶことができない．<br>
+                            単語を数語話すが，二語文や自分の年齢は言えない．<br>
+                            声かけにすぐ反応するが，<u>簡単な命令に対する行動はなく</u>，聞かれた絵を指で示せない．<br>
                             発達として遅れているのはどれか．</p>
 
 
@@ -3145,7 +3943,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now"  id="2018-08-14_21:13:33"> </span>
+                        <span class="badge badge-pill mis"  id="2018-08-14_21:13:33"> </span>
+                        <span class="badge badge-pill cau now"  id="2018-10-25_20:46:10"> </span>
                         <br>
                         <p>1歳7ヵ月の女児．<br>
                             1歳6ヵ月児健康診査で，母親と一緒に歩いて来院した．持っている絵本を指さしたり，にこにこと好奇心が旺盛の様子である．母親は，ほぼ順調な発育だと思うが，意味のある単語が言えないので言葉の発達が遅れているのではないかと心配していると言う．<br>
@@ -3180,7 +3979,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group 1y6mo obesity Tsumori-Inage milk" id="q38">
+            <div class="card-group 1y6mo obesity Tsumori-Inage milk mnemonics info" id="q38">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105B53" target="_blank" id="2018-01-31_23:18:07">105B53-55</a> 1y6mo 検診
@@ -3201,8 +4000,11 @@
                             1歳6ヵ月児健康診査のため来院した．<br>
                             出生・発育歴：在胎38週，頭位分娩にて出生した．出生時の身長48.0cm，体重2,750g，頭囲33cm．Apgarスコア8点（1分）．頸定4ヵ月，お坐り8ヵ月，つたい歩き1歳，歩行1歳2ヵ月．喃語は発するが，有意語はない．軟飯90gと歯茎で噛める固さの副菜とを1日3回，卵は全卵を1日1個，牛乳を1日1,000mL与えている．調理用油脂類と砂糖をそれぞれ1日12g使用している．<br>
                             既往歴：8ヵ月時に突発性発疹．1歳2ヵ月時に熱性けいれん．<br>
-                            家族歴：特記すべきことはない．<br>
-                            現　症：意識は清明．身長80.0cm，体重14.0kg，頭囲53cm，胸囲47cm，Kaup指数21.8．大泉門は閉鎖している．眼瞼結膜に貧血を認めない．眼球結膜に黄染を認めない．頸部に小豆大のリンパ節を右に4個触知する．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，右肋骨弓下に肝を1.5cm触知する．筋緊張は正常で，腱反射の亢進を認めない．</p>
+                            家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            意識は清明．<u>身長80.0cm</u>，<u>体重14.0kg</u>，<u>頭囲53cm</u>，胸囲47cm，Kaup指数21.8．<br>
+                            <u>大泉門は閉鎖</u>している．眼瞼結膜に貧血を認めない．眼球結膜に黄染を認めない．<u>頸部に小豆大のリンパ節を右に4個触知</u>する．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，<u>右肋骨弓下に肝を1.5cm触知</u>する．筋緊張は正常で，腱反射の亢進を認めない．</p>
                         
 
                         <p>[B053] この児で異常な所見はどれか．</p>
@@ -3273,13 +4075,32 @@
 
 
                         <h6>1y6mo 成長具合</h6>
-                        <p><u>ぱっ と 世直し</u></p>
-                        <ul class="list-group">
-                            <li class="list-group-item">身長: <b>80cm</b></li>
-                            <li class="list-group-item">体重: <b>10kg</b></li>
-                            <li class="list-group-item">頭囲: <b>47cm</b></li>
-                            <li class="list-group-item"></li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="3"><u>ぱっ と 世直し</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ぱっ</td>
+                                    <td>身長</td>
+                                    <td>80cm</td>
+                                </tr>
+                                <tr>
+                                    <td>と</td>
+                                    <td>体重</td>
+                                    <td>10kg</td>
+                                </tr>
+                                <tr>
+                                    <td>世直し</td>
+                                    <td>頭囲</td>
+                                    <td>47cm</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            
+                            
                     </div>
                 </div>
             </div>
@@ -3332,7 +4153,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_21:25:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_21:25:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_21:30:23"> </span>
                         <br>
                         <p>生後2ヵ月の乳児．<br>
                             ワクチン接種の相談のため母親に連れられて来院した．<br>
@@ -3370,8 +4192,11 @@
                         </ol>
 
                         <div class="card">
-                            <img src="https://www.qb-online.com/img_kaisetsu/109E042_bas_010.jpg" class="card-img-top img-fluid">
+                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/109E042_bas_010.jpg" class="card-img-top img-fluid"> -->
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3394,11 +4219,13 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110D53" target="_blank" id="">110D53</a> BCG
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-14_21:36:34"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_21:36:34"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:55:16"> </span>
                         <br>
                         <p>5ヵ月の乳児．<br>
                             BCG接種部位が赤く腫れてきたため母親に連れられて来院した．<br>
-                            BCG接種後2日目に接種部位が赤く腫れてきたことに気付き，日ごとに増悪したため接種後5日目に受診した．これまで成長や発達に異常を指摘されたことはない．来院時，左上腕部の接種部位に発赤と腫脹とを認め，一部膿疱様になっている．身体所見に異常を認めない．<br>
+                            <u>BCG接種後2日目に接種部位が赤く腫れてきた</u>ことに気付き，日ごとに増悪したため接種後5日目に受診した．これまで成長や発達に異常を指摘されたことはない．<br>
+                            来院時，左上腕部の接種部位に発赤と腫脹とを認め，一部膿疱様になっている．身体所見に異常を認めない．<br>
                             まず行うのはどれか．</p>
 
 
@@ -3429,11 +4256,19 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">10d - 2w に発赤<br>
-                                &xrArr; nl</li>
-                            <li class="list-group-item">- 10d に発赤<br>
-                                &xrArr; コッホ現象 s/o TB</li>
+                            <li class="list-group-item">
+                                - 10d に発赤<br>
+                                &xrArr; コッホ現象 s/o TB
+                            </li>
+                            <li class="list-group-item">
+                                10d - 2w に発赤<br>
+                                &xrArr; nl
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -3518,13 +4353,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group spurt sexual info 111 " id="q43">
+            <div class="card-group spurt sexual poverty info 111 " id="q43">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E19" target="_blank" id="">111E19</a> 二次性徴
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-14_21:48:26"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_21:48:26"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:56:17"> </span>
                         <br>
                         <p>二次性徴について正しいのはどれか．</p>
 
@@ -3568,36 +4404,42 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>10〜11</th>
-                                    <td>睾丸腫大，陰茎発育</td>
+                                    <th>10 - 11</th>
+                                    <td>睾丸腫大<br>
+                                        陰茎発育</td>
                                     <td>乳房（発育開始）</td>
                                 </tr>
                                 <tr>
-                                    <th>11〜12</th>
+                                    <th>11 - 12</th>
                                     <td></td>
-                                    <td>恥毛，身長増加促進</td>
+                                    <td>恥毛<br>
+                                        身長増加促進</td>
                                 </tr>
                                 <tr>
-                                    <th>12〜13</th>
-                                    <td>恥毛，身長増加促進</td>
+                                    <th>12 - 13</th>
+                                    <td>恥毛<br>
+                                        身長増加促進</td>
                                     <td>腋毛</td>
                                 </tr>
                                 <tr>
-                                    <th>13〜14</th>
+                                    <th>13 - 14</th>
                                     <td></td>
                                     <td>初経</td>
                                 </tr>
                                 <tr>
-                                    <th>14〜15</th>
+                                    <th>14 - 15</th>
                                     <td>腋毛</td>
                                     <td>正常月経</td>
                                 </tr>
                                 <tr>
-                                    <th>15〜16</th>
+                                    <th>15 - 16</th>
                                     <td>精子成熟</td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3610,7 +4452,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-14_21:52:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-14_21:52:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-25_21:31:41"> </span>
                         <br>
                         <p>思春期前後の男子において誤っているのはどれか．<br>
                             （※不適切問題のため複数の正答パターンがある）</p>
@@ -3660,7 +4503,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-14_21:56:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-14_21:56:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_20:58:02"> </span>
                         <br>
                         <p>バイタルサインで正常範囲にあるのはどれか．</p>
 
@@ -3684,7 +4528,7 @@
                             <li>RR 20-40</li>
                             <li>HR 100-130</li>
                             <li></li>
-                        </ul>
+                        </ol>
 
                         <p>新生児と乳児のバイタル</p>
                         <table class="table table-condensed">
@@ -3793,14 +4637,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group vital " id="q47">
+            <div class="card-group vital BP" id="q47">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93A55" target="_blank" id="2018-01-31_23:50:39">93A55</a> 小児の血圧測定
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_13:20:59"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_13:20:59"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_21:00:08"> </span>
                         <br>
                         <p>小児の血圧測定について正しいのはどれか．3つ選べ．</p>
                         
@@ -3834,14 +4679,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group vital info" id="q48">
+            <div class="card-group vital immune kidney organ  info" id="q48">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/102E12" target="_blank" id="2018-01-31_23:52:37">102E12</a> 1yo と 成人
+                        <a href="https://qb.medilink-study.com/#/Answer/102E12" target="_blank" id="2018-01-31_23:52:37">102E12</a> 1yo / 成人
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_13:23:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_13:23:33"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-25_21:02:28"> </span>
                         <br>
                         <p>1歳で成人と同じになるのはどれか．</p>
                         
@@ -3870,9 +4716,13 @@
                             <li>幼児体型</li>
                         </ol>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/102E012_bas_o_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/102E012_bas_o_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/102E012_bas_o_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -3930,6 +4780,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3998,6 +4849,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "ver." + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -4006,6 +4864,21 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "-" + print_date;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -4019,27 +4892,37 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -4061,11 +4944,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -4082,54 +4968,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -4368,8 +5254,168 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#growth h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.growth)').slideToggle(100);
+    });
+    $('#growth').find('code').html($('div.growth').size());
+
+
+    $('#BW').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.BW)').slideToggle(100);
+    });
+    $('#BW').find('code').html($('div.BW').size());
+
+
+    $('#BH').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.BH)').slideToggle(100);
+    });
+    $('#BH').find('code').html($('div.BH').size());
+
+
+    $('#fontanel h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.fontanel)').slideToggle(100);
+    });
+    $('#fontanel').find('code').html($('div.fontanel').size());
+
+
+    $('#teeth h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.teeth)').slideToggle(100);
+    });
+    $('#teeth').find('code').html($('div.teeth').size());
+
+
+    $('#organ h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.organ)').slideToggle(100);
+    });
+    $('#organ').find('code').html($('div.organ').size());
+
+
+    $('#reflex h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.reflex)').slideToggle(100);
+    });
+    $('#reflex').find('code').html($('div.reflex').size());
+
+
+    $('#Moro').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Moro)').slideToggle(100);
+    });
+    $('#Moro').find('code').html($('div.Moro').size());
+
+
+    $('#ATNR').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ATNR)').slideToggle(100);
+    });
+    $('#ATNR').find('code').html($('div.ATNR').size());
+
+
+    $('#sucking').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.sucking)').slideToggle(100);
+    });
+    $('#sucking').find('code').html($('div.sucking').size());
+
+
+    $('#Babinski').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Babinski)').slideToggle(100);
+    });
+    $('#Babinski').find('code').html($('div.Babinski').size());
+
+
+    $('#Landau').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Landau)').slideToggle(100);
+    });
+    $('#Landau').find('code').html($('div.Landau').size());
+
+
+    $('#parachute').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.parachute)').slideToggle(100);
+    });
+    $('#parachute').find('code').html($('div.parachute').size());
+
+
+    $('#psychomotor h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.psychomotor)').slideToggle(100);
+    });
+    $('#psychomotor').find('code').html($('div.psychomotor').size());
+
+
+    $('#lang h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.lang)').slideToggle(100);
+    });
+    $('#lang').find('code').html($('div.lang').size());
+
+
+    $('#motor h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.motor)').slideToggle(100);
+    });
+    $('#motor').find('code').html($('div.motor').size());
+
+
+    $('#1yo').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.1yo)').slideToggle(100);
+    });
+    $('#1yo').find('code').html($('div.1yo').size());
+
+
+    $('#1y6mo h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.1y6mo)').slideToggle(100);
+    });
+    $('#1y6mo').find('code').html($('div.1y6mo').size());
+
+
+
+    $('#vacc h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.vacc)').slideToggle(100);
+    });
+    $('#vacc').find('code').html($('div.vacc').size());
+
+
+    $('#poverty h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.poverty)').slideToggle(100);
+    });
+    $('#poverty').find('code').html($('div.poverty').size());
+
+
+    $('#vital h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.vital)').slideToggle(100);
+    });
+    $('#vital').find('code').html($('div.vital').size());
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

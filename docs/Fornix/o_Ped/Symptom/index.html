@@ -4,12 +4,32 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-19 15:31:39
+@Last modified time: 2018-10-26 14:34:36
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+
 04.01.11    18 08 17    .append size()
 04.01.10    18 08 17    #temp click toggle
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
@@ -81,11 +101,11 @@
 -->
 <html>
 <head>
-    <title>Symptom</title>
+    <title>Symptom - Ped</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-19 15:31:49" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.11">
+    <meta name="revised" content="2018-10-26 14:34:58" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.30">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -144,6 +164,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -184,23 +209,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.75px solid;}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -210,7 +244,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Symptom <small class="hidden-xs-down"></small></h1>
+        <h1 class="title">Symptom <small>Ped</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -250,352 +284,411 @@
     </div>
 
 
-    <div class="section" id="DEHYD">
-        <div class="page-header">
-            <h2>Dehydration <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="fever">
+                <div class="page-header">
+                    <h2>Fever <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>-1mo</td>
+                            <td><u>ADM</u> (≥ 38&deg;C)</td>
+                        </tr>
+                        <tr>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        <!-- </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6"> -->
+            <div class="section" id="DEHYD">
+                <div class="page-header">
+                    <h2>Dehydration <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+                
+
+            </div>
+
+        <!-- </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6"> -->
+            <div class="section" id="infusion">
+                <div class="page-header">
+                    <h2>Infusion <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <h6>1日の必要水分量 (mL/kg/day)</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>新生児</td>
+                            <td>80-100</td>
+                        </tr>
+                        <tr>
+                            <td>乳児</td>
+                            <td>120-15-</td>
+                        </tr>
+                        <tr>
+                            <td>幼児</td>
+                            <td>80-100</td>
+                        </tr>
+                        <tr>
+                            <td>学童</td>
+                            <td>60-80</td>
+                        </tr>
+                        <tr>
+                            <td>成人</td>
+                            <td>40-50</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="constipation">
+                <div class="page-header">
+                    <h2>Constipation <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
+
+                <h6>小児の下痢</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>哺乳量不足</li>
+                            <li>脱水</li>
+                            <li>Hirschsprung</li>
+                            <li>イレウス</li>
+                            <li>裂肛</li>
+                            <li>甲状腺機能低下症</li>
+                            <li>&darr;K</li>
+                            <li>習慣性</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="constipation">
-        <div class="page-header">
-            <h2>Constipation <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Meckel">
+                <div class="page-header">
+                    <h2>Meckel <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="Meckel">
-        <div class="page-header">
-            <h2>Meckel <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="intussusception">
+                <div class="page-header">
+                    <h2>Intussusception <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="intussusception">
-        <div class="page-header">
-            <h2>Intussusception <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Crouzon">
+                <div class="page-header">
+                    <h2>Crouzon <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>
+
+        <!-- </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6"> -->
+            <div class="section" id="hydrocephalus">
+                <div class="page-header">
+                    <h2>Hydrocephalus <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+                <h6>頭囲の増大</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        水頭症
+                        <ul>
+                            <li>先天奇形</li>
+                            <li>細菌性髄膜炎</li>
+                            <li>出血後</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        頭蓋内圧亢進
+                        <ul>
+                            <li>vit.A中毒</li>
+                            <li>テトラサイクリン中毒</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        硬膜下液の貯留
+                        <ul>
+                            <li>血腫</li>
+                            <li>水腫</li>
+                            <li>膿瘍</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        先天代謝異常
+                        <ul>
+                            <li>Tay-Sachs</li>
+                            <li>Hurler</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="Crouzon">
-        <div class="page-header">
-            <h2>Crouzon <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HSP">
+                <div class="page-header">
+                    <h2>HSP <small class="hidden-xs-down"> </small><small>Schönlein-Henoch紫斑病</small> <small><code></code></small></h2>
                 </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="hydrocephalus">
-        <div class="page-header">
-            <h2>Hydrocephalus <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HSV">
+                <div class="page-header">
+                    <h2>HSV <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
 
         </div>
-    </div>
 
-    <div class="section" id="HSP">
-        <div class="page-header">
-            <h2>HSP <small class="hidden-xs-down"> </small><small>Schönlein-Henoch紫斑病</small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SIDS">
+                <div class="page-header">
+                    <h2>SIDS <small class="hidden-xs-down">Sudden Infant Death Syndrome </small> <small><code></code></small></h2>
                 </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
             </div>
 
         </div>
-    </div>
-
-    <div class="section" id="HSV">
-        <div class="page-header">
-            <h2>HSV <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="SIDS">
-        <div class="page-header">
-            <h2>SIDS <small class="hidden-xs-down">Sudden Infant Death Syndrome </small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-
-
     
 
-    
-    
-    <div class="section" id="">
-        <div class="page-header">
-            <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
     
@@ -627,7 +720,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 31 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 31</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -764,21 +857,35 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group cold infxn 111 pri" id="q01">
+            <div class="card-group fever cold infxn 111 pri" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E54" target="_blank" id="">111E54</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id=""> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:17:49"> </span>
                         <br>
                         <p>1ヵ月の乳児．<br>
                             発熱を主訴に両親に連れられて来院した．<br>
-                            本日から38℃台の発熱を認めたため夜間の救急外来を受診した．咳や鼻汁などの気道症状はなく，嘔吐や下痢もない．しかし，何となく元気がなく泣き声も弱々しい．哺乳量も普段の半分程度であるという．<br>
-                            在胎39週，2,980gで出生した．昨日までは機嫌がよく，母乳栄養で体重増加は良好であった．咽頭は発赤を認めず，心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．大泉門は平坦である．<br>
-                            体温38.5℃．脈拍140/分，整．呼吸数40/分．血液所見：赤血球380万，Hb 12.6g/dL，白血球3,500，血小板25万．<br>
-                            血液生化学所見：総ビリルビン5.3mg/dL，直接ビリルビン0.2mg/dL，AST 48U/L，ALT 44U/L，LD 697U/L（基準314〜737），ALP 836U/L（基準413〜1,080），尿素窒素10mg/dL，クレアチニン0.2mg/dL，血糖64mg/dL，Na 138mEq/L，K 4.3mEq/L，Cl 105mEq/L．CRP 0.3mg/dL．<br>
+                            本日から<u>38℃台の発熱</u>を認めたため夜間の救急外来を受診した．咳や鼻汁などの気道症状はなく，嘔吐や下痢もない．しかし，何となく元気がなく泣き声も弱々しい．<u>哺乳量も普段の半分程度</u>であるという．<br>
+                            在胎39週，2,980gで出生した．<br>
+                            昨日までは機嫌がよく，母乳栄養で体重増加は良好であった．咽頭は発赤を認めず，心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．大泉門は平坦である．<br>
+                            <u>体温38.5℃</u>．脈拍140/分，整．呼吸数40/分．<br>
+                            血液所見：<br>
+                            赤血球380万，Hb 12.6g/dL，白血球3,500，血小板25万．<br>
+                            血液生化学所見：<br>
+                            総ビリルビン5.3mg/dL，直接ビリルビン0.2mg/dL，AST 48U/L，ALT 44U/L，LD 697U/L（基準314〜737），ALP 836U/L（基準413〜1,080），尿素窒素10mg/dL，クレアチニン0.2mg/dL，血糖64mg/dL，<br>
+                            Na 138mEq/L，K 4.3mEq/L，Cl 105mEq/L．CRP 0.3mg/dL．<br>
                             両親に対する説明として適切なのはどれか．</p>
 
 
@@ -824,9 +931,15 @@
                         <p>9ヵ月の乳児．<br>
                             <u>嘔吐</u>と<u>下痢</u>とを主訴に両親に連れられて来院した．<br>
                             2日前の乳児健康診査の帰宅後から機嫌が悪かった．<br>
-                            昨日からは<u>嘔吐と頻回の下痢</u>が出現し，<u>尿量も減少</u>しているという．体重7,800g．体温37.0℃．<u>心拍数120/分</u>，整．呼吸数40/分．毛細血管再充満時間3秒と延長している．顔色は不良で，腹部皮膚の<u>ツルゴールは低下</u>している．<br>
-                            尿所見：比重1.035，蛋白1＋，ケトン体1＋．血液所見：赤血球420万，白血球5,000，血小板18万．<br>
-                            血液生化学所見：<u>尿素窒素26mg/dL</u>，<u>クレアチニン0.3mg/dL</u>，血糖78mg/dL，<br>
+                            昨日からは<u>嘔吐と頻回の下痢</u>が出現し，<u>尿量も減少</u>しているという．<br>
+                            体重7,800g．体温37.0℃．<u>心拍数120/分</u>，整．呼吸数40/分．毛細血管再充満時間3秒と延長している．<br>
+                            顔色は不良で，腹部皮膚の<u>ツルゴールは低下</u>している．<br>
+                            尿所見：<br>
+                            比重1.035，蛋白1＋，ケトン体1＋．<br>
+                            血液所見：<br>
+                            赤血球420万，白血球5,000，血小板18万．<br>
+                            血液生化学所見：<br>
+                            <u>尿素窒素26mg/dL</u>，<u>クレアチニン0.3mg/dL</u>，血糖78mg/dL，<br>
                             Na 132mEq/L，K 4.0mEq/L，Cl 103mEq/L．CRP 0.8mg/dL．<br>
                             この患児の脱水状態の重症度判定に最も適切なのはどれか．</p>
 
@@ -900,7 +1013,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111C3" target="_blank" id="">111C3</a> 循環血液量減少性ショック
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-19_16:05:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_16:05:50"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-26_15:41:37"> </span>
                         <br>
                         <p>乳児において循環血液量減少性ショックを生じる可能性がある疾患はどれか．</p>
 
@@ -919,9 +1033,9 @@
 
                         <p></p>
 
-                        <p class="q_dx">e</p>
+                        <p class="q_dx">ウイルス性胃腸炎</p>
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li></li>
@@ -938,11 +1052,12 @@
             <div class="card-group DEHYD 110 pri" id="q04">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110B23" target="_blank">110B23</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110B23" target="_blank">110B23</a> 高張性脱水
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_16:08:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_16:08:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:42:44"> </span>
                         <br>
                         <p>乳児における高張性脱水の特徴はどれか．</p>
 
@@ -977,21 +1092,22 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group DEHYD" id="q05">
+            <div class="card-group DEHYD diarrhea HrNa HrCl HrOsm" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90D12" target="_blank" id="2018-02-01_11:12:46">90D12</a> 下痢 検査所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_16:14:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_16:14:05"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_14:46:31"> </span>
                         <br>
 
                         <p>7ヵ月の乳児．<br>
-                        3日前から<u>1日7，8回の水様下痢</u>が続いている．<br>
-                        今朝からぐったりとして眠りがちであるが，時々かん高い声で泣き興奮気味である．ミルクはよく飲むがすぐ吐いてしまう．<br>
-                        約1分間続く全身けいれんがあり救急車で来院した．脈拍はよく触れるが<u>頻脈</u>である．<br>
-                        検査所見として予想されるのはどれか．3つ選べ．</p>
+                            3日前から<u>1日7，8回の水様下痢</u>が続いている．<br>
+                            今朝からぐったりとして眠りがちであるが，時々かん高い声で泣き興奮気味である．ミルクはよく飲むがすぐ吐いてしまう．<br>
+                            約1分間続く全身けいれんがあり救急車で来院した．脈拍はよく触れるが<u>頻脈</u>である．<br>
+                            検査所見として予想されるのはどれか．3つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_f">血清ナトリウム128mEq/L </li>
@@ -1011,6 +1127,7 @@
                             <li>全身痙攣</li>
                             <li>頻脈</li>
                         </ul>
+
                         <p class="q_dx">&rAarr; 高張性脱水</p>
                         
                         
@@ -1029,14 +1146,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group DEHYD pri info" id="q06">
+            <div class="card-group DEHYD pri CALC info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98I11" target="_blank" id="2018-02-01_11:16:06">98I11</a> 乳児 輸液量
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_16:22:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_16:22:12"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_15:44:29"> </span>
                         <br>
                         <p>11ヵ月の乳児．<br>
                             <u>嘔吐，下痢</u>および傾眠状態を主訴に来院した．<br>
@@ -1059,14 +1177,32 @@
 
 
                         <h6>1日の必要水分量 (mL/kg/day)</h6>
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>新生児</td>
+                                    <td>80-100</td>
+                                </tr>
+                                <tr>
+                                    <td>乳児</td>
+                                    <td>120-15-</td>
+                                </tr>
+                                <tr>
+                                    <td>幼児</td>
+                                    <td>80-100</td>
+                                </tr>
+                                <tr>
+                                    <td>学童</td>
+                                    <td>60-80</td>
+                                </tr>
+                                <tr>
+                                    <td>成人</td>
+                                    <td>40-50</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                        <ul class="list-group">
-                            <li class="list-group-item">新生児: 80-100</li>
-                            <li class="list-group-item">乳児: 120-15-</li>
-                            <li class="list-group-item">幼児: 80-100</li>
-                            <li class="list-group-item">学童: 60-80</li>
-                            <li class="list-group-item">成人: 40-50</li>
-                        </ul>
+
                         <p>欠乏した水分量 + 維持輸液量 (11Mo 100mL/kg/day) <br>
                         1000 + 900 ()</p>
 
@@ -1206,14 +1342,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_16:29:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_16:29:44"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_14:49:02"> </span>
                         <br>
                         <p>6ヵ月の乳児．<br>
                             <u>嘔吐</u>と<u>下痢</u>とを主訴に母親に連れられて来院した．<br>
                             昨日の昼から<u>頻回の嘔吐</u>があり，<br>
                             本日の昼に<u>水様下痢</u>も出現したため受診した．母乳はほとんど飲まず，わずかに飲んでも嘔吐してしまう．患児はぐったりしており，目は落ちくぼんでいる．<br>
                             昨日の夕方から<u>排尿を認めない</u>．<br>
-                            1週前に乳児健康診査で測定した体重は7.7kgであったが，本日は7.0kgであった．<br>
+                            1週前に乳児健康診査で測定した体重は7.7kgであったが，<u>本日は7.0kg</u>であった．<br>
                             この児に適した初期輸液の組成はどれか．2つ選べ．</p>
 
                         <table class="table table-condensed">
@@ -1299,14 +1436,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group DEHYD " id="q09">
+            <div class="card-group DEHYD diarrhea " id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B44" target="_blank" id="2018-02-01_11:15:33">103B44</a> 乳児 嘔吐下痢症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_16:35:52"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_16:35:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:46:58"> </span>
                         <br>
                         <p>生後8ヵ月の乳児．<br>
                             <u>嘔吐</u>を主訴に来院した．<br>
@@ -1346,7 +1484,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group intussusception Meckel" id="q10">
+            <div class="card-group intussusception Meckel VKDB" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105B28" target="_blank" id="2018-02-01_11:27:05">105B28</a> 7mo 下血
@@ -1354,7 +1492,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_16:39:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_16:39:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_14:52:08"> </span>
                         <br>
                         
                         <p>7ヵ月の乳児の下血の原因として考えられるのはどれか．2つ選べ．</p>
@@ -1378,7 +1517,8 @@
                             <li>分娩時の母体血の嚥下による下血や血性嘔吐 </li>
                             <li>迷入いしている異所性胃粘膜から</li>
                             <li>下血(-)</li>
-                            <li>胆汁うっ滞, 抗菌薬長期投与 &rArr; vit.K 欠乏</li>
+                            <li>VKDB: <br>
+                                胆汁うっ滞, 抗菌薬長期投与 &rArr; vit.K 欠乏</li>
                         </ol>
 
                     </div>
@@ -1404,19 +1544,21 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111G45" target="_blank" id="">111G45</a> 説明
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-19_16:49:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_16:49:10"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_15:50:22"> </span>
                         <br>
                         <p>1ヵ月の乳児．<br>
                             健康診査のため母親に連れられて来院した．<br>
-                            母乳栄養で1日10回哺乳し，便は黄色泥状で4，5日に1回出る．固視するが追視はせず，大きな音がすると，万歳をするように両手を上前方に突き出した後に抱え込むような動作がみられるという．<br>
-                            身長53cm，体重3,680g（出生時体重2,850g），頭囲37cm．皮膚に黄染を認める．顔面に紅色丘疹の集簇を認める．心音と呼吸音とに異常を認めない．<br>
+                            母乳栄養で1日10回哺乳し，<u>便は黄色泥状で4，5日に1回出る</u>．固視するが追視はせず，大きな音がすると，万歳をするように両手を上前方に突き出した後に抱え込むような動作がみられるという．<br>
+                            身長53cm，体重3,680g（出生時体重2,850g），頭囲37cm．<br>
+                            <u>皮膚に黄染</u>を認める．顔面に紅色丘疹の集簇を認める．心音と呼吸音とに異常を認めない．<br>
                             母親への説明として適切なのはどれか．</p>
 
 
                         <ol type="a">
                             <li class="ans_f">「光線療法を行いましょう」</li>
                             <li class="ans_f">「顔に抗菌薬の軟膏を塗りましょう」</li>
-                            <li class="ans_f">「肛門を綿棒で刺激して排便を促しましょう」</li>
+                            <li class="ans_t">「肛門を綿棒で刺激して排便を促しましょう」</li>
                             <li class="ans_f">「体重が増えていないので，ミルクを加えましょう」</li>
                             <li class="ans_f">「てんかん発作があるので，抗てんかん薬を飲ませましょう」</li>
                         </ol>
@@ -1456,7 +1598,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_16:53:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_16:53:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:51:26"> </span>
                         <br>
                         <p>乳児で便秘の原因となるのはどれか．3つ選べ．</p>
                         
@@ -1499,6 +1642,8 @@
                             <li class="list-group-item">&darr;K</li>
                             <li class="list-group-item">習慣性</li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -1555,7 +1700,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_17:04:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_17:04:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:52:23"> </span>
                         <br>
                         <p>乳幼児の慢性頭蓋内圧亢進でみられるのはどれか．3つ選べ．</p>
                         
@@ -1587,41 +1733,58 @@
 
                         <h6>頭囲の増大</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">水頭症<ul>
-                                <li>先天奇形</li>
-                                <li>細菌性髄膜炎</li>
-                                <li>出血後</li>
-                            </ul></li>
-                            <li class="list-group-item">頭蓋内圧亢進<ul>
-                                <li>vit.A中毒</li>
-                                <li>テトラサイクリン中毒</li>
-                            </ul></li>
-                            <li class="list-group-item">硬膜下液の貯留<ul>
-                                <li>血腫</li>
-                                <li>水腫</li>
-                                <li>膿瘍</li>
-                            </ul></li>
-                            <li class="list-group-item">先天代謝異常<ul>
-                                <li>Tay-Sachs</li>
-                                <li>Hurler</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                水頭症
+                                <ul>
+                                    <li>先天奇形</li>
+                                    <li>細菌性髄膜炎</li>
+                                    <li>出血後</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                頭蓋内圧亢進
+                                <ul>
+                                    <li>vit.A中毒</li>
+                                    <li>テトラサイクリン中毒</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                硬膜下液の貯留
+                                <ul>
+                                    <li>血腫</li>
+                                    <li>水腫</li>
+                                    <li>膿瘍</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                先天代謝異常
+                                <ul>
+                                    <li>Tay-Sachs</li>
+                                    <li>Hurler</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group sepsis 111 pri req info" id="q15">
+            <div class="card-group sepsis SIRS 111 pri req info" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111C19" target="_blank" id="">111C19</a> 所見
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-19_17:16:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_17:16:19"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_14:55:25"> </span>
                         <br>
                         <p>6ヵ月の乳児．<br>
                             発熱を主訴に母親に連れられて救急外来に来院した．<br>
-                            意識は清明であるが，ぐずっている．体温38.5℃．心拍数144/分，整．血圧90/60mmHg．呼吸数30/分．SpO2 98％（room air）．毛細血管再充満時間4秒と延長している．<br>
+                            意識は清明であるが，ぐずっている．<br>
+                            <u>体温38.5℃</u>．<u>心拍数144/分</u>，整．<u>血圧90/60mmHg</u>．<u>呼吸数30/分</u>．SpO2 98％（room air）．<u>毛細血管再充満時間4秒</u>と延長している．<br>
                             この患児において重症感染症を示唆する所見はどれか．</p>
 
 
@@ -1821,7 +1984,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_17:33:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_17:33:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_14:57:07"> </span>
                         <br>
                         <p>3歳の男児．<br>
                             軽い咳を主訴に来院した．<br>
@@ -1830,9 +1994,9 @@
                         
 
                         <ol type="a">
-                            <li class="ans_ts">行動を観察する．</li>
+                            <li class="ans_t">行動を観察する．</li>
                             <li class="ans_f">精神科に受診科を変更させる．</li>
-                            <li class="ans_f">母親に強く抱かせて座らせる．</li>
+                            <li class="ans_tf">母親に強く抱かせて座らせる．</li>
                             <li class="ans_f">本日は診察できないと母親に説明する．</li>
                             <li class="ans_f">子どものしつけについて母親を指導する．</li>
                         </ol>
@@ -1864,7 +2028,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_17:36:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_17:36:50"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_14:59:38"> </span>
                         <br>
                         <p>5歳の男児．<br>
                             昨日から<u>間欠的に続く腹痛</u>を主訴に来院した．<br>
@@ -1886,15 +2051,16 @@
                         <ul>
                             <li>r/o 腸管の感染症</li>
                             <li>便秘</li>
-                            <li>&rarr;BT &rAarr; r/o 感染症, r/o 虫垂炎</li>
-                            <li>間欠的腹痛 &rAarr; s/o 便秘, s/o アレルギー性紫斑病</li>
+                            <li>&rarr;BT &xrArr; r/o 感染症, r/o 虫垂炎</li>
+                            <li>間欠的腹痛 &xrArr; s/o 便秘, s/o アレルギー性紫斑病</li>
                         </ul>
 
+                        <p class="q_dx">s/o 便秘 / アレルギー性紫斑病</p>
 
                         <p class="q_answer_true">e</p>
 
                         <ol type="a">
-                            <li></li>
+                            <li>診察後, 便秘を疑ったら</li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -1978,7 +2144,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_17:45:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_17:45:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:54:10"> </span>
                         <br>
                         <p>正常な診察所見はどれか．</p>
                         
@@ -2011,14 +2178,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PHYSIO" id="q22">
+            <div class="card-group PHYSIO PROC" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96G56" target="_blank" id="2018-02-01_15:12:26">96G56</a> 啼泣時 身体診察
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_17:48:08"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_17:48:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:06:40"> </span>
                         <br>
                         <p>新生児の診察で啼泣によって最もとりにくくなる身体所見はどれか．</p>
                         
@@ -2042,7 +2210,7 @@
                         <ol type="a">
                             <li></li>
                             <li>啼泣時に すぐとれる</li>
-                            <li><啼泣時 吸気音/li>
+                            <li>啼泣時 吸気音</li>
                             <li>心音はとれない</li>
                             <li>DTRも困難</li>
                         </ol>
@@ -2147,14 +2315,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group PHYSIO" id="q25">
+            <div class="card-group PHYSIO BT PROC" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/87A66" target="_blank" id="2018-02-01_15:30:20">87A66</a> 乳児 定期検温
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-19_17:54:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_17:54:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-26_15:08:15"> </span>
                         <br>
                         <p>乳児の定期検温で，避けるほうがよいのはどれか．3つ選べ．</p>
                         
@@ -2194,7 +2363,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-19_17:56:29"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-19_17:56:29"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_15:55:11"> </span>
                         <br>
                         <p>乳児期に治療の必要があるのはどれか．2つ選べ．</p>
                         
@@ -2227,13 +2397,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group exam 110 pri" id="q27">
+            <div class="card-group exam PROC 110 pri info" id="q27">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110E2" target="_blank" id="">110E2</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110E2" target="_blank" id="">110E2</a> 尿検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-19_18:04:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_18:04:00"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_15:09:20"> </span>
                         <br>
                         <p>物品の写真（①〜⑤）を次に示す．<br>
                             外来で1歳2ヵ月の男児に尿検査を実施するときに必要なのはどれか．</p>
@@ -2256,7 +2427,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">b</p>
 
@@ -2271,30 +2442,40 @@
 
                         <h6>尿検体の種類</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．採取条件（時間）による分類：随時尿，早朝尿，時間尿</li>
-                            <li class="list-group-item">2．採取方法による分類：<ul>
-                                <li>①膀胱穿刺尿：<br>
-                                    最も正確に細菌培養検査をする場合の採尿法．</li>
-                                <li>②カテーテル尿（導尿）：<br>
-                                    細菌培養検査にも利用できる．</li>
-                                <li>③中間尿（大人の一般的な検尿法）：<br>
-                                    排尿が確立した幼児以降の小児，大人で行う．3歳健診にはこの方法で尿検査があるができないこともある．</li>
-                                <li>④ハルンパック尿：<br>
-                                    オムツが取れていない（自律排尿できない）新生児・乳幼児の一般的な採尿法．シールの付いたビニールを綺麗に清拭した会陰部に貼り付ける．男児用と女児用がある．15分おきぐらいでオムツの中を確認し，排尿があったら速やかにハルンパックを取り外し清潔な容器に移す．よく動く子供，女児では取りにくい．</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                1．採取条件（時間）による分類：随時尿，早朝尿，時間尿
+                            </li>
+                            <li class="list-group-item">
+                                2．採取方法による分類：
+                                <ul>
+                                    <li>①膀胱穿刺尿：<br>
+                                        最も正確に細菌培養検査をする場合の採尿法．</li>
+                                    <li>②カテーテル尿（導尿）：<br>
+                                        細菌培養検査にも利用できる．</li>
+                                    <li>③中間尿（大人の一般的な検尿法）：<br>
+                                        排尿が確立した幼児以降の小児，大人で行う．3歳健診にはこの方法で尿検査があるができないこともある．</li>
+                                    <li>④ハルンパック尿：<br>
+                                        オムツが取れていない（自律排尿できない）新生児・乳幼児の一般的な採尿法．シールの付いたビニールを綺麗に清拭した会陰部に貼り付ける．男児用と女児用がある．15分おきぐらいでオムツの中を確認し，排尿があったら速やかにハルンパックを取り外し清潔な容器に移す．よく動く子供，女児では取りにくい．</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group exam 110 pri info" id="q28">
+            <div class="card-group exam trauma PROC 110 pri info" id="q28">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G9" target="_blank" id="">110G9</a> 頭部外傷
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-19_18:11:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-19_18:11:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-26_15:10:57"> </span>
                         <br>
                         <p>机に頭をぶつけて泣き止まないため2歳の男児が母親に連れられて深夜の救急外来を受診した．<br>
                             頭部に皮下血腫を認めず，受傷後のけいれん，嘔吐や意識障害は確認されていない．患児の栄養状態，活動性は良好で来院時は泣きやみ，神経学的所見に異常を認めない．母親から「心配なのでCTを撮ってほしい」と依頼された．<br>
@@ -2315,12 +2496,12 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
-                            <li></li>
+                            <li>XRでは, 骨折しかわからない</li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -2600,6 +2781,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2668,6 +2850,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "ver." + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2676,6 +2865,21 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "-" + print_date;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2689,27 +2893,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2731,11 +2954,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2752,54 +2978,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -3038,71 +3264,100 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
-    $('#DEHYD').click(function(){
+
+    $('#fever h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DEHYD)').toggle('slow');
+        $('div.card-group:not(.fever)').slideToggle(100);
+    });
+    $('#fever').find('code').html($('div.fever').size());
+
+
+    $('#DEHYD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.DEHYD)').slideToggle(100);
     });
     $('#DEHYD').find('code').html($('div.DEHYD').size());
 
-    $('#constipation').click(function(){
+
+    $('#infusion h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.constipation)').toggle('slow');
+        $('div.card-group:not(.infusion)').slideToggle(100);
+    });
+    $('#infusion').find('code').html($('div.infusion').size());
+
+
+    $('#constipation h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.constipation)').slideToggle(100);
     });
     $('#constipation').find('code').html($('div.constipation').size());
 
-    $('#intussusception').click(function(){
+    $('#intussusception h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.intussusception)').toggle('slow');
+        $('div.card-group:not(.intussusception)').slideToggle(100);
     });
     $('#intussusception').find('code').html($('div.intussusception').size());
 
-    $('#Meckel').click(function(){
+    $('#Meckel h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Meckel)').toggle('slow');
+        $('div.card-group:not(.Meckel)').slideToggle(100);
     });
     $('#Meckel').find('code').html($('div.Meckel').size());
 
-    $('#Crouzon').click(function(){
+
+    $('#Crouzon h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Crouzon)').toggle('slow');
+        $('div.card-group:not(.Crouzon)').slideToggle(100);
     });
     $('#Crouzon').find('code').html($('div.Crouzon').size());
 
-    $('#hydrocephalus').click(function(){
+
+    $('#hydrocephalus h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hydrocephalus)').toggle('slow');
+        $('div.card-group:not(.hydrocephalus)').slideToggle(100);
     });
     $('#hydrocephalus').find('code').html($('div.hydrocephalus').size());
 
-    $('#HSP').click(function(){
+
+    $('#HSP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HSP)').toggle('slow');
+        $('div.card-group:not(.HSP)').slideToggle(100);
     });
     $('#HSP').find('code').html($('div.HSP').size());
 
-    $('#HSV').click(function(){
+
+    $('#HSV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HSV)').toggle('slow');
+        $('div.card-group:not(.HSV)').slideToggle(100);
     });
     $('#HSV').find('code').html($('div.HSV').size());
 
-    $('#SIDS').click(function(){
+
+    $('#SIDS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SIDS)').toggle('slow');
+        $('div.card-group:not(.SIDS)').slideToggle(100);
     });
     $('#SIDS').find('code').html($('div.SIDS').size());
 
 
-
-
-
-
-    $('#').click(function(){
+    $('#SIRS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle('slow');
+        $('div.card-group:not(.SIRS)').slideToggle(100);
+    });
+    $('#SIRS').find('code').html($('div.SIRS').size());
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-27 11:33:37
+@Last modified time: 2018-10-29 10:33:23
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+
 04.01.18    18 08 26    style font-size
 04.01.17    18 08 26    .section layout
 04.01.16    18 08 26    print table-bordered
@@ -91,8 +104,8 @@
     <title>Immune</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-27 11:33:49" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.19">
+    <meta name="revised" content="2018-10-29 10:39:14" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.30">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -151,6 +164,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,28 +209,31 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
+            h2, h3{font-size: 14px}
             h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.75px solid;}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
             }
 
         }
@@ -982,7 +1003,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 28 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 28</p>
 
 
             <!-- 
@@ -1103,6 +1124,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group SCID PCP candidiasis 111 pri" id="q01">
                 <div class="card">
@@ -1110,22 +1139,26 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111D32" target="_blank" id="">111D32</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-27_12:44:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_12:44:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_10:45:48"> </span>
                         <br>
                         <p>6ヵ月の乳児．<br>
                             呼吸不全のため来院した．<br>
                             生後5ヵ月から咳嗽が出現しており，昨日から多呼吸も出現するようになったため救急外来を受診した．<br>
                             身長66.5cm，体重5.3kg．体温37.2℃．脈拍180/分，整．血圧88/52mmHg．呼吸数50/分．SpO2 86％（room air）．<br>
                             咽頭は発赤を認めないが，口腔粘膜に<u>鵞口瘡</u>を認める．心音に異常を認めない．両側の胸部にびまん性にfine cracklesを聴取する．<br>
-                            血液所見：赤血球403万，Hb 10.4g/dL，Ht 31％，白血球2,300（好中球64％，好酸球1％，好塩基球1％，単球7％，リンパ球27％），血小板37万．<br>
-                            血液生化学所見：総蛋白6.1g/dL，<u>IgG 152mg/dL</u>（基準440〜880），<u>IgA 5mg/dL</u>（基準31〜77），<u>IgM 13mg/dL</u>（基準19〜55）．<br>
-                            免疫血清学所見：CRP 0.1mg/dL，<u>β-D-グルカン26pg/mL</u>（基準10以下）．<br>
+                            血液所見：<br>
+                            赤血球403万，Hb 10.4g/dL，Ht 31％，白血球2,300（好中球64％，好酸球1％，好塩基球1％，単球7％，リンパ球27％），血小板37万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.1g/dL，<u>IgG 152mg/dL</u>（基準440〜880），<u>IgA 5mg/dL</u>（基準31〜77），<u>IgM 13mg/dL</u>（基準19〜55）．<br>
+                            免疫血清学所見：<br>
+                            CRP 0.1mg/dL，<u>β-D-グルカン26pg/mL</u>（基準10以下）．<br>
                             人工呼吸管理を開始し，胃管と中心静脈カテーテルを挿入した．胸部X線写真（A）と肺野条件の胸部CT（B）とを次に示す．<br>
                             考えられる原因微生物はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111D032A.jpg" class="card-img-top img-fluid img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111D032B.jpg" class="card-img-top img-fluid img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111D032A.jpg" class="card-img-top img-fluid img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111D032B.jpg" class="card-img-top img-fluid img-fluid" width="%">
 
 
                     <div class="card-body">
@@ -1145,17 +1178,19 @@
 
                         <img src="https://qb.medilink-study.com/images/111D032_ima_010.jpg" class="card-img-top img-fluid" width="">
                         <img src="https://qb.medilink-study.com/images/111D032_ima_020.jpg" class="card-img-top img-fluid" width="">
+                        <p>GGO</p>
 
                         <p class="q_dx">SCID &rArr; PCP</p>
 
                         <p class="q_answer_true">d</p>
 
                         <ol type="a">
-                            <li>カンジダ: <ul>
-                                <li>血行性に感染巣をつくる</li>
-                                <li>両側肺野に多発性の結節</li>
-                                <li></li>
-                            </ul></li>
+                            <li>カンジダ: 
+                                <ul>
+                                    <li>血行性に感染巣をつくる</li>
+                                    <li>両側肺野に多発性の結節</li>
+                                </ul>
+                            </li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -1172,15 +1207,20 @@
                         <a href="https://qb.medilink-study.com/#/Answer/77C57" target="_blank" id="">77C57</a> 診断 &xrArr; Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-27_12:55:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_12:55:10"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_10:54:15"> </span>
                         <br>
                         <p>1ヵ月の男児．<br>
-                            正常分娩で，出生時体重は2,950g．出生直後から哺乳力が弱く，下痢を反復していた．<br>
-                            生後15日から口腔内に難治性の白斑ができ，嗄声と咳嗽が激しくなってきたので入院した．この間チアノーゼおよびけいれんはない．<br>
-                            体温36.5℃，脈拍110/分，呼吸数50/分，栄養不良．口腔内に広汎な<u>鵞口瘡</u>を認める．心音に異常はない．左前胸部で乾性ラ音を聴取する．肝・脾腫はなく，全身の表在性リンパ節は触れず，外表奇形はない．<br>
-                            赤血球382万，白血球7,000（好中性桿状核球7％，好中性分葉核球55％，リンパ球23％，単球13％，好酸球2％），血小板21万，赤沈37mm/1時間，CRP 3＋，<br>
-                            血清総蛋白：5.8g/dL（アルブミン58.7％，α1-グロブリン5.7％，α2-グロブリン18.6％，β-グロブリン9.3％，γ-グロブリン7.7％）．<br>
-                            血清免疫グロブリン値：<u>IgG 450mg/dL，IgM 5mg/dL，IgA 0</u>．<br>
+                            正常分娩で，出生時体重は2,950g．<br>
+                            出生直後から哺乳力が弱く，<u>下痢を反復</u>していた．<br>
+                            生後15日から<u>口腔内に難治性の白斑</u>ができ，嗄声と咳嗽が激しくなってきたので入院した．この間チアノーゼおよびけいれんはない．<br>
+                            体温36.5℃，脈拍110/分，呼吸数50/分，<br>
+                            栄養不良．口腔内に広汎な<u>鵞口瘡</u>を認める．心音に異常はない．左前胸部で乾性ラ音を聴取する．肝・脾腫はなく，全身の表在性リンパ節は触れず，外表奇形はない．<br>
+                            赤血球382万，<u>白血球7,000</u>（好中性桿状核球7％，好中性分葉核球55％，リンパ球23％，単球13％，好酸球2％），血小板21万，赤沈37mm/1時間，<u>CRP 3＋</u>，<br>
+                            血清総蛋白：<br>
+                            5.8g/dL（アルブミン58.7％，α1-グロブリン5.7％，α2-グロブリン18.6％，β-グロブリン9.3％，γ-グロブリン7.7％）．<br>
+                            血清免疫グロブリン値：<br>
+                            <u>IgG 450mg/dL，IgM 5mg/dL，IgA 0</u>．<br>
                             <u>細胞性免疫能は各検査とも高度の障害</u>を示す．<br>
                             胸部X線写真で<u>胸腺陰影がみられない</u>．<br>
                             この疾患について正しいのはどれか．2つ選べ．</p>
@@ -1716,17 +1756,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_14:02:35"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_14:02:35"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-29_10:58:36"> </span>
                         <br>
                         <p>9歳の女児．<br>
-                            <u>発熱</u>と皮疹とを主訴に来院した．<br>
-                            5日前から<u>高熱</u>があり近医で抗菌薬を投与されたが解熱せず，<br>
+                            <u>発熱</u>と皮疹とを主訴に来院した．</p>
+                        <p>5日前から<u>高熱</u>があり近医で抗菌薬を投与されたが解熱せず，<br>
                             2日前から<u>皮疹</u>も出現してきた．<br>
-                            皮疹は発熱時に増強する．<br>
-                            体温40.2℃．脈拍120/分，整．両側頸部に径15mmの<u>リンパ節</u>を数個ずつ触知する．心雑音はない．<u>肝を右肋骨弓下に3cm</u>，<u>脾を左肋骨弓下に2cm触知</u>する．関節腫脹は認めない．<br>
-                            尿所見：蛋白（－），糖（－），潜血（－）．<br>
-                            血液所見：<u>赤沈110mm/1時間</u>，赤血球310万，<u>Hb 9.5g/dL</u>，Ht 29％，白血球21,200（桿状核好中球9％，分葉核好中球59％，好酸球3％，単球3％，リンパ球26％），血小板52万．<br>
-                            免疫学所見：<u>CRP 20.5mg/dL</u>，<u>ASO 500単位</u>（基準250以下），リウマトイド因子陰性，抗核抗体陰性．咽頭培養は常在菌のみ，血液培養は陰性．入院から治療までの3日間の体温表を次に示す．<br>
+                            皮疹は発熱時に増強する．</p>
+                        <p>体温40.2℃．脈拍120/分，整．<br>
+                            両側頸部に径15mmの<u>リンパ節</u>を数個ずつ触知する．心雑音はない．<u>肝を右肋骨弓下に3cm</u>，<u>脾を左肋骨弓下に2cm触知</u>する．関節腫脹は認めない．</p>
+                        <p>尿所見：<br>
+                            蛋白（－），糖（－），潜血（－）．</p>
+                        <p>血液所見：<br>
+                            <u>赤沈110mm/1時間</u>，<br>
+                            赤血球310万，<u>Hb 9.5g/dL</u>，Ht 29％，白血球21,200（桿状核好中球9％，分葉核好中球59％，好酸球3％，単球3％，リンパ球26％），血小板52万．</p>
+                        <p>免疫学所見：<br>
+                            <u>CRP 20.5mg/dL</u>，<u>ASO 500単位</u>（基準250以下），リウマトイド因子陰性，抗核抗体陰性．</p>
+                        <p>咽頭培養は常在菌のみ，血液培養は陰性．<br>
+                            入院から治療までの3日間の体温表を次に示す．<br>
                             この疾患に特徴的な皮疹はどれか．</p>
                     </div>
 
@@ -1852,7 +1900,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_14:10:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_14:10:37"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_11:01:35"> </span>
                         <br>
                         <p>多関節型の若年性特発性関節炎で認められる検査所見はどれか．2つ選べ．</p>
 
@@ -1977,21 +2026,33 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau" id="2018-08-27_14:32:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-29_11:33:18"> </span>
                          / 
-                        <span class="badge badge-pill mis now" id="2018-08-27_14:32:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_14:32:09"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-29_11:33:28"> </span>
                          / 
                         <span class="badge badge-pill mis" id="2018-08-27_14:32:17"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_11:33:35"> </span>
                         <br>
-                        <p>次の文を読み，4～6の問いに答えよ．<br>
-                            7歳の女児．<br>
-                            持続する発熱を主訴として来院した．<br>
-                            現病歴：10日前に38℃台の発熱があり，同時に紅色，斑状の発疹が主として躯幹に散在性に出現した．近医にて，じんま疹らしいと診断され投薬を受けた．発疹はその後出没していたが，3日ほどで消失した．しかし，37～39℃の発熱は持続し，膝や足の関節を痛がることがあった．この間，咳や鼻水が出るなどの症状はなかった．解熱傾向がないので来院した．<br>
-                            既往歴：5歳ころから気管支喘息の発作が起こるようになり，現在もその都度治療を受けている．<br>
-                            家族歴：父親にアレルギー性鼻炎がある．<br>
-                            現　症：身長121cm，体重23kg．体温38.2℃．血圧122/68mmHg．脈拍102/分，整．全身状態は比較的よい．頸部に径5mmほどのリンパ節を左に2個，右に3個触知するが，圧痛はない．胸部聴診で心尖部に2/6度の収縮期雑音を聴取する．呼吸音は正常で，ラ音はない．腹部触診で肝，脾および異常腫瘤を触れない．<br>
-                            検査所見：赤血球387万，Hb 10.8g/dL，Ht 32％，白血球11,800（好中性桿状核球32％，好中性分葉核球46％，好酸球2％，単球3％，リンパ球17％），網赤血球10‰，血小板35万．赤沈52mm/1時間，CRP 5＋．</p>
+                        <p>次の文を読み，4～6の問いに答えよ．</p>
+                        <p>7歳の女児．<br>
+                            持続する発熱を主訴として来院した．</p>
+                        <p>現病歴：<br>
+                            <u>10日前に38℃台の発熱</u>があり，同時に<u>紅色，斑状の発疹が主として躯幹に散在性</u>に出現した．<br>
+                            近医にて，じんま疹らしいと診断され投薬を受けた．発疹はその後出没していたが，<u>3日ほどで消失</u>した．<br>
+                            しかし，37～39℃の発熱は持続し，<u>膝や足の関節を痛がる</u>ことがあった．この間，咳や鼻水が出るなどの症状はなかった．解熱傾向がないので来院した．</p>
+                        <p>既往歴：<br>
+                            5歳ころから気管支喘息の発作が起こるようになり，現在もその都度治療を受けている．</p>
+                        <p>家族歴：<br>
+                        父親にアレルギー性鼻炎がある．</p>
+                        <p>現　症：<br>
+                            身長121cm，体重23kg．体温38.2℃．血圧122/68mmHg．脈拍102/分，整．<br>
+                            全身状態は比較的よい．頸部に径5mmほどのリンパ節を左に2個，右に3個触知するが，圧痛はない．胸部聴診で心尖部に2/6度の収縮期雑音を聴取する．呼吸音は正常で，ラ音はない．腹部触診で肝，脾および異常腫瘤を触れない．</p>
+                        <p>検査所見：<br>
+                            赤血球387万，Hb 10.8g/dL，Ht 32％，白血球11,800（好中性桿状核球32％，好中性分葉核球46％，好酸球2％，単球3％，リンパ球17％），網赤血球10‰，血小板35万．赤沈52mm/1時間，<u>CRP 5＋</u>．</p>
 
-                        <p>[C004]  この心雑音について考えられるのはどれか．3つ選べ．</p>
+                        <p>[C004]  <br>
+                            この心雑音について考えられるのはどれか．3つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">小児の生理的な無害性雑音</li>
                             <li class="ans_t">発熱による機能性雑音</li>
@@ -2002,7 +2063,8 @@
 
 
 
-                        <p>[C005]  この時点の症状と所見とから考えられる疾患はどれか．3つ選べ．</p>
+                        <p>[C005]  <br>
+                            この時点の症状と所見とから考えられる疾患はどれか．3つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">敗血症</li>
                             <li class="ans_f">EBウイルス感染症</li>
@@ -2013,7 +2075,9 @@
 
 
 
-                        <p>[C006]  3日後，心尖部に3/6度の左方に放散する逆流性収縮期心雑音を聴取するようになり，次の検査所見を得た．血清IgM 82mg/dL（正常60～100），IgG 1,380mg/dL（正常900～1,200），IgA 120mg/dL（正常100～250），ASO 500単位（正常166以下），抗核抗体陰性，リウマトイド因子陰性，血清補体価CH50 36単位（正常30～40）．血液培養は陰性であった．<br>
+                        <p>[C006]  <br>
+                            3日後，心尖部に3/6度の左方に放散する逆流性収縮期心雑音を聴取するようになり，次の検査所見を得た．<br>
+                            血清IgM 82mg/dL（正常60～100），IgG 1,380mg/dL（正常900～1,200），IgA 120mg/dL（正常100～250），ASO 500単位（正常166以下），抗核抗体陰性，リウマトイド因子陰性，血清補体価CH50 36単位（正常30～40）．血液培養は陰性であった．<br>
                             この患児にまず使用すべき薬剤はどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_f">アザチオプリン</li>
@@ -2151,7 +2215,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_14:40:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_14:40:56"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_11:38:53"> </span>
                         <br>
                         <p>小児の全身性エリテマトーデスにみられないのはどれか．</p>
 
@@ -2172,7 +2237,8 @@
 
                         <ol type="a">
                             <li>蝶形紅斑 &rArr; UVによって悪化</li>
-                            <li></li>
+                            <li>関節炎/関節痛<br>
+                                骨破壊(-) 関節の破壊には 10-20yrsかかる</li>
                             <li>Libman-Sacks型心内膜症</li>
                             <li>腎症状 &rArr; HTN</li>
                             <li></li>
@@ -2237,7 +2303,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_14:51:36"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_14:51:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-29_11:39:56"> </span>
                         <br>
                         <p>5歳の女児．<br>
                             3週前から<u>両頬部に紅斑</u>が出現し，2週前から全身倦怠感も出現してきたため来院した．<br>
@@ -2249,7 +2316,7 @@
                     </div>
 
                     <img src="https://qb.medilink-study.com/images/101G053A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/101G053B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/101G053B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2293,7 +2360,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_15:00:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_15:00:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-29_11:41:00"> </span>
                         <br>
                         <p>小児期の皮膚筋炎で正しいのはどれか．</p>
 
@@ -2425,24 +2493,34 @@
                         <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-08-27_15:15:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-29_11:44:25"> </span>
                          / 
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_15:15:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_15:15:32"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-29_11:44:37"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-08-27_15:15:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-29_11:44:47"> </span>
                         <br>
                         <p>次の文を読み，13～15の問いに答えよ．<br><br>
 
                             2歳1ヵ月の男児．<br>
                             <u>発熱</u>と<u>発疹</u>とを主訴に来院した．<br>
                             発育歴：在胎40週で出生．出生時の身長49cm，体重3,050g．頸定3ヵ月，独り歩きは1歳3ヵ月．現在，牛乳をコップから飲むことができる．積木を3個重ねることができる．「あーあー」，「うーうー」を言うが，意味のある言葉は言わない．「ワンワンちょうだい．」と言うと犬の縫いぐるみを持ってくる．人見知りをする．<br>
-                            現病歴：2日前から<u>38.5～39℃の発熱</u>と<u>体幹部の紅斑</u>とが出現し，近医で両眼と口唇との異常を指摘され紹介入院した．今朝から<u>左頸部を触れると強く啼泣</u>する．嘔吐はない．<br>
-                            現　症：意識は清明．身長83cm，体重18kg．体温38.8℃．脈拍120/分，整．<u>左頸部に径3.5cmの腫瘤</u>があり痛がって首を動かさない．皮膚は腹部から腰部にかけ大小さまざまな<u>紅斑</u>を認める．聴診では心雑音なく，呼吸音に異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．<u>口腔粘膜はびまん性に発赤</u>している．右眼の写真（A）と口唇の写真（B）とを次に示す．<br>
+                            現病歴：<br>
+                            2日前から<u>38.5～39℃の発熱</u>と<u>体幹部の紅斑</u>とが出現し，近医で両眼と口唇との異常を指摘され紹介入院した．今朝から<u>左頸部を触れると強く啼泣</u>する．嘔吐はない．<br>
+                            現　症：<br>
+                            意識は清明．身長83cm，体重18kg．体温38.8℃．脈拍120/分，整．<br>
+                            <u>左頸部に径3.5cmの腫瘤</u>があり痛がって首を動かさない．皮膚は腹部から腰部にかけ大小さまざまな<u>紅斑</u>を認める．<br>
+                            聴診では心雑音なく，呼吸音に異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．<u>口腔粘膜はびまん性に発赤</u>している．右眼の写真（A）と口唇の写真（B）とを次に示す．<br>
                             検査所見：<br>
-                            血液所見：<u>赤沈45mm/1時間</u>，赤血球410万，Hb 12.5g/dL，Ht 35％，白血球15,000（桿状核好中球7％，分葉核好中球56％，好酸球2％，好塩基球1％，単球5％，リンパ球29％），血小板30万．<br>
-                            血清生化学所見：総蛋白7.3g/dL，アルブミン3.5g/dL，総ビリルビン0.4mg/dL，AST 55単位，ALT 60単位，<u>LD 550単位</u>（基準176～353）．<br>
-                            免疫学所見：<u>CRP 12.5mg/dL</u>，ASO 250単位（基準250以下）．<br>
+                            血液所見：<br>
+                            <u>赤沈45mm/1時間</u>，赤血球410万，Hb 12.5g/dL，Ht 35％，白血球15,000（桿状核好中球7％，分葉核好中球56％，好酸球2％，好塩基球1％，単球5％，リンパ球29％），血小板30万．<br>
+                            血清生化学所見：<br>
+                            総蛋白7.3g/dL，アルブミン3.5g/dL，総ビリルビン0.4mg/dL，AST 55単位，ALT 60単位，<u>LD 550単位</u>（基準176～353）．<br>
+                            免疫学所見：<br>
+                            <u>CRP 12.5mg/dL</u>，ASO 250単位（基準250以下）．<br>
                             胸部X線写真と心電図とに異常を認めない．</p>
                     </div>
 
@@ -2794,14 +2872,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group Kawasaki" id="q24">
+            <div class="card-group Kawasaki info" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/87D28">87D28</a> 心疾患
                         </div>
                         <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-27_15:44:39"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_15:44:39"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_11:46:58"> </span>
                         <br>
                         <p>19歳の男性．<br>
                             就職試験時の健康診断で<u>心電図の異常</u>を指摘され来院した．<br>
@@ -2870,7 +2949,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/97H65" target="_blank" id="">97H65</a> Neut 形態異常
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-27_15:51:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-27_15:51:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-29_11:48:01"> </span>
                         <br>
                         <p>好中球に形態異常を認めるのはどれか．</p>
 
@@ -3152,7 +3232,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "ver." + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -3162,6 +3246,21 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "-" + print_date;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -3180,7 +3279,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -3224,13 +3335,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3247,54 +3359,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -3533,88 +3645,91 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
+
+
     $('#SCID h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SCID)').toggle();
+        $('div.card-group:not(.SCID)').slideToggle(100);
     });
     $('#SCID').find('code').html($('div.SCID').size());
 
 
     $('#WAS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.WAS)').toggle();
+        $('div.card-group:not(.WAS)').slideToggle(100);
     });
     $('#WAS').find('code').html($('div.WAS').size());
 
 
     $('#XLA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.XLA)').toggle();
+        $('div.card-group:not(.XLA)').slideToggle(100);
     });
     $('#XLA').find('code').html($('div.XLA').size());
 
 
     $('#CGD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CGD)').toggle();
+        $('div.card-group:not(.CGD)').slideToggle(100);
     });
     $('#CGD').find('code').html($('div.CGD').size());
 
 
     $('#JIA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.JIA)').toggle();
+        $('div.card-group:not(.JIA)').slideToggle(100);
     });
     $('#JIA').find('code').html($('div.JIA').size());
 
     $('#SS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SS)').toggle();
+        $('div.card-group:not(.SS)').slideToggle(100);
     });
     $('#SS').find('code').html($('div.SS').size());
 
 
     $('#RF h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RF)').toggle();
+        $('div.card-group:not(.RF)').slideToggle(100);
     });
     $('#RF').find('code').html($('div.RF').size());
 
 
     $('#SLE h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SLE)').toggle();
+        $('div.card-group:not(.SLE)').slideToggle(100);
     });
     $('#SLE').find('code').html($('div.SLE').size());
 
 
     $('#PMDM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PMDM)').toggle();
+        $('div.card-group:not(.PMDM)').slideToggle(100);
     });
     $('#PMDM').find('code').html($('div.PMDM').size());
 
 
     $('#Kawasaki h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Kawasaki)').toggle();
+        $('div.card-group:not(.Kawasaki)').slideToggle(100);
     });
     $('#Kawasaki').find('code').html($('div.Kawasaki').size());
 
 
     $('#Chediak-Higashi h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Chediak-Higashi)').toggle();
+        $('div.card-group:not(.Chediak-Higashi)').slideToggle(100);
     });
     $('#Chediak-Higashi').find('code').html($('div.Chediak-Higashi').size());
 
 
     $('#DiGeorge h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DiGeorge)').toggle();
+        $('div.card-group:not(.DiGeorge)').slideToggle(100);
     });
     $('#DiGeorge').find('code').html($('div.DiGeorge').size());
 
@@ -3623,7 +3738,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

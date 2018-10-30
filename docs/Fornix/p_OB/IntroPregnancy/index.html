@@ -4,12 +4,24 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-30 10:56:53
+@Last modified time: 2018-10-30 16:52:11
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -93,8 +105,8 @@
     <title>Intro Preg</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-30 10:57:08" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-10-30 16:52:34" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.31">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -153,6 +165,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,31 +208,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -268,61 +295,975 @@
     
 
     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="page-header">
+                <h2>Pregnancy <small> </small></h2>
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="fertilization">
+            <div class="section" id="gamete">
                 <div class="page-header">
-                    <h2>Fertilization <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Gamete <small>配偶子</small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <h6>月経の周期とホルモン</h6>
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/104B039_sup_p_010.jpg" class="card-img-top img-fluid">
-                    </div>
-
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"><u>ロック オンして ハイ，着床</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ロック</td>
-                                <td>6日目</td>
-                            </tr>
-                            <tr>
-                                <td>ハイ</td>
-                                <td>胚盤胞</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <ul class="list-group">
-                        <li class="list-group-item">排卵直前 卵胞: 20mm </li>
-                        <li class="list-group-item">卵胞数 胎児期に極大</li>
-                        <li class="list-group-item">受精
-                            <ul>
-                                <li>第二減数分裂中期で停止</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">着床
-                            <ul>
-                                <li>Day 6</li>
-                                <li>胚盤胞で</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item"></li>
-                    </ul>
-
-                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        排卵までに第一極体を放出
+                    </li>
+                    <li class="list-group-item">
+                        受精
+                        <ul>
+                            <li>第二減数分裂中期で停止</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="development">
+            <div class="section" id="follicle">
                 <div class="page-header">
-                    <h2>Development <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Follicle <small>卵胞</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        成熟卵胞 (Graaf): 20mm
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2>Corpus Luteum <small>黄体</small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="fertilization">
+                <div class="page-header">
+                    <h2>Fertilization <small>受精</small> <small><code></code></small></h2>
+                </div>
+
+
+                <h6>月経の周期とホルモン</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/104B039_sup_p_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">卵胞数 胎児期に極大</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="implantation">
+                <div class="page-header">
+                    <h2>Implantation <small>着床</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        胚盤胞: Day4-6
+                    </li>
+                    <li class="list-group-item">
+                        着床
+                        <ul>
+                            <li>Day 6</li>
+                            <li>胚盤胞で</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>ロック オンして ハイ，着床</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ロック</td>
+                            <td>6日目</td>
+                        </tr>
+                        <tr>
+                            <td>ハイ</td>
+                            <td>胚盤胞</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="section" id="fetus">
+                <div class="page-header">
+                    <h2>Fetus <small>胎児</small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+        
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="teratogen">
+                <div class="page-header">
+                    <h2>Teratogen <small>催奇形因子</small> <small><code></code></small></h2>
+                </div>
+
+                <h6>禁忌の薬剤</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>インドメタシン</td>
+                            <td>動脈管収縮</td>
+                        </tr>
+                        <tr>
+                            <td>ワルファリン</td>
+                            <td>胎児出血傾向</td>
+                        </tr>
+                        <tr>
+                            <td>サリドマイド</td>
+                            <td>四肢の発育異常</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+                <h3 id="ABx">ABx <small><code></code></small></h3>
+
+                <h6>妊婦に禁忌の抗菌薬・使用できる抗菌薬</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>あ て に しちゃだめ ま ぶ だち信じろ</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>あ</td>
+                            <td>アミノグリコシド</td>
+                        </tr>
+                        <tr>
+                            <td>て</td>
+                            <td>テトラサイクリン</td>
+                        </tr>
+                        <tr>
+                            <td>に</td>
+                            <td>ニューキノロン</td>
+                        </tr>
+                        <tr>
+                            <td>しちゃだめ</td>
+                            <td>禁忌</td>
+                        </tr>
+                        <tr>
+                            <td>ま</td>
+                            <td>マクロライド</td>
+                        </tr>
+                        <tr>
+                            <td>ぶ</td>
+                            <td>βラクタム</td>
+                        </tr>
+                        <tr>
+                            <td>だち信じろ</td>
+                            <td>使用可</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <h6>薬剤の胎児への影響</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108G054_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">HIV
+                        <ul>
+                            <li>抗ウイルス薬</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h6>妊婦の禁忌</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>人気の エースは おニューの 黒 アミ スカートで サイクリング</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>人気の</td>
+                            <td>妊娠・授乳婦に禁忌</td>
+                        </tr>
+                        <tr>
+                            <td>エースは</td>
+                            <td>ACE阻害薬</td>
+                        </tr>
+                        <tr>
+                            <td>おニューの</td>
+                            <td>ニューキノロン系</td>
+                        </tr>
+                        <tr>
+                            <td>黒</td>
+                            <td>クロラムフェニコール</td>
+                        </tr>
+                        <tr>
+                            <td>アミ</td>
+                            <td>アミノグリコシド系</td>
+                        </tr>
+                        <tr>
+                            <td>スカートで</td>
+                            <td>ST合剤</td>
+                        </tr>
+                        <tr>
+                            <td>サイクリング</td>
+                            <td>テトラサイクリン系</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+                <h6>妊婦に禁忌の薬剤</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>胎児に 悪 い薬は あ え て 避 けてこう</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>胎児に</td>
+                            <td>胎児に影響</td>
+                        </tr>
+                        <tr>
+                            <td>悪</td>
+                            <td>ワルファリン</td>
+                        </tr>
+                        <tr>
+                            <td>い薬は</td>
+                            <td>インドメタシン</td>
+                        </tr>
+                        <tr>
+                            <td>あ</td>
+                            <td>アミノグリコシド系抗菌薬</td>
+                        </tr>
+                        <tr>
+                            <td>え</td>
+                            <td>ACE阻害薬</td>
+                        </tr>
+                        <tr>
+                            <td>て</td>
+                            <td>テトラサイクリン系抗菌薬</td>
+                        </tr>
+                        <tr>
+                            <td>避</td>
+                            <td>サリドマイド</td>
+                        </tr>
+                        <tr>
+                            <td>けてこう</td>
+                            <td>経口糖尿病薬</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>疾患</th>
+                            <th>薬剤</th>
+                            <th>胎盤通過性</th>
+                            <th>胎児への影響</th>
+                            <th>妊娠中の管理</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>糖尿病</th>
+                            <td>経口血糖降下薬</td>
+                            <td>あり</td>
+                            <td>低血糖</td>
+                            <td>インスリンへ変更</td>
+                        </tr>
+                        <tr>
+                            <th>膠原病</th>
+                            <td>プレドニゾロン</td>
+                            <td>胎盤通過時に不活性化</td>
+                            <td></td>
+                            <td>継続使用可能</td>
+                        </tr>
+                        <tr>
+                            <th>静脈血栓症・心疾患</th>
+                            <td>ワルファリン</td>
+                            <td>あり</td>
+                            <td>催奇形性</td>
+                            <td>ヘパリンへ変更</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">甲状腺機能亢進症</th>
+                            <td>チアマゾール</td>
+                            <td>あり</td>
+                            <td>催奇形性の報告あり</td>
+                            <td>継続使用可能＊</td>
+                        </tr>
+                        <tr>
+                            <td>プロピルチオウラシル</td>
+                            <td>あり</td>
+                            <td></td>
+                            <td>継続使用可能</td>
+                        </tr>
+                        <tr>
+                            <th>てんかん</th>
+                            <td>バルプロ酸ナトリウム</td>
+                            <td>あり</td>
+                            <td>催奇形性あり</td>
+                            <td>下記参照</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+        
+    <div class="section" id="development">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Development <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="lung">Lung <small><code></code></small></h3>
+
+                <h6>肺成熟度の判定</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">L/S ratio (lecithin/sphingomyelin)<br>
+                        ≥ 2</li>
+                    <li class="list-group-item">レシチン</li>
+                    <li class="list-group-item">Shake test ≥ &times;2</li>
+                    <li class="list-group-item">Microbable test<br>
+                        ≥ 20</li>
+                    <li class="list-group-item">2の倍数</li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="circulation">Circulation <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        HR
+                        <ul>
+                            <li>妊娠中期 W10-11 170-180 bpm Max</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">動脈管
+                        <ul>
+                            <li>PG<sub>E</sub>で開存</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item"></li>
+                </ul>
+
+                <h6>胎児循環 / 新生児循環</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/110E039_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>機能的</th>
+                            <th>器質的</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>卵円孔</th>
+                            <td>Mins</td>
+                            <td>Ws</td>
+                        </tr>
+                        <tr>
+                            <th>動脈管</th>
+                            <td>半d</td>
+                            <td>Ds</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="hematopoiesis">Hematopoiesis <small><code></code></small></h3>
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>妊娠前期</td>
+                            <td>卵黄嚢</td>
+                        </tr>
+                        <tr>
+                            <td>妊娠中期</td>
+                            <td>肝<br>
+                                脾</td>
+                        </tr>
+                        <tr>
+                            <td>妊娠後期</td>
+                            <td>骨髄</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="blood">Blood <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        胎児血中に, 肝臓/卵黄嚢で産生された <u>&uarr;AFP</u>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="page-header">
+                <h2>Placenta / Umbilical cord <small> </small> <small><code></code></small></h2>
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="placenta">
+                <div class="page-header">
+                    <h2>Placenta <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">W16に完成</li>
+                    <li class="list-group-item">
+                        重量
+                        <ul>
+                            <li>W20: 200 g</li>
+                            <li>末期: <u>500 g</u></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        厚さ: 1.2 - 2 cm
+                    </li>
+                    <li class="list-group-item">絨毛間腔 母体血</li>
+                    <li class="list-group-item">羊水 アルカリ性</li>
+                </ul>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/105G006_bas_p_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="umbilical_cord">
+                <div class="page-header">
+                    <h2>Umbilical Cord <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">臍帯脱落 7day</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="oolemma">
+                <div class="page-header">
+                    <h2>Oolemma <small>卵膜</small> <small><code></code></small></h2>
+                </div>
+
+
+                <table class="table table-condensed">
+                    <tr>
+                        <td><u>A</u>mnion </td>
+                        <td>羊膜</td>
+                    </tr>
+                    <tr>
+                        <td><u>C</u>horion</td>
+                        <td>絨毛膜</td>
+                    </tr>
+                    <tr>
+                        <td><u>D</u>ecidua</td>
+                        <td>脱落膜</td>
+                    </tr>
+                </table>
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="amniotic_fluid">
+                <div class="page-header">
+                    <h2>Amniotic Fluid <small>羊水</small> <small><code></code></small></h2>
+                </div>
+
+
+                <h6>羊水の産生と吸収</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111G017_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="placental_hormone">
+                <div class="page-header">
+                    <h2>Placental Hormone <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <u>合胞体栄養細胞</u>: hCG産生
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="page-header">
+                <h2>Maternal <small>母体</small> <small><code></code></small></h2>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ANA">
+                <div class="page-header">
+                    <h2>Anatomy <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>Mo6</td>
+                            <td>臍高</td>
+                            <td>21 cm</td>
+                            <td>Mo &times; 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        子宮底長
+                        <ul>
+                            <li>Mo6 臍高</li>
+                            <li>Mo &times; 3 + 3</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        皮膚
+                        <ul>
+                            <li>色素沈着　肝斑</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PHYSIO">
+                <div class="page-header">
+                    <h2>Physiology <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/107E013_bas_p_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <h3 >CV</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        &uarr;循環血漿量<br>
+                        &rArr; &darr; Cr
+                    </li>
+                    <li class="list-group-item">
+                        BP: <u>&rarr;/&darr;</u><br>
+                        &because; &darr;末梢血管抵抗
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+        
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="page-header">
+                <h2>Exam <small> </small> <small><code></code></small></h2>
+            </div>
+        </div>
+    </div>
+
+        
+    <div class="section" id="US">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>US <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>妊娠週数の計測法</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106B021_bas_p_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>W5-8</td>
+                            <td align="right">GS</td>
+                            <td>+ 4 = week</td>
+                        </tr>
+                        <tr>
+                            <td>W8-12</td>
+                            <td align="right">CRL</td>
+                            <td>+ 7 = week</td>
+                        </tr>
+                        <tr>
+                            <td>W12-</td>
+                            <td align="right">BPD</td>
+                            <td>&times; 4 = week</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>妊娠各期の胎児推定体重の覚え方</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Week</th>
+                            <th colspan="2">BW</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>W24</td>
+                            <td>-6w</td>
+                            <td align="right">500</td>
+                            <td align="right">-1000kg</td>
+                        </tr>
+                        <tr>
+                            <td>W27</td>
+                            <td>-3w</td>
+                            <td align="right">1000</td>
+                            <td align="right">-500kg</td>
+                        </tr>
+                        <tr>
+                            <td><u>W30</u></td>
+                            <td></td>
+                            <td align="right"><u>1500</u></td>
+                            <td align="right"></td>
+                        </tr>
+                        <tr>
+                            <td>W33</td>
+                            <td>+3w</td>
+                            <td align="right">2000</td>
+                            <td align="right">+500kg</td>
+                        </tr>
+                        <tr>
+                            <td>W36</td>
+                            <td>+6w</td>
+                            <td align="right">2500</td>
+                            <td align="right">+1000kg</td>
+                        </tr>
+                        <tr>
+                            <td>W39</td>
+                            <td>+9w</td>
+                            <td align="right">3000</td>
+                            <td align="right">+1500kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                    
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>羊水量の基準値</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>ポケット にやにや 小西くん 死す</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ポケット</td>
+                            <td>羊水ポケット</td>
+                        </tr>
+                        <tr>
+                            <td>にやにや</td>
+                            <td>2cm-8cm</td>
+                        </tr>
+                        <tr>
+                            <td>小西くん</td>
+                            <td>5cm-24cm</td>
+                        </tr>
+                        <tr>
+                            <td>死す</td>
+                            <td>羊水指数（AFI）</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+        
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Monitoring <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="CTG">CTG <small><code></code></small></h3>
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>早発一過性徐脈</th>
+                            <td>児頭圧迫による生理的反応</td>
+                        </tr>
+                        <tr>
+                            <th>遅発一過性徐脈</th>
+                            <td>胎盤機能不全</td>
+                        </tr>
+                        <tr>
+                            <th>変動一過性徐脈</th>
+                            <td>臍帯圧迫</td>
+                        </tr>
+                        <tr>
+                            <th>基線細変動消失</th>
+                            <td>胎児アシドーシス, 胎児睡眠, 胎児神経系の未熟性</td>
+                        </tr>
+                        <tr>
+                            <th>サイヌソイダルパターン</th>
+                            <td>重症低酸素血症, 重症貧血, 血液型不適合</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="NST">NST <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="CST">CST <small><code></code></small></h3>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="BPS">
+                <div class="page-header">
+                    <h2>BPS <small> </small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+        
+    <div class="section" id="amniocentesis">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Amniocentesis <small>羊水検査</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">穿刺時期
+                        <ul>
+                            <li>W16-18</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">採取する羊水量
+                        <ul>
+                            <li>10-20 mL</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item"></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>羊水検査による胎児異常の診断</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">染色体分析:
+                        <ul>
+                            <li>染色体異常 (21-trisomy)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">酵素活性分析:
+                        <ul>
+                            <li>遺伝性代謝異常疾患</li>
+                            <li>X染色体劣性遺伝疾患</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">羊水中AFP:
+                        <ul>
+                            <li>無脳児</li>
+                            <li>二分脊椎</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">羊水中ビリルビン様物質:
+                        <ul>
+                            <li>胎児溶血性疾患 (Rh不適合妊娠)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">羊水浮遊細胞中のDNA分析</li>
+                    <li class="list-group-item">羊水中サーファクタント測定
+                        <ul>
+                            <li>RDS</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>診断的羊水穿刺のまとめ</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2">目的</th>
+                            <th>検査</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>遺伝情報の検査</th>
+                            <td><u>染色体異常</u>
+                                <ul>
+                                    <li>Down 症候群</li>
+                                </ul>
+                                遺伝子異常<br>
+                                代謝異常</td>
+                            <td>染色体分析<br>
+                                DNA検査</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">胎児合併症診断</th>
+                            <td>母子感染症</td>
+                            <td>ウイルスDNA検査</td>
+                        </tr>
+                        <tr>
+                            <td><u>胎児貧血</u>
+                                <ul>
+                                    <li>胎児溶血性貧血</li>
+                                </ul>
+                            </td>
+                            <td>吸光度分析</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">分娩時期決定</th>
+                            <td>絨毛膜羊膜炎（CAM）</td>
+                            <td>細菌染色・培養など</td>
+                        </tr>
+                        <tr>
+                            <td>胎児肺成熟度</td>
+                            <td><u>マイクロバブルテスト</u></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
                 <div class="body">
@@ -348,83 +1289,41 @@
 
                     <h3 id="liver">Liver <small><code></code></small></h3>
 
-                    <h3 id="circulation">Circulation <small><code></code></small></h3>
 
-                    <ul class="list-group">
-                        <li class="list-group-item">HR
-                            <ul>
-                                <li>妊娠中期 W10-11 170-180 bpm Max</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">動脈管
-                            <ul>
-                                <li>PG<sub>E</sub>で開存</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item"></li>
-                    </ul>
-
-                    <h6>胎児循環 / 新生児循環</h6>
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/110E039_bas_010.jpg" class="card-img-top img-fluid">
-                    </div>
 
                     <h6>血流再分配</h6>
                     <div class="card">
                         <img src="https://qb.medilink-study.com/images/111D009_bas_010.jpg" class="card-img-top img-fluid">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">&uarr;血流<ul>
-                                <li>脳</li>
-                                <li>心臓</li>
-                                <li>副腎</li>
-                            </ul></li>
-                            <li class="list-group-item">&darr;血流<ul>
-                                <li>肝</li>
-                                <li>肺</li>
-                                <li>四肢</li>
-                                <li>腸管</li>
-                                <li>腎</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                &uarr;血流
+                                <ul>
+                                    <li>脳</li>
+                                    <li>心臓</li>
+                                    <li><u>副腎</u></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                &darr;血流
+                                <ul>
+                                    <li>肝</li>
+                                    <li>肺</li>
+                                    <li>四肢</li>
+                                    <li>腸管</li>
+                                    <li>腎</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
 
-                    <h3 id="lung">Lung <small><code></code></small></h3>
-
-                    <h6>肺成熟度の判定</h6>
-                    <ul class="list-group">
-                        <li class="list-group-item">L/S ratio (lecithin/sphingomyelin)<br>
-                            ≥ 2</li>
-                        <li class="list-group-item">レシチン</li>
-                        <li class="list-group-item">Shake test ≥ &times;2</li>
-                        <li class="list-group-item">Microbable test<br>
-                            ≥ 20</li>
-                        <li class="list-group-item">2の倍数</li>
-                    </ul>
+                    
 
 
-                    <h3 id="hematology">Hematology <small><code></code></small></h3>
+                    
 
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <td>妊娠前期</td>
-                                <td>卵黄嚢</td>
-                            </tr>
-                            <tr>
-                                <td>妊娠中期</td>
-                                <td>肝<br>
-                                    脾</td>
-                            </tr>
-                            <tr>
-                                <td>妊娠後期</td>
-                                <td>骨髄</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <ul class="list-group">
-                        <li class="list-group-item">&uarr;AFP</li>
-                    </ul>
+                    
 
 
                     <h3 id="motor">Motor <small><code></code></small></h3>
@@ -453,283 +1352,10 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="drug">
-                <div class="page-header">
-                    <h2>Drug <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <div class="body">
-                    <h6>薬剤の胎児への影響</h6>
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/108G054_bas_010.jpg" class="card-img-top img-fluid">
-                    </div>
-
-                    <ul class="list-group">
-                        <li class="list-group-item">HIV
-                            <ul>
-                                <li>抗ウイルス薬</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <h6>妊婦の禁忌</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"><u>人気の エースは おニューの 黒 アミ スカートで サイクリング</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>人気の</td>
-                                <td>妊娠・授乳婦に禁忌</td>
-                            </tr>
-                            <tr>
-                                <td>エースは</td>
-                                <td>ACE阻害薬</td>
-                            </tr>
-                            <tr>
-                                <td>おニューの</td>
-                                <td>ニューキノロン系</td>
-                            </tr>
-                            <tr>
-                                <td>黒</td>
-                                <td>クロラムフェニコール</td>
-                            </tr>
-                            <tr>
-                                <td>アミ</td>
-                                <td>アミノグリコシド系</td>
-                            </tr>
-                            <tr>
-                                <td>スカートで</td>
-                                <td>ST合剤</td>
-                            </tr>
-                            <tr>
-                                <td>サイクリング</td>
-                                <td>テトラサイクリン系</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-
-                    <h6>妊婦に禁忌の薬剤</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"><u>胎児に 悪 い薬は あ え て 避 けてこう</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>胎児に</td>
-                                <td>胎児に影響</td>
-                            </tr>
-                            <tr>
-                                <td>悪</td>
-                                <td>ワルファリン</td>
-                            </tr>
-                            <tr>
-                                <td>い薬は</td>
-                                <td>インドメタシン</td>
-                            </tr>
-                            <tr>
-                                <td>あ</td>
-                                <td>アミノグリコシド系抗菌薬</td>
-                            </tr>
-                            <tr>
-                                <td>え</td>
-                                <td>ACE阻害薬</td>
-                            </tr>
-                            <tr>
-                                <td>て</td>
-                                <td>テトラサイクリン系抗菌薬</td>
-                            </tr>
-                            <tr>
-                                <td>避</td>
-                                <td>サリドマイド</td>
-                            </tr>
-                            <tr>
-                                <td>けてこう</td>
-                                <td>経口糖尿病薬</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h6>禁忌の薬剤</h6>
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <td>インドメタシン</td>
-                                <td>動脈管収縮</td>
-                            </tr>
-                            <tr>
-                                <td>ワルファリン</td>
-                                <td>胎児出血傾向</td>
-                            </tr>
-                            <tr>
-                                <td>サリドマイド</td>
-                                <td>四肢の発育異常</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th>疾患</th>
-                                <th>薬剤</th>
-                                <th>胎盤通過性</th>
-                                <th>胎児への影響</th>
-                                <th>妊娠中の管理</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>糖尿病</th>
-                                <td>経口血糖降下薬</td>
-                                <td>あり</td>
-                                <td>低血糖</td>
-                                <td>インスリンへ変更</td>
-                            </tr>
-                            <tr>
-                                <th>膠原病</th>
-                                <td>プレドニゾロン</td>
-                                <td>胎盤通過時に不活性化</td>
-                                <td></td>
-                                <td>継続使用可能</td>
-                            </tr>
-                            <tr>
-                                <th>静脈血栓症・心疾患</th>
-                                <td>ワルファリン</td>
-                                <td>あり</td>
-                                <td>催奇形性</td>
-                                <td>ヘパリンへ変更</td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">甲状腺機能亢進症</th>
-                                <td>チアマゾール</td>
-                                <td>あり</td>
-                                <td>催奇形性の報告あり</td>
-                                <td>継続使用可能＊</td>
-                            </tr>
-                            <tr>
-                                <td>プロピルチオウラシル</td>
-                                <td>あり</td>
-                                <td></td>
-                                <td>継続使用可能</td>
-                            </tr>
-                            <tr>
-                                <th>てんかん</th>
-                                <td>バルプロ酸ナトリウム</td>
-                                <td>あり</td>
-                                <td>催奇形性あり</td>
-                                <td>下記参照</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        
 
 
-                    <h3 id="ABx">ABx <small><code></code></small></h3>
-
-                    <h6>妊婦に禁忌の抗菌薬・使用できる抗菌薬</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"><u>あ て に しちゃだめ ま ぶ だち信じろ</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>あ</td>
-                                <td>アミノグリコシド</td>
-                            </tr>
-                            <tr>
-                                <td>て</td>
-                                <td>テトラサイクリン</td>
-                            </tr>
-                            <tr>
-                                <td>に</td>
-                                <td>ニューキノロン</td>
-                            </tr>
-                            <tr>
-                                <td>しちゃだめ</td>
-                                <td>禁忌</td>
-                            </tr>
-                            <tr>
-                                <td>ま</td>
-                                <td>マクロライド</td>
-                            </tr>
-                            <tr>
-                                <td>ぶ</td>
-                                <td>βラクタム</td>
-                            </tr>
-                            <tr>
-                                <td>だち信じろ</td>
-                                <td>使用可</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="placenta">
-                <div class="page-header">
-                    <h2>Placenta <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <div class="body">
-
-                    <ul class="list-group">
-                        <li class="list-group-item">W16に完成</li>
-                        <li class="list-group-item">重量
-                            <ul>
-                                <li>W20: 200 g</li>
-                                <li>末期: 500 g</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">厚さ
-                            <ul>
-                                <li>1.2 - 2 cm</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">絨毛間腔 母体血</li>
-                        <li class="list-group-item">羊水 アルカリ性</li>
-                    </ul>
-
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/105G006_bas_p_010.jpg" class="card-img-top img-fluid">
-                    </div>
-
-                    <h3 id="oolemma">Oolemma <small><code></code></small></h3>
-
-                    <table class="table table-condensed">
-                        <tr>
-                            <td><u>A</u>mnion </td>
-                            <td>羊膜</td>
-                        </tr>
-                        <tr>
-                            <td><u>C</u>horion</td>
-                            <td>絨毛膜</td>
-                        </tr>
-                        <tr>
-                            <td><u>D</u>ecidua</td>
-                            <td>脱落膜</td>
-                        </tr>
-                    </table>
-
-
-                    <ul class="list-group">
-                        <li class="list-group-item">臍帯脱落 7day</li>
-                    </ul>
-
-                </div>
-            </div>
-        </div>
+        
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -747,21 +1373,6 @@
                                     &lArr; Prog</li>
                             </ul>
                         </li>
-                        <li class="list-group-item">&uarr;循環血漿量<br>
-                            &rArr; &darr; Cr</li>
-                        <li class="list-group-item">子宮底長
-                            <ul>
-                                <li>Mo6 臍高</li>
-                                <li>Mo &times; 3 + 3</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">皮膚
-                            <ul>
-                                <li>色素沈着</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
                     </ul>
 
                     <table class="table table-condensed">
@@ -823,9 +1434,7 @@
                         </tbody>
                     </table>
 
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/107E013_bas_p_010.jpg" class="card-img-top img-fluid">
-                    </div>
+                    
 
                 </div>
             </div>
@@ -840,228 +1449,14 @@
 
                 <div class="body">
 
-                    <h3 id="US">U/S <small><code></code></small></h3>
-
-                    <h6>妊娠週数の計測法</h6>
-                    <div class="card">
-                        <img src="https://qb.medilink-study.com/images/106B021_bas_p_010.jpg" class="card-img-top img-fluid">
-                    </div>
-
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <td>W5-8</td>
-                                <td>GS</td>
-                                <td>= week - 4</td>
-                            </tr>
-                            <tr>
-                                <td>W8-12</td>
-                                <td>CRL</td>
-                                <td>= week - 7</td>
-                            </tr>
-                            <tr>
-                                <td>W12-</td>
-                                <td>BPD</td>
-                                <td>= week / 4</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h6>妊娠各期の胎児推定体重の覚え方</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2">Week</th>
-                                <th colspan="2">BW</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>W24</td>
-                                <td>-6w</td>
-                                <td align="right">500</td>
-                                <td align="right">-1000kg</td>
-                            </tr>
-                            <tr>
-                                <td>W27</td>
-                                <td>-3w</td>
-                                <td align="right">1000</td>
-                                <td align="right">-500kg</td>
-                            </tr>
-                            <tr>
-                                <td><u>W30</u></td>
-                                <td></td>
-                                <td align="right"><u>1500</u></td>
-                                <td align="right"></td>
-                            </tr>
-                            <tr>
-                                <td>W33</td>
-                                <td>+3w</td>
-                                <td align="right">2000</td>
-                                <td align="right">+500kg</td>
-                            </tr>
-                            <tr>
-                                <td>W36</td>
-                                <td>+6w</td>
-                                <td align="right">2500</td>
-                                <td align="right">+1000kg</td>
-                            </tr>
-                            <tr>
-                                <td>W39</td>
-                                <td>+9w</td>
-                                <td align="right">3000</td>
-                                <td align="right">+1500kg</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
                     
 
-                    <h6>羊水量の基準値</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"><u>ポケット にやにや 小西くん 死す</u></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ポケット</td>
-                                <td>羊水ポケット</td>
-                            </tr>
-                            <tr>
-                                <td>にやにや</td>
-                                <td>2cm-8cm</td>
-                            </tr>
-                            <tr>
-                                <td>小西くん</td>
-                                <td>5cm-24cm</td>
-                            </tr>
-                            <tr>
-                                <td>死す</td>
-                                <td>羊水指数（AFI）</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h3 id="CTG">CTG <small><code></code></small></h3>
-
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <th>早発一過性徐脈</th>
-                                <td>児頭圧迫による生理的反応</td>
-                            </tr>
-                            <tr>
-                                <th>遅発一過性徐脈</th>
-                                <td>胎盤機能不全</td>
-                            </tr>
-                            <tr>
-                                <th>変動一過性徐脈</th>
-                                <td>臍帯圧迫</td>
-                            </tr>
-                            <tr>
-                                <th>基線細変動消失</th>
-                                <td>胎児アシドーシス, 胎児睡眠, 胎児神経系の未熟性</td>
-                            </tr>
-                            <tr>
-                                <th>サイヌソイダルパターン</th>
-                                <td>重症低酸素血症, 重症貧血, 血液型不適合</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
 
                     <h3 id="amniocentesis">Amniocentesis <small>羊水穿刺</small> <small><code></code></small></h3>
 
-                    <ul class="list-group">
-                        <li class="list-group-item">穿刺時期
-                            <ul>
-                                <li>W16-18</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">採取する羊水量
-                            <ul>
-                                <li>10-20 mL</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item"></li>
-                    </ul>
-
-                    <h6>羊水検査による胎児異常の診断</h6>
-                    <ul class="list-group">
-                        <li class="list-group-item">染色体分析:
-                            <ul>
-                                <li>染色体異常 (21-trisomy)</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">酵素活性分析:
-                            <ul>
-                                <li>遺伝性代謝異常疾患</li>
-                                <li>X染色体劣性遺伝疾患</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">羊水中AFP:
-                            <ul>
-                                <li>無脳児</li>
-                                <li>二分脊椎</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">羊水中ビリルビン様物質:
-                            <ul>
-                                <li>胎児溶血性疾患 (Rh不適合妊娠)</li>
-                            </ul>
-                        </li>
-                        <li class="list-group-item">羊水浮遊細胞中のDNA分析</li>
-                        <li class="list-group-item">羊水中サーファクタント測定
-                            <ul>
-                                <li>RDS</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <h6>診断的羊水穿刺のまとめ</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2">目的</th>
-                                <th>検査</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>遺伝情報の検査</th>
-                                <td><u>染色体異常</u>
-                                    <ul>
-                                        <li>Down 症候群</li>
-                                    </ul>
-                                    遺伝子異常<br>
-                                    代謝異常</td>
-                                <td>染色体分析<br>
-                                    DNA検査</td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">胎児合併症診断</th>
-                                <td>母子感染症</td>
-                                <td>ウイルスDNA検査</td>
-                            </tr>
-                            <tr>
-                                <td><u>胎児貧血</u>
-                                    <ul>
-                                        <li>胎児溶血性貧血</li>
-                                    </ul>
-                                </td>
-                                <td>吸光度分析</td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">分娩時期決定</th>
-                                <td>絨毛膜羊膜炎（CAM）</td>
-                                <td>細菌染色・培養など</td>
-                            </tr>
-                            <tr>
-                                <td>胎児肺成熟度</td>
-                                <td><u>マイクロバブルテスト</u></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    
 
 
                     <h6>妊婦健診（中期以降）で毎回行うこと</h6>
@@ -1154,47 +1549,48 @@
 
 
 
+    </div>
 
 
 
 
+
+
+
+
+
+    <div class="row">
 
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="">
                 <div class="page-header">
-                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-
-                </div>
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
             </div>
         </div>
-
-
-
     </div>
     
 
@@ -1227,7 +1623,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 86 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 86</p>
 
             
             <!-- 
@@ -1357,14 +1753,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group fertilization PHYSIO" id="q01">
+            <div class="card-group fertilization INTRO PHYSIO" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102B33" target="_blank">102B33</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_11:03:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_11:03:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:35:27"> </span>
                         <br>
                         <p>正しいのはどれか．</p>
                         
@@ -1397,14 +1794,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group fertilization PHYSIO info" id="q02">
+            <div class="card-group fertilization ectopic_pregnancy term  INTRO PHYSIO info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B39" target="_blank">104B39</a> 妊娠/流産 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_11:13:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_11:13:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:00:35"> </span>
                         <br>
                         <p>妊娠について正しいのはどれか．</p>
 
@@ -1441,14 +1839,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group fertilization PHYSIO mnemonics pri" id="q03">
+            <div class="card-group fertilization PHYSIO INTRO mnemonics pri" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107B17" target="_blank">107B17</a> 受精卵 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_11:16:59"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_11:16:59"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:36:31"> </span>
                         <br>
                         <p>受精卵について正しいのはどれか．</p>
 
@@ -1472,7 +1871,7 @@
                         <ol type="a">
                             <li>卵管膨大部</li>
                             <li>第2減数分裂中期に停止, 精子進入で再開</li>
-                            <li></li>
+                            <li>受精後1細胞期 35hrs以内, 卵割はそれ以降</li>
                             <li>着床後, 胚盤胞栄養膜細胞によって, hCG分裂</li>
                             <li>胞胚期に着床</li>
                         </ol>
@@ -1500,14 +1899,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group fertilization PHYSIO " id="q04">
+            <div class="card-group fertilization PHYSIO INTRO" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97G46" target="_blank">97G46</a> 受精卵 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_11:23:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_11:23:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:40:56"> </span>
                         <br>
                         <p>ヒト受精卵で正しいのはどれか．</p>
 
@@ -1541,14 +1941,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group fertilization PHYSIO" id="q05">
+            <div class="card-group fertilization PHYSIO INTRO" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B48" target="_blank">101B48</a> 受精卵 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_11:30:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_11:30:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:40:35"> </span>
                         <br>
                         <p>正しいのはどれか．</p>
 
@@ -1584,15 +1985,16 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group development PHYSIO info" id="q06">
+            <div class="card-group development PHYSIO INTRO info" id="q06">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/106E35" target="_blank">106E35</a> 胎児期の器官形成
+                        <a href="https://qb.medilink-study.com/#/Answer/106E35" target="_blank">106E35</a> 器官形成 / 臓器成熟
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_11:38:19"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_11:38:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:44:10"> </span>
                         <br>
                         <p>胎児期の器官形成と臓器の成熟について正しいのはどれか．2つ選べ．</p>
 
@@ -1715,13 +2117,14 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group w20 development PHYSIO pri 111" id="q08">
+            <div class="card-group w20 development lung umbilical_cord PHYSIO pri 111 info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B19" target="_blank" id="">111B19</a> 妊娠20週 胎児
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_11:45:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_11:45:00"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:03:01"> </span>
                         <br>
                         <p>妊娠20週の胎児について正しいのはどれか．</p>
 
@@ -1781,14 +2184,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group development" id="q09">
+            <div class="card-group development BPD FL  GS CRL" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D90" target="_blank">99D90</a> 胎児体重推定
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_11:50:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_11:50:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:04:48"> </span>
                         <br>
                         <p>妊娠28週の胎児体重推定に用いるのはどれか．2つ選べ．</p>
 
@@ -1829,13 +2233,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group development 110 pri info" id="q10">
+            <div class="card-group development pulse CTG 110 pri info" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E29" target="_blank" id="">110E29</a> 胎児発育
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_11:57:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_11:57:05"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:07:17"> </span>
                         <br>
                         <p>胎児発育について正しいのはどれか．</p>
 
@@ -1870,6 +2275,9 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/110E029_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1890,14 +2298,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group HR development PHYSIO" id="q11">
+            <div class="card-group HR development PHYSIO INTRO" id="q11">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/101B83" target="_blank">101B83</a> 妊娠32週の胎児心拍数
+                        <a href="https://qb.medilink-study.com/#/Answer/101B83" target="_blank">101B83</a> 妊娠32週 HR
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_13:07:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_13:07:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:45:36"> </span>
                         <br>
                         <p>妊娠32週の胎児心拍数で誤っているのはどれか．</p>
                         
@@ -1926,6 +2335,7 @@
                                 PANS 成熟 &rArr; HR&darr;</li>
                             <li>20minごとに睡眠と覚醒を繰り返す</li>
                         </ol>
+
                     </div>
                 </div>
             </div>
@@ -1938,7 +2348,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_13:40:29"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_13:40:29"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:11:04"> </span>
                         <br>
                         <p>胎盤機能不全が原因の胎児発育不全で，最も早期から発育が抑制されるのはどれか．</p>
                         
@@ -1993,14 +2404,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PHYSIO development circulation lung motor liver hematology" id="q13">
+            <div class="card-group PHYSIO development circulation lung motor liver hematopoiesis INTRO" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97G52" target="_blank">97G52</a> 胎児
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_13:47:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_13:47:47"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:46:21"> </span>
                         <br>
                         <p>胎児で正しいのはどれか．</p>
 
@@ -2033,14 +2445,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group development hematology info " id="q14">
+            <div class="card-group development hematopoiesis info " id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105B23" target="_blank">105B23</a> 胎芽期 造血部位
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_13:54:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_13:54:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:46:56"> </span>
                         <br>
                         <p>胎芽期の主な造血部位はどれか．</p>
 
@@ -2058,17 +2471,23 @@
                     <div class="card-body">
 
                         <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>妊娠</th>
+                                    <th>造血器</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                    <td>妊娠前期</td>
+                                    <td>前期</td>
                                     <td>卵黄嚢</td>
                                 </tr>
                                 <tr>
-                                    <td>妊娠中期</td>
+                                    <td>中期</td>
                                     <td>肝 / 脾</td>
                                 </tr>
                                 <tr>
-                                    <td>妊娠後期</td>
+                                    <td>後期</td>
                                     <td>骨髄</td>
                                 </tr>
                             </tbody>
@@ -2095,7 +2514,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_14:03:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_14:03:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:48:10"> </span>
                         <br>
                         <p>胎便について正しいのはどれか．2つ選べ．</p>
 
@@ -2121,13 +2541,17 @@
                             <li></li>
                             <li>羊水混濁の状態で出生<br>
                                 &rArr; 胎盤吸引症候群</li>
-                            <li><ul>
-                                <li>胎便: 暗緑色</li>
-                                <li>移行便: 暗緑色, 黄色</li>
-                                <li>普通便: 黄色</li>
-                            </ul><br>
+                            <li>
+                                <ul>
+                                    <li>胎便: 暗緑色</li>
+                                    <li>移行便: 暗緑色, 黄色</li>
+                                    <li>普通便: 黄色</li>
+                                </ul>
+                                <br>
                                 +2d で排泄</li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
@@ -2139,7 +2563,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111C14" target="_blank" id="">111C14</a> 抗菌薬
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-30_14:28:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_14:28:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:49:21"> </span>
                         <br>
                         <p>妊娠12週の女性に比較的安全に使用できる抗菌薬はどれか．</p>
 
@@ -2220,7 +2645,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_14:31:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_14:31:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:50:27"> </span>
                         <br>
                         <p>胎児への影響の観点から，妊婦に使用する抗菌薬として適切なのはどれか．3つ選べ．</p>
 
@@ -2238,7 +2664,7 @@
 
 
 
-                        <p>True: a,b,c</p>
+                        <p class="q_answer_true">a b c</p>
 
                         <ol type="a">
                             <li></li>
@@ -2249,17 +2675,33 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/109G040_bas_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109G040_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <h6>妊婦 禁忌ABx</h6>
-                        <p><u>当てにするな</u></p>
-                        <ul class="list-group"> 
-                            <li class="list-group-item">アミノグリコシド</li>
-                            <li class="list-group-item">テトラサイクリン</li>
-                            <li class="list-group-item">ニューキノロン</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>当てにするな</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>あ</td>
+                                    <td>アミノグリコシド</td>
+                                </tr>
+                                <tr>
+                                    <td>て</td>
+                                    <td>テトラサイクリン</td>
+                                </tr>
+                                <tr>
+                                    <td>に</td>
+                                    <td>ニューキノロン</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
 
                         <h6>妊婦の禁忌</h6>
                         <table class="table table-condensed">
@@ -2344,38 +2786,24 @@
                             </tbody>
                         </table>
 
-                        <!-- p><u>人気の エースは おニューの 黒 編み スカートで サイクリング</u></p>
-                        <ul>
-                            <li>ACEI</li>
-                            <li>ニューキノロン</li>
-                            <li>クロラムフェニコール</li>
-                            <li>ST合剤</li>
-                            <li>テトラサイクリン</li>
-                        </ul> -->
+                        
 
-                        <!-- <p><u>胎児に 悪 い薬は あ え て 避 けてこう</u></p>
-                        <ul>
-                            <li>ワルファリン</li>
-                            <li>インドメタシン</li>
-                            <li>アミノグリコシド</li>
-                            <li>ACEI</li>
-                            <li>テトラサイクリン</li>
-                            <li>サリドマイド</li>
-                            <li>経口糖尿病薬</li>
-                        </ul> -->
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109G040_bas_010.jpg" class="img-fluid"> -->
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group drug info" id="q18">
+            <div class="card-group drug warfarin  info" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104A17" target="_blank">104A17</a> 薬物 - 胎児への影響
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_14:39:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_14:39:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:13:21"> </span>
                         <br>
                         <p>母体に投与した薬物と児への影響の組合せで正しいのはどれか．</p>
 
@@ -2427,14 +2855,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group drug pri info" id="q19">
+            <div class="card-group drug warfarin insulin pri info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108G10" target="_blank">108G10</a> 母体から胎児へ移行
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_14:50:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_14:50:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:14:08"> </span>
                         <br>
                         <p>母体から胎児へ移行しやすいのはどれか．</p>
 
@@ -2575,14 +3004,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group PHYSIO hematology" id="q20">
+            <div class="card-group PHYSIO hematopoiesis AFP" id="q20">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107E33" target="_blank">107E33</a> 胎児血中で高値
+                        <a href="https://qb.medilink-study.com/#/Answer/107E33" target="_blank">107E33</a> 胎児血中 > 母体血中
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_14:52:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_14:52:00"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:19:25"> </span>
                         <br>
                         <p>正常妊娠において母体血中に比較し胎児血中で高値であるのはどれか．2つ選べ．</p>
 
@@ -2597,8 +3027,6 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">c e</p>
 
@@ -2629,14 +3057,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group drug" id="q21">
+            <div class="card-group drug HIV epilepsy pyelonephritis edema HTN ACEI PIH " id="q21">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/97H1" target="_blank">97H1</a> 妊娠中の薬物投与
+                        <a href="https://qb.medilink-study.com/#/Answer/97H1" target="_blank">97H1</a> 妊娠中 薬物投与
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_15:03:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_15:03:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:22:08"> </span>
                         <br>
                         <p>妊娠中の薬物投与で正しいのはどれか．</p>
 
@@ -2714,17 +3143,21 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PHYSIO circulation drug 110" id="q3">
+            <div class="card-group PHYSIO circulation drug NSAISs 110" id="q3">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110E45" target="_blank" id="">110E45</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110E45" target="_blank" id="">110E45</a> US
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_15:17:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_15:17:50"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:24:36"> </span>
                         <br>
                         <p>30歳の初妊婦．妊娠35週．<br>
                             胎動減少を主訴に来院した．<br>
-                            妊娠33週までの妊婦健康診査では特に異常を認めなかった．10日前から持病の腰痛のため毎日非ステロイド性抗炎症薬を含有した市販薬（貼付薬と内服薬）を使用していた．昨日から胎動が少ないという．胎児心拍数陣痛図では胎児心拍数基線は140/分で正常な基線細変動を認めるが，一過性頻脈は認めない．腹部超音波検査を開始したが，胎盤や羊水量に異常を認めない．<br>
+                            妊娠33週までの妊婦健康診査では特に異常を認めなかった．<br>
+                            10日前から持病の腰痛のため毎日<u>非ステロイド性抗炎症薬</u>を含有した市販薬（貼付薬と内服薬）を使用していた．<br>
+                            昨日から<u>胎動が少ない</u>という．<br>
+                            胎児心拍数陣痛図では胎児心拍数基線は140/分で正常な基線細変動を認めるが，一過性頻脈は認めない．腹部超音波検査を開始したが，胎盤や羊水量に異常を認めない．<br>
                             超音波検査で注意して観察すべき胎児の部位はどれか．</p>
 
 
@@ -2758,14 +3191,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group circulation PHYSIO" id="q24">
+            <div class="card-group circulation PHYSIO PDA " id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100G33" target="_blank">100G33</a> 動脈管
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_15:24:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_15:24:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:54:37"> </span>
                         <br>
                         <p>動脈管について正しいのはどれか．</p>
 
@@ -2793,18 +3227,20 @@
                             <li>10%しか右室流出</li>
                             <li>O<sub>2</sub>が閉鎖</li>
                         </ol>
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group circulation PHYSIO info 110 pri" id="q25">
+            <div class="card-group circulation PDA  PHYSIO info 110 pri" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E39" target="_blank" id="">110E39</a> 循環生理
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-30_15:33:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_15:33:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:56:34"> </span>
                         <br>
                         <p>胎児期から出生直後にかけての循環生理で正しいのはどれか．2つ選べ．</p>
 
@@ -2839,6 +3275,8 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/110E039_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -2847,11 +3285,12 @@
             <div class="card-group circulation PHYSIO info pri" id="q26">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109G22" target="_blank">109G22</a> 胎児・新生児期の循環
+                        <a href="https://qb.medilink-study.com/#/Answer/109G22" target="_blank">109G22</a> 胎児 / 新生児期 循環
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_15:39:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_15:39:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:57:36"> </span>
                         <br>
                         <p>胎児・新生児期の循環で誤っているのはどれか．</p>
 
@@ -2880,29 +3319,41 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/109G022_bas_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109G022_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <h6>胎児循環の特徴</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①胎盤でのガス交換を含む体外循環を有し，肺循環は乏しい．</li>
-                            <li class="list-group-item">②卵円孔という心内シャントにより左右の心房が交通し，また左右の心室の厚さも同等である．</li>
-                            <li class="list-group-item">③動脈管（Botallo管）により肺動脈は大動脈に連絡され，右心室の拍出する血液の大部分が大動脈に流れる．</li>
-                            <li class="list-group-item">④臍帯動静脈，静脈管（Arantius管）が存在する．</li>
+                            <li class="list-group-item">
+                                ① 胎盤でのガス交換を含む体外循環を有し，肺循環は乏しい．
+                            </li>
+                            <li class="list-group-item">
+                                ② 卵円孔という心内シャントにより左右の心房が交通し，また左右の心室の厚さも同等である．
+                            </li>
+                            <li class="list-group-item">
+                                ③ 動脈管（Botallo管）により肺動脈は大動脈に連絡され，右心室の拍出する血液の大部分が大動脈に流れる．
+                            </li>
+                            <li class="list-group-item">
+                                ④ 臍帯動静脈，静脈管（Arantius管）が存在する．
+                            </li>
                         </ul>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109G022_bas_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group placenta oolemma pri 110" id="q27">
+            <div class="card-group placenta oolemma pri 110 info" id="q27">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B37" target="_blank" id="">110B37</a> 胎児付属物
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id=""> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:27:13"> </span>
                         <br>
                         <p>正常な胎児付属物について正しいのはどれか．2つ選べ．</p>
 
@@ -2927,14 +3378,18 @@
 
                         <ol type="a">
                             <li></li>
-                            <li><ul>
-                                <li>臍帯A: 2本</li>
-                                <li>臍帯V: 1本</li>
-                            </ul></li>
-                            <li>胎盤:<ul>
-                                <li>妊娠W20: 200g</li>
-                                <li>妊娠末期: 500g</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>臍帯A: 2本</li>
+                                    <li>臍帯V: 1本</li>
+                                </ul>
+                            </li>
+                            <li>胎盤:
+                                <ul>
+                                    <li>妊娠W20: 200g</li>
+                                    <li>妊娠末期: 500g</li>
+                                </ul>
+                            </li>
                             <li></li>
                             <li></li>
                         </ol>
@@ -2975,14 +3430,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group placenta info" id="q28">
+            <div class="card-group placenta amnion twin  info" id="q28">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104E16" target="_blank">104E16</a> 胎児付属物 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_15:55:06"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_15:55:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:29:13"> </span>
                         <br>
                         <p>胎児付属物について正しいのはどれか．</p>
 
@@ -2999,37 +3455,43 @@
                 <div class="card answer">
                     <div class="card-body">
 
-
-
                         <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>1卵性 &rArr; DD, MD, MM<br>
-                                2卵性 &rArr; DD</li>
+                            <li>
+                                <ul>
+                                    <li>1卵性 &rArr; DD, MD, MM</li>
+                                    <li>2卵性 &rArr; DD</li>
+                                </ul>
+                            </li>
                             <li>絨毛間腔には母体血が流れる</li>
                         </ol>
 
                         <h6>絨毛</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/104E016_bas_p_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/104E016_bas_p_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/104E016_bas_p_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group placenta" id="q29">
+            <div class="card-group placenta " id="q29">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D55" target="_blank">99D55</a> 胎児付属物
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_16:00:25"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_16:00:25"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:30:54"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
 
@@ -3054,9 +3516,16 @@
                             <li>胎盤の母体面には多くの分葉</li>
                             <li>卵膜: 脱落膜, 絨毛膜, 羊膜</li>
                             <li></li>
-                            <li>臍帯の付着部位: 中央, 辺縁, 卵膜付着</li>
+                            <li>臍帯の付着部位: 
+                                <ul>
+                                    <li>中央</li>
+                                    <li>辺縁</li>
+                                    <li>卵膜付着</li>
+                                </ul>
+                            </li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
@@ -3068,17 +3537,18 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111G17" target="_blank" id="">111G17</a> 羊水の産生 / 吸収
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_16:03:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_16:03:42"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:32:09"> </span>
                         <br>
                         <p>羊水の産生および吸収への関与が最も小さいのはどれか．</p>
 
 
                         <ol type="a">
-                            <li class="ans_f">羊膜</li>
-                            <li class="ans_f">胎児肺</li>
-                            <li class="ans_f">胎児腎臓</li>
-                            <li class="ans_t">胎児直腸</li>
-                            <li class="ans_f">胎児皮膚</li>
+                            <li class="ans_t">羊膜</li>
+                            <li class="ans_t">胎児肺</li>
+                            <li class="ans_t">胎児腎臓</li>
+                            <li class="ans_f">胎児直腸</li>
+                            <li class="ans_t">胎児皮膚</li>
                         </ol>
                     </div>
                 </div>
@@ -3089,7 +3559,7 @@
 
                         <!-- <p class="q_dx"></p> -->
 
-                        <p class="q_answer_true">d</p>
+                        <p class="q_answer_false">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -3125,14 +3595,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group oolemma" id="q31">
+            <div class="card-group oolemma info" id="q31">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G68" target="_blank">106G68</a> 卵膜の3層構造
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_16:06:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_16:06:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_19:59:25"> </span>
                         <br>
                         <p>卵膜の3層構造の順序で正しいのはどれか．<br>
                             ただし，胎児側から母体側に並べた場合とする．</p>
@@ -3163,23 +3634,27 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/106G068_bas_p_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/106G068_bas_p_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/106G068_bas_p_010.jpg" class="img-fluid"> -->
+
+
 
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group oolemma placenta pri " id="q32">
+            <div class="card-group oolemma placenta pri info" id="q32">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B34" target="_blank">109B34</a> 胎盤 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_16:26:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_16:26:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:34:42"> </span>
                         <br>
                         <p>胎盤について正しいのはどれか．2つ選べ．</p>
                         
@@ -3273,7 +3748,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_16:36:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_16:36:53"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:37:00"> </span>
                         <br>
                         <p>酸素と同様な機序で胎盤を通過するのはどれか．</p>
 
@@ -3305,14 +3781,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group placenta info" id="q35">
+            <div class="card-group placenta estriol E3 info" id="q35">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/85A63" target="_blank">85A63</a> エストリオール産生
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_16:40:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_16:40:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:00:11"> </span>
                         <br>
                         <p>妊婦尿中エストリオール産生に関与するのはどれか．3つ選べ．</p>
 
@@ -3343,9 +3820,12 @@
 
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/85A063_sup_p_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/85A063_sup_p_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/85A063_sup_p_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -3436,17 +3916,20 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group pregnancy PHYSIO" id="q37">
+            <div class="card-group pregnancy BBT PHYSIO" id="q37">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/99F10" target="_blank">99F10</a> 妊娠　母体変化 Qs
+                        <a href="https://qb.medilink-study.com/#/Answer/99F10" target="_blank">99F10</a> 妊娠 母体変化 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_16:51:22"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_16:51:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:39:28"> </span>
                         <br>
                         <p>28歳の女性．未経妊．<br>
-                            無月経と嘔気とを主訴に来院した．最終月経から起算して無月経の期間は7週0日である．妊娠反応陽性．経腟超音波検査で子宮内に胎囊と胎芽心拍動とを認める．<br>
+                            無月経と嘔気とを主訴に来院した．最終月経から起算して<u>無月経の期間は7週0日</u>である．<br>
+                            <u>妊娠反応陽性</u>．<br>
+                            経腟超音波検査で<u>子宮内に胎囊と胎芽心拍動</u>とを認める．<br>
                             正しいのはどれか．</p>
 
 
@@ -3485,7 +3968,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_16:57:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_16:57:53"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:42:09"> </span>
                         <br>
                         <p>妊娠を疑う所見でないのはどれか．</p>
 
@@ -3567,14 +4051,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group pregnancy PHYSIO" id="q39">
+            <div class="card-group pregnancy Cr PHYSIO" id="q39">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E29" target="_blank">103E29</a> 妊娠
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_17:02:07"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_17:02:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:43:35"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
 
@@ -3596,9 +4081,12 @@
 
                         <ol type="a">
                             <li></li>
-                            <li>Prog &rArr; 平滑筋弛緩 &rArr; &darr;BP</li>
+                            <li>Prog<br>
+                                &rArr; 平滑筋弛緩<br>
+                                &rArr; &darr;BP</li>
                             <li></li>
-                            <li>&uarr;循環血漿量に比して, &uarr;RBCが追いつかない &dArr; 水血症 &darr;Hb</li>
+                            <li>&uarr;循環血漿量に比して, &uarr;RBCが追いつかない<br>
+                                &rArr; 水血症 &darr;Hb</li>
                             <li>悪露:<br>
                                 赤 &rarr; 褐 &rarr; 黄 &rarr; 白</li>
                         </ol>
@@ -3607,14 +4095,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group pregnancy pri info" id="q40">
+            <div class="card-group pregnancy pH  pri info" id="q40">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107E13" target="_blank">107E13</a> 妊娠 母体変化
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_17:09:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_17:09:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:02:35"> </span>
                         <br>
                         <p>妊娠によって母体で低下するのはどれか．</p>
 
@@ -3665,14 +4154,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group pregnancy PHYSIO info" id="q41">
+            <div class="card-group pregnancy HR circulation PHYSIO info" id="q41">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102E14" target="_blank">102E14</a> 妊娠中期 &darr;
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_17:11:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_17:11:49"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_20:05:02"> </span>
                         <br>
                         <p>妊娠中期の妊婦で生理的に減少または低下するのはどれか．</p>
                         
@@ -3736,7 +4226,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111B4" target="_blank" id="">111B4</a> 後期に低下
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_17:26:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_17:26:12"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:45:51"> </span>
                         <br>
                         <p>正常妊娠で妊娠初期に比べ後期に低下するのはどれか．</p>
 
@@ -3784,7 +4275,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_17:29:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_17:29:12"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_20:05:59"> </span>
                         <br>
                         <p>正常妊娠22週における子宮底の位置について正しいのはどれか．</p>
 
@@ -3823,10 +4315,18 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">子宮底<ul>
-                                <li>Mo6 臍高</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                子宮底
+                                <ul>
+                                    <li>Mo6 臍高</li>
+                                    <li><code>子宮底長<br>
+                                        = Mo &times; 3 + 3</code></li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -3839,7 +4339,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_17:32:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_17:32:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:07:43"> </span>
                         <br>
                         <p>妊娠後期の母体でみられないのはどれか．</p>
 
@@ -3867,25 +4368,28 @@
                             <li>腹壁の充血 &because; Est</li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group pregnancy PHYSIO" id="q45">
+            <div class="card-group pregnancy abortion threaten_abortion ectopic_pregnancy PHYSIO" id="q45">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90D33" target="_blank">90D33</a> Echo free space
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_17:38:45"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_17:38:45"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:47:13"> </span>
                         <br>
                         <p>27歳の女性．<br>
-                            妊娠の既往はない．<br>
+                            <u>妊娠の既往はない</u>．<br>
                             月経周期は30日型，整．<br>
                             最終月経開始から36日目に少量の性器出血を主訴として来院した．<br>
-                            腟鏡診で子宮口の開大はなく，少量の出血を認める．尿中hCG 200IU/L．超音波断層法で子宮内に直径5mmのエコーフリースペースを認める．<br>
+                            腟鏡診で子宮口の開大はなく，少量の出血を認める．<u>尿中hCG 200IU/L</u>．<br>
+                            超音波断層法で子宮内に直径5mmの<u>エコーフリースペース</u>を認める．<br>
                             考えられるのはどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -3901,9 +4405,9 @@
                     <div class="card-body">
                         
                         <ul>
-                            <li>妊娠の既往なし &rAarr; 存続絨毛ではない</li>
-                            <li>hCG 200 &rAarr; 妊娠</li>
-                            <li>echo free &rAarr; 明確なGSではない 子宮外妊娠も</li>
+                            <li>妊娠の既往なし &xrArr; 存続絨毛ではない</li>
+                            <li>hCG 200 &xrArr; 妊娠</li>
+                            <li>echo free &xrArr; 明確なGSではない 子宮外妊娠も</li>
                         </ul>
 
                         <p class="q_answer_true">b c d</p>
@@ -3914,12 +4418,20 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>妊娠の既往がない &rAarr; r/o</li>
+                            <li>妊娠の既往がない &xrArr; r/o</li>
                         </ol>
 
-                        <p>子宮外妊娠: <br>
-                            子宮内に貯留した血液が脱落膜によって包まれて, 胎嚢様の所見 (偽胎嚢)<br>
-                            U/Sで正常妊娠と誤診してしまう</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                子宮外妊娠: <br>
+                                子宮内に貯留した血液が脱落膜によって包まれて, 胎嚢様の所見 (偽胎嚢)<br>
+                                U/Sで正常妊娠と誤診してしまう
+                            </li>
+                        </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -4022,18 +4534,21 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group PHYSIO GS " id="q48">
+            <div class="card-group PHYSIO GS abortion ectopic_pregnancy hydatidiform_mole" id="q48">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97I33" target="_blank">97I33</a> 妊娠初期 診断可能な疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_18:09:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_18:09:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:10:38"> </span>
                         <br>
                         <p>19歳の女性．<br>
                             妊娠の確認のため来院した．<br>
-                            月経周期は28日型，整であり，最終月経は平成15年1月18日から5日間であった．2月の月経発来が遅れていたので，2月25日に市販の妊娠診断補助試薬で検査したところ陽性であった．そのころから悪心が次第に強くなってきた．受診時の内診所見で子宮は超鶏卵大，軟で，子宮付属器は触知しない．カレンダーを次に示す．<br>
+                            月経周期は28日型，整であり，最終月経は平成15年1月18日から5日間であった．2月の月経発来が遅れていたので，<u>2月25日</u>に市販の妊娠診断補助試薬で検査したところ陽性であった．そのころから悪心が次第に強くなってきた．<br>
+                            受診時の内診所見で子宮は超鶏卵大，軟で，子宮付属器は触知しない．<br>
+                            カレンダーを次に示す．<br>
                             来院時の平成15年3月17日に診断できないのはどれか．2つ選べ．</p>
                     </div>
 
@@ -4123,7 +4638,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110G21" target="_blank" id="">110G21</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_18:18:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_18:18:44"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:49:29"> </span>
                         <br>
                         <p>妊婦健康診査で妊娠初期に行う血液検査項目はどれか．</p>
 
@@ -4142,7 +4658,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_true">b</p>
 
@@ -4171,14 +4687,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group PHYSIO pregnancy exam FGR CST" id="q51">
+            <div class="card-group PHYSIO pregnancy exam FGR CST info" id="q51">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B90" target="_blank">101B90</a> 疾患 - 検査 W30の胎児
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_19:01:19"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_19:01:19"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_20:16:03"> </span>
                         <br>
                         <p>妊娠30週の胎児診断の組合せで適切なのはどれか．2つ選べ．</p>
 
@@ -4206,11 +4723,16 @@
                             <li></li>
                         </ol>
 
-                        <dl>
-                            <dt>CST</dt>
-                            <dd>オキシトシン点滴 &rArr; 子宮収縮<br>
-                                胎児心拍の変化をみる</dd>
-                        </dl>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                CST<br>
+                                オキシトシン点滴 &rArr; 子宮収縮<br>
+                                胎児心拍の変化をみる
+                            </li>
+                        </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -4223,16 +4745,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_19:04:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_19:04:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:50:21"> </span>
                         <br>
                         <p>妊婦健診で毎回の検査を行わないのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f">血圧</li>
-                            <li class="ans_t">血色素</li>
-                            <li class="ans_f">尿蛋白</li>
-                            <li class="ans_f">体重</li>
-                            <li class="ans_f">尿糖</li>
+                            <li class="ans_t">血圧</li>
+                            <li class="ans_f">血色素</li>
+                            <li class="ans_t">尿蛋白</li>
+                            <li class="ans_t">体重</li>
+                            <li class="ans_t">尿糖</li>
                         </ol>
                     </div>
                 </div>
@@ -4241,7 +4764,7 @@
 
 
 
-                        <p class="q_answer_true">b</p>
+                        <p class="q_answer_false">b</p>
 
                         <ol type="a">
                             <li></li>
@@ -4433,7 +4956,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_19:17:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_19:17:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:17:35"> </span>
                         <br>
                         <p>胎児が健全であることを示唆するのはどれか．</p>
 
@@ -4458,11 +4982,25 @@
                             <li>BPS: 10pt</li>
                         </ol>
 
-                        <ol class="list-group">
-                            <li class="list-group-item">BPS: 10pt</li>
-                            <li class="list-group-item">Bishop: 13pt</li>
-                            <li class="list-group-item">Apgar: 10pt</li>
-                        </ol>
+
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>BPS</td>
+                                    <td>10pt</td>
+                                </tr>
+                                <tr>
+                                    <td>Bishop</td>
+                                    <td>13pt</td>
+                                </tr>
+                                <tr>
+                                    <td>Apgar</td>
+                                    <td>10pt</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
                     </div>
                 </div>
             </div>
@@ -4475,7 +5013,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_19:24:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_19:24:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:19:57"> </span>
                         <br>
                         <p>妊娠中の放射線被ばくについて正しいのはどれか．</p>
 
@@ -4508,18 +5047,22 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group US CRL PHYSIO exam pri" id="q56">
+            <div class="card-group US CRL PHYSIO exam pri info" id="q56">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E40" target="_blank">108E40</a> CRL &xrArr; 妊娠週数
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_19:29:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_19:29:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:53:09"> </span>
                         <br>
                         <p>22歳の女性．初妊婦．<br>
                             今朝，市販のキットで妊娠検査を行ったところ陽性であったため来院した．<br>
-                            1週前から空腹時に悪心を感じている．最終月経からは妊娠12週2日と推測される．月経周期は不順である．腟鏡診で分泌物は白色少量である．子宮は手拳大で軟．経腟超音波検査で胎児には心拍動を認め，頭殿長〈CRL〉を計測した．経腟超音波像を次に示す．最終月経開始日から280日目は2014年2月15日である．<br>
+                            1週前から空腹時に悪心を感じている．<br>
+                            最終月経からは<u>妊娠12週2日</u>と推測される．月経周期は不順である．腟鏡診で分泌物は白色少量である．子宮は手拳大で軟．経腟超音波検査で胎児には心拍動を認め，頭殿長〈CRL〉を計測した．<br>
+                            経腟超音波像を次に示す．<br>
+                            <u>最終月経開始日から280日目は2014年2月15日</u>である．<br>
                             この女性の分娩予定日として適切なのはどれか．</p>
                     </div>
 
@@ -4588,20 +5131,21 @@
             <div class="card-group US CRL PHYSIO exam 111 pri" id="q57">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111G4" target="_blank" id="">111G4</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/111G4" target="_blank" id="">111G4</a> US
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_19:39:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_19:39:33"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:55:20"> </span>
                         <br>
                         <p>妊娠初期の経腟超音波像（①〜⑤）を次に示す．<br>
                             分娩予定日を決定するために有用な計測部位はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111G004A.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111G004B.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111G004C.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111G004D.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111G004E.jpg" class="card-img-top img-fluid" width="32%">
+                    <img src="https://qb.medilink-study.com/images/111G004A.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111G004B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111G004C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111G004D.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111G004E.jpg" class="card-img-top img-fluid" width="49%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -4641,7 +5185,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_19:40:52"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_19:40:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:20:46"> </span>
                         <br>
                         <p>妊娠中の超音波写真を次に示す．<br>
                             児頭大横径〈BPD〉の計測断面を示しているのはどれか．</p>
@@ -4671,6 +5216,8 @@
                         <!-- <img src="https://www.qb-online.com/img/105E024_ima_p_030.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/105E024_ima_p_040.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/105E024_ima_p_050.jpg" class="img-fluid"> -->
+
+
                         <img src="https://qb.medilink-study.com/images/105E024_ima_p_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/105E024_ima_p_020.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/105E024_ima_p_030.jpg" class="card-img-top img-fluid">
@@ -4686,19 +5233,22 @@
                             <li>肝内臍静脈, 胃泡(+) &xrArr; 腹部</li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group  exam " id="q59">
+            <div class="card-group  exam anemia " id="q59">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G14" target="_blank">109G14</a> 胎児の貧血
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_19:48:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_19:48:39"> </span>
+                        <span class="badge badge-pill rev now" id="2018-10-30_20:22:18"> </span>
                         <br>
                         <p>胎児の貧血を診断できるのはどれか．</p>
 
@@ -4736,7 +5286,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111G31" target="_blank" id="">111G31</a> 妊娠10週
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-30_20:02:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_20:02:42"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_17:56:38"> </span>
                         <br>
                         <p>妊娠10週の経腟超音波検査で診断できるのはどれか．</p>
 
@@ -4791,7 +5342,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_20:13:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_20:13:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:23:10"> </span>
                         <br>
                         <p>胎児超音波検査で診断が最も困難な疾患はどれか．</p>
 
@@ -4807,8 +5359,6 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">a</p>
 
@@ -4827,11 +5377,12 @@
             <div class="card-group US exam info" id="q62">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/103B36" target="_blank">103B36</a> U/S観察可能な運動 - 時期
+                        <a href="https://qb.medilink-study.com/#/Answer/103B36" target="_blank">103B36</a> US観察可能な運動 - 時期
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_20:18:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_20:18:32"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_17:57:45"> </span>
                         <br>
                         <p>超音波画像下に観察が可能な胎児の運動・機能と時期の組合せで誤っているのはどれか．</p>
 
@@ -4847,11 +5398,31 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <ul class="list-group"> 
-                            <li class="list-group-item">W7: 体の動き</li>
-                            <li class="list-group-item">W8: 全身運動</li>
-                            <li class="list-group-item">W9: 上肢/下肢の単独運動, 頭部の回旋</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td>W5</td>
+                                    <td>心拍動</td>
+                                </tr>
+                                <tr>
+                                    <td>W7</td>
+                                    <td>体の動き</td>
+                                </tr>
+                                <tr>
+                                    <td>W8</td>
+                                    <td>全身運動</td>
+                                </tr>
+                                <tr>
+                                    <td>W9</td>
+                                    <td>上肢/下肢の単独運動<br>
+                                        頭部の回旋</td>
+                                </tr>
+                                <tr>
+                                    <td>W15</td>
+                                    <td>呼吸様運動</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
                         <p class="q_answer_true">b</p>
@@ -4868,14 +5439,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group US exam info mnemonics" id="q63">
+            <div class="card-group US exam GS CRL BPD info mnemonics" id="q63">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/106B21" target="_blank">106B21</a> w - U/S計測値
+                        <a href="https://qb.medilink-study.com/#/Answer/106B21" target="_blank">106B21</a> w - US
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_20:28:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_20:28:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:02:14"> </span>
                         <br>
                         <p>正常経過における妊娠週数と超音波計測値の組合せで誤っているのはどれか．</p>
 
@@ -4897,23 +5469,21 @@
                         <p class="q_answer_true">c</p>
 
                         <ol type="a">
-                            <li>GS = w - 4</li>
-                            <li>CRL = w -7</li>
-                            <li>BPD = w/4</li>
-                            <li></li>
+                            <li>w = GS + 4</li>
+                            <li>w = CRL + 7</li>
+                            <li>w = BPD * 4</li>
+                            <li>W30 - 1500 g</li>
                             <li></li>
                         </ol>
 
                         <h6>妊娠週数の計測法</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/106B021_bas_p_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/106B021_bas_p_010.jpg" class="card-img-top img-fluid">
                         </div>
 
 
                         <h6>妊娠各期の胎児推定体重の覚え方</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/106B021_bas_p_020.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/106B021_bas_p_020.jpg" class="card-img-top img-fluid">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item"><code>W30 : 1500</code></li>
@@ -4948,20 +5518,28 @@
                                 </tr>
                             </tbody>
                         </table>
-                        
+                            
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/106B021_bas_p_010.jpg" class="img-fluid"> -->
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/106B021_bas_p_020.jpg" class="img-fluid"> -->
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group US exam" id="q64">
+            <div class="card-group US exam CTG " id="q64">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/95A79" target="_blank">95A79</a> 分娩開始前 U/S
+                        <a href="https://qb.medilink-study.com/#/Answer/95A79" target="_blank">95A79</a> 分娩開始前 US
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_20:38:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_20:38:17"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_18:06:01"> </span>
                         <br>
                         <p>分娩開始前の妊婦に行う検査で，通常超音波を用いるのはどれか．3つ選べ．</p>
 
@@ -4986,6 +5564,7 @@
                             <li>XR</li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
@@ -4998,10 +5577,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_20:46:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_20:46:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:08:26"> </span>
                         <br>
                         <p>31歳の2回経妊1回経産婦．妊娠39週2日．<br>
-                            陣痛発来のため入院した．分娩は順調に進行し，入院3時間後に子宮口8cm開大，未破水である．規則的な陣痛を認めており，胎児心拍数パターンに異常を認めない．胎児心拍数陣痛図（①～⑤）を次に示す．<br>
+                            陣痛発来のため入院した．<br>
+                            分娩は順調に進行し，入院3時間後に子宮口8cm開大，未破水である．規則的な陣痛を認めており，胎児心拍数パターンに異常を認めない．<br>
+                            胎児心拍数陣痛図（①～⑤）を次に示す．<br>
                             このときの胎児心拍数陣痛図として考えられるのはどれか．</p>
                     </div>
 
@@ -5105,11 +5687,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_20:55:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_20:55:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:09:45"> </span>
                         <br>
                         <p>30歳の初産婦．<br>
                             妊娠38週に陣痛発来し入院した．<br>
-                            胎児心拍数陣痛図で異常を認め，帝王切開が行われた．娩出後の胎児付属物の写真を次に示す．<br>
+                            胎児心拍数陣痛図で異常を認め，帝王切開が行われた．<br>
+                            娩出後の胎児付属物の写真を次に示す．<br>
                             胎児心拍数陣痛図の所見として最も考えられるのはどれか．</p>
                     </div>
 
@@ -5130,7 +5714,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/109D021_ima_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/109D021_ima_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/109D021_ima_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">臍帯真結節</p>
 
@@ -5160,14 +5744,21 @@
                                 </tr>
                                 <tr>
                                     <th>基線細変動消失</th>
-                                    <td>胎児アシドーシス, 胎児睡眠, 胎児神経系の未熟性</td>
+                                    <td>胎児アシドーシス<br>
+                                        胎児睡眠<br>
+                                        胎児神経系の未熟性</td>
                                 </tr>
                                 <tr>
                                     <th>サイヌソイダルパターン</th>
-                                    <td>重症低酸素血症, 重症貧血, 血液型不適合</td>
+                                    <td>重症低酸素血症<br>
+                                        重症貧血<br>
+                                        血液型不適合</td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -5180,11 +5771,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_21:00:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_21:00:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:24:20"> </span>
                         <br>
                         <p>33歳の初産婦．妊娠39週．<br>
                             10分周期の陣痛が発来し来院した．<br>
-                            妊娠8週の自然流産歴が2回ある．不妊外来での治療後，今回の妊娠が成立した．定期的妊婦健康診査では，特に異常は指摘されていない．入院時の内診所見は子宮口2cm開大，展退度60％，下降度SP－2で破水を認めた．入院時と2時間後との胎児心拍数陣痛図（A，B）を次に示す．<br>
+                            妊娠8週の自然流産歴が2回ある．不妊外来での治療後，今回の妊娠が成立した．定期的妊婦健康診査では，特に異常は指摘されていない．<br>
+                            入院時の内診所見は子宮口2cm開大，展退度60％，<u>下降度SP－2</u>で<u>破水</u>を認めた．<br>
+                            入院時と2時間後との胎児心拍数陣痛図（A，B）を次に示す．<br>
                             考えられる病態はどれか．</p>
                     </div>
 
@@ -5208,7 +5802,6 @@
 
                         <ul>
                             <li>早期破水</li>
-                            <li></li>
                         </ul>
 
                         <p>変動性</p>
@@ -5235,7 +5828,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110G38" target="_blank" id="">110G38</a> 胎児心拍陣痛図
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-30_21:16:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_21:16:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:25:58"> </span>
                         <br>
                         <p>妊娠37週の胎児心拍陣痛図を次に示す．<br>
                             認められる所見はどれか．2つ選べ．</p>
@@ -5272,8 +5866,9 @@
                             <li></li>
                         </ol>
 
-                        <a href="https://qb.medilink-study.com/#/Answer/110B47" class="btn btn-secondary">110B47</a>
-                        <a href="../Delivery/index.html#q22" class="btn btn-secondary">Delivery #q22</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110B47" class="btn btn-secondary" target="_blank">110B47</a>
+
+                        <a href="../Delivery/index.html#q22" class="btn btn-secondary" target="_blank">Delivery #q22</a>
                     </div>
                 </div>
             </div>
@@ -5286,7 +5881,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_21:19:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_21:19:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:27:40"> </span>
                         <br>
                         <p>胎児心拍数陣痛図で胎児健康状態を判定するとき，妊娠週数を考慮しなければならないのはどれか．</p>
                         
@@ -5404,14 +6000,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group CTG exam" id="q72">
+            <div class="card-group CTG exam info" id="q72">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94B4" target="_blank">94B4</a> 胎児感染 &xrArr; CTG
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-30_21:26:54"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-30_21:26:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:28:23"> </span>
                         <br>
                         <p>胎児感染を考えるべき胎児心拍数図の所見はどれか．</p>
 
@@ -5441,7 +6038,10 @@
                         </ol>
 
                         <h6>子宮内感染 の診断</h6>
-                        <a href="http://www.sciencedirect.com/science/article/pii/0002937883905756" class="btn btn-secondary">yoder PR. et. al, AM J Obstet Gynecol 1983; 145:695</a>
+                        <a href="http://www.sciencedirect.com/science/article/pii/0002937883905756" class="btn btn-secondary">yoder PR. et. al, 1983</a>
+
+
+
                         <ul class="list-group">
                             <li class="list-group-item">分娩時BT ≥ 37.8</li>
                             <li class="list-group-item">母体頻脈 > 100bpm</li>
@@ -5450,19 +6050,23 @@
                             <li class="list-group-item">羊水悪臭</li>
                             <li class="list-group-item">子宮の圧痛</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group stillbirth" id="q73">
+            <div class="card-group stillbirth abortion " id="q73">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100H3" target="_blank">100H3</a> 習慣流産
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_21:33:49"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_21:33:49"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:12:41"> </span>
                         <br>
                         <p>27歳の女性．<br>
                             <u>反復する流産</u>を主訴に来院した．<br>
@@ -5557,7 +6161,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_21:44:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_21:44:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:14:04"> </span>
                         <br>
                         <p>先天異常の診断を行う妊娠時期と方法の組合せで正しいのはどれか．</p>
 
@@ -5585,6 +6190,7 @@
                             <li></li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
@@ -5593,11 +6199,12 @@
             <div class="card-group amniocentesis" id="q76">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/86A56" target="_blank">86A56</a> 胎児染色体分析のための羊水穿刺
+                        <a href="https://qb.medilink-study.com/#/Answer/86A56" target="_blank">86A56</a> 胎児染色体分析 羊水穿刺
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-30_21:51:26"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-30_21:51:26"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_18:15:18"> </span>
                         <br>
                         <p>胎児染色体分析のための羊水穿刺について正しいのはどれか．3つ選べ．</p>
 
@@ -5635,14 +6242,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group amniocentesis info" id="q77">
+            <div class="card-group amniocentesis AFP info" id="q77">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/89A87" target="_blank">89A87</a> 羊水検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-31_10:59:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-31_10:59:42"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_18:17:29"> </span>
                         <br>
                         <p>羊水検査について誤っている組合せはどれか．</p>
 
@@ -5674,38 +6282,58 @@
 
                         <h6>羊水検査による胎児異常の診断</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">染色体分析:<ul>
-                                <li>染色体異常 (21-trisomy)</li>
-                            </ul></li>
-                            <li class="list-group-item">酵素活性分析:<ul>
-                                <li>遺伝性代謝異常疾患</li>
-                                <li>X染色体劣性遺伝疾患</li>
-                            </ul></li>
-                            <li class="list-group-item">羊水中AFP:<ul>
-                                <li>無脳児</li>
-                                <li>二分脊椎</li>
-                            </ul></li>
-                            <li class="list-group-item">羊水中ビリルビン様物質:<ul>
-                                <li>胎児溶血性疾患 (Rh不適合妊娠)</li>
-                            </ul></li>
-                            <li class="list-group-item">羊水浮遊細胞中のDNA分析</li>
-                            <li class="list-group-item">羊水中サーファクタント測定<ul>
-                                <li>RDS</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                染色体分析:
+                                <ul>
+                                    <li>染色体異常 (21-trisomy)</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                酵素活性分析:
+                                <ul>
+                                    <li>遺伝性代謝異常疾患</li>
+                                    <li>X染色体劣性遺伝疾患</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                羊水中AFP:
+                                <ul>
+                                    <li>無脳児</li>
+                                    <li>二分脊椎</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                羊水中ビリルビン様物質:
+                                <ul>
+                                    <li>胎児溶血性疾患 (Rh不適合妊娠)</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                羊水浮遊細胞中のDNA分析
+                            </li>
+                            <li class="list-group-item">
+                                羊水中サーファクタント測定
+                                <ul>
+                                    <li>RDS</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group amniocentesis info" id="q78">
+            <div class="card-group amniocentesis AIHA  info" id="q78">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108G17" target="_blank">108G17</a> 羊水検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-31_11:04:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-31_11:04:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:20:06"> </span>
                         <br>
                         <p>羊水検査で診断できるのはどれか．</p>
 
@@ -5778,6 +6406,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -5839,7 +6470,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-31_11:14:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-31_11:14:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:30:04"> </span>
                         <br>
                         <p>新生児のマイクロバブルテストに用いるのはどれか．</p>
 
@@ -5869,13 +6501,21 @@
 
                         <h6>肺成熟度の判定</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">L/S ratio (lecithin/sphingomyelin)<br>
-                                ≥ 2</li>
+                            <li class="list-group-item">
+                                L/S ratio (lecithin/sphingomyelin)<br>
+                                ≥ 2
+                            </li>
                             <li class="list-group-item">レシチン</li>
                             <li class="list-group-item">Shake test ≥ &times;2</li>
-                            <li class="list-group-item">Microbable test<br>
-                                ≥ 20</li>
+                            <li class="list-group-item">
+                                Microbable test<br>
+                                ≥ 20
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -5904,7 +6544,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-31_11:16:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-31_11:16:51"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_18:21:29"> </span>
                         <br>
                         <p>妊娠末期に必要な摂取エネルギー付加量（kcal/日）の適切な目安はどれか．</p>
 
@@ -6007,14 +6648,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group exam CRL BW" id="q83">
+            <div class="card-group exam CRL BW BPD " id="q83">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97B8" target="_blank">97B8</a> 正常妊娠の週数と所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-31_11:23:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-31_11:23:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:31:47"> </span>
                         <br>
                         <p>正常妊娠の週数と所見の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -6056,7 +6698,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-31_11:28:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-31_11:28:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_18:22:25"> </span>
                         <br>
                         <p>妊娠経過で異常なのはどれか．</p>
 
@@ -6079,11 +6722,13 @@
                         <ol type="a">
                             <li>妊娠悪阻: 8-12w</li>
                             <li>胎動 20wまでに感じる</li>
-                            <li><ul>
-                                <li>27w 1000 g</li>
-                                <li>30w 1500 g</li>
-                                <li>33w 2000 g</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>27w: 1000 g</li>
+                                    <li>30w: 1500 g</li>
+                                    <li>33w: 2000 g</li>
+                                </ul>
+                            </li>
                             <li><ul>
                                 <li>≥ 25 cm 羊水過多</li>
                                 <li>≤  5 cm 羊水過少</li>
@@ -6103,7 +6748,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-31_11:32:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-31_11:32:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:32:53"> </span>
                         <br>
                         <p>正常妊娠で誤っているのはどれか．</p>
 
@@ -6139,14 +6785,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group exam info" id="q86">
+            <div class="card-group pregnancy umbilical_cord info" id="q86">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G15" target="_blank">109G15</a> 臍帯脱落
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-31_11:34:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-31_11:34:45"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_20:33:58"> </span>
                         <br>
                         <p>臍帯が脱落する時期はどれか．</p>
 
@@ -6305,7 +6952,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "ver." + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -6315,6 +6966,21 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "-" + print_date;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -6333,7 +6999,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -6377,13 +7055,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -6400,54 +7079,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -6686,77 +7365,78 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#fertilization h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.fertilization)').toggle();
+        $('div.card-group:not(.fertilization)').slideToggle(100);
     });
     $('#fertilization').find('code').html($('div.fertilization').size());
 
 
     $('#development h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.development)').toggle();
+        $('div.card-group:not(.development)').slideToggle(100);
     });
     $('#development').find('code').html($('div.development').size());
 
 
-    $('#hematology').click(function(){
+    $('#hematopoiesis').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hematology)').toggle();
+        $('div.card-group:not(.hematopoiesis)').slideToggle(100);
     });
-    $('#hematology').find('code').html($('div.hematology').size());
+    $('#hematopoiesis').find('code').html($('div.hematopoiesis').size());
 
 
     $('#liver').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.liver)').toggle();
+        $('div.card-group:not(.liver)').slideToggle(100);
     });
     $('#liver').find('code').html($('div.liver').size());
 
     $('#circulation').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.circulation)').toggle();
+        $('div.card-group:not(.circulation)').slideToggle(100);
     });
     $('#circulation').find('code').html($('div.circulation').size());
 
     $('#lung').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.lung)').toggle();
+        $('div.card-group:not(.lung)').slideToggle(100);
     });
     $('#lung').find('code').html($('div.lung').size());
 
     $('#eye').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.eye)').toggle();
+        $('div.card-group:not(.eye)').slideToggle(100);
     });
     $('#eye').find('code').html($('div.eye').size());
 
     $('#gastroenterology').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.gastroenterology)').toggle();
+        $('div.card-group:not(.gastroenterology)').slideToggle(100);
     });
     $('#gastroenterology').find('code').html($('div.gastroenterology').size());
 
 
     $('#placenta h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.placenta)').toggle();
+        $('div.card-group:not(.placenta)').slideToggle(100);
     });
     $('#placenta').find('code').html($('div.placenta').size());
 
     $('#oolemma').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.oolemma)').toggle();
+        $('div.card-group:not(.oolemma)').slideToggle(100);
     });
     $('#oolemma').find('code').html($('div.oolemma').size());
 
 
     $('#pregnancy h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.pregnancy)').toggle();
+        $('div.card-group:not(.pregnancy)').slideToggle(100);
     });
     $('#pregnancy').find('code').html($('div.pregnancy').size());
 
@@ -6764,26 +7444,26 @@ $('document').ready(function(){
 
     $('#exam h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.exam)').toggle();
+        $('div.card-group:not(.exam)').slideToggle(100);
     });
     $('#exam').find('code').html($('div.exam').size());
 
     $('#US').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.US)').toggle();
+        $('div.card-group:not(.US)').slideToggle(100);
     });
     $('#US').find('code').html($('div.US').size());
 
     $('#CTG').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CTG)').toggle();
+        $('div.card-group:not(.CTG)').slideToggle(100);
     });
     $('#CTG').find('code').html($('div.CTG').size());
 
 
     $('#amniocentesis').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.amniocentesis)').toggle();
+        $('div.card-group:not(.amniocentesis)').slideToggle(100);
     });
     $('#amniocentesis').find('code').html($('div.amniocentesis').size());
 
@@ -6791,21 +7471,21 @@ $('document').ready(function(){
 
     $('#nutrition h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.nutrition)').toggle();
+        $('div.card-group:not(.nutrition)').slideToggle(100);
     });
     $('#nutrition').find('code').html($('div.nutrition').size());
 
 
     $('#drug h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.drug)').toggle();
+        $('div.card-group:not(.drug)').slideToggle(100);
     });
     $('#drug').find('code').html($('div.drug').size());
 
 
     $('#ABx').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ABx)').toggle();
+        $('div.card-group:not(.ABx)').slideToggle(100);
     });
     $('#ABx').find('code').html($('div.ABx').size());
 
@@ -6813,7 +7493,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

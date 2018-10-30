@@ -4,12 +4,33 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-17 15:34:46
+@Last modified time: 2018-10-30 11:23:28
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+
 04.01.11    18 08 17    .append size()
 04.01.10    18 08 17    #temp click toggle
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
@@ -81,11 +102,11 @@
 -->
 <html>
 <head>
-    <title>Resp</title>
+    <title>Resp - Ped</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-17 15:34:58" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.11">
+    <meta name="revised" content="2018-10-30 11:23:53" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.31">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -144,6 +165,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -182,25 +208,42 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -210,7 +253,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Respiratory <small class="hidden-xs-down"></small></h1>
+        <h1 class="title">Respiratory <small>Ped</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -610,7 +653,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 16 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 16</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -747,6 +790,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group asthma info pri" id="q01">
                 <div class="card">
@@ -847,7 +898,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-17_16:21:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_16:21:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:39:12"> </span>
                         <br>
                         <p>小児気管支喘息の急性小発作に対してまず行うのはどれか．</p>
 
@@ -866,7 +918,7 @@
 
 
                         <p>急性発作に対して, 発作の程度にかかわらず<br>
-                            &rAarr; &beta;<sub>2</sub> stimulant</p>
+                            &xrArr; &beta;<sub>2</sub> stimulant</p>
 
                         <p class="q_answer_true">a</p>
 
@@ -880,37 +932,52 @@
 
                         <h6>小児の喘息急性発作の治療</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">小発作: <ul>
-                                <li>&beta;<sub>2</sub> stimulant</li>
-                            </ul></li>
-                            <li class="list-group-item">中発作:<ul>
-                                <li>&beta;<sub>2</sub> stimulant</li>
-                            </ul></li>
-                            <li class="list-group-item">大発作:<ul>
-                                <li>&beta;<sub>2</sub> stimulant</li>
-                                <li>副腎皮質ステロイド</li>
-                                <li>(アミノフィリン IV)</li>
-                            </ul></li>
-                            
+                            <li class="list-group-item">
+                                小発作: 
+                                <ul>
+                                    <li>&beta;<sub>2</sub> stimulant</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                中発作:
+                                <ul>
+                                    <li>&beta;<sub>2</sub> stimulant</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                大発作:
+                                <ul>
+                                    <li>&beta;<sub>2</sub> stimulant</li>
+                                    <li>副腎皮質ステロイド</li>
+                                    <li>(アミノフィリン IV)</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group congenital_pneumonia RDS 111 pri" id="q04">
+            <div class="card-group congenital_pneumonia RDS IRDS 111 pri" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I75" target="_blank">111I75</a> 新生児 呼吸障害 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_16:38:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_16:38:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:27:50"> </span>
                         <br>
                         <p>出生直後の新生児．<br>
                             <u>早産児</u>のためにNICUに入院した．<br>
                             母親は<u>前期破水</u>のため2日前から入院していた．<br>
-                            在胎26週，出生体重980gで経腟分娩で出生した．Apgarスコアは4点（1分）．体温37.3℃．心拍数160/分，整．呼吸数50/分．SpO2 90％（哺育器内の酸素濃度30％）．大泉門は平坦．呻吟と肋間腔の陥没とを認める．<br>
+                            在胎26週，出生体重980gで経腟分娩で出生した．<br>
+                            Apgarスコアは4点（1分）．体温37.3℃．心拍数160/分，整．呼吸数50/分．SpO2 90％（哺育器内の酸素濃度30％）．<br>
+                            大泉門は平坦．呻吟と肋間腔の陥没とを認める．<br>
                             考えられる疾患はどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -926,8 +993,8 @@
                     <div class="card-body">
 
                         <ul>
-                            <li>前期破水 &rAarr; s/o 上行性羊水感染 &rArr; 先天性肺炎</li>
-                            <li>早産超低出生体重児 &rAarr; s/o RDS</li>
+                            <li>前期破水 &xrArr; s/o 上行性羊水感染 &rArr; 先天性肺炎</li>
+                            <li>早産超低出生体重児 &xrArr; s/o RDS</li>
                             <li>早産  &xrArr; r/o 胎便吸引症候群, r/o 新生児一過性多呼吸</li>
                             <li>出生直後 &xrArr; r/o Wilson-Mikity</li>
                         </ul>
@@ -948,17 +1015,19 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group RDS pri" id="q05">
+            <div class="card-group RDS IRDS pri" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106B48" target="_blank">106B48</a> 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-17_16:43:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_16:43:07"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:40:40"> </span>
                         <br>
                         <p>生後16時間の新生児．<br>
-                            在胎28週0日，体重1,220gで出生した．Apgarスコア7点（1分），8点（5分）．多呼吸とチアノーゼとをきたしている．<br>
+                            <u>在胎28週0日</u>，体重1,220gで出生した．<br>
+                            Apgarスコア7点（1分），8点（5分）．<u>多呼吸</u>と<u>チアノーゼ</u>とをきたしている．<br>
                             他に認められる可能性が高いのはどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -1074,19 +1143,23 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group RDS info" id="q07">
+            <div class="card-group RDS IRDS info" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/86E39" target="_blank">86E39</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_16:54:08"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_16:54:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:31:44"> </span>
                         <br>
                         <p>生後0日の新生児．在胎32週，<br>
-                            体重1,432gで出生した．Apgarスコアは5点（1分），7点（5分）．<br>
+                            体重1,432gで出生した．<br>
+                            Apgarスコアは5点（1分），7点（5分）．<br>
                             出生1時間後の所見は体温36.2℃，脈拍150/分，呼吸数60/分．<br>
-                            <u>呻吟</u>を伴う<u>陥没呼吸</u>と<u>全身性チアノーゼ</u>とを認めた．心雑音なし．呼吸音は微弱で換気不良．直ちに気管内挿管し，人工呼吸器に接続し，酸素吸入を開始した．胸部X線写真を次に示す．<br>
+                            <u>呻吟</u>を伴う<u>陥没呼吸</u>と<u>全身性チアノーゼ</u>とを認めた．<br>
+                            心雑音なし．呼吸音は微弱で換気不良．直ちに気管内挿管し，人工呼吸器に接続し，酸素吸入を開始した．<br>
+                            胸部X線写真を次に示す．<br>
                             適切な処置はどれか．2つ選べ．</p>
                     </div>
 
@@ -1117,40 +1190,49 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>Rx: <ul>
-                                <li>O2</li>
-                                <li>CPAP</li>
-                                <li>Resp Acid を補正</li>
-                                <li>人工サーファクタントの補充</li>
-                            </ul></li>
+                            <li>Rx: 
+                                <ul>
+                                    <li>O2</li>
+                                    <li>CPAP</li>
+                                    <li>Resp Acid を補正</li>
+                                    <li>人工サーファクタントの補充</li>
+                                </ul>
+                            </li>
                             <li></li>
                         </ol>
 
                         <h6>新生児CyanosisのDx</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">呼吸器/気道<ul>
-                                <li>RDS</li>
-                                <li>胎便吸引症候群</li>
-                                <li>気胸</li>
-                                <li>横隔膜ヘルニア</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                呼吸器/気道
+                                <ul>
+                                    <li>RDS</li>
+                                    <li>胎便吸引症候群</li>
+                                    <li>気胸</li>
+                                    <li>横隔膜ヘルニア</li>
+                                </ul>
+                            </li>
                             <li class="list-group-item">中枢神経/筋疾患による肺胞低換気</li>
                             <li class="list-group-item">ショック</li>
                             <li class="list-group-item">肺動静脈瘻</li>
                             <li class="list-group-item">ヘモグロビン異常</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group RDS info" id="q08">
+            <div class="card-group RDS IRDS info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/79A55" target="_blank" id="">79A55</a> RDS Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id=""> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:34:33"> </span>
                         <br>
                         <p>呼吸窮迫症候群について正しいのはどれか．3つ選べ．</p>
 
@@ -1345,12 +1427,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-17_17:08:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_17:08:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_11:42:18"> </span>
                         <br>
                         <p>生後24日の新生児．<br>
                             在胎27週，968gで出生．Apgarスコア6点（1分），7点（5分）．<br>
                             出生後から<u>チアノーゼ</u>と<u>うめき声</u>とがあり，<u>陥没呼吸</u>を認めた．呼吸数54回/分．ただちに気管内挿管し，人工換気を開始した．<br>
-                            生後1日の<u>血清IgM値は50mg/dL</u>（基準0～20）．20日目で人工換気を中止し，酸素投与のみで経過をみた．抜管後，症状は4日間は落ちついていたが，次第に喘鳴が聴取されるようになった．<br>
+                            生後1日の<u>血清IgM値は50mg/dL</u>（基準0～20）．<br>
+                            20日目で人工換気を中止し，酸素投与のみで経過をみた．抜管後，症状は4日間は落ちついていたが，次第に喘鳴が聴取されるようになった．<br>
                             生後24日の白血球12,000，CRP 0.1mg/dL．胸部X線写真を次に示す．<br>
                             生後24日の状態で考えられるのはどれか．</p>
                     </div>
@@ -1410,18 +1494,22 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_17:19:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_17:19:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-30_11:36:40"> </span>
                         <br>
                         <p>生後1時間の新生児．<br>
-                            在胎32週に骨盤位で陣痛発来のため帝王切開にて出生．羊水混濁はなかった．<br>
+                            在胎32週に骨盤位で陣痛発来のため<u>帝王切開</u>にて出生．羊水混濁はなかった．<br>
                             出生体重1,496g．Apgarスコアは6点（1分），8点（5分）．<br>
                             出生後，第1呼吸を認めたが，蘇生台にて処置中に浅い呼吸を認めるようになり，NICUに入院し哺育器に収容した．<br>
-                            体温36.5℃．脈拍148/分，整．呼吸数90/分，整．SpO2 97％（哺育器内の酸素濃度30％）．心音に異常を認めない．呼吸音は左右差なく肺胞呼吸音を聴取する．胸骨上窩と季肋下とに<u>陥没呼吸</u>を認める．胃液に白血球を認めず，<u>マイクロバブルテストの結果は強陽性</u>である．胸部X線写真を次に示す．<br>
+                            体温36.5℃．脈拍148/分，整．呼吸数90/分，整．SpO2 97％（哺育器内の酸素濃度30％）．<br>
+                            心音に異常を認めない．呼吸音は左右差なく肺胞呼吸音を聴取する．胸骨上窩と季肋下とに<u>陥没呼吸</u>を認める．<br>
+                            胃液に白血球を認めず，<u>マイクロバブルテストの結果は強陽性</u>である．<br>
+                            胸部X線写真を次に示す．<br>
                             考えられる疾患はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/109D022.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/109D022.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/109D022.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1540,14 +1628,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group Potter Diaphragmatic_hernia" id="q14">
+            <div class="card-group Potter diaphragmatic_hernia CDH" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108D15" target="_blank">108D15</a> 胎児肺低形成
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_17:31:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_17:31:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:38:06"> </span>
                         <br>
                         <p>胎児肺低形成を伴うのはどれか．2つ選べ．</p>
 
@@ -1578,9 +1667,12 @@
 
                         <h6>横隔膜ヘルニア</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/108D015_sup_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/108D015_sup_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/108D015_sup_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -1592,7 +1684,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/94B8" target="_blank" id="">94B8</a> 成熟児 
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-17_17:34:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_17:34:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-30_11:42:58"> </span>
                         <br>
                         <p>成熟児と比べて未熟児に起こりにくいのはどれか．</p>
 
@@ -1611,7 +1704,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_false">d</p>
 
@@ -1719,6 +1812,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1787,6 +1881,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "ver." + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1795,6 +1896,21 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "-" + print_date;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1808,27 +1924,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -1850,11 +1985,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1871,54 +2009,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2157,48 +2295,49 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#asthma').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.asthma)').toggle('slow');
+        $('div.card-group:not(.asthma)').slideToggle(100);
     });
     $('#asthma').find('code').html($('div.asthma').size());
 
     $('#congenital_pneumonia').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.congenital_pneumonia)').toggle('slow');
+        $('div.card-group:not(.congenital_pneumonia)').slideToggle(100);
     });
     $('#congenital_pneumonia').find('code').html($('div.congenital_pneumonia').size());
 
     $('#RDS').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RDS)').toggle('slow');
+        $('div.card-group:not(.RDS)').slideToggle(100);
     });
     $('#RDS').find('code').html($('div.RDS').size());
 
     $('#TTN').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TTN)').toggle('slow');
+        $('div.card-group:not(.TTN)').slideToggle(100);
     });
     $('#TTN').find('code').html($('div.TTN').size());
 
     $('#MAS').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MAS)').toggle('slow');
+        $('div.card-group:not(.MAS)').slideToggle(100);
     });
     $('#MAS').find('code').html($('div.MAS').size());
 
     $('#CLD').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CLD)').toggle('slow');
+        $('div.card-group:not(.CLD)').slideToggle(100);
     });
     $('#CLD').find('code').html($('div.CLD').size());
 
     $('#WMS').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.WMS)').toggle('slow');
+        $('div.card-group:not(.WMS)').slideToggle(100);
     });
     $('#WMS').find('code').html($('div.WMS').size());
 
@@ -2206,7 +2345,7 @@ $('document').ready(function(){
 
     $('#').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle('slow');
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

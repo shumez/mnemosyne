@@ -4,12 +4,24 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-02 14:54:42
+@Last modified time: 2018-10-31 21:02:00
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -90,11 +102,11 @@
 -->
 <html>
 <head>
-    <title>Complication</title>
+    <title>Complication-OB</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-02 14:55:04" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-10-31 21:02:31" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.31">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -153,6 +165,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,31 +208,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -756,7 +783,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 20 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 20</p>
 
             
             <!-- 
@@ -893,17 +920,21 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_15:08:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_15:08:42"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:08:39"> </span>
                         <br>
                         <p>30歳の初妊婦．妊娠37週．<br>
                             5時間前に少量の性器出血の後，<u>規則的な子宮収縮が始まり次第に強くなった</u>ため来院した．<br>
                             28歳時に<u>子宮筋腫核出術を受けた</u>後，不妊治療で妊娠が成立し，妊婦健康診査を受けていた．<br>
                             1週前の妊娠36週時の診察では，<u>血圧140/92mmHg，尿蛋白1＋</u>であったが，胎児発育は正常で胎児心拍数モニタリングでは異常を認めなかった．<br>
                             意識は清明．身長160cm，体重70kg．体温37.0℃．脈拍92/分，整．<u>血圧142/94mmHg</u>．<br>
-                            心音と呼吸音とに異常を認めない．右上腹部に軽度の圧痛を認める．<u>5分間隔で40秒間の子宮収縮</u>を認めるが，間欠期には子宮は軟らかく圧痛を認めない．Leopold診察法第2段で大きくて<u>板状の塊を右手に触れる</u>．腟鏡診では子宮口から少量の出血を認める．内診では子宮口は軟らかく，前方に位置し，4cm開大しており胎児の頭髪を触れる．児頭の高さはSp±0である．<br>
-                            尿所見：蛋白1＋，糖1＋．<br>
-                            血液所見：赤血球350万，Hb 9.8g/dL，Ht 34％，白血球9,600，血小板9万．<br>
-                            血液生化学所見：空腹時血糖105mg/dL，<u>HbA1c（NGSP）7.1％</u>（基準4.6～6.2），総蛋白6.0g/dL，アルブミン2.7g/dL，尿素窒素19.0mg/dL，クレアチニン0.6mg/dL，尿酸5.8mg/dL，AST 50IU/L，ALT 40IU/L，LD 400IU/L（基準176～353）．CRP 0.6mg/dL．<br>
+                            心音と呼吸音とに異常を認めない．右上腹部に軽度の圧痛を認める．<u>5分間隔で40秒間の子宮収縮</u>を認めるが，間欠期には子宮は軟らかく圧痛を認めない．<u>Leopold診察法第2段で大きくて板状の塊を右手に触れる</u>．腟鏡診では子宮口から少量の出血を認める．内診では子宮口は軟らかく，前方に位置し，4cm開大しており胎児の頭髪を触れる．児頭の高さはSp±0である．<br>
+                            尿所見：<br>
+                            <u>蛋白1＋</u>，<u>糖1＋</u>．<br>
+                            血液所見：<br>
+                            赤血球350万，Hb 9.8g/dL，Ht 34％，白血球9,600，血小板9万．<br>
+                            血液生化学所見：<br>
+                            <u>空腹時血糖105mg/dL</u>，<u>HbA1c（NGSP）7.1％</u>（基準4.6～6.2），総蛋白6.0g/dL，アルブミン2.7g/dL，尿素窒素19.0mg/dL，クレアチニン0.6mg/dL，尿酸5.8mg/dL，AST 50IU/L，ALT 40IU/L，LD 400IU/L（基準176～353）．CRP 0.6mg/dL．<br>
                             この患者で正しいのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -980,12 +1011,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_15:20:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_15:20:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:12:42"> </span>
                         <br>
                         <p>33歳の女性．<br>
-                            2日前に市販のキットで尿妊娠反応が陽性であったため来院した．最終月経は7週前，月経周期は30〜45日である．3年前に糖尿病と診断され，半年前からは自宅近くの診療所でインスリン治療を受けている．内診で子宮は鵞卵大で付属器は触れない．<br>
-                            尿所見：蛋白（－），糖（－），ケトン体（－）．<br>
-                            血液生化学所見：血糖90mg/dL，HbA1c 5.8％（基準4.6〜6.2）．経腟超音波検査で子宮内に長径25mmの胎囊と心拍動を有する胎芽とを認める．妊娠していることを患者に伝えると，糖尿病による胎児奇形が心配だという．<br>
+                            2日前に市販のキットで尿妊娠反応が陽性であったため来院した．<br>
+                            <u>最終月経は7週前</u>，月経周期は30〜45日である．3年前に糖尿病と診断され，半年前からは自宅近くの診療所で<u>インスリン治療</u>を受けている．内診で子宮は鵞卵大で付属器は触れない．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），ケトン体（－）．<br>
+                            血液生化学所見：<br>
+                            <u>血糖90mg/dL</u>，HbA1c 5.8％（基準4.6〜6.2）．<br>
+                            経腟超音波検査で子宮内に長径25mmの胎囊と心拍動を有する胎芽とを認める．妊娠していることを患者に伝えると，<u>糖尿病による胎児奇形が心配だと</u>いう．<br>
                             患者への説明として適切なのはどれか．</p>
 
 
@@ -1022,19 +1058,23 @@
             <div class="card-group GDM pri" id="q03">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107E41" target="_blank">107E41</a> 診断 &rAarr; 検査
+                        <a href="https://qb.medilink-study.com/#/Answer/107E41" target="_blank">107E41</a> 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_15:25:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_15:25:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-31_21:25:11"> </span>
                         <br>
                         <p>30歳の初妊婦．妊娠28週5日．<br>
                             <u>腹部膨満感</u>を主訴に来院した．<br>
                             妊娠10週時に自宅近くの診療所を受診し分娩予定日を決定されたが，それ以降は仕事が忙しく妊婦健康診査を受けていなかった．<br>
                             3週前から<u>腹部膨満感</u>を自覚していたという．<br>
-                            身長157cm，<u>体重60.5kg（非妊時45.5kg）</u>．内診で子宮口は閉鎖しており，帯下に異常を認めない．<br>
-                            尿所見：蛋白（－），<u>糖2＋</u>，ケトン体（－）．随時血糖110mg/dL．<br>
-                            胎児心拍数陣痛図で子宮収縮はなく，胎児心拍パターンに異常を認めない．腹部超音波検査で羊水指数は28cm，胎児推定体重は1,800gで胎児構造異常を認めない．経腟超音波検査で子宮頸管長は40mmである．<br>
+                            身長157cm，<u>体重60.5kg（非妊時45.5kg）</u>．<br>
+                            内診で子宮口は閉鎖しており，帯下に異常を認めない．<br>
+                            尿所見：<br>
+                            蛋白（－），<u>糖2＋</u>，ケトン体（－）．随時血糖110mg/dL．<br>
+                            胎児心拍数陣痛図で子宮収縮はなく，胎児心拍パターンに異常を認めない．<br>
+                            腹部超音波検査で<u>羊水指数は28cm</u>，<u>胎児推定体重は1,800g</u>で胎児構造異常を認めない．経腟超音波検査で子宮頸管長は40mmである．<br>
                             治療方針の決定に有用な検査はどれか．</p>
 
                         <ol type="a">
@@ -1133,12 +1173,19 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110I67" target="_blank" id="">110I67</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-02_15:35:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-02_15:35:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:50:52"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             1回経産婦．妊娠中の血糖管理のため紹介されて来院した．<br>
-                            自宅近くの産婦人科医院で妊娠の管理中であったが，妊娠26週に測定された血糖が172㎎/dLであり，75g経口ブドウ糖負荷試験を施行され妊娠糖尿病と診断された．既往歴に特記すべきことはない．家族歴は母が2型糖尿病で治療中である．妊娠前から飲酒歴と喫煙歴はない．<br>
-                            身長160cm，体重71kg（非妊時68kg）．身体所見に異常を認めない．腹部超音波検査で胎児に異常を認めない．初診時，HbA1c 6.9％（基準4.6〜6.2）．この患者に対して1,700kcalの食事療法と無理のない程度で体を動かすことを指導して血糖の推移をみた．2週後の来院時で空腹時血糖118㎎/dL，食後2時間血糖186㎎/dLであった．<br>
+                            自宅近くの産婦人科医院で妊娠の管理中であったが，妊娠26週に測定された血糖が172㎎/dLであり，75g経口ブドウ糖負荷試験を施行され妊娠糖尿病と診断された．既往歴に特記すべきことはない．<br>
+                            家族歴は母が2型糖尿病で治療中である．<br>
+                            妊娠前から飲酒歴と喫煙歴はない．<br>
+                            身長160cm，<u>体重71kg（非妊時68kg）</u>．<br>
+                            身体所見に異常を認めない．<br>
+                            腹部超音波検査で胎児に異常を認めない．<br>
+                            初診時，<u>HbA1c 6.9％</u>（基準4.6〜6.2）．この患者に対して1,700kcalの食事療法と無理のない程度で体を動かすことを指導して血糖の推移をみた．<br>
+                            2週後の来院時で空腹時血糖118㎎/dL，食後2時間血糖186㎎/dLであった．<br>
                             この患者に対する最も適切な対応はどれか．</p>
 
 
@@ -1172,36 +1219,50 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group GDM PIH" id="q06">
+            <div class="card-group GDM PIH HELLP" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B50">104B50-52</a> 診断 / 検査 / 合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_15:49:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_15:49:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:33:12"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-02_15:49:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-31_21:33:19"> </span>
                          / 
                         <span class="badge badge-pill hit"> </span>
                         <span class="badge badge-pill hit" id="2018-09-02_15:49:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-31_21:35:46"> </span>
                         <br>
                         <p>次の文を読み，50～52の問いに答えよ．<br><br>
 
                             34歳の1回経産婦．<br>
                             妊娠31週5日に周産期管理目的で紹介され来院した．<br>
-                            現病歴：半年前に無月経を主訴として自宅近くの診療所を受診し，妊娠7週と診断された．診療所で健診を受けていたが，妊娠10週時に胎児頭殿長〈CRL〉から分娩予定日が補正された．補正後の妊娠16週ころから尿糖陽性が時々認められていたが，27週時から<u>尿糖強陽性（定性試験で3＋）</u>が出現したため29週時に75g経口ブドウ糖負荷試験〈OGTT〉が施行された．<br>
+                            現病歴：<br>
+                            半年前に無月経を主訴として自宅近くの診療所を受診し，妊娠7週と診断された．診療所で健診を受けていたが，妊娠10週時に胎児頭殿長〈CRL〉から分娩予定日が補正された．<br>
+                            補正後の妊娠16週ころから<u>尿糖陽性</u>が時々認められていたが，27週時から<u>尿糖強陽性（定性試験で3＋）</u>が出現したため29週時に75g経口ブドウ糖負荷試験〈OGTT〉が施行された．<br>
                             <u>負荷前値：110mg/dL，1時間値：204mg/dL，2時間値：168mg/dL</u>であった．<br>
-                            既往歴：特記すべきことはない．耐糖能低下を指摘されたことはない．<br>
-                            月経歴：初経11歳．月経周期28日，整．持続5～6日．月経障害なし．<br>
-                            妊娠・分娩歴：25歳時に正常経腟分娩（妊娠39週，3,790g）<br>
-                            家族歴：母が糖尿病．<br>
-                            現　症：意識は清明．身長156cm，体重76kg（妊娠前体重62.5kg，BMI＝25.7）．体温36.7℃．脈拍88/分，整．血圧136/86mmHg．心音と呼吸音とに異常を認めない．下腿浮腫を認めない．内診で胎児先進部は児頭で子宮口は閉鎖．超音波検査で子宮頸管長は4.2cmで胎児推定体重は2,200g（＋1.8SD），明らかな奇形は認めない．Biophysical profile scoreは10点である．<br>
+                            既往歴：<br>
+                            特記すべきことはない．耐糖能低下を指摘されたことはない．<br>
+                            月経歴：<br>
+                            初経11歳．月経周期28日，整．持続5～6日．月経障害なし．<br>
+                            妊娠・分娩歴：<br>
+                            25歳時に正常経腟分娩（妊娠39週，3,790g）<br>
+                            家族歴：<br>
+                            母が糖尿病．<br>
+                            現　症：<br>
+                            意識は清明．身長156cm，<u>体重76kg（妊娠前体重62.5kg，BMI＝25.7）</u>．体温36.7℃．脈拍88/分，整．血圧136/86mmHg．<br>
+                            心音と呼吸音とに異常を認めない．下腿浮腫を認めない．内診で胎児先進部は児頭で子宮口は閉鎖．超音波検査で子宮頸管長は4.2cmで胎児推定体重は2,200g（＋1.8SD），明らかな奇形は認めない．Biophysical profile scoreは10点である．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖2＋，ケトン体（－）．<br>
-                            血液所見：赤血球305万，Hb 10.2g/dL，Ht 31％，白血球6,900，<u>血小板11万</u>．<br>
-                            血液生化学所見：血糖148mg/dL，HbA1c（NGSP）7.2％，総蛋白7.0g/dL，アルブミン4.2g/dL，尿素窒素16mg/dL，クレアチニン0.6mg/dL，尿酸7.8mg/dL，総コレステロール240mg/dL，トリグリセリド130mg/dL，総ビリルビン0.8mg/dL，直接ビリルビン0.5mg/dL，<u>AST 40IU/L，ALT 48IU/L</u>，<u>LD 320IU/L</u>（基準176～353），ALP 270IU/L（基準115～359）．</p>
+                            尿所見：<br>
+                            蛋白（－），<u>糖2＋</u>，ケトン体（－）．<br>
+                            血液所見：<br>
+                            赤血球305万，Hb 10.2g/dL，Ht 31％，白血球6,900，<u>血小板11万</u>．<br>
+                            血液生化学所見：<br>
+                            血糖148mg/dL，HbA1c（NGSP）7.2％，総蛋白7.0g/dL，アルブミン4.2g/dL，尿素窒素16mg/dL，クレアチニン0.6mg/dL，尿酸7.8mg/dL，総コレステロール240mg/dL，トリグリセリド130mg/dL，総ビリルビン0.8mg/dL，直接ビリルビン0.5mg/dL，<u>AST 40IU/L，ALT 48IU/L</u>，<u>LD 320IU/L</u>（基準176～353），ALP 270IU/L（基準115～359）．</p>
 
                         <p>[B050] この患者で正しいのはどれか．</p>
                         <ol type="a">
@@ -1221,8 +1282,15 @@
                             <li class="ans_f">75g経口ブドウ糖負荷試験〈OGTT〉</li>
                         </ol>
 
-                        <p>[B052] その後の経過：入院後1週間加療を行った時点で治療継続を拒否し，退院した．退院後は受診していなかったが，妊娠35週4日に少量の性器出血と右季肋部痛とを主訴に来院した．<br>
-                            再入院時の脈拍104/分，整．血圧160/104mmHg．尿蛋白100mg/dL．血液所見：赤血球270万，Hb 9.0g/dL，Ht 28％，白血球9,200，血小板9.0万．血液生化学所見：AST 480IU/L，ALT 460IU/L，LD 700IU/L（基準176～353）．緊急帝王切開を行うこととした．<br>
+                        <p>[B052] <br>
+                            その後の経過：<br>
+                            入院後1週間加療を行った時点で治療継続を拒否し，退院した．退院後は受診していなかったが，<u>妊娠35週4日</u>に少量の性器出血と右季肋部痛とを主訴に来院した．<br>
+                            再入院時の脈拍104/分，整．血圧160/104mmHg．尿蛋白100mg/dL．<br>
+                            血液所見：<br>
+                            赤血球270万，Hb 9.0g/dL，Ht 28％，白血球9,200，血小板9.0万．<br>
+                            血液生化学所見：<br>
+                            <u>AST 480IU/L</u>，<u>ALT 460IU/L</u>，<u>LD 700IU/L</u>（基準176～353）．<br>
+                            緊急帝王切開を行うこととした．<br>
                             注意すべき母児の合併症はどれか．3つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">子癇発作</li>
@@ -1237,9 +1305,7 @@
                     <div class="card-body">
 
                         <ul>
-                            <li></li>
                             <li>LD, AST, ALT Plt &xrArr; HELLP</li>
-                            <li></li>
                         </ul>
 
                         <p class="q_dx">DM, 重症高血圧腎症, HELLP</p>
@@ -1278,33 +1344,48 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group GDM " id="q07">
+            <div class="card-group GDM HoCa jaundice" id="q07">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/91C9" target="_blank" id="">91C9-10</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/91C9" target="_blank" id="">91C9-10</a> 合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev" id="2018-09-02_16:04:41"> </span>
                          / 
-                        <span class="badge badge-pill mis now" id="2018-09-02_16:04:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_16:04:48"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-31_21:42:46"> </span>
                         <br>
                         <p>次の文を読み，9，10の問いに答えよ．<br><br>
                             36歳の経産婦．<br>
                             近医で妊婦健康診査を受けていたが，反復する尿糖陽性のため来院した．<br>
-                            既往歴・家族歴：特記すべきことはない．<br>
-                            月経歴：初経13歳．周期は28～40日で不順．持続は5日間．<br>
-                            妊娠・分娩歴：5年前，妊娠40週で3,800gの男児を出産．<br>
-                            現病歴：無月経を主訴として近医を受診し，超音波検査で妊娠8週相当と診断され，以後定期的に妊婦健康診査を受けていた．妊娠20週頃から体重の増加が著明となり，妊娠24週には妊娠前より10kgの増加となった．尿糖は反復して陽性となり，妊娠26週に精密検査のため入院した．<br>
-                            入院時所見：身長158cm，体重74kg（非妊時より12kgの増加）．子宮底長30cm，腹囲90cm．下腿浮腫なし．血圧120/70mmHg．<br>
-                            尿所見：蛋白（－），糖1＋，ケトン体（－）．<br>
-                            血液所見：赤血球370万，Hb 11.0g/dL，Ht 35％，白血球7,000，血小板23万．<br>
-                            血液型：A型，Rh（＋）．<br>
-                            血清生化学所見：総蛋白7.1g/dL，アルブミン4.2g/dL，クレアチニン0.7mg/dL，尿酸4.4mg/dL，総コレステロール215mg/dL，総ビリルビン0.5mg/dL，Na 137mEq/L，K 3.6mEq/L，Cl 104mEq/L，Ca 9.0mg/dL，Fe 93μg/dL，<br>
-                            HbA1c（NGSP）7.6％（正常4.6～6.2）．75g経口ブドウ糖負荷試験血糖値：空腹時110mg/dL，1時間180mg/dL，2時間150mg/dL．<br>
-                            入院後の経過：食事療法，運動療法およびインスリン療法を行った．妊娠39週で体重78kg．子宮底長38cm，腹囲98cm．児頭大横径9.8cm，児の推定体重4,200g，産科的骨盤X線単純撮影で児頭骨盤不均衡は認められない．</p>
+                            既往歴・家族歴：<br>
+                            特記すべきことはない．<br>
+                            月経歴：<br>
+                            初経13歳．周期は28～40日で不順．持続は5日間．<br>
+                            妊娠・分娩歴：<br>
+                            5年前，妊娠40週で3,800gの男児を出産．<br>
+                            現病歴：<br>
+                            無月経を主訴として近医を受診し，超音波検査で妊娠8週相当と診断され，以後定期的に妊婦健康診査を受けていた．妊娠20週頃から体重の増加が著明となり，妊娠24週には妊娠前より10kgの増加となった．尿糖は反復して陽性となり，妊娠26週に精密検査のため入院した．<br>
+                            入院時所見：<br>
+                            身長158cm，<u>体重74kg（非妊時より12kgの増加）</u>．子宮底長30cm，腹囲90cm．下腿浮腫なし．血圧120/70mmHg．<br>
+                            尿所見：<br>
+                            蛋白（－），糖1＋，ケトン体（－）．<br>
+                            血液所見：<br>
+                            赤血球370万，Hb 11.0g/dL，Ht 35％，白血球7,000，血小板23万．<br>
+                            血液型：<br>
+                            A型，Rh（＋）．<br>
+                            血清生化学所見：<br>
+                            総蛋白7.1g/dL，アルブミン4.2g/dL，クレアチニン0.7mg/dL，尿酸4.4mg/dL，総コレステロール215mg/dL，総ビリルビン0.5mg/dL，Na 137mEq/L，K 3.6mEq/L，Cl 104mEq/L，Ca 9.0mg/dL，Fe 93μg/dL，<br>
+                            HbA1c（NGSP）7.6％（正常4.6～6.2）．<br>
+                            75g経口ブドウ糖負荷試験血糖値：<br>
+                            <u>空腹時110mg/dL，1時間180mg/dL，2時間150mg/dL</u>．<br>
+                            入院後の経過：<br>
+                            食事療法，運動療法およびインスリン療法を行った．妊娠39週で体重78kg．子宮底長38cm，腹囲98cm．児頭大横径9.8cm，児の推定体重4,200g，<br>
+                            産科的骨盤X線単純撮影で児頭骨盤不均衡は認められない．</p>
 
 
-                        <p>[C009]  分娩時の異常として注意しなければならないのはどれか．2つ選べ．</p>
+                        <p>[C009]  <br>
+                            分娩時の異常として注意しなければならないのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_f">非適時破水</li>
                             <li class="ans_f">軟産道強靱</li>
@@ -1315,7 +1396,8 @@
 
 
 
-                        <p>[C010]  39週3日，分娩時間7時間で児は出生した．<br>
+                        <p>[C010]  <br>
+                            <u>39週3日</u>，分娩時間7時間で児は出生した．<br>
                             出生後の児が罹患しやすいのはどれか．3つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">低カルシウム血症</li>
@@ -1368,7 +1450,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_16:07:39"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_16:07:39"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-31_21:46:26"> </span>
                         <br>
                         <p>33歳の初産婦．<br>
                             妊娠30週に<u>妊娠糖尿病の疑い</u>で産科診療所から紹介され受診した．<br>
@@ -1406,24 +1489,28 @@
 
                         <p>GDM 合併症</p>
                         <ul class="list-group">
-                            <li class="list-group-item">初期
+                            <li class="list-group-item">
+                                初期
                                 <ul>
                                     <li>催奇形性</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">中後期
+                            <li class="list-group-item">
+                                中後期
                                 <ul>
                                     <li>巨大児</li>
                                     <li>胎児発育不全</li>
                                     <li>子宮内胎児死亡</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">分娩時
+                            <li class="list-group-item">
+                                分娩時
                                 <ul>
                                     <li>分娩外傷 (腕神経叢麻痺)</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">新生児
+                            <li class="list-group-item">
+                                新生児
                                 <ul>
                                     <li>低血糖</li>
                                     <li>低Ca血症</li>
@@ -1497,7 +1584,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-02_16:14:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-02_16:14:45"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:53:16"> </span>
                         <br>
                         <p>糖尿病合併妊娠について誤っているのはどれか．</p>
 
@@ -1679,22 +1767,24 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group DVT pri" id="q13">
+            <div class="card-group DVT info pri" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107I41" target="_blank">107I41</a> 妊婦 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-02_16:34:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-02_16:34:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:54:10"> </span>
                         <br>
                         <p>31歳の3回経妊0回経産婦．妊娠8週．<br>
                             <u>左下肢の疼痛</u>を主訴に来院した．<br>
                             2週前から悪心と嘔吐とが出現し，十分な食事が摂れていないという．<br>
                             左下肢の腫脹が著明で，右下肢とは左右差を認める．左腓腹部に把握痛がある．<br>
-                            血液所見：赤血球440万，Hb 13.5g/dL，Ht 40％，白血球10,000，血小板25万，<u>Dダイマー5.8μg/mL</u>（基準1.0以下）．<u>CRP 1.4mg/dL</u>．<br>
+                            血液所見：<br>
+                            赤血球440万，Hb 13.5g/dL，Ht 40％，白血球10,000，血小板25万，<u>Dダイマー5.8μg/mL</u>（基準1.0以下）．<u>CRP 1.4mg/dL</u>．<br>
                             <u>下肢静脈超音波カラードプラ法で，左大腿静脈に血流信号を認めない</u>．<br>
-                            入院後輸液を開始した．
+                            入院後輸液を開始した．<br>
                             治療薬として適切なのはどれか．</p>
 
                         <ol type="a">
@@ -1777,7 +1867,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-02_16:56:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-02_16:56:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:57:14"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             妊娠に関する相談のため来院した．<br>
@@ -1891,14 +1982,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group AA acute_appendicitis pri" id="q16">
+            <div class="card-group AA acute_appendicitis AAP pri" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/92F1" target="_blank">92F1</a> 虫垂炎 妊婦 処置
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_17:20:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_17:20:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:47:29"> </span>
                         <br>
                         <p>25歳の初妊婦．<br>
                             現在妊娠22週．これまでの妊娠経過に異常を指摘されたことはない．<br>
@@ -1907,7 +1999,8 @@
                             来院時，意識清明，発汗著明．体温39.0℃．呼吸数42/分．脈拍110/分，整．血圧110/60mmHg．<br>
                             腹部触診では<u>臍右側から右の側腹部に圧痛</u>があり，<u>Blumberg徴候陽性</u>．<br>
                             子宮は軟で圧痛はないが，4～5分ごとの軽い収縮を触知する．子宮口未開大．腟分泌物と尿沈渣とに異常を認めない．<br>
-                            血液所見：赤血球352万，Hb 10.1g/dL，Ht 30.9％，白血球18,200，血小板29万．<br>
+                            血液所見：<br>
+                            赤血球352万，Hb 10.1g/dL，Ht 30.9％，白血球18,200，血小板29万．<br>
                             適切な処置はどれか．</p>
 
                         <ol type="a">
@@ -1943,6 +2036,8 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/92F001_sup_p_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                         <!-- <img src="https://www.qb-online.com/img_kaisetsu/92F001_sup_p_010.jpg" class="img-fluid"> -->
                     </div>
                 </div>
@@ -2049,14 +2144,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group DVT pri" id="q19">
+            <div class="card-group DVT info pri" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E24" target="_blank">108E24</a> 妊婦の合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-02_17:36:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-02_17:36:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:49:53"> </span>
                         <br>
                         <p>妊婦の合併症で左側に多く発生するのはどれか．</p>
 
@@ -2105,7 +2201,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110D7" target="_blank" id="">110D7</a> 急性虫垂炎
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-02_17:39:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-02_17:39:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-31_21:57:27"> </span>
                         <br>
                         <p>妊婦の急性虫垂炎について正しいのはどれか．</p>
 
@@ -2264,7 +2361,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "ver." + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2274,6 +2375,21 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "-" + print_date;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2292,7 +2408,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2336,13 +2464,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2359,54 +2488,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2645,26 +2774,27 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#GDM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.GDM)').toggle();
+        $('div.card-group:not(.GDM)').slideToggle(100);
     });
     $('#GDM').find('code').html($('div.GDM').size());
 
 
     $('#PIH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PIH)').toggle();
+        $('div.card-group:not(.PIH)').slideToggle(100);
     });
     $('#PIH').find('code').html($('div.PIH').size());
 
 
     $('#APS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.APS)').toggle();
+        $('div.card-group:not(.APS)').slideToggle(100);
     });
     $('#APS').find('code').html($('div.APS').size());
 
@@ -2672,34 +2802,34 @@ $('document').ready(function(){
 
     $('#DVT h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DVT)').toggle();
+        $('div.card-group:not(.DVT)').slideToggle(100);
     });
     $('#DVT').find('code').html($('div.DVT').size());
 
 
     $('#SS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SS)').toggle();
+        $('div.card-group:not(.SS)').slideToggle(100);
     });
     $('#SS').find('code').html($('div.SS').size());
 
 
     $('#pyelonephritis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.pyelonephritis)').toggle();
+        $('div.card-group:not(.pyelonephritis)').slideToggle(100);
     });
     $('#pyelonephritis').find('code').html($('div.pyelonephritis').size());
 
 
     $('#acute_appendicitis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.acute_appendicitis)').toggle();
+        $('div.card-group:not(.acute_appendicitis)').slideToggle(100);
     });
     $('#acute_appendicitis').find('code').html($('div.acute_appendicitis').size());
 
     $('#SLE h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SLE)').toggle();
+        $('div.card-group:not(.SLE)').slideToggle(100);
     });
     $('#SLE').find('code').html($('div.SLE').size());
 
@@ -2709,7 +2839,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

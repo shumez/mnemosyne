@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-05 11:13:27
+@Last modified time: 2018-11-02 17:33:14
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -93,8 +106,8 @@
     <title>Confinemnet</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-05 11:13:41" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-11-02 17:33:36" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -121,7 +134,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -153,6 +166,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,31 +209,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -425,7 +453,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 24 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 24</p>
 
             
             <!-- 
@@ -555,14 +583,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group labor" id="q1">
+            <div class="card-group labor info" id="q1">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109G55" target="_blank">109G55</a> 説明
+                        <a href="https://qb.medilink-study.com/#/Answer/109G55" target="_blank">109G55</a> IC
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-05_11:20:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-05_11:20:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:43:58"> </span>
                         <br>
                         <p>33歳の初産婦．妊娠41週0日．<br>
                             陣痛発来のため入院した．<br>
@@ -624,7 +653,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_11:23:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_11:23:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:48:09"> </span>
                         <br>
                         <p>産褥期の生理的変化と判断できるのはどれか．</p>
 
@@ -632,8 +662,8 @@
                             <li class="ans_f">1日目に臍上3cmに子宮底を触知する．</li>
                             <li class="ans_t">3日目に後陣痛を認める．</li>
                             <li class="ans_f">10日目に赤色悪露を認める．</li>
-                            <li class="ans_f">14日目に妊娠前の体重に戻る．</li>
-                            <li class="ans_f">1ヵ月目に子宮が超手拳大である．</li>
+                            <li class="ans_f star">14日目に妊娠前の体重に戻る．</li>
+                            <li class="ans_f star">1ヵ月目に子宮が超手拳大である．</li>
                         </ol>
                     </div>
                 </div>
@@ -706,7 +736,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_11:30:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_11:30:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:49:27"> </span>
                         <br>
                         <p>出産後の母体変化で正しいのはどれか．</p>
 
@@ -715,8 +746,8 @@
                             <li class="ans_f">循環血液量は12時間で非妊時に戻る．</li>
                             <li class="ans_t">初乳は4日で成乳に変わる．</li>
                             <li class="ans_f">妊娠線は1週で消失する．</li>
-                            <li class="ans_f">体重は1週で非妊時に戻る．</li>
-                            <li class="ans_f">子宮は2週で正常大に戻る．</li>
+                            <li class="ans_f star">体重は1週で非妊時に戻る．</li>
+                            <li class="ans_f star">子宮は2週で正常大に戻る．</li>
                         </ol>
                     </div>
                 </div>
@@ -747,7 +778,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_11:32:32"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_11:32:32"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-02_17:50:56"> </span>
                         <br>
                         <p>妊娠高血圧症候群のために帝王切開を受けた女性．<br>
                             分娩後3ヵ月の時点で，異常所見と考えられるのはどれか．</p>
@@ -786,14 +818,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group PHYSIO milk endo info" id="q05">
+            <div class="card-group PHYSIO milk Est endo info" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D59" target="_blank">99D59</a> 産褥期 乳汁分泌 抑制
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_14:31:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_14:31:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:52:32"> </span>
                         <br>
                         <p>産褥期の乳汁分泌に抑制的に作用するのはどれか．</p>
 
@@ -821,15 +854,23 @@
                             <li></li>
                         </ol>
 
-                        <ul>
-                            <li>妊娠中:<br>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                妊娠中:<br>
                                 &uarr;PRL & &uarr;Est<br>
-                                &rArr; EstがPRLを阻害しているので乳汁分泌が生じない</li>
-                            <li>分娩後:<br>
+                                &rArr; EstがPRLを阻害しているので乳汁分泌が生じない
+                            </li>
+                            <li class="list-group-item">
+                                分娩後:<br>
                                 胎盤娩出 &rArr; &darr;Est<br>
                                 &uarr;PRL <br>
-                                乳汁分泌</li>
+                                乳汁分泌
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -842,7 +883,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_14:52:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_14:52:07"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:54:27"> </span>
                         <br>
                         <p>産褥期の生理学的特徴で誤っているのはどれか．</p>
 
@@ -882,7 +924,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_14:54:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_14:54:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:57:50"> </span>
                         <br>
                         <p>授乳について正しいのはどれか．</p>
 
@@ -915,14 +958,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group PRL milk  info mnemonics" id="q08">
+            <div class="card-group PRL milk info mnemonics" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B25" target="_blank">103B25</a> 産褥無月経
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_14:56:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_14:56:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:01:01"> </span>
                         <br>
                         <p>産褥無月経で正しいのはどれか．</p>
 
@@ -1037,10 +1081,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_15:06:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_15:06:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:02:57"> </span>
                         <br>
                         <p>22歳の初妊婦．産褥5日．<br>
-                            妊娠40週4日に遅発一過性徐脈が出現したため緊急帝王切開分娩となった．産褥3日から夕方にのみ37℃を超える微熱が2日続いている．乳房全体は腫脹し，やや発赤しているが痛みは弱い．子宮底は恥骨上縁から3cm上にあり，硬く圧痛を認めない．悪露は褐色であり，悪臭を認めない．血液所見：赤血球390万，Hb 12.0g/dL，Ht 37％，白血球6,600，血小板24万．CRP 0.1mg/dL．<br>
+                            妊娠40週4日に遅発一過性徐脈が出現したため緊急帝王切開分娩となった．<br>
+                            産褥3日から夕方にのみ<u>37℃を超える微熱</u>が2日続いている．<br>
+                            <u>乳房全体は腫脹</u>し，<u>やや発赤している</u>が痛みは弱い．子宮底は恥骨上縁から3cm上にあり，硬く圧痛を認めない．悪露は褐色であり，悪臭を認めない．<br>
+                            血液所見：<br>
+                            赤血球390万，Hb 12.0g/dL，Ht 37％，白血球6,600，血小板24万．CRP 0.1mg/dL．<br>
                             対応として適切でないのはどれか．</p>
 
 
@@ -1092,7 +1141,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111H3" target="_blank" id="">111H3</a> マタニティ・ブルーズ
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-05_15:16:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-05_15:16:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-02_17:45:11"> </span>
                         <br>
                         <p>マタニティ・ブルーズについて正しいのはどれか．</p>
 
@@ -1125,6 +1175,20 @@
                                 <li>欧米: 50-80%</li>
                             </ul></li>
                         </ol>
+
+
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>日本: 30%</li>
+                                    <li>欧米: 50-80%</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1156,11 +1220,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_15:21:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_15:21:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:05:16"> </span>
                         <br>
                         <p>34歳の初産婦．<br>
                             産褥4日目で入院中である．<br>
-                            授乳がうまくできず落ち込んでおり，授乳中に軽度の下腹部痛があるという．乳房は緊満し乳頭刺激により乳汁の分泌を認める．腟鏡診で赤色悪露を，双合診で新生児頭大の子宮を認める．<br>
+                            授乳がうまくできず<u>落ち込んでおり</u>，授乳中に<u>軽度の下腹部痛</u>があるという．乳房は緊満し乳頭刺激により乳汁の分泌を認める．<br>
+                            腟鏡診で<u>赤色悪露</u>を，双合診で<u>新生児頭大の子宮</u>を認める．<br>
                             褥婦への説明で正しいのはどれか．</p>
 
                         <ol type="a">
@@ -1366,11 +1432,12 @@
             <div class="card-group uterine_subinvolution CS info 111" id="q16">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111E16" target="_blank">111E16</a> 子宮復古不全のリスク
+                        <a href="https://qb.medilink-study.com/#/Answer/111E16" target="_blank">111E16</a> 子宮復古不全
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_15:44:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_15:44:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:06:45"> </span>
                         <br>
                         <p>子宮復古不全のリスクファクターでないのはどれか．</p>
 
@@ -1419,7 +1486,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_15:50:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_15:50:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:08:43"> </span>
                         <br>
                         <p>28歳の褥婦．<br>
                             帝王切開で分娩後，悪露の分泌量は少なく，<u>38.0℃の発熱</u>を認めたため産褥6日目に診察した．<br>
@@ -1429,9 +1497,9 @@
                         <ol type="a">
                             <li class="ans_f">授乳停止</li>
                             <li class="ans_f">温罨法</li>
-                            <li class="ans_f">抗菌薬投与</li>
+                            <li class="ans_t">抗菌薬投与</li>
                             <li class="ans_t">子宮収縮促進薬投与</li>
-                            <li class="ans_t">抗凝固薬投与</li>
+                            <li class="ans_f">抗凝固薬投与</li>
                         </ol>
                     </div>
                 </div>
@@ -1454,7 +1522,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group puerperal_fever" id="q18">
+            <div class="card-group puerperal_fever info" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I1" target="_blank">108I1</a> 産褥熱の感染巣
@@ -1462,7 +1530,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_15:53:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_15:53:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:10:51"> </span>
                         <br>
                         <p>産褥熱の感染巣として最も多い部位はどれか．</p>
 
@@ -1680,14 +1749,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group DVT pri req info" id="q22">
+            <div class="card-group DVT HG pri req info" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109C11" target="_blank">109C11</a> 妊娠中の深部静脈血栓症 原因
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_16:09:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_16:09:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:11:44"> </span>
                         <br>
                         <p>妊娠中の深部静脈血栓症の発症に最も注意すべきなのはどれか．</p>
 
@@ -1734,7 +1804,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-05_16:14:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-05_16:14:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_17:46:49"> </span>
                         <br>
                         <p>産褥期・初乳について正しいのはどれか．</p>
 
@@ -1774,14 +1845,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group puerperal_fever info" id="q24">
+            <div class="card-group puerperal_fever s_aureus info" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D1" target="_blank">109D1</a> 褥婦 感染症 黄色ブドウ球菌
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-05_16:17:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-05_16:17:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-02_18:13:12"> </span>
                         <br>
                         <p>褥婦にみられる感染症で，原因菌として黄色ブドウ球菌の頻度が高いのはどれか．</p>
 
@@ -1975,7 +2047,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1985,6 +2061,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2003,7 +2100,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2047,13 +2156,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2070,54 +2180,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2356,26 +2466,27 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#postpartum_depression h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.postpartum_depression)').toggle();
+        $('div.card-group:not(.postpartum_depression)').slideToggle(100);
     });
     $('#postpartum_depression').find('code').html($('div.postpartum_depression').size());
 
 
     $('#uterine_subinvolution h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.uterine_subinvolution)').toggle();
+        $('div.card-group:not(.uterine_subinvolution)').slideToggle(100);
     });
     $('#uterine_subinvolution').find('code').html($('div.uterine_subinvolution').size());
 
 
     $('#puerperal_fever h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.puerperal_fever)').toggle();
+        $('div.card-group:not(.puerperal_fever)').slideToggle(100);
     });
     $('#puerperal_fever').find('code').html($('div.puerperal_fever').size());
 
@@ -2388,7 +2499,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

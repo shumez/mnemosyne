@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-06 20:50:51
+@Last modified time: 2018-11-03 16:08:54
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -90,11 +103,11 @@
 -->
 <html>
 <head>
-    <title>Dev</title>
+    <title>Dev-GYN</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-06 20:51:00" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-11-03 16:09:14" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -121,7 +134,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -153,6 +166,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,31 +209,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -269,43 +297,50 @@
 
 
     
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="DEV">
+    
+    <div class="section" id="DEV">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Devlopment <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Development <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
-                    <li class="list-group-item">生殖隆起
+                    <li class="list-group-item">
+                        生殖隆起
                         <ul>
                             <li>卵巣</li>
                         </ul>
                     </li>
-                    <li class="list-group-item">Müller管
+                    <li class="list-group-item">
+                        Müller管
                         <ul>
                             <li>卵管</li>
                             <li>子宮</li>
                             <li>膣 2/3</li>
                         </ul>
                     </li>
-                    <li class="list-group-item">尿生殖洞
+                    <li class="list-group-item">
+                        尿生殖洞
                         <ul>
                             <li>膣 1/3</li>
                             <li>前庭</li>
                             <li>小陰唇</li>
                         </ul>
                     </li>
-                    <li class="list-group-item">Wolff管
+                    <li class="list-group-item">
+                        Wolff管
                         <ul>
                             <li>副卵巣 (卵巣上体)</li>
                             <li>Gartner管</li>
                         </ul>
                     </li>
                 </ul>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -314,6 +349,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>陰核</td>
+                            <td>陰茎</td>
+                        </tr>
+                        <tr>
+                            <td>大陰唇</td>
+                            <td>陰嚢</td>
+                        </tr>
+                        <tr>
+                            <td>小陰唇</td>
+                            <td>陰茎部尿道</td>
+                        </tr>
                         <tr>
                             <td>Bartholin</td>
                             <td>Cowper</td>
@@ -324,6 +371,60 @@
                         </tr>
                     </tbody>
                 </table>
+
+               
+            </div>            
+        </div>
+    </div>
+
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="DSD">
+                <div class="page-header">
+                    <h2>DSD <small>性器分化異常</small> <small class="hidden-xs-down">Disorder of Sex Development </small> <small><code></code></small></h2>
+                </div>
+
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>外陰部</th>
+                            <th>染色体</th>
+                            <th>性腺</th>
+                            <th>代表的疾患</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>46XYDSD</th>
+                            <td>女性型</td>
+                            <td>46XY</td>
+                            <td>精巣<br>（睾丸）</td>
+                            <td>5αリダクターゼ欠損症<br>
+                                （アンドロゲン受容体欠損）</td>
+                        </tr>
+                        <tr>
+                            <th>46XXDSD</th>
+                            <td>男性型</td>
+                            <td>46XX</td>
+                            <td>卵巣</td>
+                            <td>副腎性器症候群，その他</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>            
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CAH">
+                <div class="page-header">
+                    <h2>CAH <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
 
                 <!-- <ul class="list-group"> -->
                     <!-- <li class="list-group-item">
@@ -345,7 +446,7 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 <!-- </ul> -->
-            </div>            
+            </div>    
         </div>
 
 
@@ -385,42 +486,8 @@
                 </ul>
             </div>            
         </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="RKHS">
-                <div class="page-header">
-                    <h2>RKHS <small>Rokitansky-Küster-Hauser</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <ul class="list-group">
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        <ul>
-                            <li>膣欠損症</li>
-                        </ul>
-                    </li>
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                </ul>
-
-
-            </div>
-        </div>
     </div>
+
 
     <div class="section" id="Turner">
         <div class="row">
@@ -488,6 +555,7 @@
     </div>
 
     <div class="row">
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="Klinefelter">
                 <div class="page-header">
@@ -533,6 +601,45 @@
                 </ul>
             </div>            
         </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="RKHS">
+                <div class="page-header">
+                    <h2>RKHS <small>Rokitansky-Küster-Hauser</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>膣欠損症</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+
+
+            </div>
+        </div>
+        
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="HoGonad">
@@ -634,67 +741,9 @@
         </div>
     </div>
 
+
+
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="section" id="DSD">
-                <div class="page-header">
-                    <h2>DSD <small>性器分化異常</small> <small class="hidden-xs-down">Disorder of Sex Development </small> <small><code></code></small></h2>
-                </div>
-
-
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>外陰部</th>
-                            <th>染色体</th>
-                            <th>性腺</th>
-                            <th>代表的疾患</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>46XYDSD</th>
-                            <td>女性型</td>
-                            <td>46XY</td>
-                            <td>精巣<br>（睾丸）</td>
-                            <td>5αリダクターゼ欠損症<br>
-                                （アンドロゲン受容体欠損）</td>
-                        </tr>
-                        <tr>
-                            <th>46XXDSD</th>
-                            <td>男性型</td>
-                            <td>46XX</td>
-                            <td>卵巣</td>
-                            <td>副腎性器症候群，その他</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>            
-        </div>
-
-
         
         
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -760,32 +809,7 @@
 
 
         
-            <div class="section" id="CAH">
-                <div class="page-header">
-                    <h2>CAH <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>            
+                    
         </div>
 
 
@@ -983,14 +1007,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group Muller" id="q01">
+            <div class="card-group Muller DEV info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G96" target="_blank">98G96</a> Müller管
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:04:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:04:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:23:06"> </span>
                         <br>
                         <p>Müller管に由来するのはどれか．2つ選べ．</p>
                         
@@ -1043,14 +1068,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group info" id="q02">
+            <div class="card-group info DEV" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/85A2" target="_blank">85A2</a> 相同な性器
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:06:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:06:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:24:40"> </span>
                         <br>
                         <p>女性と男性との性器について相同でないのはどれか．2つ選べ．</p>
 
@@ -1066,8 +1092,6 @@
                 <div class="card answer">
                     <div class="card-body">
 
-
-
                         <p class="q_answer_false">d e</p>
 
                         <ol type="a">
@@ -1080,6 +1104,12 @@
 
 
                         <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>F</th>
+                                    <th>M</th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
                                     <td>Bartholin</td>
@@ -1103,15 +1133,19 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:12:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:12:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:27:36"> </span>
                         <br>
                         <p>22歳の女性．<br>
                             <u>原発性無月経</u>を主訴に来院した．<br>
                             身長160cm，体重52kg．<br>
                             <u>陰毛は欠如</u>している．内診で，腟は形成されているものの<u>盲端に終わる</u>．<br>
-                            尿所見：蛋白（－），糖（－）．<br>
-                            血液所見：赤血球438万，Hb 13.4g/dL，Ht 36％，白血球7,300，血小板16万．<br>
-                            血清生化学所見：<u>FSH 22.0mIU/mL</u>（基準5.2～14.4），<u>LH 18.8mIU/mL</u>（基準1.8～7.6），エストラジオール50pg/mL（基準25～75），<u>テストステロン10.5ng/mL</u>（基準0.3～0.9）．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．<br>
+                            血液所見：<br>
+                            赤血球438万，Hb 13.4g/dL，Ht 36％，白血球7,300，血小板16万．<br>
+                            血清生化学所見：<br>
+                            <u>FSH 22.0mIU/mL</u>（基準5.2～14.4），<u>LH 18.8mIU/mL</u>（基準1.8～7.6），エストラジオール50pg/mL（基準25～75），<u>テストステロン10.5ng/mL</u>（基準0.3～0.9）．<br>
                             考えられるのはどれか．</p>
 
                         <ol type="a">
@@ -1156,6 +1190,7 @@
                                 </ul>
                             </li>
                         </ol>
+
                     </div>
                 </div>
             </div>
@@ -1167,11 +1202,13 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110I63" target="_blank" id="">110I63</a> 初期検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-06_21:21:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-06_21:21:50"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-03_16:12:45"> </span>
                         <br>
                         <p>16歳の女子．<br>
                             初経がないことを心配して来院した．<br>
-                            身長の伸びは2年前に止まっている．身長164cm，体重52kg．乳腺はTanner4度，恥毛はTanner3度，腋毛はみられない．外陰は女性型だが腟口を認めない．鼠径部に腫瘤を触知しない．<br>
+                            身長の伸びは2年前に止まっている．<br>
+                            身長164cm，体重52kg．乳腺はTanner4度，恥毛はTanner3度，腋毛はみられない．外陰は女性型だが腟口を認めない．鼠径部に腫瘤を触知しない．<br>
                             最初に行う検査はどれか．</p>
 
 
@@ -1208,11 +1245,12 @@
             <div class="card-group AIS " id="q05">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/91E12" target="_blank">91E12</a> 診断 &xrArr; Qs
+                        <a href="https://qb.medilink-study.com/#/Answer/91E12" target="_blank">91E12</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:27:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:27:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:29:03"> </span>
                         <br>
                         <p>18歳の女子．<br>
                             月経の発来がないことを訴えて来院した．<br>
@@ -1234,6 +1272,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
+                        <p>&darr;Prog <br>
+                            &rArr; &uarr;LH &uarr;FSH</p>
+
                         <p class="q_dx">アンドロゲン不応症</p>
 
                         <p class="q_answer_true">d</p>
@@ -1250,7 +1291,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group Turner" id="q06">
+            <div class="card-group Turner info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97C16" target="_blank">97C16-18</a> 検査 / 症候 / 治療
@@ -1261,20 +1302,28 @@
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-09-06_21:33:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-11-03_16:33:37"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:33:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:33:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:33:46"> </span>
                         <br>
                         <p>次の文を読み，16～18の問いに答えよ．<br><br>
 
                             19歳の未婚女性．<br>
-                            月経が発来しないことを主訴に来院した．<br>
-                            既往歴・家族歴：特記すべきことはない．<br>
-                            現　症：身長140cm，体重41kg．脈拍72/分，整．血圧130/80mmHg．乳房発育は不良．腹部は平坦で，圧痛や抵抗を認めず，肝・脾を触知しない．陰毛を認めず，処女膜は閉鎖している．<br>
+                            <u>月経が発来しない</u>ことを主訴に来院した．<br>
+                            既往歴・家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            身長140cm，体重41kg．脈拍72/分，整．血圧130/80mmHg．<br>
+                            乳房発育は不良．腹部は平坦で，圧痛や抵抗を認めず，肝・脾を触知しない．陰毛を認めず，処女膜は閉鎖している．<br>
                             検査所見：<br>
-                            血液所見：赤血球480万，Hb 13.7g/dL，Ht 41％，白血球6,000．<br>
-                            血清生化学所見：総蛋白6.7g/dL，TSH 0.22μU/mL（基準0.2～4.0），LH 21mIU/mL（基準2.1～7.0），FSH 65mIU/mL（基準4.4～8.0），プロラクチン5ng/mL（基準4～15），FT4 1.5ng/dL（基準0.8～2.2），コルチゾール10μg/dL（基準5.2～12.6），エストラジオール10pg/mL以下（基準25～75），総テストステロン40ng/dL（基準30～90）．<br>
-                            経腹超音波検査で子宮は発育不良であり，卵巣は両側とも確認できない．</p>
+                            血液所見：<br>
+                            赤血球480万，Hb 13.7g/dL，Ht 41％，白血球6,000．<br>
+                            血清生化学所見：<br>
+                            総蛋白6.7g/dL，TSH 0.22μU/mL（基準0.2～4.0），<br>
+                            <u>LH 21mIU/mL</u>（基準2.1～7.0），<u>FSH 65mIU/mL</u>（基準4.4～8.0），プロラクチン5ng/mL（基準4～15），FT4 1.5ng/dL（基準0.8～2.2），コルチゾール10μg/dL（基準5.2～12.6），<u>エストラジオール10pg/mL以下</u>（基準25～75），<u>総テストステロン40ng/dL</u>（基準30～90）．<br>
+                            経腹超音波検査で子宮は発育不良であり，<u>卵巣は両側とも確認できない</u>．</p>
 
                         <p>[C016] まず行うべき検査はどれか．</p>
                         <ol type="a">
@@ -1365,12 +1414,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:38:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:38:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:37:30"> </span>
                         <br>
                         <p>18歳の女子．<br>
-                            これまでに一度も月経がないことを主訴に来院した．<br>
-                            身長144cm，体重48kg．脈拍84/分，整．血圧110/76mmHg．首の両側の皮膚が広く，余っているように見える．上肢は肘から遠位が外反している．外陰は女性型．腹部超音波検査で子宮は小さく卵巣は確認できない．乳房はTannerⅠ度．陰毛はTannerⅡ度．<br>
-                            血液生化学所見：LH 34mIU/mL（基準1.8〜7.6），FSH 39mIU/mL（基準5.2〜14.4），エストラジオール10pg/mL（基準25〜75）．<br>
+                            これまでに一度も<u>月経がない</u>ことを主訴に来院した．<br>
+                            身長144cm，体重48kg．脈拍84/分，整．血圧110/76mmHg．<br>
+                            <u>首の両側の皮膚が広く</u>，余っているように見える．<u>上肢は肘から遠位が外反</u>している．外陰は女性型．<br>
+                            腹部超音波検査で子宮は小さく卵巣は確認できない．乳房はTannerⅠ度．陰毛はTannerⅡ度．<br>
+                            血液生化学所見：<br>
+                            <u>LH 34mIU/mL</u>（基準1.8〜7.6），<u>FSH 39mIU/mL</u>（基準5.2〜14.4），<u>エストラジオール10pg/mL</u>（基準25〜75）．<br>
                             心エコー検査で大動脈基部に拡大を認めない．<br>
                             適切な治療はどれか．</p>
 
@@ -1413,11 +1466,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:41:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:41:49"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:39:24"> </span>
                         <br>
                         <p>14歳の女子．<br>
                             <u>低身長</u>と初経の遅れとを主訴に母親に伴われて来院した．<br>
-                            身長140cm，体重45kg．第二次性徴はみられず，<u>翼状頸</u>と<u>外反肘</u>とを認める．<br>
+                            身長140cm，体重45kg．<br>
+                            第二次性徴はみられず，<u>翼状頸</u>と<u>外反肘</u>とを認める．<br>
                             この疾患で正しいのはどれか．</p>
 
                         <ol type="a">
@@ -1474,7 +1529,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:45:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:45:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:40:47"> </span>
                         <br>
                         <p>Turner症候群の成人期にきたしやすいのはどれか．3つ選べ．</p>
 
@@ -1510,11 +1566,12 @@
             <div class="card-group Turner" id="q10">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/102I11" target="_blank">102I11</a> &uarr;LH, &uarr;FSH, &darr;Est
+                        <a href="https://qb.medilink-study.com/#/Answer/102I11" target="_blank">102I11</a> &uarr;LH / &uarr;FSH / &darr;E
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-06_21:51:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-06_21:51:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:41:36"> </span>
                         <br>
                         <p>血中でLH値とFSH値とが高く，エストロゲン値が低いのはどれか．</p>
 
@@ -1559,18 +1616,22 @@
 
 
             <!-- 01 -->
-            <div class="card-group HoGonad" id="q11">
+            <div class="card-group HoGonad info" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/92E19" target="_blank">92E19</a> 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_14:54:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_14:54:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:45:42"> </span>
                         <br>
                         <p>30歳の男性．<br>
                             二次性徴の発現遅延と乳頭部の有痛性腫脹とを訴えて来院した．<br>
-                            身長176cm，体重54kg．両側女性化乳房を認める．陰茎は小児様，精巣は左右とも小指頭大．恥毛・体毛は疎．血清LH 28mIU/mL（基準1.8～7.8），FSH 44mIU/mL（基準5.2～14.4），コルチゾール8.6μg/dL（基準5.2～12.6），テストステロン132ng/dL（基準400～800）．GnRH負荷後に血清LHとFSHとの増加反応を認める．<br>
+                            身長176cm，体重54kg．<br>
+                            <u>両側女性化乳房</u>を認める．<u>陰茎は小児様</u>，<u>精巣は左右とも小指頭大</u>．恥毛・体毛は疎．<br>
+                            <u>血清LH 28mIU/mL</u>（基準1.8～7.8），<u>FSH 44mIU/mL</u>（基準5.2～14.4），コルチゾール8.6μg/dL（基準5.2～12.6），<u>テストステロン132ng/dL</u>（基準400～800）．<br>
+                            GnRH負荷後に血清LHとFSHとの増加反応を認める．<br>
                             診断に必要な検査はどれか．2つ選べ．</p>
 
 
@@ -1601,19 +1662,24 @@
 
                         <h6>性ホルモンが低下する疾患</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．ゴナドトロピンも低下しているもの（中枢性性腺機能低下症）
+                            <li class="list-group-item">
+                                1．ゴナドトロピンも低下しているもの（中枢性性腺機能低下症）
                                 <ul>
                                     <li>ゴナドトロピン単独欠損症（低ゴナドトロピン性類宦官症）</li>
                                     <li>汎下垂体前葉機能低下症，Sheehan症候群</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">2．ゴナドトロピン正常or高値（原発性性腺機能低下症）
+                            <li class="list-group-item">
+                                2．ゴナドトロピン正常or高値（原発性性腺機能低下症）
                                 <ul>
                                     <li>Klinefelter症候群</li>
                                     <li>ムンプス睾丸炎</li>
                                 </ul>
                             など</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1626,9 +1692,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_14:59:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_14:59:58"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-03_16:48:22"> </span>
                         <br>
-                        <p>35歳の男性．既婚．不妊のため来院した．身長176cm，体重65kg，指極長182cm．類宦官症体型を示し，精巣は硬く，長径は2cm以下である．染色体分析で47,XXYという結果であった．<br>
+                        <p>35歳の男性．既婚．<br>
+                            不妊のため来院した．<br>
+                            身長176cm，体重65kg，指極長182cm．<br>
+                            類宦官症体型を示し，精巣は硬く，長径は2cm以下である．<br>
+                            <u>染色体分析で47,XXY</u>という結果であった．<br>
                             この疾患でみられるのはどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -1673,12 +1744,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-07_15:02:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-07_15:02:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:14:11"> </span>
                         <br>
                         <p>17歳の男子．<br>
-                        <u>二次性徴発現の遅れ</u>を主訴に来院した．<br>
-                        身長176cm，体重60kg．<u>手足が長い</u>．女性化乳房がみられる．外性器は男性型で，精巣は小さく，陰毛を認めない．<u>染色体核型は47, XXY</u>である．<br>
-                        この疾患で正しいのはどれか．2つ選べ．</p>
+                            <u>二次性徴発現の遅れ</u>を主訴に来院した．<br>
+                            身長176cm，体重60kg．<br>
+                            <u>手足が長い</u>．女性化乳房がみられる．外性器は男性型で，精巣は小さく，陰毛を認めない．<br>
+                            <u>染色体核型は47, XXY</u>である．<br>
+                            この疾患で正しいのはどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_f">光線過敏がみられる．</li>
@@ -1870,25 +1944,33 @@
             <div class="card-group malformation" id="q17">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/93C11" target="_blank">93C11-12</a> 子宮卵管造影 検査 / 治療
+                        <a href="https://qb.medilink-study.com/#/Answer/93C11" target="_blank">93C11-12</a> 子宮卵管造影 / 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-07_15:30:36"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-07_15:30:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:18:12"> </span>
                          /
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill hit" ud
-                        2018-09-07_15:30:41> </span>
+                        <span class="badge badge-pill hit" id="2018-09-07_15:30:41"> </span>
                         <br>
                         <p>次の文を読み，11，12の問いに答えよ．<br><br>
 
                             34歳の未産婦．<br>
                             <u>4回の自然流産</u>を繰り返したため来院した．<br>
-                            現病歴：30歳で結婚．4回の妊娠はいずれも超音波検査で胎囊は確認できたが，胎児心拍は認められなかった．<br>
-                            月経歴：周期は28日型，整．経血量は中等量で月経随伴症状はない．<br>
-                            家族歴：特記すべきことはない．<br>
-                            現　症：身長158cm，体重50kg．体温36.7℃．脈拍82/分，整．血圧124/78mmHg．内診上，子宮は前傾前屈，正常大，硬度正常，可動性は良好である．両側付属器は触知しない．<br>
-                            検査所見：<u>基礎体温は2相性</u>で，高温持続日数は13日前後である．月経周期6日目の血清LH 4.4mIU/mL（基準2.1～7.0），FSH 6.8mIU/mL（基準4.4～8.6），プロラクチン10.2ng/mL（15.0以下），遊離トリヨードサイロニン3.8pg/mL（基準3.5～5.3），遊離サイロキシン1.2ng/dL（基準0.8～1.4），TSH 3.5μU/mL（基準0.2～4.0）．黄体期7日目のプロゲステロン13.4ng/mL（基準10.0～15.0）．抗核抗体と抗リン脂質抗体とは陰性．夫婦の染色体検査は正常．<br>
+                            現病歴：<br>
+                            30歳で結婚．4回の妊娠はいずれも超音波検査で胎囊は確認できたが，胎児心拍は認められなかった．<br>
+                            月経歴：<br>
+                            周期は28日型，整．経血量は中等量で月経随伴症状はない．<br>
+                            家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            身長158cm，体重50kg．体温36.7℃．脈拍82/分，整．血圧124/78mmHg．<br>
+                            内診上，子宮は前傾前屈，正常大，硬度正常，可動性は良好である．両側付属器は触知しない．<br>
+                            検査所見：<br>
+                            <u>基礎体温は2相性</u>で，高温持続日数は13日前後である．<br>
+                            月経周期6日目の血清LH 4.4mIU/mL（基準2.1～7.0），FSH 6.8mIU/mL（基準4.4～8.6），プロラクチン10.2ng/mL（15.0以下），遊離トリヨードサイロニン3.8pg/mL（基準3.5～5.3），遊離サイロキシン1.2ng/dL（基準0.8～1.4），TSH 3.5μU/mL（基準0.2～4.0）．<br>
+                            黄体期7日目のプロゲステロン13.4ng/mL（基準10.0～15.0）．抗核抗体と抗リン脂質抗体とは陰性．夫婦の染色体検査は正常．<br>
                             子宮卵管造影写真を次に示す．</p>
                     </div>
 
@@ -1919,16 +2001,16 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <ul>
+                        <!-- <ul>
                             <li></li>
-                        </ul>
+                        </ul> -->
 
                         <!-- <img src="https://www.qb-online.com/img/93C011_ima_q_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/93C011_ima_q_010.jpg" class="card-img-top img-fluid">
 
                         <p class="q_dx">双角子宮 &rArr; 習慣流産</p>
 
-                        <p class="q_answer_true">c d</p>
+                        <p class="q_answer_true q_answer_true_1">c d</p>
 
                         <ol type="a">
                             <li></li>
@@ -1938,7 +2020,7 @@
                             <li></li>
                         </ol>
 
-                        <p class="q_answer_true">c</p>
+                        <p class="q_answer_true q_answer_true_2">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -1963,7 +2045,9 @@
                         <br>
                         <p>18歳の女子．<br>
                             初経が発来しないため来院した．<br>
-                            身長160cm，体重52kg．乳房や外陰の二次性徴は正常であるが，腟が完全に欠損している．基礎体温は2相性である．末梢血を用いた染色体検査の結果を次に示す．<br>
+                            身長160cm，体重52kg．<br>
+                            乳房や外陰の二次性徴は正常であるが，<u>腟が完全に欠損</u>している．基礎体温は2相性である．<br>
+                            末梢血を用いた染色体検査の結果を次に示す．<br>
                             正しいのはどれか．</p>
                     </div>
 
@@ -2001,6 +2085,8 @@
                         <div class="card">
                             <img src="https://www.qb-online.com/img_kaisetsu/98D041_bas_q_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -2013,7 +2099,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_15:41:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_15:41:05"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-03_16:50:55"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
 
@@ -2053,7 +2140,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_15:45:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_15:45:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:51:54"> </span>
                         <br>
                         <p>正しいのはどれか．</p>
 
@@ -2110,7 +2198,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_15:49:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_15:49:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:53:52"> </span>
                         <br>
                         <p>核型46,XX，正常卵巣を有する性分化異常症はどれか．</p>
 
@@ -2180,7 +2269,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_15:56:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_15:56:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:54:47"> </span>
                         <br>
                         <p>女性化乳房を認めるのはどれか．2つ選べ．</p>
                         
@@ -2244,7 +2334,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_16:03:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_16:03:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:56:06"> </span>
                         <br>
                         <p>血清ゴナドトロピンが高値を呈するのはどれか．2つ選べ．</p>
 
@@ -2296,7 +2387,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-07_16:06:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-07_16:06:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-03_16:57:28"> </span>
                         <br>
                         <p>子宮奇形について正しいのはどれか．2つ選べ．</p>
 
@@ -2453,7 +2545,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2463,6 +2559,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2481,7 +2598,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2525,13 +2654,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2548,54 +2678,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2834,73 +2964,74 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#DEV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DEV)').toggle();
+        $('div.card-group:not(.DEV)').slideToggle(100);
     });
     $('#DEV').find('code').html($('div.DEV').size());
 
 
     $('#AIS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AIS)').toggle();
+        $('div.card-group:not(.AIS)').slideToggle(100);
     });
     $('#AIS').find('code').html($('div.AIS').size());
 
 
     $('#RKHS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RKHS)').toggle();
+        $('div.card-group:not(.RKHS)').slideToggle(100);
     });
     $('#RKHS').find('code').html($('div.RKHS').size());
 
 
     $('#Turner h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Turner)').toggle();
+        $('div.card-group:not(.Turner)').slideToggle(100);
     });
     $('#Turner').find('code').html($('div.Turner').size());
 
 
     $('#HoGonad h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HoGonad)').toggle();
+        $('div.card-group:not(.HoGonad)').slideToggle(100);
     });
     $('#HoGonad').find('code').html($('div.HoGonad').size());
 
 
     $('#Klinefelter h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Klinefelter)').toggle();
+        $('div.card-group:not(.Klinefelter)').slideToggle(100);
     });
     $('#Klinefelter').find('code').html($('div.Klinefelter').size());
 
     $('#double_uterus h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.double_uterus)').toggle();
+        $('div.card-group:not(.double_uterus)').slideToggle(100);
     });
     $('#double_uterus').find('code').html($('div.double_uterus').size());
 
     $('#DSD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DSD)').toggle();
+        $('div.card-group:not(.DSD)').slideToggle(100);
     });
     $('#DSD').find('code').html($('div.DSD').size());
 
 
     $('#CAH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CAH)').toggle();
+        $('div.card-group:not(.CAH)').slideToggle(100);
     });
     $('#CAH').find('code').html($('div.CAH').size());
 
 
     $('#malformation h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.malformation)').toggle();
+        $('div.card-group:not(.malformation)').slideToggle(100);
     });
     $('#malformation').find('code').html($('div.malformation').size());
 
@@ -2910,7 +3041,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

@@ -4,12 +4,23 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-25 20:10:47
+@Last modified time: 2018-11-04 10:10:52
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -96,8 +107,8 @@
     <title>Liver</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-25 20:11:10" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-04 10:11:21" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -124,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -156,6 +167,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -196,33 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -274,6 +296,87 @@
 
     
     <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-9">
+            <h6>肝炎ウイルス</h6>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>HAV</th>
+                        <th>HBV</th>
+                        <th>HCV</th>
+                        <th>HDV</th>
+                        <th>HEV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>核酸</th>
+                        <td>RNA</td>
+                        <td><u>DNA</u></td>
+                        <td>RNA</td>
+                        <td>RNA</td>
+                        <td>RNA</td>
+                    </tr>
+                    <tr>
+                        <th>主な感染様式</th>
+                        <td>経口</td>
+                        <td>血液，性交</td>
+                        <td>血液</td>
+                        <td>血液</td>
+                        <td>経口</td>
+                    </tr>
+                    <tr>
+                        <th>急性肝炎<br>
+                            での占有率（％）</th>
+                        <td><u>40-50%</u></td>
+                        <td>20-30%</td>
+                        <td>15%</td>
+                        <td>極めてまれ</td>
+                        <td>まれ</td>
+                    </tr>
+                    <tr>
+                        <th>慢性肝炎<br>
+                            での占有率（％）</th>
+                        <td>0</td>
+                        <td>20%</td>
+                        <td><u>70%</u></td>
+                        <td>極めてまれ</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th>肝硬変 / 肝細胞癌<br>
+                            での占有率（％）</th>
+                        <td>0</td>
+                        <td>15%</td>
+                        <td><u>80%</u></td>
+                        <td>極めてまれ</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <th>診断</th>
+                        <td><ul>
+                            <li>IgM型HA抗体</li>
+                        </ul></td>
+                        <td><ul>
+                            <li>HBs抗原</li>
+                            <li>IgM型HBc抗体</li>
+                            <li>HBV-DNA</li>
+                        </ul></td>
+                        <td><ul>
+                            <li>HCV-RNA</li>
+                            <li>HCV抗体</li>
+                        </ul></td>
+                        <td><ul>
+                            <li>HDV抗体</li>
+                        </ul></td>
+                        <td><ul>
+                            <li>HEV抗体</li>
+                        </ul></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class="col-xs-12 col-sm-6 col-md-6">
 
             <div class="section" id="HAV">
@@ -281,6 +384,30 @@
                     <h2>HAV <small><code></code></small></h2>
                 </div>
 
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>IgM HA-Ab</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
 
             </div>
         </div>
@@ -365,59 +492,138 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>DNA virus</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        <ul>
+                            <li>劇症肝炎 #1</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>IgM HBc Ab:
+                                <ul>
+                                    <li>急性肝炎</li>
+                                    <li>慢性肝炎急性増悪</li>
+                                </ul>
+                            </li>
+                            <li>IgG HBc Ab
+                                <ul>
+                                    <li>慢性</li>
+                                </ul>
+                            </li>
+                            <li>HBe Ab
+                                <ul>
+                                    <li>セロコンバージョン</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>エンテカビル</li>
+                            <li>ラミブジン</li>
+                        </ul>
+
+                        <ul>
+                            <li>vaccine がある</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-8">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/93F016_bas_b_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3><i>de novo</i>B型肝炎 (再活性化)</h3>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>IgM HBc-Ab</td>
+                            <td>発症早期</td>
+                        </tr>
+                        <tr>
+                            <td>HBe-Ab</td>
+                            <td>非活動性 (回復期)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3><i>de novo</i></h3>
                 <ul class="list-group">
-                    <li class="list-group-item">劇症肝炎 #1</li>
+                    <li class="list-group-item">HBs抗原 再活性化</li>
+                    <li class="list-group-item">予後不良</li>
                 </ul>
             </div>
 
+
         </div>
     </div>
 
-    <div class="section" id="HCV">
-        <div class="page-header">
-            <h2>HCV <small class="hidden-xs-down">Hepatitis C</small> <small><code></code></small></h2>
-        </div>
 
-
-        <ul class="list-group">
-            <!-- <li class="list-group-item">
-                <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-            </li> -->
-            <li class="list-group-item">
-                <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                <ul>
-                    <li>Cirrhosis #1 肝硬変</li>
-                    <li>Carcinoma #1 癌化</li>
-                    <li>Chronic #1 慢性化</li>
-                </ul>
-            </li>
-            <!-- <li class="list-group-item">
-                <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-            </li> -->
-            <!-- <li class="list-group-item">
-                <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-            </li> -->
-            <!-- <li class="list-group-item">
-                <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-            </li> -->
-            <!-- <li class="list-group-item">
-                <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-            </li> -->
-        </ul>
-
-    </div>
 
 
     <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HCV">
+                <div class="page-header">
+                    <h2>HCV <small class="hidden-xs-down">Hepatitis C</small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        <ul>
+                            <li><u>C</u>irrhosis #1 肝硬変</li>
+                            <li><u>C</u>arcinoma #1 癌化</li>
+                            <li><u>C</u>hronic #1 慢性化</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>IFN<br>
+                                Genotype 2</li>
+                            <li>リバビリン</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="encephalopathy">
                 <div class="page-header">
@@ -437,27 +643,56 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="LC">
                 <div class="page-header">
-                    <h2>Liver Cirrhosis <small class="hidden-xs-down"></small></h2>
+                    <h2>Liver Cirrhosis <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
                     <li class="list-group-item">≥ II 羽ばたき振戦</li>
                 </ul>
-                
 
-            </div>
-        </div>
+                <h6>肝硬変 (非代償性) Rx</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">①腹水・浮腫の治療:
+                        <ul>
+                            <li>塩分制限</li>
+                            <li>水分除去
+                                <ul>
+                                    <li><u>利尿薬</u></li>
+                                    <li>腹腔穿刺</li>
+                                </ul>
+                            </li>
+                            <li>アルブミン補充</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">②肝性脳症:
+                        <ul>
+                            <li>低蛋白食</li>
+                            <li>腸内細菌を整える
+                                <ul>
+                                    <li>下剤</li>
+                                    <li>非吸収性抗菌薬</li>
+                                </ul>
+                                (アンモニアの上昇を抑えるため)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">③消化管出血:
+                        <ul>
+                            <li>黒色便の有無，吐血に注意．肝硬変患者が黒色便を訴えた場合は胃食道静脈瘤からの出血を考え，速やかに上部内視鏡検査を行う．</li>
+                        </ul>
+                    </li>
+                </ul>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="SBP">
-                <div class="page-header">
-                    <h2>SBP <small>特発性細菌性腹膜炎</small><small class="hidden-xs-down"> Spontaneous Bacterial Peritonitis</small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
+                <ul class="list-group">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>&darr;Alb <br>
+                                &rArr; &darr;循環血漿量<br>
+                                &rArr; &darr;腎血流量<br>
+                                &rArr; &uarr;RAAs<br>
+                                &rArr; &uarr;Na &darr;K</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
@@ -473,7 +708,89 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
-                <!-- </ul> -->
+                </ul>
+                
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SBP">
+                <div class="page-header">
+                    <h2>SBP <small>特発性細菌性腹膜炎</small><small class="hidden-xs-down"> Spontaneous Bacterial Peritonitis</small> <small><code></code></small></h2>
+                </div>
+
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>GNB
+                                <ul>
+                                    <li>E. coli</li>
+                                </ul></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>発熱/悪寒</li>
+                            <li>腹痛</li>
+                            <li>下痢</li>
+                            <li>脳症</li>
+                            <li>腎不全</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">概念<br>
+                        細菌感染に伴って起こる，腹部症状をはじめとした様々な症状を呈する腹水の合併症．腹水を呈する疾患ならすべてと言っていいほど起こりうるが，圧倒的に肝硬変に伴う例が多い．
+                    </li>
+                    <li class="list-group-item">疫学<br>
+                        人種・年齢・性別に差はないが，小児例では新生児と5歳児にピークがある．
+                    </li>
+                    <li class="list-group-item">原因<br>
+                        腸管膜からの腸内細菌叢の移行と免疫低下などの複数の条件下で起こると考えられている．<br>
+                        原因菌として，3/4が好気性グラム陰性菌でその半分以上がE.coliである．<br>
+                        危険因子として肝硬変，補体低下，腹水中の蛋白質低下．
+                    </li>
+                    <li class="list-group-item">症状<br>
+                        発熱・悪寒（80％），腹痛（70％），下痢，脳症，腎不全など．症状のないものも30％ほどみられる．
+                    </li>
+                    <li class="list-group-item">検査<br>
+                        腹水穿刺により腹水を採取し，分析する．
+                        <ol>
+                            <li>培養（原因菌の鑑別）</li>
+                            <li>グラム染色（即時的な原因菌の鑑別）</li>
+                            <li>細胞数（250/μL以上）</li>
+                            <li>細胞診（癌性腹水との鑑別）</li>
+                            <li>乳酸値（25/mL以上）</li>
+                            <li>pH（7.31以下）</li>
+                        </ol>
+                        他に血液と尿の培養も採取する．SBPであれば漏出性の腹水で，細菌数が多い．
+                    </li>
+                    <li class="list-group-item">治療<br>
+                        第3世代セフェムを10〜14日投与する．予後が不良のため，本疾患を疑った時点で投与してよい．
+                    </li>
+                    <li class="list-group-item">予後<br>
+                        原疾患にもよるが肝硬変では40〜70％の死亡率という報告もある．ノルフロキサシンの経口投与で予防できると言われているが，予後は改善しない．
+                    </li>
+                </ul>
             </div>
         </div>
 
@@ -483,6 +800,33 @@
                     <h2>IPH <small>特発性門脈圧亢進症</small> <small><code></code></small></h2>
                 </div>
 
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        <ul>
+                            <li>F</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>肝小葉構造の改築(-)</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+
 
             </div>
         </div>
@@ -490,9 +834,14 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="BCS">
                 <div class="page-header">
-                    <h2>Budd-Chiari Syndrome <small><code></code></small></h2>
+                    <h2>Budd-Chiari <small><code></code></small></h2>
                 </div>
 
+
+                <h6>腹部側副血行路</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/96A023_sup_b_010.jpg" class="card-img-top img-fluid">
+                </div>
             </div>
         </div>
 
@@ -512,6 +861,53 @@
                     <h2>ALD <small> アルコール性肝障害</small> <small><code></code></small></h2>
                 </div>
 
+
+                <h6>肝障害 / AST/ALT</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/102D014_sup_b_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/101G028.jpg" class="card-img-top img-fluid" width="%">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">肝細胞の風船様変化<br>
+                            (Balooning)</li>
+                        <li class="list-group-item">アルコール硝子体<br>
+                            (Mallory body)</li>
+                        <li class="list-group-item">Neutro浸潤</li>
+                        <li class="list-group-item">脂肪変性</li>
+                        <li class="list-group-item">肝細胞周囲性線維化<br>
+                            (Pericellular fibrosis)</li>
+                    </ul>
+                </div>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6>Association</h6>
+                        <ul>
+                            <li>アルコール性心筋症</li>
+                            <li>Wernicke</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
 
             </div>
         </div>
@@ -565,29 +961,158 @@
 
             </div>
         </div>
+    </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="DILD">
+
+    <div class="section" id="DILD">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>DILD <small> 薬剤性肝障害</small></h2>
+                    <h2>DILD <small> 薬剤性肝障害</small> <small><code></code></small></h2>
                 </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>肝細胞障害</th>
+                            <th>胆汁うっ滞</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>原因</th>
+                            <td>
+                                <ul>
+                                    <li><u>INH</u></li>
+                                    <li><u>RFP</u></li>
+                                    <li>ハロセン</li>
+                                    <li><u>四塩化炭素</u></li>
+                                    <li>P</li>
+                                    <li>ジフェニルヒダトイン</li>
+                                    <li>ケトコナゾール</li>
+                                    <li>メトトレキサート</li>
+                                    <li><u>クロロホルム（CHCl3）</u></li>
+                                    <li>Vit. A</li>
+                                    <li>テトラサイクリン</li>
+                                    <li>バルプロ酸ニトロフラントイン</li>
+                                    <li>アセトアミノフェン</li>
+                                    <li>アスピリン</li>
+                                    <li><u>α-メチルドパ</u></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><u>蛋白同化ホルモン</u><br>
+                                        (<u>メチルテストステロン</u>)</li>
+                                    <li>経口避妊薬</li>
+                                    <li>サルファ薬</li>
+                                    <li>RFP</li>
+                                    <li>テオプロミン</li>
+                                    <li>アジマリン</li>
+                                    <li>セフェム系</li>
+                                    <li><u>クロルプロマジン</u></li>
+                                    <li>ペニシリン系</li>
+                                    <li><u>プロピルチオウラシル</u></li>
+                                    <li>エリスロマイシン</li>
+                                    <li>シクロスポリン</li>
+                                    <li>アセトアミノフェン<br>
+                                        (肝細胞障害が主)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>逸脱酵素</th>
+                            <td>&uarr;&uarr;&uarr;</td>
+                            <td>&uarr;</td>
+                        </tr>
+                        <tr>
+                            <th>胆道系酵素</th>
+                            <td>&uarr;</td>
+                            <td>&uarr;&uarr;&uarr;</td>
+                        </tr>
+                        <tr>
+                            <th>黄疸</th>
+                            <td>&uarr;</td>
+                            <td>&uarr;&uarr;&uarr;</td>
+                        </tr>
+                        <tr>
+                            <th>薬剤中止後</th>
+                            <td>速やかに改善</td>
+                            <td>遅延</td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </div>
         </div>
+    </div>
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="AIH">
                 <div class="page-header">
                     <h2>AIH <small>自己免疫肝炎</small> <small><code></code></small></h2>
                 </div>
 
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>抗平滑筋Ab</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>PSL</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h6>AIH / PBC / PSC</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">AIH:
+                        <ul>
+                            <li>IgG</li>
+                            <li>抗核抗体</li>
+                            <li>抗平滑筋抗体</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">PBC:
+                        <ul>
+                            <li>IgM</li>
+                            <li>抗ミトコンドリア抗体</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">PSC:
+                        <ul>
+                            <li>P-ANCA</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="PBC">
                 <div class="page-header">
-                    <h2>PBC <small></small><small class="hidden-xs-down"> Primary Billary Cholangitis/Cirrhosis</small></h2>
+                    <h2>PBC <small></small><small class="hidden-xs-down"> Primary Billary Cholangitis/Cirrhosis</small> <small><code></code></small></h2>
                 </div>
 
 
@@ -604,28 +1129,88 @@
                             <li>黄色腫</li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>抗ミトコンドリアAb</li>
+                            <li>IgM</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
+                        <ul>
+                            <li>ウルソデオキシコール酸</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Association</h6>
+                        <ul>
+                            <li>SS</li>
+                            <li>皮膚黄色腫</li>
+                            <li>RA</li>
+                            <li>慢性甲状腺炎</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Prognosis</h6>
+                        <ul>
+                            <li>胆道癌にはならない</li>
+                        </ul>
+                    </li>
                 </ul>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/96C010_ref_b_010.jpg" class="card-img-top img-fluid">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">胆管上皮の重層化</li>
+                        <li class="list-group-item">胆管基底膜の破壊</li>
+                        <li class="list-group-item">胆管周囲のリンパ球浸潤</li>
+                        <li class="list-group-item">慢性非化膿性破壊性胆管炎（CNSDC）</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/101A028_bas_b_010.jpg" class="card-img-top img-fluid">
+                </div>
 
                 
             </div>
         </div>
+    </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="HCC">
+    <div class="section" id="HCC">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>HCC <small class="hidden-xs-down">HepatoCellular Carcinoma</small></h2>
+                    <h2>HCC <small class="hidden-xs-down">HepatoCellular Carcinoma</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>Ope</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">肝癌 単発, 同一区域</li>
+                    <li class="list-group-item">症状(-)<ul>
+                        <li>黄疸(-)</li>
+                        <li>腹水(-)</li>
+                        <li>肝性脳症(-)</li>
+                    </ul></li>
+                    <li class="list-group-item">ICG ≤ 30%</li>
+                </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>肝切除</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/103D031_bas_b_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">ICG < 30</li>
                     <li class="list-group-item">ICG ≥ 30<ul>
@@ -634,22 +1219,141 @@
                     </ul></li>
                     <!-- <li class="list-group-item"></li> -->
                 </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>AFP</li>
+                            <li>肝内転移</li>
+                            <li>Hyper-vascular</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6>Prognosis</h6>
+                        <ul>
+                            <li>Good (HCC)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-21 col-md-12">
+                <h6>HCC / 転移性肝癌</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>超音波像</th>
+                            <th colspan="2">CTスキャン</th>
+                            <th>選択的肝動脈造影</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>単純</th>
+                            <th>造影</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>肝内結石症</th>
+                            <td>高エコー<br>
+                                （acoustic shadowを伴う）</td>
+                            <td>HD</td>
+                            <td>（−）</td>
+                            <td>所見（−）</td>
+                        </tr>
+                        <tr>
+                            <th>肝細胞癌</th>
+                            <td>低エコー<br>
+                                高エコー<br>
+                                モザイクエコーetc．<br>
+                                (大きくなればhalo)</td>
+                            <td>LD</td>
+                            <td>（＋）</td>
+                            <td>
+                                <ul>
+                                    <li>hypervascular stainは静脈相以後直ちに消える</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>転移性肝癌</th>
+                            <td>低エコー<br>
+                                高エコー<br>
+                                など様々．<br>
+                                bull’s eye</td>
+                            <td>LD</td>
+                            <td>（＋）〜（−）</td>
+                            <td>
+                                <ul>
+                                    <li>hypovascular</li>
+                                    <li>多発性</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3 id="TAE">TAE <small><code></code></small></h3>
 
                 <h3 id="TACE">TACE <small><code></code></small></h3>
 
+                <ul class="list-group">
+                    <li class="list-group-item">IND
+                        <ul>
+                            <li><u>門脈本幹に閉塞(-)</u></li>
+                            <li><u>T-Bil</u> <u>≤ 3</u>が好まれる</li>
+                            <li><u>大きさ/個数は問わない</u></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">C/I
+                        <ul>
+                            <li>高度黄疸</li>
+                            <li><u>難治性腹水</u></li>
+                            <li>門脈本幹に狭窄</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3 id="Tx">Tx <small><code></code></small></h3>
 
             </div>
         </div>
+    </div>
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="HBM">
                 <div class="page-header">
-                    <h2>Hepatoblastoma <small class="hidden-xs-down">HBM</small></h2>
+                    <h2>Hepatoblastoma <small class="hidden-xs-down">HBM</small> <small><code></code></small></h2>
                 </div>
+
+                
 
 
             </div>
@@ -658,8 +1362,34 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="CCC">
                 <div class="page-header">
-                    <h2>CCC <small class="hidden-xs-down">CholangioCellular Carcinoma</small></h2>
+                    <h2>CCC <small class="hidden-xs-down">CholangioCellular Carcinoma</small> <small><code></code></small></h2>
                 </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>CA19-9</li>
+                            <li>リンパ節転移(++)</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
 
 
             </div>
@@ -669,7 +1399,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="meta">
                 <div class="page-header">
-                    <h2>Meta <small class="hidden-xs-down"></small></h2>
+                    <h2>Meta <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
 
 
@@ -706,13 +1436,17 @@
                     </li>
                 </ul>
 
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/105A026_bas_b_010.jpg" class="card-img-top img-fluid" >
+                </div>
+
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="KMS">
                 <div class="page-header">
-                    <h2>Kasabach-Merrit Syndrome <small class="hidden-xs-down">KMS</small></h2>
+                    <h2>Kasabach-Merrit <small><code></code></small></h2>
                 </div>
 
             </div>
@@ -726,9 +1460,16 @@
 
 
                 <ul class="list-group">
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>GNB
+                                <ul>
+                                    <li>大腸菌</li>
+                                    <li>Klebsiela</li>
+                                </ul></li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
@@ -749,6 +1490,13 @@
                     </li> -->
                 </ul>
 
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111I060_ima_010.jpg" class="card-img-top img-fluid">
+                    <div class="card-body">
+                        <p>リング状造影</p>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -756,11 +1504,114 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="EH">
                 <div class="page-header">
-                    <h2>Entamoeba histolytica <small class="hidden-xs-down">EH</small><small> 赤痢アメーバ</small></h2>
+                    <h2>Entamoeba Histolytica <small> 赤痢アメーバ</small> <small><code></code></small></h2>
                 </div>
 
 
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>ICG</h6>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>ICG</th>
+                        <th>S/S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>≤ 10%</td>
+                        <td>正常</td>
+                    </tr>
+                    <tr>
+                        <td>≥ 25%</td>
+                        <td>肝硬変</td>
+                    </tr>
+                    <tr>
+                        <td>≥ 70%</td>
+                        <td>&uarr;Bil</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>ICGに反映される因子</h6>
+            <ul class="list-group">
+                <li class="list-group-item">肝血流量</li>
+                <li class="list-group-item">肝細胞ICG摂取能力</li>
+                <li class="list-group-item">ICGの胆汁中への排泄能力</li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h6>肝疾患 組織学</h6>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>病態</th>
+                        <th>特徴的な組織学的所見</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>非アルコール性脂肪性肝炎（NASH）</th>
+                        <td>肝細胞の脂肪変性，肝臓の炎症・線維化</td>
+                        <td>
+                            <ul>
+                                <li>肝細胞の脂肪沈着</li>
+                                <li>肝細胞の風船様変性</li>
+                                <li>Mallory body（マロリー・デンク体）</li>
+                                <li>炎症細胞浸潤（小葉内・門脈域内）</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>自己免疫性肝炎（AIH）</th>
+                        <td>自己免疫による肝細胞障害<br>
+                            （→慢性活動性肝炎）</td>
+                        <td>
+                            <ul>
+                                <li>慢性肝炎像
+                                    <ul>
+                                        <li>門脈域の不整形な拡大</li>
+                                        <li>炎症細胞浸潤</li>
+                                        <li>piecemeal necrosis</li>
+                                        <li>ロゼット様配列・水腫状変化</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>原発性硬化性胆管炎（PSC）</th>
+                        <td>肝内外の胆管（肝外胆管と比較的太めの肝内胆管）の障害<br>
+                            （→胆汁うっ滞）</td>
+                        <td><ul>
+                            <li>線維性閉塞性胆管炎（胆管の肥厚・狭窄）<ul>
+                                <li>小葉間胆管周囲の線維化（onion skin lesion）</li>
+                            </ul></li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <th>原発性胆汁性胆管炎（PBC）</th>
+                        <td>自己免疫による肝内の細小胆管（特に小葉間胆管）の障害<br>
+                            （→肝内胆汁うっ滞）</td>
+                        <td><ul>
+                            <li>慢性非化膿性破壊性胆管炎<br>
+                                （CNSDC）<br>
+                                （胆管上皮の変性・壊死）<ul>
+                                <li>胆管上皮や周囲へのリンパ球浸潤</li>
+                            </ul></li>
+                        </ul></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -3505,7 +4356,7 @@
             <div class="card-group LC verices" id="q042">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://qb.medilink-study.com/#/Answer/97C19-21" target="_blank">97C19-21</a>　黒色便 尿濃染
+                        <a href="https://qb.medilink-study.com/#/Answer/97C19-21" target="_blank">97C19-21</a> 黒色便 尿濃染
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
@@ -5389,19 +6240,28 @@
 
                         <h6>AIH / PBC / PSC</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">AIH:<ul>
-                                <li>IgG</li>
-                                <li>抗核抗体</li>
-                                <li>抗平滑筋抗体</li>
-                            </ul></li>
-                            <li class="list-group-item">PBC:<ul>
-                                <li>IgM</li>
-                                <li>抗ミトコンドリア抗体</li>
-                            </ul></li>
-                            <li class="list-group-item">PSC:<ul>
-                                <li>P-ANCA</li>
-                            </ul></li>
+                            <li class="list-group-item">AIH:
+                                <ul>
+                                    <li>IgG</li>
+                                    <li>抗核抗体</li>
+                                    <li>抗平滑筋抗体</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">PBC:
+                                <ul>
+                                    <li>IgM</li>
+                                    <li>抗ミトコンドリア抗体</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">PSC:
+                                <ul>
+                                    <li>P-ANCA</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -6168,7 +7028,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group HCC" id="q081">
+            <div class="card-group HCC ope" id="q081">
                 <div class="card">
                     <div class="card-header info">
                         <a href="https://qb.medilink-study.com/#/Answer/104A30" target="_blank">104A30</a> 肝癌 治療方針決定
@@ -6233,9 +7093,9 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group HCC MRI" id="q082">
+            <div class="card-group HCC MRI 111 pri info" id="q082">
                 <div class="card">
-                    <div class="card-header 111 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111D22" target="_blank">111D22</a> 肝臓 造影MRI
                     </div>
                     <div class="card-body">
@@ -6342,7 +7202,7 @@
 
                         <p class="q_dx">HCC</p>
 
-                        <p>True: d</p>
+                        <p class="q_answer_true">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -6649,7 +7509,6 @@
 
             <!-- 08 -->
             <div class="card-group HCC verices TAE TACE" id="q088">
-                <div class="card-group">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/105B50" target="_blank">105B50-52</a> 検査所見 / 食道 治療 / 治療
@@ -7791,9 +8650,11 @@
 
                         <h6>血管腫</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/105A026_bas_b_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/105A026_bas_b_010.jpg" class="card-img-top img-fluid" >
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/105A026_bas_b_010.jpg" class="img-fluid"> -->
+
                     </div>
                 </div>
             </div>
@@ -8519,7 +9380,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -8529,6 +9394,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -8547,7 +9433,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -8598,6 +9496,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -8614,54 +9513,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -8900,163 +9799,199 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
     $('#HAV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HAV)').toggle();
+        $('div.card-group:not(.HAV)').slideToggle(100);
     });
     $('#HAV').find('code').html($('div.HAV').size());
 
 
     $('#HEV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HEV)').toggle();
+        $('div.card-group:not(.HEV)').slideToggle(100);
     });
     $('#HEV').find('code').html($('div.HEV').size());
 
 
+    $('#AH h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.AH)').slideToggle(100);
+    });
+    $('#AH').find('code').html($('div.AH').size());
+
+
     $('#HBV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HBV)').toggle();
+        $('div.card-group:not(.HBV)').slideToggle(100);
     });
     $('#HBV').find('code').html($('div.HBV').size());
 
 
     $('#HCV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HCV)').toggle();
+        $('div.card-group:not(.HCV)').slideToggle(100);
     });
     $('#HCV').find('code').html($('div.HCV').size());
 
 
     $('#FH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FH)').toggle();
+        $('div.card-group:not(.FH)').slideToggle(100);
     });
     $('#FH').find('code').html($('div.FH').size());
 
 
     $('#LC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.LC)').toggle();
+        $('div.card-group:not(.LC)').slideToggle(100);
     });
     $('#LC').find('code').html($('div.LC').size());
 
 
     $('#SBP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SBP)').toggle();
+        $('div.card-group:not(.SBP)').slideToggle(100);
     });
     $('#SBP').find('code').html($('div.SBP').size());
 
 
     $('#IPH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IPH)').toggle();
+        $('div.card-group:not(.IPH)').slideToggle(100);
     });
     $('#IPH').find('code').html($('div.IPH').size());
 
 
     $('#BCS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.BCS)').toggle();
+        $('div.card-group:not(.BCS)').slideToggle(100);
     });
     $('#BCS').find('code').html($('div.BCS').size());
 
 
     $('#FL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FL)').toggle();
+        $('div.card-group:not(.FL)').slideToggle(100);
     });
     $('#FL').find('code').html($('div.FL').size());
 
 
     $('#ALD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ALD)').toggle();
+        $('div.card-group:not(.ALD)').slideToggle(100);
     });
     $('#ALD').find('code').html($('div.ALD').size());
 
 
     $('#DILD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DILD)').toggle();
+        $('div.card-group:not(.DILD)').slideToggle(100);
     });
     $('#DILD').find('code').html($('div.DILD').size());
 
 
     $('#AIH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AIH)').toggle();
+        $('div.card-group:not(.AIH)').slideToggle(100);
     });
     $('#AIH').find('code').html($('div.AIH').size());
 
 
     $('#PBC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PBC)').toggle();
+        $('div.card-group:not(.PBC)').slideToggle(100);
     });
     $('#PBC').find('code').html($('div.PBC').size());
 
 
+    $('#HCC h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HCC)').slideToggle(100);
+    });
+    $('#HCC').find('code').html($('div.HCC').size());
+
+
+    $('#CCC h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CCC)').slideToggle(100);
+    });
+    $('#CCC').find('code').html($('div.CCC').size());
+
+
+
     $('#TAE').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TAE)').toggle();
+        $('div.card-group:not(.TAE)').slideToggle(100);
     });
     $('#TAE').find('code').html($('div.TAE').size());
 
 
     $('#TACE').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TACE)').toggle();
+        $('div.card-group:not(.TACE)').slideToggle(100);
     });
     $('#TACE').find('code').html($('div.TACE').size());
 
 
     $('#Tx').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Tx)').toggle();
+        $('div.card-group:not(.Tx)').slideToggle(100);
     });
     $('#Tx').find('code').html($('div.Tx').size());
 
 
     $('#HGM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HGM)').toggle();
+        $('div.card-group:not(.HGM)').slideToggle(100);
     });
     $('#HGM').find('code').html($('div.HGM').size());
 
 
     $('#KMS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.KMS)').toggle();
+        $('div.card-group:not(.KMS)').slideToggle(100);
     });
     $('#KMS').find('code').html($('div.KMS').size());
 
 
     $('#abscess h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.abscess)').toggle();
+        $('div.card-group:not(.abscess)').slideToggle(100);
     });
     $('#abscess').find('code').html($('div.abscess').size());
 
 
     $('#EHPVO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.EHPVO)').toggle();
+        $('div.card-group:not(.EHPVO)').slideToggle(100);
     });
     $('#EHPVO').find('code').html($('div.EHPVO').size());
 
 
     $('#NASH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NASH)').toggle();
+        $('div.card-group:not(.NASH)').slideToggle(100);
     });
     $('#NASH').find('code').html($('div.NASH').size());
 
+
+    $('#meta h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.meta)').slideToggle(100);
+    });
+    $('#meta').find('code').html($('div.meta').size());
+
+
+    $('#HBM h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HBM)').slideToggle(100);
+    });
+    $('#HBM').find('code').html($('div.HBM').size());
 
 
 
@@ -9069,7 +10004,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

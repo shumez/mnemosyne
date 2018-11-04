@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-08 18:14:40
+@Last modified time: 2018-11-04 13:09:37
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -90,11 +103,11 @@
 -->
 <html>
 <head>
-    <title>Tumor</title>
+    <title>Tumor-GYN</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-08 18:14:50" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-11-04 13:10:02" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -121,7 +134,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -153,6 +166,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,31 +209,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -226,7 +254,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Tumor <small class="hidden-xs-down">q GYN</small></h1>
+        <h1 class="title">Tumor <small>GYN</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -269,46 +297,13 @@
 
 
     
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="fallopian_tube_cancer">
-                <div class="page-header">
-                    <h2>Fallopian Tube Cancer <small>卵管癌</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <ul class="list-group">
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        <ul>
-                            <li>55yo</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        <ul>
-                            <li>水様性帯下</li>
-                            <li>多量の腹水貯留</li>
-                        </ul>
-                    </li>
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                </ul>
-            </div>            
-        </div>
+    
+    <div class="page-header">
+        <h2>Uterus</h2>
     </div>
 
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-12">
+        <!-- <div class="col-xs-12 col-sm-9 col-md-9">
             <h6>子宮内膜症・子宮腺筋症・子宮筋腫の比較</h6>
             <table class="table table-condensed">
                 <thead>
@@ -448,7 +443,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="endometriosis">
@@ -456,7 +451,7 @@
                     <h2>Endometriosis <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
@@ -466,54 +461,46 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>&uarr;CA125</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                        <ul>
+                            <li>対症療法
+                                <ul>
+                                    <li>NSAID</li>
+                                    <li>漢方薬</li>
+                                </ul></li>
+                            <li>ホルモン療法
+                                <ul>
+                                    <li>#1
+                                        <ul>
+                                            <li>低用量ピル LEP (Est/Prog)</li>
+                                            <li>ジエノゲスト (黄体ホルモン)</li>
+                                        </ul></li>
+                                    <li>#2
+                                        <ul>
+                                            <li>GnRH アゴニスト</li>
+                                            <li>ダナゾール</li>
+                                        </ul></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <h6>子宮内膜症の治療</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/109D060_bas_040.jpg" class="card-img-top img-fluid">
                 </div>
 
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <th colspan="2">対症療法</th>
-                            <td>
-                                <ul>
-                                    <li>NSAID</li>
-                                    <li>漢方薬</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th rowspan="2">ホルモン療法</th>
-                            <th>#1</th>
-                            <td>
-                                <ul>
-                                    <li>LEP (低用量ピル) #1</li>
-                                    <li>ジエノゲスト #1</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>#2</th>
-                            <td>
-                                <ul>
-                                    <li>GnRH アゴニスト #2</li>
-                                    <li>ダナゾール #2</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>            
         </div>
 
@@ -521,7 +508,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="adenomyosis_uteri">
                 <div class="page-header">
-                    <h2>Adenomyosis Uteri <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Adenomyosis Uteri <small></small> <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
@@ -534,13 +521,16 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
-                            <li>月経痛</li>
-                            <li>過多月経</li>
+                            <li><u>月経痛</u></li>
+                            <li><u>過多月経</u></li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>&uarr;CA125</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
@@ -550,8 +540,9 @@
                 </ul>
             </div>            
         </div>
+    </div>
 
-
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="uterine_myoma">
                 <div class="page-header">
@@ -564,24 +555,24 @@
                     <img src="https://qb.medilink-study.com/images/103I043_bas_q_010.jpg" class="card-img-top img-fluid">
                 </div>
 
-                <h6>子宮筋腫の治療</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">①経過観察：明らかに良性で，無症状，挙児希望がない場合，3～6ヵ月ごとの検診を行う．</li>
-                    <li class="list-group-item">②薬物療法：GnRHアゴニスト</li>
-                    <li class="list-group-item">③手術療法：筋腫核出術，単純子宮全摘術（根治治療）</li>
-                    <li class="list-group-item">※対症療法（貧血改善，鎮痛薬）のみ行うこともある．</li>
-                </ul>
+                
 
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
+                <ul class="list-group">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
+                        <ul>
+                            <li><u>Est依存性</u></li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
+                        <ul>
+                            <li><u>過多月経</u></li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                     </li> -->
@@ -591,28 +582,42 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
-                <!-- </ul> -->
+                </ul>
+
+
+                <h6>子宮筋腫の治療</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">①経過観察：明らかに良性で，無症状，挙児希望がない場合，3～6ヵ月ごとの検診を行う．</li>
+                    <li class="list-group-item">②薬物療法：GnRHアゴニスト</li>
+                    <li class="list-group-item">③手術療法：筋腫核出術，単純子宮全摘術（根治治療）</li>
+                    <li class="list-group-item">※対症療法（貧血改善，鎮痛薬）のみ行うこともある．</li>
+                </ul>
+
+
             </div>            
         </div>
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="sarcoma">
+            <div class="section" id="uterine_sarcoma">
                 <div class="page-header">
-                    <h2>Sarcoma <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Uterine Sarcoma <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>閉経後も増大する</li>
+                        </ul>
+                    </li>
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
-                            <li>血行性転移</li>
+                            <li><u>血行性転移</u></li>
                         </ul>
                     </li>
                     <li class="list-group-item">
@@ -631,7 +636,40 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/95D041_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
+                </div>
+
+
+
             </div>            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <table class="table table-condensed">
+                <tbody>
+                    <tr>
+                        <th>I</th>
+                        <td>限局</td>
+                    </tr>
+                    <tr>
+                        <th>II</th>
+                        <td>子宮内</td>
+                    </tr>
+                    <tr>
+                        <th>III</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>IV</th>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -649,83 +687,97 @@
                     <img src="https://qb.medilink-study.com/images/111G041_ima_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
+        </div>
+
+        <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <table class="table table-condensed">
                     <tbody>
                         <tr>
                             <th rowspan="7">Ⅰ期</th>
-                            <td colspan="3">癌が子宮頸部に限局するもの（体部浸潤の有無は考慮しない）．</td>
+                            <td colspan="3"><!-- 癌が -->子宮<u>頸部に限局</u><!-- するもの（体部浸潤の有無は考慮しない）． --></td>
                         </tr>
                         <tr>
                             <th rowspan="3">ⅠA期</th>
-                            <td colspan="2">組織学的にのみ診断できる浸潤癌．肉眼的に明らかな病巣は，たとえ表層浸潤であってもⅠB期とする．</td>
+                            <td colspan="2"><!-- 組織学的にのみ診断できる浸潤癌．肉眼的に明らかな病巣は，たとえ表層浸潤であってもⅠB期とする． --></td>
                         </tr>
                         <tr>
                             <th>ⅠA1期</th>
-                            <td>間質浸潤の深さが3mm以内で，広がりが7mmをこえないもの．</td>
+                            <td><!-- 間質浸潤の -->深さ ≤ 3mm<br>
+                                広がり < 7mm<!-- をこえないもの． --></td>
                         </tr>
                         <tr>
                             <th>ⅠA2期</th>
-                            <td>間質浸潤の深さが3mmをこえるが5mm以内で，広がりが7mmをこえないもの．</td>
+                            <td><!-- 間質浸潤の -->深さ > 3mm<!-- をこえるが -->
+                                <u>≤ 5mm</u><!-- 以内で， --><br>
+                                <u>広がり < 7mm</u><!-- をこえないもの． --></td>
                         </tr>
                         <tr>
                             <th rowspan="3">ⅠB期</th>
-                            <td colspan="2">臨床的に明らかな病巣が子宮頸部に限局するもの．または，臨床的に明らかではないがⅠA期をこえるもの．</td>
+                            <td colspan="2"><!-- 臨床的に明らかな病巣が子宮頸部に限局するもの．または，臨床的に明らかではないがⅠA期をこえるもの． --></td>
                         </tr>
                         <tr>
                             <th>ⅠB1期</th>
-                            <td>病巣が4cm以内のもの．</td>
+                            <td>病巣 ≤ 4cm</td>
                         </tr>
                         <tr>
                             <th>ⅠB2期</th>
-                            <td>病巣が4cmをこえるもの．</td>
+                            <td>病巣 > 4cm<!-- をこえるもの． --></td>
                         </tr>
                         <tr>
                             <th rowspan="5">Ⅱ期</th>
-                            <td colspan="3">癌が頸部を超えて広がっているが，骨盤壁または腟壁下1/3には達していないもの．</td>
+                            <td colspan="3"><!-- 癌が -->頸部を超えて<!-- 広がっているが， --><br>
+                                <u>骨盤壁 / 腟壁下1/3には達していない</u><!-- もの． --></td>
                         </tr>
                         <tr>
                             <th rowspan="3">ⅡA期</th>
-                            <td colspan="2">腟壁浸潤が認められるが，子宮傍組織浸潤は認められないもの．</td>
+                            <td colspan="2">腟壁浸潤が認められる<!-- が， --><br>
+                                子宮傍組織浸潤は認められない<!-- もの． --></td>
                         </tr>
                         <tr>
                             <th>ⅡA1期</th>
-                            <td>病巣が4cm以下のもの</td>
+                            <td>病巣 ≤ 4cm<!-- 以下のもの --></td>
                         </tr>
                         <tr>
                             <th>ⅡA2期</th>
-                            <td>病巣が4cmをこえるもの</td>
+                            <td>病巣 > 4cm<!-- をこえるもの --></td>
                         </tr>
                         <tr>
                             <th>ⅡB期</th>
-                            <td colspan="2">子宮傍組織浸潤が認められるもの．</td>
+                            <td colspan="2">子宮傍組織浸潤が認められる<!-- もの． --></td>
                         </tr>
                         <tr>
                             <th rowspan="3">Ⅲ期</th>
-                            <td colspan="3">癌浸潤骨盤壁まで達するもので，腫瘍塊と骨盤壁との間にcancer free spaceを残さない．または，腟壁浸潤が下1/3に達するもの．</td>
+                            <td colspan="3"><u>癌浸潤骨盤壁まで達する</u><!-- もので， -->
+                                <!-- 腫瘍塊と骨盤壁との間にcancer free spaceを残さない． --><br>
+                                <!-- または， -->腟壁浸潤が下1/3に達する<!-- もの． --></td>
                         </tr>
                         <tr>
                             <th>ⅢA期</th>
-                            <td colspan="2">腟壁浸潤は下1/3に達するが，子宮傍組織浸潤は骨盤壁まで達していないもの．</td>
+                            <td colspan="2">腟壁浸潤は下1/3に達する<!-- が， -->子宮傍組織浸潤は骨盤壁まで達していないもの．</td>
                         </tr>
                         <tr>
                             <th>ⅢB期</th>
-                            <td colspan="2">子宮傍組織浸潤が骨盤壁にまで達しているもの．または，明らかな水腎症や無機能腎を認めるもの．</td>
+                            <td colspan="2">子宮傍組織浸潤が骨盤壁にまで達している<!-- もの． --><br>
+                                <!-- または， --><!-- 明らかな --><u>水腎症</u> / 無機能腎<!-- を認めるもの． --></td>
                         </tr>
                         <tr>
                             <th rowspan="3">Ⅳ期</th>
-                            <td colspan="3">癌が小骨盤を超えて広がるか，膀胱，直腸の粘膜を侵すもの．</td>
+                            <td colspan="3">癌が小骨盤を超えて<!-- 広がるか， --><br>
+                                膀胱，直腸の粘膜を侵す<!-- もの． --></td>
                         </tr>
                         <tr>
                             <th>ⅣA期</th>
-                            <td colspan="2">膀胱，直腸の粘膜への浸潤があるもの．</td>
+                            <td colspan="2"><u>膀胱 / 直腸の粘膜への浸潤</u><!-- があるもの． --></td>
                         </tr>
                             <th>ⅣB期</th>
-                            <td colspan="2">小骨盤腔をこえて広がるもの．</td>
+                            <td colspan="2">小骨盤腔をこえて広がる<!-- もの． --></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>子宮頸癌の代表的な治療法</h6>
                 <table class="table table-condensed">
@@ -741,7 +793,8 @@
                         </tr>
                         <tr>
                             <th colspan="2">上皮内癌</th>
-                            <td rowspan="2">子宮頸部円錐切除術，単純子宮全摘出術</td>
+                            <td rowspan="2"><u>子宮頸部円錐切除術</u><br>
+                                単純子宮全摘出術</td>
                             <td rowspan="2">―</td>
                         </tr>
                         <tr>
@@ -755,7 +808,7 @@
                         </tr>
                         <tr>
                             <th>ⅠB期</th>
-                            <td rowspan="3">広汎子宮全摘術</td>
+                            <td rowspan="3"><u>広汎子宮全摘術</u></td>
                             <td rowspan="2">外照射＋腔内照射（＋/－同時放射線化学療法）</td>
                         </tr>
                         <tr>
@@ -787,7 +840,8 @@
                     <li class="list-group-item">②IB期以上には広汎子宮全摘術が施行される．</li>
                     <li class="list-group-item">③手術適応のないⅢ期以上の症例に対しては，扁平上皮癌が感受性がよいことから放射線療法が主に用いられる．</li>
                 </ul>
-                <!-- <ul class="list-group"> -->
+
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
@@ -803,19 +857,26 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                        <ul>
+                            <li><u>シスプラチン</u></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3 id="CIS">CIS <small><code></code></small></h3>
+                <h3 id="CIN">CIN <small><code></code></small></h3>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="card">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <!-- <div class="card">
                     <img src="https://qb.medilink-study.com/images/100F043.jpg" class="card-img-top img-fluid">
+                </div> -->
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108E041_ima_010.jpg" class="card-img-top img-fluid" width="%">
                 </div>
             </div>
 
@@ -824,10 +885,14 @@
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/108E041_bas_010.jpg" class="card-img-top img-fluid">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">白色上皮</li>
-                        <li class="list-group-item">白斑</li>
-                        <li class="list-group-item">赤点斑</li>
-                        <li class="list-group-item">モザイク</li>
+                        <li class="list-group-item">
+                            <ul>
+                                <li>白色上皮</li>
+                                <li>白斑</li>
+                                <li>赤点斑</li>
+                                <li><u>モザイク</u></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -843,24 +908,43 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Etiology</h6>
+                        <ul>
+                            <li><u>リンパ行性</u></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li><u>未経産婦</u></li>
+                            <li>肥満 / DM</li>
+                            <li>HTN</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item"></li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>子宮体癌の分類</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/104I055_bas_q_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>子宮頸癌と子宮体癌</h6>
-            <div class="card">
-                <img src="https://qb.medilink-study.com/images/111A047_bas_010.jpg" class="card-img-top img-fluid">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>子宮頸癌 / 子宮体癌</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111A047_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
             </div>
+
         </div>
     </div>
 
+    
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="atypical_endometrial_hyperplasia">
@@ -868,10 +952,14 @@
                     <h2>Atypical Endometrial Hyperplasia <small>子宮内膜異型性症</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <h6>子宮内膜異形増殖症</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">単純子宮全摘術</li>
-                    <li class="list-group-item">ゲスターゲン (黄体ホルモン)</li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li>単純子宮全摘術</li>
+                            <li><u>ゲスターゲン (黄体ホルモン)</u></li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <!-- <ul class="list-group"> -->
@@ -929,6 +1017,11 @@
     </div>
 
 
+    <div class="page-header">
+        <h2>Ovary</h2>
+    </div>
+
+
     <div class="section" id="ovarian_cancer">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -938,7 +1031,7 @@
             </div>
 
 
-            <div class="col-xs-12 col-sm-6 col-md-12">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-12">
                 <h6>卵巣腫瘍の臨床病理学的分類</h6>
                 <table class="table table-condensed">
                     <thead>
@@ -954,17 +1047,17 @@
                             <th rowspan="4">表層上皮性<br>
                                 ・<br>
                                 間質性腫瘍</th>
-                            <td>漿液性<!-- （囊胞） -->腺腫</td>
-                            <td>漿液性<!-- （囊胞） -->腫瘍，<br>
+                            <td>漿液性（囊胞）腺腫</td>
+                            <td>漿液性（囊胞）腫瘍，<br>
                                 境界悪性</td>
-                            <td>漿液性<!-- （囊胞） -->腺癌</td>
+                            <td>漿液性（囊胞）腺癌</td>
                             <td rowspan="4">卵巣癌</td>
                         </tr>
                         <tr>
-                            <td>粘液性<!-- （囊胞） -->腺腫</td>
-                            <td>粘液性<!-- （囊胞） -->腫瘍，<br>
+                            <td>粘液性（囊胞）腺腫</td>
+                            <td>粘液性（囊胞）腫瘍，<br>
                                 境界悪性</td>
-                            <td>粘液性<!-- （囊胞） -->腺癌</td>
+                            <td>粘液性（囊胞）腺癌</td>
                         </tr>
                         <tr>
                             <td>類内膜腺腫</td>
@@ -1027,7 +1120,7 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>腫瘍マーカー</h6>
@@ -1051,12 +1144,12 @@
                                 移行上皮癌</td>
                         </tr>
                         <tr>
-                            <td>CA19-9</td>
+                            <td><u>CA19-9</u></td>
                             <td>粘液性囊胞腺癌<br>
                                 成熟奇形腫</td>
                         </tr>
                         <tr>
-                            <td>CEA</td>
+                            <td><u>CEA</u></td>
                             <td>粘液性囊胞腺癌</td>
                         </tr>
                         <tr>
@@ -1114,7 +1207,7 @@
                     <tbody>
                         <tr>
                             <td rowspan="4">Ⅰ期</td>
-                            <td colspan="2">病変は卵巣に限局する．</td>
+                            <td colspan="2"><!-- 病変は -->卵巣に限局<!-- する． --></td>
                         </tr>
                         <tr>
                             <td>Ⅰa</td>
@@ -1132,7 +1225,7 @@
                         </tr>
                         <tr>
                             <td rowspan="4">Ⅱ期</td>
-                            <td colspan="2">病変は一側または両側の卵巣を越え骨盤内へ浸潤する．</td>
+                            <td colspan="2"><!-- 病変は一側または両側の卵巣を越え -->骨盤内へ浸潤<!-- する． --></td>
                         </tr>
                         <tr>
                             <td>Ⅱa</td>
@@ -1148,8 +1241,8 @@
                         </tr>
                         <tr>
                             <td rowspan="4">Ⅲ期</td>
-                            <td colspan="2">一側または両側の卵巣に病変を認め，さらに骨盤外の腹膜播種を認めるもの．<br>
-                                後腹膜，鼠径リンパ節転移または表在性の肝転移のあるもの．</td>
+                            <td colspan="2"><!-- 一側または両側の卵巣に病変を認め，さらに -->骨盤外の腹膜播種<!-- を認めるもの． --><br>
+                                後腹膜，鼠径リンパ節転移または表在性の肝転移<!-- のあるもの． --></td>
                         </tr>
                         <tr>
                             <td >Ⅲa</td>
@@ -1174,21 +1267,47 @@
 
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-sm-6">
-                <h3 id="serous">Serous <small><code></code></small></h3>
+                <h3 id="sEOC">sEOC <small>漿液性</small> <small><code></code></small></h3>
 
                 <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li><u>#1</u></li>
+                        </ul>
+                    </li>
                     <li class="list-group-item"><h6>Examine</h6>
                         <ul>
-                            <li>砂粒小体</li>
+                            <li><u>砂粒小体</u></li>
                         </ul>
                     </li>
                 </ul>
-            <!-- </div> -->
 
-            <!-- <div class="col-xs-12 col-sm-6 col-md-6"> -->
-                <h3 id="mucinous">Mucinous <small><code></code></small></h3>
 
-                <h6>漿液性囊胞腺腫と粘液性囊胞腺腫の対比</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/90E030.jpg" class="card-img-top img-fluid">
+                </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="mEOC">mEOC <small>粘液性</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li>&uarr;CEA &uarr;CA19-9</li>
+                            <!-- <li></li> -->
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/95G040_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
+                </div>
+
+                <h6>漿液性囊胞腺腫 / 粘液性囊胞腺腫の対比</h6>
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -1214,12 +1333,12 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 id="clear_cell">Clear Cell <small><code></code></small></h3>
+                <h3 id="OCCC">Clear Cell <small><code></code></small></h3>
 
                 <ul class="list-group">
                     <li class="list-group-item"><h6>Exam</h6>
                         <ul>
-                            <li>hobnail pattern</li>
+                            <li><u>hobnail</u> pattern</li>
                         </ul>
                     </li>
                 </ul>
@@ -1243,9 +1362,9 @@
                         </ul>
                     </li>
                 </ul>
-            <!-- </div> -->
+            </div>
 
-            <!-- <div class="col-xs-12 col-sm-6 col-md-6"> -->
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3 id="Sertoli">Sertoli <small><code></code></small></h3>
 
                 <ul class="list-group">
@@ -1290,7 +1409,10 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
 
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -1405,6 +1527,83 @@
                     <h2>Lutein Cyst <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li><u>経過観察</u></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>            
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="fallopian_tube_cancer">
+                <div class="page-header">
+                    <h2>Fallopian Tube Cancer <small>卵管癌</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        <ul>
+                            <li>55yo</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>水様性帯下</li>
+                            <li>多量の腹水貯留</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>            
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h2>Chorion</h2>
+    </div>
+
+    
+    <div class="section" id="hydatidiform_mole">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Hydatidiform Mole <small>胞状奇胎</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6"> -->
                 <!-- <ul class="list-group"> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
@@ -1425,24 +1624,18 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 <!-- </ul> -->
-            </div>            
-        </div>
-    </div>
+            <!-- </div> -->
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="hydatidiform_mole">
-                <div class="page-header">
-                    <h2>Hydatidiform Mole <small>胞状奇胎</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/105I043_ref_q_010.jpg" class="card-img-top img-fluid">
                     <div class="card-body">
                         <p>snow storm，snow flake pattern</p>
                     </div>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -1484,35 +1677,20 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
 
+            <div class="col-xs-12 col-sm-9 col-md-9">
                 <h6>存続絨毛症からの確定診断の流れ</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/111A021_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
 
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                
             </div>            
         </div>
+    </div>
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="choriocarcinoma">
                 <div class="page-header">
@@ -1532,7 +1710,7 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
-                            <li>肺転移</li>
+                            <li><u>肺転移</u></li>
                             <li>血行性転移</li>
                         </ul>
                     </li>
@@ -1549,30 +1727,20 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                         <ul>
                             <li>24w f/u hCG</li>
+                            <li>CCT
+                                <ul>
+                                    <li>MEA
+                                        <ul>
+                                            <li><u>MTX</u></li>
+                                            <li>Ethoposid</li>
+                                            <li><u>Actiomycin D</u></li>
+                                        </ul></li>
+                                </ul></li>
                         </ul>
                     </li>
                 </ul>
 
-                <h6>CCT</h6>
-                <p><u>MTX</u>, <u>アクチノマイシンD</u>, エトポシド</p>
-                <ul class="list-group">
-                    <!-- <li class="list-group-item">EMO/CO
-                        <ul>
-                            <li>エトポシド</li>
-                            <li>MTX</li>
-                            <li>アクチノマイシンD</li>
-                            <li>シクロホスファミド</li>
-                            <li>ビンクリスチン</li>
-                        </ul>
-                    </li> -->
-                    <li class="list-group-item">MEA
-                        <ul>
-                            <li>MTX</li>
-                            <li>Ethoposid</li>
-                            <li>Actiomycin D</li>
-                        </ul>
-                    </li>
-                </ul>
+               
             </div>
         </div>
 
@@ -1810,7 +1978,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-08_19:32:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-08_19:32:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_13:24:11"> </span>
                         <br>
                         <p>卵管癌で最も高頻度にみられる症状はどれか．</p>
                         
@@ -1840,10 +2009,17 @@
 
                         <h6>卵管癌</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">水様性帯下</li>
-                            <li class="list-group-item">下腹痛</li>
-                            <li class="list-group-item">腹部腫瘤</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>水様性帯下</li>
+                                    <li>下腹痛</li>
+                                    <li>腹部腫瘤</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1857,7 +2033,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-08_19:42:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-08_19:42:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:24:24"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             <u>月経痛</u>と<u>性交痛</u>とを主訴に来院した．<br>
@@ -1878,9 +2055,9 @@
                     <div class="card-body">
 
                         <ul>
-                            <li>月経痛, 性交痛 &rAarr; s/o 子宮内膜症</li>
-                            <li>月経時以外にも下腹部痛 &rAarr; 子宮内膜症, 卵巣嚢胞</li>
-                            <li>卵巣が鶏卵大に触れる &rAarr; r/o 子宮腺筋症, s/o 子宮内膜症 (チョコレート嚢胞)</li>
+                            <li>月経痛, 性交痛 &xrArr; s/o 子宮内膜症</li>
+                            <li>月経時以外にも下腹部痛 &xrArr; 子宮内膜症, 卵巣嚢胞</li>
+                            <li>卵巣が鶏卵大に触れる &xrArr; r/o 子宮腺筋症, s/o 子宮内膜症 (チョコレート嚢胞)</li>
                             <li></li>
                             <li></li>
                         </ul>
@@ -1903,11 +2080,12 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/105G058_bas_q_010.jpg" class="card-img-top img-fluid">
                         </div>
-                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/105G058_bas_q_010.jpg" class="img-fluid"> -->
+
 
                         <h6>性交痛の原因となる病態</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．子宮付属器周囲癒着による
+                            <li class="list-group-item">
+                                1．子宮付属器周囲癒着による
                                 <ul>
                                     <li>骨盤内感染症（PID）</li>
                                     <li>子宮内膜症</li>
@@ -1916,7 +2094,8 @@
                                     <li>癒着性子宮後転症</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">2．腟狭小，腟上皮伸展不良
+                            <li class="list-group-item">
+                                2．腟狭小，腟上皮伸展不良
                                 <ul>
                                     <li>萎縮性腟炎</li>
                                 </ul>
@@ -1924,6 +2103,12 @@
                         </ul>
 
                         <img src="https://www.qb-online.com/img_kaisetsu/105G058_ref_q_010.jpg" class="img-fluid">
+
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/105G058_bas_q_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -1997,7 +2182,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-08_19:53:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-08_19:53:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_13:30:15"> </span>
                         <br>
                         <p>32歳の女性．未経妊．<br>
                             <u>月経痛</u>を主訴に来院した．<br>
@@ -2108,7 +2294,7 @@
                                         <ul>
                                             <li>月経を重ねるたびに増強する</li>
                                         </ul>
-                                    </td>s
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>過多月経</th>
@@ -2381,7 +2567,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/104A038.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/104A038.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/104A038.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2428,7 +2614,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-08_20:56:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-08_20:56:19"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_13:37:42"> </span>
                         <br>
                         <p>37歳の女性．1回経妊0回経産婦．<br>
                             <u>不正性器出血</u>を主訴に来院した．<br>
@@ -2453,7 +2640,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/110A049_ima_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/110A049_ima_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/110A049_ima_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">子宮腺筋症</p>
 
@@ -2541,7 +2728,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/111D020.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/111D020.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/111D020.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2618,7 +2805,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/103I043.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/103I043.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/103I043.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2694,7 +2881,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/102D060.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/102D060.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/102D060.jpg" class="card-img-top img-fluid" width="%">
 
 
                     <div class="card-body">
@@ -2748,7 +2935,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/109I058.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/109I058.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/109I058.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2796,14 +2983,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group uterine_myoma" id="q14">
+            <div class="card-group uterine_myoma info" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://www.qb-online.com/#/list/94B63" target="_blank">94B63</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-08_21:21:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-08_21:21:56"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:28:04"> </span>
                         <br>
                         <p>子宮筋腫について正しいのはどれか．2つ選べ．</p>
 
@@ -2877,6 +3065,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -2889,14 +3080,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-08_21:26:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-08_21:26:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:29:46"> </span>
                         <br>
                         <p>正常月経周期を有する女性の骨盤部MRIのT2強調矢状断像を次に示す．<br>
                             この患者にみられる症状はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/108A013.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/108A013.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/108A013.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2929,14 +3121,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group sarcoma" id="q16">
+            <div class="card-group uterine_sarcoma fig" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95D41" target="_blank">95D41</a> 診断 &xrArr; Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-08_21:29:59"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-08_21:29:59"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_13:59:28"> </span>
                         <br>
                         <p>63歳の女性．<br>
                             2ヵ月前からの不正性器出血，体重減少および下腹部のしこりを訴え来院した．<br>
@@ -2947,8 +3140,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/95D041A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/95D041B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/95D041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/95D041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/95D041A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/95D041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2964,7 +3157,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/95D041_ima_q_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/95D041_ima_q_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/95D041_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">子宮肉腫</p>
 
@@ -3037,26 +3230,30 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group cervical_cancer" id="q18">
+            <div class="card-group cervical_cancer  CIN" id="q18">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/102I41" target="_blank">102I41</a> コルポスコピー &xrArr; 診断
+                        <a href="https://qb.medilink-study.com/#/Answer/102I41" target="_blank">102I41</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-08_21:38:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-08_21:38:27"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:30:28"> </span>
                         <br>
                         <p>27歳の女性．1回経妊，未経産．<br>
                             子宮頸癌検診での細胞診の結果がクラスⅢbのため来院した．<br>
-                            特に症状はなく，既往歴にも特記すべきことはない．喫煙は15本/日を5年間．母が子宮頸癌で，58歳時に手術を受けている．内診所見では腟鏡診で異常なく，双合診で子宮は鶏卵大に触れ，両側付属器は触知しない．直腸診で両側の子宮傍組織に抵抗を触れない．<br>
+                            特に症状はなく，既往歴にも特記すべきことはない．<br>
+                            喫煙は15本/日を5年間．<br>
+                            母が子宮頸癌で，58歳時に手術を受けている．<br>
+                            内診所見では腟鏡診で異常なく，双合診で子宮は鶏卵大に触れ，両側付属器は触知しない．直腸診で両側の子宮傍組織に抵抗を触れない．<br>
                             コルポスコピー所見（A，B）を次に示す．<br>
                             最も考えられる子宮頸部疾患はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/102I041A.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/102I041B.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/102I041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/102I041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/102I041A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/102I041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3094,18 +3291,20 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group cervical_cancer CIS" id="q19">
+            <div class="card-group cervical_cancer CIN info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100F43" target="_blank">100F43</a> コルポスコピー &xrArr; 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-08_21:41:42"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-08_21:41:42"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:32:37"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             <u>帯下の増加</u>を主訴に来院した．<br>
-                            内診と細胞診とを行った後，コルポスコピィを施行した．酢酸加工後のコルポスコピィ写真を次に示す．<br>
+                            内診と細胞診とを行った後，コルポスコピィを施行した．<br>
+                            酢酸加工後のコルポスコピィ写真を次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
 
@@ -3146,28 +3345,35 @@
                             <li class="list-group-item">モザイク</li>
                             <li class="list-group-item">赤点斑</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group cervical_cancer CIS info" id="q20">
+            <div class="card-group cervical_cancer CIN info fig" id="q20">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/108E41" target="_blank">108E41</a> コルポスコピー &xrArr; 診断
+                        <a href="https://qb.medilink-study.com/#/Answer/108E41" target="_blank">108E41</a> コルポスコピー
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-08_21:47:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-08_21:47:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:03:12"> </span>
                         <br>
                         <p>39歳の女性．<br>
                             子宮頸がん検診の細胞診で異常を指摘されたため来院した．<br>
-                            不正性器出血はなかった．初経12歳．月経周期28日，整．腟鏡診で分泌物は白色少量である．酢酸加工後のコルポスコピィの写真を次に示す．<br>
+                            不正性器出血はなかった．<br>
+                            初経12歳．月経周期28日，整．<br>
+                            腟鏡診で分泌物は白色少量である．<br>
+                            酢酸加工後のコルポスコピィの写真を次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/108E041.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/108E041.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/108E041.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3183,9 +3389,9 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/108E041_ima_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/108E041_ima_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/108E041_ima_010.jpg" class="card-img-top img-fluid" width="%">
 
-                        <p class="q_dx">異型性</p>
+                        <p class="q_dx">異型性 CIS </p>
 
                         <p class="q_answer_true">e</p>
 
@@ -3231,7 +3437,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group cervical_cancer CIS pri info 110" id="q21">
+            <div class="card-group cervical_cancer CIN pri info 110" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110I62" target="_blank" id="">110I62</a>
@@ -3336,14 +3542,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group cervical_cancer " id="q22">
+            <div class="card-group cervical_cancer fig" id="q22">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/98A41" target="_blank">98A41</a> コルポスコピー, 細胞診  &xrArr; 診断
+                        <a href="https://qb.medilink-study.com/#/Answer/98A41" target="_blank">98A41</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_14:07:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_14:07:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:33:55"> </span>
                         <br>
                         <p>30歳の女性．<br>
                             多量の粘稠性帯下を主訴に来院した．子宮頸部は腫大していたが，子宮体部は正常大で，両側付属器は触知しない．頸部擦過細胞診のPapanicolaou染色標本（A）とコルポスコピィ写真（B）とを次に示す．<br>
@@ -3352,8 +3559,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/98A041A.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/98A041B.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/98A041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/98A041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/98A041A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/98A041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3370,7 +3577,8 @@
 
                         <!-- <img src="https://www.qb-online.com/img/98A041_ima_q_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/98A041_ima_q_010.jpg" class="card-img-top img-fluid">
-                        <p class="q_dx">腺癌細胞</p>
+
+                        <p>腺癌細胞</p>
 
                         <p class="q_dx">子宮頚部腺癌</p>
 
@@ -3388,20 +3596,22 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group cervical_cancer info 110" id="q23">
+            <div class="card-group cervical_cancer CIN info 110" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110I7" target="_blank" id="">110I7</a> 病理
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-09_14:16:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_14:16:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:06:13"> </span>
                         <br>
-                        <p>子宮頸部細胞診とコルポスコピィで異常所見を認めた患者に狙い組織診を行った．その際のH-E染色標本（A，B）を次に示す．<br>
+                        <p>子宮頸部細胞診とコルポスコピィで異常所見を認めた患者に狙い組織診を行った．<br>
+                            その際のH-E染色標本（A，B）を次に示す．<br>
                             診断はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/110I007A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/110I007B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/110I007A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/110I007B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3437,12 +3647,14 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/110I007_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group cervical_cancer " id="q24">
+            <div class="card-group cervical_cancer CIN" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99G39" target="_blank">99G39</a> 病理 &xrArr; 診断
@@ -3474,7 +3686,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/99G039_ima_q_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/99G039_ima_q_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/99G039_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">子宮頚部上皮内癌</p>
 
@@ -3506,7 +3718,7 @@
                             次に行う検査はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111G041.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/111G041.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3548,7 +3760,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_14:29:42"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_14:29:42"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:35:23"> </span>
                         <br>
                         <p>26歳の女性．未経妊．<br>
                         3ヵ月前からの<u>性交時出血</u>を主訴に来院した．<br>
@@ -3577,7 +3790,7 @@
 
 
                         <ul>
-                            <li>癌細胞がオレンジ &rAarr; 細胞質内のタンパク量&uarr;, 細胞質の厚み&uarr;</li>
+                            <li>癌細胞がオレンジ &xrArr; 細胞質内のタンパク量&uarr;, 細胞質の厚み&uarr;</li>
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/106D046_ima_q_010.jpg" class="img-fluid"> -->
@@ -3606,16 +3819,20 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_14:38:54"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_14:38:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:39:46"> </span>
                         <br>
                         <p>48歳の女性．<br>
                         <u>性器出血</u>を主訴に来院した．<br>
                             5年前から<u>性交時に性器出血</u>を認め，<br>
                             1年前から<u>下腹部痛</u>と<u>腰痛</u>とを自覚している．<br>
-                            <u>子宮頸部に径7cmで易出血性の腫瘤</u>を認めた．<u>子宮頸癌ⅢB期</u>と診断され，手術療法は適応外と判断された．<br>
+                            <u>子宮頸部に径7cmで易出血性の腫瘤</u>を認めた．<br>
+                            <u>子宮頸癌ⅢB期</u>と診断され，手術療法は適応外と判断された．<br>
                             体温37.2℃．<br>
-                            血液所見：赤血球285万，<u>Hb 7.0g/dL</u>，Ht 23％，網赤血球1.0％，白血球9,500，血小板25万．<br>
-                            血液生化学所見：総蛋白6.8g/dL，アルブミン3.5g/dL，尿素窒素28mg/dL，クレアチニン0.7mg/dL，AST 30IU/L，ALT 22IU/L．CRP 2.4mg/dL．<br>
+                            血液所見：<br>
+                            赤血球285万，<u>Hb 7.0g/dL</u>，Ht 23％，網赤血球1.0％，白血球9,500，血小板25万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.8g/dL，アルブミン3.5g/dL，尿素窒素28mg/dL，クレアチニン0.7mg/dL，AST 30IU/L，ALT 22IU/L．CRP 2.4mg/dL．<br>
                             治療として適切なのはどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -3648,7 +3865,6 @@
                             <img src="https://qb.medilink-study.com/images/105E059_bas_q_010.jpg" class="card-img-top img-fluid">
                         </div>
 
-                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/105E059_bas_q_010.jpg" class="img-fluid"> -->
 
                         <h6>放射線治療による合併症</h6>
                         <table class="table table-condensed">
@@ -3705,6 +3921,12 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/105E059_bas_q_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -3717,16 +3939,20 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_14:49:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_14:49:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:41:49"> </span>
                         <br>
                         <p>43歳の女性．3回経妊2回経産婦．<br>
                             <u>不正性器出血</u>と<u>腰痛</u>とを主訴に来院した．<br>
                             月経周期は28日型．<br>
                             2ヵ月前から不正性器出血と腰痛とが出現したため受診した．<br>
                             腟鏡診で<u>子宮腟部にカリフラワー状</u>で<u>易出血性の腫瘤</u>を認める．内診で<u>子宮頸部から右側骨盤壁に連続する硬結</u>を触知する．<br>
-                            血液所見：赤血球350万，Hb 11.0g/dL，Ht 30％，白血球9,000，血小板42万．<br>
-                            血液生化学所見：総蛋白7.0g/dL，クレアチニン0.9mg/dL，AST 32IU/L，ALT 30IU/L，Na 140mEq/L，K 3.8mEq/L，Cl 104mEq/L．<br>
-                            子宮腟部生検の組織診では<u>扁平上皮癌</u>である．全身検索で遠隔転移を認めない．<br>
+                            血液所見：<br>
+                            赤血球350万，Hb 11.0g/dL，Ht 30％，白血球9,000，血小板42万．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.0g/dL，クレアチニン0.9mg/dL，AST 32IU/L，ALT 30IU/L，Na 140mEq/L，K 3.8mEq/L，Cl 104mEq/L．<br>
+                            子宮腟部生検の組織診では<u>扁平上皮癌</u>である．<br>
+                            全身検索で遠隔転移を認めない．<br>
                             造影剤静注の10分後の静脈性尿路造影像を次に示す．<br>
                             最も適切な治療法はどれか．</p>
                     </div>
@@ -3755,7 +3981,8 @@
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/109D037_ima_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/109D037_ima_010.jpg" class="card-img-top img-fluid" width="50%">
+                        <img src="https://qb.medilink-study.com/images/109D037_ima_010.jpg" class="card-img-top img-fluid" width="%">
+
                         <ul>
                             <li>○: Rt 水腎症</li>
                             <li>&larr;: 造影剤排出に乏しい</li>
@@ -3921,7 +4148,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_15:11:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_15:11:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:46:05"> </span>
                         <br>
                         <p>55歳の4回経産婦．<br>
                             性器出血を主訴に来院した．<br>
@@ -3929,7 +4157,7 @@
                             内診では，子宮は可動性がやや制限されているが正常大である．両側の子宮付属器は触知しない．直腸診で<u>右子宮傍結合織に弾性硬の抵抗を触知</u>するが骨盤壁には達しておらず，左子宮傍結合織は軟である．<br>
                             子宮腟部・頸管細胞診はClassⅤ，子宮内膜細胞診はClassⅡである．<br>
                             胸部X線写真，腹部CT，大腸内視鏡検査，静脈性尿路造影検査，膀胱鏡検査および骨シンチグラフィで異常所見を認めない．<br>
-                            骨盤部MRIで子宮頸部に最大径約3cmの腫瘤を認める．<br>
+                            骨盤部MRIで<u>子宮頸部に最大径約3cmの腫瘤</u>を認める．<br>
                             最も適切な治療はどれか．</p>
 
                         <ol type="a">
@@ -3960,18 +4188,22 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group cervical_cancer " id="q30">
+            <div class="card-group cervical_cancer info" id="q30">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/92F32" target="_blank">92F32</a> 子宮頸癌 &xrArr; 診断 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_15:16:22"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_15:16:22"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:09:10"> </span>
                         <br>
                         <p>42歳の女性．<br>
                             子宮腟部の擦過細胞診で陽性であると言われて来院した．<br>
-                            腟鏡診で子宮腟部に限局して粘液の付着した隆起性腫瘤が認められる．内診上，子宮は正常大で左右の付属器は触知しない．<u>直腸診で左子宮傍結合織に結節状の抵抗を触知</u>するが骨盤壁には達していない．右子宮傍結合織は軟．静脈性尿路造影と膀胱鏡とでは異常所見を認めない．<br>
+                            腟鏡診で子宮腟部に限局して粘液の付着した隆起性腫瘤が認められる．<br>
+                            内診上，子宮は正常大で左右の付属器は触知しない．<br>
+                            <u>直腸診で左子宮傍結合織に結節状の抵抗を触知</u>するが骨盤壁には達していない．右子宮傍結合織は軟．<br>
+                            静脈性尿路造影と膀胱鏡とでは異常所見を認めない．<br>
                             子宮内膜生検では<u>分泌期内膜</u>が認められる．<br>
                             子宮腟部腫瘤生検のH-E染色標本を次に示す．<br>
                             この腫瘍について正しいのはどれか．2つ選べ．</p>
@@ -4053,7 +4285,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_15:22:20"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_15:22:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:11:31"> </span>
                         <br>
                         <p>子宮頸癌の術式決定に必要な検査はどれか．3つ選べ．</p>
 
@@ -4093,7 +4326,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_15:25:20"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_15:25:20"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:17:49"> </span>
                         <br>
                         <p>子宮頸癌について正しいのはどれか．2つ選べ．</p>
                         
@@ -4116,7 +4350,12 @@
 
                         <ol type="a">
                             <li></li>
-                            <li>IA: 間質浸潤 深さ ≤ 5mm, 縦軸方向 ≤ 7mm</li>
+                            <li>IA: 間質浸潤
+                                <ul>
+                                    <li>深さ ≤ 5mm</li>
+                                    <li>縦軸方向 ≤ 7mm</li>
+                                </ul>
+                            </li>
                             <li>IB: 子宮頸部に限局</li>
                             <li></li>
                             <li></li>
@@ -4133,7 +4372,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_15:31:36"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_15:31:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:20:59"> </span>
                         <br>
                         <p>子宮頸部の異形成について正しいのはどれか．</p>
 
@@ -4165,6 +4405,9 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/91A065_bas_q_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -4177,7 +4420,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_15:38:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_15:38:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:23:22"> </span>
                         <br>
                         <p>54歳の女性．<br>
                             1ヵ月前から時々<u>少量の性器出血</u>があり来院した．<br>
@@ -4188,8 +4432,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/96A040A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/96A040B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/96A040A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/96A040B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/96A040A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/96A040B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -4206,20 +4450,21 @@
 
                         <ul>
                             <li>不正性器出血</li>
-                            <li>閉経後, 未経妊 &rAarr; s/o 乳癌, 子宮体癌</li>
+                            <li>閉経後, 未経妊 &xrArr; s/o 乳癌, 子宮体癌</li>
                             <!-- <li></li> -->
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/96A040_ima_q_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/96A040_ima_q_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/96A040_ima_q_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/96A040_ima_q_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/96A040_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/96A040_ima_q_020.jpg" class="card-img-top img-fluid" width="%">
 
                         <ul>
                             <li>異型度++</li>
                             <li>N/C Hi</li>
                             <li>class V</li>
                         </ul>
+
                         <p class="q_dx">子宮内膜癌 (子宮体癌)</p>
 
                         <p class="q_answer_true">d</p>
@@ -4234,18 +4479,38 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item">1．<br>
-                                コルポイリーゼ：分娩時，腟の進展性を高めるために風船を挿入する．<br>
-                                コルポスコープ：腟拡大鏡診<br>
+                            <li class="list-group-item">
+                                1．
+                                <ul>
+                                    <li>コルポイリーゼ：<br>
+                                        分娩時，腟の進展性を高めるために風船を挿入する．</li>
+                                    <li>コルポスコープ：<br>
+                                        腟拡大鏡診</li>
+                                </ul>
                                 ※（コルポとはラテン語で腟という意味）
-                            <li class="list-group-item">2．<br>
-                                メトロイリーゼ：分娩時，子宮頸管の開大と熟化のために風船を挿入する．<br>
-                                ヒステロスコープ：子宮鏡（内視鏡検査）<br>
-                                ヒステロザルピンゴグラフィー（HSG）：子宮卵管造影<br>
+                            </li>
+                            <li class="list-group-item">
+                                2．
+                                <ul>
+                                    <li>メトロイリーゼ：<br>
+                                    分娩時，子宮頸管の開大と熟化のために風船を挿入する．</li>
+                                    <li>ヒステロスコープ：<br>
+                                        子宮鏡（内視鏡検査）</li>
+                                    <li>ヒステロザルピンゴグラフィー（HSG）：<br>
+                                        子宮卵管造影</li>
+                                </ul>
                                 ※（メトロ，ヒステロとは子宮の意味）
-                            <li class="list-group-item">3．<br>
-                                ラパロスコープ：腹腔鏡</li>
+                            </li>
+                            <li class="list-group-item">3．
+                                <ul>
+                                    <li>ラパロスコープ：<br>
+                                        腹腔鏡</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -4254,14 +4519,16 @@
             <div class="card-group uterine_cancer" id="q35">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/100C22-24" target="_blank">100C22-24</a> 検査 / 治療
+                        <a href="https://qb.medilink-study.com/#/Answer/100C22" target="_blank">100C22-24</a> 検査 / 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-09_15:48:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-11-04_15:50:21"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_15:48:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_15:48:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:50:31"> </span>
                          / 
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill rev" id="2018-09-09_15:48:55"> </span>
@@ -4270,13 +4537,21 @@
 
                             65歳の女性．<br>
                             <u>閉経後</u>の<u>性器出血</u>を主訴に来院した．<br>
-                            現病歴：3ヵ月前から少量の性器出血が持続し，2週前から増量している．3回経妊，3回経産．閉経52歳．<br>
-                            既往歴：60歳から高血圧症で降圧薬を服用している．<br>
-                            現　症：身長157cm，体重68kg．体温36.4℃．脈拍72/分，整．血圧148/88mmHg．表在リンパ節に腫大を認めない．心音と呼吸音は正常である．腹部は平坦で，腫瘤を触れない．下肢に浮腫を認めない．内診で<u>腟分泌物は暗赤色</u>，中等量．子宮腟部に異常を認めない．双合診で<u>子宮体部は鵞卵大に腫大</u>しているが，付属器は触れない．直腸診で子宮傍組織は軟らかい．<br>
+                            現病歴：<br>
+                            3ヵ月前から少量の性器出血が持続し，2週前から増量している．3回経妊，3回経産．閉経52歳．<br>
+                            既往歴：<br>
+                            60歳から高血圧症で降圧薬を服用している．<br>
+                            現　症：<br>
+                            身長157cm，体重68kg．体温36.4℃．脈拍72/分，整．血圧148/88mmHg．<br>
+                            表在リンパ節に腫大を認めない．心音と呼吸音は正常である．腹部は平坦で，腫瘤を触れない．下肢に浮腫を認めない．内診で<u>腟分泌物は暗赤色</u>，中等量．子宮腟部に異常を認めない．<br>
+                            双合診で<u>子宮体部は鵞卵大に腫大</u>しているが，付属器は触れない．直腸診で子宮傍組織は軟らかい．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（－），潜血（－）．<br>
-                            血液所見：赤血球316万，Hb 10.2g/dL，Ht 31％，白血球6,400，血小板28万．血清生化学所見：総蛋白7.2g/dL，アルブミン4.8g/dL，尿素窒素18mg/dL，クレアチニン1.3mg/dL，AST 18単位，ALT 14単位，LD 248単位（基準176～353）．<br>
-                            免疫学所見：CEA 3.7ng/mL（基準5以下），CA19-9 33U/mL（基準37以下），<u>CA125 248U/mL</u>（基準35以下）．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），潜血（－）．<br>
+                            血液所見：<br>
+                            赤血球316万，Hb 10.2g/dL，Ht 31％，白血球6,400，血小板28万．血清生化学所見：総蛋白7.2g/dL，アルブミン4.8g/dL，尿素窒素18mg/dL，クレアチニン1.3mg/dL，AST 18単位，ALT 14単位，LD 248単位（基準176～353）．<br>
+                            免疫学所見：<br>
+                            CEA 3.7ng/mL（基準5以下），CA19-9 33U/mL（基準37以下），<u>CA125 248U/mL</u>（基準35以下）．<br>
                             子宮頸部細胞診クラスⅠ．<br>
                             胸部X線撮影で異常を認めない．経腟超音波写真を次に示す．</p>
                     </div>
@@ -4320,7 +4595,7 @@
 
                         
                         <!-- <img src="https://www.qb-online.com/img/100C022_ima_q_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/100C022_ima_q_010.jpg" class="card-img-top img-fluid" width="50%">
+                        <img src="https://qb.medilink-study.com/images/100C022_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">子宮体癌</p>
 
@@ -4360,18 +4635,19 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group atypical_endometrial_hyperplasia info" id="q36">
+            <div class="card-group atypical_endometrial_hyperplasia Prog info" id="q36">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95D40" target="_blank">95D40</a> 子宮内膜異型増殖症 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_15:57:13"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_15:57:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:29:29"> </span>
                         <br>
                         <p>26歳の女性．<br>
                             3年間の不妊を訴えて来院した．<br>
-                            内診では子宮は正常大であるが，超音波検査で子宮内膜の肥厚がみられ，内膜掻爬組織診で子宮内膜異型増殖症と診断された．<br>
+                            内診では子宮は正常大であるが，超音波検査で子宮内膜の肥厚がみられ，内膜掻爬組織診で<u>子宮内膜異型増殖症</u>と診断された．<br>
                             この患者に適切な治療法はどれか．</p>
 
 
@@ -4386,13 +4662,7 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
-                        <h6>子宮内膜異形増殖症</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">単純子宮全摘術</li>
-                            <li class="list-group-item">ゲスターゲン (黄体ホルモン)</li>
-                        </ul>
+                        
 
                         <p class="q_dx">不妊症, 子宮内膜異形増殖症</p>
 
@@ -4405,6 +4675,15 @@
                             <li></li>
                             <li>挙児希望の不妊女性なので, 温存を選択</li>
                         </ol>
+
+
+                        <h6>子宮内膜異形増殖症</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">単純子宮全摘術</li>
+                            <li class="list-group-item">ゲスターゲン (黄体ホルモン)</li>
+                        </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -4541,14 +4820,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_16:15:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_16:15:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:52:37"> </span>
                         <br>
                         <p>60歳の女性．
                             未経妊．51歳で閉経．<br>
                             子宮がん検診を定期的に受けている．<br>
                             半年前の検診では異常がなかったが，最近3ヵ月間断続的に<u>性器出血</u>を認める．<br>
                             2年前から<u>糖尿病</u>で治療を受けている．<br>
-                            身長155cm，体重75kg．経腟超音波検査で子宮内膜厚は35mm．子宮内膜組織のH-E染色標本を次に示す．<br>
+                            身長155cm，体重75kg．<br>
+                            経腟超音波検査で子宮内膜厚は35mm．子宮内膜組織のH-E染色標本を次に示す．<br>
                             患者に対する説明で適切なのはどれか．2つ選べ．</p>
                     </div>
 
@@ -4722,14 +5003,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group uterine_cancer pri print" id="q42">
+            <div class="card-group uterine_cancer pri  info" id="q42">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I11" target="_blank">108I11</a> 子宮体癌のリスクファクター
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_16:34:32"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_16:34:32"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:53:42"> </span>
                         <br>
                         <p>子宮体癌のリスクファクターでないのはどれか．</p>
 
@@ -4776,7 +5058,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_16:40:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_16:40:16"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:33:32"> </span>
                         <br>
                         <p>子宮体癌について正しいのはどれか．2つ選べ．</p>
 
@@ -4911,7 +5194,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_17:00:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_17:00:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:03:41"> </span>
                         <br>
                         <p>子宮内膜類内膜腺癌Grade 1で正しいのはどれか．3つ選べ．</p>
 
@@ -4974,11 +5258,12 @@
             <div class="card-group uterine_cancer cervical_cancer info" id="q46">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/89B61" target="_blank">89B61</a>　子宮癌 病期 - 検査
+                        <a href="https://qb.medilink-study.com/#/Answer/89B61" target="_blank">89B61</a> 病期 - 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_17:13:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_17:13:31"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:35:37"> </span>
                         <br>
                         <p>子宮癌の臨床進行期を決定するうえで正しい組合せはどれか．</p>
 
@@ -5024,18 +5309,36 @@
 
                         <h6>子宮頸癌の治療</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①上皮内癌で妊娠希望の場合は，円錐切除のみで経過観察とする．</li>
-                            <li class="list-group-item">②IB期以上には広汎子宮全摘術が施行される．</li>
-                            <li class="list-group-item">③手術適応のないⅢ期以上の症例に対しては，扁平上皮癌が感受性がよいことから放射線療法が主に用いられる．</li>
+                            <li class="list-group-item">
+                                ①上皮内癌で妊娠希望の場合は，円錐切除のみで経過観察とする．
+                            </li>
+                            <li class="list-group-item">
+                                ②IB期以上には広汎子宮全摘術が施行される．
+                            </li>
+                            <li class="list-group-item">
+                                ③手術適応のないⅢ期以上の症例に対しては，扁平上皮癌が感受性がよいことから放射線療法が主に用いられる．
+                            </li>
                         </ul>
 
                         <h6>子宮体癌の治療</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①子宮体癌Ⅰ期の標準治療は単純子宮全摘術である．</li>
-                            <li class="list-group-item">②子宮体癌Ⅱ期の標準治療は広汎子宮全摘術である．</li>
-                            <li class="list-group-item">③子宮体癌Ⅲ期＋Ⅳ期は子宮摘出術と腫瘍減量術が可能であれば，手術療法を選択することが望ましい．</li>
-                            <li class="list-group-item">④不完全摘出の進行癌（Ⅲ・Ⅳ期）または遠隔転移例（ⅣB期）・再発癌に対して化学療法は有用である．</li>
+                            <li class="list-group-item">
+                                ①子宮体癌Ⅰ期の標準治療は単純子宮全摘術である．
+                            </li>
+                            <li class="list-group-item">
+                                ②子宮体癌Ⅱ期の標準治療は広汎子宮全摘術である．
+                            </li>
+                            <li class="list-group-item">
+                                ③子宮体癌Ⅲ期＋Ⅳ期は子宮摘出術と腫瘍減量術が可能であれば，手術療法を選択することが望ましい．
+                            </li>
+                            <li class="list-group-item">
+                                ④不完全摘出の進行癌（Ⅲ・Ⅳ期）または遠隔転移例（ⅣB期）・再発癌に対して化学療法は有用である．
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -5087,7 +5390,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_17:21:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_17:21:39"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_16:04:29"> </span>
                         <br>
                         <p>女性生殖器から細胞診の検体を採取するために用いる器具の写真を次に示す．<br>
                             これらの器具を用いて検査する共通の部位はどれか．</p>
@@ -5138,11 +5442,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_17:27:43"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_17:27:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_14:39:11"> </span>
                         <br>
                         <p>30歳の女性．未経妊．<br>
                             月経不順と過多月経とを主訴に来院した．<br>
-                            内診では子宮は正常大で，付属器には腫瘤を触知しない．経腟超音波検査では，<u>子宮内膜の厚さは24mm</u>で，<u>卵巣の被膜下には多数の小囊胞</u>を認め，軽度に腫大している．<br>
+                            内診では子宮は正常大で，付属器には腫瘤を触知しない．<br>
+                            経腟超音波検査では，<u>子宮内膜の厚さは24mm</u>で，<u>卵巣の被膜下には多数の小囊胞</u>を認め，<u>軽度に腫大</u>している．<br>
                             検査として適切なのはどれか．2つ選べ．</p>
 
 
@@ -5175,13 +5481,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group ovarian_cancer info" id="q50">
+            <div class="card-group ovarian_cancer sEOC endometriosis info 110" id="q50">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110A6" target="_blank" id="">110A6</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110A6" target="_blank" id="">110A6</a> Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-09_17:35:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_17:35:04"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:05:12"> </span>
                         <br>
                         <p>卵巣癌について正しいのはどれか．</p>
 
@@ -5334,14 +5641,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group ovarian_cancer info" id="q51">
+            <div class="card-group ovarian_cancer sEOC OCCC info" id="q51">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://www.qb-online.com/#/list/107A41" target="_blank">107A41</a> 
+                        <a href="https://www.qb-online.com/#/list/107A41" target="_blank">107A41</a> Ex
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_20:04:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_20:04:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_16:08:08"> </span>
                         <br>
                         <p>58歳の女性．<br>
                             <u>腹部膨満感</u>と<u>全身倦怠感</u>とを主訴に来院した．<br>
@@ -5359,8 +5667,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/107A041A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/107A041B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/107A041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/107A041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/107A041A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/107A041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -5492,23 +5800,30 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group ovarian_cancer serous info" id="q52">
+            <div class="card-group ovarian_cancer sEOC info" id="q52">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/90E30" target="_blank">90E30</a> 診断 &xrArr; Qs
+                        <a href="https://qb.medilink-study.com/#/Answer/90E30" target="_blank">90E30</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_20:47:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_20:47:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:43:13"> </span>
                         <br>
                         <p>53歳の女性．<br>
-                            下腹部の膨満感を主訴として来院した．<br>
-                            内診と画像診断とで両側の卵巣腫瘍が確認され卵巣癌と診断した．開腹手術を行ったところ，左側卵巣に手拳大，右側卵巣に鶏卵大の一部充実性腫瘤を認めた．子宮および卵管表面に約1cmの播種巣が数ヵ所存在したが，いずれも骨盤内であり，その他の部位には病変は認められなかった．摘出卵巣腫瘍のH-E染色標本を次に示す．砂粒小体の沈着を伴う腺癌である．<br>
+                            <u>下腹部の膨満感</u>を主訴として来院した．<br>
+                            内診と画像診断とで両側の卵巣腫瘍が確認され<u>卵巣癌</u>と診断した．<br>
+                            開腹手術を行ったところ，左側卵巣に手拳大，右側卵巣に鶏卵大の一部充実性腫瘤を認めた．<u>子宮および卵管表面に約1cmの播種巣</u>が数ヵ所存在したが，いずれも<u>骨盤内</u>であり，その他の部位には病変は認められなかった．<br>
+                            摘出卵巣腫瘍のH-E染色標本を次に示す．<br>
+                            <u>砂粒小体の沈着</u>を伴う<u>腺癌</u>である．<br>
                             この患者について正しいのはどれか．2つ選べ．</p>
                     </div>
 
@@ -5614,28 +5929,34 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group ovarian_cancer mucinous info" id="q53">
+            <div class="card-group ovarian_cancer mEOC info" id="q53">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://www.qb-online.com/#/list/95G40" target="_blank">95G40</a> 
+                        <a href="https://www.qb-online.com/#/list/95G40" target="_blank">95G40</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_21:02:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_21:02:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:49:11"> </span>
                         <br>
                         <p>53歳の女性．<br>
                             1ヵ月前から<u>下腹痛</u>に加え腹部膨満感があり，近医を受診し<u>下腹部腫瘤</u>を指摘され来院した．<br>
-                            閉経51歳．身長158cm，体重57kg．腹囲83cmで臍上に達する腫瘤を認めた．<br>
+                            閉経51歳．身長158cm，体重57kg．<br>
+                            腹囲83cmで臍上に達する腫瘤を認めた．<br>
                             内診では<u>子宮は凹凸のある腫瘤</u>と一塊となり，可動性はなかった．<br>
-                            腫瘍マーカーは<u>CEA 77.4ng/mL</u>（基準5以下），<u>CA19-9 805.3U/mL</u>（基準37以下），<u>CA125 52.0U/mL</u>（基準35以下）であった．<br>
-                            下腹部MRIのT2強調像（A）を次に示す．卵巣腫瘍の診断で開腹手術を行ったが，腹腔内に散在する腫瘍の一部は切除できなかった．<br>
-                            腹水は<u>約300mLで血性</u>であった．摘出卵巣腫瘍のH-E染色標本とアルシアン・ブルー染色標本（B，C）とを次に示す．<br>
+                            腫瘍マーカーは<br>
+                            <u>CEA 77.4ng/mL</u>（基準5以下），<br>
+                            <u>CA19-9 805.3U/mL</u>（基準37以下），<br><u>CA125 52.0U/mL</u>（基準35以下）であった．<br>
+                            下腹部MRIのT2強調像（A）を次に示す．<br>
+                            卵巣腫瘍の診断で開腹手術を行ったが，腹腔内に散在する腫瘍の一部は切除できなかった．<br>
+                            腹水は<u>約300mLで血性</u>であった．<br>
+                            摘出卵巣腫瘍のH-E染色標本と<u>アルシアン・ブルー染色標本</u>（B，C）とを次に示す．<br>
                             正しいのはどれか．2つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/95G040A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/95G040B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/95G040A.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/95G040A.jpg" class="card-img-top img-fluid" width="%">
                     <img src="https://qb.medilink-study.com/images/95G040B.jpg" class="card-img-top img-fluid">
 
                     <div class="card-body">
@@ -5658,7 +5979,7 @@
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/95G040_ima_q_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/95G040_ima_q_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/95G040_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
                         <p>アルシアンブルー(+) &xrArr; 粘液性</p>
 
                         <ol>
@@ -5714,40 +6035,50 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group ovarian_cancer clear_cell" id="q54">
+            <div class="card-group OCCC EOC ovarian_cancer fig" id="q54">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/86C14-15" target="_blank">86C14-15</a> 手術　/ 診断
+                        <a href="https://qb.medilink-study.com/#/Answer/86C14" target="_blank">86C14-15</a> 手術 / 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_21:13:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_21:13:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_14:55:11"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-09_21:13:58"> </span>
+                        <span class="badge badge-pill mis" id="2018-11-04_14:55:17"> </span>
                         <br>
                         <p>次の文を読み，14，15の問いに答えよ．<br><br>
+
                             40歳の女性．<br>
-                            下腹部膨満感と全身倦怠感とを主訴として来院した．<br>
-                            現病歴：初経12歳，月経は28日型で整順であったが，6ヵ月前から不順になった．3ヵ月前から体重は5kg減少した．<br>
+                            <u>下腹部膨満感</u>と<u>全身倦怠感</u>とを主訴として来院した．<br>
+                            現病歴：<br>
+                            初経12歳，月経は28日型で整順であったが，6ヵ月前から不順になった．<br>
+                            3ヵ月前から体重は5kg減少した．<br>
                             既往歴・家族歴：特記すべきことはない．<br>
-                            現　症：身長160cm，体重44kg．体温36.4℃．脈拍138/分．整．血圧138/92mmHg．眼瞼結膜はやや貧血状．<br>
-                            内診所見：子宮は前傾前屈．子宮後壁およびDouglas窩に癒着する小児頭大の腫瘤を触知するが，圧痛はない．<br>
+                            現　症：<br>
+                            身長160cm，体重44kg．体温36.4℃．脈拍138/分．整．血圧138/92mmHg．眼瞼結膜はやや貧血状．<br>
+                            内診所見：<br>
+                            子宮は前傾前屈．子宮後壁およびDouglas窩に癒着する小児頭大の腫瘤を触知するが，圧痛はない．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（－）．便潜血（－）．赤血球340万，Hb 10.9g/dL，Ht 32％，白血球8,000，血小板25万．<br>
-                            血清生化学所見：総蛋白5.8g/dL，尿素窒素12mg/dL，AST 15単位，ALT 14単位，<u>CA125 147単位</u>（正常35以下），<u>CA19-9 57単位</u>（正常37以下），CEA 0.2ng/mL（正常3以下），α-フェトプロテイン16ng/mL（正常20以下）．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．便潜血（－）．赤血球340万，Hb 10.9g/dL，Ht 32％，白血球8,000，血小板25万．<br>
+                            血清生化学所見：<br>
+                            総蛋白5.8g/dL，尿素窒素12mg/dL，AST 15単位，ALT 14単位，<u>CA125 147単位</u>（正常35以下），<u>CA19-9 57単位</u>（正常37以下），CEA 0.2ng/mL（正常3以下），α-フェトプロテイン16ng/mL（正常20以下）．<br>
                             術前の骨盤部X線造影CT（A）と摘出腫瘍のH-E染色標本（B，C）とを次に示す．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/86C014-015A.jpg" class="img-fluid" width=""> -->
                     <!-- <img src="https://www.qb-online.com/img/86C014-015B.jpg" class="img-fluid" width=""> -->
                     <!-- <img src="https://www.qb-online.com/img/86C014-015C.jpg" class="img-fluid" width=""> -->
-                    <img src="https://qb.medilink-study.com/images/86C014-015A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/86C014-015B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/86C014-015C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/86C014-015A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/86C014-015B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/86C014-015C.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
-                        <p>[C014] この患者の手術で摘出したのはどれか．すべて選べ．</p>
+                        <p>[C014] <br>
+                            この患者の手術で摘出したのはどれか．すべて選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">子宮</li>
@@ -5756,7 +6087,8 @@
                             <li class="ans_t">大網</li>
                         </ol>
 
-                        <p>[C015] この腫瘍の病理診断はどれか．</p>
+                        <p>[C015] <br>
+                            この腫瘍の病理診断はどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">漿液性囊胞腺癌</li>
@@ -5779,6 +6111,7 @@
                         <!-- <img src="https://www.qb-online.com/img/86C014_ima_q_030.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/86C014_ima_q_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/86C014_ima_q_020.jpg" class="card-img-top img-fluid">
+
                         <p>hobnail pattern</p>
 
                         <p class="q_dx">明細胞癌</p>
@@ -5801,31 +6134,37 @@
                             <li>hobnail</li>
                             <li></li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group ovarian_cancer clear_cell 111 pri" id="q55">
+            <div class="card-group OCCC ovarian_cancer fig 111 pri" id="q55">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I67" target="_blank" id="">111I67</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id=""> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:01:11"> </span>
                         <br>
                         <p>51歳の女性．<br>
                             下腹部の違和感と腹満感とを主訴に来院した．<br>
                             48歳で閉経．閉経まで月経痛が強く，子宮内膜症と診断されたことがある．<br>
-                            身長161cm，体重58kg．体温36.5℃．脈拍76/分，整．血圧124/84mmHg．下腹部に恥骨上8cmに達する可動性のない腫瘤を触知し，軽度の圧痛を認める．<br>
-                            血液生化学所見：CEA 1.6ng/mL（基準5以下），CA19-9 34U/mL（基準37以下），<u>CA125 116U/mL</u>（基準35以下）．CRP 0.7mg/dL．<br>
-                            開腹手術を施行した．術前の骨盤部MRIのT2強調水平断像（A），矢状断像（B）及び手術で摘出した組織の充実部分のH-E染色標本（C）を次に示す．<br>
+                            身長161cm，体重58kg．体温36.5℃．脈拍76/分，整．血圧124/84mmHg．<br>
+                            下腹部に恥骨上8cmに達する可動性のない腫瘤を触知し，軽度の圧痛を認める．<br>
+                            血液生化学所見：<br>
+                            CEA 1.6ng/mL（基準5以下），CA19-9 34U/mL（基準37以下），<u>CA125 116U/mL</u>（基準35以下）．CRP 0.7mg/dL．<br>
+                            開腹手術を施行した．<br>
+                            術前の骨盤部MRIのT2強調水平断像（A），矢状断像（B）及び手術で摘出した組織の充実部分のH-E染色標本（C）を次に示す．<br>
                             最終的な診断はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111I067A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111I067B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111I067C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111I067A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111I067B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111I067C.jpg" class="card-img-top img-fluid" width="%">
                     
                     <div class="card-body">
                         <ol type="a">
@@ -5988,15 +6327,17 @@
             <div class="card-group Sertoli ovarian_cancer" id="q58">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://www.qb-online.com/#/list/81E30" target="_blank">81E30</a>
+                        <a href="https://www.qb-online.com/#/list/81E30" target="_blank">81E30</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-09_21:54:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-09_21:54:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:04:16"> </span>
                         <br>
                         <p>33歳の女性．<br>
                             1年6ヵ月前から<u>無月経</u>となり，次第に<u>声の低音化</u>，<u>多毛</u>および<u>痤瘡様発疹</u>が著明になったので来院した．<br>
-                            内診所見：子宮は<u>前傾前屈</u>，鶏卵大．<u>右卵巣は鵞卵大</u>，左卵巣は正常．<br>
+                            内診所見：<br>
+                            子宮は<u>前傾前屈</u>，鶏卵大．<u>右卵巣は鵞卵大</u>，左卵巣は正常．<br>
                             この卵巣腫瘤について適切なのはどれか．</p>
 
                         <ol type="a">
@@ -6015,9 +6356,9 @@
                             <li>続発性無月経</li>
                             <li>男性化徴候</li>
                         </ul>
-                        <p>若年 アンドロゲン産生　&rAarr; Sertoli/間質細胞腫 (境界悪性)</p>
+                        <p>若年 アンドロゲン産生　&xrArr; Sertoli/間質細胞腫 (境界悪性)</p>
 
-                        <p>cf. 更年期以降 &rAarr; Leydig細胞腫 (Benigh)</p>
+                        <p>cf. 更年期以降 &xrArr; Leydig細胞腫 (Benigh)</p>
 
                         <p class="q_dx">Sertoli・間質細胞腫瘍</p>
 
@@ -6042,20 +6383,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-09_21:58:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-09_21:58:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:10:04"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             突然の下腹部痛を主訴に来院した．<br>
-                            月経周期28日型，整．月経痛はない．内診で骨盤内に新生児頭大の可動性のある腫瘤を触知する．<br>
-                            免疫学所見：CA125 24U/mL（基準35以下），<u>CA19-9 98U/mL</u>（基準37以下），SCC 1.2ng/mL（基準1.5以下）．<br>
+                            月経周期28日型，整．月経痛はない．<br>
+                            内診で骨盤内に新生児頭大の可動性のある腫瘤を触知する．<br>
+                            免疫学所見：<br>
+                            CA125 24U/mL（基準35以下），<br>
+                            <u>CA19-9 98U/mL</u>（基準37以下），<br>
+                            SCC 1.2ng/mL（基準1.5以下）．<br>
                             骨盤部単純MRIのT1強調像（A）と脂肪抑制T1強調像（B）とを次に示す．<br>
                             診断はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/103A038A.jpg" class="img-fluid" > -->
                     <!-- <img src="https://www.qb-online.com/img/103A038B.jpg" class="img-fluid" > -->
-                    <img src="https://qb.medilink-study.com/images/103A038A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/103A038B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/103A038A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/103A038B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -6194,15 +6540,21 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110D39" target="_blank" id="">110D39</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-10_10:42:15"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_10:42:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:12:32"> </span>
                         <br>
                         <p>23歳の女性．<br>
                             右下腹部痛のため救急車で搬入された．<br>
-                            2時間前に右下腹部痛が突然出現した．病院到着時には右下腹部痛の強さは発症時に比べ半減していた．意識は清明．体温36.7℃．脈拍92/分，整．血圧110/82mmHg．呼吸数14/分．SpO2 96％（room air）．内診で右付属器に径6cmの腫瘤を触知し圧痛を認める．子宮と左付属器とに異常を認めない．尿妊娠反応は陰性である．経腟超音波像を次に示す．<br>
+                            2時間前に<u>右下腹部痛が突然出現</u>した．<br>
+                            病院到着時には右下腹部痛の強さは発症時に比べ半減していた．<br>
+                            意識は清明．体温36.7℃．脈拍92/分，整．血圧110/82mmHg．呼吸数14/分．SpO2 96％（room air）．<br>
+                            内診で右付属器に径6cmの腫瘤を触知し圧痛を認める．子宮と左付属器とに異常を認めない．<br>
+                            尿妊娠反応は陰性である．<br>
+                            経腟超音波像を次に示す．<br>
                             この患者への対応として適切なのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/110D039.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/110D039.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -6236,11 +6588,16 @@
 
                         <h6>超音波断層法による卵巣腫瘍の悪性鑑別</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．良性所見<br>
-                                隔壁がスムーズで被膜が薄い，囊胞性所見のみで充実性部分がない</li>
-                            <li class="list-group-item">2．悪性を疑う所見<br>
-                                隔壁が不整で充実部分を含む，乳頭状増殖所見がみられる，充実性</li>
-                            <li class="list-group-item">3．成熟囊胞性奇形腫のエコー所見
+                            <li class="list-group-item">
+                                1．良性所見<br>
+                                隔壁がスムーズで被膜が薄い，囊胞性所見のみで充実性部分がない
+                            </li>
+                            <li class="list-group-item">
+                                2．悪性を疑う所見<br>
+                                隔壁が不整で充実部分を含む，乳頭状増殖所見がみられる，充実性
+                            </li>
+                            <li class="list-group-item">
+                                3．成熟囊胞性奇形腫のエコー所見
                                 <ul>
                                     <li>囊胞部分に充実部分が混在</li>
                                     <li>高輝度エコー（骨，歯など）</li>
@@ -6249,6 +6606,9 @@
                                 </ul>
                             </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -6274,12 +6634,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_10:45:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_10:45:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:14:19"> </span>
                         <br>
                         <p>60歳の女性．<br>
                             子宮癌検診で骨盤内の腫瘤を指摘され来院した．<br>
                             内診では付属器に可動性良好な新生児頭大の腫瘤を触知する．<br>
-                            腫瘍マーカーは<u>CA19-9 650U/mL</u>（基準37以下），<u>CA125 45U/mL</u>（基準35以下），<u>SCC 8.6ng/mL</u>（基準1.5以下）．<br>
+                            腫瘍マーカーは<br>
+                            <u>CA19-9 650U/mL</u>（基準37以下），<br>
+                            <u>CA125 45U/mL</u>（基準35以下），<br>
+                            <u>SCC 8.6ng/mL</u>（基準1.5以下）．<br>
                             経腟超音波検査では最大径12cmの囊胞性腫瘍で，一部に充実部分と<u>毛髪塊</u>とを認める．<br>
                             最も考えられるのはどれか．</p>
 
@@ -6323,18 +6687,20 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_10:49:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_10:49:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:05:58"> </span>
                         <br>
                         <p>21歳の女性．<br>
                             突然の左下腹部の激痛を主訴に来院した．<br>
                             子宮は後傾後屈正常大で可動性は良好，左卵巣に超鵞卵大の腫瘤を触知し，強い圧痛を認める．<br>
                             腹部X線単純写真で左側小骨盤腔に<u>歯状の石灰化</u>を認める．<br>
-                            直ちに腹腔鏡下手術を行った．摘出腫瘤のH-E染色標本を次に示す．<br>
+                            直ちに腹腔鏡下手術を行った．<br>
+                            摘出腫瘤のH-E染色標本を次に示す．<br>
                             正しいのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/102D059.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/102D059.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/102D059.jpg" class="card-img-top img-fluid" width="%">
 
 
                     <div class="card-body">
@@ -6351,7 +6717,8 @@
                     <div class="card-body">
 
                         <ul>
-                            <li>歯状の石灰化 &xrArr; 成熟嚢胞性奇形腫</li>
+                            <li>歯状の石灰化<br>
+                                &xrArr; 成熟嚢胞性奇形腫</li>
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/102D059_ima_q_010.jpg" class="img-fluid"> -->
@@ -6366,7 +6733,8 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>成熟嚢胞性奇形腫: &uarr;CA19-9 AFP(-)</li>
+                            <li>成熟嚢胞性奇形腫:<br>
+                                &uarr;CA19-9 AFP(-)</li>
                         </ol>
                     </div>
                 </div>
@@ -6488,24 +6856,29 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group yolk_sac" id="q65">
+            <div class="card-group yolk_sac ovarian_cancer" id="q65">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/108A30" target="_blank" id="">108A30</a> 
+                        <a href="https://qb.medilink-study.com/#/Answer/108A30" target="_blank" id="">108A30</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-10_11:08:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_11:08:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:15:04"> </span>
                         <br>
                         <p>21歳の女性．<br>
                             下腹部のしこりを主訴に来院した．<br>
                             内診で子宮は正常大で，右付属器が手拳大に腫大していた．<br>
-                            腫瘍マーカーはCA19-9 17.5U/mL（基準37以下），CA125 56.7U/mL（基準35以下），<u>α-フェトプロテイン〈AFP〉960ng/mL</u>（基準20以下）．悪性卵巣腫瘍を疑い，右付属器切除術と大網切除術とを施行した．<br>
+                            腫瘍マーカーは<br>
+                            CA19-9 17.5U/mL（基準37以下），<br>
+                            CA125 56.7U/mL（基準35以下），<br>
+                            <u>α-フェトプロテイン〈AFP〉960ng/mL</u>（基準20以下）．<br>
+                            悪性卵巣腫瘍を疑い，右付属器切除術と大網切除術とを施行した．<br>
                             術中写真（A）と摘出腫瘍のH-E染色標本（B）とを次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/108A030A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108A030B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108A030A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108A030B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -6548,17 +6921,23 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_11:15:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_11:15:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:07:44"> </span>
                         <br>
                         <p>53歳の女性．<br>
-                            下腹部のしこりを主訴に来院した．経腟超音波検査と腹部MRIとで<u>両側卵巣に充実性の腫瘤</u>と<u>少量の腹水</u>とを認める．腫瘍マーカーはCEA 15.7ng/mL（基準5以下），CA19-9 17.5U/mL（基準37以下），CA125 56.7U/mL（基準35以下）．開腹時の腹部写真（A）と摘出された卵巣腫瘍のH-E染色標本（B）とを次に示す．<br>
+                            下腹部のしこりを主訴に来院した．経腟超音波検査と腹部MRIとで<u>両側卵巣に充実性の腫瘤</u>と<u>少量の腹水</u>とを認める．<br>
+                            腫瘍マーカーは<br>
+                            CEA 15.7ng/mL（基準5以下），<br>
+                            CA19-9 17.5U/mL（基準37以下），<br>
+                            CA125 56.7U/mL（基準35以下）．<br>
+                            開腹時の腹部写真（A）と摘出された卵巣腫瘍のH-E染色標本（B）とを次に示す．<br>
                             診断を確定するために追加すべき検査として最も適切なのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/107D039A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/107D039B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/107D039A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/107D039B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/107D039A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/107D039B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -6575,10 +6954,12 @@
 
                         <!-- <img src="https://www.qb-online.com/img/107D039_ima_q_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/107D039_ima_q_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/107D039_ima_q_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/107D039_ima_q_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/107D039_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/107D039_ima_q_020.jpg" class="card-img-top img-fluid" width="%">
 
-                        <p class="q_dx">Krukenberg tumor</p><br>
+                        <p class="q_dx">Krukenberg tumor</p>
+
+
                         <p>&uarr;CEA</p>
 
                         <p class="q_answer_true">d</p>
@@ -6595,14 +6976,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group fibroma" id="q67">
+            <div class="card-group fibroma info" id="q67">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/95I34" target="_blank">95I34</a> 卵巣腫瘤の超音波断層所見
+                        <a href="https://qb.medilink-study.com/#/Answer/95I34" target="_blank">95I34</a> 卵巣腫瘤 US
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_11:28:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_11:28:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:10:57"> </span>
                         <br>
                         <p>卵巣腫瘤の超音波断層所見で誤っているのはどれか．</p>
 
@@ -6632,7 +7014,8 @@
 
                         <h6>超音波断層法による卵巣腫瘤の悪性鑑別</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">良性
+                            <li class="list-group-item">
+                                良性
                                 <ul>
                                     <li>隔壁がスムース</li>
                                     <li>被膜薄い</li>
@@ -6640,7 +7023,8 @@
                                     <li>充実性部分(-)</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">悪性
+                            <li class="list-group-item">
+                                悪性
                                 <ul>
                                     <li>隔壁不整</li>
                                     <li>充実性部分(+)</li>
@@ -6648,7 +7032,8 @@
                                     <li>充実性</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">成熟嚢胞性奇形腫
+                            <li class="list-group-item">
+                                成熟嚢胞性奇形腫
                                 <ul>
                                     <li>嚢胞部分に充実性部分が混在</li>
                                     <li>高輝度エコー</li>
@@ -6657,12 +7042,15 @@
                                 </ul>
                             </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group ovarian_cancer clear_cell serous" id="q68">
+            <div class="card-group ovarian_cancer OCCC sEOC" id="q68">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103I33" target="_blank">103I33</a> 表層上皮性・間質性腫瘍
@@ -6895,18 +7283,21 @@
 
 
             <!-- 01 -->
-            <div class="card-group ovarian_cancer serous" id="q71">
+            <div class="card-group ovarian_cancer sEOC serous info" id="q71">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109A43" target="_blank">109A43</a> 対応
+                        <a href="https://qb.medilink-study.com/#/Answer/109A43" target="_blank">109A43</a> 卵巣嚢腫 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_13:14:39"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_13:14:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:15:16"> </span>
                         <br>
                         <p>23歳の女性．<br>
-                            卵巣囊腫の精査を目的に来院した．<br>
-                            月経は28日型，整．2週前の職場の健康診断で腹部超音波検査を受け右卵巣囊腫を指摘された．自覚症状はない．内診で径5cmの軟らかい右付属器腫瘤を触知し，可動性は良好で圧痛を認めない．<br>
+                            <u>卵巣囊腫</u>の精査を目的に来院した．<br>
+                            月経は28日型，整．2週前の職場の健康診断で腹部超音波検査を受け右卵巣囊腫を指摘された．<br>
+                            自覚症状はない．<br>
+                            内診で径5cmの軟らかい右付属器腫瘤を触知し，可動性は良好で圧痛を認めない．<br>
                             右卵巣の経腟超音波像を次に示す．<br>
                             この腫瘤への対応として最も適切なのはどれか．</p>
                     </div>
@@ -6945,14 +7336,24 @@
 
                         <h6>超音波断層法による卵巣腫瘤の悪性鑑別</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．良性所見<br>
-                                隔壁がスムーズで被膜が薄い，囊胞性所見のみで充実性部分がない</li>
-                            <li class="list-group-item">2．悪性を疑う所見<br>
-                                隔壁が不整で充実部分を含む，乳頭状増殖所見がみられる，充実性</li>
-                            <li class="list-group-item">3．成熟囊胞性奇形腫の超音波検査所見<br>
+                            <li class="list-group-item">
+                                1．良性所見<br>
+                                隔壁がスムーズで被膜が薄い，囊胞性所見のみで充実性部分がない
+                            </li>
+                            <li class="list-group-item">
+                                2．悪性を疑う所見<br>
+                                隔壁が不整で充実部分を含む，乳頭状増殖所見がみられる，充実性
+                            </li>
+                            <li class="list-group-item">
+                                3．成熟囊胞性奇形腫の超音波検査所見<br>
                                 囊胞部分に充実部分が混在，高輝度超音波像（骨，歯など）<br>
-                                Hair ball所見（毛髪），niveau形成（脂肪部分の存在）</li>
+                                Hair ball所見（毛髪），niveau形成（脂肪部分の存在）
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -6965,11 +7366,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_13:30:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_13:30:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_16:18:32"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             3ヵ月前からの無月経を主訴に来院した．<br>
-                            基礎体温の記録からは5週間の高温相が持続している．昨日から悪心が強くなり，これまで数回嘔吐した．内診所見では子宮は鵞卵大，軟，左付属器に鶏卵大の腫瘤を触知する．経腟超音波検査で子宮内に胎囊を認め，数mm長の胎芽に心拍動（心拍数80/分）を認める．左卵巣に直径4cmの囊胞性腫瘤を認める．<br>
+                            基礎体温の記録からは5週間の高温相が持続している．昨日から悪心が強くなり，これまで数回嘔吐した．<br>
+                            内診所見では子宮は鵞卵大，軟，左付属器に鶏卵大の腫瘤を触知する．<br>
+                            経腟超音波検査で子宮内に<u>胎囊</u>を認め，数mm長の<u>胎芽に心拍動（心拍数80/分）</u>を認める．<u>左卵巣に直径4cmの囊胞性腫瘤</u>を認める．<br>
                             適切な対応はどれか．</p>
 
 
@@ -7003,18 +7407,20 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group hydatidiform_mole" id="q73">
+            <div class="card-group hydatidiform_mole fig" id="q73">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/86D33" target="_blank">86D33</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_13:43:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_13:43:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_16:20:55"> </span>
                         <br>
                         <p>24歳の未産婦．<br>
                             無月経と不正性器出血とを主訴として来院した．<br>
-                            内診所見：子宮は前傾前屈，超鵞卵大，軟．両側卵巣は軽度腫大．子宮の横断超音波断層写真を次に示す．<br>
+                            内診所見：<br>
+                            子宮は前傾前屈，超鵞卵大，軟．両側卵巣は軽度腫大．子宮の横断超音波断層写真を次に示す．<br>
                             まず行う治療法はどれか．</p>
                     </div>
 
@@ -7120,11 +7526,12 @@
             <div class="card-group hydatidiform_mole info" id="q75">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107D40" target="_blank">107D40</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/107D40" target="_blank">107D40</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_14:02:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_14:02:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:18:02"> </span>
                         <br>
                         <p>33歳の2回経妊1回経産婦．<br>
                             <u>無月経</u>を主訴に来院した．<br>
@@ -7138,9 +7545,9 @@
                     <!-- <img src="https://www.qb-online.com/img/107D040A.jpg" width="30%"> -->
                     <!-- <img src="https://www.qb-online.com/img/107D040B.jpg" width="30%"> -->
                     <!-- <img src="https://www.qb-online.com/img/107D040C.jpg" width="30%"> -->
-                    <img src="https://qb.medilink-study.com/images/107D040A.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/107D040B.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/107D040C.jpg" class="card-img-top img-fluid" width="32%">
+                    <img src="https://qb.medilink-study.com/images/107D040A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/107D040B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/107D040C.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -7157,17 +7564,15 @@
 
 
                         <ul>
-                            <li>&uarr;hCG &rAarr; s/o 絨毛性疾患 r/o 進行性流産</li>
-                            <li>U/S 絨毛と脱落膜部分の異常肥厚所見 &rAarr; 胞状奇胎</li>
-                            <li>胎児が一度確認されている, 胎児の有核RBC &rAarr; 部分胞状奇胎</li>
+                            <li>&uarr;hCG &xrArr; s/o 絨毛性疾患 r/o 進行性流産</li>
+                            <li>U/S 絨毛と脱落膜部分の異常肥厚所見 &xrArr; 胞状奇胎</li>
+                            <li>胎児が一度確認されている, 胎児の有核RBC &xrArr; 部分胞状奇胎</li>
                         </ul>
                         
                         <!-- <img src="https://www.qb-online.com/img/107D040_ima_q_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/107D040_ima_q_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/107D040_ima_q_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/107D040_ima_q_010.jpg" class="card-img-top img-fluid" width="%">
                         <img src="https://qb.medilink-study.com/images/107D040_ima_q_010.jpg" class="card-img-top img-fluid">
-
-                        
 
                         <p class="q_dx">部分胞状奇胎</p>
 
@@ -7269,11 +7674,12 @@
             <div class="card-group hydatidiform_mole info" id="q77">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/96H45" target="_blank">96H45</a> 子宮内容除去術後の管理
+                        <a href="https://qb.medilink-study.com/#/Answer/96H45" target="_blank">96H45</a> 子宮内容除去術後 管理
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_14:16:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_14:16:33"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:20:11"> </span>
                         <br>
                         <p>全胞状奇胎の子宮内容除去術後の管理上必要でないのはどれか．</p>
 
@@ -7303,13 +7709,21 @@
 
                         <h6>胞状奇胎娩出後の管理</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">基礎体温の変化<br>
-                                hCG産生 &rArr; 高温相</li>
-                            <li class="list-group-item">筋層内浸潤, 遠隔転移の検索<ul>
-                                <li>低エコー</li>
-                                <li>肺転移, 脳転移</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                基礎体温の変化<br>
+                                hCG産生 &rArr; 高温相
+                            </li>
+                            <li class="list-group-item">
+                                筋層内浸潤, 遠隔転移の検索
+                                <ul>
+                                    <li>低エコー</li>
+                                    <li>肺転移, 脳転移</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -7322,7 +7736,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_14:22:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_14:22:02"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-04_15:22:15"> </span>
                         <br>
                         <p>全胞状奇胎について正しいのはどれか．2つ選べ．</p>
 
@@ -7371,18 +7786,23 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111A21" target="_blank" id="">111A21</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-10_14:30:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_14:30:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:22:22"> </span>
                         <br>
                         <p>31歳の女性．1回経妊0回経産婦．<br>
-                            胞状奇胎の治療後に妊娠反応陽性が持続するため紹介されて来院した．<br>
-                            1年前から不妊外来で排卵誘発薬の投与を受けていた．3ヵ月前に妊娠反応陽性となったが，全胞状奇胎と診断され2回の子宮内容除去術を受けた．<br>
-                            基礎体温は1相性である．内診で子宮はやや腫大，軟．超音波検査で後壁筋層内に血流豊富な径1.5cmの腫瘤を認める．脳，肝，腎臓および腟に異常を認めない．<br>
+                            <u>胞状奇胎の治療後</u>に妊娠反応陽性が持続するため紹介されて来院した．<br>
+                            1年前から不妊外来で排卵誘発薬の投与を受けていた．<br>
+                            3ヵ月前に妊娠反応陽性となったが，<u>全胞状奇胎と診断</u>され2回の<u>子宮内容除去術</u>を受けた．<br>
+                            基礎体温は1相性である．<br>
+                            内診で子宮はやや腫大，軟．<br>
+                            超音波検査で後壁筋層内に血流豊富な径1.5cmの腫瘤を認める．<br>
+                            脳，肝，腎臓および腟に異常を認めない．<br>
                             血清hCGの推移（A）と肺野条件の胸部CT（B）とを次に示す．<br>
                             治療として適切なのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111A021A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111A021B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111A021A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111A021B.jpg" class="card-img-top img-fluid" width="%">
 
 
                     <div class="card-body">
@@ -7401,8 +7821,8 @@
                         <p></p>
 
                         
-                        <img src="https://qb.medilink-study.com/images/111A021_ima_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/111A021_ima_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/111A021_ima_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/111A021_ima_020.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">臨床的侵入奇胎</p>
 
@@ -7426,6 +7846,8 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/111A021_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -7434,11 +7856,12 @@
             <div class="card-group choriocarcinoma" id="q80">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/97D41" target="_blank">97D41</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/97D41" target="_blank">97D41</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_14:33:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_14:33:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:25:01"> </span>
                         <br>
                         <p>34歳の2回経産婦．<br>
                             <u>不正出血</u>を訴えて来院した．<br>
@@ -7447,15 +7870,16 @@
                             内診では<u>子宮は正常よりやや大きく</u>，付属器に異常はなかった．<br>
                             経腟超音波検査で<u>子宮体部に子宮筋腫様の腫瘤</u>がみられ，子宮体部細胞診では<u>異常細胞</u>を認めた．<br>
                             ヒステロスコピィ下の組織生検を行い，そのH-E染色標本（A）を次に示す．<br>
-                            尿中hCGは120IU/L，血清hCG-βは5ng/mLであった．<br>
-                            本人および家族と相談の結果，単純子宮全摘術を行った．摘出子宮標本の写真（B）を次に示す．<br>
+                            <u>尿中hCGは120IU/L</u>，血清hCG-βは5ng/mLであった．<br>
+                            本人および家族と相談の結果，<u>単純子宮全摘術</u>を行った．<br>
+                            摘出子宮標本の写真（B）を次に示す．<br>
                             正しいのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/97D041A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/97D041B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/97D041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/97D041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/97D041A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/97D041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -7513,12 +7937,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_14:38:21"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_14:38:21"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:26:51"> </span>
                         <br>
                         <p>32歳の3回経妊，2回経産婦．<br>
                             最終妊娠は1年前に<u>胞状奇胎</u>．<br>
                             2週前から<u>不正性器出血</u>があり来院した．<br>
-                            内診所見：腟前壁のクルミ大，暗赤色，柔軟な腫瘤から出血がある．子宮は前傾前屈，鵞卵大，硬度は軟，移動性良好．子宮付属器は両側とも異常を認めない．<br>
+                            内診所見：<br>
+                            腟前壁のクルミ大，暗赤色，柔軟な腫瘤から出血がある．子宮は前傾前屈，鵞卵大，硬度は軟，移動性良好．子宮付属器は両側とも異常を認めない．<br>
                             有用な検査はどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -7534,10 +7960,7 @@
                     <div class="card-body">
 
                         <ul>
-                            <li>胞状奇胎 &rAarr; 尿hCG, CXR, 骨盤血管造影 (PAG)</li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                            <li>胞状奇胎 &xrArr; 尿hCG, CXR, 骨盤血管造影 (PAG)</li>
                         </ul>
 
 
@@ -7547,7 +7970,7 @@
 
                         <ol type="a">
                             <li></li>
-                            <li>絨毛癌 hCG産生</li>
+                            <li>絨毛癌: hCG産生</li>
                             <li>絨毛癌: 肺転移する</li>
                             <li></li>
                             <li>血行性転移</li>
@@ -7564,7 +7987,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_14:41:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_14:41:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:27:58"> </span>
                         <br>
                         <p>妊娠性絨毛癌に用いる薬剤はどれか．2つ選べ．</p>
 
@@ -7590,13 +8014,11 @@
                         </ol>
 
 
-
-
-
                         <h6>絨毛癌に対して推奨される化学療法</h6>
                         <p>MTX, アクチノマイシンD, エトポシド</p>
                         <ul class="list-group">
-                            <li class="list-group-item">EMO/CO
+                            <li class="list-group-item">
+                                EMO/CO
                                 <ul>
                                     <li>エトポシド</li>
                                     <li>MTX</li>
@@ -7605,7 +8027,8 @@
                                     <li>ビンクリスチン</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">MEA
+                            <li class="list-group-item">
+                                MEA
                                 <ul>
                                     <li>MTX</li>
                                     <li>Ethoposid</li>
@@ -7648,7 +8071,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_14:48:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_14:48:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:29:41"> </span>
                         <br>
                         <p>多量の腹水貯留をきたさないのはどれか．</p>
 
@@ -7690,7 +8114,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-10_15:08:34"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-10_15:08:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_15:22:54"> </span>
                         <br>
                         <p>疾患と血中腫瘍マーカーの組合せで正しいのはどれか．3つ選べ．</p>
 
@@ -7722,14 +8147,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group cervical_cancer" id="q85">
+            <div class="card-group cervical_cancer RT" id="q85">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100G117" target="_blank">100G117</a> 放射線治療 標準的治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_15:12:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_15:12:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:30:30"> </span>
                         <br>
                         <p>放射線治療が標準的治療として用いられるのはどれか．</p>
                         
@@ -7769,7 +8195,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-10_15:14:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-10_15:14:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-04_16:31:08"> </span>
                         <br>
                         <p>女性外陰疾患で正しいのはどれか．</p>
 
@@ -7919,7 +8346,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -7929,6 +8360,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -7947,7 +8399,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -7991,13 +8455,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -8014,54 +8479,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -8300,169 +8765,170 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#fallopian_tube_cancer h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.fallopian_tube_cancer)').toggle();
+        $('div.card-group:not(.fallopian_tube_cancer)').slideToggle(100);
     });
     $('#fallopian_tube_cancer').find('code').html($('div.fallopian_tube_cancer').size());
 
     $('#endometriosis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.endometriosis)').toggle();
+        $('div.card-group:not(.endometriosis)').slideToggle(100);
     });
     $('#endometriosis').find('code').html($('div.endometriosis').size());
 
 
     $('#adenomyosis_uteri h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.adenomyosis_uteri)').toggle();
+        $('div.card-group:not(.adenomyosis_uteri)').slideToggle(100);
     });
     $('#adenomyosis_uteri').find('code').html($('div.adenomyosis_uteri').size());
 
 
     $('#uterine_myoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.uterine_myoma)').toggle();
+        $('div.card-group:not(.uterine_myoma)').slideToggle(100);
     });
     $('#uterine_myoma').find('code').html($('div.uterine_myoma').size());
 
 
-    $('#sarcoma h2').click(function(){
+    $('#uterine_sarcoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.sarcoma)').toggle();
+        $('div.card-group:not(.uterine_sarcoma)').slideToggle(100);
     });
-    $('#sarcoma').find('code').html($('div.sarcoma').size());
+    $('#uterine_sarcoma').find('code').html($('div.uterine_sarcoma').size());
 
 
     $('#cervical_cancer h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.cervical_cancer)').toggle();
+        $('div.card-group:not(.cervical_cancer)').slideToggle(100);
     });
     $('#cervical_cancer').find('code').html($('div.cervical_cancer').size());
 
 
-    $('#CIS').click(function(){
+    $('#CIN').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CIS)').toggle();
+        $('div.card-group:not(.CIN)').slideToggle(100);
     });
-    $('#CIS').find('code').html($('div.CIS').size());
+    $('#CIN').find('code').html($('div.CIN').size());
 
 
     $('#endometrial_cancer h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.endometrial_cancer)').toggle();
+        $('div.card-group:not(.endometrial_cancer)').slideToggle(100);
     });
     $('#endometrial_cancer').find('code').html($('div.endometrial_cancer').size());
 
     $('#uterine_cancer h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.uterine_cancer)').toggle();
+        $('div.card-group:not(.uterine_cancer)').slideToggle(100);
     });
     $('#uterine_cancer').find('code').html($('div.uterine_cancer').size());
 
 
     $('#atypical_endometrial_hyperplasia h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.atypical_endometrial_hyperplasia)').toggle();
+        $('div.card-group:not(.atypical_endometrial_hyperplasia)').slideToggle(100);
     });
     $('#atypical_endometrial_hyperplasia').find('code').html($('div.atypical_endometrial_hyperplasia').size());
 
 
     $('#endometrial_hyperplasia h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.endometrial_hyperplasia)').toggle();
+        $('div.card-group:not(.endometrial_hyperplasia)').slideToggle(100);
     });
     $('#endometrial_hyperplasia').find('code').html($('div.endometrial_hyperplasia').size());
 
 
     $('#ovarian_cancer h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ovarian_cancer)').toggle();
+        $('div.card-group:not(.ovarian_cancer)').slideToggle(100);
     });
     $('#ovarian_cancer').find('code').html($('div.ovarian_cancer').size());
 
 
-    $('#serous').click(function(){
+    $('#sEOC').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.serous)').toggle();
+        $('div.card-group:not(.sEOC)').slideToggle(100);
     });
-    $('#serous').find('code').html($('div.serous').size());
+    $('#sEOC').find('code').html($('div.sEOC').size());
 
-    $('#mucinous').click(function(){
+    $('#mEOC').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.mucinous)').toggle();
+        $('div.card-group:not(.mEOC)').slideToggle(100);
     });
-    $('#mucinous').find('code').html($('div.mucinous').size());
+    $('#mEOC').find('code').html($('div.mEOC').size());
 
 
-    $('#clear_cell').click(function(){
+    $('#OCCC').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.clear_cell)').toggle();
+        $('div.card-group:not(.OCCC)').slideToggle(100);
     });
-    $('#clear_cell').find('code').html($('div.clear_cell').size());
+    $('#OCCC').find('code').html($('div.OCCC').size());
 
 
     $('#granulosa_cell').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.granulosa_cell)').toggle();
+        $('div.card-group:not(.granulosa_cell)').slideToggle(100);
     });
     $('#granulosa_cell').find('code').html($('div.granulosa_cell').size());
 
 
     $('#teratoma').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.teratoma)').toggle();
+        $('div.card-group:not(.teratoma)').slideToggle(100);
     });
     $('#teratoma').find('code').html($('div.teratoma').size());
 
     $('#Sertoli').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Sertoli)').toggle();
+        $('div.card-group:not(.Sertoli)').slideToggle(100);
     });
     $('#Sertoli').find('code').html($('div.Sertoli').size());
 
 
     $('#yolk_sac').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.yolk_sac)').toggle();
+        $('div.card-group:not(.yolk_sac)').slideToggle(100);
     });
     $('#yolk_sac').find('code').html($('div.yolk_sac').size());
 
 
     $('#Krukenberg').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Krukenberg)').toggle();
+        $('div.card-group:not(.Krukenberg)').slideToggle(100);
     });
     $('#Krukenberg').find('code').html($('div.Krukenberg').size());
 
 
     $('#lutein_cyst h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.lutein_cyst)').toggle();
+        $('div.card-group:not(.lutein_cyst)').slideToggle(100);
     });
     $('#lutein_cyst').find('code').html($('div.lutein_cyst').size());
 
 
     $('#hydatidiform_mole h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hydatidiform_mole)').toggle();
+        $('div.card-group:not(.hydatidiform_mole)').slideToggle(100);
     });
     $('#hydatidiform_mole').find('code').html($('div.hydatidiform_mole').size());
 
 
     $('#choriocarcinoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.choriocarcinoma)').toggle();
+        $('div.card-group:not(.choriocarcinoma)').slideToggle(100);
     });
     $('#choriocarcinoma').find('code').html($('div.choriocarcinoma').size());
 
 
     $('#Paget h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Paget)').toggle();
+        $('div.card-group:not(.Paget)').slideToggle(100);
     });
     $('#Paget').find('code').html($('div.Paget').size());
 
@@ -8471,7 +8937,7 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('code').html($('div.').size());
 

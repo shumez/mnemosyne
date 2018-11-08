@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-11 14:24:23
+@Last modified time: 2018-11-08 20:20:36
 -->
 
 
 <!DOCTYPE html>
 <!--  
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
@@ -94,8 +107,8 @@
     <title>Frac</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-11 14:24:34" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.21">
+    <meta name="revised" content="2018-11-08 20:21:10" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -122,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -154,6 +167,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -194,33 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -271,7 +295,260 @@
     </div>
 
     
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro</h2>
+                </div>
+            </div>
 
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="section" id="open_fracture">
+                    <div class="page-header">
+                        <h2>Open Fracture <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    </div>
+
+
+                    <h6>開放骨折の処置</h6>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>経過時間</th>
+                                <th>≤ 6 hrs</th>
+                                <th>> 6 hrs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>ブラッシング</th>
+                                <td>必須</td>
+                                <td>必須</td>
+                            </tr>
+                            <tr>
+                                <th>洗浄</th>
+                                <td>必須</td>
+                                <td>必須</td>
+                            </tr>
+                            <tr>
+                                <th>デブリドマン</th>
+                                <td>必須</td>
+                                <td>必須</td>
+                            </tr>
+                            <tr>
+                                <th>創外固定</th>
+                                <td>好まれる</td>
+                                <td>必須</td>
+                            </tr>
+                            <tr>
+                                <th>内固定</th>
+                                <td>可のことあり</td>
+                                <td><u>禁忌</u></td>
+                            </tr>
+                            <tr>
+                                <th>一次的創閉鎖</th>
+                                <td>可能なら閉鎖</td>
+                                <td><u>禁忌</u></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    
+                </div>            
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>骨折の治癒過程</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/103E068_bas_t_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>血流が少ない<br>
+                    &rArr; 骨癒合が起こりにくい</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>大腿骨頚部骨折</li>
+                            <li>手の舟状骨骨折</li>
+                            <li>脛骨中下1/3骨折</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="page-header">
+        <h2>Complication</h2>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>骨折の合併症</h6>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    早期:
+                    <ul>
+                        <li>循環障害<br>
+                            (コンパートメント症候群)</li>
+                        <li>血管損傷</li>
+                        <li>神経損傷</li>
+                        <li>臓器損傷</li>
+                        <li>脂肪塞栓</li>
+                        <li>感染</li>
+                        <li>DIC</li>
+                        <li>外傷性ショック</li>
+                        <li>静脈血栓</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    晩期:
+                    <ul>
+                        <li>関節拘縮</li>
+                        <li>複合性局所疼痛症候群 (CRPS)</li>
+                        <li>外傷性骨化性筋炎</li>
+                        <li>阻血性骨壊死</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="compartment">
+                <div class="page-header">
+                    <h2>Compartment <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                </div>
+
+                <h6><u>6P</u></h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>Pain</td>
+                            <td>激しい疼痛</td>
+                        </tr>
+                        <tr>
+                            <td>Paresthesia</td>
+                            <td>知覚異常</td>
+                        </tr>
+                        <tr>
+                            <td>Paralysis</td>
+                            <td>麻痺</td>
+                        </tr>
+                        <tr>
+                            <td>Pulselessness</td>
+                            <td>脈拍消失</td>
+                        </tr>
+                        <tr>
+                            <td>Paleness</td>
+                            <td>蒼白</td>
+                        </tr>
+                        <tr>
+                            <td>Passive stretch test /<br>
+                                stretch sign</td>
+                            <td>他動的伸展による激痛</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>            
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CRPS">
+                <div class="page-header">
+                    <h2>CRPS <small>複合性局所疼痛症候群</small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>針で刺すような疼痛</li>
+                            <li>発汗&uarr;/&darr;</li>
+                            <li>浮腫</li>
+                            <li>関節可動域制限</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+
+
+                <!-- <h6>CRPS 複合性局所疼痛症候群</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        自覚的症状<br>
+                        （病期のいずれかの時期に，以下の自覚的症状のうち2項目以上該当すること）
+                        <ol>
+                            <li>皮膚・爪・毛のうちいずれかに萎縮性変化</li>
+                            <li>関節可動域制限</li>
+                            <li>持続性ないし不釣り合いな痛み，しびれたような針で刺すような痛み，または知覚過敏</li>
+                            <li>発汗の亢進ないしは低下</li>
+                            <li>浮腫</li>
+                        </ol>
+                    </li>
+                    <li class="list-group-item">
+                        他覚的所見<br>
+                        （診察時において，以下の他覚的所見の項目を2項目以上該当すること）
+                        <ol>
+                            <li>皮膚・爪・毛のうちいずれかに萎縮性変化</li>
+                            <li>関節可動域制限</li>
+                            <li>異痛症（触刺激または熱刺激）ないしは痛覚過敏（ピンプリック）</li>
+                            <li>発汗の亢進ないしは低下</li>
+                            <li>浮腫</li>
+                        </ol>
+                    </li>
+                </ul> -->
+
+
+
+
+            </div>            
+        </div>
+    </div>
 
     
     
@@ -279,7 +556,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Humerus <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Humerus <small>上腕骨</small> <small><code></code></small></h2>
                 </div>
             </div>
 
@@ -319,6 +596,11 @@
                         </ul>
                     </li>
                 </ul>
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108D054_ima_010.jpg" class="card-img-top img-fluid">
+                </div>
+
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -372,10 +654,13 @@
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
-                    <li class="list-group-item">Sudeck骨萎縮<br>
-                        骨折の後の, 自発痛, 運動痛, 浮腫とともに, 骨萎縮<br>
-                            交感神経の異常 &rArr; 複合性局所疼痛症候群<br>
-                            距骨骨折, Colles骨折の後に
+                    <li class="list-group-item">
+                        Sudeck骨萎縮
+                        <ul>
+                            <li>骨折の後の, 自発痛, 運動痛, 浮腫とともに, 骨萎縮</li>
+                            <li>交感神経の異常 &rArr; 複合性局所疼痛症候群</li>
+                            <li>距骨骨折, Colles骨折の後に</li>
+                        </ul>
                     </li>
                 </ul>
 
@@ -511,119 +796,7 @@
         </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="compartment">
-                <div class="page-header">
-                    <h2>Compartment <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <h6>Compartment synd <u>6P</u></h6>
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <td>激しい疼痛</td>
-                            <td>pain</td>
-                        </tr>
-                        <tr>
-                            <td>知覚異常</td>
-                            <td>paresthesia</td>
-                        </tr>
-                        <tr>
-                            <td>麻痺</td>
-                            <td>paralysis</td>
-                        </tr>
-                        <tr>
-                            <td>脈拍消失</td>
-                            <td>pulselessness</td>
-                        </tr>
-                        <tr>
-                            <td>蒼白</td>
-                            <td>paleness</td>
-                        </tr>
-                        <tr>
-                            <td>他動的伸展による激痛</td>
-                            <td>passive stretch test / stretch sign</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>            
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="CRPS">
-                <div class="page-header">
-                    <h2>CRPS <small>複合性局所疼痛症候群</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <h6>CRPS 複合性局所疼痛症候群</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">自覚的症状<br>
-                        （病期のいずれかの時期に，以下の自覚的症状のうち2項目以上該当すること）
-                        <ol>
-                            <li>皮膚・爪・毛のうちいずれかに萎縮性変化</li>
-                            <li>関節可動域制限</li>
-                            <li>持続性ないし不釣り合いな痛み，しびれたような針で刺すような痛み，または知覚過敏</li>
-                            <li>発汗の亢進ないしは低下</li>
-                            <li>浮腫</li>
-                        </ol>
-                    </li>
-                    <li class="list-group-item">他覚的所見<br>
-                        （診察時において，以下の他覚的所見の項目を2項目以上該当すること）
-                        <ol>
-                            <li>皮膚・爪・毛のうちいずれかに萎縮性変化</li>
-                            <li>関節可動域制限</li>
-                            <li>異痛症（触刺激または熱刺激）ないしは痛覚過敏（ピンプリック）</li>
-                            <li>発汗の亢進ないしは低下</li>
-                            <li>浮腫</li>
-                        </ol>
-                    </li>
-                </ul>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>            
-        </div>
-
-
+        
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="ped">
                 <div class="page-header">
@@ -665,111 +838,9 @@
         </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="open">
-                <div class="page-header">
-                    <h2>Open Fracture <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-
-                <h6>開放骨折の処置</h6>
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th>経過時間</th>
-                            <th>6時間以内</th>
-                            <th>それ以上</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>ブラッシング</th>
-                            <td>必須</td>
-                            <td>必須</td>
-                        </tr>
-                        <tr>
-                            <th>洗浄</th>
-                            <td>必須</td>
-                            <td>必須</td>
-                        </tr>
-                        <tr>
-                            <th>デブリドマン</th>
-                            <td>必須</td>
-                            <td>必須</td>
-                        </tr>
-                        <tr>
-                            <th>創外固定</th>
-                            <td>好まれる</td>
-                            <td>必須</td>
-                        </tr>
-                        <tr>
-                            <th>内固定</th>
-                            <td>可のことあり</td>
-                            <td><u>禁忌</u></td>
-                        </tr>
-                        <tr>
-                            <th>一次的創閉鎖</th>
-                            <td>可能なら閉鎖</td>
-                            <td><u>禁忌</u></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>            
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>骨折の治癒過程</h6>
-            <div class="card">
-                <img src="https://qb.medilink-study.com/images/103E068_bas_t_010.jpg" class="card-img-top img-fluid">
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>血流が少ない<br>
-                &rArr; 骨癒合が起こりにくい</h6>
-            <ul class="list-group">
-                <li class="list-group-item">大腿骨頚部骨折</li>
-                <li class="list-group-item">手の舟状骨骨折</li>
-                <li class="list-group-item">脛骨中下1/3骨折</li>
-            </ul>
-        </div>
-
-
-
-
-
-
-
-
         
     </div>
-    
 
-    
-   
     
 
     
@@ -934,7 +1005,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_14:33:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_14:33:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:27:30"> </span>
                         <br>
                         <p>男児の左肘のX線写真（A，B）を次に示す．<br>
                             診断として正しいのはどれか．</p>
@@ -992,13 +1064,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_14:49:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_14:49:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:33:08"> </span>
                         <br>
                         <p>6歳の男児．<br>
                             2時間前に公園の遊具から転落して右肘を打って受傷したため搬入された．<br>
                             母親の話では受傷直後は指を動かしていたとのことであるが，次第に<u>指の動きが少なくなり</u>救急搬送された．<br>
                             既往歴に特記すべきことはない．<br>
-                            脈拍92/分，整．血圧112/68mmHg．右上肢を痛がり動かさない．痛みが強く泣き止まず指を全く動かそうとしない．右肘から前腕近位は腫脹が強く，<u>右橈骨動脈は触知できるが左側に比べると弱い</u>．<u>右手指を他動的に伸展させようとすると疼痛が増強</u>する．感覚に関する検査は施行できなかった．<br>
+                            脈拍92/分，整．血圧112/68mmHg．<br>
+                            右上肢を痛がり動かさない．痛みが強く泣き止まず指を全く動かそうとしない．右肘から前腕近位は腫脹が強く，<u>右橈骨動脈は触知できるが左側に比べると弱い</u>．<u>右手指を他動的に伸展させようとすると疼痛が増強</u>する．感覚に関する検査は施行できなかった．<br>
                             右上肢の写真（A）と肘部X線写真（B，C）を次に示す．<br>
                             次に行うべき検査はどれか．</p>
                     </div>
@@ -1006,9 +1080,9 @@
                     <!-- <img src="https://www.qb-online.com/img/109I061A.jpg" class="img-fluid" width="30%">  -->
                     <!-- <img src="https://www.qb-online.com/img/109I061B.jpg" class="img-fluid" width="30%">  -->
                     <!-- <img src="https://www.qb-online.com/img/109I061C.jpg" class="img-fluid" width="30%">  -->
-                    <img src="https://qb.medilink-study.com/images/109I061A.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/109I061B.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/109I061C.jpg" class="card-img-top img-fluid" width="32%">
+                    <img src="https://qb.medilink-study.com/images/109I061A.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/109I061B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/109I061C.jpg" class="card-img-top img-fluid" width="49%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1051,16 +1125,30 @@
 
                         <h6>四肢阻血徴候の5P（6P）</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①疼痛（Pain）</li>
-                            <li class="list-group-item">②蒼白（Pale）</li>
-                            <li class="list-group-item">③知覚障害（Paresthesia）</li>
-                            <li class="list-group-item">④脈拍消失（Pulselessness）</li>
-                            <li class="list-group-item">⑤運動麻痺（Paralysis）</li>
-                            <li class="list-group-item">（⑥）他動的伸展による激痛（passive stretching pain）</li>
+                            <li class="list-group-item">
+                                ①疼痛（Pain）
+                            </li>
+                            <li class="list-group-item">
+                                ②蒼白（Pale）
+                            </li>
+                            <li class="list-group-item">
+                                ③知覚障害（Paresthesia）
+                            </li>
+                            <li class="list-group-item">
+                                ④脈拍消失（Pulselessness）
+                            </li>
+                            <li class="list-group-item">
+                                ⑤運動麻痺（Paralysis）
+                            </li>
+                            <li class="list-group-item">
+                                (⑥）他動的伸展による激痛（passive stretching pain)
+                            </li>
                         </ul>
 
 
                         <p>顆上骨折 &xrArr; 前腕コンパートメント症候群</p>
+
+
                     </div>
                 </div>
             </div>
@@ -1069,11 +1157,12 @@
             <div class="card-group humerus supracondylar" id="q03">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/97H51" target="_blank">97H51</a> 上腕骨顆上骨折 後遺症
+                        <a href="https://qb.medilink-study.com/#/Answer/97H51" target="_blank">97H51</a> 上腕骨顆上 後遺症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_14:57:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_14:57:46"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:37:14"> </span>
                         <br>
                         <p>上腕骨顆上骨折に最も生じやすい後遺障害はどれか．</p>
 
@@ -1106,17 +1195,18 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group humerus supracondylar compartment Volkmann" id="q04">
+            <div class="card-group humerus supracondylar compartment Volkmann info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B46" target="_blank">104B46</a> 上腕骨顆上骨折 感覚障害 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-11_15:02:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_15:02:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-08_21:03:12"> </span>
                         <br>
                         <p>8歳の男児．<br>
-                            本日，右上腕骨顆上骨折で入院した．<br>
+                            本日，<u>右上腕骨顆上骨折</u>で入院した．<br>
                             直達牽引を行っていたが，夜間に激しい疼痛を訴えた．右前腕は水疱形成を伴って腫脹し，手指は蒼白で，前腕と手とに錯感覚と運動麻痺とを認める．<br>
                             対応として適切なのはどれか．</p>
 
@@ -1290,14 +1380,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_15:23:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_15:23:38"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:43:27"> </span>
                         <br>
                         <p>6歳の男児．<br>
                             <u>左肘の痛みと腫れ</u>を主訴に母親に連れられて来院した．<br>
                             遊具から転落し<u>左肘をついて受傷</u>したとのことである．<br>
                             来院時，右手で左肘を支え，動かそうとしない．左肘部に開放創はないが，肘部全体に<u>高度な腫脹</u>を認める．手指の感覚障害は本人の協力が得られず不明だが，手指の自動運動は可能で，橈骨動脈の拍動は手関節部で良好に触知する．<br>
                             肘関節のX線写真（A，B）を次に示す．<br>
-                            考えられるのはどれか．2つ選べ．</p>
+                            考えられるのはどれか．<u>2つ選べ</u>．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/108D054A.jpg" width="45%"> -->
@@ -1345,7 +1436,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_15:32:59"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_15:32:59"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-08_20:45:14"> </span>
                         <br>
                         <p>右肘関節を分解した模式図を次に示す．<br>
                             小児期の骨折で成長とともに外反肘変形を生じる可能性が高いのはどれか．</p>
@@ -1385,33 +1477,33 @@
                         <h6>上腕骨の骨折</h6>
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/99D085_bas_t_010.jpg" class="card-img-top img-fluid">
-                            <div class="card-body">
-                                <table class="table table-condensed">
-                                    <tbody>
-                                        <tr>
-                                            <th>解剖頸</th>
-                                            <td>稀である．関節内骨折のため，阻血性骨壊死を生じやすい．</td>
-                                        </tr>
-                                        <tr>
-                                            <th>外科頸</th>
-                                            <td>最も骨折しやすい部位．内転位または外転位で肘をついた場合や，側方からの直達外力によって生じやすい．高齢者に多い．</td>
-                                        </tr>
-                                        <tr>
-                                            <th>骨幹部</th>
-                                            <td>開放骨折が少ない．血行が良く遅延治癒を起こしにくい．橈骨神経麻痺がある．ときに投球でこの部に螺旋骨折が生じる．</td>
-                                        </tr>
-                                        <tr>
-                                            <th>顆上</th>
-                                            <td>神経麻痺（正中・尺骨神経），フォルクマン拘縮が生じやすい．</td>
-                                        </tr>
-                                        <tr>
-                                            <th>外顆</th>
-                                            <td>幼児・小児に生じやすく，肘伸展位において外反方向に力が加わり発生する．放置により，外反肘変形や遅発性尺骨神経麻痺をきたす．</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
+
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <th>解剖頸</th>
+                                    <td>稀である．関節内骨折のため，阻血性骨壊死を生じやすい．</td>
+                                </tr>
+                                <tr>
+                                    <th>外科頸</th>
+                                    <td>最も骨折しやすい部位．内転位または外転位で肘をついた場合や，側方からの直達外力によって生じやすい．高齢者に多い．</td>
+                                </tr>
+                                <tr>
+                                    <th>骨幹部</th>
+                                    <td>開放骨折が少ない．血行が良く遅延治癒を起こしにくい．橈骨神経麻痺がある．ときに投球でこの部に螺旋骨折が生じる．</td>
+                                </tr>
+                                <tr>
+                                    <th>顆上</th>
+                                    <td>神経麻痺（正中・尺骨神経），フォルクマン拘縮が生じやすい．</td>
+                                </tr>
+                                <tr>
+                                    <th>外顆</th>
+                                    <td>幼児・小児に生じやすく，肘伸展位において外反方向に力が加わり発生する．放置により，外反肘変形や遅発性尺骨神経麻痺をきたす．</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
@@ -1480,17 +1572,19 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group radius Colles print" id="q10">
+            <div class="card-group radius Colles info print" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/82C65" target="_blank">82C65</a> 診断 &xrArr; 合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_15:45:49"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_15:45:49"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:47:44"> </span>
                         <br>
                         <p>65歳の女性．<br>
-                            路上で右手掌をついて転倒した．右手関節部の腫脹と疼痛とが出現し，X線単純写真で骨折がみられる．<br>
+                            路上で右手掌をついて転倒した．<br>
+                            <u>右手関節部の腫脹と疼痛</u>とが出現し，X線単純写真で骨折がみられる．<br>
                             この骨折で起こしやすい合併症はどれか．3つ選べ．</p>
 
 
@@ -1527,12 +1621,17 @@
 
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <dt>Sudeck骨萎縮</dt>
-                                <dd>骨折の後の, 自発痛, 運動痛, 浮腫とともに, 骨萎縮<br>
-                                    交感神経の異常 &rArr; 複合性局所疼痛症候群<br>
-                                    距骨骨折, Colles骨折の後に</dd>
+                                Sudeck骨萎縮
+                                <ul>
+                                    <li>骨折の後の, 自発痛, 運動痛, 浮腫とともに, 骨萎縮</li>
+                                    <li>交感神経の異常 &rArr; 複合性局所疼痛症候群</li>
+                                    <li>距骨骨折, Colles骨折の後に</li>
+                                </ul>
                             </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1553,24 +1652,26 @@
 
 
             <!-- 01 -->
-            <div class="card-group CRPS radius" id="q11">
+            <div class="card-group CRPS radius info" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D44" target="_blank">109D44</a> 骨折+3mo 疼痛　診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-11_15:50:19"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_15:50:19"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_21:06:36"> </span>
                         <br>
                         <p>72歳の女性．<br>
                             右手の疼痛を主訴に来院した．<br>
-                            3ヵ月前に右橈骨遠位端骨折を受傷し，8週間のギプス固定を受けた．ギプス除去後にリハビリテーションを受けている．<u>手を触られると刺すような痛み</u>があり，手掌の<u>発汗亢進</u>を自覚していたが，その後，増強するようになったため受診した．<br>
+                            3ヵ月前に右橈骨遠位端骨折を受傷し，8週間のギプス固定を受けた．<br>
+                            ギプス除去後にリハビリテーションを受けている．<u>手を触られると刺すような痛み</u>があり，手掌の<u>発汗亢進</u>を自覚していたが，その後，増強するようになったため受診した．<br>
                             来院時，右手指は<u>腫脹</u>しており，つまみ動作は可能である．手関節とすべての手指の関節とに<u>可動域制限</u>を認める．両手X線写真を次に示す．<br>
                             診断として考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/109D044.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/109D044.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/109D044.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1634,7 +1735,8 @@
 
                         <h6>骨折の合併症</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">早期に認めやすい合併症
+                            <li class="list-group-item">
+                                早期に認めやすい合併症
                                 <ul>
                                     <li>循環障害（コンパートメント症候群）</li>
                                     <li>血管損傷</li>
@@ -1647,7 +1749,8 @@
                                     <li>静脈血栓</li>
                                 </ul>
                             </li>
-                            <li class="list-group-item">晩期に認めやすい合併症
+                            <li class="list-group-item">
+                                晩期に認めやすい合併症
                                 <ul>
                                     <li>関節拘縮</li>
                                     <li>複合性局所疼痛症候群（CRPS）</li>
@@ -1656,23 +1759,30 @@
                                 </ul>
                             </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group femur femoral_neck" id="q12">
+            <div class="card-group femur femoral_neck info" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107I66" target="_blank">107I66</a> XR &xrArr; 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_15:59:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_15:59:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-08_20:50:36"> </span>
                         <br>
                         <p>74歳の女性．<br>
                             右股関節部の運動痛と起立不能とを主訴に来院した．<br>
-                            本日，自宅玄関の段差につまずいて転倒し，動けないところを家族が発見し救急外来を受診した．昨日までは手押し車を押して近所まで買い物に行くことが可能であった．意識は清明．右下肢以外の自動運動は可能である．座位では疼痛は少ないが，右股関節を内外旋させると疼痛が強い．支えても立位をとることはできない．四肢反射の亢進はなく，感覚障害を認めない．両股関節X線写真を次に示す．<br>
+                            本日，自宅玄関の段差につまずいて転倒し，動けないところを家族が発見し救急外来を受診した．<br>
+                            昨日までは手押し車を押して近所まで買い物に行くことが可能であった．<br>
+                            意識は清明．右下肢以外の自動運動は可能である．座位では疼痛は少ないが，<u>右股関節を内外旋させると疼痛が強い</u>．支えても立位をとることはできない．四肢反射の亢進はなく，感覚障害を認めない．<br>
+                            両股関節X線写真を次に示す．<br>
                             診断はどれか．</p>
                     </div>
 
@@ -1856,7 +1966,7 @@
                         <p class="q_answer_true">c</p>
 
                         <ol type="a">
-                            <li></li>
+                            <li>2d後に手術するので, ギプス固定不要</li>
                             <li>直達牽引: 除痛, 変形の矯正のため</li>
                             <li>早期離床のため</li>
                             <li></li>
@@ -1911,14 +2021,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group tibial " id="q17">
+            <div class="card-group tibial info" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H52" target="_blank">97H52</a> 脛骨骨幹部閉鎖性骨折 治療 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_16:48:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_16:48:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:55:38"> </span>
                         <br>
                         <p>脛骨骨幹部閉鎖性骨折の治療で誤っているのはどれか．</p>
 
@@ -1961,14 +2072,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group femoral_neck femur ped" id="q18">
+            <div class="card-group femoral_neck femur ped info" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95I39" target="_blank">95I39</a> 骨折 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_16:52:13"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_16:52:13"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:57:00"> </span>
                         <br>
                         <p>骨折について誤っているのはどれか．2つ選べ．</p>
 
@@ -2015,14 +2127,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group ped open" id="q19">
+            <div class="card-group ped open_fracture" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94A70" target="_blank">94A70</a> 骨折 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-11_16:55:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_16:55:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-08_21:08:51"> </span>
                         <br>
                         <p>正しいのはどれか．3つ選べ．</p>
 
@@ -2062,7 +2175,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_17:00:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_17:00:37"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-08_20:58:54"> </span>
                         <br>
                         <p>小児骨折で正しいのはどれか．2つ選べ．</p>
                         
@@ -2157,14 +2271,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PHYSIO info" id="q22">
+            <div class="card-group femoral_neck PHYSIO info" id="q22">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/102I18" target="_blank">102I18</a> 骨癒合が得られにくい
+                        <a href="https://qb.medilink-study.com/#/Answer/102I18" target="_blank">102I18</a> 骨癒合(-)
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-11_17:05:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_17:05:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-08_21:09:25"> </span>
                         <br>
                         <p>骨癒合が得られにくいのはどれか．</p>
 
@@ -2222,14 +2337,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group open info" id="q23">
+            <div class="card-group open_fracture info" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102G38" target="_blank">102G38</a> 開放骨折 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_17:09:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_17:09:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-08_20:59:55"> </span>
                         <br>
                         <p>広範な軟部組織の挫滅を伴う開放骨折の治療で適切なのはどれか．2つ選べ．</p>
 
@@ -2237,7 +2353,7 @@
                         <ol type="a">
                             <li class="ans_t">創外固定</li>
                             <li class="ans_f">遊離植皮</li>
-                            <li class="ans_f">遊離植皮</li>
+                            <li class="ans_f">人工骨移植</li>
                             <li class="ans_t">デブリドマン</li>
                             <li class="ans_f">プレート固定</li>
                         </ol>
@@ -2420,7 +2536,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2430,6 +2550,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2448,7 +2589,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2492,13 +2645,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2515,54 +2669,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2801,98 +2955,100 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
     $('#humerus h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.humerus)').toggle();
+        $('div.card-group:not(.humerus)').slideToggle(100);
     });
-    $('#humerus').find('code').html($('div.humerus').size());
+    $('#humerus').find('code').html($('div.humerus > .card > .mis').size() + '/' + $('div.humerus').size());
 
 
     $('#supracondylar').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.supracondylar)').toggle();
+        $('div.card-group:not(.supracondylar)').slideToggle(100);
     });
-    $('#supracondylar').find('code').html($('div.supracondylar').size());
+    $('#supracondylar').find('code').html($('div.supracondylar > .card > .mis').size() + '/' + $('div.supracondylar').size());
 
 
     $('#lateral_condyle').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.lateral_condyle)').toggle();
+        $('div.card-group:not(.lateral_condyle)').slideToggle(100);
     });
-    $('#lateral_condyle').find('code').html($('div.lateral_condyle').size());
+    $('#lateral_condyle').find('code').html($('div.lateral_condyle > .card > .mis').size() + '/' + $('div.lateral_condyle').size());
 
 
     $('#Volkmann').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Volkmann)').toggle();
+        $('div.card-group:not(.Volkmann)').slideToggle(100);
     });
-    $('#Volkmann').find('code').html($('div.Volkmann').size());
+    $('#Volkmann').find('code').html($('div.Volkmann > .card > .mis').size() + '/' + $('div.Volkmann').size());
 
 
     $('#compartment h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.compartment)').toggle();
+        $('div.card-group:not(.compartment)').slideToggle(100);
     });
-    $('#compartment').find('code').html($('div.compartment').size());
+    $('#compartment').find('code').html($('div.compartment > .card > .mis').size() + '/' + $('div.compartment').size());
 
 
     $('#radius h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.radius)').toggle();
+        $('div.card-group:not(.radius)').slideToggle(100);
     });
-    $('#radius').find('code').html($('div.radius').size());
+    $('#radius').find('code').html($('div.radius > .card > .mis').size() + '/' + $('div.radius').size());
 
 
     $('#Colles').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Colles)').toggle();
+        $('div.card-group:not(.Colles)').slideToggle(100);
     });
-    $('#Colles').find('code').html($('div.Colles').size());
+    $('#Colles').find('code').html($('div.Colles > .card > .mis').size() + '/' + $('div.Colles').size());
 
 
     $('#CRPS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CRPS)').toggle();
+        $('div.card-group:not(.CRPS)').slideToggle(100);
     });
-    $('#CRPS').find('code').html($('div.CRPS').size());
+    $('#CRPS').find('code').html($('div.CRPS > .card > .mis').size() + '/' + $('div.CRPS').size());
 
 
     $('#femur h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.femur)').toggle();
+        $('div.card-group:not(.femur)').slideToggle(100);
     });
-    $('#femur').find('code').html($('div.femur').size());
+    $('#femur').find('code').html($('div.femur > .card > .mis').size() + '/' + $('div.femur').size());
 
 
     $('#femoral_neck').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.femoral_neck)').toggle();
+        $('div.card-group:not(.femoral_neck)').slideToggle(100);
     });
-    $('#femoral_neck').find('code').html($('div.femoral_neck').size());
+    $('#femoral_neck').find('code').html($('div.femoral_neck > .card > .mis').size() + '/' + $('div.femoral_neck').size());
 
 
     $('#tibial h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.tibial)').toggle();
+        $('div.card-group:not(.tibial)').slideToggle(100);
     });
-    $('#tibial').find('code').html($('div.tibial').size());
+    $('#tibial').find('code').html($('div.tibial > .card > .mis').size() + '/' + $('div.tibial').size());
+
 
     $('#ped h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ped)').toggle();
+        $('div.card-group:not(.ped)').slideToggle(100);
     });
-    $('#ped').find('code').html($('div.ped').size());
+    $('#ped').find('code').html($('div.ped > .card > .mis').size() + '/' + $('div.ped').size());
 
 
-    $('#open h2').click(function(){
+    $('#open_fracture h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.open)').toggle();
+        $('div.card-group:not(.open_fracture)').slideToggle(100);
     });
-    $('#open').find('code').html($('div.open').size());
+    $('#open_fracture').find('code').html($('div.open_fracture > .card > .mis').size() + '/' + $('div.open_fracture').size());
 
 
 
@@ -2902,9 +3058,10 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    
+    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
 
 });
 </script>

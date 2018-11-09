@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-12 13:02:07
+@Last modified time: 2018-11-09 16:11:10
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
@@ -91,11 +104,11 @@
 -->
 <html>
 <head>
-    <title>Spine</title>
+    <title>Spine-Ortho</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-12 13:02:14" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.21">
+    <meta name="revised" content="2018-11-09 16:11:53" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -122,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -154,6 +167,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -194,33 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-
+            div.card-header{font-size: 11px}
+            
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -331,17 +355,18 @@
                     <img src="https://qb.medilink-study.com/images/83D038_sup_t_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
+        </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-12">
-
-                <table class="table table-bordered">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>高位</th>
-                            <th>障害神経根</th>
-                            <th>感覚障害</th>
-                            <th>運動障害</th>
-                            <th>反射異常</th>
+                            <th>Level</th>
+                            <th>Root</th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>Ref</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -351,27 +376,39 @@
                             <th>C4/5</th>
                             <th>C5</th>
                             <td>上腕外側</td>
-                            <td>三角筋<br>
-                                上腕二頭筋</td>
-                            <td><u>上腕二頭筋腱反射↓</u></td>
+                            <td>
+                                <ul>
+                                    <li>三角筋</li>
+                                    <li>Biceps</li>
+                                </ul>
+                            </td>
+                            <td><u>&darr;Biceps</u></td>
                         </tr>
                         <tr>
                             <th>C5/6</th>
                             <th>C6</th>
                             <td>前腕外側<br>
                                 （Ⅰ，Ⅱ，Ⅲ指）</td>
-                            <td>上腕二頭筋<br>
-                                手根伸筋</td>
-                            <td>腕橈骨筋腱反射↓</td>
+                            <td>
+                                <ul>
+                                    <li>Biceps</li>
+                                    <li>手根伸筋</li>
+                                </ul>
+                            </td>
+                            <td>&darr;腕橈骨筋腱反射</td>
                         </tr>
                         <tr>
                             <th>C6/7</th>
                             <th>C7</th>
                             <td>中指<br>
                                 （Ⅱ，Ⅲ，Ⅳ指）</td>
-                            <td>手根屈筋<br>
-                                指伸展</td>
-                            <td>上腕三頭筋腱反射↓</td>
+                            <td>
+                                <ul>
+                                    <li>手根屈筋</li>
+                                    <li>指伸展</li>
+                                </ul>
+                            </td>
+                            <td>&darr;Triceps</td>
                         </tr>
                         <tr>
                             <th>C7/T1</th>
@@ -388,44 +425,87 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-12">
-                <table class="table table-bordered">
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h6>頸髄損傷と神経根症状</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106F022_bas_t_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
                             <th>Level</th>
                             <th>Root</th>
-                            <th>Sensory</th>
-                            <th>Motor</th>
-                            <th>Reflex</th>
+                            <th>S</th>
+                            <th>M</th>
+                            <th>Ref</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>L3/4</th>
                             <th><u>L4</u></th>
-                            <td></td>
-                            <td>Quad<br>
-                            前脛骨筋</td>
+                            <td>
+                                <ul>
+                                    <li>下腿内側</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Quad</li>
+                                    <li>前脛骨筋</li>
+                                </ul>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
                             <th>L4/5</th>
                             <th><u>L5</u></th>
-                            <td></td>
-                            <td>長母指伸筋<br>
-                            長趾伸筋</td>
+                            <td>
+                                <ul>
+                                    <li>下腿外側-足背内側</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><u>前脛骨筋</u></li>
+                                    <li><u>長母指伸筋</u></li>
+                                    <li>長趾伸筋</li>
+                                </ul>
+                            </td>
                             <td></td>
                         </tr>
                         <tr>
                             <th>L5/S1</th>
                             <th>S1</th>
                             <td></td>
-                            <td>足関節底屈</td>
-                            <td></td>
+                            <td>
+                                <ul>
+                                    <li>足関節底屈</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><u>アキレス腱</u></li>
+                                </ul>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <h6>腰椎椎間板ヘルニアの高位と神経根症状</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106I018_bas_t_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <table class="table table-condensed">
                     <tbody>
@@ -445,12 +525,9 @@
                 </table>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>頸髄損傷と神経根症状</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/106F022_bas_t_010.jpg" class="card-img-top img-fluid">
-                </div>
+            
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3 id="C4">C4 <small><code></code></small></h3>
                 <h3 id="C5">C5 <small><code></code></small></h3>
                 <h3 id="C6">C6 <small><code></code></small></h3>
@@ -468,10 +545,7 @@
                     </li>
                 </ul>
 
-                <h6>腰椎椎間板ヘルニアの高位と神経根症状</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/106I018_bas_t_010.jpg" class="card-img-top img-fluid">
-                </div>
+                
 
                 <!-- <ul class="list-group"> -->
                     <!-- <li class="list-group-item">
@@ -993,12 +1067,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_13:03:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_13:03:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:01:43"> </span>
                         <br>
                         <p>68歳の男性．<br>
                             軽自動車を運転中に電柱に衝突し救急車で搬入された．<br>
                             意識は清明．激しい頸部痛を訴えている．<br>
-                            上腕三頭筋から両下肢にかけて高度の麻痺を認める．<br>
+                            <u>上腕三頭筋</u>から両下肢にかけて高度の麻痺を認める．<br>
                             障害部位はどれか．</p>
 
                         <ol type="a">
@@ -1029,17 +1104,19 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group SCI C5 C6" id="q02">
+            <div class="card-group SCI C5 C6 info" id="q02">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/93E15" target="_blank">93E15</a> Level C5,6,7,8,Th1,2
+                        <a href="https://qb.medilink-study.com/#/Answer/93E15" target="_blank">93E15</a> Level C / Th
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_13:07:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_13:07:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:03:55"> </span>
                         <br>
                         <p>40歳の男性．<br>
-                            1年前から徐々に歩きにくくなり，1ヵ月前から両手のしびれがあり来院した．深部反射は，下顎反射正常，上腕二頭筋反射消失，上腕三頭筋反射亢進，膝蓋腱反射亢進およびアキレス腱反射亢進がみられた．<br>
+                            1年前から徐々に歩きにくくなり，1ヵ月前から両手のしびれがあり来院した．<br>
+                            深部反射は，下顎反射正常，<u>上腕二頭筋反射消失</u>，<u>上腕三頭筋反射亢進</u>，<u>膝蓋腱反射亢進</u>および<u>アキレス腱反射亢進</u>がみられた．<br>
                             最も考えられる障害部位はどれか．</p>
 
                         <ol type="a">
@@ -1057,16 +1134,16 @@
                         <table class="table table-condensed">
                             <tbody>
                                 <tr>
-                                    <td>Biceps</td>
                                     <td>C5</td>
+                                    <td>Biceps</td>
                                 </tr>
                                 <tr>
-                                    <td>腕撓骨筋腱</td>
                                     <td>C6</td>
+                                    <td>腕撓骨筋腱</td>
                                 </tr>
                                 <tr>
-                                    <td>Triceps</td>
                                     <td>C7</td>
+                                    <td>Triceps</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1200,11 +1277,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_13:42:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_13:42:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_16:21:10"> </span>
                         <br>
                         <p>17歳の女子．<br>
                             水泳の高飛込みに失敗して<u>頭頸部を打撲</u>，<u>右上下肢の麻痺</u>を訴えて救急車で来院した．<br>
-                            意識清明．右上下肢，特に上肢に強い運動麻痺があり，左側の前胸部以下に温痛覚障害を認める．頸椎X線単純写真に骨折，脱臼はない．<br>
+                            意識清明．右上下肢，特に上肢に強い運動麻痺があり，左側の前胸部以下に温痛覚障害を認める．<br>
+                            頸椎X線単純写真に骨折，脱臼はない．<br>
                             適切な治療はどれか．3つ選べ．</p>
 
                         <ol type="a">
@@ -1233,14 +1312,23 @@
 
                         <h6>脊髄損傷の診断</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">1．神経学的所見<br>
-                                筋力低下，知覚障害 &xrArr;（損傷高位以下で認められる）<br>
-                                病的反射 &xrArr;（損傷高位より中枢では正常，損傷部では消失，損傷高位より下では亢進）<br>
-                                膀胱直腸障害 &xrArr;（球海綿体反射，肛門反射，陰茎持続勃起など）
+                            <li class="list-group-item">
+                                1．神経学的所見
+                                <ul>
+                                    <li>筋力低下，知覚障害<br>
+                                        &xrArr;（損傷高位以下で認められる）</li>
+                                    <li>病的反射<br>
+                                        &xrArr;（損傷高位より中枢では正常，損傷部では消失，損傷高位より下では亢進）</li>
+                                    <li>膀胱直腸障害<br>
+                                        &xrArr;（球海綿体反射，肛門反射，陰茎持続勃起など）</li>
+                                </ul>
                             </li>
-                            <li class="list-group-item">2．画像所見<br>
-                                単純X線，CTによる椎体骨折の有無<br>
-                                MRI（T2強調画像で高輝度領域を認める）
+                            <li class="list-group-item">
+                                2．画像所見
+                                <ul>
+                                    <li>単純X線，CTによる椎体骨折の有無<br>
+                                        MRI（T2強調画像で高輝度領域を認める）</li>
+                                </ul>
                             </li>
                         </ul>
 
@@ -1263,7 +1351,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_13:49:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_13:49:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:06:31"> </span>
                         <br>
                         <p>受傷直後の完全頸髄損傷でみられないのはどれか．</p>
 
@@ -1283,17 +1372,28 @@
 
                         <h6>脊髄ショック</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">全感覚</li>
-                            <li class="list-group-item">弛緩性麻痺</li>
-                            <li class="list-group-item">尿閉</li>
-                            <li class="list-group-item">DTR(-) &rarr; 回復期には亢進</li>
+                            <li class="list-group-item">
+                                全感覚
+                            </li>
+                            <li class="list-group-item">
+                                弛緩性麻痺
+                            </li>
+                            <li class="list-group-item">
+                                尿閉
+                            </li>
+                            <li class="list-group-item">
+                                DTR(-) &rarr; 回復期には亢進
+                            </li>
                         </ul>
 
 
                         <h6>頸髄</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">横隔神経</li>
-                            <li class="list-group-item">交感神経 障害
+                            <li class="list-group-item">
+                                横隔神経
+                            </li>
+                            <li class="list-group-item">
+                                交感神経 障害
                                 <ul>
                                     <li>HoTN</li>
                                     <li>&darr;COutput</li>
@@ -1325,7 +1425,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_14:00:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_14:00:02"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_16:32:50"> </span>
                         <br>
                         <p>43歳の男性．<br>
                             <u>肩こり</u>，<u>頸部痛</u>および<u>歩行困難</u>を訴え来院した．<br>
@@ -1335,7 +1436,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/95G046.jpg" width="50%"> -->
-                    <img src="https://qb.medilink-study.com/images/95G046.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/95G046.jpg" class="card-img-top img-fluid" width="70%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1353,7 +1454,8 @@
                         <!-- <img src="https://www.qb-online.com/img/95G046_ima_t_010.jpg" class="img-fluid">  -->
                         <img src="https://qb.medilink-study.com/images/95G046_ima_t_010.jpg" class="card-img-top img-fluid">
 
-                        <p class="q_dx">C5/6 椎間板ヘルニア 
+
+                        <p class="q_dx">C5/6 椎間板ヘルニア &rArr;
                             神経根C6 障害</p>
 
                         <p class="q_answer_true">a d e</p>
@@ -1371,17 +1473,38 @@
                             <tbody>
                                 <tr>
                                     <th>頸椎症状</th>
-                                    <td>後頸部痛，頸肩こり，頸部運動制限</td>
+                                    <td>
+                                        <ul>
+                                            <li>後頸部痛</li>
+                                            <li>頸肩こり</li>
+                                            <li>頸部運動制限</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>神経根症状</th>
-                                    <td>一側上肢への放散痛，しびれ感，知覚障害，運動障害，深部腱反射低下～消失<br>
-                                        （→圧迫を受けているレベルのみ症状が出現</td>）
+                                    <td>
+                                        <ul>
+                                            <li>一側上肢への放散痛</li>
+                                            <li>しびれ感</li>
+                                            <li>知覚障害</li>
+                                            <li>運動障害</li>
+                                            <li>深部腱反射低下～消失</li>
+                                        </ul>
+                                        （圧迫を受けているレベルのみ症状が出現)
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>脊髄症状</th>
-                                    <td>両側性の知覚障害，運動障害（痙性歩行など），障害髄節より低位の深部腱反射亢進，膀胱直腸障害<br>
-                                        （→障害レベル以下すべての圧迫症状が出現）</td>
+                                    <td>
+                                        <ul>
+                                            <li>両側性の知覚障害</li>
+                                            <li>運動障害（痙性歩行など）</li>
+                                            <li>障害髄節より低位の深部腱反射亢進</li>
+                                            <li>膀胱直腸障害</li>
+                                        </ul>
+                                        (障害レベル以下すべての圧迫症状が出現)
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1399,11 +1522,12 @@
             <div class="card-group LDH L5" id="q07">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/100F46" target="_blank">100F46</a>症候
+                        <a href="https://qb.medilink-study.com/#/Answer/100F46" target="_blank">100F46</a> 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_14:11:29"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_14:11:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_16:38:32"> </span>
                         <br>
                         <p>43歳の男性．<br>
                         <u>右下肢の脱力感</u>を主訴に来院した．<br>
@@ -1448,7 +1572,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_14:17:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_14:17:25"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_17:10:47"> </span>
                         <br>
                         <p>腰椎椎間板ヘルニアでL5神経根が圧迫され，同側下肢の筋力低下がみられた．<br>
                             障害されると考えられる動作はどれか．</p>
@@ -1494,11 +1619,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_14:21:58"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_14:21:58"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_16:41:38"> </span>
                         <br>
                         <p>42歳の男性．<br>
                             中腰で重いものを持ち上げようとしたとき激しい腰痛が起こり動けなくなったので，救急車で来院した．<br>
-                            数年前から時々腰痛があり，腰椎椎間板ヘルニアの診断を受けていたが放置していた．左下肢に放散痛，運動麻痺および感覚鈍麻がある．腰部単純MRIを次に示す．<br>
+                            数年前から時々腰痛があり，腰椎椎間板ヘルニアの診断を受けていたが放置していた．<br>
+                            左下肢に放散痛，運動麻痺および感覚鈍麻がある．腰部単純MRIを次に示す．<br>
                             左下肢で筋力低下を認めるのはどれか．</p>
                     </div>
 
@@ -1614,11 +1741,12 @@
             <div class="card-group LDH info" id="q11">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/96H52" target="_blank">96H52</a> 腰椎椎間板ヘルニア 治療
+                        <a href="https://qb.medilink-study.com/#/Answer/96H52" target="_blank">96H52</a> LDH 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_14:33:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_14:33:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_16:44:09"> </span>
                         <br>
                         <p>腰部椎間板ヘルニアによる腰痛の治療で正しいのはどれか．2つ選べ．</p>
                         
@@ -1650,10 +1778,35 @@
 
                         <h6>腰部椎間板ヘルニアの治療</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">安静（臥床，コルセット，間欠牽引，労働回避）</li>
-                            <li class="list-group-item">服薬（鎮痛剤，筋弛緩剤，シップ）</li>
-                            <li class="list-group-item">注射（局所，硬膜外ブロック・交感神経ブロック（主に下肢痛に））</li>
-                            <li class="list-group-item">手術（1〜3に対して抵抗性の時，麻痺のある時）</li>
+                            <li class="list-group-item">
+                                安静
+                                <ul>
+                                    <li>臥床</li>
+                                    <li>コルセット</li>
+                                    <li>間欠牽引</li>
+                                    <li>労働回避</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                服薬
+                                <ul>
+                                    <li>鎮痛剤</li>
+                                    <li>筋弛緩剤</li>
+                                    <li>シップ</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                注射
+                                <ul>
+                                    <li>局所</li>
+                                    <li>硬膜外ブロック・交感神経ブロック<br>
+                                        (主に下肢痛に)
+                                    </li>
+                                </ul></li>
+                            <li class="list-group-item">
+                                手術<br>
+                                (1〜3に対して抵抗性の時，麻痺のある時)
+                            </li>
                         </ul>
 
 
@@ -1717,7 +1870,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_17:14:58"> </span>
                         <br>
                         <p>頸椎症性神経根症でみられるのはどれか．</p>
 
@@ -1760,14 +1914,19 @@
             <div class="card-group OPLL CS pri req" id="q14">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107H25" target="_blank">107H25</a> 頸椎単純XR 診断
+                        <a href="https://qb.medilink-study.com/#/Answer/107H25" target="_blank">107H25</a> XR 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_14:54:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_14:54:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:16:36"> </span>
                         <br>
                         <p>61歳の男性．<br>
-                            両手のしびれ感を主訴に来院した．半年前から両手指のしびれ感を自覚していた．徐々に食事動作や書字動作がしにくくなり，歩行時の足のもつれも生じるようになったため受診した．上肢の巧緻性の低下と下肢腱反射の亢進とを認める．頸椎単純X線写真を次に示す．<br>
+                            両手のしびれ感を主訴に来院した．<br>
+                            半年前から両手指のしびれ感を自覚していた．<br>
+                            徐々に食事動作や書字動作がしにくくなり，歩行時の足のもつれも生じるようになったため受診した．<br>
+                            上肢の巧緻性の低下と下肢腱反射の亢進とを認める．<br>
+                            頸椎単純X線写真を次に示す．<br>
                             考えられるのはどれか．</p>
                     </div>
 
@@ -1788,6 +1947,7 @@
                     <div class="card-body">
                         
                         <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/107/img/107H025_ima_t_010.jpg" alt="no connection..." class="img-fluid"> -->
+
                         <img src="https://qb.medilink-study.com/images/107H025_ima_t_010.jpg" class="card-img-top img-fluid">
 
                         <p class="q_dx">後縦靭帯骨化症 &rArr; 頚椎症</p>
@@ -1808,19 +1968,25 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group OPLL " id="q15">
+            <div class="card-group OPLL DM" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104A42" target="_blank">104A42</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_15:00:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_15:00:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_16:52:07"> </span>
                         <br>
                         <p>62歳の男性．<br>
                             四肢のしびれと歩行障害とを主訴に妻に伴われて来院した．<br>
-                            4年前から手の動かしにくさとしびれ感とを感じていた．1年前から階段を下りるときに手すりが必要になったが，医療機関を受診しなかった．昨日，敷居に足が引っかかりよろめいてから四肢のしびれが強くなり，自力で歩けなくなった．健康診断で軽度の糖尿病を指摘されたことがある．家族歴と生活歴とに特記すべきことはない．<br>
-                            意識は清明．身長167cm，体重67kg．坐位はとれるが，介助しても立位は不可能．徒手筋力テストでは上下肢ともほぼ3（fair）である．深部腱反射は上腕二頭筋以下すべて亢進し，Babinski徴候は陽性である．四肢に末梢優位の表在感覚低下を認める．明らかな膀胱・直腸障害はない．<br>
+                            4年前から手の動かしにくさとしびれ感とを感じていた．<br>
+                            1年前から階段を下りるときに手すりが必要になったが，医療機関を受診しなかった．<br>
+                            昨日，敷居に足が引っかかりよろめいてから四肢のしびれが強くなり，自力で歩けなくなった．<br>
+                            健康診断で<u>軽度の糖尿病</u>を指摘されたことがある．<br>
+                            家族歴と生活歴とに特記すべきことはない．<br>
+                            意識は清明．身長167cm，体重67kg．<br>
+                            坐位はとれるが，介助しても立位は不可能．徒手筋力テストでは上下肢ともほぼ3（fair）である．深部腱反射は上腕二頭筋以下すべて亢進し，Babinski徴候は陽性である．四肢に末梢優位の表在感覚低下を認める．明らかな膀胱・直腸障害はない．<br>
                             頸椎X線写真の側面像（A）と頸椎単純CT（B）とを次に示す．<br>
                             治療方針として適切なのはどれか．</p>
                     </div>
@@ -1939,14 +2105,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group spinal_canal_stenosis info" id="q17">
+            <div class="card-group spinal_canal_stenosis OPLL OYL info" id="q17">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/97B15" target="_blank">97B15</a> 脊柱管狭窄の原因
+                        <a href="https://qb.medilink-study.com/#/Answer/97B15" target="_blank">97B15</a> 脊柱管狭窄
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_15:11:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_15:11:04"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:19:40"> </span>
                         <br>
                         <p>脊柱管狭窄の原因とならないのはどれか．</p>
 
@@ -1978,16 +2145,28 @@
 
                         <h6>脊柱菅狭窄症</h6>
                         <ul class="list-group">
-                            <li class="list-group-item"><u>変形性脊椎症</u></li>
-                            <li class="list-group-item">脊柱菅内靭帯骨化症
+                            <li class="list-group-item">
+                                <u>変形性脊椎症</u>
+                            </li>
+                            <li class="list-group-item">
+                                脊柱菅内靭帯骨化症
                                 <ul>
                                     <li><u>OPLL</u></li>
                                     <li><u>OYL</u></li>
-                                </ul></li>
-                            <li class="list-group-item"><u>椎間板ヘルニア</u></li>
-                            <li class="list-group-item"><u>脊椎すべり症</u></li>
-                            <li class="list-group-item">椎間関節, 黄色靭帯の肥厚</li>
-                            <li class="list-group-item">外傷，医原性（脊椎後方固定術後）</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <u>椎間板ヘルニア</u>
+                            </li>
+                            <li class="list-group-item">
+                                <u>脊椎すべり症</u>
+                            </li>
+                            <li class="list-group-item">
+                                椎間関節, 黄色靭帯の肥厚
+                            </li>
+                            <li class="list-group-item">
+                                外傷，医原性 (脊椎後方固定術後)
+                            </li>
                         </ul>
 
 
@@ -2014,11 +2193,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_15:19:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_15:19:12"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_17:00:25"> </span>
                         <br>
                         <p>71歳の男性．<br>
-                            腰痛と会陰部のしびれとを主訴に来院した．<br>
-                            10年前から時々腰痛を自覚していたが，2年前から腰痛が強くなり，歩行後に右足先がしびれるようになった．3ヵ月前からは100mの歩行で会陰部に強いしびれが生じ，尿意を催すようになった．腰かけて数分休むと症状は消失する．腰椎の前屈は正常であるが，後屈は制限されている．<br>
+                            <u>腰痛</u>と<u>会陰部のしびれ</u>とを主訴に来院した．<br>
+                            10年前から時々腰痛を自覚していたが，2年前から腰痛が強くなり，歩行後に右足先がしびれるようになった．<br>
+                            3ヵ月前からは100mの歩行で会陰部に強いしびれが生じ，<u>尿意を催す</u>ようになった．腰かけて数分休むと症状は消失する．腰椎の前屈は正常であるが，後屈は制限されている．<br>
                             この患者にみられるのはどれか．</p>
 
 
@@ -2059,11 +2240,12 @@
             <div class="card-group scoliosis info" id="q19">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/102I16" target="_blank">102I16</a> 脊柱側弯症検診
+                        <a href="https://qb.medilink-study.com/#/Answer/102I16" target="_blank">102I16</a> 脊柱側弯症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_15:23:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_15:23:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:23:03"> </span>
                         <br>
                         <p>学校における脊柱側弯症検診で着目すべき所見はどれか．2つ選べ．</p>
 
@@ -2199,7 +2381,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110I32" target="_blank" id="">110I32</a> 脊椎疾患 - 症状
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-12_15:40:01"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_15:40:01"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:29:21"> </span>
                         <br>
                         <p>脊椎疾患とその症状の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -2218,9 +2401,9 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
-                        <p class="q_answer_true"></p>
+                        <p class="q_answer_true">c d</p>
 
                         <ol type="a">
                             <li></li>
@@ -2241,7 +2424,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_15:43:29"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_15:43:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_17:31:21"> </span>
                         <br>
                         <p>脊椎の加齢性変化について正しいのはどれか．</p>
 
@@ -2280,7 +2464,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_15:46:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_15:46:45"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_17:34:57"> </span>
                         <br>
                         <p>急性腰痛の対応で適切なのはどれか．</p>
 
@@ -2425,7 +2610,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2435,6 +2624,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2453,7 +2663,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2497,13 +2719,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2520,54 +2743,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2806,98 +3029,99 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#SCI h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SCI)').toggle();
+        $('div.card-group:not(.SCI)').slideToggle(100);
     });
-    $('#SCI').find('code').html($('div.SCI').size());
+    $('#SCI').find('code').html($('div.SCI > .card > .mis').size() + '/' + $('div.SCI').size());
 
 
     $('#C4').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.C4)').toggle();
+        $('div.card-group:not(.C4)').slideToggle(100);
     });
-    $('#C4').find('code').html($('div.C4').size());
+    $('#C4').find('code').html($('div.C4 > .card > .mis').size() + '/' + $('div.C4').size());
 
 
     $('#C5').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.C5)').toggle();
+        $('div.card-group:not(.C5)').slideToggle(100);
     });
-    $('#C5').find('code').html($('div.C5').size());
+    $('#C5').find('code').html($('div.C5 > .card > .mis').size() + '/' + $('div.C5').size());
 
 
     $('#C6').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.C6)').toggle();
+        $('div.card-group:not(.C6)').slideToggle(100);
     });
-    $('#C6').find('code').html($('div.C6').size());
+    $('#C6').find('code').html($('div.C6 > .card > .mis').size() + '/' + $('div.C6').size());
 
 
     $('#C7').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.C7)').toggle();
+        $('div.card-group:not(.C7)').slideToggle(100);
     });
-    $('#C7').find('code').html($('div.C7').size());
+    $('#C7').find('code').html($('div.C7 > .card > .mis').size() + '/' + $('div.C7').size());
 
 
     $('#CDH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CDH)').toggle();
+        $('div.card-group:not(.CDH)').slideToggle(100);
     });
-    $('#CDH').find('code').html($('div.CDH').size());
+    $('#CDH').find('code').html($('div.CDH > .card > .mis').size() + '/' + $('div.CDH').size());
 
 
     $('#LDH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.LDH)').toggle();
+        $('div.card-group:not(.LDH)').slideToggle(100);
     });
-    $('#LDH').find('code').html($('div.LDH').size());
+    $('#LDH').find('code').html($('div.LDH > .card > .mis').size() + '/' + $('div.LDH').size());
 
 
     $('#L5').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.L5)').toggle();
+        $('div.card-group:not(.L5)').slideToggle(100);
     });
-    $('#L5').find('code').html($('div.L5').size());
+    $('#L5').find('code').html($('div.L5 > .card > .mis').size() + '/' + $('div.L5').size());
 
 
     $('#CS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CS)').toggle();
+        $('div.card-group:not(.CS)').slideToggle(100);
     });
-    $('#CS').find('code').html($('div.CS').size());
+    $('#CS').find('code').html($('div.C5 > .card > .mis').size() + '/' + $('div.CS').size());
 
 
     $('#OPLL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.OPLL)').toggle();
+        $('div.card-group:not(.OPLL)').slideToggle(100);
     });
-    $('#OPLL').find('code').html($('div.OPLL').size());
+    $('#OPLL').find('code').html($('div.OPLL > .card > .mis').size() + '/' + $('div.OPLL').size());
 
 
     $('#spinal_canal_stenosis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.spinal_canal_stenosis)').toggle();
+        $('div.card-group:not(.spinal_canal_stenosis)').slideToggle(100);
     });
-    $('#spinal_canal_stenosis').find('code').html($('div.spinal_canal_stenosis').size());
+    $('#spinal_canal_stenosis').find('code').html($('div.spinal_canal_stenosis > .card > .mis').size() + '/' + $('div.spinal_canal_stenosis').size());
 
 
     $('#scoliosis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.scoliosis)').toggle();
+        $('div.card-group:not(.scoliosis)').slideToggle(100);
     });
-    $('#scoliosis').find('code').html($('div.scoliosis').size());
+    $('#scoliosis').find('code').html($('div.scoliosis > .card > .mis').size() + '/' + $('div.scoliosis').size());
 
 
     $('#back_pain h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.back_pain)').toggle();
+        $('div.card-group:not(.back_pain)').slideToggle(100);
     });
-    $('#back_pain').find('code').html($('div.back_pain').size());
+    $('#back_pain').find('code').html($('div.back_pain > .card > .mis').size() + '/' + $('div.back_pain').size());
 
 
 
@@ -2906,9 +3130,10 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    
+    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
 
 });
 </script>

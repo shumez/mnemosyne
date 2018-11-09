@@ -4,12 +4,26 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-11 19:33:12
+@Last modified time: 2018-11-09 10:59:12
 -->
 
 
 <!DOCTYPE html>
 <!--    
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
 04.01.18    18 08 26    style font-size
@@ -93,8 +107,8 @@
     <title>Joint</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-11 19:33:22" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.20">
+    <meta name="revised" content="2018-11-09 10:59:33" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -121,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -153,6 +167,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -191,31 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            h3{font-size: 16px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px; margin: : 5px 5px 5px 5px}
-
-            li.list-group-item{border-color: black; border-width: 1px; padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -268,64 +297,76 @@
     
 
 
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>膝関節軟部損傷の検査</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>内側側副靱帯</th>
+                            <td>
+                                <ul>
+                                    <li>外反ストレステスト</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>外側側副靱帯</th>
+                            <td>
+                                <ul>
+                                    <li>内反ストレステスト</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>前十字靱帯</th>
+                            <td>
+                                <ul>
+                                    <li>前方引き出しテスト</li>
+                                    <li>Lachmanテスト</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>後十字靱帯</th>
+                            <td>
+                                <ul>
+                                    <li>後方引き出しテスト</li>
+                                    <li>Saggingテスト</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>半月板</th>
+                            <td>
+                                <ul>
+                                    <li>McMurrayテスト</li>
+                                    <li>Apleyテスト</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
     
     <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>膝関節軟部損傷の検査</h6>
-            <table class="table table-condensed">
-                <tbody>
-                    <tr>
-                        <th>内側側副靱帯</th>
-                        <td>
-                            <ul>
-                                <li>外反ストレステスト</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>外側側副靱帯</th>
-                        <td>
-                            <ul>
-                                <li>内反ストレステスト</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>前十字靱帯</th>
-                        <td>
-                            <ul>
-                                <li>前方引き出しテスト</li>
-                                <li>Lachmanテスト</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>後十字靱帯</th>
-                        <td>
-                            <ul>
-                                <li>後方引き出しテスト</li>
-                                <li>Saggingテスト</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>半月板</th>
-                        <td>
-                            <ul>
-                                <li>McMurrayテスト</li>
-                                <li>Apleyテスト</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="meniscus">
+            <div class="section" id="meniscus_injury">
                 <div class="page-header">
-                    <h2>Meniscus <small>半月板</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Meniscus Injury <small>半月板損傷</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
                 <!-- <ul class="list-group"> -->
@@ -348,6 +389,12 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 <!-- </ul> -->
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/102I053_ima_t_010.jpg" class="card-img-top img-fluid">
+                </div>
+
             </div>            
         </div>
 
@@ -400,73 +447,78 @@
         </div>
     </div>
 
-    
-    <div class="section" id="ACL">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-header">
-                    <h2>ACL <small>前十字靭帯</small> <small class="hidden-xs-down">Anterior Cruciate Ligament</small> <small><code></code></small></h2>
-                </div>
-            </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+    <div class="page-header">
+        <h2>Knee Ligament Injury</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>前十字靱帯損傷 / 後十字靱帯損傷</h6>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>前十字靱帯損傷</th>
+                        <th>後十字靱帯損傷</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>受傷機転</th>
+                        <td>スポーツ活動などでのジャンプやその着地・方向転換の際に生じることが多い</td>
+                        <td>交通事故などで膝の前面を強く打ちつけたときに生じることが多い</td>
+                    </tr>
+                    <tr>
+                        <th>関節内血腫</th>
+                        <td>比較的多量</td>
+                        <td>比較的少量</td>
+                    </tr>
+                    <tr>
+                        <th>不安定性</th>
+                        <td>前方不安定</td>
+                        <td>後方不安定</td>
+                    </tr>
+                    <tr>
+                        <th>検査</th>
+                        <td>前方引き出しテスト<br>
+                            Lachmannテスト</td>
+                        <td>後方引き出しテスト<br>
+                            Saggingテスト</td>
+                    </tr>
+                    <tr>
+                        <th>治療</th>
+                        <td>原則として観血的靱帯再建術</td>
+                        <td>原則として大腿四頭筋訓練などの保存的治療</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-xs-12 col-sm-4 col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    ACL:<br>
+                    バスケ着地</li>
+                <li class="list-group-item">
+                    半月板:<br>
+                    走ってひねる</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ACL">
+                <div class="page-header">
+                    <h2>ACL <small>前十字靭帯</small> <!-- <small class="hidden-xs-down">Anterior Cruciate Ligament</small> --><small><code></code></small></h2>
+                </div>
+
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/105D059_bas_t_010.jpg" class="card-img-top img-fluid">
                 </div>
-            </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>前十字靱帯損傷 / 後十字靱帯損傷</h6>
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>前十字靱帯損傷</th>
-                            <th>後十字靱帯損傷</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>受傷機転</th>
-                            <td>スポーツ活動などでのジャンプやその着地・方向転換の際に生じることが多い</td>
-                            <td>交通事故などで膝の前面を強く打ちつけたときに生じることが多い</td>
-                        </tr>
-                        <tr>
-                            <th>関節内血腫</th>
-                            <td>比較的多量</td>
-                            <td>比較的少量</td>
-                        </tr>
-                        <tr>
-                            <th>不安定性</th>
-                            <td>前方不安定</td>
-                            <td>後方不安定</td>
-                        </tr>
-                        <tr>
-                            <th>検査</th>
-                            <td>前方引き出しテスト<br>
-                                Lachmannテスト</td>
-                            <td>後方引き出しテスト<br>
-                                Saggingテスト</td>
-                        </tr>
-                        <tr>
-                            <th>治療</th>
-                            <td>原則として観血的靱帯再建術</td>
-                            <td>原則として大腿四頭筋訓練などの保存的治療</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">ACL:<br>
-                        バスケ着地</li>
-                    <li class="list-group-item">半月板:<br>
-                        走ってひねる</li>
-                </ul>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
                 <!-- <ul class="list-group"> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
@@ -487,8 +539,30 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 <!-- </ul> -->
-            </div>            
+            </div>
         </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PCL">
+                <div class="page-header">
+                    <h2>PCL <small>後十字靭帯損傷</small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MCL">
+                <div class="page-header">
+                    <h2>MCL <small>内側側副靭帯損傷</small> <small><code></code></small></h2>
+                </div>
+
+
+
+            </div>
+        </div>
+           
     </div>
 
     <div class="row">
@@ -728,14 +802,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group meniscus info" id="q01">
+            <div class="card-group meniscus_injury info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102I53" target="_blank">102I53</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-11_19:37:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_19:37:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_11:10:15"> </span>
                         <br>
                         <p>44歳の男性．<br>
                             右膝の疼痛と腫脹とを主訴に来院した．<br>
@@ -803,14 +878,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group meniscus chondromalacia_patellae info" id="q02">
+            <div class="card-group meniscus_injury chondromalacia_patellae info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95G47" target="_blank">95G47</a> 膝関節痛 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_19:45:47"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_19:45:47"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-09_11:04:55"> </span>
                         <br>
                         <p>13歳の男子．<br>
                             左膝痛を主訴に来院した．<br>
@@ -835,7 +911,7 @@
                             <!-- <li></li> -->
                         </ul>
 
-                        <p class="q_dx">半月板障害 膝蓋軟骨軟化症</p>
+                        <p class="q_dx">半月板障害 / 膝蓋軟骨軟化症</p>
 
                         <p class="q_answer_true">b c</p>
 
@@ -864,8 +940,12 @@
                                 </ul>
 
                                 半月板損傷に類似</li>
-                            <li class="list-group-item">anterior knee pain syndrome 膝前面痛症候群の1つ</li>
+                            <li class="list-group-item">
+                                anterior knee pain syndrome 膝前面痛症候群の1つ
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -878,16 +958,19 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-11_19:56:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_19:56:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_11:13:21"> </span>
                         <br>
                         <p>17歳の女子．<br>
                             左膝の痛みを主訴に来院した．<br>
-                            バスケットボールでジャンプして着地した際，バランスを崩して転倒した．左膝の疼痛と腫脹とが著しく，関節穿刺で30mLの血性関節液を吸引した．その後1ヵ月で疼痛は次第に軽減したが，斜面を歩いたときに膝がガクッと曲がってしまうことが何度かあった．左膝関節を前方から見た模式図（膝蓋骨は示していない）を示す．<br>
+                            バスケットボールでジャンプして着地した際，<u>バランスを崩して転倒</u>した．<br>
+                            左膝の疼痛と腫脹とが著しく，関節穿刺で30mLの血性関節液を吸引した．その後1ヵ月で疼痛は次第に軽減したが，斜面を歩いたときに膝がガクッと曲がってしまうことが何度かあった．<br>
+                            左膝関節を前方から見た模式図（膝蓋骨は示していない）を示す．<br>
                             この患者で損傷されている可能性が高いのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/105D059.jpg" class="img-fluid" width="50%"> -->
-                    <img src="https://qb.medilink-study.com/images/105D059.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/105D059.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -968,10 +1051,11 @@
             <div class="card-group ACL info 110" id="q04">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110A5" target="_blank" id="">110A5</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/110A5" target="_blank" id="">110A5</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-11_20:10:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-11_20:10:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_11:16:46"> </span>
                         <br>
                         <p>3週前にバスケットボールで着地した際に左膝を捻って受傷した21歳の男性の連続した左膝関節部MRIのT2強調矢状断像（A，B）を次に示す．<br>
                             最も疑われるのはどれか．</p>
@@ -1079,7 +1163,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-11_20:16:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-11_20:16:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-09_11:07:44"> </span>
                         <br>
                         <p>21歳の男性．<br>
                             サッカーの試合中に接触転倒し，右膝部に痛みを訴えて救護室に担がれてきた．右膝関節は軽度屈曲位で腫脹があり，明らかな膝蓋跳動がみられた．主力選手であり試合への継続出場を強く望んでいる．<br>
@@ -1256,7 +1341,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1266,6 +1355,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1284,7 +1394,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1328,13 +1450,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1351,54 +1474,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -1637,34 +1760,35 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
-    $('#meniscus h2').click(function(){
+    $('#meniscus_injury h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.meniscus)').toggle();
+        $('div.card-group:not(.meniscus_injury)').slideToggle(100);
     });
-    $('#meniscus').find('code').html($('div.meniscus').size());
+    $('#meniscus_injury').find('code').html($('div.meniscus_injury > .card > .mis').size() + '/' + $('div.meniscus_injury').size());
 
 
     $('#chondromalacia_patellae h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.chondromalacia_patellae)').toggle();
+        $('div.card-group:not(.chondromalacia_patellae)').slideToggle(100);
     });
-    $('#chondromalacia_patellae').find('code').html($('div.chondromalacia_patellae').size());
+    $('#chondromalacia_patellae').find('code').html($('div.chondromalacia_patellae > .card > .mis').size() + '/' + $('div.chondromalacia_patellae').size());
 
     $('#ACL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ACL)').toggle();
+        $('div.card-group:not(.ACL)').slideToggle(100);
     });
-    $('#ACL').find('code').html($('div.ACL').size());
+    $('#ACL').find('code').html($('div.ACL > .card > .mis').size() + '/' + $('div.ACL').size());
 
 
     $('#internal_derangement_of_knee_joint h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.internal_derangement_of_knee_joint)').toggle();
+        $('div.card-group:not(.internal_derangement_of_knee_joint)').slideTogg;
     });
-    $('#internal_derangement_of_knee_joint').find('code').html($('div.internal_derangement_of_knee_joint').size());
+    $('#internal_derangement_of_knee_joint').find('code').html($('div.internal_derangement_of_knee_joint > .card > .mis').size() + '/' + $('div.internal_derangement_of_knee_joint').size());
 
 
 
@@ -1672,9 +1796,10 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    
+    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
 
 });
 </script>

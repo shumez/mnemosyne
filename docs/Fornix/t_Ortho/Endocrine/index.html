@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-13 17:26:56
+@Last modified time: 2018-11-10 17:28:10
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
@@ -94,8 +107,8 @@
     <title>Endo</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-13 17:43:00" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.21">
+    <meta name="revised" content="2018-11-10 17:37:19" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -122,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -154,6 +167,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -194,33 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -273,153 +297,183 @@
     
 
 
-    
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>骨形成不全症</th>
-                        <th>大理石骨病</th>
-                        <th>骨Paget病</th>
-                        <th>軟骨無形成症</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>原因</th>
-                        <td>骨芽細胞の異常による<br>
-                            <u>Ⅰ型コラーゲン</u>合成障害</td>
-                        <td>破骨細胞の機能低下</td>
-                        <td>原因不明</td>
-                        <td>第４染色体短腕上の<br>
-                            <u>FGFR3</u>＊の変異（常・優）</td>
-                    </tr>
-                    <tr>
-                        <th>病態</th>
-                        <td><u>骨膜性骨化の障害</u></td>
-                        <td>骨吸収<br>
-                            骨形成障害</td>
-                        <td>局所性に骨吸収と骨新生が過剰反復</td>
-                        <td><u>軟骨内骨化</u>の障害</td>
-                        </tr>
-                    <tr>
-                        <th>症状</th>
-                        <td>
-                            <ul>
-                                <li>易骨折性</li>
-                                <li><u>青色強膜</u></li>
-                                <li>難聴</li>
-                                <li>小児期からの骨粗鬆症</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>骨硬化</li>
-                                <li>易骨折性</li>
-                                <li>造血障害</li>
-                                <li>う歯（下顎骨骨髄炎へ波及）</li>
-                            </ul>
-                        </td>
-                        <td>X線：
-                            <ul>
-                                <li>骨萎縮像と骨硬化像が混在</li>
-                                <li>血中ALP↑</li>
-                                <li>神経絞扼</li>
-                                <li>病的骨折</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li><u>四肢短縮型の低身長</u></li>
-                                <li><u>大頭</u></li>
-                                <li>前額部突出</li>
-                                <li>亀背</li>
-                                <li>太く短い手指</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="achondrogenesis">
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Achondrogenesis <small>軟骨無形成症</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Intro</h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-9 col-md-9">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>骨形成不全症</th>
+                            <th>大理石骨病</th>
+                            <th>骨Paget病</th>
+                            <th>軟骨無形成症</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>原因</th>
+                            <td>骨芽細胞の異常による<br>
+                                <u>Ⅰ型コラーゲン</u>合成障害</td>
+                            <td>破骨細胞の機能低下</td>
+                            <td>原因不明</td>
+                            <td>第４染色体短腕上の<br>
+                                <u>FGFR3</u>＊の変異（常・優）</td>
+                        </tr>
+                        <tr>
+                            <th>病態</th>
+                            <td><u>骨膜性骨化</u><br>
+                                の障害</td>
+                            <td>骨吸収<br>
+                                骨形成障害</td>
+                            <td>局所性に骨吸収と骨新生が過剰反復</td>
+                            <td><u>軟骨内骨化</u><br>
+                                の障害</td>
+                            </tr>
+                        <tr>
+                            <th>症状</th>
+                            <td>
+                                <ul>
+                                    <li>易骨折性</li>
+                                    <li><u>青色強膜</u></li>
+                                    <li>難聴</li>
+                                    <li>小児期からの骨粗鬆症</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>骨硬化</li>
+                                    <li>易骨折性</li>
+                                    <li>造血障害</li>
+                                    <li>う歯（下顎骨骨髄炎へ波及）</li>
+                                </ul>
+                            </td>
+                            <td>X線：
+                                <ul>
+                                    <li>骨萎縮像と骨硬化像が混在</li>
+                                    <li>血中ALP↑</li>
+                                    <li>神経絞扼</li>
+                                    <li>病的骨折</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><u>四肢短縮型の低身長</u></li>
+                                    <li><u>大頭</u></li>
+                                    <li>前額部突出</li>
+                                    <li>亀背</li>
+                                    <li>太く短い手指</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="section" id="achondrogenesis">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Achondrogenesis <small>軟骨無形成症</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                         <ul>
-                            <li>軟骨内骨化</li>
+                            <li>AD<br>
+                                &rArr; <i>FGFR3</i> point mut<br>
+                                &rArr; 軟骨内骨化 障害<br>
+                                膜性骨化 nl</li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>1 / 1-2 &times;10<sup>4</sup></li>
+                        </ul>
+                    </li>
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
                             <li>四肢短縮型低身長</li>
-                            <li>大頭</li>
-                            <li>前額部突出</li>
-                            <li>亀背</li>
-                            <li>太く短い手指</li>
+                            <li>大頭 / 前額部突出 / 亀背 / 太く短い手指</li>
+                            <li><u>内反膝 O脚</u></li>
+                            <li>鞍鼻</li>
+                            <li>三尖手</li>
+                        </ul>
+                        <ul>
+                            <li><u>脊柱管狭窄症</u></li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>US <u>胎内診断可能</u></li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                </ul>
-
-                <ul class="list-group">
-                    <li class="list-group-item">概念<br>
-                        線維芽細胞増殖因子受容体3（FGFR3）の変異により，四肢の短縮を伴った低身長をきたす疾患．</li>
-                    <li class="list-group-item">疫学<br>
-                        1～2万人に1人</li>
-                    <li class="list-group-item">遺伝形式<br>
-                        常染色体優性遺伝だが，突然変異による孤発例も多い．</li>
-                    <li class="list-group-item">症状
                         <ul>
-                            <li>低身長</li>
-                            <li>大きな頭蓋</li>
-                            <li>鞍鼻</li>
-                            <li>三尖手</li>
-                            <li>O脚</li>
+                            <li>対症療法</li>
+                            <li>成長ホルモンの投与</li>
+                            <li>骨延長術</li>
                         </ul>
                     </li>
-                    <li class="list-group-item">治療<br>
-                        対症療法が中心だが，成長ホルモンの投与，骨延長術を行う場合もある．</li>
                 </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="http://www.usmle77k.com/usmle77k/image/q_image/PreTest%20Pediatrics%2010ed-432.jpg" class="card-img-top img">
+                </div>
+
             </div>            
         </div>
+    </div>
 
-
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="osteogenesis_imperfecta">
                 <div class="page-header">
-                    <h2>Osteogenesis Imperfecta <small>骨形成不全症</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Osteogenesis Imperfecta <small>骨形成不全症</small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
+                <ul class="list-group">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>膜性骨化 障害</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
+                        <ul>
+                            <li>易骨折性<br>
+                                &rArr; 仮骨形成<br>
+                                &rArr; 変形</li>
+                            <li>青色強膜</li>
+                            <li>難聴</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                     </li> -->
@@ -429,7 +483,7 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
-                <!-- </ul> -->
+                </ul>
 
 
                 <table class="table table-condensed">
@@ -466,6 +520,83 @@
         </div>
 
 
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="marble_bone_disease">
+                <div class="page-header">
+                    <h2>Marble Bone Disease <small>大理石骨病</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>破骨細胞 &darr;Func</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>乳児悪性型
+                                <ul>
+                                    <li>大頭症</li>
+                                    <li>難聴</li>
+                                    <li>視力障害</li>
+                                    <li>肝脾腫</li>
+                                    <li>貧血</li>
+                                </ul>
+                            </li>
+                            <li>遅発型
+                                <ul>
+                                    <li><u>骨折</u></li>
+                                    <li>骨髄炎</li>
+                                    <li>顔面神経麻痺</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>骨髄移植</li>
+                            <li>ope: 骨折に対して</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">概念<br>
+                        骨吸収の障害により引き起こされるびまん性骨硬化性病変の総称．主に，出生時に発症する乳児悪性型と，後になってから発症する遅発型に分けられる．</li>
+                    <li class="list-group-item">疫学<br>
+                        乳児悪性型…まれ<br>
+                        遅発型…10万に1人</li>
+                    <li class="list-group-item">遺伝形式<br>
+                        乳児悪性型…常染色体劣性遺伝<br>
+                        遅発型…常染色体優性遺伝</li>
+                    <li class="list-group-item">症状
+
+                    </li>
+                    <li class="list-group-item">治療<br>
+                        骨髄移植，骨折に対しては外科手術を行う．</li>
+                </ul> -->
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="osteoporosis">
                 <div class="page-header">
@@ -509,55 +640,6 @@
                         </ol>
                     </div>
                 </div>
-            </div>            
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="marble_bone_disease">
-                <div class="page-header">
-                    <h2>Marble Bone Disease <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-
-                <ul class="list-group">
-                    <li class="list-group-item">概念<br>
-                        骨吸収の障害により引き起こされるびまん性骨硬化性病変の総称．主に，出生時に発症する乳児悪性型と，後になってから発症する遅発型に分けられる．</li>
-                    <li class="list-group-item">疫学<br>
-                        乳児悪性型…まれ<br>
-                        遅発型…10万に1人</li>
-                    <li class="list-group-item">遺伝形式<br>
-                        乳児悪性型…常染色体劣性遺伝<br>
-                        遅発型…常染色体優性遺伝</li>
-                    <li class="list-group-item">症状
-                        <ul>
-                            <lli>乳児悪性型…大頭症，難聴，視力障害，肝脾腫，貧血</lli>
-                            <li>遅発型…骨折，骨髄炎，顔面神経麻痺</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">治療<br>
-                        骨髄移植，骨折に対しては外科手術を行う．</li>
-                </ul>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
             </div>            
         </div>
 
@@ -800,11 +882,12 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-13_17:50:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-13_17:50:48"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_17:40:04"> </span>
                         <br>
                         <p>2歳の男児．<br>
-                            低身長を主訴に来院した．<br>
-                            四肢短縮型の低身長を呈し，頭部が大きく前頭部が突出している．内反肘，太く短い手指および胸腰椎移行部の亀背を認める．知能は正常である．<br>
+                            <u>低身長</u>を主訴に来院した．<br>
+                            <u>四肢短縮型の低身長</u>を呈し，<u>頭部が大きく前頭部が突出</u>している．<u>内反肘</u>，<u>太く短い手指</u>および<u>胸腰椎移行部の亀背</u>を認める．知能は正常である．<br>
                             この病態にみられるのはどれか．2つ選べ．</p>
                         
 
@@ -850,7 +933,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-13_17:58:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-13_17:58:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_17:52:02"> </span>
                         <br>
                         <p>軽微な外傷による<u>複数回の四肢の骨折歴</u>があり，<u>難聴</u>を伴う18歳男子の眼の写真を次に示す．<br>
                             診断として最も考えられるのはどれか．</p>
@@ -969,14 +1053,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group osteogenesis_imperfecta" id="q03">
+            <div class="card-group osteogenesis_imperfecta info" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107D46" target="_blank">107D46</a> 診断 &xrArr; 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-13_19:43:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-13_19:43:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_17:52:42"> </span>
                         <br>
                         <p>35歳の女性．<br>
                             腰痛を主訴に来院した．<br>
@@ -1200,9 +1285,11 @@
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-09-13_20:10:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-11-10_17:44:18"> </span>
                          / 
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-13_20:11:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-13_20:11:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_17:44:11"> </span>
                         <br>
                         <p>次の文を読み，25～27の問いに答えよ．<br><br>
 
@@ -1213,14 +1300,23 @@
                             最近，疼痛と<u>脊柱の変形</u>とが増強してきたことに気付いている．<br>
                             <u>身長は20歳代に比べて8cm短縮</u>した．<br>
                             既往歴・家族歴：特記すべきことはない．閉経は52歳であった．<br>
-                            現　症：身長152cm，体重44kg．脈拍76/分，整．血圧120/72mmHg．<u>胸腰椎移行部の後弯変形と叩打痛</u>とを認める．心雑音はなく，呼吸音も正常である．腹部と四肢とに特記すべき所見はない．深部腱反射に異常を認めない．<br>
+                            現　症：<br>
+                            身長152cm，体重44kg．脈拍76/分，整．血圧120/72mmHg．<br>
+                            <u>胸腰椎移行部の後弯変形と叩打痛</u>とを認める．心雑音はなく，呼吸音も正常である．腹部と四肢とに特記すべき所見はない．深部腱反射に異常を認めない．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（－）．<br>
-                            血液所見：赤血球423万，Hb 12.4g/dL，Ht 39％，白血球3,700，血小板13万．<br>
-                            血清生化学所見：血糖80mg/dL，総蛋白6.5g/dL，アルブミン4.2g/dL，ALP 152単位（基準260以下），Na 143mEq/L，K 3.7mEq/L，Cl 110mEq/L，Ca 8.7mg/dL，P 3.0mg/dL，FT4 1.2ng/dL（基準0.8～2.2），PTH 46pg/mL（基準10～60）．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．<br>
+                            血液所見：<br>
+                            赤血球423万，Hb 12.4g/dL，Ht 39％，白血球3,700，血小板13万．<br>
+                            血清生化学所見：<br>
+                            血糖80mg/dL，総蛋白6.5g/dL，アルブミン4.2g/dL，ALP 152単位（基準260以下），<br>
+                            Na 143mEq/L，K 3.7mEq/L，Cl 110mEq/L，Ca 8.7mg/dL，P 3.0mg/dL，<br>
+                            FT4 1.2ng/dL（基準0.8～2.2），PTH 46pg/mL（基準10～60）．<br>
                             第2～4腰椎の骨密度は若年健常女性の<u>平均骨密度の65％</u>（基準80以上）．</p>
 
-                        <p>[C025] 診断はどれか．</p>
+                        <p>[C025] <br>
+                            診断はどれか．</p>
+
                         <ol type="a">
                             <li class="ans_f">心身症</li>
                             <li class="ans_f">椎間板ヘルニア</li>
@@ -1229,7 +1325,9 @@
                             <li class="ans_t">骨粗鬆症</li>
                         </ol>
 
-                        <p>[C026] この患者の腰椎X線単純写真でみられるのはどれか．2つ選べ．</p>
+                        <p>[C026] <br>
+                        この患者の腰椎X線単純写真でみられるのはどれか．2つ選べ．</p>
+
                         <ol type="a">
                             <li class="ans_f">骨陰影の増強</li>
                             <li class="ans_t">魚椎変形</li>
@@ -1238,7 +1336,9 @@
                             <li class="ans_f">隅角解離</li>
                         </ol>
 
-                        <p>[C027] この患者への対応として適切なのはどれか．</p>
+                        <p>[C027] <br>
+                            この患者への対応として適切なのはどれか．</p>
+
                         <ol type="a">
                             <li class="ans_f">経過観察</li>
                             <li class="ans_f">腰椎前屈運動療法</li>
@@ -1261,7 +1361,7 @@
                         <ol type="a">
                             <li></li>
                             <li></li>
-                            <li>nl Ca, nl P &rAarr; Ca, Pの吸収障害</li>
+                            <li>nl Ca, nl P &xrArr; Ca, Pの吸収障害</li>
                             <li></li>
                             <li></li>
                         </ol>
@@ -1297,17 +1397,22 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-13_20:17:06"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-13_20:17:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_17:48:13"> </span>
                         <br>
                         <p>76歳の女性．<br>
                             <u>右膝痛</u>を主訴に来院した．<br>
-                            以前から時々右膝の腫脹と疼痛とがあったが，1週間程度で改善していた．10日前から右膝痛が出現し，昨日から増悪し歩行困難となった．<br>
-                            体温38.7℃．右膝関節に腫脹，発赤，局所熱感および関節水症を認める．関節穿刺液は黄色半透明である．右膝関節X線写真を次に示す．<br>
+                            以前から<u>時々右膝の腫脹と疼痛</u>とがあったが，<u>1週間程度で改善</u>していた．<br>
+                            10日前から右膝痛が出現し，昨日から増悪し歩行困難となった．<br>
+                            体温38.7℃．<br>
+                            右膝関節に腫脹，発赤，局所熱感および関節水症を認める．<br>
+                            関節穿刺液は黄色半透明である．<br>
+                            右膝関節X線写真を次に示す．<br>
                             右膝痛の原因として最も考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/105I040.jpg" width="50%"> -->
-                    <img src="https://qb.medilink-study.com/images/105I040.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/105I040.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1330,9 +1435,10 @@
 
                         <!-- <img src="https://www.qb-online.com/img/105I040_ima_t_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/105I040_ima_t_010.jpg" class="card-img-top img-fluid">
+
                         <p>石灰化像 <br>
-                        化膿性関節炎に似た臨床像, 自然に経過する<br>
-                        &xrArr; 偽痛風</p>
+                            化膿性関節炎に似た臨床像, 自然に経過する<br>
+                            &xrArr; 偽痛風</p>
 
                         <p class="q_dx">偽痛風</p>
 
@@ -1357,7 +1463,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-13_20:24:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-13_20:24:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_17:51:15"> </span>
                         <br>
                         <p>正しいのはどれか．2つ選べ．</p>
 
@@ -1598,7 +1705,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1608,6 +1719,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1626,7 +1758,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1670,13 +1814,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1693,54 +1838,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -1979,42 +2124,43 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#achondrogenesis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.achondrogenesis)').toggle();
+        $('div.card-group:not(.achondrogenesis)').slideToggle(100);
     });
-    $('#achondrogenesis').find('code').html($('div.achondrogenesis').size());
+    $('#achondrogenesis').find('code').html($('div.achondrogenesis > .card > .mis').size() + '/' + $('div.achondrogenesis').size());
 
 
     $('#osteogenesis_imperfecta h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.osteogenesis_imperfecta)').toggle();
+        $('div.card-group:not(.osteogenesis_imperfecta)').slideToggle(100);
     });
-    $('#osteogenesis_imperfecta').find('code').html($('div.osteogenesis_imperfecta').size());
+    $('#osteogenesis_imperfecta').find('code').html($('div.osteogenesis_imperfecta > .card > .mis').size() + '/' + $('div.osteogenesis_imperfecta').size());
 
 
     $('#osteoporosis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.osteoporosis)').toggle();
+        $('div.card-group:not(.osteoporosis)').slideToggle(100);
     });
-    $('#osteoporosis').find('code').html($('div.osteoporosis').size());
+    $('#osteoporosis').find('code').html($('div.osteoporosis > .card > .mis').size() + '/' + $('div.osteoporosis').size());
 
 
     $('#marble_bone_disease h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.marble_bone_disease)').toggle();
+        $('div.card-group:not(.marble_bone_disease)').slideToggle(100);
     });
-    $('#marble_bone_disease').find('code').html($('div.marble_bone_disease').size());
+    $('#marble_bone_disease').find('code').html($('div.marble_bone_disease > .card > .mis').size() + '/' + $('div.marble_bone_disease').size());
 
 
     $('#pseudogout h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.pseudogout)').toggle();
+        $('div.card-group:not(.pseudogout)').slideToggle(100);
     });
-    $('#pseudogout').find('code').html($('div.pseudogout').size());
+    $('#pseudogout').find('code').html($('div.pseudogout > .card > .mis').size() + '/' + $('div.pseudogout').size());
 
 
 
@@ -2023,9 +2169,9 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
 
 });
 </script>

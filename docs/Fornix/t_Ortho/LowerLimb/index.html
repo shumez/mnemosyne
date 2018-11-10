@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-12 17:24:42
+@Last modified time: 2018-11-10 10:54:50
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
@@ -91,11 +104,11 @@
 -->
 <html>
 <head>
-    <title>L/E</title>
+    <title>LE-Ortho</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-12 17:24:56" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.21">
+    <meta name="revised" content="2018-11-10 10:55:16" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -122,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -154,6 +167,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -194,33 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -273,143 +297,106 @@
     
 
 
-    
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>股関節</h6>
-            <table class="table table-condensed">
-                <tbody>
-                    <tr>
-                        <td>新生児期</td>
-                        <td>
-                            <ul>
-                                <li>発育性股関節形成不全<br>
-                                    (先天性股関節脱臼)</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>乳児期</td>
-                        <td>
-                            <ul>
-                                <li>化膿性股関節炎</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3yo</td>
-                        <td>
-                            <ul>
-                                <li>単純性股関節炎</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3-10yo</td>
-                        <td>
-                            <ul>
-                                <li><u>Parthes病</u></li>
-                                <li>股関節結核</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>成長期</td>
-                        <td>
-                            <ul>
-                                <li><u>大腿骨頭すべり症</u></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>20-40yo</td>
-                        <td>
-                            <ul>
-                                <li><u>特発性大腿骨頭壊死症</u></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>40yo - </td>
-                        <td>
-                            <ul>
-                                <li><u>変形性骨関節症</u></li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>若年者に多くみられる原因不明の骨端の壊死</h6>
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>疾患名</th>
-                        <th>罹患部位</th>
-                        <th>好発年齢</th>
-                        <th>性差</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th><u>Perthes病</u></th>
-                        <td>大腿骨骨頭　（股）</td>
-                        <td>5～10歳</td>
-                        <td>男＞</td>
-                    </tr>
-                    <tr>
-                        <th>第1 Köhlerケーラー病</th>
-                        <td>足舟状骨　（足）</td>
-                        <td>5～10歳</td>
-                        <td>男＞</td>
-                    </tr>
-                    <tr>
-                        <th>Pannerパンナー病</th>
-                        <td>上腕骨小頭</td>
-                        <td>5～10歳</td>
-                        <td>男＞</td>
-                    </tr>
-                    <tr>
-                        <th><u>Osgood-Schlatter病</u></th>
-                        <td>脛骨結節　（膝）</td>
-                        <td>10～15歳</td>
-                        <td>男＞</td>
-                    </tr>
-                    <tr>
-                        <th>Scheuermannショイエルマン病</th>
-                        <td>椎体上下骨端　（脊椎）</td>
-                        <td>10～15歳</td>
-                        <td>男＞</td>
-                    </tr>
-                    <tr>
-                        <th>Kienböckキーンベック病</th>
-                        <td>手月状骨　（手）</td>
-                        <td>20歳以上</td>
-                        <td>男＞</td>
-                    </tr>
-                    <tr>
-                        <th>第2 Köhler病（Freiberg病）</th>
-                        <td>第2中足骨骨頭　（足）</td>
-                        <td>15～20歳</td>
-                        <td>女＞</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="osteonecrosis">
-                <div class="page-header">
-                    <h2>Osteonecrosis <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
 
+
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro</h2>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>股関節</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>新生児期</td>
+                            <td>
+                                <ul>
+                                    <li>発育性股関節形成不全<br>
+                                        (先天性股関節脱臼)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>乳児期</td>
+                            <td>
+                                <ul>
+                                    <li>化膿性股関節炎</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3yo</td>
+                            <td>
+                                <ul>
+                                    <li>単純性股関節炎</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3-10yo</td>
+                            <td>
+                                <ul>
+                                    <li><u>Parthes病</u></li>
+                                    <li>股関節結核</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>成長期</td>
+                            <td>
+                                <ul>
+                                    <li><u>大腿骨頭すべり症</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20-40yo</td>
+                            <td>
+                                <ul>
+                                    <li><u>特発性大腿骨頭壊死症</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>40yo - </td>
+                            <td>
+                                <ul>
+                                    <li><u>変形性骨関節症</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            
+        </div>
+    </div>
+
+
+    
+    <div class="section" id="osteonecrosis">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Osteonecrosis <small>大腿骨頭壊死症</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>大腿骨頭 前上部</li>
+                        </ul>
+                    </li>
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
@@ -418,9 +405,27 @@
                             <!-- <li></li> -->
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>XR: 
+                                <ul>
+                                    <li>初期
+                                        <ul>
+                                            <li>帯状硬化</li>
+                                            <li>関節面不整</li>
+                                            <li>透過陰影像</li>
+                                        </ul>
+                                    </li>
+                                    <li>進行期
+                                        <ul>
+                                            <li>関節面の圧潰</li>
+                                        </ul></li>
+                                </ul></li>
+                            <li><u>MRI</u></li>
+                            <li><u><sup>99m</sup>Tc シンチグラフィ</u></li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
@@ -428,7 +433,9 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>大腿骨頭壊死症の分類</h6>
                 <table class="table table-condensed">
                     <tbody>
@@ -446,7 +453,7 @@
                             <th>特発性（広義）</th>
                             <td>
                                 <ul>
-                                    <li>ステロイド性</li>
+                                    <li><u>ステロイド性</u></li>
                                     <li>アルコール性</li>
                                     <li>特発性（狭義）</li>
                                 </ul>
@@ -454,6 +461,82 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/98A046_ima_t_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="epiphysiopathy">
+                <div class="page-header">
+                    <h2>Epiphysiopathy <small>骨端症</small> <small><code></code></small></h2>
+                </div>
+
+                <h6>若年者性 原因不明の骨端壊死</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>疾患名</th>
+                            <th>罹患部位</th>
+                            <th>好発年齢</th>
+                            <th>性差</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th><u>Perthes病</u></th>
+                            <td>大腿骨骨頭　(股)</td>
+                            <td>5-10yo</td>
+                            <td>M ></td>
+                        </tr>
+                        <tr>
+                            <th>第1 Köhlerケーラー病</th>
+                            <td>足舟状骨 (足)</td>
+                            <td>5-10yo</td>
+                            <td>M ></td>
+                        </tr>
+                        <tr>
+                            <th>Pannerパンナー病</th>
+                            <td>上腕骨小頭</td>
+                            <td>5-10yo</td>
+                            <td>M ></td>
+                        </tr>
+                        <tr>
+                            <th><u>Osgood-Schlatter病</u></th>
+                            <td>脛骨結節 (膝)</td>
+                            <td>10-15yo</td>
+                            <td>M ></td>
+                        </tr>
+                        <tr>
+                            <th>Scheuermannショイエルマン病</th>
+                            <td>椎体上下骨端 (脊椎)</td>
+                            <td>10-15yo</td>
+                            <td>M ></td>
+                        </tr>
+                        <tr>
+                            <th>Kienböckキーンベック病</th>
+                            <td>手月状骨 (手)</td>
+                            <td>≥ 20yo</td>
+                            <td>M ></td>
+                        </tr>
+                        <tr>
+                            <th>第2 Köhler病 (Freiberg病)</th>
+                            <td>第2中足骨骨頭 (足)</td>
+                            <td>15-20yo</td>
+                            <td>< F</td>
+                        </tr>
+                    </tbody>
+                </table>                
+
             </div>
         </div>
 
@@ -468,7 +551,7 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                         <ul>
-                            <li>大腿骨近位骨端部　血行障害 阻血性壊死</li>
+                            <li>大腿骨近位骨端部 <u>血行障害</u> 阻血性壊死</li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -484,16 +567,17 @@
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
                     <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <h6>Prognosis</h6>
                         <ul>
-                            <li>Containment</li>
-                            <li>免荷装具療法</li>
+                            <li>≥ 9y/o では骨頭に変形をきたす<br>
+                                年少児の方が予後良好</li>
                         </ul>
                     </li>
                     <li class="list-group-item">
-                        <h6>Prognosis</h6>
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                         <ul>
-                            <li>≥ 9y/o では骨頭に変形をきたす</li>
+                            <li>Containment</li>
+                            <li><u>免荷装具療法</u></li>
                         </ul>
                     </li>
                 </ul>
@@ -504,8 +588,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="slipped_capital_femoral_epiphysis">
                 <div class="page-header">
@@ -516,13 +602,14 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                         <ul>
-                            <li>大腿骨近位骨端軟骨の脆弱化</li>
+                            <li>大腿骨近位<u>骨端軟骨の脆弱化</u><br>
+                                運動が原因ではない</li>
                         </ul>
                     </li>
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                         <ul>
-                            <li> 幼稚園-小学校低学年</li>
+                            <li>幼稚園-小学校低学年</li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -538,6 +625,12 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108D031_ima_020.jpg" class="card-img-top img-fluid">
+                </div>
+
             </div>
         </div>
     </div>
@@ -568,9 +661,10 @@
                         <ul>
                             <li>XR
                                 <ul>
-                                    <li>臼底部の二重像</li>
+                                    <li>臼底部の<u>二重底 Double floor</u></li>
+                                    <li><u>骨嚢胞</u></li>
                                     <li>骨棘</li>
-                                    <li>狭小化</li>
+                                    <li>関節裂隙 狭小化</li>
                                 </ul>
                             </li>
                         </ul>
@@ -597,13 +691,14 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
-                            <li>内側広筋の萎縮</li>
+                            <li><u>大腿四頭筋 内側広筋の廃用性萎縮</u></li>
                         </ul>
                     </li>
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                         <ul>
-                            <li>軟骨下骨囊腫</li>
+                            <li><u>軟骨下骨囊胞</u></li>
+                            <li>骨棘</li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -612,9 +707,10 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                         <ul>
-                            <li>足底板<br>
+                            <li><u>足底板</u><br>
                                 内側に集中する荷重を外側に移動する</li>
-                            <li>内側広筋の萎縮 ⟹ 大腿四頭筋の筋力訓練</li>
+                            <li><u>大腿四頭筋の筋力訓練</u><br>
+                                &because; 内側広筋の萎縮</li>
                         </ul>
                     </li>
                 </ul>
@@ -681,16 +777,19 @@
                     <img src="https://qb.medilink-study.com/images/96D046_bas_t_010.jpg" class="card-img-top img-fluid">
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
+                        <ul>
+                            <li>母趾 外反/回内</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                     </li> -->
@@ -700,7 +799,7 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
-                <!-- </ul> -->
+                </ul>
             </div>
         </div>
 
@@ -900,21 +999,24 @@
 
 
             <!-- 01 -->
-            <div class="card-group osteonecrosis" id="q01">
+            <div class="card-group osteonecrosis info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I53" target="_blank">108I53</a> XR &xrArr; 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_17:33:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_17:33:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_11:30:49"> </span>
                         <br>
                         <p>31歳の男性．<br>
                             <u>左股関節部痛</u>を主訴に来院した．<br>
                             半年前から誘因なく<u>歩行時に左股関節部の痛み</u>が出現した．安静時痛はない．<br>
-                            25歳時から膠原病の診断にて<u>副腎皮質ステロイド</u>の内服治療を開始し，現在まで継続している．プレドニゾロン内服量は最大で60mg/日で，現在は10mg/日であるという．<br>
+                            25歳時から膠原病の診断にて<u>副腎皮質ステロイド</u>の内服治療を開始し，現在まで継続している．<br>
+                            プレドニゾロン内服量は最大で60mg/日で，現在は10mg/日であるという．<br>
                             身長170cm，体重75kg．体温36.3℃．脈拍64/分，整．<br>
-                            左股関節の運動時痛を認める．左股関節の可動域は屈曲110°，伸展0°，外転20°，内転15°．<br>
+                            左股関節の<u>運動時痛</u>を認める．<br>
+                            左股関節の可動域は屈曲110°，伸展0°，外転20°，内転15°．<br>
                             来院時の股関節X線写真を次に示す．<br>
                             考えられるのはどれか．</p>
                     </div>
@@ -992,11 +1094,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_17:43:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_17:43:45"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_12:53:33"> </span>
                         <br>
                         <p>35歳の女性．<br>
-                            全身性エリテマトーデスで副腎皮質ステロイド薬の治療を3年間受けている．<br>
-                            3ヵ月前から歩行時に左股関節痛を訴えるようになり来院した．股関節部X線単純写真を次に示す．<br>
+                            全身性エリテマトーデスで<u>副腎皮質ステロイド薬の治療</u>を3年間受けている．<br>
+                            3ヵ月前から<u>歩行時に左股関節痛</u>を訴えるようになり来院した．<br>
+                            股関節部X線単純写真を次に示す．<br>
                             この股関節疾患について正しいのはどれか．</p>
                     </div>
 
@@ -1042,7 +1146,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_17:53:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_17:53:47"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_12:55:41"> </span>
                         <br>
                         <p>73歳の女性．<br>
                             右膝関節痛のため来院した．<br>
@@ -1094,15 +1199,18 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_18:10:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_18:10:16"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_11:07:02"> </span>
                         <br>
                         <p>68歳の女性．<br>
-                            6ヵ月前からの<u>右膝の疼痛と腫脹</u>とを主訴に来院した．膝関節痛は夜間と階段昇降時に増強する．右膝のX線写真を次に示す．<br>
+                            6ヵ月前からの<u>右膝の疼痛と腫脹</u>とを主訴に来院した．<br>
+                            膝関節痛は<u>夜間</u>と<u>階段昇降時</u>に増強する．<br>
+                            右膝のX線写真を次に示す．<br>
                             診断に最も有用なのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/104I059.jpg" width="50%"> -->
-                    <img src="https://qb.medilink-study.com/images/104I059.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/104I059.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1118,6 +1226,7 @@
                     <div class="card-body">
                         
                         <!-- <img src="https://www.qb-online.com/img/104I059_ima_t_010.jpg" class="img-fluid"> -->
+
                         <img src="https://qb.medilink-study.com/images/104I059_ima_t_010.jpg" class="card-img-top img-fluid">
 
                         <p class="q_dx">特発性大腿骨頭壊死症</p>
@@ -1143,13 +1252,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_18:15:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_18:15:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_12:57:03"> </span>
                         <br>
                         <p>8歳の男児．<br>
-                            跛行を主訴に母親に伴われて来院した．<br>
-                            6ヵ月前から運動時に左股関節の疼痛があり，3ヵ月前から歩行時に跛行があることに母親が気付いた．<br>
+                            <u>跛行</u>を主訴に母親に伴われて来院した．<br>
+                            6ヵ月前から運動時に<u>左股関節の疼痛</u>があり，3ヵ月前から歩行時に跛行があることに母親が気付いた．<br>
                             既往歴に特記すべきことはない．<br>
-                            明らかな低身長や肥満を認めない．左股関節には軽度の可動域制限があるが，発赤や熱感はない．<br>
+                            明らかな低身長や肥満を認めない．<br>
+                            左股関節には軽度の可動域制限があるが，発赤や熱感はない．<br>
                             股関節X線写真を次に示す．<br>
                             この病態で正しいのはどれか．</p>
                     </div>
@@ -1252,6 +1363,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1264,16 +1378,21 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_19:41:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_19:41:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_11:13:27"> </span>
                         <br>
                         <p>6歳の男児．<br>
                             跛行と左大腿部の運動痛とを主訴に，母親に連れられて来院した．<br>
-                            3日前に母親が跛行に気付き聞いたところ，1ヵ月前から運動をしたとき左大腿部に軽い痛みがあったとのことである．既往歴に特記することはない．左股関節の可動域制限と軽度の跛行とがある．血液検査所見に異常はない．両股関節X線単純写真を次に示す．<br>
+                            3日前に母親が跛行に気付き聞いたところ，1ヵ月前から運動をしたとき左大腿部に軽い痛みがあったとのことである．<br>
+                            既往歴に特記することはない．<br>
+                            <u>左股関節の可動域制限と軽度の跛行</u>とがある．<br>
+                            血液検査所見に異常はない．<br>
+                            両股関節X線単純写真を次に示す．<br>
                             この疾患で正しいのはどれか．2つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/98D045.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/98D045.jpg" class="card-img-top img">
+                    <img src="https://qb.medilink-study.com/images/98D045.jpg" class="card-img-top img-fluid">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1377,17 +1496,20 @@
             <div class="card-group slipped_capital_femoral_epiphysis info" id="q07">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/108D31" target="_blank">108D31</a> XR &xrArr; 診断
+                        <a href="https://qb.medilink-study.com/#/Answer/108D31" target="_blank">108D31</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_19:49:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_19:49:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_13:04:50"> </span>
                         <br>
                         <p>11歳の男児．<br>
                             左足の靴下が履けない，走りにくい，床から起き上がりにくいことを主訴に来院した．<br>
-                            5ヵ月前に野球でスライディングをし，その後から左大腿部から膝部にかけての痛みが出現した．その後も野球を続けていたが，練習後の夜間に疼痛があり，朝には改善することを繰り返していた．安静時痛はなかった．<br>
-                            2ヵ月前には友人から跛行を指摘されたが，疼痛が改善傾向であったため様子を見ていた．1週前に，患児が立ったままでは左足の靴下を履けないことに父親が気付いた．<br>
-                            身長155cm，体重62kg．股関節前面部に圧痛と運動時痛とを認める．左股関節可動域は屈曲30°，伸展－10°，内旋0°，外旋40°．血液生化学所見に異常を認めない．<br>
+                            5ヵ月前に<u>野球でスライディングをし，その後から左大腿部から膝部にかけての痛みが出現</u>した．その後も野球を続けていたが，練習後の夜間に疼痛があり，朝には改善することを繰り返していた．安静時痛はなかった．<br>
+                            2ヵ月前には友人から跛行を指摘されたが，疼痛が改善傾向であったため様子を見ていた．<br>
+                            1週前に，患児が立ったままでは左足の靴下を履けないことに父親が気付いた．<br>
+                            身長155cm，体重62kg．股関節前面部に圧痛と運動時痛とを認める．左股関節可動域は屈曲30°，伸展－10°，内旋0°，外旋40°．<br>
+                            血液生化学所見に異常を認めない．<br>
                             来院時の両側股関節のX線写真（A，B，C）を次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
@@ -1395,9 +1517,9 @@
                     <!-- <img src="https://www.qb-online.com/img/108D031A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/108D031B.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/108D031C.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/108D031A.jpg" class="card-img-top img-fluid" width="50%">
-                    <img src="https://qb.medilink-study.com/images/108D031B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108D031C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108D031A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108D031B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108D031C.jpg" class="card-img-top img-fluid" width="%">
 
 
                     <div class="card-body">
@@ -1449,7 +1571,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-12_19:57:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-12_19:57:56"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_11:14:48"> </span>
                         <br>
                         <p>スポーツが原因とならないのはどれか．</p>
 
@@ -1488,17 +1611,21 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_20:01:15"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_20:01:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_13:08:41"> </span>
                         <br>
                         <p>72歳の女性．<br>
                             左股関節痛と歩行困難とを主訴に来院した．<br>
-                            3年前から左股関節痛を自覚し，最近，痛みが強くなり跛行を伴うようになってきたため受診した．股関節部に外傷歴はない．喫煙歴はない．飲酒は機会飲酒．<br>
-                            身長152cm，体重65kg．体温36.2℃．脈拍72/分，整．下肢長は右75cm，左73cmである．股関節X線写真正面像を次に示す．<br>
+                            3年前から左股関節痛を自覚し，最近，痛みが強くなり跛行を伴うようになってきたため受診した．<br>
+                            股関節部に外傷歴はない．喫煙歴はない．飲酒は機会飲酒．<br>
+                            身長152cm，体重65kg．体温36.2℃．脈拍72/分，整．<br>
+                            下肢長は右75cm，左73cmである．<br>
+                            股関節X線写真正面像を次に示す．<br>
                             最も考えられる疾患はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/110D038.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/110D038.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/110D038.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1528,7 +1655,7 @@
                             <li></li>
                         </ol>
 
-                        <h6>変形性関節症（OA）と関節リウマチ（RA）のX線での鑑別</h6>
+                        <h6>OA / RA XR</h6>
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
@@ -1577,7 +1704,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_20:07:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_20:07:43"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_13:10:19"> </span>
                         <br>
                         <p>右股関節痛を訴える中年女性の股関節X線単純写真（A）と断層写真（B）とを次に示す．<br>
                             この写真でみられない所見はどれか．</p>
@@ -1585,8 +1713,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/96G100A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/96G100B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/96G100A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/96G100B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/96G100A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/96G100B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1712,17 +1840,19 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_20:38:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_20:38:22"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_13:12:23"> </span>
                         <br>
                         <p>65歳の女性．<br>
                             この10年間次第に増悪する右下肢痛と跛行とを訴えて来院した．<br>
-                            身長155cm，体重75kg．右股関節の可動制限があり，右大腿筋萎縮を軽度認める．<br>
+                            身長155cm，体重75kg．<br>
+                            右股関節の可動制限があり，右大腿筋萎縮を軽度認める．<br>
                             両側股関節X線単純写真を次に示す．<br>
                             治療として適切でないのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/92F041.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/92F041.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/92F041.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1763,7 +1893,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_20:42:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_20:42:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_13:13:33"> </span>
                         <br>
                         <p>63歳の女性．<br>
                             膝関節痛を主訴に来院した．<br>
@@ -1792,8 +1923,8 @@
 
                         <!-- <img src="https://www.qb-online.com/img/104E057_ima_t_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/104E057_ima_t_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/104E057_ima_t_010.jpg" class="card-img-top img" width="49%">
-                        <img src="https://qb.medilink-study.com/images/104E057_ima_t_020.jpg" class="card-img-top img" width="49%">
+                        <img src="https://qb.medilink-study.com/images/104E057_ima_t_010.jpg" class="card-img-top img" width="%">
+                        <img src="https://qb.medilink-study.com/images/104E057_ima_t_020.jpg" class="card-img-top img" width="%">
 
                         <p>O脚変形 <br>
                             &rArr; 内側関節裂隙に荷重が集中<br>
@@ -1844,12 +1975,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_21:10:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_21:10:50"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_13:17:08"> </span>
                         <br>
                         <p>65歳の女性．<br>
-                            1年前から歩行開始時の右膝痛を自覚し，最近増悪したため来院した．<br>
-                            身長158cm，体重69kg．右膝は内反変形を伴い，内側の疼痛と関節水腫とを認める．<br>
-                            右膝X線単純写真で内側の関節裂隙の狭小化と軟骨下骨の骨硬化とを認める．<br>
+                            1年前から<u>歩行開始時の右膝痛</u>を自覚し，最近増悪したため来院した．<br>
+                            身長158cm，体重69kg．<br>
+                            右膝は<u>内反変形</u>を伴い，内側の疼痛と関節水腫とを認める．<br>
+                            右膝X線単純写真で<u>内側の関節裂隙の狭小化</u>と<u>軟骨下骨の骨硬化</u>とを認める．<br>
                             生活指導で適切なのはどれか．3つ選べ．</p>
 
 
@@ -1889,7 +2022,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-12_21:18:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-12_21:18:10"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_13:18:48"> </span>
                         <br>
                         <p>変形性膝関節症にみられるのはどれか．3つ選べ．</p>
 
@@ -2093,7 +2227,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2103,6 +2241,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2121,7 +2280,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2165,13 +2336,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2188,54 +2360,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2474,55 +2646,57 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#osteonecrosis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.osteonecrosis)').toggle();
+        $('div.card-group:not(.osteonecrosis)').slideToggle(100);
     });
-    $('#osteonecrosis').find('code').html($('div.osteonecrosis').size());
+    $('#osteonecrosis').find('code').html($('div.osteonecrosis > .card > .mis').size() + '/' + $('div.osteonecrosis').size());
 
 
     $('#Parthes h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Parthes)').toggle();
+        $('div.card-group:not(.Parthes)').slideToggle(100);
     });
-    $('#Parthes').find('code').html($('div.Parthes').size());
+    $('#Parthes').find('code').html($('div.Parthes > .card > .mis').size() + '/' + $('div.Parthes').size());
+
 
     $('#slipped_capital_femoral_epiphysis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.slipped_capital_femoral_epiphysis)').toggle();
+        $('div.card-group:not(.slipped_capital_femoral_epiphysis)').slideToggle(100);
     });
-    $('#slipped_capital_femoral_epiphysis').find('code').html($('div.slipped_capital_femoral_epiphysis').size());
+    $('#slipped_capital_femoral_epiphysis').find('code').html($('div.slipped_capital_femoral_epiphysis > .card > .mis').size() + '/' + $('div.slipped_capital_femoral_epiphysis').size());
 
 
     $('#OA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.OA)').toggle();
+        $('div.card-group:not(.OA)').slideToggle(100);
     });
-    $('#OA').find('code').html($('div.OA').size());
+    $('#OA').find('code').html($('div.OA > .card > .mis').size() + '/' + $('div.OA').size());
 
 
     $('#coxarthrosis').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.coxarthrosis)').toggle();
+        $('div.card-group:not(.coxarthrosis)').slideToggle(100);
     });
-    $('#coxarthrosis').find('code').html($('div.coxarthrosis').size());
+    $('#coxarthrosis').find('code').html($('div.coxarthrosis > .card > .mis').size() + '/' + $('div.coxarthrosis').size());
 
 
     $('#gonarthrosis').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.gonarthrosis)').toggle();
+        $('div.card-group:not(.gonarthrosis)').slideToggle(100);
     });
-    $('#gonarthrosis').find('code').html($('div.gonarthrosis').size());
+    $('#gonarthrosis').find('code').html($('div.gonarthrosis > .card > .mis').size() + '/' + $('div.gonarthrosis').size());
 
 
     $('#hallux_valgus h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hallux_valgus)').toggle();
+        $('div.card-group:not(.hallux_valgus)').slideToggle(100);
     });
-    $('#hallux_valgus').find('code').html($('div.hallux_valgus').size());
+    $('#hallux_valgus').find('code').html($('div.hallux_valgus > .card > .mis').size() + '/' + $('div.hallux_valgus').size());
 
 
 
@@ -2530,9 +2704,10 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    
+    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
 
 });
 </script>

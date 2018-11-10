@@ -4,12 +4,25 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-13 21:40:40
+@Last modified time: 2018-11-10 20:44:34
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
 04.01.19    18 08 27    js .pri glyphicon
@@ -91,11 +104,11 @@
 -->
 <html>
 <head>
-    <title>Tumor</title>
+    <title>Tumor-Ortho</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-13 21:40:50" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.21">
+    <meta name="revised" content="2018-11-10 20:45:00" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -122,7 +135,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -154,6 +167,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -194,33 +210,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -273,178 +297,243 @@
     
 
 
-    
-    <div class="row">
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small><code></code></small></h2>
+                </div>
+            </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>骨腫瘍の好発年齢</h6>
-            <table class="table table-condensed">
-                <tbody>
-                    <tr>
-                        <td>5 - 10歳</td>
-                        <td>腫瘍類似疾患</td>
-                        <td>Langerhans細胞性組織球症</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="3">10 - 20歳</td>
-                        <td>良性</td>
-                        <td>骨軟骨腫<br>
-                            類骨骨腫<br>
-                            内軟骨腫</td>
-                    </tr>
-                    <tr>
-                        <td>悪性</td>
-                        <td>骨肉腫<br>
-                            Ewing肉腫</td>
-                    </tr>
-                    <tr>
-                        <td>腫瘍類似疾患</td>
-                        <td>骨囊腫</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">20 - 30歳</td>
-                        <td>良性</td>
-                        <td>巨細胞腫</td>
-                    </tr>
-                    <tr>
-                        <td>悪性</td>
-                        <td>骨線維肉腫</td>
-                    </tr>
-                    <tr>
-                        <td>30 - 50歳</td>
-                        <td>悪性</td>
-                        <td>軟骨肉腫<br>
-                            脊索腫</td>
-                    </tr>
-                    <tr>
-                        <td>50歳 -</td>
-                        <td>悪性</td>
-                        <td>骨髄腫</td>
-                    </tr>
-                    <tr>
-                        <td>続発性</td>
-                        <td colspan="2">転移性骨腫瘍</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>骨腫瘍の好発年齢</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>5-10yo</td>
+                            <td>腫瘍類似疾患</td>
+                            <td>
+                                <ul>
+                                    <li>Langerhans<br>
+                                        細胞性組織球症</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">10-20yo</td>
+                            <td>良性</td>
+                            <td>
+                                <ul>
+                                    <li><u>骨軟骨腫</u></li>
+                                    <li><u>類骨骨腫</u></li>
+                                    <li>内軟骨腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>悪性</td>
+                            <td>
+                                <ul>
+                                    <li><u>骨肉腫</u></li>
+                                    <li><u>Ewing肉腫</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>腫瘍類似疾患</td>
+                            <td>
+                                <ul>
+                                    <li>骨囊腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">20-30yo</td>
+                            <td>良性</td>
+                            <td>
+                                <ul>
+                                    <li><u>巨細胞腫</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>悪性</td>
+                            <td>
+                                <ul>
+                                    <li>骨線維肉腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>30-50yo</td>
+                            <td>悪性</td>
+                            <td>
+                                <ul>
+                                    <li><u>軟骨肉腫</u></li>
+                                    <li>脊索腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>50yo-</td>
+                            <td>悪性</td>
+                            <td>
+                                <ul>
+                                    <li>骨髄腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>続発性</td>
+                            <td colspan="2">転移性骨腫瘍</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>好発部位</th>
+                            <th>好発年齢</th>
+                            <th>検査所見</th>
+                            <th>臨床症状</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>骨肉腫</th>
+                            <td>長管骨の骨幹端</td>
+                            <td>中学生<br>
+                                高校生</td>
+                            <td>ALP上昇</td>
+                            <td>痛み，腫脹</td>
+                        </tr>
+                        <tr>
+                            <th>Ewing肉腫</th>
+                            <td>長管骨の骨幹，骨盤</td>
+                            <td>小学生〜中学生</td>
+                            <td>炎症所見</td>
+                            <td>痛み，腫脹，発熱</td>
+                        </tr>
+                        <tr>
+                            <th>軟骨肉腫</th>
+                            <td>長管骨の骨幹，骨盤</td>
+                            <td>中高年</td>
+                            <td>特になし</td>
+                            <td>痛み</td>
+                        </tr>
+                        <tr>
+                            <th>脊索腫</th>
+                            <td>脊椎，特に仙骨</td>
+                            <td>中高年</td>
+                            <td>特になし</td>
+                            <td>膀胱直腸障害</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
                         <th></th>
-                        <th>好発部位</th>
-                        <th>好発年齢</th>
-                        <th>検査所見</th>
-                        <th>臨床症状</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>骨肉腫</th>
-                        <td>長管骨の骨幹端</td>
-                        <td>中学生<br>
-                            高校生</td>
-                        <td>ALP上昇</td>
-                        <td>痛み，腫脹</td>
-                    </tr>
-                    <tr>
-                        <th>Ewing肉腫</th>
-                        <td>長管骨の骨幹，骨盤</td>
-                        <td>小学生〜中学生</td>
-                        <td>炎症所見</td>
-                        <td>痛み，腫脹，発熱</td>
-                    </tr>
-                    <tr>
-                        <th>軟骨肉腫</th>
-                        <td>長管骨の骨幹，骨盤</td>
-                        <td>中高年</td>
-                        <td>特になし</td>
-                        <td>痛み</td>
-                    </tr>
-                    <tr>
-                        <th>脊索腫</th>
-                        <td>脊椎，特に仙骨</td>
-                        <td>中高年</td>
-                        <td>特になし</td>
-                        <td>膀胱直腸障害</td>
-                    </tr>
-                </tbody>
-            </table>
+                        <th>Binign</th>
+                        <th>Malignant</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>骨幹</th>
+                            <td>
+                                <ul>
+                                    <li>類骨骨腫</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><u>Ewing 肉腫</u></li>
+                                    <li>軟骨肉腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>骨幹端</th>
+                            <td>
+                                <ul>
+                                    <li>骨軟骨腫</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>軟骨肉腫</li>
+                                    <li><u>骨肉腫</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>骨端</th>
+                            <td>
+                                <ul>
+                                    <li><u>骨巨細胞腫</u></li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <table class="table table-condensed">
-                <thead>
-                    <th></th>
-                    <th>良性</th>
-                    <th>悪性</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>骨幹</th>
-                        <td></td>
-                        <td>
-                            <ul>
-                                <li><u>Ewing 肉腫</u></li>
-                                <li>軟骨肉腫</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>骨幹端</th>
-                        <td>
-                            <ul>
-                                <li>骨軟骨腫</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>軟骨肉腫</li>
-                                <li><u>骨肉腫</u></li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>骨端</th>
-                        <td>
-                            <ul>
-                                <li><u>骨巨細胞腫</u></li>
-                            </ul>
-                        </td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="page-header">
+                <h2>Benign</h2>
+            </div>
         </div>
-
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="osteochondroma">
                 <div class="page-header">
                     <h2>Osteochondroma <small>骨軟骨腫</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>原発性骨腫瘍 #1</li>
+                            <li><u>10s</u></li>
+                            <li>膝 <u>骨幹端</u></li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>XR
+                                <ul>
+                                    <li>軟骨帽</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                        <ul>
+                            <li>腫瘍摘出</li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/102I054_ima_t_010.jpg" class="card-img-top img-fluid">
@@ -458,6 +547,29 @@
             </div>            
         </div>
 
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="enchondroma">
+                <div class="page-header">
+                    <h2>Enchondrome <small>内軟骨腫</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li>微小石灰化</li>
+                            <li>境界明瞭な透明巣</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="card">
+                    <img src="https://www.info-radiologie.ch/enchondrome/fullsize/enchondrome_-_1_fs.jpg" class="card-img-top img-fluid" width="50%">
+                </div>
+
+            </div>
+        </div>
+
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="giant_cell_tumor">
@@ -465,62 +577,77 @@
                     <h2>Giant Cell Tumor <small>巨細胞腫</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
+                
                 <ul class="list-group">
-                    <li class="list-group-item">骨成長完了後（骨端軟骨線閉鎖後）の20歳から30歳代に多い．</li>
-                    <li class="list-group-item">長管骨の骨端部から骨幹端部にかけて多く，全症例の約60％は大腿骨遠位部，脛骨近位部の膝関節周囲に発生する．</li>
-                    <li class="list-group-item">腫瘍内切除術では再発率が高い．</li>
-                    <li class="list-group-item">X線像で長管骨の骨端部に偏在性で囊胞状の骨透亮像（soap bubble appearance）を認める．</li>
-                </ul>
-
-
-                <!-- <ul class="list-group"> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>20-30s</li>
+                            <li>骨端</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>骨端: Soap bubble</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                        <ul>
+                            <li><u>腫瘍内切除</u> (<u>掻爬</u>)</li>
+                            <li><u>骨移植</u></li>
+                        </ul>
+                    </li>
+                </ul>
 
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/106A026_ima_t_010.jpg" class="card-img-top img-fluid">
                 </div>
-            </div>            
-        </div>
-    </div>
 
-    <div class="section" id="osteoid_osteoma">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/106A026_ima_t_020.jpg" class="card-img-top img-fluid" width="%">
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="osteoid_osteoma">
                 <div class="page-header">
                     <h2>Osteoid Osteoma <small>類骨骨腫</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
+                        <ul>
+                            <li>10-20s</li>
+                            <li>骨幹部</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>Nidus(+) 透明巣</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
@@ -530,21 +657,46 @@
                 <!-- </ul> -->
 
                 <div class="card">
-                    <img src="https://qb.medilink-study.com/images/105D029_ima_t_010.jpg" class="card-img-top img-fluid">
+                    <img src="https://qb.medilink-study.com/images/105D029.jpg" class="card-img-top img-fluid">
+                    <!-- <img src="https://qb.medilink-study.com/images/105D029_ima_t_010.jpg" class="card-img-top img-fluid"> -->
                 </div>
             </div>            
         </div>
     </div>
 
-    <div class="section" id="osteosarcoma">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+    
+
+    <div class="page-header">
+        <h2>Malignant</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>骨膜反応の鑑別</h6>
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/100H035_sup_t_010.jpg" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <ol>
+                        <li>onion peel appearance：<br>
+                            骨膜下に新生骨が形成し肥厚した骨膜が層状にみえるもの．</li>
+                        <li>spicula：<br>
+                            骨外に腫瘍が進展し，新生骨が骨の長軸に対して直角にみえるもの．</li>
+                        <li>sun-ray appearance：<br>
+                            spiculaが多数集まり放射状にみえるもの．</li>
+                        <li>Codman三角：<br>
+                            腫瘍の発育する部位で骨膜下に新生骨を形成し三角形にみえるもの．</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="osteosarcoma">
                 <div class="page-header">
                     <h2>Osteosarcoma <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
@@ -583,25 +735,46 @@
                 </ul>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>骨膜反応の鑑別</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/100H035_sup_t_010.jpg" class="card-img-top img-fluid">
-                    <div class="card-body">
-                        <ol>
-                            <li>onion peel appearance：<br>
-                                骨膜下に新生骨が形成し肥厚した骨膜が層状にみえるもの．</li>
-                            <li>spicula：<br>
-                                骨外に腫瘍が進展し，新生骨が骨の長軸に対して直角にみえるもの．</li>
-                            <li>sun-ray appearance：<br>
-                                spiculaが多数集まり放射状にみえるもの．</li>
-                            <li>Codman三角：<br>
-                                腫瘍の発育する部位で骨膜下に新生骨を形成し三角形にみえるもの．</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>            
+                        
         </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Ewing">
+                <div class="page-header">
+                    <h2>Ewing <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+
+                <div class="card">
+                    <img src="http://www.learningradiology.com/caseofweek/caseoftheweekpix2007-1/cow279arr.jpg" class="card-img-top img-fluid">
+                </div>
+
+            </div>
+        </div>
+
+
+
     </div>
 
     <div class="row">
@@ -898,7 +1071,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-13_21:45:43"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-13_21:45:43"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-10_20:49:56"> </span>
                         <br>
                         <p>12歳の男児．<br>
                             6ヵ月前から自覚していた左下腿遠位の無痛性の隆起を主訴に来院した．膝関節と足関節との可動域は正常である．左下腿骨X線単純写真を次に示す．<br>
@@ -906,7 +1080,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/102I054.jpg" class="img-fluid" width="50%"> -->
-                    <img src="https://qb.medilink-study.com/images/102I054.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/102I054.jpg" class="card-img-top img-fluid" width="75%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -922,7 +1096,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/102I054_ima_t_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/102I054_ima_t_010.jpg" class="card-img-top img-fluid" width="50%">
+                        <img src="https://qb.medilink-study.com/images/102I054_ima_t_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p>脛骨遠位に発生した骨軟骨腫</p>
 
@@ -941,9 +1115,17 @@
 
                         <h6>悪性化する良性骨腫瘍</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①多発性骨軟骨腫症（外骨腫）</li>
-                            <li class="list-group-item">②多発性内軟骨腫症</li>
+                            <li class="list-group-item">
+                                ①多発性骨軟骨腫症（外骨腫）
+                            </li>
+                            <li class="list-group-item">
+                                ②多発性内軟骨腫症
+                            </li>
                         </ul>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -956,7 +1138,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-13_21:51:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-13_21:51:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_20:55:51"> </span>
                         <br>
                         <p>36歳の男性．<br>
                             1ヵ月前からの<u>右膝関節の疼痛と腫脹</u>とを主訴に来院した．<br>
@@ -966,8 +1149,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/104D041A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/104D041B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/104D041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/104D041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/104D041A.jpg" class="card-img-top img-fluid" width="75%">
+                    <img src="https://qb.medilink-study.com/images/104D041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -990,7 +1173,7 @@
 
 
                         <!-- <img src="https://www.qb-online.com/img/104D041_ima_t_020.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/104D041_ima_t_010.jpg" class="card-img-top img-fluid" width="30%">
+                        <img src="https://qb.medilink-study.com/images/104D041_ima_t_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <img src="https://qb.medilink-study.com/images/104D041_ima_t_020.jpg" class="card-img-top img-fluid">
 
@@ -1010,14 +1193,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group giant_cell_tumor " id="q03">
+            <div class="card-group giant_cell_tumor info" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://www.qb-online.com/#/list/106A26" target="_blank">106A26</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-13_21:56:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-13_21:56:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_20:57:58"> </span>
                         <br>
                         <p>25歳の男性．<br>
                             ランニング中に自覚した右膝の痛みを主訴に来院した．右膝関節内側に腫脹を認める．<br>
@@ -1027,8 +1211,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/106A026A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/106A026B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/106A026A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/106A026B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/106A026A.jpg" class="card-img-top img-fluid" width="75%">
+                    <img src="https://qb.medilink-study.com/images/106A026B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1050,7 +1234,7 @@
                         </ul> -->
 
                         <!-- <img src="https://www.qb-online.com/img/106A026_ima_t_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/106A026_ima_t_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/106A026_ima_t_010.jpg" class="card-img-top img-fluid" width="%">
                         <p>Soap bubble appearance</p>
 
                         <!-- <img src="https://www.qb-online.com/img/106A026_ima_t_020.jpg" class="img-fluid"> -->
@@ -1071,10 +1255,18 @@
 
                         <h6>骨巨細胞腫</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">骨成長完了後（骨端軟骨線閉鎖後）の20歳から30歳代に多い．</li>
-                            <li class="list-group-item">長管骨の骨端部から骨幹端部にかけて多く，全症例の約60％は大腿骨遠位部，脛骨近位部の膝関節周囲に発生する．</li>
-                            <li class="list-group-item">腫瘍内切除術では再発率が高い．</li>
-                            <li class="list-group-item">X線像で長管骨の骨端部に偏在性で囊胞状の骨透亮像（soap bubble appearance）を認める．</li>
+                            <li class="list-group-item">
+                                骨成長完了後（骨端軟骨線閉鎖後）の20歳から30歳代に多い．
+                            </li>
+                            <li class="list-group-item">
+                                長管骨の骨端部から骨幹端部にかけて多く，全症例の約60％は大腿骨遠位部，脛骨近位部の膝関節周囲に発生する．
+                            </li>
+                            <li class="list-group-item">
+                                腫瘍内切除術では再発率が高い．
+                            </li>
+                            <li class="list-group-item">
+                                X線像で長管骨の骨端部に偏在性で囊胞状の骨透亮像（soap bubble appearance）を認める．
+                            </li>
                         </ul>
 
 
@@ -1087,11 +1279,12 @@
             <div class="card-group osteoid_osteoma info" id="q04">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/105D29" target="_blank">105D29</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/105D29" target="_blank">105D29</a> Dx
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_11:00:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_11:00:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_20:59:32"> </span>
                         <br>
                         <p>10歳の男児．<br>
                             右下肢痛のため家族に伴われて来院した．<br>
@@ -1123,6 +1316,7 @@
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/105D029_ima_t_010.jpg" class="img-fluid"> -->
+
                         <img src="https://qb.medilink-study.com/images/105D029_ima_t_010.jpg" class="card-img-top img-fluid">
                         <p>Nidus</p>
 
@@ -1219,8 +1413,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/100H035A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/100H035B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/100H035A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/100H035B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/100H035A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/100H035B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1291,19 +1485,24 @@
                         <a href="https://qb.medilink-study.com/#/Answer/110D49" target="_blank" id="">110D49</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-14_12:57:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_12:57:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:00:20"> </span>
                         <br>
                         <p>10歳の男児．<br>
                             左膝の痛みを主訴に来院した．<br>
-                            3ヵ月前にサッカーの練習中に膝の痛みを自覚した．その後，徐々に疼痛が強くなり腫脹も出現したため自宅近くの診療所を受診していた．左膝関節X線写真で異常陰影が認められたため，紹介されて受診した．荷重時に疼痛があり，松葉杖をついている．左の大腿遠位から膝にかけて腫脹があり，同部にびまん性に圧痛を認める．安静時痛は軽度で，左膝関節の自動可動域は伸展－30°，屈曲90°である．赤沈7mm/1時間．<br>
-                            血液所見：赤血球502万，Hb 13.6g/dL，白血球8,900．<br>
-                            血液生化学所見：LD 417IU/L（基準176〜353），ALP 1,259IU/L（基準359〜1,110），プロカルシトニン0.05ng/mL以下（基準0.05以下）．CRP 0.9mg/dL．<br>
+                            3ヵ月前にサッカーの練習中に膝の痛みを自覚した．<br>
+                            その後，徐々に疼痛が強くなり腫脹も出現したため自宅近くの診療所を受診していた．左膝関節X線写真で異常陰影が認められたため，紹介されて受診した．<br>
+                            荷重時に疼痛があり，松葉杖をついている．左の大腿遠位から膝にかけて腫脹があり，同部にびまん性に圧痛を認める．安静時痛は軽度で，左膝関節の自動可動域は伸展－30°，屈曲90°である．赤沈7mm/1時間．<br>
+                            血液所見：<br>
+                            赤血球502万，Hb 13.6g/dL，白血球8,900．<br>
+                            血液生化学所見：<br>
+                            LD 417IU/L（基準176〜353），ALP 1,259IU/L（基準359〜1,110），プロカルシトニン0.05ng/mL以下（基準0.05以下）．CRP 0.9mg/dL．<br>
                             左膝関節X線写真正面像（A）と側面像（B）とを次に示す．<br>
                             最も考えられる疾患はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/110D049A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/110D049B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/110D049A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/110D049B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1389,7 +1588,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_13:00:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_13:00:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:02:13"> </span>
                         <br>
                         <p>13歳の男子．<br>
                             <u>右膝痛</u>を主訴に来院した．<br>
@@ -1434,7 +1634,7 @@
                         <!-- <img src="https://www.qb-online.com/img/103I069_ima_t_010.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/103I069_ima_t_020.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/103I069_ima_t_010.jpg" class="card-img-top img-fluid">
-                        <img src="https://qb.medilink-study.com/images/103I069_ima_t_020.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/103I069_ima_t_020.jpg" class="card-img-top img-fluid" width="%">
                         <p>類骨</p>
 
                         
@@ -1462,7 +1662,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_13:07:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_13:07:04"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:03:19"> </span>
                         <br>
                         <p>四肢骨肉腫について正しいのはどれか．3つ選べ．</p>
 
@@ -1556,20 +1757,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_13:37:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_13:37:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:05:20"> </span>
                         <br>
                         <p>62歳の男性．<br>
                             持続する腰痛を主訴に来院した．<br>
                             3ヵ月前，ゴルフの後に腰痛が出現した．自宅近くの診療所で薬物療法と理学療法とを受けたが腰痛は軽減せず，1ヵ月前からは左下肢痛も加わった．<br>
-                            身長165cm，体重55kg．体温36.9℃．下部腰椎に叩打痛と運動時痛とを認める．腰椎前後屈で左殿部から左大腿部への放散痛がある．歩行は可能．Lasègueテスト両側陰性．左L4，L5及びS1神経根領域に感覚鈍麻と軽度の筋力低下とを認める．<br>
-                            血液所見：赤血球390万，Hb 11.3g/dL，Ht 36％，白血球7,600，血小板21万．<br>
-                            血液生化学所見：総蛋白7.0g/dL，アルブミン3.5g/dL，ALP 421IU/L（基準115～359），Na 143mEq/L，K 4.3mEq/L，Cl 102mEq/L，Ca 11.0mg/dL，P 3.0mg/dL．CRP 0.9mg/dL．<br>
+                            身長165cm，体重55kg．体温36.9℃．<br>
+                            下部腰椎に叩打痛と運動時痛とを認める．腰椎前後屈で左殿部から左大腿部への放散痛がある．歩行は可能．Lasègueテスト両側陰性．左L4，L5及びS1神経根領域に感覚鈍麻と軽度の筋力低下とを認める．<br>
+                            血液所見：<br>
+                            赤血球390万，Hb 11.3g/dL，Ht 36％，白血球7,600，血小板21万．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.0g/dL，アルブミン3.5g/dL，<u>ALP 421IU/L</u>（基準115～359），<br>
+                            Na 143mEq/L，K 4.3mEq/L，Cl 102mEq/L，Ca 11.0mg/dL，P 3.0mg/dL．CRP 0.9mg/dL．<br>
                             初診時の腰椎X線写真を次に示す．<br>
                             この患者の腰下肢痛の原因として最も考えられるのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/105A034.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/105A034.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/105A034.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1635,16 +1841,19 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_13:48:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_13:48:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:07:50"> </span>
                         <br>
                         <p>61歳の男性．<br>
-                            3週前からの左股関節部痛を主訴に来院した．疼痛は安静時にもあるが歩行で増悪し，2，3歩しか歩けない．左股関節X線写真を次に示す．<br>
+                            3週前からの<u>左股関節部痛</u>を主訴に来院した．<br>
+                            疼痛は安静時にもあるが歩行で増悪し，2，3歩しか歩けない．<br>
+                            左股関節X線写真を次に示す．<br>
                             次に行うべき検査として適切なのはどれか．</p>
 
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/105E046.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/105E046.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/105E046.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1660,7 +1869,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/105E046_ima_t_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/105E046_ima_t_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/105E046_ima_t_010.jpg" class="card-img-top img-fluid" width="%">
                         <p>骨透亮像 &xrArr; 溶骨性変化</p>
 
                         <p class="q_dx">骨腫瘍 (s/o 転移性骨腫瘍)</p>
@@ -1685,19 +1894,22 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111A32" target="_blank" id="">111A32</a> 初期対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-14_14:00:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-14_14:00:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_20:51:56"> </span>
                         <br>
                         <p>64歳の男性．<br>
                             2週間前から持続する右大腿部痛を主訴に来院した．<br>
                             発症時，痛みは安静時にはなく歩行時のみであったが，3日前から安静時痛も出てきたという．<br>
                             既往歴に特記すべきことはない．<br>
-                            血液所見：赤血球478万，Hb 12.3g/dL，Ht 41％，白血球4,300，血小板19万．<br>
-                            血液生化学所見：総蛋白6.5g/dL，アルブミン3.8g/dL．CRP 0.1mg/dL．<br>
+                            血液所見：<br>
+                            赤血球478万，Hb 12.3g/dL，Ht 41％，白血球4,300，血小板19万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.5g/dL，アルブミン3.8g/dL．CRP 0.1mg/dL．<br>
                             右大腿骨X線写真を次に示す．<br>
                             初期対応として適切なのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111A032.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/111A032.jpg" class="card-img-top img-fluid" width="75%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1715,7 +1927,7 @@
                         <p></p>
 
 
-                        <img src="https://qb.medilink-study.com/images/111A032_ima_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/111A032_ima_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">Rt 大腿骨溶骨性病変</p>
 
@@ -1733,14 +1945,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group spinal_cord_tumor" id="q13">
+            <div class="card-group spinal_cord_tumor info" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H50" target="_blank">97H50</a> 脊髄腫瘍 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_14:07:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_14:07:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:08:58"> </span>
                         <br>
                         <p>成人の脊髄腫瘍で正しいのはどれか．</p>
 
@@ -1848,7 +2061,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-14_14:17:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-14_14:17:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-10_21:09:55"> </span>
                         <br>
                         <p>疾患とX線単純写真所見の組合せで誤っているのはどれか．</p>
 
@@ -2017,7 +2231,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2027,6 +2245,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2045,7 +2284,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2089,13 +2340,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-time"></span></span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2112,54 +2364,54 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
@@ -2398,57 +2650,77 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#osteochondroma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.osteochondroma)').toggle();
+        $('div.card-group:not(.osteochondroma)').slideToggle(100);
     });
-    $('#osteochondroma').find('code').html($('div.osteochondroma').size());
+    $('#osteochondroma').find('code').html($('div.osteochondroma > .card > .mis').size() + '/' + $('div.osteochondroma').size());
 
     $('#giant_cell_tumor h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.giant_cell_tumor)').toggle();
+        $('div.card-group:not(.giant_cell_tumor)').slideToggle(100);
     });
-    $('#giant_cell_tumor').find('code').html($('div.giant_cell_tumor').size());
+    $('#giant_cell_tumor').find('code').html($('div.giant_cell_tumor > .card > .mis').size() + '/' + $('div.giant_cell_tumor').size());
 
 
     $('#osteoid_osteoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.osteoid_osteoma)').toggle();
+        $('div.card-group:not(.osteoid_osteoma)').slideToggle(100);
     });
-    $('#osteoid_osteoma').find('code').html($('div.osteoid_osteoma').size());
+    $('#osteoid_osteoma').find('code').html($('div.osteoid_osteoma > .card > .mis').size() + '/' + $('div.osteoid_osteoma').size());
 
 
     $('#osteosarcoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.osteosarcoma)').toggle();
+        $('div.card-group:not(.osteosarcoma)').slideToggle(100);
     });
-    $('#osteosarcoma').find('code').html($('div.osteosarcoma').size());
+    $('#osteosarcoma').find('code').html($('div.osteosarcoma > .card > .mis').size() + '/' + $('div.osteosarcoma').size());
+
+
+    $('#Ewing h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.Ewing)').slideToggle(100);
+    });
+    $('#Ewing').find('code').html($('div.Ewing > .card > .mis').size() + '/' + $('div.Ewing').size());
+
+
+
+
+
+
+    $('#chondrosarcoma h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.chondrosarcoma)').slideToggle(100);
+    });
+    $('#chondrosarcoma').find('code').html($('div.chondrosarcoma > .card > .mis').size() + '/' + $('div.chondrosarcoma').size());
+
 
 
     $('#meta h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.meta)').toggle();
+        $('div.card-group:not(.meta)').slideToggle(100);
     });
-    $('#meta').find('code').html($('div.meta').size());
+    $('#meta').find('code').html($('div.meta > .card > .mis').size() + '/' + $('div.meta').size());
 
 
     $('#spinal_cord_tumor h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.spinal_cord_tumor)').toggle();
+        $('div.card-group:not(.spinal_cord_tumor)').slideToggle(100);
     });
-    $('#spinal_cord_tumor').find('code').html($('div.spinal_cord_tumor').size());
+    $('#spinal_cord_tumor').find('code').html($('div.spinal_cord_tumor > .card > .mis').size() + '/' + $('div.spinal_cord_tumor').size());
 
 
 
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
 
 });
 </script>

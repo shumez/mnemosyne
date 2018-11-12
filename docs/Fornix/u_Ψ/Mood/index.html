@@ -4,12 +4,39 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-07-30 16:08:06
+@Last modified time: 2018-11-12 10:30:42
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
@@ -81,8 +108,8 @@
     <title>Mood</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-07-30 16:08:17" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.8">
+    <meta name="revised" content="2018-11-12 10:31:13" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.33">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -109,7 +136,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -141,6 +168,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -179,25 +211,42 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -246,243 +295,296 @@
         </div>
     </div>
 
-    <!-- <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2> 
-            <span class="badge badge-pill mis"> </span>
-            <span class="badge badge-pill cau"> </span>
-            <span class="badge badge-pill rev"> </span>
-            <span class="badge badge-pill hit"> </span>
-            <script type="text/javascript"></script>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+    
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro</h2>
                 </div>
             </div>
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>うつ状態をきたす神経疾患</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>髄膜炎 / 脳炎</li>
+                            <li>脳血管障害</li>
+                            <li>MS</li>
+                            <li>Parkinson</li>
+                            <li>Huntington</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div> -->
+    </div>
+
 
     <div class="section" id="MDD">
-        <div class="page-header">
-            <h2>MDD <small class="hidden-xs-down">Major Depressive Disorder</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>MDD <small class="hidden-xs-down">Major Depressive Disorder</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>思考制止</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>軽度なうつ病
+                                <ul>
+                                    <li>四環系抗うつ薬</li>
+                                    <li>SSRI</li>
+                                    <li>SNRI</li>
+                                </ul>
+                            </li>
+                            <li>重症
+                                <ul>
+                                    <li>電気けいれん療法 ECT</li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>病前性格</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        循環気質 (クレッチマー)
+                        <ul>
+                            <li>快活, 陰鬱</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        執着性格 (下田)
+                        <ul>
+                            <li>熱中性, 几帳面</li>
+                            <li>仕事熱心, 徹底性</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        メランコリー型性格 (テレンバッハ)
+                        <ul>
+                            <li>秩序志向性, 几帳面</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>説明すべきこと</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>概念</td>
+                            <td><ul>
+                                <li>うつ病という病気であって, 怠けではない</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>治療 / 生活指導</td>
+                            <td><ul>
+                                <li>治る病気</li>
+                                <li>休息をとる</li>
+                                <li>経過には一進一退</li>
+                                <li>抗うつ薬が必要である理由</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td>人生に関与すること</td>
+                            <td><ul>
+                                <li>人生上の重要な決断をしない</li>
+                                <li>自殺などの自己破壊的行為をしないように約束させる</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="psychotic_depression">Psychotic Depression <small>精神病性うつ病</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Definition</h6>
+                        <ul>
+                            <li>w/ <u>幻覚</u> / 妄想</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+
             </div>
 
         </div>
     </div>
-        
-    <div class="section" id="BPD">
-        <div class="page-header">
-            <h2>BiPolar Disorder <small class="hidden-xs-down">BPD</small><small> 双極性障害</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="SAD">
-        <div class="page-header">
-            <h2>Seasonal Affective Disorder <small class="hidden-xs-down">SAD</small><small> 季節性うつ病</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
     
 
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="BPD">
+                <div class="page-header">
+                    <h2>BPD <small>双極性障害</small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li>
+                                <ul>
+                                    <li>観念奔逸</li>
+                                    <li><u>談話心迫</u><br>
+                                        行為心迫の１つ, 黙っていられず, 次々と止めどなく話し出す</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>VPA</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
 
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SAD">
+                <div class="page-header">
+                    <h2>Seasonal Affective Disorder <small> 季節性うつ病</small> <small><code></code></small></h2>
                 </div>
 
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li>
+                </ul> -->
             </div>
 
         </div>
     </div>
-    -->
+
+    
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
 
     <div class="section" id="app">
@@ -508,7 +610,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 21 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 21</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -645,10 +747,18 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group MDD" id="q01">
+            <div class="card-group psychotic_depression MDD 111 info" id="q01">
                 <div class="card">
-                    <div class="card-header 111 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G56" target="_blank" id="">111G56</a> Dx
                     </div>
                     <div class="card-body">
@@ -707,13 +817,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_16:27:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_16:27:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_10:58:06"> </span>
                         <br>
                         <p>45歳の男性．<br>
-                            数ヵ月前から始まった食思不振と倦怠感とを主訴に来院した．<br>
-                            「食べ物が砂をかむような味しかしない．食欲がでない．」と言う．<br>
-                            身長170cm．最近2ヵ月で，67kgだった体重が63kgに減少した．<br>
-                            先週会社の健康診断で受けた上部消化管造影は正常で，胸部X線撮影，血液検査および生化学検査に異常所見はなかった．健胃薬を処方したが2週たっても症状は改善しなかった．さらに患者は，最近では「朝方早く目が覚めて再び眠れないので，睡眠薬を処方して欲しい」と言う．<br>
+                            数ヵ月前から始まった<u>食思不振</u>と<u>倦怠感</u>とを主訴に来院した．<br>
+                            「<u>食べ物が砂をかむような味しかしない</u>．<u>食欲がでない</u>．」と言う．<br>
+                            身長170cm．<br>
+                            最近2ヵ月で，67kgだった体重が63kgに減少した．<br>
+                            先週会社の健康診断で受けた上部消化管造影は正常で，胸部X線撮影，血液検査および生化学検査に異常所見はなかった．<br>
+                            健胃薬を処方したが2週たっても症状は改善しなかった．<br>
+                            さらに患者は，最近では「朝方早く目が覚めて再び眠れないので，睡眠薬を処方して欲しい」と言う．<br>
                             診断に最も重要な質問はどれか．</p>
 
                         <ol type="a">
@@ -786,9 +900,9 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group MDD" id="q04">
+            <div class="card-group MDD info" id="q04">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I60" target="_blank">108I60</a> 対応
                     </div>
                     <div class="card-body">
@@ -952,9 +1066,9 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group MDD delirium" id="q06">
+            <div class="card-group MDD delirium info" id="q06">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95H13" target="_blank">95H13-15</a> 治療
                     </div>
                     <div class="card-body">
@@ -965,18 +1079,27 @@
                         <span class="badge badge-pill rev" id="2018-07-30_17:03:49"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_17:03:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_17:03:43"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-12_11:05:02"> </span>
                         <br>
                         <p>次の文を読み，13～15の問いに答えよ．<br><br>
 
                             60歳の女性．<br>
                             言動の異常を心配した長男夫婦に連れられて来院した．<br>
-                            現病歴：2ヵ月前から徐々に家にとじこもり横になっていることが多く，おかしなことを言うようになった．家族によれば，心配することは何もないのに，「今年の所得税が払えない．自宅が抵当に入ったので立ち退かねばならない．」と悩み，「そうなったのも<u>昨年のお盆で先祖供養が不十分だったから</u>．」と<u>自分を責め</u>，いくら言っても聞き入れない．食事もとろうとせず，入浴は無理やりでないと入らない．<u>体重がこの2ヵ月で3kg減少</u>した．夜間はほとんど眠らないまま，何かぶつぶつ言ってはお経を唱えている．「きっかけとしては，昨年新築した自宅の建築費についての税務署からの問い合わせが関係しているかもしれない．」と長男は言う．この問い合わせは通常のもので問題は何もなかった．<br>
-                            既往歴：高血圧症のため10年前から投薬を受けている．<br>
-                            生活歴：夫と長男夫婦，孫2人の6人家族．元来きれい好きで働き者であった．<br>
-                            現　症：身長150cm，体重55kg．脈拍74/分，整．血圧166/92mmHg．神経学的身体診察では異常を認めない．医師がいろいろ質問しても患者はうつむいてほとんど答えないか，小声で二言三言答える程度である．しかし意識ははっきりしており，現在の状況もわかっている．このままではいけないからと入院を勧めても，「貧乏で入院費が払えないから．」と頑として入院を拒否する．改訂長谷川式簡易知的機能評価スケールで23点（基準21以上）．</p>
+                            現病歴：<br>
+                            2ヵ月前から徐々に家にとじこもり横になっていることが多く，おかしなことを言うようになった．家族によれば，心配することは何もないのに，「今年の所得税が払えない．自宅が抵当に入ったので立ち退かねばならない．」と悩み，「そうなったのも<u>昨年のお盆で先祖供養が不十分だったから</u>．」と<u>自分を責め</u>，いくら言っても聞き入れない．<br>
+                            食事もとろうとせず，入浴は無理やりでないと入らない．<u>体重がこの2ヵ月で3kg減少</u>した．<br>
+                            夜間はほとんど眠らないまま，何かぶつぶつ言ってはお経を唱えている．「きっかけとしては，昨年新築した自宅の建築費についての税務署からの問い合わせが関係しているかもしれない．」と長男は言う．この問い合わせは通常のもので問題は何もなかった．<br>
+                            既往歴：<br>
+                            高血圧症のため10年前から投薬を受けている．<br>
+                            生活歴：<br>
+                            夫と長男夫婦，孫2人の6人家族．元来きれい好きで働き者であった．<br>
+                            現　症：<br>
+                            身長150cm，体重55kg．脈拍74/分，整．血圧166/92mmHg．<br>
+                            神経学的身体診察では異常を認めない．医師がいろいろ質問しても患者はうつむいてほとんど答えないか，小声で二言三言答える程度である．しかし意識ははっきりしており，現在の状況もわかっている．このままではいけないからと入院を勧めても，「貧乏で入院費が払えないから．」と頑として入院を拒否する．改訂長谷川式簡易知的機能評価スケールで23点（基準21以上）．</p>
 
-                        <p>[H013] この患者にみられるのはどれか．</p>
+                        <p>[H013] <br>
+                            この患者にみられるのはどれか．</p>
                         <ol type="a">
                             <li class="ans_f">認知症</li>
                             <li class="ans_f">せん妄</li>
@@ -985,7 +1108,8 @@
                             <li class="ans_f">感情失禁</li>
                         </ol>
 
-                        <p>[H014] 適切な処置はどれか．</p>
+                        <p>[H014] <br>
+                            適切な処置はどれか．</p>
                         <ol type="a">
                             <li class="ans_f">本人の意志を尊重しそのまま帰宅させる．</li>
                             <li class="ans_f">1週後の再受診を指示する．</li>
@@ -994,7 +1118,8 @@
                             <li class="ans_f">措置入院のための手続きをとる．</li>
                         </ol>
 
-                        <p>[H015] この患者の治療法として適切なのはどれか．2つ選べ．</p>
+                        <p>[H015] <br>
+                            この患者の治療法として適切なのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">イミプラミン投与</li>
                             <li class="ans_f">ワルファリン投与</li>
@@ -1103,14 +1228,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group MDD" id="q08">
+            <div class="card-group MDD SSRI SNRI" id="q08">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/100G113" target="_blank">100G113</a> 治療薬
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_17:19:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_17:19:18"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-12_11:06:55"> </span>
                         <br>
                         <p>うつ病に最も適切な治療薬はどれか．</p>
 
@@ -1193,7 +1319,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-07-30_17:32:13"> </span>
+                        <span class="badge badge-pill mis" id="2018-07-30_17:32:13"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-12_10:49:58"> </span>
                         <br>
                         <p>57歳の男性．<br>
                             3ヵ月前から食欲低下と不眠とが出現した．<br>
@@ -1239,14 +1366,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group MDD" id="q11">
+            <div class="card-group MDD info" id="q11">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98H6" target="_blank">98H6</a> 病前性格
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-07-30_17:36:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-07-30_17:36:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_10:53:42"> </span>
                         <br>
                         <p>中年発症のうつ病患者に特徴的な病前性格はどれか．3つ選べ．</p>
 
@@ -1276,31 +1404,43 @@
 
                         <h6>病前性格</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">循環気質 (クレッチマー)<ul>
-                                <li>快活, 陰鬱</li>
-                            </ul></li>
-                            <li class="list-group-item">執着性格 (下田)<ul>
-                                <li>熱中性, 几帳面</li>
-                                <li>仕事熱心, 徹底性</li>
-                            </ul></li>
-                            <li class="list-group-item">メランコリー型性格 (テレンバッハ)<ul>
-                                <li>秩序志向性, 几帳面</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                循環気質 (クレッチマー)
+                                <ul>
+                                    <li>快活, 陰鬱</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                執着性格 (下田)
+                                <ul>
+                                    <li>熱中性, 几帳面</li>
+                                    <li>仕事熱心, 徹底性</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                メランコリー型性格 (テレンバッハ)
+                                <ul>
+                                    <li>秩序志向性, 几帳面</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
 
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group MDD" id="q12">
+            <div class="card-group MDD dellusion perception" id="q12">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/93B66" target="_blank">93B66</a> うつ病 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_17:40:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_17:40:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-12_11:07:54"> </span>
                         <br>
                         <p>うつ病について正しいのはどれか．</p>
 
@@ -1331,14 +1471,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group MDD" id="q13">
+            <div class="card-group MDD thinking" id="q13">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/101F8" target="_blank">101F8</a> 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_17:42:29"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_17:42:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_11:08:25"> </span>
                         <br>
                         <p>うつ病でみられるのはどれか．</p>
 
@@ -1369,14 +1510,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group MDD" id="q14">
+            <div class="card-group MDD 110 info mnemonics" id="q14">
                 <div class="card">
-                    <div class="card-header 110 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110I34" target="_blank">110I34</a> 妄想
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_17:47:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_17:47:04"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_11:09:54"> </span>
                         <br>
                         <p>うつ病の患者で，抑うつ気分と関連してみられる妄想はどれか．2つ選べ．</p>
 
@@ -1422,27 +1564,54 @@
                             <li class="list-group-item">精神病症状（妄想，幻覚など）を伴うこともある．</li>
                         </ul>
 
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>美女は 必 死に 罪を うったえる</u></li>
-                            <li class="list-group-item">微小妄想</li>
-                            <li class="list-group-item">貧困妄想</li>
-                            <li class="list-group-item">心気妄想</li>
-                            <li class="list-group-item">罪業妄想</li>
-                            <li class="list-group-item">うつ病</li>
-                        </ul>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th><u>美女は 必 死に 罪を うったえる</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>美女は</td>
+                                    <td>微小妄想</td>
+                                </tr>
+                                <tr>
+                                    <td>必</td>
+                                    <td>貧困妄想</td>
+                                </tr>
+                                <tr>
+                                    <td>死に</td>
+                                    <td>心気妄想</td>
+                                </tr>
+                                <tr>
+                                    <td>罪を</td>
+                                    <td>罪業妄想</td>
+                                </tr>
+                                <tr>
+                                    <td>うったえる</td>
+                                    <td>うつ病</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group MDD VaD PD" id="q15">
+            <div class="card-group MDD VaD PD info" id="q15">
                 <div class="card">
-                    <div class="card-header info">
-                        <a href="https://qb.medilink-study.com/#/Answer/104B19" target="_blank">104B19</a> うつ状態をきたしやすい神経疾患
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/104B19" target="_blank">104B19</a> うつ状態 神経疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-07-30_17:56:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-07-30_17:56:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_10:55:28"> </span>
                         <br>
                         <p>うつ状態を呈しやすいのはどれか．2つ選べ．</p>
 
@@ -1472,12 +1641,19 @@
 
                         <h6>うつ状態をきたす神経疾患</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">髄膜炎 / 脳炎</li>
-                            <li class="list-group-item">脳血管障害</li>
-                            <li class="list-group-item">MS</li>
-                            <li class="list-group-item">Parkinson</li>
-                            <li class="list-group-item">Huntington</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>髄膜炎 / 脳炎</li>
+                                    <li>脳血管障害</li>
+                                    <li>MS</li>
+                                    <li>Parkinson</li>
+                                    <li>Huntington</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1535,20 +1711,21 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group BPD" id="q17">
+            <div class="card-group BPD info" id="q17">
                 <div class="card">
-                    <div class="card-header info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96D2" target="_blank">96D2</a> 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_18:05:54"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_18:05:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_11:11:51"> </span>
                         <br>
                         <p>25歳の男性．<br>
                             <u>多弁・多動</u>を主訴に家族に伴われて来院した．<br>
-                            元来，社交的で人情味があり，親しみやすい好人物であった．<br>
+                            <u>元来，社交的で人情味があり，親しみやすい好人物であった</u>．<br>
                             3週前，仕事上の失敗で上司に注意され，責任を強く感じていた．その後，「<u>眠くならない．眠らなくても疲れない</u>．」と言い，深夜まで読書をしたり，部屋を片づけたりしている．<br>
-                            職場でも，多弁で声が大きく，仕事に関係ない話題を同僚に話しかけるようになった．上司が注意すると，不機嫌になって大声で言い返したり，書類を破り捨てたりする．診察時，意識は清明，気分は爽快で，話の内容は理解できるが，しばしば話が脱線し，語呂合わせや冗談を言ったりする．「自分は病気ではない．入院は断固しない．」と主張する．常用薬はない．<br>
+                            職場でも，多弁で声が大きく，仕事に関係ない話題を同僚に話しかけるようになった．上司が注意すると，不機嫌になって大声で言い返したり，書類を破り捨てたりする．診察時，意識は清明，気分は爽快で，話の内容は理解できるが，しばしば話が脱線し，語呂合わせや冗談を言ったりする．<u>「自分は病気ではない．入院は断固しない．」</u>と主張する．常用薬はない．<br>
                             この患者で正しいのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -1565,7 +1742,7 @@
 
                         <ul>
                             <li>意欲の亢進, 行為心迫</li>
-                            <li>元来社交的で, 人情味があり親しみやすい性格 &rAarr; 循環気質</li>
+                            <li>元来社交的で, 人情味があり親しみやすい性格 &xrArr; 循環気質</li>
                             <li>睡眠障害</li>
                             <li>易刺激性</li>
                             <li>観念奔逸</li>
@@ -1648,14 +1825,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group BPD" id="q18">
+            <div class="card-group BPD VPA pri info" id="q18">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D23" target="_blank">109D23</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_18:09:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_18:09:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_11:13:40"> </span>
                         <br>
                         <p>40歳の女性．<br>
                             「<u>気分の上がり下がり</u>」を主訴に夫とともに来院した．<br>
@@ -1745,14 +1923,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group BPD" id="q19">
+            <div class="card-group BPD pri 111" id="q19">
                 <div class="card">
-                    <div class="card-header pri 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A14" target="_blank">111A14</a> 症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-07-30_18:15:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-07-30_18:15:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_11:14:33"> </span>
                         <br>
                         <p>双極性障害の躁状態でみられる症状はどれか．2つ選べ．</p>
 
@@ -1844,7 +2023,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-07-30_18:22:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-07-30_18:22:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-12_10:57:00"> </span>
                         <br>
                         <p>季節性うつ病について正しいのはどれか．2つ選べ．</p>
 
@@ -1925,6 +2105,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1993,6 +2174,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2001,6 +2189,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2014,27 +2223,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2056,11 +2284,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2077,62 +2308,62 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2363,8 +2594,70 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#MDD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MDD)').slideToggle(100);
+    });
+    $('#MDD').find('small > code').html(
+        $('div.MDD > .card > .mis').size() + '+' +
+        $('div.MDD > .card > .cau').size() + '/' +
+        $('div.MDD').size()
+    );
+
+
+    $('#psychotic_depression').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.psychotic_depression)').slideToggle(100);
+    });
+    $('#psychotic_depression').find('small > code').html(
+        $('div.psychotic_depression > .card > .mis').size() + '+' +
+        $('div.psychotic_depression > .card > .cau').size() + '/' +
+        $('div.psychotic_depression').size()
+    );
+
+
+
+    $('#BPD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.BPD)').slideToggle(100);
+    });
+    $('#BPD').find('small > code').html(
+        $('div.BPD > .card > .mis').size() + '+' +
+        $('div.BPD > .card > .cau').size() + '/' +
+        $('div.BPD').size()
+    );
+
+
+
+    $('#SAD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SAD)').slideToggle(100);
+    });
+    $('#SAD').find('small > code').html(
+        $('div.SAD > .card > .mis').size() + '+' +
+        $('div.SAD > .card > .cau').size() + '/' +
+        $('div.SAD').size()
+    );
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
+
 });
 </script>
 </body>

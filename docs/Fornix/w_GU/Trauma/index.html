@@ -4,12 +4,27 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-01 17:20:26
+@Last modified time: 2018-11-17 14:43:06
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -92,11 +107,11 @@
 -->
 <html>
 <head>
-    <title>Trauma - GU</title>
+    <title>Trauma-GU</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-01 17:20:39" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-17 14:43:25" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -115,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -123,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -155,6 +173,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -195,33 +216,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -232,8 +261,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Trauma <small class="hidden-xs-down">GU</small></h1>
-        <h1 class="title hidden-sm-up">#tit</h1>
+        <h1 class="title">Trauma <small>GU</small></h1>
     </div>
 <!-- </nav> -->
 
@@ -364,7 +392,7 @@
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                         <ul>
                             <li>逆行性尿道膀胱造影 #1<br>
-                                s/o 感染の場合 C/I</li>
+                                s/o <u>感染の場合 <code>C/I</code></u></li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -404,7 +432,7 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                         <ul>
                             <li>軽症: 陰嚢切開ドレナージ</li>
-                            <li>重症: 精巣摘除</li>
+                            <li>重症: <u>精巣摘除</u></li>
                         </ul>
                     </li>
                 </ul>
@@ -646,7 +674,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_18:13:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_18:13:44"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_14:48:26"> </span>
                         <br>
                         <p>25歳の男性．<br>
                             バイクで転倒，左側腹部を強打し，局所の疼痛と血尿とを訴え，直ちに来院した．<br>
@@ -725,7 +754,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/90A88" target="_blank" id="">90A88</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-01_19:33:27"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_19:33:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_14:49:18"> </span>
                         <br>
                         <p>男性が会陰部を強打した後に起こった尿閉に対してまず行うべき検査はどれか．</p>
 
@@ -767,20 +797,23 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_19:37:35"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_19:37:35"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_14:51:21"> </span>
                         <br>
                         <p>18歳の男子．<br>
                             サッカーの部活中に陰部を蹴られ，右精巣に腫脹と疼痛とが生じたため救急受診した．<br>
                             顔面はやや蒼白で，腰を曲げて下腹部を押さえている．右陰囊部は手拳大に腫脹し，皮膚は青黒く緊満し，触診で強度の疼痛を訴える．<br>
-                            血液所見：赤血球410万，Hb 13.5g/dL，白血球8,100，血小板19万．<br>
-                            尿所見と血清生化学所見とに異常はない．左右の陰囊部超音波写真を次に示す．<br>
+                            血液所見：<br>
+                            赤血球410万，Hb 13.5g/dL，白血球8,100，血小板19万．<br>
+                            尿所見と血清生化学所見とに異常はない．<br>
+                            左右の陰囊部超音波写真を次に示す．<br>
                             適切な治療はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/97A043A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/97A043B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/97A043A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/97A043B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/97A043A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/97A043B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -821,10 +854,11 @@
             <div class="card-group bladder CVF" id="q04">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/98A42" target="_blank" id="">98A42</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/98A42" target="_blank" id="">98A42</a> Dx
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-01_19:42:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-01_19:42:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_14:54:15"> </span>
                         <br>
                         <p>80歳の男性．<br>
                             半年前から便秘気味であったが，<br>
@@ -872,9 +906,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_19:47:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_19:47:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_14:52:59"> </span>
                         <br>
-                        <p>75歳の女性．3ヵ月前から下着が汚れるようになったので受診した．特に歩行時に腟から球のようなものが出てきて，下着が汚れる．ベッドに横になると引っ込むという．診察では，腟前壁が腟口から球状に飛び出している．尿所見：蛋白（－），糖（－），沈渣に赤血球1～2/1視野，白血球2～3/1視野．血液所見と血清生化学所見とに異常はない．<br>
+                        <p>75歳の女性．<br>
+                            3ヵ月前から下着が汚れるようになったので受診した．<br>
+                            特に<u>歩行時に腟から球のようなものが出てきて</u>，下着が汚れる．ベッドに横になると引っ込むという．<br>
+                            診察では，腟前壁が腟口から球状に飛び出している．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），沈渣に赤血球1～2/1視野，白血球2～3/1視野．<br>
+                            血液所見と血清生化学所見とに異常はない．<br>
                             この患者でみられないのはどれか．</p>
 
 
@@ -1024,7 +1065,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1034,6 +1079,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1052,7 +1118,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1103,6 +1181,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1119,63 +1198,71 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1189,6 +1276,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1218,6 +1308,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -1405,43 +1498,59 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
     $('#kidney h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.kidney)').toggle();
+        $('#q div.card-group:not(.kidney)').slideToggle(100);
     });
-    $('#kidney').find('code').html($('div.kidney').size());
+    $('#kidney').find('small > code').html(
+        $('div.kidney > .card > .mis').size() + '+' +
+        $('div.kidney > .card > .cau').size() + '/' +
+        $('div.kidney').size());
 
 
     $('#ureter h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ureter)').toggle();
+        $('#q div.card-group:not(.ureter)').slideToggle(100);
     });
-    $('#ureter').find('code').html($('div.ureter').size());
+    $('#ureter').find('small > code').html(
+        $('div.ureter > .card > .mis').size() + '+' +
+        $('div.ureter > .card > .cau').size() + '/' +
+        $('div.ureter').size());
 
 
     $('#testis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.testis)').toggle();
+        $('#q div.card-group:not(.testis)').slideToggle(100);
     });
-    $('#testis').find('code').html($('div.testis').size());
+    $('#testis').find('small > code').html(
+        $('div.testis > .card > .mis').size() + '+' +
+        $('div.testis > .card > .cau').size() + '/' +
+        $('div.testis').size());
 
 
     $('#bladder h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.bladder)').toggle();
+        $('#q div.card-group:not(.bladder)').slideToggle(100);
     });
-    $('#bladder').find('code').html($('div.bladder').size());
+    $('#bladder').find('small > code').html(
+        $('div.bladder > .card > .mis').size() + '+' +
+        $('div.bladder > .card > .cau').size() + '/' +
+        $('div.bladder').size());
 
 
     $('#CVF h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CVF)').toggle();
+        $('#q div.card-group:not(.CVF)').slideToggle(100);
     });
-    $('#CVF').find('code').html($('div.CVF').size());
+    $('#CVF').find('small > code').html(
+        $('div.CVF > .card > .mis').size() + '+' +
+        $('div.CVF > .card > .cau').size() + '/' +
+        $('div.CVF').size());
 
 
 
@@ -1449,9 +1558,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

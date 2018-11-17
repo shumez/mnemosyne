@@ -4,12 +4,14 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-11-16 11:26:27
+@Last modified time: 2018-11-17 13:25:12
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+
 04.01.35    18 11 14    nav .mnemonics .fig, #q 
 04.01.34    18 11 11    .cau size
 04.01.33    18 11 06    .mis size
@@ -109,8 +111,8 @@
     <title>Epid</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-16 11:26:51" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.35">
+    <meta name="revised" content="2018-11-17 13:25:21" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -128,6 +130,9 @@
 
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -335,18 +340,19 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        直接法：
+                        直接法：<br>
 
-                        <div lang="latex">
-                            \begin{align*}
-                                \sum{\text{N} \times \frac{\text{m}}{\text{n}}}
-                            \end{align*} \\
+                        \(
+                            \sum{\text{N} \times \frac{\text{m}}{\text{n}}}
+                        \)
+                        <br>
+                        \(
                             \begin{cases}
                                 N \text{: Population} \\
                                 n \text{: Sample} \\
                                 m \text{: Sample}
                             \end{cases}
-                        </div>
+                        \)
 
                         <ul>
                             <li>直接法年齢調整死亡率</li>
@@ -355,13 +361,11 @@
                         </ul>
                     </li>
                     <li class="list-group-item">
-                        間接法：
+                        間接法：<br>
 
-                        <div lang="latex">
-                            \begin{align*}
-                                \sum{\text{n} \times \frac{\text{M}}{\text{N}}}
-                            \end{align*}
-                        </div>
+                        \(
+                            \sum{\text{n} \times \frac{\text{M}}{\text{N}}}
+                        \)
 
                         <ul>
                             <li>標準化死亡比（SMR）</li>
@@ -397,19 +401,19 @@
                         <tr>
                             <th rowspan="2">Exp</th>
                             <th>(+)</th>
-                            <td><i>I<sub>e</sub></i></td>
+                            <td>\(I_e\)</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <th>(-)</th>
-                            <td><i>I<sub>u</sub></i></td>
+                            <td>\(I_u\)</td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
                             <th colspan="2">Total</th>
-                            <td><i>I<sub>t</sub></i></td>
+                            <td>\(I_t\)</td>
                             <td></td>
                             <td></td>
                         </tr>
@@ -418,15 +422,16 @@
             
                 <ul class="list-group">
                     <li class="list-group-item">
-                        相対危険度 <i>ARR</i>
-                        <div lang="latex">
-                            RR = \frac{I_e}{I_u}
-                        </div>
+                        相対危険度 <i>ARR</i><br>
+                        \(
+                            \text{RR} = \frac{I_e}{I_u}
+                        \)
+                        
                     </li>
                     <li class="list-group-item">
                         寄与危険度 <i>AR</i>
                         <div lang="latex">
-                            AR = I_e - I_u
+                            \text{AR} = I_e - I_u
                         </div>
                     </li>
                 </ul>
@@ -435,36 +440,37 @@
                 <h6>寄与危険割合 AF</h6>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <div lang="latex">
+                        \(
                             \begin{align*}
-                                AF &= \frac{I_e - I_u}{I_e} \\
+                                \text{AF} 
+                                &= \frac{I_e - I_u}{I_e} \\
                                 &= \frac{^{I_e}/_{I_u} - 1}{^{I_e}/_{I_u}} \\
-                                &= \frac{RR - 1}{RR}
+                                &= \frac{\text{RR} - 1}{\text{RR}}
                             \end{align*} \\
                             \begin{cases}
                                 I_e \text{: Exposed Incident} \\
                                 I_u \text{: Unxposed Incident}
                             \end{cases}
-                        </div>
-                        
+                        \)
                     </li>
                 </ul>
 
                 <h6>集団寄与危険割合 PAF</h6>
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <div lang="latex">
+                        \(
                             \begin{align*}
-                                PAF 
+                                \text{PAF} 
                                 &= \frac{I_t - I_u}{I_t} \\
                                 &= \frac{I_e \times p + I_u \times (1 - p) - I_u}{I_e \times p + I_u \times (1-p)} \\
-                                &= \frac{(RR -1) \times p}{(RR - 1) \times p + 1}
+                                &= \frac{(\text{RR} -1) \times p}{(\text{RR} - 1) \times p + 1}
                             \end{align*} \\
                             \begin{cases}
                                 I_t \text{: Total Incident} \\
                                 I_u \text{: Unxposed Incident}
                             \end{cases}
-                        </div>
+                        \)
+                        
                     </li>
                 </ul>
 

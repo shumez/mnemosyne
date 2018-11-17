@@ -4,12 +4,27 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-01 20:10:55
+@Last modified time: 2018-11-17 16:26:58
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -92,11 +107,11 @@
 -->
 <html>
 <head>
-    <title>Tumor</title>
+    <title>Tumor-GU</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-01 20:11:04" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-17 16:27:22" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -115,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -123,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -155,6 +173,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -195,33 +216,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -232,7 +261,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Tumor <small class="hidden-xs-down">GU</small></h1>
+        <h1 class="title">Tumor <small>GU</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -1128,7 +1157,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_20:30:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_20:30:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_16:40:07"> </span>
                         <br>
                         <p>71歳の女性．<br>
                             体重減少を主訴に来院した．<br>
@@ -1141,10 +1171,15 @@
                             胸部CTで異常を認めない．<br>
                             腹部造影CTの水平断像（A）と画像再構成による冠状断像（B）とを次に示す．腹部臓器とリンパ節とに転移を認めない．<br>
                             この患者に対する適切な治療はどれか．</p>
-                        
-                        <img src="https://www.qb-online.com/img/111I062A.jpg" class="img-fluid">
-                        <img src="https://www.qb-online.com/img/111I062B.jpg" class="img-fluid">
+                    </div>
 
+                    <!-- <img src="https://www.qb-online.com/img/111I062A.jpg" class="img-fluid"> -->
+                    <!-- <img src="https://www.qb-online.com/img/111I062B.jpg" class="img-fluid"> -->
+
+                    <img src="https://qb.medilink-study.com/images/111I062A.jpg" class="card-img-top img-fluid">
+                    <img src="https://qb.medilink-study.com/images/111I062B.jpg" class="card-img-top img-fluid">
+
+                    <div class="card-body">
                         <ol type="a">
                             <li class="ans_t">手術療法</li>
                             <li class="ans_f">免疫療法</li>
@@ -1162,8 +1197,12 @@
                             <li>&uarr;LD</li>
                         </ul>
 
-                        <img src="https://www.qb-online.com/img/111I062_ima_010.jpg" class="img-fluid">
-                        <img src="https://www.qb-online.com/img/111I062_ima_020.jpg" class="img-fluid">
+                        <!-- <img src="https://www.qb-online.com/img/111I062_ima_010.jpg" class="img-fluid"> -->
+                        <!-- <img src="https://www.qb-online.com/img/111I062_ima_020.jpg" class="img-fluid"> -->
+
+
+                        <img src="https://qb.medilink-study.com/images/111I062_ima_010.jpg" class="card-img-top img-fluid">
+                        <img src="https://qb.medilink-study.com/images/111I062_ima_020.jpg" class="card-img-top img-fluid">
 
                         <p class="q_dx">IVCまで進展した腎実質由来の腫瘍</p>
                         <p>M0</p>
@@ -1223,28 +1262,33 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group RCC pri" id="q03">
+            <div class="card-group RCC meta pri" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108D57" target="_blank">108D57</a> 肺転移 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_20:39:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_20:39:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_16:57:22"> </span>
                         <br>
                         <p>68歳の男性．<br>
                             健康診断で肺野の異常陰影を指摘され精査のため来院した．<br>
-                            身長175cm，体重71kg．体温36.7℃．脈拍64/分，整．血圧134/68mmHg．呼吸数12/分．心音と呼吸音とに異常を認めない．<br>
-                            血液所見：赤血球410万，Hb 13.1g/dL，Ht 37％，白血球5,700，血小板21万．<br>
-                            血液生化学所見：総蛋白7.1g/dL，アルブミン3.7g/dL，AST 37IU/L，ALT 31IU/L，LD 126IU/L（基準176～353），尿素窒素19mg/dL，クレアチニン1.0mg/dL，Na 136mEq/L，K 4.5mEq/L，Cl 109mEq/L，Ca 9.2mg/dL．CRP 0.2mg/dL．<br>
-                            呼吸機能検査所見：％VC 83％，FEV1％ 74％．肺野条件の胸部CT（A）と腹部造影CT再構成三次元画像（B）とを次に示す．<br>
+                            身長175cm，体重71kg．体温36.7℃．脈拍64/分，整．血圧134/68mmHg．呼吸数12/分．<br>
+                            心音と呼吸音とに異常を認めない．<br>
+                            血液所見：<br>
+                            赤血球410万，Hb 13.1g/dL，Ht 37％，白血球5,700，血小板21万．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.1g/dL，アルブミン3.7g/dL，AST 37IU/L，ALT 31IU/L，LD 126IU/L（基準176～353），尿素窒素19mg/dL，クレアチニン1.0mg/dL，Na 136mEq/L，K 4.5mEq/L，Cl 109mEq/L，Ca 9.2mg/dL．CRP 0.2mg/dL．<br>
+                            呼吸機能検査所見：<br>
+                            ％VC 83％，FEV1％ 74％．肺野条件の胸部CT（A）と腹部造影CT再構成三次元画像（B）とを次に示す．<br>
                             治療法として適切なのはどれか．2つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/108D057A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/108D057B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/108D057A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108D057B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108D057A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108D057B.jpg" class="card-img-top img-fluid" width="%">
 
 
                     <div class="card-body">
@@ -1289,7 +1333,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_20:43:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_20:43:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:00:29"> </span>
                         <br>
                         <p>腎細胞癌について正しいのはどれか．2つ選べ．</p>
 
@@ -1370,7 +1415,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_20:51:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_20:51:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:10:46"> </span>
                         <br>
                         <p>腎細胞癌の腫瘍随伴症はどれか．3つ選べ．</p>
 
@@ -1499,18 +1545,28 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_21:04:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_21:04:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:13:05"> </span>
                         <br>
                         <p>68歳の男性．<br>
                             血尿を主訴に来院した．<br>
-                            <u>1ヵ月前から間欠的に血尿</u>があった．15年前から高血圧症に対し降圧薬を内服中であり，糖尿病に対しインスリン療法を行っている．12年前に肝血管腫を疑われ，<u>腹部造影CTを撮影した際に，蕁麻疹と重篤な呼吸困難</u>とをきたしたことがある．<br>
+                            <u>1ヵ月前から間欠的に血尿</u>があった．<br>
+                            15年前から高血圧症に対し降圧薬を内服中であり，糖尿病に対しインスリン療法を行っている．<br>
+                            12年前に肝血管腫を疑われ，<u>腹部造影CTを撮影した際に，蕁麻疹と重篤な呼吸困難</u>とをきたしたことがある．<br>
                             喫煙は20本/日を48年間．<br>
-                            身長165cm，体重70kg．体温36.0℃．脈拍76/分，整．血圧162/92mmHg．呼吸数14/分．腹部は平坦，軟で，肝・脾を触知しない．<br>
-                            尿所見：蛋白3＋，糖2＋，沈渣に赤血球多数/1視野，白血球10～20/1視野．<br>
-                            血液所見：赤血球358万，Hb 10.6g/dL，Ht 33％，白血球7,800，血小板24万．<br>
-                            血液生化学所見：血糖180mg/dL，HbA1c（NGSP）7.4％（基準4.6～6.2），総蛋白6.0g/dL，アルブミン2.9g/dL，尿素窒素50mg/dL，クレアチニン3.2mg/dL，<br>
-                            Na 132mEq/L，K 5.6mEq/L，Cl 98mEq/L．免疫学所見：CRP 0.8mg/dL．PSA 2.6ng/mL（基準4以下）．<br>
-                            腹部超音波検査で<u>左腎盂内に径20mmの腫瘤</u>を認める．膀胱鏡検査で膀胱と尿道とに異常はないが，左尿管口から血尿の流出を認める．<br>
+                            身長165cm，体重70kg．体温36.0℃．脈拍76/分，整．血圧162/92mmHg．呼吸数14/分．<br>
+                            腹部は平坦，軟で，肝・脾を触知しない．<br>
+                            尿所見：<br>
+                            <u>蛋白3＋</u>，<u>糖2＋</u>，沈渣に赤血球多数/1視野，白血球10～20/1視野．<br>
+                            血液所見：<br>
+                            赤血球358万，Hb 10.6g/dL，Ht 33％，白血球7,800，血小板24万．<br>
+                            血液生化学所見：<br>
+                            <u>血糖180mg/dL</u>，<u>HbA1c（NGSP）7.4％</u>（基準4.6～6.2），総蛋白6.0g/dL，アルブミン2.9g/dL，尿素窒素50mg/dL，クレアチニン3.2mg/dL，<br>
+                            Na 132mEq/L，K 5.6mEq/L，Cl 98mEq/L．<br>
+                            免疫学所見：<br>
+                            CRP 0.8mg/dL．PSA 2.6ng/mL（基準4以下）．<br>
+                            腹部超音波検査で<u>左腎盂内に径20mmの腫瘤</u>を認める．<br>
+                            膀胱鏡検査で膀胱と尿道とに異常はないが，<u>左尿管口から血尿の流出</u>を認める．<br>
                             血尿の原因精査のために行う検査として適切なのはどれか．</p>
                         
 
@@ -1549,7 +1605,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_21:09:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_21:09:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_17:17:41"> </span>
                         <br>
                         <p>59歳の男性．<br>
                             右腰背部の鈍痛と血尿とを訴えて来院した．<br>
@@ -1559,8 +1616,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/91F030A.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/91F030B.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/91F030A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/91F030B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/91F030A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/91F030B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1832,20 +1889,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_21:30:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_21:30:21"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:23:36"> </span>
                         <br>
                         <p>65歳の男性．<br>
                             <u>血尿</u>を主訴に来院した．<br>
                             3ヵ月前から時々血尿を自覚していたが，自然に消失していたため医療機関を受診していなかった．<br>
                             2日前から<u>血尿が持続</u>するため受診した．<br>
                             <u>喫煙は20本/日を45年間</u>．飲酒はビール350mL/日を20年間．<br>
-                            身長165cm，体重90kg．血圧160/100mmHg．尿沈渣に赤血球多数/1視野，白血球5〜10/1視野．尿細胞診はクラスⅤ．<br>
+                            身長165cm，体重90kg．血圧160/100mmHg．<br>
+                            尿沈渣に赤血球多数/1視野，白血球5〜10/1視野．尿細胞診はクラスⅤ．<br>
                             膀胱内視鏡像を次に示す．<br>
-                            脊髄くも膜下麻酔下で<u>経尿道的膀胱腫瘍切除</u>を行った．病理所見では尿路上皮癌pTaと上皮内癌とを認める．術後1ヵ月目に施行した尿細胞診でもクラスⅤであった．<br>
+                            脊髄くも膜下麻酔下で<u>経尿道的膀胱腫瘍切除</u>を行った．<br>
+                            病理所見では<u>尿路上皮癌pTaと上皮内癌</u>とを認める．<br>
+                            術後1ヵ月目に施行した<u>尿細胞診でもクラスⅤ</u>であった．<br>
                             この患者の治療として適切なのはどれか．</p>
                     </div>
 
-                    <img src="https://www.qb-online.com/img/110A035.jpg" class="img-fluid">
+                    <!-- <img src="https://www.qb-online.com/img/110A035.jpg" class="img-fluid"> -->
+                    <img src="https://qb.medilink-study.com/images/110A035.jpg" class="card-img-top img-fluid">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1969,11 +2031,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_21:41:07"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_21:41:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_17:26:32"> </span>
                         <br>
                         <p>63歳の女性．<br>
                             筋層浸潤性膀胱癌の精査加療目的で入院中である．<br>
-                            入院前に施行した血液検査では異常を認めなかった．膀胱内視鏡検査では，膀胱三角部から<u>膀胱頸部に広がる広基性非乳頭状腫瘍</u>を認め，両側の尿管口は同定できなかった．胸腹部造影CTでは明らかな転移は認めなかった．入院後，全身倦怠感を訴えている．<br>
+                            入院前に施行した血液検査では異常を認めなかった．膀胱内視鏡検査では，膀胱三角部から<u>膀胱頸部に広がる広基性非乳頭状腫瘍</u>を認め，両側の尿管口は同定できなかった．<br>
+                            胸腹部造影CTでは明らかな転移は認めなかった．入院後，全身倦怠感を訴えている．<br>
                             <u>1日尿量は急に低下</u>してきている．<br>
                             緊急に行った血液生化学検査では<u>尿素窒素63mg/dL，クレアチニン5.6mg/dL，K 4.8mEq/L</u>であった．<br>
                             腹部超音波像（A，B）を次に示す．残尿量は40mLであった．<br>
@@ -1982,8 +2046,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/108D044A.jpg" class="img-fluid" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/108D044B.jpg" class="img-fluid" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/108D044A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108D044B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108D044A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/108D044B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2021,14 +2085,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group bladder_cancer" id="q17">
+            <div class="card-group bladder_cancer papilloma " id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/91B63" target="_blank">91B63</a> 膀胱腫瘍 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_21:45:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_21:45:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:28:34"> </span>
                         <br>
                         <p>膀胱腫瘍について正しいのはどれか．</p>
 
@@ -2106,12 +2171,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-01_21:48:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-01_21:48:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:31:12"> </span>
                         <br>
                         <p>70歳の男性．<br>
                             1ヵ月前から血尿が続いているため受診した．<br>
-                            腹部に腫瘤は触れず，外陰部に異常はない．直腸指診では前立腺は軽度肥大し弾性硬である．血液所見には異常なく，<u>PSA〈前立腺特異抗原〉が3.4ng/mL</u>（基準4.0以下）であった．<br>
-                            尿所見：肉眼的血尿があり，小さな凝血塊が数個認められる．尿蛋白1＋，糖（－），沈渣に白血球2～3/1視野，赤血球無数/1視野，異型細胞多数/1視野，細菌（－）．尿細胞診ClassⅤ．<br>
+                            腹部に腫瘤は触れず，外陰部に異常はない．<br>
+                            直腸指診では前立腺は軽度肥大し弾性硬である．<br>
+                            血液所見には異常なく，<u>PSA〈前立腺特異抗原〉が3.4ng/mL</u>（基準4.0以下）であった．<br>
+                            尿所見：<br>
+                            肉眼的血尿があり，小さな凝血塊が数個認められる．尿蛋白1＋，糖（－），沈渣に白血球2～3/1視野，赤血球無数/1視野，異型細胞多数/1視野，細菌（－）．尿細胞診ClassⅤ．<br>
                             膀胱鏡検査で膀胱頂部に母指頭大の<u>広基性非乳頭状腫瘍</u>が認められ，<br>
                             生検で<u>腺癌</u>であった．<br>
                             この腺癌の発生母地はどこか．</p>
@@ -2307,15 +2376,20 @@
             <div class="card-group PC 111 info" id="q22">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111E50" target="_blank">111E50</a> 患者への説明 
+                        <a href="https://qb.medilink-study.com/#/Answer/111E50" target="_blank">111E50</a> IC
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_09:41:26"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_09:41:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:34:35"> </span>
                         <br>
                         <p>61歳の男性．<br>
-                            人間ドックで<u>PSA 23.0ng/mL</u>（基準4.0以下）を指摘され来院した．自覚症状はない．<br>
-                            家族歴は父親が前立腺癌で死亡．直腸指診で前立腺左葉に硬結を触知する．経直腸超音波検査で前立腺左葉に低エコー領域を認める．前立腺針生検で8ヵ所中2ヵ所に低分化腺癌（Gleason score 5＋4）を認める．<br>
+                            人間ドックで<u>PSA 23.0ng/mL</u>（基準4.0以下）を指摘され来院した．<br>
+                            自覚症状はない．<br>
+                            家族歴は<u>父親が前立腺癌</u>で死亡．<br>
+                            直腸指診で<u>前立腺左葉に硬結</u>を触知する．<br>
+                            経直腸超音波検査で前立腺左葉に低エコー領域を認める．<br>
+                            前立腺針生検で8ヵ所中2ヵ所に低分化腺癌（Gleason score 5＋4）を認める．<br>
                             この患者に説明する内容として正しいのはどれか．</p>
 
                         <ol type="a">
@@ -2435,7 +2509,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_09:52:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_09:52:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:36:16"> </span>
                         <br>
                         <p>79歳の男性．<br>
                             <u>排尿障害</u>を主訴に来院した．<br>
@@ -2443,8 +2518,10 @@
                             1年前から<u>治療に抵抗性</u>を示している．<br>
                             1ヵ月前から頻尿と残尿感とを自覚していた．<br>
                             今朝から<u>排尿障害</u>と<u>下腹部膨満感</u>が出現したため受診した．<br>
-                            意識は清明．身長165cm，体重63kg．体温36.2℃．脈拍80/分，整．血圧148/86mmHg．呼吸数16/分．下腹部に膨隆を認める．血液生化学所見：尿素窒素28mg/dL，クレアチニン1.5mg/dL，Na 135mEq/L，K 4.6mEq/L，Cl 116mEq/L，<u>PSA 15.5ng/mL</u>（基準4.0以下）．<br>
-                            腹部超音波検査で両側水腎症と膀胱内の大量の尿貯留とを認める．<br>
+                            意識は清明．身長165cm，体重63kg．体温36.2℃．脈拍80/分，整．血圧148/86mmHg．呼吸数16/分．下腹部に膨隆を認める．<br>
+                            血液生化学所見：<br>
+                            尿素窒素28mg/dL，クレアチニン1.5mg/dL，Na 135mEq/L，K 4.6mEq/L，Cl 116mEq/L，<u>PSA 15.5ng/mL</u>（基準4.0以下）．<br>
+                            腹部超音波検査で<u>両側水腎症</u>と<u>膀胱内の大量の尿貯留</u>とを認める．<br>
                             まず行うべきなのはどれか．</p>
 
                         <ol type="a">
@@ -2525,13 +2602,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_10:05:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_10:05:03"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_17:41:52"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             <u>PSA高値</u>を指摘され来院した．<br>
-                            7年前から人間ドックで定期的にPSAを測定していたが基準値を超えたため受診した．排尿障害を認めない．直腸指診で前立腺はくるみ大，弾性硬で両葉に小結節を触知する．<br>
+                            7年前から人間ドックで定期的にPSAを測定していたが基準値を超えたため受診した．<br>
+                            排尿障害を認めない．<br>
+                            直腸指診で前立腺はくるみ大，弾性硬で両葉に小結節を触知する．<br>
                             <u>PSA 6.5ng/mL</u>（基準4.0以下）．<br>
-                            骨盤部MRIのT2強調像で前立腺辺縁領域に低信号を認めるため前立腺生検を施行した．病理診断では前立腺左葉の6本中2本，右葉の6本中1本に中分化腺癌（Gleason score 4＋4）を認める．骨シンチグラフィでは異常な集積を認めない．<br>
+                            骨盤部MRIのT2強調像で<u>前立腺辺縁領域に低信号</u>を認めるため前立腺生検を施行した．<br>
+                            病理診断では前立腺左葉の6本中2本，右葉の6本中1本に<u>中分化腺癌（Gleason score 4＋4）</u>を認める．骨シンチグラフィでは異常な集積を認めない．<br>
                             対応として適切なのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -2889,12 +2970,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_10:52:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_10:52:10"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_17:44:55"> </span>
                         <br>
                         <p>77歳の男性．<br>
-                            6年前から頻尿，残尿感および排尿困難があったが，最近，症状が悪化したため来院した．<br>
+                            <u>6年前</u>から<u>頻尿</u>，<u>残尿感</u>および<u>排尿困難</u>があったが，最近，症状が悪化したため来院した．<br>
                             腹部は平坦で腸雑音は正常．尿所見に異常はない．<br>
-                            血清生化学所見：尿素窒素28mg/dL，クレアチニン1.2mg/dL．<u>PSA〈前立腺特異抗原〉2.3ng/mL</u>（基準4.0以下）．<br>
+                            血清生化学所見：<br>
+                            <u>尿素窒素28mg/dL，クレアチニン1.2mg/dL</u>．<u>PSA〈前立腺特異抗原〉2.3ng/mL</u>（基準4.0以下）．<br>
                             静脈性尿路造影30分の写真を次に示す．<br>
                             みられる所見はどれか．3つ選べ．</p>
                     </div>
@@ -3385,7 +3468,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_11:29:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_11:29:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_17:46:17"> </span>
                         <br>
                         <p>前立腺肥大症の治療として誤っているのはどれか．</p>
 
@@ -3469,13 +3553,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_11:34:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_11:34:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-17_17:48:02"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-10-02_11:35:09"> </span>
+                        <span class="badge badge-pill cau" id="2018-11-17_17:48:09"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-10-02_11:35:13"> </span>
+                        <span class="badge badge-pill mis" id="2018-11-17_17:48:18"> </span>
                         <br>
                         <p>次の文を読み，28～30の問いに答えよ．<br><br>
                             
@@ -3488,7 +3575,8 @@
                             現　症：<br>
                             意識は清明．身長176cm，体重68kg．体温36.1℃．脈拍68/分，整．血圧110/72mmHg．<br>
                             身体所見で胸腹部に異常を認めない．陰囊皮膚と右陰囊内容とに異常はない．左陰囊内容は鶏卵大で一塊として硬く触知するが，圧痛と透光性とは認めない．<br>
-                            検査所見：尿所見：<br>
+                            検査所見：<br>
+                            尿所見：<br>
                             異常を認めない．<br>
                             血液所見：<br>
                             赤血球456万，Hb 15.1g/dL，白血球8,300，血小板26万．<br>
@@ -3666,14 +3754,19 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_11:42:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_11:42:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-17_17:50:15"> </span>
                         <br>
                         <p>31歳の男性．<br>
                             右陰囊腫大を主訴に来院した．<br>
-                            1年前から右陰囊腫大に気付いていたが，疼痛を自覚しないため様子をみていた．1ヵ月前から陰囊腫大が増悪してきたため受診した．<br>
-                            身長172cm，体重60kg．腹部は平坦，軟で，肝・脾を触知しない．外陰部では右精巣が小児頭大に腫大しているが圧痛を認めない．<br>
-                            血液生化学所見：<u>LD 658IU/L</u>（基準176～353），hCG 12mIU/mL，<u>α-フェトプロテイン〈AFP〉64ng/mL</u>（基準20以下）．<br>
-                            胸部CTと頭部MRIとに異常を認めない．腹部造影CTを次に示す．<br>
+                            1年前から<u>右陰囊腫大</u>に気付いていたが，疼痛を自覚しないため様子をみていた．<br>
+                            1ヵ月前から陰囊腫大が増悪してきたため受診した．<br>
+                            身長172cm，体重60kg．<br>
+                            腹部は平坦，軟で，肝・脾を触知しない．外陰部では右精巣が小児頭大に腫大しているが圧痛を認めない．<br>
+                            血液生化学所見：<br>
+                            <u>LD 658IU/L</u>（基準176～353），hCG 12mIU/mL，<u>α-フェトプロテイン〈AFP〉64ng/mL</u>（基準20以下）．<br>
+                            胸部CTと頭部MRIとに異常を認めない．<br>
+                            腹部造影CTを次に示す．<br>
                             この患者について正しいのはどれか．2つ選べ．</p>
                     </div>
 
@@ -4187,7 +4280,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -4197,6 +4294,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -4215,7 +4333,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -4266,6 +4396,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -4282,63 +4413,71 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -4352,6 +4491,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -4381,6 +4523,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -4568,6 +4713,7 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
@@ -4651,9 +4797,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

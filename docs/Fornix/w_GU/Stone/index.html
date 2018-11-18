@@ -4,12 +4,27 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-02 14:22:46
+@Last modified time: 2018-11-18 10:20:20
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -92,11 +107,11 @@
 -->
 <html>
 <head>
-    <title>Stone</title>
+    <title>Stone-GU</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-02 14:22:55" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-18 10:20:44" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -115,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -123,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -155,6 +173,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -195,33 +216,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -290,8 +319,8 @@
                         <ul>
                             <li>&uarr;Ca
                                 <ul>
-                                    <li>Cushing &rArr; Steroid</li>
-                                    <li>RTA</li>
+                                    <li><u>Cushing</u> &rArr; Steroid</li>
+                                    <li><u>RTA</u></li>
                                     <li>&uarr;PTH</li>
                                 </ul>
                             </li>
@@ -320,10 +349,34 @@
                         <ul>
                             <li>適度なCa摂取<br>
                                 &because; Ca-シュウ酸 &rarr; 排泄&darr;</li>
+                            <li>保存的
+                                <ul>
+                                    <li>水分多量摂取</li>
+                                    <li>点滴</li>
+                                </ul>
+                            </li>
+                            <li>薬物
+                                <ul>
+                                    <li>UA</li>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li>手術
+                                <ul>
+                                    <li>尿管ステント: 緊急</li>
+                                    <li>ESWL: 
+                                        <ul>
+                                            <li>IND: ≤ 20mm</li>
+                                            <li></li>
+                                        </ul>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li class="list-group-item">
-                        <h6>IC</h6>
+                        <h6>I/C</h6>
                         <ul>
                             <li>自動車運転は危険</li>
                         </ul>
@@ -467,7 +520,79 @@
                     </li>
                 </ul>
             </div>
-            
+                
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="ESWL">ESWL <small><code></code></small></h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>ESWLの合併症</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">早期合併症</th>
+                            <td>直後</td>
+                            <td>
+                                <ul>
+                                    <li><u>血尿</u></li>
+                                    <li><u>皮下出血</u></li>
+                                    <li>腎被膜下血腫</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>数日後</td>
+                            <td>
+                                <ul>
+                                    <li>stone street</li>
+                                    <li>膵炎</li>
+                                    <li>腸管損傷</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">晩期合併症</th>
+                            <td>
+                                <ul>
+                                    <li>腎機能障害</li>
+                                    <li>高血圧</li>
+                                    <li>糖尿病</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>ESWLの禁忌</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>絶対的禁忌</th>
+                            <td>
+                                <ul>
+                                    <li>妊婦</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>相対的禁忌</th>
+                            <td>
+                                <ul>
+                                    <li>未治療の血液凝固能異常</li>
+                                    <li>50mm以上の大動脈瘤</li>
+                                    <li>20mm以上の腎動脈の動脈瘤</li>
+                                    <li>未治療の尿路感染症</li>
+                                    <li>解剖学的な尿路狭窄</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
         </div>
     </div>
 
@@ -559,9 +684,9 @@
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="UA">
+            <div class="section" id="HrUA">
                 <div class="page-header">
-                    <h2>UA <small>尿酸</small> <small><code></code></small></h2>
+                    <h2>&uarr;UA <small>尿酸</small> <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
@@ -604,94 +729,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>ESWLの合併症</h6>
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <th rowspan="2">早期合併症</th>
-                            <td>直後</td>
-                            <td>
-                                <ul>
-                                    <li>血尿</li>
-                                    <li>皮下出血</li>
-                                    <li>腎被膜下血腫</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>数日後</td>
-                            <td>
-                                <ul>
-                                    <li>stone street</li>
-                                    <li>膵炎</li>
-                                    <li>腸管損傷</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">晩期合併症</th>
-                            <td>
-                                <ul>
-                                    <li>腎機能障害</li>
-                                    <li>高血圧</li>
-                                    <li>糖尿病</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>ESWLの禁忌</h6>
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <th>絶対的禁忌</th>
-                            <td>
-                                <ul>
-                                    <li>妊婦</li>
-                                </ul>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>相対的禁忌</th>
-                            <td>
-                                <ul>
-                                    <li>未治療の血液凝固能異常</li>
-                                    <li>50mm以上の大動脈瘤</li>
-                                    <li>20mm以上の腎動脈の動脈瘤</li>
-                                    <li>未治療の尿路感染症</li>
-                                    <li>解剖学的な尿路狭窄</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
+            
         </div>
     </div>
 
@@ -898,7 +936,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/98I33" target="_blank" id="">98I33</a> Dx
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-02_14:46:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-02_14:46:13"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-18_11:00:06"> </span>
                         <br>
                         <p>40歳の男性．<br>
                             <u>突然，左腰部の重圧感</u>が出現したので来院した．<br>
@@ -959,11 +998,12 @@
                         <a href="https://qb.medilink-study.com/#/Answer/89D45" target="_blank" id="">89D45</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_14:54:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_14:54:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_10:23:32"> </span>
                         <br>
                         <p>24歳の男性．<br>
                             右腰背部の疼痛を訴えて来院した．<br>
-                            2年前から同様の症状が数回あった．<br>
+                            <u>2年前から同様の症状が数回</u>あった．<br>
                             薬物の服用はない．<br>
                             脈拍68/分，整．血圧128/72mmHg．<br>
                             上腹部に軽い圧痛を認める以外身体所見に異常はない．<br>
@@ -1077,7 +1117,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/107I16" target="_blank" id="">107I16</a> 結石
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-02_15:03:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-02_15:03:51"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-18_11:01:02"> </span>
                         <br>
                         <p>右尿管結石症の腹部単純X線写真を次に示す．<br>
                             この結石の成分として最も考えられるのはどれか．</p>
@@ -1140,13 +1181,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group UA stone 110" id="q04">
+            <div class="card-group HrUA stone 110" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D35" target="_blank" id="">110D35</a> 結石
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-02_15:10:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-02_15:10:02"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-18_11:02:44"> </span>
                         <br>
                         <p>51歳の男性．<br>
                             左の下腹部から側腹部にかけての痛みを主訴に来院した．<br>
@@ -1159,14 +1201,15 @@
                             血液所見：<br>
                             赤血球460万，Hb 14.6g/dL，Ht 46％，白血球8,300，血小板22万．<br>
                             血液生化学所見：<br>
-                            総蛋白7.1g/dL，アルブミン3.8g/dL，総ビリルビン1.1mg/dL，AST 35IU/L，ALT 32IU/L，LD 186IU/L（基準176〜353），γ-GTP 45IU/L（基準8〜50），尿素窒素23mg/dL，クレアチニン1.2mg/dL，尿酸8.6mg/dL，血糖92mg/dL，Na 136mEq/L，K 4.0mEq/L，Cl 109mEq/L，Ca 9.2mg/dL．CRP 1.2mg/dL．<br>
+                            総蛋白7.1g/dL，アルブミン3.8g/dL，総ビリルビン1.1mg/dL，AST 35IU/L，ALT 32IU/L，LD 186IU/L（基準176〜353），γ-GTP 45IU/L（基準8〜50），尿素窒素23mg/dL，クレアチニン1.2mg/dL，尿酸8.6mg/dL，血糖92mg/dL，<br>
+                            Na 136mEq/L，K 4.0mEq/L，Cl 109mEq/L，Ca 9.2mg/dL．CRP 1.2mg/dL．<br>
                             腹部超音波検査で左水腎症，左腎結石および左尿管結石を認める．<br>
                             腹部単純X線写真（A）と腹部単純CT（B）とを次に示す．<br>
                             この患者で予測される結石成分はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/110D035A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/110D035B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/110D035A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/110D035B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1287,16 +1330,18 @@
             <div class="card-group stone" id="q06">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/96D38" target="_blank" id="">96D38</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/96D38" target="_blank" id="">96D38</a> 検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_15:23:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_15:23:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_10:24:54"> </span>
                         <br>
                         <p>32歳の男性．<br>
                             昨夜から右側腹部疝痛発作があり，救急外来を受診した．<br>
                             5年前に同様の発作があり，ヨード造影剤検査で<u>尿管結石を指摘</u>されたが，その<u>検査中に重度の呼吸困難に陥った</u>ことがある．<br>
                             腹部は平坦，軟であるが，右背部に強い叩打痛がある．<br>
-                            尿所見：蛋白（±），糖（－），沈渣に赤血球20～30/1視野，白血球（－）．<br>
+                            尿所見：<br>
+                            蛋白（±），糖（－），沈渣に赤血球20～30/1視野，白血球（－）．<br>
                             血清生化学所見に異常はない．<br>
                             まず行うべき検査はどれか．</p>
 
@@ -1331,7 +1376,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group UA" id="q07">
+            <div class="card-group HrUA" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106D24" target="_blank" id="">106D24</a> 検査
@@ -1381,7 +1426,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group stone UA" id="q08">
+            <div class="card-group stone HrUA" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102D55" target="_blank">102D55</a> 診断 対応
@@ -1443,7 +1488,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_15:37:35"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_15:37:35"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_11:17:39"> </span>
                         <br>
                         <p>33歳の初妊婦．妊娠34週．<br>
                             <u>右側腹部の疝痛</u>と<u>肉眼的血尿</u>とを主訴に来院した．<br>
@@ -1494,16 +1540,18 @@
                         <a href="https://qb.medilink-study.com/#/Answer/109I74" target="_blank" id="">109I74</a> IC
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_15:45:21"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_15:45:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:31:41"> </span>
                         <br>
                         <p>37歳の男性．<br>
                             左下腹部痛を主訴に来院した．<br>
-                            深夜，就寝中に突然の左下腹部痛で目が覚めた．痛みは急激に増強し悪心と嘔吐とが出現したため受診した．<br>
-                            意識は清明．体温36.3℃．血圧158/94mmHg．腹部に反跳痛を認めない．<br>
-                            左側の肋骨脊柱角に叩打痛を認める．<br>
+                            深夜，<u>就寝中に突然の左下腹部痛</u>で目が覚めた．痛みは急激に増強し悪心と嘔吐とが出現したため受診した．<br>
+                            意識は清明．体温36.3℃．血圧158/94mmHg．<br>
+                            腹部に反跳痛を認めない．<br>
+                            <u>左側の肋骨脊柱角に叩打痛</u>を認める．<br>
                             尿所見：<br>
                             蛋白1＋，糖（－），潜血3＋，沈渣に赤血球15～30/1視野，白血球1～5/1視野．<br>
-                            腹部超音波検査では左腎盂に軽度の拡張を認める以外には異常を認めない．<br>
+                            腹部超音波検査では<u>左腎盂に軽度の拡張</u>を認める以外には異常を認めない．<br>
                             腹部X線写真正面像で<u>第3腰椎の左横突起の外側に3×2mmの石灰化</u>を認める．<br>
                             非ステロイド性抗炎症薬の坐薬を挿入して症状は軽快した．<br>
                             今後の対応についての患者への説明として適切なのはどれか．2つ選べ．</p>
@@ -1564,20 +1612,31 @@
 
 
             <!-- 01 -->
-            <div class="card-group stone info 111" id="q11">
+            <div class="card-group stone TUL info 111" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A30" target="_blank" id="">111A30</a> 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_15:50:35"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_15:50:35"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:35:46"> </span>
                         <br>
-                        <p>78歳の男性．下腹部痛と血尿とを主訴に来院した．1ヵ月前から血尿が出現し，昨日からは下腹部痛も伴っている．4年前から夜間頻尿と排尿までに時間がかかることに対して，自宅近くの診療所で治療を受けている．身長165cm，体重64kg．体温36.8℃．脈拍80/分，整．血圧132/84 mmHg．呼吸数16/分．腹部は平坦，軟で，肝・脾を触知しない．直腸指診で小鶏卵大，弾性硬の前立腺を触知し，圧痛を認めない．尿所見：蛋白2＋，糖（－），潜血3＋，沈渣に赤血球多数/1視野，白血球多数/1視野．腹部X線写真（A）と腹部CT（B）とを次に示す．尿培養を提出して抗菌薬の投与を開始した．<br>
+                        <p>78歳の男性．<br>
+                            下腹部痛と血尿とを主訴に来院した．<br>
+                            1ヵ月前から血尿が出現し，昨日からは下腹部痛も伴っている．<br>
+                            4年前から夜間頻尿と排尿までに時間がかかることに対して，自宅近くの診療所で治療を受けている．<br>
+                            身長165cm，体重64kg．体温36.8℃．脈拍80/分，整．血圧132/84 mmHg．呼吸数16/分．<br>
+                            腹部は平坦，軟で，肝・脾を触知しない．<br>
+                            直腸指診で小鶏卵大，弾性硬の前立腺を触知し，圧痛を認めない．<br>
+                            尿所見：<br>
+                            蛋白2＋，糖（－），潜血3＋，沈渣に赤血球多数/1視野，白血球多数/1視野．<br>
+                            腹部X線写真（A）と腹部CT（B）とを次に示す．<br>
+                            尿培養を提出して抗菌薬の投与を開始した．<br>
                             次に行う治療として最も適切なのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111A030A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/111A030B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111A030A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/111A030B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1605,8 +1664,8 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li></li>
-                            <li>大きい結石</li>
+                            <li>TUL: 大きい結石</li>
+                            <li>ESWL: ≤ 20mm </li>
                         </ol>
 
 
@@ -1623,13 +1682,14 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group cystinuria HrPTH UA PA " id="q12">
+            <div class="card-group  cystinuria HrPTH HrUA PA " id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104I9" target="_blank" id="">104I9</a> 尿路結石
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_15:55:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_15:55:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_10:39:31"> </span>
                         <br>
                         <p>尿路結石で正しいのはどれか．2つ選べ．</p>
 
@@ -1664,13 +1724,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group UA stone" id="q13">
+            <div class="card-group HrUA stone" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99E45" target="_blank" id="">99E45</a> 尿路結石症 Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-02_15:59:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-02_15:59:30"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_11:05:20"> </span>
                         <br>
                         <p>尿路結石症について正しいのはどれか．2つ選べ．</p>
 
@@ -1715,13 +1776,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group CaOx MSK cystinuria " id="q14">
+            <div class="card-group sponge_kidney CaOx MSK cystinuria " id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B53" target="_blank" id="">93B53</a> Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_16:03:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_16:03:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:44:52"> </span>
                         <br>
                         <p>正しいのはどれか．</p>
 
@@ -1747,7 +1809,7 @@
                         <ol type="a">
                             <li>シュウ酸: 2%塩酸　滴下 &xrArr; 透明<br>
                                 尿酸: 加熱 &xrArr; 透明</li>
-                            <li></li>
+                            <li>尿酸結石: XR(-), CT(+)</li>
                             <li>海綿腎: 石灰化(++)</li>
                             <li>シスチン尿症: AR</li>
                             <li>RTA I (遠位尿細管): 結石(++)</li>
@@ -1764,7 +1826,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_16:10:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_16:10:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:49:31"> </span>
                         <br>
                         <p>尿路結石症の危険因子はどれか．3つ選べ．</p>
 
@@ -1804,13 +1867,14 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group stone thiazide steroid" id="q16">
+            <div class="card-group stone gla thiazide steroid" id="q16">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/93A60" target="_blank" id="">93A60</a> 尿路結石形成の誘因
+                        <a href="https://qb.medilink-study.com/#/Answer/93A60" target="_blank" id="">93A60</a> 尿路結石形成 誘因
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_16:16:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_16:16:32"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:50:31"> </span>
                         <br>
                         <p>尿路結石形成の誘因となるのはどれか．2つ選べ．</p>
 
@@ -1847,13 +1911,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group UA  info" id="q17">
+            <div class="card-group HrUA  info" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97B33" target="_blank" id="">97B33</a> 尿酸結石
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-02_16:20:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-02_16:20:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_11:06:06"> </span>
                         <br>
                         <p>尿酸結石の治療薬として適切なのはどれか．2つ選べ．</p>
 
@@ -1924,7 +1989,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111I32" target="_blank" id="">111I32</a> 尿路結石の再発予防
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_16:26:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_16:26:53"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:52:21"> </span>
                         <br>
                         <p>尿路結石の再発予防に有用なのはどれか．2つ選べ．</p>
 
@@ -1990,17 +2056,18 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group ESWL " id="q19">
+            <div class="card-group ESWL stone" id="q19">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/101H50" target="_blank" id="">101H50</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/101H50" target="_blank" id="">101H50</a> ESWL後
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-02_16:31:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_16:31:32"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:56:50"> </span>
                         <br>
                         <p>32歳の男性．<br>
-                            左側腹部痛，微熱および肉眼的血尿を主訴に来院した．<br>
-                            前日，直径2cmの左腎結石に対して，体外衝撃波結石破砕術〈ESWL〉を行った．<br>
+                            <u>左側腹部痛</u>，微熱および肉眼的血尿を主訴に来院した．<br>
+                            前日，<u>直径2cmの左腎結石</u>に対して，体外衝撃波結石破砕術〈<u>ESWL</u>〉を行った．<br>
                             最も考えられるのはどれか．</p>
 
 
@@ -2034,13 +2101,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group ESWL info pri" id="q20">
+            <div class="card-group stone ESWL info pri" id="q20">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109G38" target="_blank" id="">109G38</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/109G38" target="_blank" id="">109G38</a> ESWL後
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id=""> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_10:59:12"> </span>
                         <br>
                         <p>腎結石に対する体外衝撃波結石破砕術〈ESWL〉<u>直後</u>に起こり得る合併症はどれか．2つ選べ．</p>
 
@@ -2266,7 +2334,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2276,6 +2348,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2294,7 +2387,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2345,6 +2450,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2361,63 +2467,71 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -2431,6 +2545,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -2460,6 +2577,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -2647,43 +2767,65 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
     $('#stone h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.stone)').toggle();
+        $('#q div.card-group:not(.stone)').slideToggle(100);
     });
-    $('#stone').find('code').html($('div.stone').size());
+    $('#stone').find('small > code').html(
+        $('div.stone > .card > .mis').size() + '+' +
+        $('div.stone > .card > .cau').size() + '/' +
+        $('div.stone').size()
+    );
 
 
     $('#cystinuria h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.cystinuria)').toggle();
+        $('#q div.card-group:not(.cystinuria)').slideToggle(100);
     });
-    $('#cystinuria').find('code').html($('div.cystinuria').size());
+    $('#cystinuria').find('small > code').html(
+        $('div.cystinuria > .card > .mis').size() + '+' +
+        $('div.cystinuria > .card > .cau').size() + '/' +
+        $('div.cystinuria').size()
+    );
 
 
     $('#CaOx h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CaOx)').toggle();
+        $('#q div.card-group:not(.CaOx)').slideToggle(100);
     });
-    $('#CaOx').find('code').html($('div.CaOx').size());
+    $('#CaOx').find('small > code').html(
+        $('div.CaOx > .card > .mis').size() + '+' +
+        $('div.CaOx > .card > .cau').size() + '/' +
+        $('div.CaOx').size()
+    );
 
 
-    $('#UA h2').click(function(){
+    $('#HrUA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.UA)').toggle();
+        $('#q div.card-group:not(.HrUA)').slideToggle(100);
     });
-    $('#UA').find('code').html($('div.UA').size());
+    $('#HrUA').find('small > code').html(
+        $('div.HrUA > .card > .mis').size() + '+' +
+        $('div.HrUA > .card > .cau').size() + '/' +
+        $('div.HrUA').size()
+    );
+
 
 
     $('#ESWL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ESWL)').toggle();
+        $('#q div.card-group:not(.ESWL)').slideToggle(100);
     });
-    $('#ESWL').find('code').html($('div.ESWL').size());
+    $('#ESWL').find('small > code').html(
+        $('div.ESWL > .card > .mis').size() + '+' +
+        $('div.ESWL > .card > .cau').size() + '/' +
+        $('div.ESWL').size()
+    );
 
 
 
@@ -2692,9 +2834,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

@@ -4,12 +4,41 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-06 20:19:41
+@Last modified time: 2018-11-18 15:23:02
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
 04.01.06    18 06 03    js latex
@@ -81,8 +110,8 @@
     <title>Certificate</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-06 20:19:56" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.8">
+    <meta name="revised" content="2018-11-18 15:23:41" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -101,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -109,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -141,6 +173,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -179,25 +216,42 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -266,274 +320,306 @@
         </div>
     </div> -->
 
-        
-    <div class="section" id="prescription">
-        <div class="page-header">
-            <h2>Prescription <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="record">
-        <div class="page-header">
-            <h2>Record <small class="hidden-xs-down"></small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="post-mortem">
-        <div class="page-header">
-            <h2>Post-mortem <small class="hidden-xs-down">死体検案書</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <div class="card">
-                            <img src="https://qb.medilink-study.com/images/110F018_bas_010.jpg" class="card-img-top img-fluid">
-                            <div class="card-body">
-                                <a href="https://www.mhlw.go.jp/toukei/manual/dl/manual_h30.pdf" class="card-link">REF</a>
-                            </div>
-                        </div>
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item"><ul>
-                            <li>救急外来などで医学的処置を行い</li>
-                            <li>明らかなな内因死</li>
-                        </ul>
-                        <p>&xrArr; "診療継続中の患者が死亡" とみなし, 死亡診断書</p></li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="birth_certificate">
-        <div class="page-header">
-            <h2>Birth Certificate <small class="hidden-xs-down"></small><small> 出生証明書</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <!-- <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul> -->
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li>
-                        <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
     
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
+    
+    <div class="section" id="record">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Record <small>診療情報</small> <small><code></code></small></h2>
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>診療に関連する諸記録の保存</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>保存物</th>
+                            <th>法律</th>
+                            <th>保存責任者</th>
+                            <th>保存期間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>診療録（カルテ）</th>
+                            <td><u>医師法</u></td>
+                            <td>勤務医師→病院診療所の管理者（院長）<br>
+                                その他の診療→診療した医師</td>
+                            <td><u>5年</u></td>
+                        </tr>
+                        <tr>
+                            <th>診療に関する諸記録</th>
+                            <td><u>医療法</u>施行規則</td>
+                            <td>病院のみ適用<br>
+                                （診療所には規定なし）</td>
+                            <td>2年</td>
+                        </tr>
+                        <tr>
+                            <th>処方箋</th>
+                            <td>薬剤師法</td>
+                            <td>薬局開設者</td>
+                            <td rowspan="2">3年</td>
+                        </tr>
+                        <tr>
+                            <th>保険給付の帳簿書類</th>
+                            <td>療養担当規則</td>
+                            <td>保険医療機関<br>
+                                ※診療録ではない</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">診療録: 医師法</li>
+                    <li class="list-group-item">診療に関する諸記録: 医療法</li>
+                </ul>
+            </div>
         </div>
     </div>
-    -->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="medical_record">
+                <div class="page-header">
+                    <h2>Medical Record <small>診療録</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <u>医師法</u>
+                    </li>
+                    <li class="list-group-item">診療録を外部に保存可能</li>
+
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="prescription">
+                <div class="page-header">
+                    <h2>Prescription <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        保存期間: 3y
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="care_plan">
+                <div class="page-header">
+                    <h2>Care Plan <small>入院診療計画書</small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="summary">
+                <div class="page-header">
+                    <h2>Summary <small>退院時要約</small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="e-record">
+                <div class="page-header">
+                    <h2>E-record <small> </small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="certificate">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Certificate <small>証明書</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>作成書類</h6>
+                <table class="table table-bordered table-condensed">
+                    <thead>
+                        <tr>
+                            <th>交付書類</th>
+                            <th>医師</th>
+                            <th>歯科医師</th>
+                            <th>助産師</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>出生証明書</th>
+                            <td rowspan="5">(+)</td>
+                            <td rowspan="3">(-)</td>
+                            <td rowspan="3"><u>(+)</u></td>
+                        </tr>
+                        <tr>
+                            <th>死産証書</th>
+                        </tr>
+                        <tr>
+                            <th>死胎検案書</th>
+                        </tr>
+                        <tr>
+                            <th><u>死亡診断書</u></th>
+                            <td><u>(+)</u></td>
+                            <td rowspan="2">(-)</td>
+                        </tr>
+                        <tr>
+                            <th><u>死体検案書</u></th>
+                            <td>(-)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="birth_certificate">
+                <div class="page-header">
+                    <h2>Birth Certificate <small>出生証明書</small> <small><code></code></small></h2>
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">分娩に立ち会った者のうち, <br>
+                    医師 &rarr; 助産師 &rarr; その他</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="dead_fetus_certificate">
+                <div class="page-header">
+                    <h2>Dead Fetus Certificate <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">≥ 12w</li>
+                    <li class="list-group-item">
+                        死産児の分娩に
+                        <ul>
+                            <li>立ち会った &xrArr; 死産証書</li>
+                            <li>立ち会ってない &xrArr; 死体検案書</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="death_certificate">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Death Certificate <small>死亡診断書</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>診療継続中の患者</li>
+                            <li><u>受診後 24h以内</u>の死亡</li>
+                            </li>
+                            <li>異状(-)</li>
+                        </ul>
+                        &xrArr; 死亡診断書<br>
+                        (診察不要)
+                    </li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>診療継続中の患者</li>
+                            <li>受診後 24h以降</li>
+                            <li>診療に係る疾病で死亡</li>
+                        </ul>
+                        &xrArr; 診察<br>
+                        &xrArr; 診察していた疾病が原因<br>
+                        &xrArr; 死亡診断書
+                    </li>
+                </ul>
+                
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/110F018_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="post-mortem_certificate">
+                <div class="page-header">
+                    <h2>Post-mortem Certificate <small>死体検案書</small> <small><code></code></small></h2>
+                </div>
+
+
+                
+
+
+
+                
+            </div>
+
+        </div>
+
+
+        
+
+
+
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
 
 
     <div class="section" id="app">
@@ -559,7 +645,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 15 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 15</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -696,16 +782,25 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group prescription" id="q01">
+            <div class="card-group medical_record summary prescription e-record care_plan record pri req 110 info" id="q01">
                 <div class="card">
-                    <div class="card-header pri req 110 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110C12" target="_blank" id="2018-02-05_23:12:49">110C12</a> 診療 諸記録
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-06_20:45:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-06_20:45:03"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_15:37:22"> </span>
                         <br>
                         <p>診療に関する諸記録について誤っているのはどれか．</p>
 
@@ -725,7 +820,8 @@
                         <p class="q_answer_false">c</p>
 
                         <ol type="a">
-                            <li>医療法: 診療録</li>
+                            <li>諸記録: 医療法<br>
+                                診療録: 医師法</li>
                             <li></li>
                             <li>処方箋: 保存期間 3yrs</li>
                             <li></li>
@@ -771,20 +867,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group record" id="q02">
+            <div class="card-group medical_record e-record record req" id="q02">
                 <div class="card">
-                    <div class="card-header req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101C3" target="_blank" id="2018-02-05_23:12:39">101C3</a> 診療録
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-06_20:57:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-06_20:57:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:26:48"> </span>
                         <br>
                         <p>診療録に関して誤っているのはどれか．</p>
 
@@ -817,14 +916,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group MSL" id="q03">
+            <div class="card-group care_plan MSL record req info" id="q03">
                 <div class="card">
-                    <div class="card-header req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103F9" target="_blank" id="2018-01-23_15:57:10">103F9</a> 入院診療計画書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-06_21:01:34"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-06_21:01:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:27:29"> </span>
                         <br>
                         <p>入院診療計画書の作成と交付およびその適切な説明は，患者が入院した日から何日以内に行うべきか．</p>
 
@@ -861,9 +961,9 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group " id="q04">
+            <div class="card-group medical_record record req" id="q04">
                 <div class="card">
-                    <div class="card-header req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99B4" target="_blank" id="2018-01-23_16:10:47">99B4</a> 問題指向型医療記録
                     </div>
                     <div class="card-body">
@@ -899,14 +999,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group certificate post-mortem" id="q05">
+            <div class="card-group post-mortem_certificate death_certificate dead_fetus_certificate birth_certificate certificate req info" id="q05">
                 <div class="card">
-                    <div class="card-header req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104H12" target="_blank" id="2018-01-23_15:57:49">104H12</a> 医師が交付できる証明書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-06_21:08:58"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-06_21:08:58"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:28:11"> </span>
                         <br>
                         <p>医師のみが交付できるのはどれか．</p>
 
@@ -968,20 +1069,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group certificate birth_certificate" id="q06">
+            <div class="card-group birth_certificate certificate req info" id="q06">
                 <div class="card">
-                    <div class="card-header req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102C17" target="_blank" id="2018-01-23_16:00:28">102C17</a> 出生証明書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-06_21:14:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-06_21:14:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:37:58"> </span>
                         <br>
                         <p>28歳の女性．保健師，助産師，看護師および夫の立ち会いのもと，妊娠39週6日に3,200gの児を娩出した．医師は立ち会っていない．<br>
                             出生証明書の作成で正しいのはどれか．</p>
@@ -1018,16 +1122,16 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group certificate" id="q07">
-                <div class="card-group">
+            <div class="card-group dead_fetus_certificate certificate req info" id="q07">
                 <div class="card">
-                    <div class="card-header  req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/92D2" target="_blank" id="2018-02-05_23:19:46">92D2</a> 死産証書 / 死胎検案書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-06_21:30:59"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-06_21:30:59"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_15:39:27"> </span>
                         <br>
                         <p>重症妊娠高血圧症候群のため入院治療中の妊婦．妊娠23週に子宮内胎児死亡が生じ，3日後に分娩に至った．<br>
                             発行すべき文書はどれか．</p>
@@ -1076,23 +1180,24 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group certificate death" id="q08">
+            <div class="card-group death_certificate post-mortem_certificate certificate 111 pri info" id="q08">
                 <div class="card">
-                    <div class="card-header 111 pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G29" target="_blank">111G29</a> 死亡診断書 / 死体検案書 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-06_21:44:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-06_21:44:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_15:33:09"> </span>
                         <br>
                         <p>死亡診断書および死体検案書について誤っているのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f">死因統計の資料となる．</li>
-                            <li class="ans_f">死亡を医学的，法律的に証明する．</li>
-                            <li class="ans_t">死体を検案したときは保健所に届け出る．</li>
-                            <li class="ans_f">診療継続中の患者以外の者が死亡した場合，死体検案を行った上で死体検案書を交付する．</li>
-                            <li class="ans_f">診療継続中の患者が診療に係る傷病と関連しない原因で死亡した場合，死体検案を行った上で死体検案書を交付する．</li>
+                            <li class="ans_t">死因統計の資料となる．</li>
+                            <li class="ans_t">死亡を医学的，法律的に証明する．</li>
+                            <li class="ans_f">死体を検案したときは保健所に届け出る．</li>
+                            <li class="ans_t">診療継続中の患者以外の者が死亡した場合，死体検案を行った上で死体検案書を交付する．</li>
+                            <li class="ans_t">診療継続中の患者が診療に係る傷病と関連しない原因で死亡した場合，死体検案を行った上で死体検案書を交付する．</li>
                         </ol>
                     </div>
                 </div>
@@ -1120,14 +1225,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group certificate death" id="q09">
+            <div class="card-group death_certificate certificate death pri info" id="q09">
                 <div class="card">
-                    <div class="card-header pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G18" target="_blank" id="2018-01-23_16:02:19">109G18</a> 死亡診断書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-06_21:47:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-06_21:47:27"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:40:20"> </span>
                         <br>
                         <p>死亡診断書について正しいのはどれか．</p>
 
@@ -1170,14 +1276,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group certificate death" id="q10">
+            <div class="card-group post-mortem_certificate certificate death pri req info" id="q10">
                 <div class="card">
-                    <div class="card-header pri req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106H10" target="_blank" id="2018-01-23_16:03:53">106H10</a>  死体検案書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-06_21:51:19"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-06_21:51:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:41:21"> </span>
                         <br>                            
                         <p>死体検案書について正しいのはどれか．</p>
 
@@ -1225,14 +1332,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group post-mortem" id="q11">
+            <div class="card-group post-mortem_certificate death_certificate certificate req pri 111 info" id="q11">
                 <div class="card">
-                    <div class="card-header req pri 111 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111F12" target="_blank">111F12</a> 死亡診断書 / 死体検案書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-06_21:58:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-06_21:58:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:42:27"> </span>
                         <br>
                         <p>死亡診断書ではなく死体検案書が発行される状況はどれか．</p>
 
@@ -1268,14 +1376,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group post-mortem" id="q12">
+            <div class="card-group post-mortem_certificate death_certificate unnatural certificate 111 req pri info" id="q12">
                 <div class="card">
-                    <div class="card-header 111 req pri info">
-                        <a href="https://qb.medilink-study.com/#/Answer/111C20" target="_blank">111C20</a> 自殺 死亡診断書/死体検案書
+                    <div class="card-header">
+                        <a href="https://qb.medilink-study.com/#/Answer/111C20" target="_blank">111C20</a> 自殺
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-07_13:29:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-07_13:29:52"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-18_15:35:55"> </span>
                         <br>
                         <p>60歳の女性．<br>
                             早朝に自宅敷地内の倉庫で梁にロープを掛け，<u>縊頸した状態で発見</u>された．近くから自筆の遺書が発見され，病苦が原因の自殺であること，対外的には病死として処理して欲しいことなどが記されていた．<br>
@@ -1319,9 +1428,9 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group post-mortem" id="q13">
+            <div class="card-group post-mortem_certificate death_certificate certificate req info" id="q13">
                 <div class="card">
-                    <div class="card-header req info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96E9" target="_blank" id="2018-01-23_16:04:40">96E9</a> 病死
                     </div>
                     <div class="card-body">
@@ -1361,14 +1470,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group post-mortem" id="q14">
+            <div class="card-group post-mortem_certificate death_certificate post-mortem certificate req pri 110 info" id="q14">
                 <div class="card">
-                    <div class="card-header req pri 110 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110F18" target="_blank" id="2018-01-23_16:07:20">110F18</a> 死亡診断/死体検案書
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_13:41:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_13:41:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:44:27"> </span>
                         <br>
 
                         <p>92歳の男性．<br>
@@ -1415,18 +1525,21 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group post-mortem" id="q15">
+            <div class="card-group post-mortem death_certificate certificate unnatural" id="q15">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103E44" target="_blank" id="2018-01-23_16:08:00">103E44</a> 救急外来 死亡 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-07_13:48:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-07_13:48:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-18_15:45:35"> </span>
                         <br>
                         <p>65歳の女性．<br>
                             自宅のトイレ内で便器に座ったまま，意識不明の状態で家族に発見され搬入された．<br>
-                            到着時，すでに心肺停止状態であった．既往症と通院歴とに特記すべきことはない．画像診断と諸検査とによって<u>大動脈解離による心タンポナーデ</u>と診断し，搬入1時間後に死亡を確認した．<br>
+                            <u>到着時，すでに心肺停止状態</u>であった．<br>
+                            既往症と通院歴とに特記すべきことはない．<br>
+                            画像診断と諸検査とによって<u>大動脈解離による心タンポナーデ</u>と診断し，搬入1時間後に死亡を確認した．<br>
                             担当医として取るべき行動はどれか．</p>
 
                         <ol type="a">
@@ -1512,6 +1625,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1580,6 +1694,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1588,6 +1709,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1601,27 +1743,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -1643,11 +1804,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1664,63 +1828,71 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1734,6 +1906,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1763,6 +1938,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -1950,8 +2128,151 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#record h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.record)').slideToggle(100);
+    });
+    $('#record').find('small > code').html(
+        $('div.record > .card > .mis').size() + '+' +
+        $('div.record > .card > .cau').size() + '/' +
+        $('div.record').size()
+    );
+
+
+    $('#medical_record h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.medical_record)').slideToggle(100);
+    });
+    $('#medical_record').find('small > code').html(
+        $('div.medical_record > .card > .mis').size() + '+' +
+        $('div.medical_record > .card > .cau').size() + '/' +
+        $('div.medical_record').size()
+    );
+
+
+    $('#prescription h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.prescription)').slideToggle(100);
+    });
+    $('#prescription').find('small > code').html(
+        $('div.prescription > .card > .mis').size() + '+' +
+        $('div.prescription > .card > .cau').size() + '/' +
+        $('div.prescription').size()
+    );
+
+
+
+    $('#care_plan h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.care_plan)').slideToggle(100);
+    });
+    $('#care_plan').find('small > code').html(
+        $('div.care_plan > .card > .mis').size() + '+' +
+        $('div.care_plan > .card > .cau').size() + '/' +
+        $('div.care_plan').size()
+    );
+
+
+    $('#summary h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.summary)').slideToggle(100);
+    });
+    $('#summary').find('small > code').html(
+        $('div.summary > .card > .mis').size() + '+' +
+        $('div.summary > .card > .cau').size() + '/' +
+        $('div.summary').size()
+    );
+
+
+    $('#e-record h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.e-record)').slideToggle(100);
+    });
+    $('#e-record').find('small > code').html(
+        $('div.e-record > .card > .mis').size() + '+' +
+        $('div.e-record > .card > .cau').size() + '/' +
+        $('div.e-record').size()
+    );
+
+
+
+    $('#certificate h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.certificate)').slideToggle(100);
+    });
+    $('#certificate').find('small > code').html(
+        $('div.certificate > .card > .mis').size() + '+' +
+        $('div.certificate > .card > .cau').size() + '/' +
+        $('div.certificate').size()
+    );
+
+
+
+    $('#birth_certificate h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.birth_certificate)').slideToggle(100);
+    });
+    $('#birth_certificate').find('small > code').html(
+        $('div.birth_certificate > .card > .mis').size() + '+' +
+        $('div.birth_certificate > .card > .cau').size() + '/' +
+        $('div.birth_certificate').size()
+    );
+
+
+    $('#dead_fetus_certificate h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.dead_fetus_certificate)').slideToggle(100);
+    });
+    $('#dead_fetus_certificate').find('small > code').html(
+        $('div.dead_fetus_certificate > .card > .mis').size() + '+' +
+        $('div.dead_fetus_certificate > .card > .cau').size() + '/' +
+        $('div.dead_fetus_certificate').size()
+    );
+
+
+
+    $('#death_certificate h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.death_certificate)').slideToggle(100);
+    });
+    $('#death_certificate').find('small > code').html(
+        $('div.death_certificate > .card > .mis').size() + '+' +
+        $('div.death_certificate > .card > .cau').size() + '/' +
+        $('div.death_certificate').size()
+    );
+
+
+
+    $('#post-mortem_certificate h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.post-mortem_certificate)').slideToggle(100);
+    });
+    $('#post-mortem_certificate').find('small > code').html(
+        $('div.post-mortem_certificate > .card > .mis').size() + '+' +
+        $('div.post-mortem_certificate > .card > .cau').size() + '/' +
+        $('div.post-mortem_certificate').size()
+    );
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
+
 });
 </script>
 </body>

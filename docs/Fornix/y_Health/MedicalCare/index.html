@@ -4,12 +4,40 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-10 22:04:42
+@Last modified time: 2018-11-19 15:53:25
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
@@ -82,8 +110,8 @@
     <title>Medical Care</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-10 22:05:28" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.9">
+    <meta name="revised" content="2018-11-19 15:53:47" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -102,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -110,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -142,6 +173,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -180,25 +216,42 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -247,259 +300,361 @@
         </div>
     </div>
 
-    
-    <div class="section" id="hosp">
-        <div class="page-header">
-            <h2>Hospital <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th colspan="2"></th>
-                                <th>特定機能病院</th>
-                                <th>地域医療支援病院</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th colspan="2">法令</th>
-                                <td>『医療法』第4条の2</td>
-                                <td>『医療法』第4条</td>
-                            </tr>
-                            <tr>
-                                <th colspan="2">承認者</th>
-                                <td>厚生労働大臣</td>
-                                <td>都道府県知事</td>
-                            </tr>
-                            <tr>
-                                <th colspan="2">趣旨</th>
-                                <td><ul>
-                                    <li>高度な医療技術が必要な症例を扱い，高い医療水準を確保する</li>
-                                    <li>高度医療のための人員設備を集約する</li>
-                                    <li>患者は必要に応じて高度な医療機関を受診できる</li>
-                                </ul></td>
-                                <td><ul>
-                                    <li>患者に身近な地域で医療を提供する</li>
-                                    <li>かかりつけ医を支援する能力がある</li>
-                                    <li>地域医療の確保を図る病院としてふさわしい構造・設備を有する</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">要件</th>
-                                <th>役割</th>
-                                <td><ul>
-                                    <li>高度医療，先進医療を提供する</li>
-                                    <li>高度医療の開発，評価を行う</li>
-                                    <li>高度医療に関する研修を行う</li>
-                                </ul></td>
-                                <td><ul>
-                                    <li>紹介患者へ医療を提供する</li>
-                                    <li>医療設備を他院の医療従事者に共同利用させる</li>
-                                    <li>救急医療を提供する</li>
-                                </ul>
-                            </tr>
-                            <tr>
-                                <th>設備</th>
-                                <td><ul>
-                                    <li>病床400床以上</li>
-                                    <li>省令で定める診療科を有する</li>
-                                    <li>集中治療室，無菌室，医薬品情報管理室を有する</li>
-                                </ul></td>
-                                <td><ul>
-                                    <li>病床200床以上</li>
-                                    <li>集中治療室，検査室，病理解剖室，研究室などを有する</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th colspan="2">配置</th>
-                                <td>三次医療圏（都道府県単位）に約1施設</td>
-                                <td>二次医療圏に1施設が望ましいが未達成</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MSL">
+                <div class="page-header">
+                    <h2>Medical Service Law <small>医療法</small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="chiikiiryosienbyoin">地域医療支援病院</h3>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6 (11)</td>
+                            <td><u>医療安全支援センター</u></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6 id="iryoanzenshiencenter">医療安全支援センター　<small><code></code></small></h6>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="plan">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Plan <small>医療計画</small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>医療計画</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td rowspan="3">
+                                5疾病5事業<br>
+                                / 在宅医療に関する目標<br>
+                                医療連携体制<br>
+                                情報提供の推進</td>
+                            <td>5疾病</td>
+                            <td>
+                                <ol type="1">
+                                    <li>がん</li>
+                                    <li>脳卒中</li>
+                                    <li>急性心筋梗塞</li>
+                                    <li>糖尿病</li>
+                                    <li>精神疾患</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5事業</td>
+                            <td>
+                                <ol type="a">
+                                    <li><u>救急医療</u></li>
+                                    <li>災害医療</li>
+                                    <li><u>へき地医療</u></li>
+                                    <li>周産期医療</li>
+                                    <li>小児医療<br>
+                                        (小児救急を含む)</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">在宅医療</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><u>医療従事者の確保</u></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">医療の安全の確保</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><u>病床整備を図るべき区域の設定</u><br>
+                            (二次医療圏，三次医療圏の設定)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><u>基準病床数</u></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><u>地域医療支援病院の整備目標</u></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">医療提供体制の確保</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="medical_care_zone">Medical Care Zone <small>医療圏</small> <small><code></code></small></h3>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>医療圏</th>
+                            <th>地理的区域</th>
+                            <th>医療の内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>一次医療圏</th>
+                            <td>(<u>市町村</u>)</td>
+                            <td><ul>
+                                <li><u>プライマリ・ケア</u><br>
+                                    通常の傷病の外来診断・治療・健康管理・紹介など</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>二次医療圏</th>
+                            <td><u>広域市町村</u><br>
+                                344</td>
+                            <td><ul>
+                                <li><u>一般の医療需要</u>　(入院医療)</li>
+                            </ul>
+                            <u>都道府県保健所</u>の所轄区域</td>
+                        </tr>
+                        <tr>
+                            <th>三次医療圏</th>
+                            <td><u>都道府県</u><br>
+                                <u>北海道と長野県は複数圏域</u></td>
+                            <td><ul>
+                                <li>特殊な医療需要</li>
+                                <li><u>先進的/高度専門的医療</u></li>
+                                <li>特殊医療機器の配備</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="rural">Rural <small>地域医療</small> <small><code></code></small></h3>
             </div>
 
         </div>
     </div>
+
+
+
+    <div class="section" id="hosp">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Hospital <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>特定機能病院</th>
+                            <th>地域医療支援病院</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">法令</th>
+                            <td>『医療法』第4条の2</td>
+                            <td>『医療法』第4条</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">承認者</th>
+                            <td>厚生労働大臣</td>
+                            <td>都道府県知事</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">趣旨</th>
+                            <td><ul>
+                                <li>高度な医療技術が必要な症例を扱い，高い医療水準を確保する</li>
+                                <li>高度医療のための人員設備を集約する</li>
+                                <li>患者は必要に応じて高度な医療機関を受診できる</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>患者に身近な地域で医療を提供する</li>
+                                <li>かかりつけ医を支援する能力がある</li>
+                                <li>地域医療の確保を図る病院としてふさわしい構造・設備を有する</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">要件</th>
+                            <th>役割</th>
+                            <td><ul>
+                                <li>高度医療，先進医療を提供する</li>
+                                <li>高度医療の開発，評価を行う</li>
+                                <li>高度医療に関する研修を行う</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>紹介患者へ医療を提供する</li>
+                                <li>医療設備を他院の医療従事者に共同利用させる</li>
+                                <li>救急医療を提供する</li>
+                            </ul>
+                        </tr>
+                        <tr>
+                            <th>設備</th>
+                            <td><ul>
+                                <li>病床400床以上</li>
+                                <li>省令で定める診療科を有する</li>
+                                <li>集中治療室，無菌室，医薬品情報管理室を有する</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>病床200床以上</li>
+                                <li>集中治療室，検査室，病理解剖室，研究室などを有する</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">配置</th>
+                            <td>三次医療圏（都道府県単位）に約1施設</td>
+                            <td>二次医療圏に1施設が望ましいが未達成</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6 id="chiikiiryosienbyoin">地域医療支援病院 <small><code></code></small></h6>
+
+                <h6 id="tokuteikinoubyoin">特定機能病院 <small><code></code></small></h6>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="health_care_provider">
+                <div class="page-header">
+                    <h2>Health Care Provider <small>医療従事者</small> <small><code></code></small></h2>
+                </div>
+
+                <h6>救急救命士が行える特定行為</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>キュートで きっと 丈 夫な エビ</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>きっと</td>
+                            <td>気道確保</td>
+                        </tr>
+                        <tr>
+                            <td>丈</td>
+                            <td>静脈路確保/輸液</td>
+                        </tr>
+                        <tr>
+                            <td>夫な</td>
+                            <td>ブドウ糖溶液投与</td>
+                        </tr>
+                        <tr>
+                            <td>エビ</td>
+                            <td>エピネフリン経静脈投与</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="ER">
+                <div class="page-header">
+                    <h2>ER <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="disaster">
+                <div class="page-header">
+                    <h2>Disaster <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    
+    
         
     <div class="section" id="CWO">
         <div class="page-header">
             <h2>Child Welfare Office <small class="hidden-xs-down">CWO</small><small> 児童相談所</small></h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
     </div>
     
 
-    <div class="section" id="MCL">
-        <div class="page-header">
-            <h2>Medical Care Law <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="iryoanzenshiencenter">医療安全支援センター</h3>
+
+
+    
+
+
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
+
+
             </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="plan">
-        <div class="page-header">
-            <h2>医療計画 <small class="hidden-xs-down">plan</small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="section" id="">
-        <div class="page-header">
-            <!-- <h2>#dx <small class="hidden-xs-down">#diag</small></h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
    
@@ -530,7 +685,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 39 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 39</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -667,8 +822,16 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group MCL pri req info" id="q01">
+            <div class="card-group MSL pri req info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108F1" target="_blank">108F1</a> 医療法 施設
@@ -714,7 +877,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group MCL 111 pri" id="q02">
+            <div class="card-group MSL 111 pri" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E15" target="_blank">111E15</a> 医療法
@@ -751,7 +914,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group MCL pri req 110" id="q03">
+            <div class="card-group MSL medical_record pri req 110" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110F20" target="_blank">110F20</a> 情報提供システム 法令
@@ -792,7 +955,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group MCL pri 110 info" id="q04">
+            <div class="card-group MSL pri 110 info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G30" target="_blank">110G30</a> 医療法 施設
@@ -917,7 +1080,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group " id="q05">
+            <div class="card-group chiikiiryosienbyoin hosp plan 111" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E42" target="_blank" id="">111E42</a> 対応
@@ -963,13 +1126,14 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group chiikiiryosienbyoin hosp pri info 111" id="q06">
+            <div class="card-group chiikiiryosienbyoin hosp plan pri info 111" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G24" target="_blank" id="">111G24</a> 地域医療支援病院
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-11_15:47:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_15:47:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:47:02"> </span>
                         <br>
                         <p>地域医療支援病院について正しいのはどれか．</p>
 
@@ -1071,14 +1235,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group chiikiiryosienbyoin tokuteikinoubyoin kaigo" id="q07">
+            <div class="card-group chiikiiryosienbyoin tokuteikinoubyoin hosp plan kaigo" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100G4" target="_blank">100G4</a> 医療/介護施設
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_16:00:06"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_16:00:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:09:02"> </span>
                         <br>
                         <p>正しいのはどれか．</p>
                         
@@ -1110,14 +1275,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group MCL chiikihoukatusiencenter CWO" id="q08">
+            <div class="card-group MSL chiikihoukatusiencenter autopsy  CWO" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105G31" target="_blank">105G31</a> 法律
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_16:04:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_16:04:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:11:04"> </span>
                         <br>
                         <p>機関・人材と法律の組合せで正しいのはどれか．2つ選べ．</p>
                         
@@ -1156,7 +1322,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_16:13:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_16:13:47"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:47:55"> </span>
                         <br>
                         <p>健康保険法に基づく療養の給付の一環として保険調剤業務を取り扱う薬局をこの法律で何と呼ぶか．</p>
 
@@ -1185,14 +1352,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group iryoanzenshiencenter kaigo pri 110" id="q10">
+            <div class="card-group iryoanzenshiencenter kaigo MSL pri 110" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E16" target="_blank">110E16</a> 法 - 内容
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_16:11:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_16:11:03"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_16:49:26"> </span>
                         <br>
                         <p>規定されている内容とその根拠法の組合せで正しいのはどれか．</p>
 
@@ -1235,14 +1403,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group plan pri info" id="q11">
+            <div class="card-group medical_care_zone plan pri info" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B18" target="_blank">109B18</a> 医療計画
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_16:30:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_16:30:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:19:15"> </span>
                         <br>
                         <p>医療計画に含まれないのはどれか．</p>
 
@@ -1331,14 +1500,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group plan info" id="q12">
+            <div class="card-group medical_care_zone plan info" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96G5" target="_blank" id="2018-02-07_13:19:41">96G5</a> 医療圏
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_16:39:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_16:39:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:50:18"> </span>
                         <br>
                         <p>医療圏について誤っているのはどれか．</p>
 
@@ -1403,6 +1573,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1415,7 +1588,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_16:51:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_16:51:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:51:04"> </span>
                         <br>
                         <p>2013年時点において病床数が最も多いのはどれか．</p>
                         
@@ -1495,7 +1669,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_16:53:22"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_16:53:22"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_16:21:05"> </span>
                         <br>
                         <p>2000年に比べて減少しているのはどれか．</p>
                         
@@ -1676,7 +1851,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group comedical" id="q17">
+            <div class="card-group comedical health_care_provider" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B5" target="_blank">104B5</a> 医療資源
@@ -1713,7 +1888,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group NST comedical pri info" id="q18">
+            <div class="card-group NST comedical health_care_provider pri info" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107B27" target="_blank">107B27</a> NST
@@ -1761,7 +1936,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group comedical info" id="q19">
+            <div class="card-group comedical health_care_provider info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102B7" target="_blank">102B7</a> 国家資格
@@ -1833,13 +2008,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group comedical info 111" id="q20">
+            <div class="card-group comedical PT OT health_care_provider info 111" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B2" target="_blank" id="">111B2</a> コメディカル
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-11_17:16:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_17:16:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:29:49"> </span>
                         <br>
                         <p>医療，介護および福祉の分野で連携する職種の専門性や主たる役割について最も適切なのはどれか．</p>
 
@@ -1865,10 +2041,14 @@
                         <ol type="a">
                             <li></li>
                             <li></li>
-                            <li><ul>
-                                <li>理学療法士 PT: 基本的動作能力の回復</li>
-                                <li>作業療法士OT: 応用的動作能力又は社会的適応能力の回復</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>理学療法士 PT:<br>
+                                        基本的動作能力の回復</li>
+                                    <li>作業療法士OT: <br>
+                                        応用的動作能力又は社会的適応能力の回復</li>
+                                </ul>
+                            </li>
                             <li></li>
                             <li></li>
                         </ol>
@@ -1888,7 +2068,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group comedical 110 req pri" id="q21">
+            <div class="card-group comedical health_care_provider 110 req pri" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110C9" target="_blank" id="2018-02-02_15:07:50">110C9</a> 職種
@@ -1926,9 +2106,9 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group" id="q22">
+            <div class="card-group health_care_provider pri req" id="q22">
                 <div class="card">
-                    <div class="card-header pri req">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107F24" target="_blank">107F24</a> 患者 家族
                     </div>
                     <div class="card-body">
@@ -1965,14 +2145,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group pri" id="q23">
+            <div class="card-group health_care_provider pri" id="q23">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107E3" target="_blank">107E3</a> 医行為 助産師
+                        <a href="https://qb.medilink-study.com/#/Answer/107E3" target="_blank">107E3</a> 医行為
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_17:26:06"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_17:26:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:32:17"> </span>
                         <br>
                         <p>医師の指示が必要でないのはどれか．</p>
 
@@ -2002,14 +2183,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group comedical pri info" id="q24">
+            <div class="card-group comedical health_care_provider pri info" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E4" target="_blank">109E4</a> 診療補助行為
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_17:31:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_17:31:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:35:07"> </span>
                         <br>
                         <p>医師の指示の下に行う診療補助行為として適切なのはどれか．</p>
 
@@ -2039,26 +2221,46 @@
                         </ol>
 
                         <h6>救急救命士が行える特定行為</h6>
-                        <ul class="list-group">
-                            <li class="list-group-item"><u>キュートで きっと 丈 夫な エビ</u></li>
-                            <li class="list-group-item">気道確保</li>
-                            <li class="list-group-item">静脈路確保/輸液</li>
-                            <li class="list-group-item">ブドウ糖溶液投与</li>
-                            <li class="list-group-item">エピネフリン経静脈投与</li>
-                        </ul>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"><u>キュートで きっと 丈 夫な エビ</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>きっと</td>
+                                    <td>気道確保</td>
+                                </tr>
+                                <tr>
+                                    <td>丈</td>
+                                    <td>静脈路確保/輸液</td>
+                                </tr>
+                                <tr>
+                                    <td>夫な</td>
+                                    <td>ブドウ糖溶液投与</td>
+                                </tr>
+                                <tr>
+                                    <td>エビ</td>
+                                    <td>エピネフリン経静脈投与</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group comedical req pri" id="q25">
+            <div class="card-group comedical health_care_provider req pri" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109H30" target="_blank">109H30</a> 退院後の医療, 介護計画
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_17:37:07"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_17:37:07"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:40:46"> </span>
                         <br>
                         <p>78歳の男性．<br>
                             脳梗塞で入院中である．<br>
@@ -2081,8 +2283,8 @@
                         <ol type="a">
                             <li>処方できない</li>
                             <li>訪問看護にて, 看護師, 准看護師, 保健師によって</li>
-                            <li>ケアマネージャーが</li>
-                            <li>ホームヘルパーが</li>
+                            <li>ケアマネージャーが ケアプラン作成</li>
+                            <li>ホームヘルパーが介助する</li>
                             <li>作業療法士が</li>
                         </ol>
 
@@ -2091,7 +2293,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group clinicalpath pri info" id="q26">
+            <div class="card-group clinicalpath plan pri info" id="q26">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106E55" target="_blank">106E55</a> 地域連携クリニカルパス
@@ -2143,7 +2345,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group clinicalpath 111 pri req info" id="q27">
+            <div class="card-group clinicalpath plan 111 pri req info" id="q27">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111F14" target="_blank" id="">111F14</a> 地域連携クリニカルパス
@@ -2196,7 +2398,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_17:46:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_17:46:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:42:53"> </span>
                         <br>
                         <p>救急医療について正しいのはどれか．</p>
                         
@@ -2217,7 +2420,8 @@
                         <p class="q_answer_true">d</p>
 
                         <ol type="a">
-                            <li>救命救急センター: 三次救急医療機関, 24時間体制で初期, 二次救急医療機関からの転送患者の入院</li>
+                            <li>救命救急センター:<br>
+                                三次救急医療機関, 24時間体制で初期, 二次救急医療機関からの転送患者の入院</li>
                             <li></li>
                             <li>気管内チューブによる気道確保などの特定行為は医師の指示が必要</li>
                             <li></li>
@@ -2235,7 +2439,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_17:49:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_17:49:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:52:08"> </span>
                         <br>
                         <p>救急医療について正しいのはどれか．</p>
 
@@ -2271,7 +2476,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_17:58:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_17:58:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:52:43"> </span>
                         <br>
                         <p>高度救命救急センターで受け入れるべきなのはどれか．</p>
 
@@ -2386,7 +2592,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-11_18:01:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_18:01:14"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_16:44:12"> </span>
                         <br>
                         <p>心臓機能停止の傷病者に対する救急救命士の特定行為はどれか．3つ選べ．</p>
 
@@ -2414,35 +2621,45 @@
 
                         <h6>救急救命士の処置</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">医師の具体的な指示が必要<br>
+                            <li class="list-group-item">
+                                医師の具体的な指示が必要<br>
                                 特定行為<br>
-                                <u>きっと 丈 夫な エビ</u><ul>
-                                <li>気道確保</li>
-                                <li>静脈路確保/輸液</li>
-                                <li>ブドウ糖投与</li>
-                                <li>エピネフリン経静脈投与</li>
-                                </ul></li>
-                            <li class="list-group-item">医師の包括的な指示が必要<ul>
-                                <li>除細動</li>
-                                <li>精神科の処置</li>
-                                <li>小児科の処置</li>
-                                <li>産婦人科の処置</li>
-                                <li>エピネフリン経皮投与</li>
-                                <li>血糖測定</li>
-                            </ul></li>
+                                <u>きっと 丈 夫な エビ</u>
+                                <ul>
+                                    <li>気道確保</li>
+                                    <li>静脈路確保/輸液</li>
+                                    <li>ブドウ糖投与</li>
+                                    <li>エピネフリン経静脈投与</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                医師の包括的な指示が必要
+                                <ul>
+                                    <li>除細動</li>
+                                    <li>精神科の処置</li>
+                                    <li>小児科の処置</li>
+                                    <li>産婦人科の処置</li>
+                                    <li>エピネフリン経皮投与</li>
+                                    <li>血糖測定</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group ER disaster DMAT 111 pri" id="q32">
+            <div class="card-group ER disaster DMAT medical_care_zone 111 pri" id="q32">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E7" target="_blank" id="">111E7</a> 災害医療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-11_18:08:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-11_18:08:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_16:45:59"> </span>
                         <br>
                         <p>災害医療について正しいのはどれか．</p>
 
@@ -2477,14 +2694,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group disaster  pri info" id="q33">
+            <div class="card-group disaster pri info" id="q33">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106B37" target="_blank">106B37</a> 災害拠点病院
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_18:11:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_18:11:35"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_16:53:45"> </span>
                         <br>
                         <p>災害拠点病院について正しいのはどれか．2つ選べ．</p>
 
@@ -2544,7 +2762,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_18:14:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_18:14:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:54:16"> </span>
                         <br>
                         <p>トリアージタッグ〈識別札〉について誤っているのはどれか．</p>
 
@@ -2731,14 +2950,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group rural pri" id="q37">
+            <div class="card-group rural medical_care_zone pri" id="q37">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E5" target="_blank">109E5</a> へき地医療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_18:23:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_18:23:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:55:37"> </span>
                         <br>
                         <p>へき地医療について正しいのはどれか．</p>
 
@@ -2762,7 +2982,8 @@
                             <li>二次医療圏ごとに設置</li>
                             <li>[第11次計画] 都道府県が策定する</li>
                             <li>へき地医療拠点病院: 代診医を派遣</li>
-                            <li></li>
+                            <li>へき地巡回診療車はへき地医療拠点病院が派遣<br>
+                                救命救急センターが派遣するのはドクターカー</li>
                             <li>へき地医療拠点病院: 都道府県ごとに</li>
                         </ol>
                     </div>
@@ -2814,10 +3035,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-11_18:28:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-11_18:28:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_16:57:49"> </span>
                         <br>
                         <p>70歳の男性．<br>
-                            離島に居住している．晴天の朝，自宅近くで農作業中に突然の強い胸痛と呼吸困難とを自覚し，島内にある無床診療所を受診した．胸痛は2時間持続している．5年前から高血圧症と脂質異常症のために通院している．意識は清明．表情は苦悶様．心電図で完全房室ブロックとⅡ，Ⅲ，aVF誘導のST上昇とを認める．島内にはこの診療所以外に医療施設はない．<br>
+                            離島に居住している．<br>
+                            晴天の朝，自宅近くで農作業中に突然の強い胸痛と呼吸困難とを自覚し，島内にある無床診療所を受診した．<u>胸痛は2時間持続</u>している．<br>
+                            5年前から<u>高血圧症</u>と<u>脂質異常症</u>のために通院している．<br>
+                            意識は清明．表情は苦悶様．心電図で<u>完全房室ブロックとⅡ，Ⅲ，aVF誘導のST上昇</u>とを認める．<br>
+                            島内にはこの診療所以外に<u>医療施設はない</u>．<br>
                             対応として適切でないのはどれか．</p>
 
 
@@ -2898,6 +3124,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2966,6 +3193,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2974,6 +3208,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2987,27 +3242,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3029,11 +3303,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3050,63 +3327,71 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -3120,6 +3405,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -3149,6 +3437,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -3336,8 +3627,151 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+
+    $('#MSL h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.MSL)').slideToggle(100);
+    });
+    $('#MSL').find('small > code').html(
+        $('div.MSL > .card > .mis').size() + '+' +
+        $('div.MSL > .card > .cau').size() + '/' +
+        $('div.MSL').size()
+    );
+
+
+
+    $('#iryoanzenshiencenter').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.iryoanzenshiencenter)').slideToggle(100);
+    });
+    $('#iryoanzenshiencenter').find('small > code').html(
+        $('div.iryoanzenshiencenter > .card > .mis').size() + '+' +
+        $('div.iryoanzenshiencenter > .card > .cau').size() + '/' +
+        $('div.iryoanzenshiencenter').size()
+    );
+
+
+
+    $('#plan h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.plan)').slideToggle(100);
+    });
+    $('#plan').find('small > code').html(
+        $('div.plan > .card > .mis').size() + '+' +
+        $('div.plan > .card > .cau').size() + '/' +
+        $('div.plan').size()
+    );
+
+
+    $('#medical_care_zone').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.medical_care_zone)').slideToggle(100);
+    });
+    $('#medical_care_zone').find('small > code').html(
+        $('div.medical_care_zone > .card > .mis').size() + '+' +
+        $('div.medical_care_zone > .card > .cau').size() + '/' +
+        $('div.medical_care_zone').size()
+    );
+
+
+    $('#rural').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.rural)').slideToggle(100);
+    });
+    $('#rural').find('small > code').html(
+        $('div.rural > .card > .mis').size() + '+' +
+        $('div.rural > .card > .cau').size() + '/' +
+        $('div.rural').size()
+    );
+
+
+
+    $('#hosp').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.hosp)').slideToggle(100);
+    });
+    $('#hosp').find('small > code').html(
+        $('div.hosp > .card > .mis').size() + '+' +
+        $('div.hosp > .card > .cau').size() + '/' +
+        $('div.hosp').size()
+    );
+
+
+    $('#chiikiiryosienbyoin').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.chiikiiryosienbyoin)').slideToggle(100);
+    });
+    $('#chiikiiryosienbyoin').find('small > code').html(
+        $('div.chiikiiryosienbyoin > .card > .mis').size() + '+' +
+        $('div.chiikiiryosienbyoin > .card > .cau').size() + '/' +
+        $('div.chiikiiryosienbyoin').size()
+    );
+
+
+    $('#tokuteikinoubyoin').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.tokuteikinoubyoin)').slideToggle(100);
+    });
+    $('#tokuteikinoubyoin').find('small > code').html(
+        $('div.tokuteikinoubyoin > .card > .mis').size() + '+' +
+        $('div.tokuteikinoubyoin > .card > .cau').size() + '/' +
+        $('div.tokuteikinoubyoin').size()
+    );
+
+
+
+    $('#health_care_provider h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.health_care_provider)').slideToggle(100);
+    });
+    $('#health_care_provider').find('small > code').html(
+        $('div.health_care_provider > .card > .mis').size() + '+' +
+        $('div.health_care_provider > .card > .cau').size() + '/' +
+        $('div.health_care_provider').size()
+    );
+
+
+
+    $('#ER h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.ER)').slideToggle(100);
+    });
+    $('#ER').find('small > code').html(
+        $('div.ER > .card > .mis').size() + '+' +
+        $('div.ER > .card > .cau').size() + '/' +
+        $('div.ER').size()
+    );
+
+
+    $('#disaster h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.disaster)').slideToggle(100);
+    });
+    $('#disaster').find('small > code').html(
+        $('div.disaster > .card > .mis').size() + '+' +
+        $('div.disaster > .card > .cau').size() + '/' +
+        $('div.disaster').size()
+    );
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
+
 });
 </script>
 </body>

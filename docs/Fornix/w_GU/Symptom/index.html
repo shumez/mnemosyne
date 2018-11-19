@@ -4,12 +4,26 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-03 15:55:48
+@Last modified time: 2018-11-19 21:30:12
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+
 04.01.23    18 10 03    js .slideToggle()
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
@@ -93,11 +107,11 @@
 -->
 <html>
 <head>
-    <title>SS - GU</title>
+    <title>SS-GU</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-03 15:55:57" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-19 21:30:42" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -116,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -124,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -156,6 +173,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -196,33 +216,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -783,19 +811,23 @@
 
 
             <!-- 01 -->
-            <div class="card-group pyelonephritis RCC hematuria" id="q01">
+            <div class="card-group pyelonephritis RCC hematuria PKD " id="q01">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/93E25" target="_blank" id="">93E25</a> 
+                        <a href="https://qb.medilink-study.com/#/Answer/93E25" target="_blank" id="">93E25</a> 診断
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-03_16:28:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_16:28:50"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_21:34:52"> </span>
                         <br>
                         <p>60歳の男性．<br>
                             一昨日突然血尿があり，右肋骨弓下に自分で腫瘤を触れ，そこに軽い痛みを感じた．<br>
                             尿量は正常．眼瞼結膜に貧血はない．<br>
-                            尿所見：蛋白（－），糖（－），潜血2＋，沈渣に赤血球20～30/1視野，白血球1～2/1視野，赤沈30mm/1時間．<br>
-                            血清生化学所見：TP 8.5g/dL，アルブミン4.6g/dL，クレアチニン1.2mg/dL，AST 32単位，ALT 24単位．尿細胞診は陰性．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），潜血2＋，沈渣に赤血球20～30/1視野，白血球1～2/1視野，赤沈30mm/1時間．<br>
+                            血清生化学所見：<br>
+                            TP 8.5g/dL，アルブミン4.6g/dL，クレアチニン1.2mg/dL，AST 32単位，ALT 24単位．<br>
+                            尿細胞診は陰性．<br>
                             考えられないのはどれか．</p>
 
 
@@ -843,7 +875,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-03_16:32:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_16:32:14"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_21:36:48"> </span>
                         <br>
                         <p>肉眼的血尿を認めないのはどれか．</p>
 
@@ -977,7 +1010,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/95B45" target="_blank" id="">95B45</a> 尿閉
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-03_16:56:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_16:56:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:54:00"> </span>
                         <br>
                         <p>尿閉の原因となるのはどれか．2つ選べ．</p>
 
@@ -1012,14 +1046,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group urinary_retention info" id="q04">
+            <div class="card-group urinary_retention uterine_prolapse info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B77" target="_blank">101B77</a> 尿閉
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_17:02:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_17:02:58"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:54:46"> </span>
                         <br>
                         <p>尿閉の原因となるのはどれか．2つ選べ．</p>
 
@@ -1126,7 +1161,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_17:13:19"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_17:13:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:55:53"> </span>
                         <br>
                         <p>疾患と症候の組合せで正しいのはどれか．</p>
                         
@@ -1299,15 +1335,20 @@
                         <a href="https://qb.medilink-study.com/#/Answer/106D39" target="_blank" id="">106D39</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-03_17:47:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_17:47:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:40:34"> </span>
                         <br>
                         <p>78歳の男性．<br>
                             胃癌に対する胃切除術のため入院中である．<br>
                             術後2日，<u>深夜に尿道カテーテルを自己抜去し，尿道出血</u>を認めた．<br>
-                            意識は清明．身長163cm，体重63kg．脈拍96/分，整．血圧130/70mmHg．下腹部は小児頭大に膨隆している．直腸指診で鶏卵大の前立腺を触知する．<br>
-                            血液所見：赤血球377万，Hb 10.2g/dL，Ht 33％，白血球10,200，血小板23万．<br>
-                            血液生化学所見：尿素窒素22mg/dL，クレアチニン1.4mg/dL．<br>
-                            腹部超音波検査では，膀胱は多量の尿で拡張し，前立腺は腫大していた．<u>尿道カテーテルは再挿入</u>できなかった．<br>
+                            意識は清明．身長163cm，体重63kg．脈拍96/分，整．血圧130/70mmHg．<br>
+                            下腹部は小児頭大に膨隆している．直腸指診で鶏卵大の前立腺を触知する．<br>
+                            血液所見：<br>
+                            赤血球377万，Hb 10.2g/dL，Ht 33％，白血球10,200，血小板23万．<br>
+                            血液生化学所見：<br>
+                            尿素窒素22mg/dL，クレアチニン1.4mg/dL．<br>
+                            腹部超音波検査では，膀胱は多量の尿で拡張し，前立腺は腫大していた．<br>
+                            <u>尿道カテーテルは再挿入</u>できなかった．<br>
                             対応として適切なのはどれか．</p>
 
 
@@ -1341,14 +1382,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group auria pri req" id="q09">
+            <div class="card-group auria stone  pri req" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107F12" target="_blank">107F12</a> 無尿
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_17:52:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_17:52:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:56:21"> </span>
                         <br>
                         <p>無尿をきたすのはどれか．</p>
 
@@ -1389,7 +1431,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-03_17:57:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_17:57:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:42:45"> </span>
                         <br>
                         <p>頻尿の原因で誤っているのはどれか．</p>
 
@@ -1438,21 +1481,22 @@
 
 
             <!-- 01 -->
-            <div class="card-group BPH pri" id="q11">
+            <div class="card-group BPH pri info" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E57" target="_blank">109E57</a> 頻度・尿量記録
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-03_18:02:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_18:02:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:45:14"> </span>
                         <br>
                         <p>72歳の男性．<br>
                             <u>頻尿</u>を主訴に来院した．<br>
-                            3年前から夜間に尿意で目が覚めてトイレに行くようになり，3ヵ月前からはその頻度が増してきた．自宅近くの医療機関を受診しα1遮断薬の内服を1ヵ月続けたが軽快しないため紹介されて受診した．起床時に下着はぬれていない．<br>
+                            3年前から<u>夜間に尿意で目が覚めてトイレに行く</u>ようになり，<u>3ヵ月前からはその頻度が増し</u>てきた．自宅近くの医療機関を受診し<u>α1遮断薬</u>の内服を1ヵ月続けたが軽快しないため紹介されて受診した．起床時に下着はぬれていない．<br>
                             腹部は平坦，軟．直腸指診で小鶏卵大で弾性硬の前立腺を触知する．尿所見に異常を認めない．<br>
                             PSA 2.3ng/mL（基準4.0以下）．<br>
-                            腹部超音波検査で前立腺体積は34mLで残尿量は30mL．国際前立腺症状スコア12点（軽症0～7点，中等症8～19点，重症20～35点）．<br>
+                            腹部超音波検査で前立腺体積は34mLで残尿量は30mL．<u>国際前立腺症状スコア12点</u>（軽症0～7点，中等症8～19点，重症20～35点）．<br>
                             頻度・尿量記録を次に示す．<br>
                             この患者にみられるのはどれか．2つ選べ．</p>
                     </div>
@@ -1492,6 +1536,20 @@
                             </li>
                             <li></li>
                         </ol>
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                昼間頻用　≥ 8
+                            </li>
+                            <li class="list-group-item">
+                                夜間尿量
+                                <ul>
+                                    <li>高齢者: 夜間尿量 ≥ 1/3 24hrs尿量</li>
+                                    <li>若年: 夜間尿量 ≥ .2 24hrs尿量</li>
+                                </ul>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -1504,14 +1562,19 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-03_18:09:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_18:09:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:50:09"> </span>
                         <br>
                         <p>82歳の男性．<br>
-                            尿量の減少と全身倦怠感とを主訴に来院した．<br>
+                            <u>尿量の減少</u>と全身倦怠感とを主訴に来院した．<br>
                             3年前に胃癌にて胃全摘術を受けたが，受診は2年前から中断している．<br>
-                            意識は清明．体温36.7℃．血圧144/94mmHg．上腹部に手術痕を，両下肢に強い浮腫を認める．その他の身体診察所見に明らかな異常を認めない．<br>
-                            血液所見：赤血球362万，Hb 10.8g/dL，Ht 28％．<br>
-                            血液生化学所見：尿素窒素40mg/dL，クレアチニン2.8mg/dL，総ビリルビン1.0mg/dL，AST 38IU/L，ALT 42IU/L，Na 132mEq/L，K 5.6mEq/L，Cl 98mEq/L．<br>
+                            意識は清明．体温36.7℃．血圧144/94mmHg．<br>
+                            上腹部に手術痕を，両下肢に強い浮腫を認める．その他の身体診察所見に明らかな異常を認めない．<br>
+                            血液所見：<br>
+                            赤血球362万，Hb 10.8g/dL，Ht 28％．<br>
+                            血液生化学所見：<br>
+                            <u>尿素窒素40mg/dL，クレアチニン2.8mg/dL</u>，総ビリルビン1.0mg/dL，AST 38IU/L，ALT 42IU/L，<br>
+                            Na 132mEq/L，K 5.6mEq/L，Cl 98mEq/L．<br>
                             腹部超音波検査で膀胱内に尿を認めない．<br>
                             胸部X線写真にて心胸郭比58％．腹部単純CTを次に示す．<br>
                             まず行う処置として適切なのはどれか．</p>
@@ -1569,22 +1632,23 @@
 
                         <ul class="list-group">
                             <li class="list-group-item">K ≥ 6</li>
-                            <li class="list-group-item"><b>HCO<sub>3</sub><sup>-</sup> ≤ 15</b></li>
-                            <li class="list-group-item"><b>Cr ≥ 7</b></li>
-                            <li class="list-group-item"><b>BUN ≥ 80</b></li>
+                            <li class="list-group-item"><u>HCO<sub>3</sub><sup>-</sup> ≤ 15</u></li>
+                            <li class="list-group-item"><u>Cr ≥ 7</u></li>
+                            <li class="list-group-item"><u>BUN ≥ 80</u></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group incontinence" id="q13">
+            <div class="card-group AD BPH  incontinence" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101B76" target="_blank" id="">101B76</a> 尿失禁
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-03_18:14:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_18:14:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_21:57:06"> </span>
                         <br>
                         <p>尿失禁の原因として考えにくいのはどれか．</p>
 
@@ -1619,14 +1683,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group tenderness info" id="q14">
+            <div class="card-group tenderness TIN pyelonephritis stone info" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H41" target="_blank" id="2018-01-26_16:58:10">97H41</a> 側腹部痛
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-03_18:16:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_18:16:31"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_21:52:33"> </span>
                         <br>
                         <p>側腹部痛を生じないのはどれか．</p>
                         
@@ -1795,7 +1860,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1805,6 +1874,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1823,7 +1913,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1874,6 +1976,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1941,12 +2044,20 @@ $('document').ready(function(){
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1960,6 +2071,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1989,6 +2103,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -2176,6 +2293,7 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
@@ -2215,9 +2333,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

@@ -4,12 +4,27 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-02 21:40:09
+@Last modified time: 2018-11-19 13:56:22
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -95,8 +110,8 @@
     <title>Urinary Tract</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-02 21:40:21" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-19 13:56:44" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.36">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -115,6 +130,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -123,7 +141,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -155,6 +173,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -195,33 +216,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -277,141 +306,6 @@
     
     <div class="row">
 
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <h6>尿失禁の種類と原因</h6>
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>種類</th>
-                        <th>病態</th>
-                        <th>原因疾患</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <th>腹圧性尿失禁</th>
-                        <td>
-                            <ul>
-                                <li><u>骨盤底筋群の弛緩</u> / <!-- や -->
-                                    尿道閉鎖機能の低下<!-- のため， --></li>
-                                <li>腹圧上昇時<!-- （咳，くしゃみなど）に少量の尿が漏れる． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>妊娠・分娩（多い）</li>
-                                <li>加齢</li>
-                                <li>骨盤内手術</li>
-                            </ul>
-                            など
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>切迫性尿失禁</th>
-                        <td>
-                            <ul>
-                                <li>膀胱が過敏状態<!-- にあり，<br>
-                            強い尿意に耐えきれず失禁する． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>神経因性膀胱<br>
-                                    （仙髄より上位の中枢神経障害）</li>
-                                <li>加齢</li>
-                                <li>尿路感染</li>
-                                <li>過活動膀胱</li>
-                            </ul>
-                            など
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>溢流性尿失禁<br>
-                            （奇異性尿失禁）</th>
-                        <td>
-                            <ul>
-                                <li><u>尿排出障害</u></li>
-                                <li><!-- で残尿量が大量になると -->膀胱内<!-- の -->圧<!-- が上昇し，<br> --> >
-                            尿道内圧<!-- より高くなったときに尿が漏れる． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>前立腺肥大症</li>
-                                <li>高度の尿道狭窄</li>
-                                <li>神経因性膀胱<br>
-                                    （仙髄排尿中枢以下の末梢神経障害）</li>
-                            </ul>
-                            など</td>
-                    </tr>
-                    <tr>
-                        <th>反射性尿失禁</th>
-                        <td>
-                            <ul>
-                                <li>上位・下位排尿中枢の間で連絡不全<!-- があり， --></li>
-                                <li>尿意を伴わずに排尿筋が不随意収縮<!-- することで尿が漏れる． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>神経因性膀胱<br>
-                                    （仙髄排尿中枢より上位の脊髄障害）</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>機能性尿失禁</th>
-                        <td>
-                            <ul>
-                                <li>日常生活動作（ADL）の障害</li>
-                                <!-- により -->
-                                <li><u>トイレへの移動や排尿動作ができず<u><!-- 失禁する． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>認知症</li>
-                                <li>歩行障害</li>
-                                <li>脳血管障害後の麻痺</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>尿管性尿失禁</th>
-                        <td>
-                            <ul>
-                                <li>尿管異所開口<!-- のある小児で認められる．尿管が男児では前部尿道や精囊腺，女児では子宮や腟などに開口するため，腎からの尿が常時漏れる（ --></li>
-                                <li>“dry-timeがない”<!-- と表現する）． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>尿管異所開口</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>真性尿失禁</th>
-                        <td>
-                            <ul>
-                                <li><u>括約筋の障害</u></li>
-                                <!-- のため， -->
-                                <li>膀胱に尿が貯留することなく<!-- 持続的に尿が漏れる． --></li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>先天異常</li>
-                                <li>外傷</li>
-                                <li>骨盤内手術などの合併症</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="hydronephrosis">
@@ -451,13 +345,6 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <h6>膀胱尿管逆流の程度の分類</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/101G038_sup_w_010.jpg" class="card-img-top img-fluid">
-                </div>
-            </div>
-
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
@@ -489,6 +376,15 @@
                     </li> -->
                 </ul>
             </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>膀胱尿管逆流の程度の分類</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/101G038_sup_w_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            
         </div>
     </div>
 
@@ -578,9 +474,14 @@
                     </li>
                     
                 </ul> -->
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>松笠状</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/94F028_ima_w_020.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
 
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-9 col-md-9">
                 <h6>神経因性膀胱</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/102D056_sup_w_010.jpg" class="card-img-top img-fluid">
@@ -591,43 +492,235 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="OAB">
+    
+    <div class="section" id="UI">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>OAB <small> </small> <small><code></code></small></h2>
+                    <h2>UI <small>尿失禁</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-8">
+                <h6>尿失禁の種類と原因</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2">種類</th>
+                            <th>病態</th>
+                            <th>原因疾患</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">排尿中枢の異常</th>
+                            <th>(運動性)<br>
+                                切迫性</th>
+                            <td>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li><u>脳梗塞</u></li>
+                                    <li>脳腫瘍</li>
+                                    <li>ICH</li>
+                                    <li><u>PD</u></li>
+                                    <li>MS</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>反射性</th>
+                            <td>
+                                <ul>
+                                    <li>上位・下位排尿中枢の間で連絡不全<!-- があり， --></li>
+                                    <li>尿意を伴わずに排尿筋が不随意収縮<!-- することで尿が漏れる． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>神経因性膀胱<br>
+                                        （仙髄排尿中枢より上位の脊髄障害）</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">括約筋不全</th>
+                            <th>真性</th>
+                            <td>
+                                <ul>
+                                    <li><u>括約筋の障害</u></li>
+                                    <!-- のため， -->
+                                    <li>膀胱に尿が貯留することなく<!-- 持続的に尿が漏れる． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>先天異常</li>
+                                    <li>外傷</li>
+                                    <li>骨盤内手術などの合併症</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>腹圧性</th>
+                            <td>
+                                <ul>
+                                    <li><u>骨盤底筋群の弛緩</u> / <!-- や -->
+                                        尿道閉鎖機能の低下<!-- のため， --></li>
+                                    <li>腹圧上昇時<!-- （咳，くしゃみなど）に少量の尿が漏れる． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>妊娠・分娩（多い）</li>
+                                    <li>加齢</li>
+                                    <li>骨盤内手術</li>
+                                </ul>
+                                など
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">下部尿路の異常</th>
+                            <th>溢流性<br>
+                                (奇異性)</th>
+                            <td>
+                                <ul>
+                                    <li><u>尿排出障害</u></li>
+                                    <li><!-- で残尿量が大量になると -->膀胱内<!-- の -->圧<!-- が上昇し，<br> --> >
+                                尿道内圧<!-- より高くなったときに尿が漏れる． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>前立腺肥大症</li>
+                                    <li>高度の尿道狭窄</li>
+                                    <li>神経因性膀胱<br>
+                                        （仙髄排尿中枢以下の末梢神経障害）</li>
+                                </ul>
+                                など</td>
+                        </tr>
+                        <tr>
+                            <th>(知覚性)切迫性</th>
+                            <td>
+                                <ul>
+                                    <li>膀胱が過敏状態<!-- にあり，<br>
+                                強い尿意に耐えきれず失禁する． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>神経因性膀胱<br>
+                                        （仙髄より上位の中枢神経障害）</li>
+                                    <li>加齢</li>
+                                    <li>尿路感染</li>
+                                    <li>過活動膀胱</li>
+                                </ul>
+                                など
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2"></th>
+                            <th>機能性</th>
+                            <td>
+                                <ul>
+                                    <li>日常生活動作（ADL）の障害</li>
+                                    <!-- により -->
+                                    <li><u>トイレへの移動や排尿動作ができず<u><!-- 失禁する． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>認知症</li>
+                                    <li>歩行障害</li>
+                                    <li>脳血管障害後の麻痺</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>尿管性</th>
+                            <td>
+                                <ul>
+                                    <li>尿管異所開口<!-- のある小児で認められる．尿管が男児では前部尿道や精囊腺，女児では子宮や腟などに開口するため，腎からの尿が常時漏れる（ --></li>
+                                    <li>“dry-timeがない”<!-- と表現する）． --></li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>尿管異所開口</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="reflectional_incontinence">
+                <div class="page-header">
+                    <h2>Reflectional Incontinence <small>反射性尿失禁</small> <small><code></code></small></h2>
                 </div>
 
-                <ul class="list-group">
+                <!-- <ul class="list-group"> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <li class="list-group-item">
+                    <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        <ul>
-                            <li>頻尿</li>
-                            <li>尿意切迫感</li>
-                        </ul>
-                    </li>
+                    </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                     </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <li class="list-group-item">
+                    <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        <ul>
-                            <li>AntiCholinergic</li>
-                        </ul>
-                    </li>
-                </ul>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+
+        <!-- </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6"> -->
+            <div class="section" id="true_incontinece">
+                <div class="page-header">
+                    <h2>True Incontinece <small>真性尿失禁</small> <small><code></code></small></h2>
+                </div>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
             </div>
         </div>
-
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -687,8 +780,8 @@
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                         排出障害
                         <ul>
-                            <li>BPH</li>
-                            <li>尿道狭窄</li>
+                            <li><u>BPH</u></li>
+                            <li><u>尿道狭窄</u></li>
                         </ul>
                         &rArr; &uarr;残尿量<br>
                         &rArr; 膀胱内圧 > 尿道内圧
@@ -709,48 +802,16 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
-                <!-- </ul> -->
+                </ul>
             </div>
         </div>
 
 
+        
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="reflectional_incontinence">
+            <div class="section" id="UUI">
                 <div class="page-header">
-                    <h2>Reflectional Incontinence <small> </small> <small><code></code></small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
-        </div>
-
-
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="UI">
-                <div class="page-header">
-                    <h2>UI <small>切迫性尿失禁</small> <small class="hidden-sm-down">Urge Incontinence</small> <small><code></code></small></h2>
+                    <h2>UUI <small>切迫性尿失禁</small> <small class="hidden-sm-down">Urge Incontinence</small> <small><code></code></small></h2>
                 </div>
 
                 <!-- <ul class="list-group"> -->
@@ -778,33 +839,44 @@
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="true_incontinece">
+            <div class="section" id="OAB">
                 <div class="page-header">
-                    <h2>True Incontinece <small>真性尿失禁</small> <small><code></code></small></h2>
+                    <h2>OAB <small> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
+                        <ul>
+                            <li><u>尿意切迫感</u></li>
+                            <li>頻尿</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                     </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                        <ul>
+                            <li><u>抗コリン</u><br>
+                                BPH: 適応外</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
+
+
+        
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -1021,15 +1093,20 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-02_21:48:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-02_21:48:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:02:21"> </span>
                         <br>
                         <p>32歳の女性．<br>
-                            健康診断で右水腎症を指摘され精査目的に来院した．<br>
+                            健康診断で<u>右水腎症</u>を指摘され精査目的に来院した．<br>
                             10年前から数ヵ月に1回右背部に軽い鈍痛を自覚していたが，20分程度安静にしていると軽快していた．<br>
-                            右肋骨脊柱角に軽度の叩打痛を認める．<br>
-                            尿所見：蛋白（－），糖（－），潜血1＋，沈渣に赤血球1～4/1視野，白血球1～5/1視野．<br>
-                            血液所見：赤血球432万，Hb 13.6g/dL，Ht 43％，白血球6,900，血小板28万．<br>
-                            血液生化学所見：総蛋白7.6g/dL，アルブミン4.3g/dL，尿素窒素22mg/dL，クレアチニン0.9mg/dL，尿酸5.8mg/dL，Na 134mEq/L，K 3.8mEq/L，Cl 105mEq/L．CRP 0.1mg/dL．<br>
+                            <u>右肋骨脊柱角に軽度の叩打痛</u>を認める．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），潜血1＋，沈渣に赤血球1～4/1視野，白血球1～5/1視野．<br>
+                            血液所見：<br>
+                            赤血球432万，Hb 13.6g/dL，Ht 43％，白血球6,900，血小板28万．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.6g/dL，アルブミン4.3g/dL，尿素窒素22mg/dL，クレアチニン0.9mg/dL，尿酸5.8mg/dL，<br>
+                            Na 134mEq/L，K 3.8mEq/L，Cl 105mEq/L．CRP 0.1mg/dL．<br>
                             腹部X線写真で尿路結石像を認めなかった．<br>
                             腹部超音波像を次に示す．<br>
                             診断のために有用なのはどれか．2つ選べ．</p>
@@ -1051,7 +1128,8 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <img src="https://www.qb-online.com/img/108E059_ima_010.jpg" class="img-fluid">
+                        <!-- <img src="https://www.qb-online.com/img/108E059_ima_010.jpg" class="img-fluid"> -->
+                        <img src="https://qb.medilink-study.com/images/108E059_ima_010.jpg" class="card-img-top img-fluid">
 
                         <p class="q_dx">Rt 水腎症 / Rt 腎盂尿管移行部狭窄症</p>
 
@@ -1079,12 +1157,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-03_10:59:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_10:59:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_14:05:08"> </span>
                         <br>
                         <p><u>16歳</u>の男子．<br>
                             2日前からの<u>発熱</u>と<u>左の側腹部痛</u>とを主訴に来院した．<br>
                             小児期から年に2回ほど高熱を出し，そのたびに抗菌薬治療を受けていたという．<br>
-                            体温39.0℃．左肋骨脊柱角に叩打痛を認める．血清クレアチニン1.0mg/dL．<br>
+                            体温39.0℃．<br>
+                            <u>左肋骨脊柱角に叩打痛</u>を認める．<br>
+                            血清クレアチニン1.0mg/dL．<br>
                             排尿後の腹部超音波検査で残尿を認めない．左腎に水腎症と軽度の萎縮とを認める．尿培養でグラム陰性桿菌を認めた．抗菌薬投与で解熱し，症状は消失した．<br>
                             引き続き行う必要がある検査で適切なのはどれか．</p>
 
@@ -1229,15 +1310,18 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_11:19:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_11:19:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_14:14:53"> </span>
                         <br>
                         <p>58歳の女性．<br>
                             <u>排尿時痛</u>を主訴に来院した．<br>
                             2日前から頻尿，残尿感および排尿時痛を認めた．発熱はなかった．普段は腹圧を用いて排尿をしていたが，明らかな残尿感は自覚していなかった．<br>
                             10年前から<u>糖尿病</u>を指摘されていたが未治療であった．<br>
                             体温36.5℃．腹部は平坦，軟で，下腹部の圧痛はない．<br>
-                            尿所見：蛋白1＋，糖2＋，沈渣に赤血球5～10/1視野，白血球5～10/1視野．<br>
-                            血液所見：空腹時血糖186mg/dL，HbA1c（NGSP）9.4％（基準4.6～6.2）．<br>
+                            尿所見：<br>
+                            蛋白1＋，<u>糖2＋</u>，沈渣に赤血球5～10/1視野，白血球5～10/1視野．<br>
+                            血液所見：<br>
+                            空腹時血糖186mg/dL，HbA1c（NGSP）9.4％（基準4.6～6.2）．<br>
                             次に行う検査はどれか．</p>
 
                         <ol type="a">
@@ -1329,20 +1413,23 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group NB " id="q06">
+            <div class="card-group NB fig" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94F28" target="_blank">94F28</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_11:27:09"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_11:27:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:18:03"> </span>
                         <br>
                         <p>51歳の男性．<br>
                             健康診断の超音波検査で尿路の異常を指摘され来院した．<br>
                             数年前から軽度の排尿困難を自覚していたが放置していた．肺結核で治療を受けたことがある．直腸診で弾性硬・クルミ大の前立腺を触知する．<br>
-                            尿所見：蛋白（－），糖1＋，尿沈渣に赤血球1～2/1視野，白血球1～2/1視野．<br>
-                            血清生化学所見：<u>尿素窒素26mg/dL，クレアチニン1.4mg/dL</u>．<br>
+                            尿所見：<br>
+                            蛋白（－），<u>糖1＋</u>，尿沈渣に赤血球1～2/1視野，白血球1～2/1視野．<br>
+                            血清生化学所見：<br>
+                            <u>尿素窒素26mg/dL，クレアチニン1.4mg/dL</u>．<br>
                             点滴静注尿路造影写真（A）と膀胱造影写真（B）とを次に示す．<br>
                             適切な治療はどれか．</p>
                     </div>
@@ -1398,7 +1485,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_11:35:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_11:35:38"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-19_14:20:27"> </span>
                         <br>
                         <p>30歳の女性．<br>
                             1年前に交通事故で脊髄を損傷した．<br>
@@ -1452,7 +1540,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/106D17" target="_blank" id="">106D17</a> 過活動膀胱
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-03_11:41:52"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_11:41:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_14:21:15"> </span>
                         <br>
                         <p>過活動膀胱の症状はどれか．2つ選べ．</p>
 
@@ -1490,15 +1579,17 @@
             <div class="card-group OAB" id="q09">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107A37" target="_blank" id="">107A37</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/107A37" target="_blank" id="">107A37</a> 対応
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-03_11:47:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_11:47:11"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:22:51"> </span>
                         <br>
                         <p>64歳の女性．<br>
                             頻尿と尿意切迫感とを主訴に来院した．<br>
                             1週前から自宅近くの診療所で抗菌薬を投与されていたが改善しないため受診した．<br>
-                            尿所見：蛋白（±），糖（－）．沈渣に赤血球1～4/1視野，白血球1～4/1視野，細菌（－）．尿細胞診クラスⅡ（陰性）．<br>
+                            尿所見：<br>
+                            蛋白（±），糖（－）．沈渣に赤血球1～4/1視野，白血球1～4/1視野，細菌（－）．尿細胞診クラスⅡ（陰性）．<br>
                             腹部超音波検査で残尿を認めない．<br>
                             次に行うべき対応として適切なのはどれか．</p>
 
@@ -1540,14 +1631,16 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_11:53:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_11:53:13"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-19_14:23:29"> </span>
                         <br>
                         <p>57歳の女性．
                             <u>3回経妊3回経産婦</u>．<br>
                             52歳で閉経．<br>
                             尿失禁を主訴に来院した．<br>
                             2年前から咳嗽時に下着が濡れることに気付いていた．<br>
-                            半年前から<u>笑ったり重い荷物を持ち上げたりするとき</u>にも漏れるようになったため受診した．頻尿，排尿痛および尿意切迫感を認めない．少量用尿とりパッドを1日1枚交換している．尿所見に異常を認めない．腹部超音波検査で残尿を認めない．1時間パッドテストでの尿失禁量は5gである．<br>
+                            半年前から<u>笑ったり重い荷物を持ち上げたりするとき</u>にも漏れるようになったため受診した．頻尿，排尿痛および尿意切迫感を認めない．少量用尿とりパッドを1日1枚交換している．尿所見に異常を認めない．<br>
+                            腹部超音波検査で残尿を認めない．1時間パッドテストでの尿失禁量は5gである．<br>
                             まず行う対応として適切なのはどれか．</p>
                         
 
@@ -1654,7 +1747,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/91B53" target="_blank" id="">91B53</a> 腹圧性尿失禁
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-03_13:25:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_13:25:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-19_14:06:33"> </span>
                         <br>
                         <p>女性の腹圧性尿失禁について正しいのはどれか．2つ選べ．</p>
 
@@ -1692,10 +1786,11 @@
             <div class="card-group stress_incontinence info" id="q12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/89B52" target="_blank" id="">89B52</a> 検査
+                        <a href="https://qb.medilink-study.com/#/Answer/89B52" target="_blank" id="">89B52</a> 腹圧性 検査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-03_13:29:13"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_13:29:13"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:08:32"> </span>
                         <br>
                         <p>女性の腹圧性尿失禁の鑑別診断に必要な検査はどれか．3つ選べ．</p>
 
@@ -1743,10 +1838,12 @@
                         <a href="https://qb.medilink-study.com/#/Answer/99A37" target="_blank" id="">99A37</a> タイプ
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-03_13:34:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_13:34:16"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:09:45"> </span>
                         <br>
                         <p>50歳の女性．<br>
-                            半年前からの頻尿と尿失禁とのため来院した．3年前からうつ症状があり，複数の向精神薬を服用している．下腹部正中に緊満した半球状の腫瘤を触知する．<br>
+                            半年前からの頻尿と尿失禁とのため来院した．<br>
+                            3年前からうつ症状があり，複数の<u>向精神薬</u>を服用している．<u>下腹部正中に緊満した半球状の腫瘤</u>を触知する．<br>
                             尿失禁のタイプで可能性が最も高いのはどれか．</p>
 
 
@@ -1783,19 +1880,22 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group reflectional_incontinence info 110" id="q14">
+            <div class="card-group reflectional_incontinence CCA  info 110" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E49" target="_blank" id="">110E49</a> タイプ
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-10-03_13:39:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-03_13:39:52"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:11:00"> </span>
                         <br>
                         <p>61歳の女性．<br>
-                            尿失禁を主訴に来院した．<br>
-                            3年前から遺伝性脊髄小脳変性症で治療を受けている．2ヵ月前から突然の尿意を伴わない尿失禁が出現したため受診した．くしゃみでは尿は漏れない．<br>
+                            <u>尿失禁</u>を主訴に来院した．<br>
+                            3年前から<u>遺伝性脊髄小脳変性症</u>で治療を受けている．<br>
+                            2ヵ月前から<u>突然の尿意を伴わない尿失禁</u>が出現したため受診した．くしゃみでは尿は漏れない．<br>
                             意識は清明．構音障害，協調運動障害および失調性歩行がある．腹部は平坦，軟で，圧痛を認めない．<br>
-                            尿所見：蛋白（－），糖（－），沈渣に赤血球1〜4個/1視野，白血球1〜4個/1視野．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），沈渣に赤血球1〜4個/1視野，白血球1〜4個/1視野．<br>
                             腹部超音波検査で残尿を認めない．<br>
                             考えられる尿失禁の種類はどれか．</p>
 
@@ -1884,14 +1984,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group  UI pri" id="q15">
+            <div class="card-group  UUI pri" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105I34" target="_blank">105I34</a> 切迫性尿失禁
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-03_13:43:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-03_13:43:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-19_14:25:26"> </span>
                         <br>
                         <p>切迫性尿失禁を起こすのはどれか．2つ選べ．</p>
 
@@ -2045,7 +2146,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2055,6 +2160,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2073,7 +2199,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2124,6 +2262,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2191,12 +2330,20 @@ $('document').ready(function(){
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -2210,6 +2357,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -2239,6 +2389,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -2426,6 +2579,7 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
@@ -2433,74 +2587,105 @@ $('document').ready(function(){
 
     $('#hydronephrosis h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hydronephrosis)').toggle();
+        $('div.card-group:not(.hydronephrosis)').slideToggle(100);
     });
-    $('#hydronephrosis').find('code').html($('div.hydronephrosis').size());
+    $('#hydronephrosis').find('code').html(
+        $('div.hydronephrosis > .card > .mis').size() + '+' +
+        $('div.hydronephrosis > .card > .cau').size() + '/' +
+        $('div.hydronephrosis').size());
 
 
     $('#VUR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.VUR)').toggle();
+        $('div.card-group:not(.VUR)').slideToggle(100);
     });
-    $('#VUR').find('code').html($('div.VUR').size());
+    $('#VUR').find('code').html(
+        $('div.VUR > .card > .mis').size() + '+' +
+        $('div.VUR > .card > .cau').size() + '/' +
+        $('div.VUR').size());
 
 
     $('#OAB h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.OAB)').toggle();
+        $('div.card-group:not(.OAB)').slideToggle(100);
     });
-    $('#OAB').find('code').html($('div.OAB').size());
+    $('#OAB').find('code').html(
+        $('div.OAB > .card > .mis').size() + '+' +
+        $('div.OAB > .card > .cau').size() + '/' +
+        $('div.OAB').size());
 
 
     $('#stress_incontinence h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.stress_incontinence)').toggle();
+        $('div.card-group:not(.stress_incontinence)').slideToggle(100);
     });
-    $('#stress_incontinence').find('code').html($('div.stress_incontinence').size());
+    $('#stress_incontinence').find('code').html(
+        $('div.stress_incontinence > .card > .mis').size() + '+' +
+        $('div.stress_incontinence > .card > .cau').size() + '/' +
+        $('div.stress_incontinence').size());
 
 
     $('#overflow_incontinence h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.overflow_incontinence)').toggle();
+        $('div.card-group:not(.overflow_incontinence)').slideToggle(100);
     });
-    $('#overflow_incontinence').find('code').html($('div.overflow_incontinence').size());
+    $('#overflow_incontinence').find('code').html(
+        $('div.overflow_incontinence > .card > .mis').size() + '+' +
+        $('div.overflow_incontinence > .card > .cau').size() + '/' +
+        $('div.overflow_incontinence').size());
 
 
     $('#reflectional_incontinence h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.reflectional_incontinence)').toggle();
+        $('div.card-group:not(.reflectional_incontinence)').slideToggle(100);
     });
-    $('#reflectional_incontinence').find('code').html($('div.reflectional_incontinence').size());
+    $('#reflectional_incontinence').find('code').html(
+        $('div.reflectional_incontinence > .card > .mis').size() + '+' +
+        $('div.reflectional_incontinence > .card > .cau').size() + '/' +
+        $('div.reflectional_incontinence').size());
 
 
-    $('#UI h2').click(function(){
+    $('#UUI h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.UI)').toggle();
+        $('div.card-group:not(.UUI)').slideToggle(100);
     });
-    $('#UI').find('code').html($('div.UI').size());
+    $('#UUI').find('code').html(
+        $('div.UUI > .card > .mis').size() + '+' +
+        $('div.UUI > .card > .cau').size() + '/' +
+        $('div.UUI').size());
 
 
     $('#NB h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NB)').toggle();
+        $('div.card-group:not(.NB)').slideToggle(100);
     });
-    $('#NB').find('code').html($('div.NB').size());
+    $('#NB').find('code').html(
+        $('div.NB > .card > .mis').size() + '+' +
+        $('div.NB > .card > .cau').size() + '/' +
+        $('div.NB').size());
 
 
     $('#true_incontinece h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.true_incontinece)').toggle();
+        $('div.card-group:not(.true_incontinece)').slideToggle(100);
     });
-    $('#true_incontinece').find('code').html($('div.true_incontinece').size());
+    $('#true_incontinece').find('code').html(
+        $('div.true_incontinece > .card > .mis').size() + '+' +
+        $('div.true_incontinece > .card > .cau').size() + '/' +
+        $('div.true_incontinece').size());
 
 
 
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

@@ -4,12 +4,27 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-03 21:51:32
+@Last modified time: 2018-11-20 17:48:08
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+
 04.01.23    18 10 03    js .slideToggle()
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
@@ -93,11 +108,11 @@
 -->
 <html>
 <head>
-    <title>Rx - GU</title>
+    <title>Rx-GU</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-03 21:51:41" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.23">
+    <meta name="revised" content="2018-11-20 17:48:33" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.37">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -116,6 +131,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -124,7 +142,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -156,6 +174,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -172,7 +193,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -196,33 +219,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -233,7 +264,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Treatment <small class="hidden-xs-down">GU</small></h1>
+        <h1 class="title">Treatment <small>GU</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -281,7 +312,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="CISC">
                 <div class="page-header">
-                    <h2>CISC <small>間欠的自己導尿</small><small class="hidden-xs-down"> Clean Intermittent Self-Catherterization</small> <small><code></code></small></h2>
+                    <h2>CISC <small>間欠的自己導尿</small><!-- <small class="hidden-xs-down"> Clean Intermittent Self-Catherterization</small> --> <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
@@ -333,8 +364,8 @@
                         <ul>
                             <li>閉塞解除後利尿
                                 <ul>
-                                    <li>&darr;Na &darr;K</li>
-                                    <li>&uarr;尿量</li>
+                                    <li><u>&darr;Na</u> <u>&darr;K</u></li>
+                                    <li><u>&uarr;尿量</u></li>
                                 </ul>
                             </li>
                         </ul>
@@ -383,7 +414,8 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                     <li class="list-group-item">
-                        灌流液: 非電解質性等張液
+                        <h6>Method</h6>
+                        灌流液: <u>非電解質性等張液</u>
                     </li>
                     <li class="list-group-item">
                         <h6>Indication</h6>
@@ -402,7 +434,8 @@
                         cf.
                         <ul>
                             <li>前立腺肥大: 経尿道手術</li>
-                            <li>前立腺癌: 摘除術</li>
+                            <li>前立腺癌: 摘除術<br>
+                                &because; 好発: 辺縁領域</li>
                         </ul>
                     </li>
                     <li class="list-group-item">
@@ -411,7 +444,7 @@
                             <li>穿孔</li>
                             <li>TUR反応<br>
                                 術後に<u>大量の灌流液が吸収</u><br>
-                                &rArr; 低Na血症（水中毒） / 溶血<br>
+                                &rArr; &darr;Na（水中毒） / 溶血<br>
                                 &rArr; ショック / 急性腎不全
                             </li>
                             <li>逆行性射精</li>
@@ -427,7 +460,7 @@
 
 
 
-            <div class="col-xs-12 col-sm-9 col-md-9">
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>経尿道的前立腺切除術（TURP）</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/91A080_bas_w_010.jpg" class="card-img-top img-fluid">
@@ -679,7 +712,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-04_10:08:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-04_10:08:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_17:51:27"> </span>
                         <br>
                         <p>尿道カテーテル留置の目的で最も適切なのはどれか．</p>
 
@@ -703,7 +737,7 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li>ドレナージ >> 長期安静保持</li>
+                            <li>ドレナージが必要なときにすべき</li>
                             <li>ドレナージ</li>
                         </ol>
                     </div>
@@ -714,14 +748,16 @@
             <div class="card-group IDUC urinary_catheter" id="q03">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/90E27" target="_blank">90E27</a> 閉塞解除後利尿
+                        <a href="https://qb.medilink-study.com/#/Answer/90E27" target="_blank">90E27</a> 閉塞解除後
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-04_10:17:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-04_10:17:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_17:54:55"> </span>
                         <br>
                         <p>58歳の女性．<br>
-                            3年前に子宮頸癌の手術を受け，その後定期的に検診を受けていた．半年前に骨盤内再発を認め，時々血尿を指摘されるようになった．<br>
+                            3年前に子宮頸癌の手術を受け，その後定期的に検診を受けていた．<br>
+                            半年前に骨盤内再発を認め，時々血尿を指摘されるようになった．<br>
                             3日前から<u>尿量が一日約600mLに減少</u>し，昨日からは排尿しようとしても<u>数滴の血尿しか出なくなった</u>．<br>
                             両側の<u>経皮的腎瘻</u>を作成し，腎盂留置カテーテルを設置した．<br>
                             起こりやすいのはどれか．2つ選べ．</p>
@@ -767,7 +803,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-04_10:22:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-04_10:22:20"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-20_17:57:45"> </span>
                         <br>
                         <p>導尿で誤っているのはどれか．</p>
 
@@ -806,7 +843,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-04_10:25:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-04_10:25:42"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_17:56:17"> </span>
                         <br>
                         <p>経尿道的手術が外科的治療の第一選択となるのはどれか．2つ選べ．</p>
                         
@@ -855,7 +893,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/91A80" target="_blank" id="">91A80</a> TUR-P
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-04_10:32:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-04_10:32:43"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_17:59:13"> </span>
                         <br>
                         <p>経尿道的前立腺切除術（TUR-P）について正しいのはどれか．3つ選べ．</p>
 
@@ -928,7 +967,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-04_10:37:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-04_10:37:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_17:56:56"> </span>
                         <br>
                         <p>経尿道的内視鏡手術の適応はどれか．2つ選べ．</p>
 
@@ -1100,7 +1140,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1110,6 +1154,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1128,7 +1193,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1179,6 +1256,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1246,12 +1324,26 @@ $('document').ready(function(){
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1265,6 +1357,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1294,6 +1389,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -1481,29 +1579,39 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
     $('#CISC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CISC)').toggle();
+        $('#q div.card-group:not(.CISC)').slideToggle(100);
     });
-    $('#CISC').find('code').html($('div.CISC').size());
+    $('#CISC').find('small > code').html(
+        $('div.CISC > .card > .mis').size() + '+' +
+        $('div.CISC > .card > .cau').size() + '/' +
+        $('div.CISC').size());
 
 
     $('#IDUC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IDUC)').toggle();
+        $('#q div.card-group:not(.IDUC)').slideToggle(100);
     });
-    $('#IDUC').find('code').html($('div.IDUC').size());
+    $('#IDUC').find('small > code').html(
+        $('div.IDUC > .card > .mis').size() + '+' +
+        $('div.IDUC > .card > .cau').size() + '/' +
+        $('div.IDUC').size());
 
 
     $('#TUR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TUR)').toggle();
+        $('#q div.card-group:not(.TUR)').slideToggle(100);
     });
-    $('#TUR').find('code').html($('div.TUR').size());
+    $('#TUR').find('small > code').html(
+        $('div.TUR > .card > .mis').size() + '+' +
+        $('div.TUR > .card > .cau').size() + '/' +
+        $('div.TUR').size());
 
 
 
@@ -1512,9 +1620,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

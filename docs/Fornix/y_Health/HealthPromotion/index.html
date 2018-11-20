@@ -4,12 +4,41 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-15 13:42:14
+@Last modified time: 2018-11-20 19:14:34
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
 04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
@@ -82,8 +111,8 @@
     <title>Promo</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-15 13:42:24" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.9">
+    <meta name="revised" content="2018-11-20 19:14:46" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.37">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -102,6 +131,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -110,7 +142,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -142,6 +174,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -156,7 +193,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -180,25 +219,42 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -247,213 +303,301 @@
         </div>
     </div>
 
-    <div class="section" id="HPL">
-        <div class="page-header">
-            <h2>Health Promotion Law <small class="hidden-xs-down">HPL</small><small> 健康増進法</small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro </h2>
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="health_promotion_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Health Promotion Law <small>健康増進法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>10</td>
+                            <td><u>国民健康栄養調査</u>
+                                <!-- <ul>
+                                    <li></li>
+                                </ul> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17-19</td>
+                            <td><u>市町村による健康増進事業</u>
+                                <!-- <ul>
+                                    <li></li>
+                                </ul> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td><u>受動喫煙の防止</u>
+                                <!-- <ul>
+                                    <li></li>
+                                </ul> -->
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="national_health_and_nutrition_examination_survey">National Health and Nutrition Examination Survey <small>国民健康栄養調査</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item"><u>厚生労働省</u>による , <u>毎年</u></li>
+                    <!-- <li class="list-group-item"></li> -->
+                </ul>
+
+            </div>
         </div>
     </div>
 
     <div class="section" id="kenkonippon21">
-        <div class="page-header">
-            <h2>健康日本21 <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Kenkonippon 21 <small>健康日本21</small> <small><code></code></small></h2>
                 </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id=""></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        生活習慣/社会環境の改善
+                        <ul>
+                            <li>栄養・食生活</li>
+                            <li>身体活動・運動</li>
+                            <li>休養</li>
+                            <li>飲酒</li>
+                            <li>喫煙及び歯・口腔の健康</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        生活習慣病の発症予防 / 重症化予防<br>
+                        (非感染性疾患の予防)
+                    </li>
+                    <li class="list-group-item">
+                        社会生活を営むために必要な機能の維持/向上<br>
+                        (働く世代のメンタルヘルス対策を含む)
+                    </li>
+                    <li class="list-group-item">
+                        健康を支え，守るための社会環境の整備
+                    </li>
+                    <li class="list-group-item">
+                        <u>健康寿命の延伸</u> / <u>健康格差の縮小</u>
+                    </li>
+
+
+
+                    
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>「健康日本21」の改善目標対象分野</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>栄養・食生活</li>
+                            <li>身体活動・運動</li>
+                            <li>休養・心の健康づくり</li>
+                            <li>たばこ</li>
+                            <li>アルコール</li>
+                            <li>歯の健康</li>
+                            <li>糖尿病</li>
+                            <li>循環器病（高血圧，高脂血症，脳卒中，虚血性心疾患）</li>
+                            <li>がん</li>
+                        </ul>
+                        ※「事故」「母子保健」等を追加する予定（厚生労働省　健康日本21公報資料）
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="lifestyle_disease">Lifestyle Disease <small>生活習慣病</small> <small><code></code></small></h3>
+
+
+
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3><span id="specific_health_checkup">Specific Health Checkup <small>特定健康診査</small> <small><code></code></small></span><br>
+                <span id="spceific_health_guidance">Specific Health Guidance <small>特定保健指導</small> <small><code></code></small></span></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>検診の実施主体</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>特定健康診査</th>
+                            <th>健康診査</th>
+                            <th>がん検診/<br>
+                                歯周疾患検診/<br>
+                                骨粗鬆症検診/<br>
+                                肝炎ウイルス検診</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>40-74yo</td>
+                            <td>≥ 75yo</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>根拠法</td>
+                            <td colspan="2">高齢者医療確保法</td>
+                            <td>健康増進法</td>
+                        </tr>
+                        <tr>
+                            <td>実施主体</td>
+                            <td><u>医療保険者</u><br>
+                                (<u>義務</u>)</td>
+                            <td>後期高齢者医療広域連合<br>
+                                (努力義務)</td>
+                            <td>市町村<br>
+                                (努力義務)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>特定健康診査の検査項目</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>基本項目</th>
+                            <td>
+                                <ul>
+                                    <li>質問票
+                                        <ul>
+                                            <li>服薬歴</li>
+                                            <li>喫煙歴</li>
+                                            <li>運動習慣</li>
+                                            <li>食習慣等</li>
+                                        </ul>
+                                    </li>
+                                    <li>身体計測
+                                        <ul>
+                                            <li>身長</li>
+                                            <li>体重</li>
+                                            <li>BMI</li>
+                                            <li>腹囲</li>
+                                        </ul>
+                                    </li>
+                                    <li>血圧測定</li>
+                                    <li>理学的検査
+                                        <ul>
+                                            <li>身体診察</li>
+                                        </ul>
+                                    </li>
+                                    <li>尿検査
+                                        <ul>
+                                            <li>尿糖</li>
+                                            <li>尿蛋白</li>
+                                        </ul>
+                                    </li>
+                                    <li>血液検査
+                                        <ul>
+                                            <li>脂質検査（中性脂肪，HDLコレステロール，LDLコレステロール）</li>
+                                            <li>血糖（空腹時血糖またはHbA1c）</li>
+                                            <li>肝機能（AST，ALT，γ-GTP）</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>詳細項目</th>
+                            <td>※一定の基準の下，医師が必要と認めた場合に実施
+                                <ul>
+                                    <li>心電図</li>
+                                    <li>眼底検査</li>
+                                    <li>貧血検査（赤血球数，血色素量，ヘマトクリット値）</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="cancer">Cancer <small><code></code></small></h3>
             </div>
 
         </div>
     </div>
 
 
-    <div class="section" id="screening">
-        <div class="page-header">
-            <h2>検診 <small class="hidden-xs-down">screening</small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
 
-        </div>
-    </div>
 
-    <div class="section" id="riskfactor">
-        <div class="page-header">
-            <h2>Risk Factor <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
     
-    <div class="section" id="smoking">
-        <div class="page-header">
-            <h2>Smoking <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
     
-    
-    <div class="section" id="">
-        <div class="page-header">
-            <!-- <h2>#dx <small class="hidden-xs-down">#diag</small></h2> -->
-        </div>
+    <div class="row">
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
    
@@ -484,7 +628,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 21 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 21</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -621,8 +765,16 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group HPL info" id="q01">
+            <div class="card-group health_promotion_law info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B30" target="_blank" id="2018-01-24_11:34:32">109B30</a> 健康増進法
@@ -674,14 +826,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group   info" id="q02">
+            <div class="card-group national_health_and_nutrition_examination_survey health_promotion_law info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G30" target="_blank" id="2018-01-24_11:41:33">106G30</a> 国民健康・栄養調査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_13:59:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_13:59:16"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_19:24:12"> </span>
                         <br>
                         <p>国民健康・栄養調査について正しいのはどれか．</p>
                         
@@ -733,7 +886,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group kenkonippon21 req" id="q03">
+            <div class="card-group kenkonippon21 info req" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103C1" target="_blank">103C1</a> Qs
@@ -783,18 +936,22 @@
                             <li class="list-group-item">⑨がん</li>
                             <li class="list-group-item">※「事故」「母子保健」等を追加する予定（厚生労働省　健康日本21公報資料）</li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group kenkonippon21 111 pri" id="q4">
+            <div class="card-group kenkonippon21 info 111 pri" id="q4">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E4" target="_blank" id="">111E4</a> 健康日本21
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-15_14:19:45"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_14:19:45"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:25:10"> </span>
                         <br>
                         <p>健康日本21（第二次）の基本方針に含まれないのはどれか．</p>
 
@@ -846,7 +1003,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_14:23:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_14:23:46"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_19:26:25"> </span>
                         <br>
                         <p>健康日本21（第二次）に含まれないのはどれか．</p>
 
@@ -887,7 +1045,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_14:26:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_14:26:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:31:12"> </span>
                         <br>
                         <p>健康日本21（第二次）で摂取量の目標値が設定されているのはどれか．</p>
 
@@ -915,10 +1074,17 @@
 
                         <h6>目標値:</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">塩分</li>
-                            <li class="list-group-item">野菜</li>
-                            <li class="list-group-item">果物</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>塩分</li>
+                                    <li>野菜</li>
+                                    <li>果物</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -932,7 +1098,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_14:29:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_14:29:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:32:18"> </span>
                         <br>
                         <p>健康日本21の目標のうち，中間評価の時点で目標値に達した項目はどれか．</p>
 
@@ -1001,7 +1168,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group screening info" id="q09">
+            <div class="card-group cancer screening lifestyle_disease kenkonippon21 info" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G22" target="_blank" id="2018-01-24_11:46:44">106G22</a> 検診の有効性
@@ -1009,7 +1176,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_14:39:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_14:39:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:33:36"> </span>
                         <br>
                         <p>集団に対してある癌の検診を行った．<br>
                             検診後に観察された変化の中で，検診が有効であったことを示す根拠はどれか．</p>
@@ -1058,7 +1226,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group screening" id="q10">
+            <div class="card-group cancer screening" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95A15" target="_blank" id="2018-01-24_12:29:57">95A15</a> がん検診の有効性評価
@@ -1111,7 +1279,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group screening info" id="q11">
+            <div class="card-group cancer screening info" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105G2" target="_blank" id="2018-01-24_12:30:43">105G2</a> がん検診
@@ -1185,14 +1353,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group screening info" id="q12">
+            <div class="card-group specific_health_checkup kenkonippon21 screening info" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104G32" target="_blank" id="2018-01-24_12:40:50">104G32</a> 医療保険者 義務
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_14:49:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_14:49:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_19:27:33"> </span>
                         <br>
                         <p>医療保険者に実施が義務付けられているのはどれか．</p>
                         
@@ -1253,19 +1422,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group screening  pri req info" id="q13">
+            <div class="card-group spceific_health_guidance kenkonippon21 screening pri req info" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109F2" target="_blank" id="2018-02-03_14:04:29">109F2</a> 特定保健指導
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_14:53:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_14:53:03"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-20_19:34:30"> </span>
                         <br>
                         <p>特定保健指導について正しいのはどれか．</p>
                         
@@ -1308,14 +1481,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group screening pri 110 info" id="q14">
+            <div class="card-group specific_health_checkup kenkonippon21 screening pri 110 info" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B32" target="_blank" id="2018-01-24_15:00:57">110B32</a> 特定健康診査 項目
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-15_15:05:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_15:05:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:35:16"> </span>
                         <br>
                         <p>特定健康診査で必須の項目はどれか．2つ選べ．</p>
                         
@@ -1362,43 +1536,61 @@
                             <tbody>
                                 <tr>
                                     <th>基本項目</th>
-                                    <td><ul>
-                                        <li>質問票<ul>
-                                            <li>服薬歴</li>
-                                            <li>喫煙歴</li>
-                                            <li>運動習慣</li>
-                                            <li>食習慣等</li>
-                                        </ul><li>身体計測<ul>
-                                            <li>身長</li>
-                                            <li>体重</li>
-                                            <li>BMI</li>
-                                            <li>腹囲</li>
-                                        </ul></li>
-                                        <li>血圧測定</li>
-                                        <li>理学的検査<ul>
-                                            <li>身体診察</li>
-                                        </ul></li>
-                                        <li>尿検査<ul>
-                                            <li>尿糖</li>
-                                            <li>尿蛋白</li>
-                                        </ul></li>
-                                        <li>血液検査<ul>
-                                            <li>脂質検査（中性脂肪，HDLコレステロール，LDLコレステロール）</li>
-                                            <li>血糖（空腹時血糖またはHbA1c）</li>
-                                            <li>肝機能（AST〈GOT〉，ALT〈GPT〉，γ-GTP）</li>
-                                        </ul></li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>質問票
+                                                <ul>
+                                                    <li>服薬歴</li>
+                                                    <li>喫煙歴</li>
+                                                    <li>運動習慣</li>
+                                                    <li>食習慣等</li>
+                                                </ul>
+                                            </li>
+                                            <li>身体計測
+                                                <ul>
+                                                    <li>身長</li>
+                                                    <li>体重</li>
+                                                    <li>BMI</li>
+                                                    <li>腹囲</li>
+                                                </ul>
+                                            </li>
+                                            <li>血圧測定</li>
+                                            <li>理学的検査
+                                                <ul>
+                                                    <li>身体診察</li>
+                                                </ul>
+                                            </li>
+                                            <li>尿検査
+                                                <ul>
+                                                    <li>尿糖</li>
+                                                    <li>尿蛋白</li>
+                                                </ul>
+                                            </li>
+                                            <li>血液検査
+                                                <ul>
+                                                    <li>脂質検査（中性脂肪，HDLコレステロール，LDLコレステロール）</li>
+                                                    <li>血糖（空腹時血糖またはHbA1c）</li>
+                                                    <li>肝機能（AST，ALT，γ-GTP）</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>詳細項目</th>
-                                    <td>※一定の基準の下，医師が必要と認めた場合に実施<ul>
-                                        <li>心電図</li>
-                                        <li>眼底検査</li>
-                                        <li>貧血検査（赤血球数，血色素量，ヘマトクリット値）</li>
-                                    </ul></td>
+                                    <td>※一定の基準の下，医師が必要と認めた場合に実施
+                                        <ul>
+                                            <li>心電図</li>
+                                            <li>眼底検査</li>
+                                            <li>貧血検査（赤血球数，血色素量，ヘマトクリット値）</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1455,7 +1647,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111B33" target="_blank" id="">111B33</a> リスクファクター
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-15_15:28:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-15_15:28:30"> </span>
+                        <span class="badge badge-pill rev now" id="2018-11-20_19:37:57"> </span>
                         <br>
                         <p>癌とリスクファクターの組合せで正しいのはどれか．</p>
 
@@ -1771,7 +1964,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111E26" target="_blank" id="">111E26</a> たばこ
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-15_15:44:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_15:44:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:28:55"> </span>
                         <br>
                         <p>たばこについて正しいのはどれか．</p>
 
@@ -1815,14 +2009,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group smoking " id="q21">
+            <div class="card-group smoking info" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106I26" target="_blank" id="2018-01-24_15:24:08">106I26</a> たばこ対策
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-15_15:48:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-15_15:48:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-20_19:30:14"> </span>
                         <br>
                         <p>わが国のたばこ対策に関する説明で正しいのはどれか．2つ選べ．</p>
                         
@@ -1915,6 +2110,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1983,6 +2179,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1991,6 +2194,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2004,27 +2228,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2046,11 +2289,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2067,63 +2313,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -2137,6 +2397,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -2166,6 +2429,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -2353,8 +2619,105 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+
+    $('#health_promotion_law h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.health_promotion_law)').slideToggle(100);
+    });
+    $('#health_promotion_law').find('small > code').html(
+        $('div.health_promotion_law > .card > .mis').size() + '+' +
+        $('div.health_promotion_law > .card > .cau').size() + '/' +
+        $('div.health_promotion_law').size()
+    );
+
+
+    $('#national_health_and_nutrition_examination_survey').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.national_health_and_nutrition_examination_survey)').slideToggle(100);
+    });
+    $('#national_health_and_nutrition_examination_survey').find('small > code').html(
+        $('div.national_health_and_nutrition_examination_survey > .card > .mis').size() + '+' +
+        $('div.national_health_and_nutrition_examination_survey > .card > .cau').size() + '/' +
+        $('div.national_health_and_nutrition_examination_survey').size()
+    );
+
+
+
+    $('#kenkonippon21 h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.kenkonippon21)').slideToggle(100);
+    });
+    $('#kenkonippon21').find('small > code').html(
+        $('div.kenkonippon21 > .card > .mis').size() + '+' +
+        $('div.kenkonippon21 > .card > .cau').size() + '/' +
+        $('div.kenkonippon21').size()
+    );
+
+
+    $('#lifestyle_disease').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.lifestyle_disease)').slideToggle(100);
+    });
+    $('#lifestyle_disease').find('small > code').html(
+        $('div.lifestyle_disease > .card > .mis').size() + '+' +
+        $('div.lifestyle_disease > .card > .cau').size() + '/' +
+        $('div.lifestyle_disease').size()
+    );
+
+
+
+    $('#specific_health_checkup').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.specific_health_checkup)').slideToggle(100);
+    });
+    $('#specific_health_checkup').find('small > code').html(
+        $('div.specific_health_checkup > .card > .mis').size() + '+' +
+        $('div.specific_health_checkup > .card > .cau').size() + '/' +
+        $('div.specific_health_checkup').size()
+    );
+
+
+    $('#spceific_health_guidance').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.spceific_health_guidance)').slideToggle(100);
+    });
+    $('#spceific_health_guidance').find('small > code').html(
+        $('div.spceific_health_guidance > .card > .mis').size() + '+' +
+        $('div.spceific_health_guidance > .card > .cau').size() + '/' +
+        $('div.spceific_health_guidance').size()
+    );
+
+
+    $('#cancer').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.cancer)').slideToggle(100);
+    });
+    $('#cancer').find('small > code').html(
+        $('div.cancer > .card > .mis').size() + '+' +
+        $('div.cancer > .card > .cau').size() + '/' +
+        $('div.cancer').size()
+    );
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
+
 });
 </script>
 </body>

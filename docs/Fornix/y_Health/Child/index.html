@@ -4,12 +4,40 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-16 19:44:05
+@Last modified time: 2018-11-21 15:22:31
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+
 04.01.10    18 08 17    #temp click toggle
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
 04.01.08    18 07 27    add etio epi s/s ex dx rx
@@ -83,8 +111,8 @@
     <title>Child</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-16 19:47:22" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.10">
+    <meta name="revised" content="2018-11-21 15:22:54" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.37">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -103,6 +131,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -111,7 +142,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -143,6 +174,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -157,7 +193,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -181,25 +219,42 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -248,248 +303,310 @@
         </div>
     </div>
 
+
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro </h2>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="promo">
+                <div class="page-header">
+                    <h2>Promo <small class="hidden-xs-down"></small></h2>
+                </div>
+
+                <h3 id="angelplan">Angel Plan <small>エンゼルプラン</small> <small><code></code></small></h3>
+
+                <h3 id="sukoyakaoyako21">Sukoyakaoyako 21 <small>健やか親子日本</small> <small><code></code></small></h3>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="jisedaiikuseishientaisakusuishinhou">
+                <div class="page-header">
+                    <h2> <small>次世代育成支援対策推進法</small> <small><code></code></small></h2>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
     <div class="section" id="MCHL">
-        <div class="page-header">
-            <h2>Maternal and Chilc Health Law<small class="hidden-xs-down"> MCHL</small><small> 母子保健法</small></h2>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Maternal and Child Health Law <small>母子保健法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>11</td>
+                            <td><u>新生児訪問指導</u>
+                                <ul>
+                                    <li><u>市町村長</u>は，医師・保健師・助産師などによる訪問指導を行う．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>健康診査（幼児）
+                                <ul>
+                                    <li><u>市町村</u>は，1歳6か月児健診，3歳児健診を行わなければならない．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td><u>健康診査（妊産婦，乳幼児）</u>
+                                <ul>
+                                    <li>市町村は，必要に応じ，妊産婦・乳幼児に対して健康診査を行い，または勧奨しなければならない．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td><u>妊娠の届出</u>
+                                <ul>
+                                    <li>妊娠した者は，速やかに，<u>市町村長</u>に届け出なければならない．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td><u>母子健康手帳の交付</u>
+                                <ul>
+                                    <li>市町村は，妊娠の届出者に母子健康手帳を交付しなければならない．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>妊産婦の訪問指導
+                                <ul>
+                                    <li>市町村長は，医師・保健師・助産師などによる訪問指導を行う．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td><u>低体重児の届出</u>
+                                <ul>
+                                    <li><u>2,500g未満の乳児</u>が出生した場合，保護者は速やかに，乳児の現在地の市町村に届出る．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>未熟児の訪問指導
+                                <ul>
+                                    <li>都道府県，保健所を設置する市または特別区の長は，医師，保健師，助産師などによる訪問指導を行う．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td><u>未熟児養育医療</u>
+                                <ul>
+                                    <li>市町村は，入院の必要な未熟児（2,000g以下が対象）に対し，養育医療の給付または医療費の支給を行う．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>母子健康センター
+                                <ul>
+                                    <li><u>市町村は，母子健康センターの設置に努めなければならない</u>．</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="boseikenkokanrishidouzikoucard">
+                <div class="page-header">
+                    <h2> <small>母性健康管理指導事項カード</small> <small><code></code></small></h2>
+                </div>
+
+
+
+            </div>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <td>第11条</td>
-                                <td><u>新生児訪問指導</u></td>
-                                <td><u>市町村長</u>は，医師・保健師・助産師などによる訪問指導を行う．</td>
-                            </tr>
-                            <tr>
-                                <td>第12条</td>
-                                <td>健康診査（幼児）</td>
-                                <td><u>市町村</u>は，1歳6か月児健診，3歳児健診を行わなければならない．</td>
-                            </tr>
-                            <tr>
-                                <td>第13条</td>
-                                <td><u>健康診査（妊産婦，乳幼児）</u></td>
-                                <td>市町村は，必要に応じ，妊産婦・乳幼児に対して健康診査を行い，または勧奨しなければならない．</td>
-                            </tr>
-                            <tr>
-                                <td>第15条</td>
-                                <td><u>妊娠の届出</u></td>
-                                <td>妊娠した者は，速やかに，<u>市町村長</u>に届け出なければならない．</td>
-                            </tr>
-                            <tr>
-                                <td>第16条</td>
-                                <td><u>母子健康手帳の交付</u></td>
-                                <td>市町村は，妊娠の届出者に母子健康手帳を交付しなければならない．</td>
-                            </tr>
-                            <tr>
-                                <td>第17条</td>
-                                <td>妊産婦の訪問指導</td>
-                                <td>市町村長は，医師・保健師・助産師などによる訪問指導を行う．</td>
-                            </tr>
-                            <tr>
-                                <td>第18条</td>
-                                <td><u>低体重児の届出</u></td>
-                                <td><u>2,500g未満の乳児</u>が出生した場合，保護者は速やかに，乳児の現在地の市町村に届出る．</td>
-                            </tr>
-                            <tr>
-                                <td>第19条</td>
-                                <td>未熟児の訪問指導</td>
-                                <td>都道府県，保健所を設置する市または特別区の長は，医師，保健師，助産師などによる訪問指導を行う．</td>
-                            </tr>
-                            <tr>
-                                <td>第20条</td>
-                                <td><u>未熟児養育医療</u></td>
-                                <td>市町村は，入院の必要な未熟児（2,000g以下が対象）に対し，養育医療の給付または医療費の支給を行う．</td>
-                            </tr>
-                            <tr>
-                                <td>第22条</td>
-                                <td>母子健康センター</td>
-                                <td><u>市町村は，母子健康センターの設置に努めなければならない</u>．</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="maternity_record">
+                <div class="page-header">
+                    <h2>Maternity Record Book <small>母子手帳</small> <small><code></code></small></h2>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+
+                <ul class="list-group">
+                    <li class="list-group-item">母子健康手帳:<ul>
+                        <li>市町村長へ</li>
+                        <li>自己申告制, 医師の証明不要</li>
+                        <li>記録: 医学的記録, 保護者の記録</li>
+                        <li>情報提供: 保健, 育児, 行政</li>
+                    </ul></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <h6>女性労働者の母性保護に係る法律</h6>
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>法令</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>『男女雇用機会均等法』</th>
+                        <td>妊娠中・出産後の女性労働者に対して事業主が母性健康管理の措置を講じる義務を規定．
+                        <ul>
+                            <li>①妊娠中・産後1年以内の健康診査を受ける時間の確保</li>
+                            <li>②<u>通勤緩和</u>（勤務時間の変更，時差出勤等）</li>
+                            <li>③<u>休憩時間の延長</u>，回数の増加</li>
+                            <li>④<u>作業の制限</u>，勤務時間の短縮，休業等の措置</li>
+                        </ul>
+                    </tr>
+                    <tr>
+                        <th>『労働基準法』</th>
+                        <td>女性労働者の母性保護のための規定．妊産婦に対し，次の項目が定められている．
+                        <ul>
+                            <li>①産前・産後休業</li>
+                            <li>②<u>危険有害業務の就業制限</u>＊</li>
+                            <li>③<u>軽易業務転換</u></li>
+                            <li>④変形労働時間の適用制限</li>
+                            <li>⑤<u>時間外労働の制限</u></li>
+                            <li>⑥<u>休日労働の制限</u></li>
+                            <li>⑦<u>深夜労働の制限</u></li>
+                            <li>⑧育児時間の確保</li>
+                        </ul>
+                        ＊<u>重量物を取り扱う業務</u>，<u>有毒ガスを発散する場所における業務</u>はすべての女性で禁止．その他に妊産婦は，<u>著しく暑熱な場所における業務，墜落のおそれのある高さ5m以上の場所での業務</u>などが禁止されている．</td>
+                    </tr>
+                    <tr>
+                        <th>『育児・介護休業法』</th>
+                        <td>育児や家族の介護を行う労働者の職業生活と家庭生活の両立を支援するための規定．
+                        <ul>
+                            <li>①育児休業制度</li>
+                            <li>②子の看護休暇制度</li>
+                            <li>③時間外労働の制限</li>
+                            <li>④深夜労働の制限</li>
+                            <li>⑤勤務時間の短縮</li>
+                        </ul></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">※母性健康管理指導事項連絡カード：仕事を持つ妊産婦が，主治医等から受けた指導事項を事業者に明確に伝えるためのカード．カードは<u>医師</u>が発行し，事業主はカードの記載内容に応じた措置を講じる．</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+
+    <div class="section" id="maternal_protection_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Maternal Protection Law <small>母体保護法</small> <small><code></code></small></h2>
                 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="child_welfare_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Child Welfare Law <small>児童福祉法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CCC">
+                <div class="page-header">
+                    <h2>CCC <small>児童相談所</small> <small><code></code></small></h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="child_abuse_prevention_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Child Abuse Prevention Law <small>児童虐待防止法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>福祉事務所</li>
+                            <li>児童相談所</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
             </div>
 
         </div>
     </div>
 
-    <div class="section" id="boseikenkokanrishidouzikoucard">
-        <div class="page-header">
-            <h2>母性健康管理指導事項カード <small class="hidden-xs-down"></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="section" id="stat">
+        <div class="row">
+            <div class="col-xs-12 col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Stat <small><code></code></small></h2>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div class="section" id="maternityrecord">
-        <div class="page-header">
-            <h2>Maternity Record Book<small class="hidden-xs-down"></small><small> 母子手帳</small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <li class="list-group-item">母子健康手帳:<ul>
-                            <li>市町村長へ</li>
-                            <li>自己申告制, 医師の証明不要</li>
-                            <li>記録: 医学的記録, 保護者の記録</li>
-                            <li>情報提供: 保健, 育児, 行政</li>
-                        </ul></li>
-                    </ul>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
 
-        </div>
-    </div>
+    
 
-    <div class="section" id="promo">
-        <div class="page-header">
-            <h2>Promo <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="angelplan">エンゼルプラン</h3>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 id="sukoyakaoyako21">健やか親子日本</h3>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class="section" id="jisedaiikuseishientaisakusuishinhou">
-        <div class="page-header">
-            <h2>次世代育成支援対策推進法 <small class="hidden-xs-down"></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    
 
     <div class="section" id="child_care_leave">
         <div class="page-header">
@@ -598,72 +715,13 @@
             <h2>Abuse <small class="hidden-xs-down"> 虐待</small></h2>
         </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
     </div>
 
-    <div class="section" id="CCC">
-        <div class="page-header">
-            <h2>Child Consaltation Center <small class="hidden-xs-down"> CCC</small><small> 児童相談所</small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    
 
     <div class="section" id="maternal_death">
         <div class="page-header">
-            <h2>Maternal Death <small class="hidden-xs-down"> </small><small> 妊産婦死亡</small></h2>
+            <h2>Maternal Death <small>妊産婦死亡</small></h2>
         </div>
 
         <div class="body">
@@ -830,7 +888,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 32 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 32</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -967,6 +1025,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group MCHL pri info" id="q01">
                 <div class="card">
@@ -975,7 +1041,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_19:50:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_19:50:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:52:17"> </span>
                         <br>
                         <p>母子保健法による母子保健事業として行われていないのはどれか．</p>
 
@@ -1034,29 +1101,39 @@
                         </table>
 
                         <ul class="list-group">
-                            <li class="list-group-item">母子保健法:<ul>
-                                <li>サポート</li>
-                                <li>生む人/生まれる人</li>
-                                <li>市町村が主体</li>
-                            </ul></li>
-                            <li class="list-group-item">母体保護法:<ul>
-                                <li>生みたい人, 堕ろしたい人</li>
-                                <li>都道府県が主体</li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                母子保健法:
+                                <ul>
+                                    <li>サポート</li>
+                                    <li>生む人/生まれる人</li>
+                                    <li>市町村が主体</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                母体保護法:
+                                <ul>
+                                    <li>生みたい人, 堕ろしたい人</li>
+                                    <li>都道府県が主体</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group MCHL pri info" id="q02">
+            <div class="card-group maternity_record MCHL pri info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E3" target="_blank">109E3</a> 母子保健制度
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_19:57:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_19:57:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:55:08"> </span>
                         <br>
                         <p>わが国の母子保健制度について正しいのはどれか．</p>
 
@@ -1092,56 +1169,89 @@
                             <tbody>
                                 <tr>
                                     <td>第11条</td>
-                                    <td><u>新生児訪問指導</u></td>
-                                    <td><u>市町村長</u>は，医師・保健師・助産師などによる訪問指導を行う．</td>
+                                    <td><u>新生児訪問指導</u>
+                                        <ul>
+                                            <li><u>市町村長</u>は，医師・保健師・助産師などによる訪問指導を行う．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第12条</td>
-                                    <td>健康診査（幼児）</td>
-                                    <td><u>市町村</u>は，1歳6か月児健診，3歳児健診を行わなければならない．</td>
+                                    <td>健康診査（幼児）
+                                        <ul>
+                                            <li><u>市町村</u>は，1歳6か月児健診，3歳児健診を行わなければならない．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第13条</td>
-                                    <td><u>健康診査（妊産婦，乳幼児）</u></td>
-                                    <td>市町村は，必要に応じ，妊産婦・乳幼児に対して健康診査を行い，または勧奨しなければならない．</td>
+                                    <td><u>健康診査（妊産婦，乳幼児）</u>
+                                        <ul>
+                                            <li>市町村は，必要に応じ，妊産婦・乳幼児に対して健康診査を行い，または勧奨しなければならない．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第15条</td>
-                                    <td><u>妊娠の届出</u></td>
-                                    <td>妊娠した者は，速やかに，<u>市町村長</u>に届け出なければならない．</td>
+                                    <td><u>妊娠の届出</u>
+                                        <ul>
+                                            <li>妊娠した者は，速やかに，<u>市町村長</u>に届け出なければならない．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第16条</td>
-                                    <td><u>母子健康手帳の交付</u></td>
-                                    <td>市町村は，妊娠の届出者に母子健康手帳を交付しなければならない．</td>
+                                    <td><u>母子健康手帳の交付</u>
+                                        <ul>
+                                            <li>市町村は，妊娠の届出者に母子健康手帳を交付しなければならない．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第17条</td>
-                                    <td>妊産婦の訪問指導</td>
-                                    <td>市町村長は，医師・保健師・助産師などによる訪問指導を行う．</td>
+                                    <td>妊産婦の訪問指導
+                                        <ul>
+                                            <li>市町村長は，医師・保健師・助産師などによる訪問指導を行う．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第18条</td>
-                                    <td><u>低体重児の届出</u></td>
-                                    <td><u>2,500g未満の乳児</u>が出生した場合，保護者は速やかに，乳児の現在地の市町村に届出る．</td>
+                                    <td><u>低体重児の届出</u>
+                                        <ul>
+                                            <li><u>2,500g未満の乳児</u>が出生した場合，保護者は速やかに，乳児の現在地の市町村に届出る．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第19条</td>
-                                    <td>未熟児の訪問指導</td>
-                                    <td>都道府県，保健所を設置する市または特別区の長は，医師，保健師，助産師などによる訪問指導を行う．</td>
+                                    <td>未熟児の訪問指導
+                                        <ul>
+                                            <li>都道府県，保健所を設置する市または特別区の長は，医師，保健師，助産師などによる訪問指導を行う．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第20条</td>
-                                    <td><u>未熟児養育医療</u></td>
-                                    <td>市町村は，入院の必要な未熟児（2,000g以下が対象）に対し，養育医療の給付または医療費の支給を行う．</td>
+                                    <td><u>未熟児養育医療</u>
+                                        <ul>
+                                            <li>市町村は，入院の必要な未熟児（2,000g以下が対象）に対し，養育医療の給付または医療費の支給を行う．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>第22条</td>
-                                    <td>母子健康センター</td>
-                                    <td><u>市町村は，母子健康センターの設置に努めなければならない</u>．</td>
+                                    <td>母子健康センター
+                                        <ul>
+                                            <li><u>市町村は，母子健康センターの設置に努めなければならない</u>．</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1195,14 +1305,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group boseikenkokanrishidouzikoucard MCHL LSL pri" id="q04">
+            <div class="card-group boseikenkokanrishidouzikoucard MCHL LSL info pri" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107B8" target="_blank">107B8</a> 母子保健
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_20:10:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_20:10:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:01:12"> </span>
                         <br>
                         <p>母子保健について正しいのはどれか．</p>
 
@@ -1231,22 +1342,28 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">母性健康管理指導事項連絡カード<br>
-                                仕事を持つ妊産婦が，主治医等から受けた指導事項を事業者に明確に伝えるためのカード．事業主はカードの記載内容に応じた措置を講じる．</li>
+                            <li class="list-group-item">
+                                母性健康管理指導事項連絡カード:<br>
+                                仕事を持つ妊産婦が，主治医等から受けた指導事項を事業者に明確に伝えるためのカード．事業主はカードの記載内容に応じた措置を講じる．
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group maternityrecord MCHL info" id="q05">
+            <div class="card-group maternity_record MCHL info" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102B11" target="_blank">102B11</a> 母子健康手帳
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-16_20:30:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-16_20:30:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:26:08"> </span>
                         <br>
                         <p>母子健康手帳で誤っているのはどれか．</p>
 
@@ -1289,7 +1406,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group maternityrecord MCHL 111 pri info" id="q06">
+            <div class="card-group maternity_record MCHL 111 pri info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B8" target="_blank" id="">111B8</a> 母子健康手帳
@@ -1364,13 +1481,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group MCHL 1y6mo 3y screening 111 pri" id="q07">
+            <div class="card-group checkup MCHL 1y6mo 3y screening 111 pri" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G33" target="_blank" id="">111G33</a> 健康診査
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-16_20:42:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_20:42:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:02:36"> </span>
                         <br>
                         <p>母子保健法に規定されている児の健康診査の時期で正しいのはどれか．2つ選べ．</p>
 
@@ -1405,7 +1523,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group preventive 3y screening pri info" id="q08">
+            <div class="card-group checkup MCHL preventive 3y screening pri info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E36" target="_blank">109E36</a> 一次予防
@@ -1479,7 +1597,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group MCHL maternityrecord abortion" id="q09">
+            <div class="card-group MCHL maternity_record abortion" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106B45" target="_blank">106B45</a> 母親への説明
@@ -1531,7 +1649,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_20:59:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_20:59:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:03:15"> </span>
                         <br>
                         <p>新生児マススクリーニングの対象疾患に含まれないのはどれか．</p>
 
@@ -1690,13 +1809,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_21:14:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_21:14:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:04:07"> </span>
                         <br>
                         <p>次世代育成支援対策推進法に規定されているのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_t">育児休業</li>
-                            <li class="ans_f">学童保育</li>
+                            <li class="ans_tf">学童保育</li>
                             <li class="ans_f">産前休業 </li>
                             <li class="ans_f">安全衛生教育</li>
                             <li class="ans_f">労働災害防止計画</li>
@@ -1707,7 +1827,7 @@
                     <div class="card-body">
 
 
-                        <p class="q_answer_true">a</p>
+                        <p class="q_answer_true">a (b)</p>
 
                         <ol type="a">
                             <li></li>
@@ -1734,7 +1854,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_21:21:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_21:21:11"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_16:07:42"> </span>
                         <br>
                         <p>35歳の初妊婦．妊娠33週6日．<br>
                             妊婦健康診査のため来院した．<br>
@@ -1820,6 +1941,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1832,7 +1956,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-16_21:35:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-16_21:35:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:10:11"> </span>
                         <br>
                         <p>出産，育児と就労について正しいのはどれか．</p>
 
@@ -1882,12 +2007,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-16_21:44:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-16_21:44:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:30:00"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             産後1ヵ月の健康診査のため来院した．<br>
-                            常勤の病棟看護師として勤務している．妊娠が判明した時点で，勤務先から非常勤の外来専属看護師になるよう繰り返し強く求められたが断った．妊娠9週につわりが出現し，勤務を緩和してもらうよう医師から指導を受け，勤務時間が短縮された．妊娠23週までは4週に1回，勤務時間中に妊婦健康診査を受診していた．妊娠36週から産前休暇を取得した．<br>
-                            現在，産後休暇中であるが，分娩後6週経過したら勤務に復帰することになっている．産後1ヵ月の健康診査では問題がなかった．<br>
+                            常勤の病棟看護師として勤務している．<br>
+                            妊娠が判明した時点で，<u>勤務先から非常勤の外来専属看護師になるよう繰り返し強く求められた</u>が断った．<br>
+                            妊娠9週につわりが出現し，勤務を緩和してもらうよう医師から指導を受け，<u>勤務時間が短縮</u>された．<br>
+                            妊娠23週までは<u>4週に1回，勤務時間中に妊婦健康診査を受診</u>していた．<br>
+                            妊娠36週から<u>産前休暇</u>を取得した．<br>
+                            現在，産後休暇中であるが，<u>分娩後6週経過したら勤務に復帰</u>することになっている．産後1ヵ月の健康診査では問題がなかった．<br>
                             この女性に対する母性健康管理措置として適切でなかったのはどれか．</p>
 
 
@@ -1938,7 +2068,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:11:16"> </span>
                         <br>
                         <p>事業者が行う母性に関する保護措置として法令に基づいているのはどれか．</p>
 
@@ -1970,14 +2101,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group LSL  info" id="q17">
+            <div class="card-group LSL info" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101H2" target="_blank">101H2</a> 給付
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_10:31:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_10:31:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:33:17"> </span>
                         <br>
                         <p>26歳の1回経産婦．会社員．<br>
                             妊娠39週4日に自然陣痛が発来し，入院後6時間で3,300gの男児を経腟分娩した．<br>
@@ -2059,7 +2191,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-17_10:26:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_10:26:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:13:11"> </span>
                         <br>
                         <p>母体保護法に基づく人工妊娠中絶で正しいのはどれか．</p>
 
@@ -2101,7 +2234,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-17_10:31:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_10:31:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:15:15"> </span>
                         <br>
                         <p>妊娠，出産および育児について正しいのはどれか．</p>
 
@@ -2148,7 +2282,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group abuse pri info" id="q20">
+            <div class="card-group abuse child_abuse_prevention_law pri info" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108G30" target="_blank" id="2018-01-24_16:04:24">108G30</a> 虐待 通告先
@@ -2156,7 +2290,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_10:50:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_10:50:30"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_15:34:35"> </span>
                         <br>
                         <p>虐待が疑われる児を診察した際の通告先として適切なのはどれか．2つ選べ．</p>
 
@@ -2185,10 +2320,18 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item">虐待が疑われる児の通告先は，市町村，福祉事務所もしくは児童相談所（児童委員を介しても可）である（『児童福祉法』，『児童虐待防止法』）．</li>
-                            <li class="list-group-item">福祉事務所が通告を受けた場合，当該児童の安全確認に努めるとともに，必要に応じて児童相談所への送致を行う（一時保護が必要な場合，安全確認ができない場合など）．</li>
-                            <li class="list-group-item">児童の一時保護は『児童福祉法』に規定されており，児童相談所長が決定する．</li>
+                            <li class="list-group-item">
+                                虐待が疑われる児の通告先は，市町村，福祉事務所もしくは児童相談所（児童委員を介しても可）である（『児童福祉法』，『児童虐待防止法』）．
+                            </li>
+                            <li class="list-group-item">
+                                福祉事務所が通告を受けた場合，当該児童の安全確認に努めるとともに，必要に応じて児童相談所への送致を行う（一時保護が必要な場合，安全確認ができない場合など）．
+                            </li>
+                            <li class="list-group-item">
+                                児童の一時保護は『児童福祉法』に規定されており，児童相談所長が決定する．
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -2205,7 +2348,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group abuse info" id="q21">
+            <div class="card-group abuse child_abuse_prevention_law info" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106I3" target="_blank" id="2018-01-24_16:05:39">106I3</a> 児童虐待 Qs
@@ -2321,14 +2464,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group CCC abuse pri info" id="q22">
+            <div class="card-group CCC abuse child_abuse_prevention_law pri info" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B6" target="_blank" id="2018-01-24_16:07:10">109B6</a> 児童相談所 業務
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-17_11:03:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-17_11:03:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:15:51"> </span>
                         <br>
                         <p>児童相談所の業務はどれか．</p>
 
@@ -2424,7 +2568,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group abuse CCC " id="q24">
+            <div class="card-group abuse child_abuse_prevention_law CCC " id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E19" target="_blank" id="2018-01-24_16:22:22">103E19</a> 被虐待児 対応
@@ -2465,18 +2609,22 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group abuse CCC" id="q25">
+            <div class="card-group abuse CCC child_abuse_prevention_law" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101H3" target="_blank" id="2018-01-24_16:27:36">101H3</a> s/o 虐待 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_11:15:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_11:15:33"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_15:41:00"> </span>
                         <br>
                         <p>10歳の女児．<br>
                             階段から転落したことを主訴に祖母と来院した．<br>
-                            転落時の状況を本人に問うと，「よく分かりません．自分で落ちたと思います」と小声で返答する．祖母に問うと「最近，母親に反抗しているようです．母親はしつけに苦労してイライラしているようです」と不安そうに述べた．女児は母子家庭で育った．女児は非常に小柄で痩せており，表情に乏しい．右半身に打撲，頭部に血腫が認められる．他にも全身に古い打撲痕がいくつか認められる．<br>
+                            転落時の状況を本人に問うと，「よく分かりません．自分で落ちたと思います」と小声で返答する．<br>
+                            祖母に問うと「最近，母親に反抗しているようです．母親はしつけに苦労してイライラしているようです」と不安そうに述べた．<br>
+                            <u>女児は母子家庭</u>で育った．女児は非常に小柄で痩せており，表情に乏しい．右半身に打撲，頭部に血腫が認められる．<br>
+                            他にも全身に古い打撲痕がいくつか認められる．<br>
                             医師の対応として適切なのはどれか．2つ選べ．</p>
                         
 
@@ -2508,7 +2656,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group abuse CCC" id="q26">
+            <div class="card-group abuse CCC child_abuse_prevention_law" id="q26">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105E53" target="_blank" id="2018-01-24_16:31:48">105E53</a> 対応
@@ -2557,7 +2705,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111G25" target="_blank" id="">111G25</a> 妊産婦死亡
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-17_11:20:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_11:20:56"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_15:46:25"> </span>
                         <br>
                         <p>人口動態統計（2015年）における妊産婦死亡について正しいのはどれか．</p>
 
@@ -2599,10 +2748,12 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_11:25:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_11:25:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:48:46"> </span>
                         <br>
                         <p>37歳の初産婦．<br>
-                            妊娠26週時に交通事故で腹部を打撲し，常位胎盤早期剝離をきたした．緊急帝王切開を行い800gの男児を娩出したが，児は生後9日に多臓器不全のため死亡した．<br>
+                            <u>妊娠26週</u>時に交通事故で腹部を打撲し，常位胎盤早期剝離をきたした．<br>
+                            緊急帝王切開を行い800gの男児を娩出したが，<u>児は生後9日</u>に多臓器不全のため死亡した．<br>
                             この事例について正しいのはどれか．2つ選べ．</p>
                         
 
@@ -2664,7 +2815,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_11:29:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_11:29:05"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_15:49:50"> </span>
                         <br>
                         <p>周産期死亡に含まれるのはどれか．</p>
                         
@@ -2697,14 +2849,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group stat birth" id="q30">
+            <div class="card-group stat birth info" id="q30">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100G17" target="_blank" id="2018-01-24_17:04:00">100G17</a> 母子保健動向
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_11:31:47"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_11:31:47"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_15:51:18"> </span>
                         <br>
                         <p>わが国の最近5年間の母子保健動向で誤っているのはどれか．</p>
                         
@@ -2841,7 +2994,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/108B20" target="_blank" id="2018-01-24_17:37:56">108B20</a> 合計特殊出生率
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_16:16:34"> </span>
                         <br>
                         <p>合計特殊出生率，周産期死亡率，出生時の平均体重，低出生体重児の出生割合，複産〈多胎〉の出生割合を図に示す．それぞれ1990年における数値を100％としたときの2010年までの変化である．<br>
                             合計特殊出生率はどれか．</p>
@@ -2930,6 +3084,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2998,6 +3153,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3006,6 +3168,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -3019,27 +3202,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3061,11 +3263,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3082,63 +3287,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -3152,6 +3371,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -3181,6 +3403,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -3368,78 +3593,238 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
+    $('#jisedaiikuseishientaisakusuishinhou').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.jisedaiikuseishientaisakusuishinhou)').slideToggle(100);
+    });
+    $('#jisedaiikuseishientaisakusuishinhou').find('small > code').html(
+        $('div.jisedaiikuseishientaisakusuishinhou > .card > .mis').size() + '+' +
+        $('div.jisedaiikuseishientaisakusuishinhou > .card > .cau').size() + '/' +
+        $('div.jisedaiikuseishientaisakusuishinhou').size()
+    );
+
+
+
     $('#MCHL').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MCHL)').toggle('slow');
+        $('div.card-group:not(.MCHL)').slideToggle(100);
     });
+    $('#MCHL').find('small > code').html(
+        $('div.MCHL > .card > .mis').size() + '+' +
+        $('div.MCHL > .card > .cau').size() + '/' +
+        $('div.MCHL').size()
+    );
+
+
     $('#boseikenkokanrishidouzikoucard').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.boseikenkokanrishidouzikoucard)').toggle('slow');
+        $('div.card-group:not(.boseikenkokanrishidouzikoucard)').slideToggle(100);
     });
-    $('#maternityrecord').click(function(){
+    $('#boseikenkokanrishidouzikoucard').find('small > code').html(
+        $('div.boseikenkokanrishidouzikoucard > .card > .mis').size() + '+' +
+        $('div.boseikenkokanrishidouzikoucard > .card > .cau').size() + '/' +
+        $('div.boseikenkokanrishidouzikoucard').size()
+    );
+
+
+    $('#maternity_record').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.maternityrecord)').toggle('slow');
+        $('div.card-group:not(.maternity_record)').slideToggle(100);
     });
+    $('#maternity_record').find('small > code').html(
+        $('div.maternity_record > .card > .mis').size() + '+' +
+        $('div.maternity_record > .card > .cau').size() + '/' +
+        $('div.maternity_record').size()
+    );
+
+
+
+    $('#maternal_protection_law h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.maternal_protection_law)').slideToggle(100);
+    });
+    $('#maternal_protection_law').find('small > code').html(
+        $('div.maternal_protection_law > .card > .mis').size() + '+' +
+        $('div.maternal_protection_law > .card > .cau').size() + '/' +
+        $('div.maternal_protection_law').size()
+    );
+
+
+
+    $('#child_welfare_law h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.child_welfare_law)').slideToggle(100);
+    });
+    $('#child_welfare_law').find('small > code').html(
+        $('div.child_welfare_law > .card > .mis').size() + '+' +
+        $('div.child_welfare_law > .card > .cau').size() + '/' +
+        $('div.child_welfare_law').size()
+    );
+
+
+
+    $('#child_abuse_prevention_law h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.child_abuse_prevention_law)').slideToggle(100);
+    });
+    $('#child_abuse_prevention_law').find('small > code').html(
+        $('div.child_abuse_prevention_law > .card > .mis').size() + '+' +
+        $('div.child_abuse_prevention_law > .card > .cau').size() + '/' +
+        $('div.child_abuse_prevention_law').size()
+    );
+
+
+
+    $('#stat h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.stat)').slideToggle(100);
+    });
+    $('#stat').find('small > code').html(
+        $('div.stat > .card > .mis').size() + '+' +
+        $('div.stat > .card > .cau').size() + '/' +
+        $('div.stat').size()
+    );
+
+
+
+
+
+
+
+
+
     $('#promo').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.promo)').toggle('slow');
+        $('div.card-group:not(.promo)').slideToggle(100);
     });
     $('#angelplan').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.angelplan)').toggle('slow');
+        $('div.card-group:not(.angelplan)').slideToggle(100);
     });
+    $('#promo').find('small > code').html(
+        $('div.promo > .card > .mis').size() + '+' +
+        $('div.promo > .card > .cau').size() + '/' +
+        $('div.promo').size()
+    );
+
     $('#sukoyakaoyako21').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.sukoyakaoyako21)').toggle('slow');
+        $('div.card-group:not(.sukoyakaoyako21)').slideToggle(100);
     });
-    $('#jisedaiikuseishientaisakusuishinhou').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.jisedaiikuseishientaisakusuishinhou)').toggle('slow');
-    });
+    $('#sukoyakaoyako21').find('small > code').html(
+        $('div.sukoyakaoyako21 > .card > .mis').size() + '+' +
+        $('div.sukoyakaoyako21 > .card > .cau').size() + '/' +
+        $('div.sukoyakaoyako21').size()
+    );
+
+
+
+
+    
+
+
     $('#child_care_leave').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.child_care_leave)').toggle('slow');
+        $('div.card-group:not(.child_care_leave)').slideToggle(100);
     });
+    $('#child_care_leave').find('small > code').html(
+        $('div.child_care_leave > .card > .mis').size() + '+' +
+        $('div.child_care_leave > .card > .cau').size() + '/' +
+        $('div.child_care_leave').size()
+    );
+
+
     $('#abortion').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.abortion)').toggle('slow');
+        $('div.card-group:not(.abortion)').slideToggle(100);
     });
+    $('#abortion').find('small > code').html(
+        $('div.abortion > .card > .mis').size() + '+' +
+        $('div.abortion > .card > .cau').size() + '/' +
+        $('div.abortion').size()
+    );
+
+
+
     $('#abuse').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.abuse)').toggle('slow');
+        $('div.card-group:not(.abuse)').slideToggle(100);
     });
+    $('#abuse').find('small > code').html(
+        $('div.abuse > .card > .mis').size() + '+' +
+        $('div.abuse > .card > .cau').size() + '/' +
+        $('div.abuse').size()
+    );
+
+
     $('#CCC').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CCC)').toggle('slow');
+        $('div.card-group:not(.CCC)').slideToggle(100);
     });
+    $('#CCC').find('small > code').html(
+        $('div.CCC > .card > .mis').size() + '+' +
+        $('div.CCC > .card > .cau').size() + '/' +
+        $('div.CCC').size()
+    );
+
+
+
     $('#maternal_death').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.maternal_death)').toggle('slow');
+        $('div.card-group:not(.maternal_death)').slideToggle(100);
     });
+    $('#maternal_death').find('small > code').html(
+        $('div.maternal_death > .card > .mis').size() + '+' +
+        $('div.maternal_death > .card > .cau').size() + '/' +
+        $('div.maternal_death').size()
+    );
+
+
     $('#stillbirth').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.stillbirth)').toggle('slow');
+        $('div.card-group:not(.stillbirth)').slideToggle(100);
     });
+    $('#stillbirth').find('small > code').html(
+        $('div.stillbirth > .card > .mis').size() + '+' +
+        $('div.stillbirth > .card > .cau').size() + '/' +
+        $('div.stillbirth').size()
+    );
+
+
+
     $('#birth').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.birth)').toggle('slow');
+        $('div.card-group:not(.birth)').slideToggle(100);
     });
-    $('#temp').click(function(){
+    $('#birth').find('small > code').html(
+        $('div.birth > .card > .mis').size() + '+' +
+        $('div.birth > .card > .cau').size() + '/' +
+        $('div.birth').size()
+    );
+    
+
+
+
+
+
+
+
+
+
+    $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.temp)').toggle('slow');
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#temp').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.temp)').toggle('slow');
-    });
-    $('#temp').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.temp)').toggle('slow');
-    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 
 });

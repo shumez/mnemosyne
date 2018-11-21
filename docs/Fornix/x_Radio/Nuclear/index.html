@@ -4,12 +4,28 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-22 16:09:33
+@Last modified time: 2018-11-21 17:35:54
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -95,8 +111,8 @@
     <title>Nuc</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-22 16:09:54" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-11-21 17:36:17" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.37">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -115,6 +131,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -123,7 +142,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -155,6 +174,9 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
 
 
         /*.nav-pills*/
@@ -171,7 +193,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -195,33 +219,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -271,41 +303,297 @@
         </div>
     </div>
 
+
+
+
     
 
 
     
+    <div class="section" id="isotope">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Isotope <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>放射性同位元素の半減期</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td><u><sup>81m</sup>Kr</u></td>
+                            <td>13秒</td>
+                        </tr>
+                        <tr>
+                            <td><u><sup>99m</sup>Tc</u></td>
+                            <td>6時間</td>
+                        </tr>
+                        <tr>
+                            <td><u><sup>123</sup>I</u></td>
+                            <td>13時間</td>
+                        </tr>
+                        <tr>
+                            <td><sup>111</sup>In</td>
+                            <td>2.8日</td>
+                        </tr>
+                        <tr>
+                            <td><u><sup>201</sup>Tl</u></td>
+                            <td>74時間</td>
+                        </tr>
+                        <tr>
+                            <td><u><sup>67</sup>Ga</u></td>
+                            <td>78時間</td>
+                        </tr>
+                        <tr>
+                            <td><u><sup>133</sup>Xe</u></td>
+                            <td>5.3日</td>
+                        </tr>
+                        <tr>
+                            <td><sup>131</sup>I</td>
+                            <td>8日</td>
+                        </tr>
+                        <tr>
+                            <td>75Se</td>
+                            <td>121日</td>
+                        </tr>
+                        <tr>
+                            <td>134Cs</td>
+                            <td>2年</td>
+                        </tr>
+                        <tr>
+                            <td>90Sr</td>
+                            <td>29年</td>
+                        </tr>
+                        <tr>
+                            <td>137Cs</td>
+                            <td>30年</td>
+                        </tr>
+                        <tr>
+                            <td>50Co</td>
+                            <td>270年</td>
+                        </tr>
+                        <tr>
+                            <td>235Pu</td>
+                            <td>2,400年</td>
+                        </tr>
+                        <tr>
+                            <td>14C</td>
+                            <td>5,370年</td>
+                        </tr>
+                        <tr>
+                            <td>87Rb</td>
+                            <td>488億年</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>核医学検査</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>臓器</th>
+                            <th>検査法</th>
+                            <th>放射性医薬品名</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">中枢神経</th>
+                            <td>脳血流</td>
+                            <td><u><sup>123</sup>I-IMP</u><br>
+                                <u><sup>99m</sup>Tc-HMPAO</u><br>
+                                99mTc-ECD</td>
+                        </tr>
+                        <tr>
+                            <td>脳槽</td>
+                            <td>111In-DTPA</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">内分泌</th>
+                            <td>甲状腺</td>
+                            <td><u><sup>123</sup>I-NaI</u><br>
+                                131I-NaI<br>
+                                <u><sup>99m</sup>TcO4−</u><br>
+                                201Tl-Cl</td>
+                        </tr>
+                        <tr>
+                            <td>副甲状腺</td>
+                            <td>99mTc-MIBI<br>
+                                201Tl-Cl</td>
+                        </tr>
+                        <tr>
+                            <td>副腎髄質</td>
+                            <td><u><sup>131</sup>I-MIBG</u></td>
+                        </tr>
+                        <tr>
+                            <td>副腎皮質</td>
+                            <td><u><sup>131</sup>I-アドステロール</u></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">呼吸器</th>
+                            <td>血流</td>
+                            <td><u><sup>99m</sup>Tc-粗大凝集アルブミン（MAA）</u></td>
+                        </tr>
+                        <tr>
+                            <td>換気</td>
+                            <td><u><sup>81m</sup>Krガス</u><br>
+                                <u><sup>133</sup>Xeガス</u></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5">循環器</th>
+                            <td>心筋血流</td>
+                            <td><u><sup>201</sup>Tl-Cl</u><br>
+                                <u><sup>99m</sup>Tc-MIBI</u><br>
+                                99mTc-TF</td>
+                        </tr>
+                        <tr>
+                            <td>心筋梗塞</td>
+                            <td><u><sup>99m</sup>Tc-ピロリン酸（PYP）</u></td>
+                        </tr>
+                        <tr>
+                            <td>脂肪酸代謝</td>
+                            <td>123I-BMIPP</td>
+                        </tr>
+                        <tr>
+                            <td>交感神経</td>
+                            <td>123I-MIBG</td>
+                        </tr>
+                        <tr>
+                            <td>RIアンジオグラフィ，心プール</td>
+                            <td>99mTc-ヒト血清アルブミン（HSA），99mTc-RBC</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">消化器</th>
+                            <td>肝コロイド</td>
+                            <td>99mTc-フチン酸，99mTc-スズコロイド</td>
+                        </tr>
+                        <tr>
+                            <td>肝受容体</td>
+                            <td>99mTc-GSA</td>
+                        </tr>
+                        <tr>
+                            <td>肝胆道</td>
+                            <td>99mTc-PMT</td>
+                        </tr>
+                        <tr>
+                            <td>Meckel憩室</td>
+                            <td><u><sup>99m</sup>TcO<sub>4</sub><sup>−</sup></u></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">泌尿器</th>
+                            <td>腎動態，レノグラム</td>
+                            <td><u><sup>99m</sup>Tc-DTPA</u><br>
+                                99mTc-MAG3</td>
+                        </tr>
+                        <tr>
+                            <td>腎静態</td>
+                            <td>99mTc-DMSA</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">骨・腫瘍<br>
+                                その他</th>
+                            <td>骨</td>
+                            <td><u><sup>99m</sup>Tc-燐酸化合物（MDP）</u></td>
+                        </tr>
+                        <tr>
+                            <td>腫瘍</td>
+                            <td><u><sup>67</sup>Ga-クエン酸ガリウム</u><br>
+                                201Tl-Cl</td>
+                        </tr>
+                        <tr>
+                            <td>炎症</td>
+                            <td><u><sup>67</sup>Ga-クエン酸ガリウム</u><br>
+                                111In-白血球</td>
+                        </tr>
+                        <tr>
+                            <td>血栓</td>
+                            <td>99mTc-フィブリノゲン<br>
+                                111In-白血球</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="4">血液・造血器</th>
+                            <td>リンパ節</td>
+                            <td>99mTc-ヒト血清アルブミン（HSA）<br>
+                                99mTcO4−<br>
+                                99mTc-フィチン酸</td>
+                        </tr>
+                        <tr>
+                            <td>循環赤血球量</td>
+                            <td>51Cr-赤血球</td>
+                        </tr>
+                        <tr>
+                            <td>鉄動態</td>
+                            <td>59Fe-クエン酸第二鉄<br>
+                                59Fe-血漿鉄</td>
+                        </tr>
+                        <tr>
+                            <td>骨髄</td>
+                            <td><u><sup>99m</sup>Tc-スズコロイド</u><br>
+                                111InCl3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>レノグラム</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/75B038_bas_x_010.jpg" class="card-img-top img-fluid">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">⑴正常型</li>
+                        <li class="list-group-item">⑵閉塞型</li>
+                        <li class="list-group-item">⑶機能低下型</li>
+                        <li class="list-group-item">⑷無機能型</li>
+                        <li class="list-group-item">⑸間欠性排泄型</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>肝シンチグラム</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/78B037_sup_x_010.jpg" class="card-img-top img-fluid">
+                </div>
+                
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>肝実質の線維化</li>
+                            <li>肝右葉の萎縮</li>
+                            <li>左葉外側区の腫大</li>
+                            <li>脾腫</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
     <div class="row">
-
-
-
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="">
                 <div class="page-header">
-                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>            
+                
+            </div>
         </div>
     </div>
     
@@ -469,13 +757,14 @@
 
 
             <!-- 01 -->
-            <div class="card-group isotope info" id="q01">
+            <div class="card-group isotope Cs Sr info" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107B32" target="_blank" id="">107B32</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-22_16:20:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-22_16:20:05"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_17:38:42"> </span>
                         <br>
                         <p>放射性同位元素で物理的半減期が1年以上なのはどれか．2つ選べ．</p>
 
@@ -576,18 +865,22 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group info isotope" id="q02">
+            <div class="card-group isotope info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/88B28" target="_blank" id="">88B28</a> 虚血性心疾患
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-22_16:26:34"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-22_16:26:34"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_17:40:34"> </span>
                         <br>
                         <p>虚血性心疾患の検査に用いられる放射性医薬品はどれか．3つ選べ．</p>
 
@@ -766,6 +1059,9 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -778,7 +1074,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-22_16:54:01"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-22_16:54:01"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_17:48:17"> </span>
                         <br>
                         <p>放射性物質の集積で診断できるのはどれか．3つ選べ．</p>
 
@@ -817,7 +1114,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-22_16:59:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-22_16:59:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_17:49:13"> </span>
                         <br>
                         <p>肺血流シンチグラフィで肺のみでなく，脳や腎にアイソトープの取り込みが認められるのはどれか．2つ選べ．</p>
 
@@ -855,7 +1153,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/81B84" target="_blank" id="">81B84</a> 肺換気シンチグラフィ
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-22_17:05:34"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-22_17:05:34"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_17:44:21"> </span>
                         <br>
                         <p>81mKrによる肺換気シンチグラフィで両肺野に多発性欠損像を認めた．<br>
                             考えられないのはどれか．</p>
@@ -875,7 +1174,7 @@
 
                         <p></p>
 
-                        <p class="q_dx"></p>
+                        <!-- <p class="q_dx"></p> -->
 
                         <p class="q_answer_false">b</p>
 
@@ -892,13 +1191,14 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group " id="q06">
+            <div class="card-group 99mTc-MDP scintigraphy" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/81B86" target="_blank" id="">81B86</a> 99mTc-MDP骨シンチグラフィ
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-22_17:12:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-22_17:12:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_17:50:16"> </span>
                         <br>
                         <p>99mTc-MDP骨シンチグラフィで正しいのはどれか．</p>
 
@@ -941,13 +1241,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group kidney info" id="q07">
+            <div class="card-group kidney renogram info" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/75B38" target="_blank" id="">75B38</a> レノグラム
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-09-22_17:18:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-22_17:18:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-21_17:51:57"> </span>
                         <br>
                         <p>131I-馬尿酸ナトリウムによるレノグラムを次に示す．<br>
                             右腎（実線で示す）の診断はどれか．</p>
@@ -995,6 +1296,9 @@
                                 <li class="list-group-item">⑸間欠性排泄型</li>
                             </ul>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1006,7 +1310,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/78B37" target="_blank" id="">78B37</a> 肝硬変
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-09-22_17:24:04"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-22_17:24:04"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-21_17:46:40"> </span>
                         <br>
                         <p>肝硬変の肝シンチグラムの特徴でないのはどれか．</p>
 
@@ -1038,18 +1343,23 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">肝実質の線維化</li>
-                            <li class="list-group-item">肝右葉の萎縮</li>
-                            <li class="list-group-item">左葉外側区の腫大</li>
-                            <li class="list-group-item">脾腫</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>肝実質の線維化</li>
+                                    <li>肝右葉の萎縮</li>
+                                    <li>左葉外側区の腫大</li>
+                                    <li>脾腫</li>
+                                </ul>
+                            </li>
                         </ul>
-
 
 
                         <h6>肝シンチグラム</h6>
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/78B037_sup_x_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
                     </div>
                 </div>
             </div>
@@ -1174,7 +1484,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1184,6 +1498,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1202,7 +1537,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1253,6 +1600,7 @@ $('document').ready(function(){
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1269,63 +1617,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1339,6 +1701,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1368,6 +1733,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -1555,14 +1923,21 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
+
+
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

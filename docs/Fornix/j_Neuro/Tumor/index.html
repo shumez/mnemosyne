@@ -4,12 +4,23 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-21 13:13:55
+@Last modified time: 2018-11-22 20:25:27
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+
 04.01.27    18 10 21    .img glyphicon-picture
 04.01.26    18 10 19    print_date, slideToggle(100)
 04.01.25    18 10 18    title + version
@@ -98,11 +109,11 @@
 -->
 <html>
 <head>
-    <title>Tumor</title>
+    <title>Brain Tumor</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-21 13:14:17" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.27">
+    <meta name="revised" content="2018-11-22 20:25:51" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.37">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -121,6 +132,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -129,7 +143,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -161,7 +175,7 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul{
+        li.list-group-item ul, li.list-group-item ol{
             padding-left: 18px
         }
 
@@ -180,7 +194,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -204,33 +220,41 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
             td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
             ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
             table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
+            div.card-header{font-size: 11px}
             
             table.table-condensed > thead,
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
+                border-bottom: 0.5px solid black;}
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
             table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
+                border: 0.5px solid black;
             }
 
         }
@@ -3244,6 +3268,7 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
 
     var title_ver = title + "." + version;
@@ -3259,12 +3284,25 @@ $('document').ready(function(){
     }
 
     var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
     var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
     var month = months[now.getMonth()];
-    var year = now.getFullYear();
+    var year = now.getYear();
+    year -= 100;
     var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
     $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
     
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -3283,9 +3321,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
         $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -3404,12 +3452,26 @@ $('document').ready(function(){
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -3423,6 +3485,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -3452,6 +3517,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -3647,56 +3715,80 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.INTRO)').slideToggle(100);
     });
-    $('#INTRO').find('code').html($('div.INTRO').size());
+    $('#INTRO').find('small > code').html(
+        $('div.INTRO > .card > .mis').size() + '+' +
+        $('div.INTRO > .card > .cau').size() + '/' +
+        $('div.INTRO').size());
 
 
     $('#ASTM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.ASTM)').slideToggle(100);
     });
-    $('#ASTM').find('code').html($('div.ASTM').size());
+    $('#ASTM').find('small > code').html(
+        $('div.ASTM > .card > .mis').size() + '+' +
+        $('div.ASTM > .card > .cau').size() + '/' +
+        $('div.ASTM').size());
 
 
     $('#GBM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.GBM)').slideToggle(100);
     });
-    $('#GBM').find('code').html($('div.GBM').size());
+    $('#GBM').find('small > code').html(
+        $('div.GBM > .card > .mis').size() + '+' +
+        $('div.GBM > .card > .cau').size() + '/' +
+        $('div.GBM').size());
 
 
     $('#SWM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.SWM)').slideToggle(100);
     });
-    $('#SWM').find('code').html($('div.SWM').size());
+    $('#SWM').find('small > code').html(
+        $('div.SWM > .card > .mis').size() + '+' +
+        $('div.SWM > .card > .cau').size() + '/' +
+        $('div.SWM').size());
 
 
     $('#MBM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.MBM)').slideToggle(100);
     });
-    $('#MBM').find('code').html($('div.MBM').size());
+    $('#MBM').find('small > code').html(
+        $('div.MBM > .card > .mis').size() + '+' +
+        $('div.MBM > .card > .cau').size() + '/' +
+        $('div.MBM').size());
 
 
     $('#EPNM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.EPNM)').slideToggle(100);
     });
-    $('#EPNM').find('code').html($('div.EPNM').size());
+    $('#EPNM').find('small > code').html(
+        $('div.EPNM > .card > .mis').size() + '+' +
+        $('div.EPNM > .card > .cau').size() + '/' +
+        $('div.EPNM').size());
 
 
     $('#PA h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.PA)').slideToggle(100);
     });
-    $('#PA').find('code').html($('div.PA').size());
+    $('#PA').find('small > code').html(
+        $('div.PA > .card > .mis').size() + '+' +
+        $('div.PA > .card > .cau').size() + '/' +
+        $('div.PA').size());
 
 
     $('#pituitary_apoplexy').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.pituitary_apoplexy)').slideToggle(100);
     });
-    $('#pituitary_apoplexy').find('code').html($('div.pituitary_apoplexy').size());
+    $('#pituitary_apoplexy').find('small > code').html(
+        $('div.pituitary_apoplexy > .card > .mis').size() + '+' +
+        $('div.pituitary_apoplexy > .card > .cau').size() + '/' +
+        $('div.pituitary_apoplexy').size());
 
 
 
@@ -3704,7 +3796,10 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.CPM)').slideToggle(100);
     });
-    $('#CPM').find('code').html($('div.CPM').size());
+    $('#CPM').find('small > code').html(
+        $('div.CPM > .card > .mis').size() + '+' +
+        $('div.CPM > .card > .cau').size() + '/' +
+        $('div.CPM').size());
 
 
 
@@ -3712,7 +3807,10 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.GCT)').slideToggle(100);
     });
-    $('#GCT').find('code').html($('div.GCT').size());
+    $('#GCT').find('small > code').html(
+        $('div.GCT > .card > .mis').size() + '+' +
+        $('div.GCT > .card > .cau').size() + '/' +
+        $('div.GCT').size());
 
 
 
@@ -3720,21 +3818,30 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.MGM)').slideToggle(100);
     });
-    $('#MGM').find('code').html($('div.MGM').size());
+    $('#MGM').find('small > code').html(
+        $('div.MGM > .card > .mis').size() + '+' +
+        $('div.MGM > .card > .cau').size() + '/' +
+        $('div.MGM').size());
 
 
     $('#meta h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.meta)').slideToggle(100);
     });
-    $('#meta').find('code').html($('div.meta').size());
+    $('#meta').find('small > code').html(
+        $('div.meta > .card > .mis').size() + '+' +
+        $('div.meta > .card > .cau').size() + '/' +
+        $('div.meta').size());
 
 
     $('#FKS').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.FKS)').slideToggle(100);
     });
-    $('#FKS').find('code').html($('div.FKS').size());
+    $('#FKS').find('small > code').html(
+        $('div.FKS > .card > .mis').size() + '+' +
+        $('div.FKS > .card > .cau').size() + '/' +
+        $('div.FKS').size());
 
 
 
@@ -3743,9 +3850,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

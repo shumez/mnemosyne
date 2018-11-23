@@ -4,12 +4,40 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-17 17:52:37
+@Last modified time: 2018-11-23 10:39:52
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 23    .table-condesd tr:first-child border-top
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+
 04.01.11    18 08 17    .append size()
 04.01.10    18 08 17    #temp click toggle
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
@@ -84,8 +112,8 @@
     <title>Elderly</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-17 17:52:51" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.11">
+    <meta name="revised" content="2018-11-23 10:41:05" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -104,6 +132,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -112,7 +143,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -144,6 +175,11 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -158,7 +194,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -182,25 +220,48 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -248,6 +309,69 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="section" id="elderly_welfare_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Elderly Welfare Law <small>老人福祉法</small> <small><code></code></small></h2>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2> <small>高齢者医療確保法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="advanced_elderly_medical_service_system">Advanced Elderly Medical Service System <small>後期高齢者医療制度</small> <small><code></code></small></h3>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section" id="nursing_care_insurance_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Nursing Care Insurance Law <small>介護保険法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <div class="section" id="home_healthcare">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Home Healthcare <small>在宅医療</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="care_management">Care Management <small>ケアマネジメント 居宅介護支援</small> <small><code></code></small></h3>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <div class="section" id="">
         <div class="page-header">
@@ -690,7 +814,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 36 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 36</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -825,6 +949,14 @@
                     </a>
                 </li>
             </ul>
+
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
 
             <!-- 01 -->
@@ -1063,14 +1195,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group insurance" id="q05">
+            <div class="card-group insurance nursing_care_insurance_law" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104E34" target="_blank">104E34</a> 介護保険制度
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_19:41:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_19:41:31"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_10:50:30"> </span>
                         <br>
                         <p>介護保険制度で正しいのはどれか．2つ選べ．</p>
 
@@ -1080,7 +1213,7 @@
                             <li class="ans_f">要介護認定は65歳以上の全員に行う．</li>
                             <li class="ans_f">訪問看護と訪問介護との併用はできない．</li>
                             <li class="ans_t">ケアプランは利用者が自分で作ることができる．</li>
-                            <li class="ans_t">第2号被保険者は40歳以上65歳未満を対象とする．</li>
+                            <li class="ans_t star">第2号被保険者は40歳以上65歳未満を対象とする．</li>
                         </ol>
                     </div>
                 </div>
@@ -1103,14 +1236,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group insurance" id="q06">
+            <div class="card-group insurance nursing_care_insurance_law" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B16" target="_blank">104B16</a> 介護保険制度 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_19:45:59"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_19:45:59"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_10:54:34"> </span>
                         <br>
                         <p>介護保険制度について正しいのはどれか．2つ選べ．</p>
 
@@ -1132,10 +1266,12 @@
 
                         <ol type="a">
                             <li>要支援1/2, 要介護1が増加</li>
-                            <li><ol>
-                                <li>認知症</li>
-                                <li>脳血管障害</li>
-                            </ol></li>
+                            <li>
+                                <ol>
+                                    <li>認知症</li>
+                                    <li>脳血管障害</li>
+                                </ol>
+                            </li>
                             <li></li>
                             <li>介護保険</li>
                             <li></li>
@@ -1334,7 +1470,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group ADL pri 110" id="q10">
+            <div class="card-group IADL ADL nursing_care_insurance_law pri 110 info" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E19" target="_blank">110E19</a> IADL
@@ -1342,7 +1478,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_20:04:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_20:04:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_10:56:44"> </span>
                         <br>
                         <p>手段的日常生活動作〈IADL〉に含まれるのはどれか．</p>
 
@@ -1628,14 +1765,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group care_manager pri" id="q14">
+            <div class="card-group care_manager care_management nursing_care_insurance_law pri" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G3" target="_blank">109G3</a> 介護支援専門員〈ケアマネジャー〉 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_20:25:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_20:25:00"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_11:06:29"> </span>
                         <br>
                         <p>介護支援専門員〈ケアマネジャー〉について正しいのはどれか．</p>
 
@@ -1667,14 +1805,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group day_service service" id="q15">
+            <div class="card-group day_service service nursing_care_insurance_law" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106E15" target="_blank">106E15</a> 通所介護〈デイサービス〉
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_20:29:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_20:29:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_11:19:38"> </span>
                         <br>
                         <p>介護保険制度の通所介護〈デイサービス〉で提供されるサービスに含まれないのはどれか．</p>
 
@@ -1835,19 +1974,22 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group service pri" id="q17">
+            <div class="card-group  service nursing_care_insurance_law pri" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107E40" target="_blank">107E40</a> リハビリ 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_20:43:27"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_20:43:27"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_11:22:27"> </span>
                         <br>
                         <p>83歳の男性．妻と2人暮らし．<br>
                             脳梗塞後の定期受診のため妻に伴われて診療所に来院した．<br>
-                            5年前に脳梗塞を発症したが，<u>ごく軽度の左片麻痺</u>を認めるのみで，屋内はつたい歩きが可能で日常生活は自立している．要介護1であるが，介護保険サービスは屋内手すりの設置しか利用していない．趣味活動は特にない．<u>半年前から転倒が多くなり，寝てばかり</u>いるという．<br>
-                            脈拍84/分，整．血圧132/88mmHg．呼吸数22/分．頭頸部に異常を認めない．胸部と腹部とに異常を認めない．見当識は保たれており，指示動作にも問題なく従える．新たな神経学的所見を認めない．座位を長く続けられず，診察時もすぐに横になりたがる．<br>
+                            5年前に脳梗塞を発症したが，<u>ごく軽度の左片麻痺</u>を認めるのみで，屋内はつたい歩きが可能で日常生活は自立している．<u>要介護1</u>であるが，介護保険サービスは屋内手すりの設置しか利用していない．趣味活動は特にない．<br>
+                            <u>半年前から転倒が多くなり，寝てばかり</u>いるという．<br>
+                            脈拍84/分，整．血圧132/88mmHg．呼吸数22/分．<br>
+                            頭頸部に異常を認めない．胸部と腹部とに異常を認めない．見当識は保たれており，指示動作にも問題なく従える．新たな神経学的所見を認めない．<u>座位を長く続けられず，診察時もすぐに横になりたがる</u>．<br>
                             紹介した病院で頭部CTを含め精査を受けたが新たな異常は指摘されなかった．<br>
                             適切な対応はどれか．</p>
 
@@ -1880,14 +2022,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group service" id="q18">
+            <div class="card-group service nursing_care_insurance_law" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D7" target="_blank">99D7</a> 介護施設
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_20:46:01"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_20:46:01"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_11:26:02"> </span>
                         <br>
                         <p>常時介護が必要で在宅生活が困難な要介護者を収容する施設はどれか．</p>
                         
@@ -1910,16 +2053,22 @@
 
                         <ol type="a">
                             <li></li>
-                            <li>介護老人福祉施設:<ul>
-                                <li>居宅で介護を受けられない</li>
-                            </ul></li>
-                            <li>介護老人保健施設: <ul>
-                                <li>病状安定期</li>
-                                <li>リハビリ, 看護, 介護</li>
-                            </ul></li>
-                            <li>介護療養型医療施設:<ul>
-                                <li>日常的な医療行為</li>
-                            </ul></li>
+                            <li>介護老人福祉施設:
+                                <ul>
+                                    <li>居宅で介護を受けられない</li>
+                                </ul>
+                            </li>
+                            <li>介護老人保健施設: 
+                                <ul>
+                                    <li>病状安定期</li>
+                                    <li>リハビリ, 看護, 介護</li>
+                                </ul>
+                            </li>
+                            <li>介護療養型医療施設:
+                                <ul>
+                                    <li>日常的な医療行為</li>
+                                </ul>
+                            </li>
                             <li></li>
                         </ol>
                     </div>
@@ -1927,14 +2076,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group service " id="q19">
+            <div class="card-group service nursing_care_insurance_law" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93A6" target="_blank">93A6</a> 医師が管理者
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_20:47:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_20:47:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_11:27:22"> </span>
                         <br>
                         <p>法令上医師が管理者となる規定があるのはどれか．</p>
 
@@ -2325,19 +2475,25 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group chiikihoukatsushiencenter" id="q26">
-                s<div class="card">
+            <div class="card-group chiikihoukatsushiencenter service nursing_care_insurance_law" id="q26">
+                <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103G54" target="_blank">103G54</a> 指導
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-17_21:06:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-17_21:06:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_11:29:49"> </span>
                         <br>
                         <p>78歳の男性．<br>
-                            寝たきりになることを心配した娘に伴われて来院した．<br>
-                            3ヵ月前に妻が急死し1人暮らしとなった．一日中テレビを見ており食事も不規則になった．お茶を飲むときに咳き込むことが増えた．最近つまずきやすくなり，杖を使うようになった．かかってきた電話には受け答えはできる．排泄は自力でできる．<br>
-                            意識は清明．言葉は不明瞭で内容がわかりにくい．体温36.1℃．血圧138/90mmHg．皮膚はやや乾燥している．血液生化学所見：血糖88mg/dL，HbA1c 4.0％，総蛋白6.1g/dL，アルブミン3.7g/dL．<br>
+                            <u>寝たきり</u>になることを心配した娘に伴われて来院した．<br>
+                            3ヵ月前に妻が急死し1人暮らしとなった．一日中テレビを見ており食事も不規則になった．お茶を飲むときに咳き込むことが増えた．<br>
+                            <u>最近つまずきやすくな<り</u>，杖を使うようになった．かかってきた電話には受け答えはできる．<u>排泄は自力</u>でできる．<br>
+                            意識は清明．言葉は不明瞭で内容がわかりにくい．<br>
+                            体温36.1℃．血圧138/90mmHg．<br>
+                            皮膚はやや乾燥している．<br>
+                            血液生化学所見：<br>
+                            血糖88mg/dL，HbA1c 4.0％，総蛋白6.1g/dL，<u>アルブミン3.7g/dL</u>．<br>
                             指導として誤っているのはどれか．</p>
 
 
@@ -3027,6 +3183,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -3095,6 +3252,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -3103,6 +3267,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -3116,27 +3301,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -3158,11 +3362,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3179,63 +3386,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -3249,6 +3470,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -3278,6 +3502,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -3465,46 +3692,69 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#insurance').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.insurance)').toggle('slow');
+        $('div.card-group:not(.insurance)').slideToggle(100);
     });
-    $('#insurance').find('code').html($('div.insurance').size());
+    $('#insurance').find('code').html(
+        $('div.insurance > .card > .mis').size() + '+' +
+        $('div.insurance > .card > .cau').size() + '/' +
+        $('div.insurance').size());
+
 
     $('#chiikihoukatsushiencenter').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.chiikihoukatsushiencenter)').toggle('slow');
+        $('div.card-group:not(.chiikihoukatsushiencenter)').slideToggle(100);
     });
-    $('#chiikihoukatsushiencenter').find('code').html($('div.chiikihoukatsushiencenter').size());
+    $('#chiikihoukatsushiencenter').find('code').html(
+        $('div.chiikihoukatsushiencenter > .card > .mis').size() + '+' +
+        $('div.chiikihoukatsushiencenter > .card > .cau').size() + '/' +
+        $('div.chiikihoukatsushiencenter').size());
 
     $('#ADL').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ADL)').toggle('slow');
+        $('div.card-group:not(.ADL)').slideToggle(100);
     });
-    $('#ADL').find('code').html($('div.ADL').size());
+    $('#ADL').find('code').html(
+        $('div.ADL > .card > .mis').size() + '+' +
+        $('div.ADL > .card > .cau').size() + '/' +
+        $('div.ADL').size());
+
 
     $('#netakirido').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.netakirido)').toggle('slow');
+        $('div.card-group:not(.netakirido)').slideToggle(100);
     });
-    $('#netakirido').find('code').html($('div.netakirido').size());
+    $('#netakirido').find('code').html(
+        $('div.netakirido > .card > .mis').size() + '+' +
+        $('div.netakirido > .card > .cau').size() + '/' +
+        $('div.netakirido').size());
+
 
     $('#care_manager').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.care_manager)').toggle('slow');
+        $('div.card-group:not(.care_manager)').slideToggle(100);
     });
-    $('#care_manager').find('code').html($('div.care_manager').size());
+    $('#care_manager').find('code').html(
+        $('div.care_manager > .card > .mis').size() + '+' +
+        $('div.care_manager > .card > .cau').size() + '/' +
+        $('div.care_manager').size());
 
 
 
-    $('#').click(function(){
+    $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle('slow');
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

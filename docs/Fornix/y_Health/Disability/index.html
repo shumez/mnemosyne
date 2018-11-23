@@ -4,12 +4,40 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-18 21:53:07
+@Last modified time: 2018-11-23 16:33:36
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 23    .table-condesd tr:first-child border-top; td > ul margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+
 04.01.11    18 08 17    .append size()
 04.01.10    18 08 17    #temp click toggle
 04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
@@ -84,8 +112,8 @@
     <title>Disability</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-18 21:53:27" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.11">
+    <meta name="revised" content="2018-11-23 16:33:59" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -104,6 +132,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -112,7 +143,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -140,10 +171,15 @@
         code.q_alert_done{color: rgb(126, 64, 177)}
         #q div.card-group{margin-bottom: 10px}
         div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
+        td > ul{padding-left: 12px; margin-bottom: 5px}
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -158,7 +194,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -182,25 +220,48 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul{padding-left: 10px; margin-bottom: 3px;}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -250,179 +311,286 @@
     </div>
 
 
-    <div class="section" id="reception">
-        <div class="page-header">
-            <h2>障害の受容 <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small><code></code></small></h2>
                 </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="ICF">ICF <small>国際生活機能分類</small> <small><code></code></small></h3>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>生活機能<br>
+                                Functioning</th>
+                            <th></th>
+                            <th>障害<br>
+                                Disability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>心身機能/身体構造<br>
+                                body function/structure</td>
+                            <td>&rarr;</td>
+                            <td><u>機能障害</u><br>
+                                Impairment</td>
+                        </tr>
+                        <tr>
+                            <td>活動<br>
+                                Activity</td>
+                            <td>&rarr;</td>
+                            <td><u>活動制限</u><br>
+                                Activity limitation</td>
+                        </tr>
+                        <tr>
+                            <td>参加<br>
+                                Participation</td>
+                            <td>&rarr;</td>
+                            <td><u>参加制約</u><br>
+                                Participation restriction</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <h6>背景因子</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>個人因子<br>
+                                Personal </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>環境因子<br>
+                                Environmental</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="reception">Reception <small></small> <small><code></code></small></h3>
+
+                <h6>障害の受容</h6>
+                <p>ショック &rarr; 否認 &rarr; 混乱 &rarr; 解決への努力 &rarr; 需要</p>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>ショック期</th>
+                            <td><ul>
+                                <li><u>感情が鈍麻</u>した無関心な状態</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>否認期</th>
+                            <td><ul>
+                                <li>身体的状態が安定</li>
+                                <li>心理的な防衛反応としての疾病・障害の否認を生じる</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>混乱期</th>
+                            <td><ul>
+                                <li><u>攻撃性が高い</u></li>
+                                <li>外向的: 他人の責任, 怒り, 恨み<br>
+                                    内向的: 疾病, 障害の否認</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>解決への努力期</th>
+                            <td><ul>
+                                <li>建設的な努力</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>受容期</th>
+                            <td><ul>
+                                <li>生きがいを感じるようになる</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="normalization">Normalization <small><code></code></small></h3>
+
+
+
             </div>
 
         </div>
     </div>
 
-    <div class="section" id="ICF">
-        <div class="page-header">
-            <h2>ICF <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
+    <div class="section" id="welfare">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Welfare <small>障害者福祉</small> <small><code></code></small></h2>
+                </div>  
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>障害者基本法</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">&dArr;</td>
+                        </tr>
+                        <tr>
+                            <td>身体障害者福祉法</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>知的障害者福祉法</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>精神保健福祉法</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>発達障害支援法</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>児童福祉法</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">+</td>
+                        </tr>
+                        <tr>
+                            <td>障害者総合支援法</td>
+                            <td>
+                                <ul>
+                                    <li>自立支援</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>身体障害</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>視覚障害</li>
+                                    <li>聴覚障害 / 平衡機能障害</li>
+                                    <li>音声機能 / 言語機能 / 咀嚼機能</li>
+                                    <li>肢体不自由</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>心臓/腎臓/ 呼吸器</li>
+                                    <li>膀胱直腸障害</li>
+                                    <li>小腸機能障害</li>
+                                    <li>HIVによる免疫機能障害</li>
+                                    <li>肝機能障害</li>
+                                </ul>
+                            </td>
+                            <td>内部障害</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="DPWL">DPWL <!-- <small class="hidden-xs-down"> Disable Person Welfare Law</small> --> <small>身体障害者福祉法</small> <small><code></code></small></h3>
+
+
+
             </div>
 
         </div>
     </div>
 
-    <div class="section" id="DPWL">
-        <div class="page-header">
-            <h2>DPWL <small class="hidden-xs-down"> Disable Person Welfare Law</small> <small>身体障害者福祉法</small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
     <div class="section" id="syogaisyasogoshienho">
-        <div class="page-header">
-            <h2>障害者総合支援法 <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Syogaisyasogoshienho <small>障害者総合支援法</small> <small><code></code></small></h2>
                 </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>障害者総合支援法</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>6<br>
+                                76</td>
+                            <td><u>自立支援給付</u>
+                                <ul>
+                                    <li>介護給付</li>
+                                    <li>訓練等給付</li>
+                                    <li>自立支援医療</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>自立支援医療</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>更生医療</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>育成医療</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>精神通院医療</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
     </div>
 
-    
+
+
 
     
     
-    <div class="section" id="">
-        <div class="page-header">
-            <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
+    
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
-                </div>
-            </div>
 
-        </div>
-    </div>
+
+
+
+
     
    
     
@@ -452,7 +620,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 14 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 14</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -589,6 +757,16 @@
             </ul>
 
 
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
+
             <!-- 01 -->
             <div class="card-group reception info" id="q01">
                 <div class="card">
@@ -597,7 +775,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-18_22:03:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-18_22:03:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_16:37:21"> </span>
                         <br>
                         <p>障害の受容について正しいのはどれか．</p>
                         
@@ -666,19 +845,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group ICF info" id="q02">
+            <div class="card-group ICF INTRO info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B3" target="_blank" id="2018-01-24_18:00:36">103B3</a> 国際生活機能分類 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-18_22:08:30"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-18_22:08:30"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_17:00:16"> </span>
                         <br>
                         <p>国際生活機能分類〈ICF〉で誤っているのはどれか．</p>
 
@@ -720,45 +903,52 @@
                                     <td>心身機能/身体構造<br>
                                         body function/structure</td>
                                     <td>&rarr;</td>
-                                    <td><b>機能障害</b><br>
+                                    <td><u>機能障害</u><br>
                                         Impairment</td>
                                 </tr>
                                 <tr>
                                     <td>活動<br>
                                         Activity</td>
                                     <td>&rarr;</td>
-                                    <td><b>活動制限</b><br>
+                                    <td><u>活動制限</u><br>
                                         Activity limitation</td>
                                 </tr>
                                 <tr>
                                     <td>参加<br>
                                         Participation</td>
                                     <td>&rarr;</td>
-                                    <td><b>参加制約</b><br>
+                                    <td><u>参加制約</u><br>
                                         Participation restriction</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
                                 </tr>
                             </tbody>
                         </table>
 
                         <h6>ICF</h6>
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/103B003_bas_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/103B003_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
                         <ul class="list-group">
-                            <li class="list-group-item">機能障害：<br>
-                                肢体不自由，内臓障害，精神障害等，心身機能または身体構造に著しい変異や喪失が起こった状態．</li>
-                            <li class="list-group-item">活動制限：<br>
-                                個人が活動を行うときに生じる能力の制限．</li>
-                            <li class="list-group-item">参加制約：<br>
-                                個人が生活・人生場面で経験する社会的な制約．</li>
+                            <li class="list-group-item">
+                                機能障害：<br>
+                                肢体不自由，内臓障害，精神障害等，心身機能または身体構造に著しい変異や喪失が起こった状態．
+                            </li>
+                            <li class="list-group-item">
+                                活動制限：<br>
+                                個人が活動を行うときに生じる能力の制限．
+                            </li>
+                            <li class="list-group-item">
+                                参加制約：<br>
+                                個人が生活・人生場面で経験する社会的な制約．
+                            </li>
                         </ul>
+
+
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/103B003_bas_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -800,14 +990,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group ICF pri info" id="q04">
+            <div class="card-group ICF INTRO pri info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E20" target="_blank">108E20</a> 国際生活機能分類
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-18_22:14:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-18_22:14:34"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_17:02:17"> </span>
                         <br>
                         <p>国際生活機能分類（2001年）における生活機能はどれか．</p>
 
@@ -882,14 +1073,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group ICF " id="q06">
+            <div class="card-group ICF INTRO" id="q06">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/104G48" target="_blank">104G48</a> 国際生活機能分類 Qs
+                        <a href="https://qb.medilink-study.com/#/Answer/104G48" target="_blank">104G48</a> ICF Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-18_22:18:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-18_22:18:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_17:03:44"> </span>
                         <br>
                         <p>53歳の男性．会社員．<br>
                             連日深夜まで働いていたが，1ヵ月前に脳出血をきたし片麻痺を生じた．歩行が困難である．一時は気が滅入りがちであったが，妻の励ましもあり現在は意欲的にリハビリテーションに取り組んでいる．仕事は休職している．<br>
@@ -930,7 +1122,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-18_22:21:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-18_22:21:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_16:42:30"> </span>
                         <br>
                         <p>48歳の女性．<br>
                             28歳で筋萎縮性側索硬化症〈ALS〉を発症し，35歳で人工呼吸器を装着した．眼瞼・眼球運動機能が残存しているため開閉眼で意思疎通を行うことができ，コンピュータやインターネットを駆使して地域の患者会の会長をしている．<br>
@@ -1008,15 +1201,19 @@
             <div class="card-group REHAB info pri" id="q08">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109E59" target="_blank" id="2018-01-24_18:31:34">109E59</a> リハビリテーションの到達目標設定
+                        <a href="https://qb.medilink-study.com/#/Answer/109E59" target="_blank" id="2018-01-24_18:31:34">109E59</a> リハ 到達目標設定
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-18_22:24:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-18_22:24:49"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_17:05:49"> </span>
                         <br>
                         <p>86歳の女性．<br>
                             歩行が不安定であることを主訴に娘に連れられて来院した．<br>
-                            10年前から高血圧症，変形性膝関節症および変形性脊椎症で通院していたが，徐々に足の力が弱くなり歩行が不安定になったため受診した．自分で立ち上がり，どうにか屋内の伝い歩きをすることはできるが，月1回の通院以外はほとんど外出することはない．食事と排泄とはかろうじて自立しているが，入浴には一部介助が必要である．夫は5年前に肺癌で死亡し，現在は一人暮らしで隣に住む娘が介護している．半年前から1週間に2回の訪問介護を利用している．本人と家族に相談の上，訪問リハビリテーションを開始することになった．<br>
+                            10年前から高血圧症，変形性膝関節症および変形性脊椎症で通院していたが，徐々に足の力が弱くなり歩行が不安定になったため受診した．<br>
+                            自分で立ち上がり，どうにか屋内の伝い歩きをすることはできるが，月1回の通院以外はほとんど外出することはない．食事と排泄とはかろうじて自立しているが，入浴には一部介助が必要である．<br>
+                            夫は5年前に肺癌で死亡し，現在は一人暮らしで隣に住む娘が介護している．<br>
+                            半年前から1週間に2回の訪問介護を利用している．本人と家族に相談の上，訪問リハビリテーションを開始することになった．<br>
                             リハビリテーションの到達目標設定のために必要な情報はどれか．3つ選べ．</p>
                         
 
@@ -1061,7 +1258,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-18_22:28:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-18_22:28:32"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_16:43:42"> </span>
                         <br>
                         <p>社会的支援（social support）の効果で誤っているのはどれか．</p>
                         
@@ -1106,14 +1304,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group normalization" id="q10">
+            <div class="card-group normalization INTRO" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E10" target="_blank">103E10</a> ノーマライゼーション
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-18_22:30:31"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-18_22:30:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_17:07:20"> </span>
                         <br>
                         <p>ノーマライゼーションで正しいのはどれか．3つ選べ．</p>
 
@@ -1207,14 +1406,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group DPWL" id="q12">
+            <div class="card-group DPWL welfare" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99D9" target="_blank" id="2018-01-24_18:11:13">99D9</a> 身体障害者手帳の交付対象
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-18_22:35:01"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-18_22:35:01"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-23_16:51:23"> </span>
                         <br>
                         <p>身体障害者手帳の交付対象とならないのはどれか．</p>
 
@@ -1244,18 +1444,20 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group syogaisyasogoshienho DPWL MCL insurance " id="q13">
+            <div class="card-group syogaisyasogoshienho DPWL MCL insurance nursing_care_insurance_law" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103G40" target="_blank" id="2018-01-24_18:11:53">103G40</a> 片麻痺 福祉
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-18_22:39:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-18_22:39:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_16:54:11"> </span>
                         <br>
-                        <p>38歳の女性．<br>
+                        <p><u>38歳</u>の女性．<br>
                             3ヵ月前に<u>脳出血</u>を発症し，<u>右片麻痺</u>と<u>失語症</u>とが残存した．<br>
-                            救急病院で初期治療を受け，1ヵ月後にリハビリテーション病院に転院した．2ヵ月間のリハビリテーションによって，<u>T字杖と短下肢装具とを用いて平地での歩行が可能</u>となったが，<u>階段昇降や入浴には介助を要する</u>．<br>
+                            救急病院で初期治療を受け，1ヵ月後にリハビリテーション病院に転院した．<br>
+                            2ヵ月間のリハビリテーションによって，<u>T字杖と短下肢装具とを用いて平地での歩行が可能</u>となったが，<u>階段昇降や入浴には介助を要する</u>．<br>
                             会話の理解は良好で状況判断も適切だが，<u>言語表出が困難</u>である．<br>
                             会社勤めの40歳の夫と2人暮らしで，日中は1人になる．家屋は持ち家だが，屋内に段差が多く，トイレは和式である．<br>
                             退院準備として適切なのはどれか．2つ選べ．</p>
@@ -1303,7 +1505,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-18_22:42:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-18_22:42:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-23_16:57:40"> </span>
                         <br>
                         <p>3歳2ヵ月の女児．<br>
                             3歳児健康診査で医師から<u>心雑音</u>を指摘され，専門医療機関を紹介され来院した．<br>
@@ -1341,7 +1544,7 @@
                                 療養の給付では, 小学校入学前: 自己負担 20%</li>
                             <li></li>
                             <li>[障害者総合支援法]<br>
-                                < 18yo 身体障害児 &rAarr; 自立支援医療</li>
+                                < 18yo 身体障害児 &xrArr; 自立支援医療</li>
                         </ol>
                     </div>
                 </div>
@@ -1395,6 +1598,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -1463,6 +1667,13 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
+    $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -1471,6 +1682,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1484,27 +1716,46 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
+
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
+
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -1526,11 +1777,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1547,63 +1801,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1617,6 +1885,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1646,6 +1917,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -1833,41 +2107,99 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
-    $('#reception').click(function(){
+
+    $('#INTRO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.reception)').toggle('slow');
+        $('#q div.card-group:not(.INTRO)').slideToggle(100);
     });
-    $('#reception').find('code').html($('div.reception').size());
+    $('#INTRO').find('small > code').html(
+        $('div.INTRO > .card > .mis').size() + '+' +
+        $('div.INTRO > .card > .cau').size() + '/' +
+        $('div.INTRO').size()
+    );
+
 
     $('#ICF').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ICF)').toggle('slow');
+        $('div.card-group:not(.ICF)').slideToggle(100);
     });
-    $('#ICF').find('code').html($('div.ICF').size());
+    $('#ICF').find('code').html(
+        $('div.ICF > .card > .mis').size() + '+' +
+        $('div.ICF > .card > .cau').size() + '/' +
+        $('div.ICF').size()
+    );
 
-    $('#DPWL').click(function(){
+
+
+    $('#welfare h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DPWL)').toggle('slow');
+        $('#q div.card-group:not(.welfare)').slideToggle(100);
     });
-    $('#DPWL').find('code').html($('div.DPWL').size());
+    $('#welfare').find('small > code').html(
+        $('div.welfare > .card > .mis').size() + '+' +
+        $('div.welfare > .card > .cau').size() + '/' +
+        $('div.welfare').size()
+    );
+
 
     $('#syogaisyasogoshienho').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.syogaisyasogoshienho)').toggle('slow');
+        $('div.card-group:not(.syogaisyasogoshienho)').slideToggle(100);
     });
-    $('#syogaisyasogoshienho').find('code').html($('div.syogaisyasogoshienho').size());
+    $('#syogaisyasogoshienho').find('code').html(
+        $('div.syogaisyasogoshienho > .card > .mis').size() + '+' +
+        $('div.syogaisyasogoshienho > .card > .cau').size() + '/' +
+        $('div.syogaisyasogoshienho').size()
+    );
+
+
+
+    $('#reception').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.reception)').slideToggle(100);
+    });
+    $('#reception').find('code').html(
+        $('div.reception > .card > .mis').size() + '+' +
+        $('div.reception > .card > .cau').size() + '/' +
+        $('div.reception').size()
+    );
+
+
+
+    
+
+
+
+    $('#DPWL').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.DPWL)').slideToggle(100);
+    });
+    $('#DPWL').find('code').html(
+        $('div.DPWL > .card > .mis').size() + '+' +
+        $('div.DPWL > .card > .cau').size() + '/' +
+        $('div.DPWL').size()
+    );
+
+
+
+    
 
 
 
 
-    // $('#').click(function(){
-    //     $('.card-group').show();
-    //     $('div.card-group:not(.)').toggle('slow');
-    // });
-    // $('#').find('code').html($('div.').size());
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

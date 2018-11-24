@@ -4,12 +4,36 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-23 18:21:14
+@Last modified time: 2018-11-24 21:39:39
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+
 04.01.15    18 08 23    version
 04.01.14    18 08 22    js print
 04.01.13    18 08 21    js .mnemonics badge
@@ -85,11 +109,11 @@
 -->
 <html>
 <head>
-    <title>Nutrition</title>
+    <title>Nutrition-Health</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-23 20:13:21" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.15">
+    <meta name="revised" content="2018-11-24 21:40:20" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -108,6 +132,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -116,7 +143,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -144,10 +171,15 @@
         code.q_alert_done{color: rgb(126, 64, 177)}
         #q div.card-group{margin-bottom: 10px}
         div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
+        td > ul, td > ol{padding-left: 12px; margin-bottom: 5px}
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -162,7 +194,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -186,25 +220,48 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul, td > ol{padding-left: 10px; margin-bottom: 3px;}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -214,7 +271,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Nutrition <small class="hidden-xs-down"></small></h1>
+        <h1 class="title">Nutrition <small>Health</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -258,101 +315,97 @@
     
     
     <div class="section" id="intake">
-        <div class="page-header">
-            <h2>Intake <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h6>摂取目標</h6>
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <th>タンパク質</th>
-                                <td><ul>
-                                    <li>目標: 14.7% (13-20)</li>
-                                    <li>1g/kg</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th>脂質</th>
-                                <td><ul>
-                                    <li>目標: 26.9% (20-30)</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th>炭水化物</th>
-                                <td><ul>
-                                    <li>目標: 58.4% (50-65)</li>
-                                </ul></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h6>国民一人当たりの食品群別摂取量</h6>
-                    <table class="table table-condensed">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>野菜類</th>
-                                <th>果物類</th>
-                                <th>魚介類</th>
-                                <th>肉類</th>
-                                <th>乳類</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>2001年＊</th>
-                                <td>279.5</td>
-                                <td>132.0</td>
-                                <td>94.0</td>
-                                <td>76.3</td>
-                                <td>170.0</td>
-                            </tr>
-                            <tr>
-                                <th>2011年</th>
-                                <td>266.5</td>
-                                <td>105.7</td>
-                                <td>72.7</td>
-                                <td>83.6</td>
-                                <td>122.7</td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="6">＊国民栄養調査として</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intake <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="EER">EER <small>推定エネルギー必要量</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        \(
+                            \text{EER} \\
+                            = 21.5 \text{ (kcal/kg/day)} \times 22 \text{(kg/m}^2\text{)} \times  \\
+                            = \text{基礎代謝基準値} \times \text{基準体重} \times \text{身体活動レベル}
+                        \)
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>摂取目標</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>タンパク質</th>
+                            <td><ul>
+                                <li>目標: 14.7% (13-20)</li>
+                                <li>1g/kg</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>脂質</th>
+                            <td><ul>
+                                <li>目標: 26.9% (20-30)</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>炭水化物</th>
+                            <td><ul>
+                                <li>目標: 58.4% (50-65)</li>
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>国民一人当たりの食品群別摂取量</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>野菜類</th>
+                            <th>果物類</th>
+                            <th>魚介類</th>
+                            <th>肉類</th>
+                            <th>乳類</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>2001年＊</th>
+                            <td>279.5</td>
+                            <td>132.0</td>
+                            <td>94.0</td>
+                            <td>76.3</td>
+                            <td>170.0</td>
+                        </tr>
+                        <tr>
+                            <th>2011年</th>
+                            <td>266.5</td>
+                            <td>105.7</td>
+                            <td>72.7</td>
+                            <td>83.6</td>
+                            <td>122.7</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="6">＊国民栄養調査として</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
         </div>
+
     </div>
     
    
@@ -383,7 +436,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 7 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 7</p>
 
             
             <!-- 
@@ -504,6 +557,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group pri" id="q01">
                 <div class="card">
@@ -513,7 +574,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-23_20:01:20"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-23_20:01:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-24_21:43:23"> </span>
                         <br>
                         <p>食事バランスガイドのイラストを次に示す．<br>
                             説明として適切なのはどれか．</p>
@@ -559,7 +621,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-23_20:05:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-23_20:05:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-24_21:44:07"> </span>
                         <br>
                         <p>日本人の食事摂取基準について誤っているのはどれか．</p>
                         
@@ -604,7 +667,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-23_20:09:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-23_20:09:04"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-24_21:44:49"> </span>
                         <br>
                         <p>身体活動レベルⅢの30歳の男性の1日摂取目標量として適切なのはどれか．</p>
                         
@@ -697,7 +761,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group pri " id="q04">
+            <div class="card-group pri info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107B61" target="_blank" id="2018-01-24_23:05:41">107B61</a> 推定エネルギー必要量
@@ -740,12 +804,13 @@
                             <li></li>
                         </ol>
 
-                        <div lang="latex">
-                            \begin{align*}
+                        \(
                             \text{EER (Estimated Energy Requirement)} \\
                             = 21.5 \text{ (kcal/kg/day)} \times 22 \text{ (kg/m}^2\text{)}
-                            \end{align*}
-                        </div>
+                        \)
+
+
+
                         <p><code>EER（Estimated Energy Requirement）：<br>
                             推定エネルギー必要量（kcal/日）<br>
                             ＝ 基礎代謝基準値（kcal/kg（体重）/日）×基準体重（kg）×身体活動レベル<br>
@@ -881,7 +946,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-23_20:34:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-23_20:34:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-24_21:45:28"> </span>
                         <br>
                         <p>栄養素とその欠乏によって起こる病態との組合せで正しいのはどれか．</p>
 
@@ -1037,7 +1103,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -1047,6 +1117,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -1065,7 +1156,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -1109,13 +1212,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req">Req</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -1132,63 +1236,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -1202,6 +1320,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -1231,6 +1352,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -1418,14 +1542,31 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
     $('#intake h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.intake)').toggle();
+        $('div.card-group:not(.intake)').slideToggle(100);
     });
-    $('#intake').find('code').html($('div.intake').size());
+    $('#intake').find('small > code').html(
+        $('div.intake > .card > .mis').size() + '+' +
+        $('div.intake > .card > .cau').size() + '/' +
+        $('div.intake').size());
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.)').slideToggle(100);
+    });
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

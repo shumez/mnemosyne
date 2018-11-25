@@ -4,12 +4,34 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-25 18:07:58
+@Last modified time: 2018-11-25 13:51:52
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+
 04.01.17    18 08 26    .section layout
 04.01.16    18 08 26    print table-bordered
 04.01.15    18 08 23    version
@@ -87,11 +109,11 @@
 -->
 <html>
 <head>
-    <title>Labor</title>
+    <title>Labor-Health</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-25 18:08:17" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.17">
+    <meta name="revised" content="2018-11-25 13:53:06" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -110,6 +132,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -118,7 +143,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -146,10 +171,15 @@
         code.q_alert_done{color: rgb(126, 64, 177)}
         #q div.card-group{margin-bottom: 10px}
         div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
+        td > ul, td > ol{padding-left: 12px; margin-bottom: 5px}
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -164,7 +194,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -188,30 +220,48 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul, td > ol{padding-left: 10px; margin-bottom: 3px;}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed th, .table-condensed td{
-                border-bottom: 1px solid black;}
-            .table-condensed th, .table-condensed td{
-                border-bottom: 1px solid black;}
-
-            .table-bordered th, .table-bordered td{
-                border: 1px black solid;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
                 border-color: black;
-                /*border-right: 1px solid black;*/
-                /*border-bottom: 1px solid black;*/
-                /*border-left: 1px solid black;*/
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
             }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
             
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
+            }
 
         }
     </style>
@@ -221,7 +271,7 @@
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Labor <small class="hidden-xs-down"></small></h1>
+        <h1 class="title">Labor <small>Health</small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -261,200 +311,301 @@
     </div>
 
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="industrial_physician">
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Industrial Physician <small>産業医</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>Intro</h2>
                 </div>
+            </div>
+        </div>
+    </div>
 
-                <div class="body">
-                    <h6>産業医の職務</h6>
-                    <ul class="list-group">
-                        <li class="list-group-item">健康診断の実施</li>
-                        <li class="list-group-item">作業環境の維持管理</li>
-                        <li class="list-group-item">作業の管理</li>
-                        <li class="list-group-item">労働者の健康管理</li>
-                        <li class="list-group-item">健康教育 / 健康相談 / 健康の保持増進</li>
-                        <li class="list-group-item">衛生教育</li>
-                        <li class="list-group-item">健康障害の原因調査 / 再発防止</li>
-                    </ul>
 
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
-                                <th>要件</th>
-                                <td colspan="3"><ul>
-                                    <li>厚生労働大臣の定める研修の修了者</li>
-                                    <li>労働衛生コンサルタント試験（保健衛生）に合格した者　など</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <th rowspan="5">選任基準<br>
-                                    （事業者が選任する）</th>
-                                <td>事業場規模</td>
-                                <td>産業医数</td>
-                                <td>選任形態</td>
-                            </tr>
-                            <tr>
-                                <td>50人以上</td>
-                                <td rowspan="3">1人以上</td>
-                                <td>嘱託でも可</td>
-                            </tr>
-                            <tr>
-                                <td>有害業務500人以上</td>
-                                <td rowspan="3">専属</td>
-                            </tr>
-                            <tr>
-                                <td>一般業務1,000人以上</td>
-                            </tr>
-                            <tr>
-                                <td>3,001人以上</td>
-                                <td>2人以上</td>
-                            </tr>
-                            <tr>
-                                <th>職務</th>
-                                <td colspan="3"><ol>
-                                    <li>健康診断，面接指導の実施，その結果に基づく措置</li>
-                                    <li>作業環境の維持管理</li>
-                                    <li>作業の管理</li>
-                                    <li>上記以外の労働者の健康管理</li>
-                                    <li>健康教育，健康相談，健康の保持増進</li>
-                                    <li>衛生教育</li>
-                                    <li>健康障害の原因調査，再発防止</li>
-                                </ol></td>
-                            </tr>
-                            <tr>
-                                <th>義務</th>
-                                <td colspan="3">職場巡視（少なくとも月1回）</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="section" id="labor_standard_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Labor Standard Law <small>労働基準法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+    </div>
 
+
+
+    <div class="section" id="industrial_safety_and_health_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Industrial Safety and Health Law <small>労働安全衛生法</small> <small><code></code></small></h2>
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="industrial_physician">Industrial Physician <small>産業医</small> <small><code></code></small></h3>
+            </div>
 
-        </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="management">
-                <div class="page-header">
-                    <h2>Management <small>労働安全衛生の管理</small> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
+                <h6>産業医の職務</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>健康診断の実施</li>
+                            <li>作業環境の維持管理</li>
+                            <li>作業の管理</li>
+                            <li>労働者の健康管理</li>
+                            <li>健康教育 / 健康相談 / 健康の保持増進</li>
+                            <li>衛生教育</li>
+                            <li>健康障害の原因調査 / 再発防止</li>
+                        </ul>
+                    </li>
+                </ul>
 
-                <div class="body">
-                    <h6>労働安全衛生の3原則</h6>
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <td>健康管理</td>
-                                <td><ul>
+                <ul class="list-group">
+                    <li class="list-group-item"><u>労災認定</u>:<br>
+                        <u>労働基準監督署長</u>が行う</li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>要件</th>
+                            <td colspan="3"><ul>
+                                <li>厚生労働大臣の定める研修の修了者</li>
+                                <li>労働衛生コンサルタント試験（保健衛生）に合格した者　など</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="5">選任基準<br>
+                                （事業者が選任する）</th>
+                            <td>事業場規模</td>
+                            <td>産業医数</td>
+                            <td>選任形態</td>
+                        </tr>
+                        <tr>
+                            <td>50人以上</td>
+                            <td rowspan="3">1人以上</td>
+                            <td>嘱託でも可</td>
+                        </tr>
+                        <tr>
+                            <td>有害業務500人以上</td>
+                            <td rowspan="3">専属</td>
+                        </tr>
+                        <tr>
+                            <td>一般業務1,000人以上</td>
+                        </tr>
+                        <tr>
+                            <td>3,001人以上</td>
+                            <td>2人以上</td>
+                        </tr>
+                        <tr>
+                            <th>職務</th>
+                            <td colspan="3"><ol>
+                                <li>健康診断，面接指導の実施，その結果に基づく措置</li>
+                                <li>作業環境の維持管理</li>
+                                <li>作業の管理</li>
+                                <li>上記以外の労働者の健康管理</li>
+                                <li>健康教育，健康相談，健康の保持増進</li>
+                                <li>衛生教育</li>
+                                <li>健康障害の原因調査，再発防止</li>
+                            </ol></td>
+                        </tr>
+                        <tr>
+                            <th>義務</th>
+                            <td colspan="3">職場巡視（少なくとも月1回）</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="management">Management <small>労働安全衛生の管理</small> <small><code></code></small></h3>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>労働安全衛生の3原則</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th rowspan="3">作業環境管理</th>
+                            <td>発生の抑制</td>
+                            <td>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>隔離</td>
+                            <td>
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>除去</td>
+                            <td>
+                                <ul>
+                                    <li>局所排気</li>
+                                    <li>換気</li>
+                                    <li>建物の改修</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>作業管理</th>
+                            <td><u>侵入の抑制</u></td>
+                            <td>
+                                <ul>
+                                    <li>作業場所</li>
+                                    <li>作業方法</li>
+                                    <li>作業姿勢</li>
+                                    <li><u>暴露時間</u></li>
+                                    <li>呼吸保護具</li>
+                                    <li>教育</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>健康管理</th>
+                            <td>障害の予防</td>
+                            <td>
+                                <ul>
                                     <li>生活指導</li>
                                     <li>健康診断</li>
                                     <li>職業性疾病や障害の予防</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <td>作業環境管理</td>
-                                <td><ul>
-                                    <li>有害要因の除去</li>
-                                    <li>環境測定などによる評価</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <td>作業管理</td>
-                                <td><ul>
-                                    <li>作業そのものの管理</li>
-                                    <li>健康障害の防止対策など</li>
-                                </ul></td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-
-                </div>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="industrial_accident">
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>許容濃度に用いる値</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>作業時間荷重平均値（TWA）</th>
+                            <td>濃度を持続時間で積分した値を，１日の作業時間（７〜８時間）で除した値<br>
+                            &xrArr; 慢性中毒対策に適している</td>
+                        </tr>
+                        <tr>
+                            <th>最大<u>許容濃度</u><br>（天井値　Ｃ値）</th>
+                            <td>健康障害の危険のある物質が瞬時でもこの濃度以上になってはならない上限値<br>
+                            &xrArr; 急性中毒対策に適する</td>
+                        </tr>
+                        <tr>
+                            <th>短時間曝露限界値（STEL）</th>
+                            <td>刺激作用や麻酔作用のある物質に対して，1回15分以内，1時間以上の間隔で1日4回以内の条件下での限界値</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section" id="industrial_accident_compensation_insurance_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Industrial Accident <small>労災</small><small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <div class="body">
-                    <ul class="list-group">
-                        <li class="list-group-item">労働者が労働災害（業務，通勤による負傷，疾病，障害，死亡）を受けた場合，労災補償の対象となる</li>
-                        <li class="list-group-item">国が保険者，労働者が被保険者で<u>強制加入</u>，保険料は<u>事業者が全額負担</u></li>
-                        <li class="list-group-item">労災の認定は<u>労働基準監督署長</u>が行う（産業医ではない）</li>
-                        <li class="list-group-item">負傷に起因する業務上疾病では，<u>災害性腰痛</u>が最多</li>
-                    </ul>
-
-
+                    <h2>Industrial Accident Compensation Insurance Law <small>労働者災害補償保険法</small> <small><code></code></small></h2>
                 </div>
             </div>
-        </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="occupational_disease">
-                <div class="page-header">
-                    <h2>Occupational Disease <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="industrial_accident">Industrial Accident <small>労災</small> <small><code></code></small></h3>
 
-                <div class="body">
 
-                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        労働者が労働災害（業務，<u>通勤</u>による負傷，疾病，障害，死亡）を受けた場合，労災補償の対象となる
+                    </li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>保険者: 国</li>
+                            <li>被保険者: 労働者  <u>強制加入</u></li>
+                            <li>保険料: <u>事業者が全額負担</u></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        労災の認定: <u>労働基準監督署長</u>が行う<br>
+                        (産業医ではない)
+                    </li>
+                    <li class="list-group-item">
+                        負傷に起因する業務上疾病では，
+                        <ol>
+                            <li><u>災害性腰痛</u>が最多</li>
+                        </ol>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="occupational_disease">Occupational Disease <small class="hidden-xs-down"> </small> <small><code></code></small></h3>
+
+
             </div>
         </div>
+    </div>
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="radioactive">
                 <div class="page-header">
                     <h2>Radioactive <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <h6>放射線障害の分類</h6>
-                    <table class="table table-condensed">
-                        <tbody>
-                            <tr>
-                                <th>急性 (早発)</th>
-                                <td><ul>
-                                    <li>放射線宿酔（悪心・嘔吐）</li>
-                                    <li>皮膚障害（紅斑，脱毛）</li>
-                                    <li>粘膜障害（下痢，血便，唾液分泌障害）</li>
-                                    <li>不妊</li>
-                                    <li>造血器障害（汎血球障害）</li>
-                                    <li>味覚障害</li>
-                                </ul></td>
-                                <td rowspan="2">確定的障害</td>
-                            </tr>
-                            <tr>
-                                <th rowspan="2">晩発</th>
-                                <td><ul>
-                                    <li>白内障</li>
-                                    <li>肺線維症</li>
-                                    <li>腎不全</li>
-                                    <li>骨髄障害</li>
-                                    <li>腸閉塞</li>
-                                    <li>胎児被曝</li>
-                                    <li>甲状腺機能低下症</li>
-                                </ul></td>
-                            </tr>
-                            <tr>
-                                <td><u>癌</u><ul>
-                                    <li>乳癌</li>
-                                    <li>甲状腺癌</li>
-                                    <li>白血病</li>
-                                    <li>肺癌</li>
-                                </ul></td>
-                                <td>確率的障害</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <h6>放射線障害の分類</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>急性 (早発)</th>
+                            <td><ul>
+                                <li>放射線宿酔（悪心・嘔吐）</li>
+                                <li>皮膚障害（紅斑，脱毛）</li>
+                                <li>粘膜障害（下痢，血便，唾液分泌障害）</li>
+                                <li>不妊</li>
+                                <li>造血器障害（汎血球障害）</li>
+                                <li>味覚障害</li>
+                            </ul></td>
+                            <td rowspan="2">確定的障害</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">晩発</th>
+                            <td><ul>
+                                <li>白内障</li>
+                                <li>肺線維症</li>
+                                <li>腎不全</li>
+                                <li>骨髄障害</li>
+                                <li>腸閉塞</li>
+                                <li>胎児被曝</li>
+                                <li>甲状腺機能低下症</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <td><u>癌</u><ul>
+                                <li>乳癌</li>
+                                <li>甲状腺癌</li>
+                                <li>白血病</li>
+                                <li>肺癌</li>
+                            </ul></td>
+                            <td>確率的障害</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                </div>
             </div>
         </div>
 
@@ -464,9 +615,7 @@
                     <h2>Compound <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
 
-                </div>
             </div>
         </div>        
     </div>
@@ -474,66 +623,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
     
 
     
-    
-    <div class="section" id="">
-        <div class="page-header">
-            <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
     
@@ -565,7 +665,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 53 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 53</p>
 
             <!-- 
             <div class="row hidden-xs-down">
@@ -685,15 +785,24 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group " id="q01">
+            <div class="card-group labor_standard_law" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B29" target="_blank">109B29</a> 労働 社会状況
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_18:18:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_18:18:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:06:19"> </span>
                         <br>
                         <p>2011～2015年の社会状況で正しいのはどれか．2つ選べ．</p>
                         
@@ -725,7 +834,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group pri 110" id="q02">
+            <div class="card-group occupational_disease industrial_accident_compensation_insurance_law pri 110" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G8" target="_blank">110G8</a> 産業 &rArr; 疾患
@@ -745,7 +854,7 @@
                         <ol type="a">
                             <li class="ans_f">じん肺</li>
                             <li class="ans_t">適応障害</li>
-                            <li class="ans_f">適応障害</li>
+                            <li class="ans_f">農薬中毒</li>
                             <li class="ans_f">胸膜中皮腫</li>
                             <li class="ans_f">レプトスピラ症</li>
                         </ol>
@@ -776,7 +885,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group pri info" id="q03">
+            <div class="card-group industrial_safety_and_health_law pri info" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107E14" target="_blank">107E14</a> 妊娠中の女性の就業が制限
@@ -829,14 +938,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group industrial_physician info" id="q04">
+            <div class="card-group industrial_physician industrial_safety_and_health_law info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104E17" target="_blank">104E17</a> 産業医 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_20:21:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_20:21:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:08:06"> </span>
                         <br>
                         <p>産業医について正しいのはどれか．</p>
 
@@ -876,14 +986,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group industrial_physician 111 pri" id="q05">
+            <div class="card-group industrial_physician industrial_safety_and_health_law 111 pri" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E11" target="_blank">111E11</a> 産業医 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-25_20:30:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-25_20:30:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_14:06:24"> </span>
                         <br>
                         <p>産業医について誤っているのはどれか．</p>
 
@@ -915,14 +1026,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group industrial_physician info pri 110" id="q06">
+            <div class="card-group industrial_physician industrial_safety_and_health_law info pri 110" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E14" target="_blank">110E14</a> 産業医の職務
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-25_20:33:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-25_20:33:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:17:16"> </span>
                         <br>
                         <p>産業医の職務として法令に規定されていないのはどれか．</p>
 
@@ -1004,7 +1116,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group industrial_physician" id="q07">
+            <div class="card-group industrial_physician industrial_safety_and_health_law" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E6" target="_blank">109E6</a> 産業医の業務
@@ -1040,14 +1152,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group management info" id="q08">
+            <div class="card-group management industrial_safety_and_health_law info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107E31" target="_blank">107E31</a> 作業環境管理
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-25_20:46:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-25_20:46:14"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_14:18:46"> </span>
                         <br>
                         <p>労働衛生管理のうち作業環境管理はどれか．2つ選べ．</p>
 
@@ -1117,14 +1230,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group info" id="q09">
+            <div class="card-group management industrial_safety_and_health_law info" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E33" target="_blank">103E33</a> 許容濃度
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_20:53:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_20:53:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:09:58"> </span>
                         <br>
                         <p>許容濃度で正しいのはどれか．</p>
 
@@ -1171,19 +1285,23 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 10 -->
-            <div class="card-group solvant toluene pri" id="q10">
+            <div class="card-group solvant toluene management industrial_safety_and_health_law pri" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109A55" target="_blank">109A55</a> 産業医の具体的な措置
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_20:57:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_20:57:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:12:24"> </span>
                         <br>
                         <p>48歳の男性．<br>
                             <u>工場で吹きつけ作業</u>を担当している．<br>
@@ -1232,7 +1350,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group toluene xylene" id="q11">
+            <div class="card-group toluene xylene management industrial_safety_and_health_law" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103G51" target="_blank">103G51</a> 作業環境　措置
@@ -1273,14 +1391,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group industrial_physician" id="q12">
+            <div class="card-group industrial_physician industrial_safety_and_health_law" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E48" target="_blank">108E48</a> 産業医の対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-25_21:05:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-25_21:05:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:47:30"> </span>
                         <br>
                         <p>45歳の女性．<br>
                             職場の定期健康診断の胸部X線写真で<u>胸部の腫瘤影</u>を指摘され，精密検査が必要との通知を受けた．<br>
@@ -1312,7 +1431,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group " id="q13">
+            <div class="card-group industrial_safety_and_health_law" id="q13">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E10" target="_blank">109E10</a> 過重労働対策
@@ -1351,7 +1470,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group industrial_physician " id="q14">
+            <div class="card-group industrial_physician industrial_safety_and_health_law" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G55" target="_blank">106G55</a> 産業医の対応
@@ -1390,7 +1509,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group industrial_accident info" id="q15">
+            <div class="card-group industrial_accident industrial_accident_compensation_insurance_law info" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G8" target="_blank">109G8</a> 労働者災害補償保険法
@@ -1438,7 +1557,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group industrial_accident info" id="q16">
+            <div class="card-group industrial_accident industrial_accident_compensation_insurance_law info" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105E4" target="_blank">105E4</a> 労働者災害補償保険 対象
@@ -1480,14 +1599,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group industrial_accident info" id="q17">
+            <div class="card-group industrial_accident industrial_accident_compensation_insurance_law info" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B23" target="_blank">104B23</a> 労働者災害補償保険 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:22:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:22:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:15:06"> </span>
                         <br>
                         <p>わが国の労働者災害補償保険について正しいのはどれか．</p>
 
@@ -1528,14 +1648,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group cancer " id="q18">
+            <div class="card-group asbest  cancer occupational_disease industrial_accident_compensation_insurance_law" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94B100" target="_blank">94B100</a> 職業癌
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:26:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:26:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:17:11"> </span>
                         <br>
                         <p>職業癌について誤っているのはどれか．</p>
 
@@ -1568,14 +1689,15 @@
 
 
             <!-- 09 -->
-            <div class="card-group compound aromatic cancer" id="q19">
+            <div class="card-group compound aromatic cancer occupational_disease industrial_accident_compensation_insurance_law" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H76" target="_blank">97H76</a> 膀胱癌 発がん物質
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:28:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:28:40"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:18:03"> </span>
                         <br>
                         <p>膀胱癌の原因となるのはどれか．2つ選べ．</p>
 
@@ -1607,14 +1729,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group benzene asbest Cr Ni As compound cancer" id="q20">
+            <div class="card-group benzene asbest Cr Ni As compound cancer occupational_disease industrial_accident_compensation_insurance_law" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H77" target="_blank">97H77</a> 肺癌 発癌物質
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:32:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:32:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:19:21"> </span>
                         <br>
                         <p>肺癌と関連がないのはどれか．</p>
 
@@ -1665,14 +1788,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group compound As asbest benzene cancer info" id="q21">
+            <div class="card-group compound As asbest benzene cancer occupational_disease industrial_accident_compensation_insurance_law info" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101F79" target="_blank">101F79</a> 原因物質 - 疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:34:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:34:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:20:05"> </span>
                         <br>
                         <p>原因物質と疾患の組合せで誤っているのはどれか．</p>
 
@@ -1729,14 +1853,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group compound Cr info mnemonics" id="q22">
+            <div class="card-group compound Cr occupational_disease industrial_accident_compensation_insurance_law info mnemonics" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100B80" target="_blank">100B80</a> 作業 - 悪性腫瘍
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:37:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:37:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:20:56"> </span>
                         <br>
                         <p>作業と悪性腫瘍の組合せで正しいのはどれか．</p>
 
@@ -1805,14 +1930,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group compound info" id="q23">
+            <div class="card-group compound occupational_disease industrial_accident_compensation_insurance_law info" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95B77" target="_blank">95B77</a> 製造禁止物質
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:43:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:43:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:21:47"> </span>
                         <br>
                         <p>わが国で製造と使用とが禁止されているのはどれか．2つ選べ．</p>
 
@@ -1857,7 +1983,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group compound pneumoconiosis" id="q24">
+            <div class="card-group compound pneumoconiosis industrial_accident_compensation_insurance_law" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97H78" target="_blank">97H78</a> じん肺
@@ -1897,14 +2023,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group asbest compound" id="q25">
+            <div class="card-group asbest compound occupational_disease industrial_accident_compensation_insurance_law" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102E31" target="_blank">102E31</a> 物質 - 疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-25_21:49:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-25_21:49:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:50:09"> </span>
                         <br>
                         <p>組合せで正しいのはどれか．</p>
 
@@ -1945,7 +2072,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group pneumoconiosis info" id="q26">
+            <div class="card-group pneumoconiosis industrial_accident_compensation_insurance_law info" id="q26">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100B75" target="_blank">100B75</a> じん肺健康診断
@@ -1992,14 +2119,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group pneumoconiosis info" id="q27">
+            <div class="card-group pneumoconiosis occupational_disease industrial_accident_compensation_insurance_law info" id="q27">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106I33" target="_blank">106I33</a> 塵肺の合併症
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-25_21:55:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-25_21:55:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:24:46"> </span>
                         <br>
                         <p>法令でじん肺の合併症として認められている業務上疾病はどれか．2つ選べ．</p>
 
@@ -2039,7 +2167,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group hypoxia" id="q28">
+            <div class="card-group hypoxia industrial_accident_compensation_insurance_law info" id="q28">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102I80" target="_blank">102I80</a> ガス 測定
@@ -2118,14 +2246,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group NIHL occupational_disease" id="q29">
+            <div class="card-group NIHL occupational_disease industrial_accident_compensation_insurance_law" id="q29">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98H79" target="_blank">98H79</a> 騒音性難聴 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_10:16:29"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_10:16:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:51:52"> </span>
                         <br>
                         <p>騒音性難聴について正しいのはどれか．</p>
 
@@ -2163,14 +2292,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group occupational_disease" id="q30">
+            <div class="card-group occupational_disease industrial_accident_compensation_insurance_law" id="q30">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105D16" target="_blank">105D16</a> 労働形態 - 健康障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_10:22:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_10:22:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:53:41"> </span>
                         <br>
                         <p>労働形態と健康障害の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -2216,7 +2346,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group occupational_disease Raynaud " id="q31">
+            <div class="card-group occupational_disease Raynaud industrial_accident_compensation_insurance_law" id="q31">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95B80" target="_blank">95B80</a> チェーンソー
@@ -2256,14 +2386,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group NIHL occupational_disease" id="q32">
+            <div class="card-group NIHL occupational_disease industrial_accident_compensation_insurance_law" id="q32">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97G26" target="_blank">97G26</a> 物理的要因 - 健康障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_10:29:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_10:29:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:26:44"> </span>
                         <br>
                         <p>物理的要因と健康障害の組合せで誤っているのはどれか．</p>
 
@@ -2295,14 +2426,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group UV occupational_disease" id="q33">
+            <div class="card-group UV occupational_disease industrial_accident_compensation_insurance_law" id="q33">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95B78" target="_blank">95B78</a> UV
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_10:35:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_10:35:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:28:16"> </span>
                         <br>
                         <p>紫外線について正しいのはどれか．2つ選べ．</p>
 
@@ -2340,14 +2472,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group radioactive leukemia occupational_disease info" id="q34">
+            <div class="card-group radioactive leukemia occupational_disease industrial_accident_compensation_insurance_law info" id="q34">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/95A65" target="_blank">95A65</a> 電離放射線障害 閾値
+                        <a href="https://qb.medilink-study.com/#/Answer/95A65" target="_blank">95A65</a> 電離放射線障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_10:38:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_10:38:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:55:30"> </span>
                         <br>
                         <p>電離放射線障害で閾値が明らかでないのはどれか．2つ選べ．</p>
 
@@ -2397,14 +2530,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group radioactive cata info" id="q35">
+            <div class="card-group radioactive cata occupational_disease industrial_accident_compensation_insurance_law info" id="q35">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95A64" target="_blank">95A64</a> 放射線障害 遅い
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_10:44:31"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_10:44:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:29:23"> </span>
                         <br>
                         <p>大量の被曝後，放射線障害が最も遅く発現するのはどれか．</p>
 
@@ -2476,14 +2610,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group radioactive info" id="q36">
+            <div class="card-group radioactive occupational_disease industrial_accident_compensation_insurance_law info" id="q36">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/96B23" target="_blank">96B23</a> 放射線業務従事者 健康診断
+                        <a href="https://qb.medilink-study.com/#/Answer/96B23" target="_blank">96B23</a> 放射線業務 健康診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_10:48:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_10:48:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:56:33"> </span>
                         <br>
                         <p>放射線業務従事者の定期検査の対象となるのはどれか．3つ選べ．</p>
 
@@ -2539,7 +2674,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group occupational_disease" id="q37">
+            <div class="card-group occupational_disease industrial_accident_compensation_insurance_law" id="q37">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107I28" target="_blank">107I28</a> 職業性腰痛
@@ -2575,7 +2710,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group VDT occupational_disease" id="q38">
+            <div class="card-group VDT occupational_disease industrial_accident_compensation_insurance_law" id="q38">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103I54" target="_blank">103I54</a> VDT
@@ -2618,14 +2753,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group occupational_disease" id="q39">
+            <div class="card-group DPI Cr occupational_disease industrial_accident_compensation_insurance_law" id="q39">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101F80" target="_blank">101F80</a> 職業性アレルギー
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_11:05:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_11:05:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_14:58:55"> </span>
                         <br>
                         <p>職業性アレルギーの原因とならないのはどれか．</p>
 
@@ -2658,13 +2794,14 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group VDT asbest benzene Pb  111 pri" id="q40">
+            <div class="card-group VDT asbest benzene Pb occupational_disease industrial_accident_compensation_insurance_law  111 pri" id="q40">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E32" target="_blank" id="">111E32</a>
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-26_11:09:59"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_11:09:59"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_15:30:28"> </span>
                         <br>
                         <p>作業とその影響の組合せで誤っているのはどれか．</p>
 
@@ -2712,14 +2849,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group Pb toluene  compound occupational_disease" id="q41">
+            <div class="card-group Pb toluene  compound occupational_disease industrial_accident_compensation_insurance_law" id="q41">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102B28" target="_blank">102B28</a> 尿検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_11:13:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_11:13:45"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:33:26"> </span>
                         <br>
                         <p>鉛健康診断の尿検査項目はどれか．</p>
 
@@ -2746,7 +2884,7 @@
 
 
 
-                        <h6><u>なまった先生, 公園トコトコあら, 貧血</u></h6>
+                        <h6>Pb</h6>
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
@@ -2780,6 +2918,8 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
                         <!-- <ul class="list-group">
                             <li class="list-group-item">Pb中毒</li>
                             <li class="list-group-item">疝痛</li>
@@ -2793,14 +2933,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group compound Pb Zn As Mn Cd" id="q42">
+            <div class="card-group compound Pb Zn As Mn Cd occupational_disease industrial_accident_compensation_insurance_law" id="q42">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106I15" target="_blank">106I15</a> 金属中毒 - 健康障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_11:16:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_11:16:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:34:15"> </span>
                         <br>
                         <p>金属中毒と健康障害の組合せで誤っているのはどれか．</p>
                         
@@ -2838,14 +2979,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group compound Pb Cr Hg Be In 110 info" id="q43">
+            <div class="card-group compound Pb Cr Hg Be In 110 info occupational_disease industrial_accident_compensation_insurance_law" id="q43">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G20" target="_blank">110G20</a> 金属 - 健康障害
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_11:18:55"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_11:18:55"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:34:56"> </span>
                         <br>
                         <p>金属と健康障害の組合せで誤っているのはどれか．</p>
 
@@ -2951,14 +3093,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group compound solvant" id="q44">
+            <div class="card-group compound solvant occupational_disease industrial_accident_compensation_insurance_law" id="q44">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B100" target="_blank">93B100</a> 有機溶剤
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_11:27:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_11:27:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:35:44"> </span>
                         <br>
                         <p>職場における有機溶剤曝露について正しいのはどれか．</p>
 
@@ -2987,22 +3130,27 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group toluene " id="q45">
+            <div class="card-group toluene occupational_disease industrial_accident_compensation_insurance_law" id="q45">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98I22" target="_blank">98I22</a> 塗装 検査 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_11:30:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_11:30:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:01:22"> </span>
                         <br>
                         <p>20歳の男性．<br>
-                            食欲不振，頭痛およびめまいを主訴に来院した．<br>
-                            3週前から室内の壁の塗装のアルバイトをしていた．<br>
-                            身長162cm，体重54kg．体温36.7℃．脈拍60/分，整．血圧110/64mmHg．胸腹部に異常所見を認めない．四肢の感覚異常はない．<br>
-                            尿所見：蛋白（－），糖（－）．<br>
-                            血液所見：赤血球420万，白血球5,200，血小板30万．<br>
-                            血清生化学所見：AST 70単位，ALT 60単位，γ-GTP 60単位（基準8～50），コリンエステラーゼ580単位（基準400～800），CK 22単位（基準10～40）．<br>
+                            食欲不振，<u>頭痛</u>および<u>めまい</u>を主訴に来院した．<br>
+                            3週前から室内の<u>壁の塗装</u>のアルバイトをしていた．<br>
+                            身長162cm，体重54kg．体温36.7℃．脈拍60/分，整．血圧110/64mmHg．<br>
+                            胸腹部に異常所見を認めない．四肢の感覚異常はない．<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．<br>
+                            血液所見：<br>
+                            赤血球420万，白血球5,200，血小板30万．<br>
+                            血清生化学所見：<br>
+                            AST 70単位，ALT 60単位，γ-GTP 60単位（基準8～50），コリンエステラーゼ580単位（基準400～800），CK 22単位（基準10～40）．<br>
                             診断に最も有用なのはどれか．</p>
 
                         <ol type="a">
@@ -3038,14 +3186,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group toluene CCl4 methanol benzene TCE" id="q46">
+            <div class="card-group toluene CCl4 methanol benzene TCE solvant occupational_disease industrial_accident_compensation_insurance_law" id="q46">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99E78" target="_blank">99E78</a> 有機溶剤 - 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_12:44:59"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_12:44:59"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_15:36:54"> </span>
                         <br>
                         <p>組合せで誤っているのはどれか．</p>
 
@@ -3078,14 +3227,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group hexane Cd Pb asbest CO" id="q47">
+            <div class="card-group hexane Cd Pb asbest CO occupational_disease industrial_accident_compensation_insurance_law" id="q47">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96H77" target="_blank">96H77</a> 有害物質 - 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_13:12:22"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_13:12:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:03:29"> </span>
                         <br>
                         <p>有害物質と症候の組合せで正しいのはどれか．</p>
 
@@ -3119,14 +3269,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group xylene toluene hexane TCE cresol compound solvant  info" id="q48">
+            <div class="card-group xylene toluene hexane TCE cresol compound solvant occupational_disease industrial_accident_compensation_insurance_law info" id="q48">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96H76" target="_blank">96H76</a> 尿中代謝物検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_13:24:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_13:24:23"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:38:09"> </span>
                         <br>
                         <p>有機溶剤業務従事者の健康診断で尿中代謝物検査の対象とならないのはどれか．</p>
 
@@ -3233,14 +3384,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group compound Pb xylene styrene toluene CO info" id="q49">
+            <div class="card-group compound Pb xylene styrene toluene CO occupational_disease industrial_accident_compensation_insurance_law info" id="q49">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105G4" target="_blank">105G4</a> 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_13:34:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_13:34:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_15:04:33"> </span>
                         <br>
                         <p>職場の有害因子と生物学的曝露の測定項目との組合せで誤っているのはどれか．</p>
 
@@ -3313,14 +3465,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group compound HF " id="q50">
+            <div class="card-group compound HF occupational_disease industrial_accident_compensation_insurance_law info" id="q50">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B99" target="_blank">93B99</a> 歯牙 異常所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_13:41:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_13:41:43"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_15:39:01"> </span>
                         <br>
                         <p>歯牙に異常所見をきたすのはどれか．2つ選べ．</p>
 
@@ -3408,14 +3561,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group compound SO2 NO2 benzene toluene" id="q51">
+            <div class="card-group compound SO2 NO2 benzene toluene occupational_disease industrial_accident_compensation_insurance_law" id="q51">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G25" target="_blank">98G25</a> 有毒ガス - 症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_13:46:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_13:46:35"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:39:54"> </span>
                         <br>
                         <p>誤っているのはどれか．</p>
 
@@ -3445,14 +3599,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group phosphorus OP pesticide compound info" id="q52">
+            <div class="card-group phosphorus OP pesticide compound occupational_disease industrial_accident_compensation_insurance_law info" id="q52">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/97B4" target="_blank">97B4</a>
+                        <a href="https://qb.medilink-study.com/#/Answer/97B4" target="_blank">97B4</a> 有機リン
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_13:49:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_13:49:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:40:37"> </span>
                         <br>
                         <p>有機リン系殺虫剤の中毒でみられないのはどれか．</p>
 
@@ -3499,14 +3654,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group paraquat pesticide compound" id="q53">
+            <div class="card-group paraquat pesticide compound occupational_disease industrial_accident_compensation_insurance_law info" id="q53">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/91B100" target="_blank">91B100</a> 酸素吸入 禁忌
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_13:53:59"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_13:53:59"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_15:41:15"> </span>
                         <br>
                         <p>初期治療として酸素吸入が禁忌であるのはどれか．</p>
 
@@ -3700,7 +3856,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -3710,6 +3870,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -3728,7 +3909,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -3772,13 +3965,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -3795,63 +3989,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -3865,6 +4073,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -3894,6 +4105,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -4081,51 +4295,105 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
-    $('#industrial_physician h2').click(function(){
+    $('#labor_standard_law h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.industrial_physician)').toggle();
+        $('#q div.card-group:not(.labor_standard_law)').slideToggle(100);
     });
-    $('#industrial_physician').find('code').html($('div.industrial_physician').size());
+    $('#labor_standard_law').find('small > code').html(
+        $('div.labor_standard_law > .card > .mis').size() + '+' +
+        $('div.labor_standard_law > .card > .cau').size() + '/' +
+        $('div.labor_standard_law').size()
+    );
 
 
-    $('#management h2').click(function(){
+    $('#industrial_safety_and_health_law h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.management)').toggle();
+        $('#q div.card-group:not(.industrial_safety_and_health_law)').slideToggle(100);
     });
-    $('#management').find('code').html($('div.management').size());
+    $('#industrial_safety_and_health_law').find('small > code').html(
+        $('div.industrial_safety_and_health_law > .card > .mis').size() + '+' +
+        $('div.industrial_safety_and_health_law > .card > .cau').size() + '/' +
+        $('div.industrial_safety_and_health_law').size()
+    );
+
+
+
+
+    $('#industrial_physician').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.industrial_physician)').slideToggle(100);
+    });
+    $('#industrial_physician').find('code').html(
+        $('div.industrial_physician > .card > .mis').size() + '+' +
+        $('div.industrial_physician > .card > .cau').size() + '/' +
+        $('div.industrial_physician').size());
+
+
+    $('#management').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.management)').slideToggle(100);
+    });
+    $('#management').find('code').html(
+        $('div.management > .card > .mis').size() + '+' +
+        $('div.management > .card > .cau').size() + '/' +
+        $('div.management').size());
+
+
+    $('#industrial_accident_compensation_insurance_law h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.industrial_accident_compensation_insurance_law)').slideToggle(100);
+    });
+    $('#industrial_accident_compensation_insurance_law').find('small > code').html(
+        $('div.industrial_accident_compensation_insurance_law > .card > .mis').size() + '+' +
+        $('div.industrial_accident_compensation_insurance_law > .card > .cau').size() + '/' +
+        $('div.industrial_accident_compensation_insurance_law').size()
+    );
 
 
     $('#industrial_accident h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.industrial_accident)').toggle();
+        $('div.card-group:not(.industrial_accident)').slideToggle(100);
     });
-    $('#industrial_accident').find('code').html($('div.industrial_accident').size());
+    $('#industrial_accident').find('code').html(
+        $('div.industrial_accident > .card > .mis').size() + '+' +
+        $('div.industrial_accident > .card > .cau').size() + '/' +
+        $('div.industrial_accident').size());
 
 
 
     $('#occupational_disease h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.occupational_disease)').toggle();
+        $('div.card-group:not(.occupational_disease)').slideToggle(100);
     });
-    $('#occupational_disease').find('code').html($('div.occupational_disease').size());
+    $('#occupational_disease').find('code').html(
+        $('div.occupational_disease > .card > .mis').size() + '+' +
+        $('div.occupational_disease > .card > .cau').size() + '/' +
+        $('div.occupational_disease').size());
 
 
     $('#radioactive h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.radioactive)').toggle();
+        $('div.card-group:not(.radioactive)').slideToggle(100);
     });
-    $('#radioactive').find('code').html($('div.radioactive').size());
+    $('#radioactive').find('code').html(
+        $('div.radioactive > .card > .mis').size() + '+' +
+        $('div.radioactive > .card > .cau').size() + '/' +
+        $('div.radioactive').size());
 
 
     $('#compound h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.compound)').toggle();
+        $('div.card-group:not(.compound)').slideToggle(100);
     });
-    $('#compound').find('code').html($('div.compound').size());
+    $('#compound').find('code').html(
+        $('div.compa > .card > .mis').size() + '+' +
+        $('div.compa > .card > .cau').size() + '/' +
+        $('div.compound').size());
 
 
 
@@ -4135,9 +4403,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

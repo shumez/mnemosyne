@@ -4,12 +4,34 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-08-26 17:11:07
+@Last modified time: 2018-11-25 16:44:44
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+
 04.01.17    18 08 26    .section layout
 04.01.16    18 08 26    print table-bordered
 04.01.15    18 08 23    version
@@ -87,11 +109,11 @@
 -->
 <html>
 <head>
-    <title>Env</title>
+    <title>Env-Health</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-08-26 17:11:16" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.17">
+    <meta name="revised" content="2018-11-25 16:45:13" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -110,6 +132,9 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
     <style type="text/css">
@@ -118,7 +143,7 @@
         h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
         body{padding-bottom: 70px; position: relative}
         /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
+        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
         h2{font-size: 24px;}
         h3{font-size: 22px;}
         h4{font-size: 20px;}
@@ -146,10 +171,15 @@
         code.q_alert_done{color: rgb(126, 64, 177)}
         #q div.card-group{margin-bottom: 10px}
         div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
+        td > ul, td > ol{padding-left: 12px; margin-bottom: 5px}
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+        li.list-group-item ul, li.list-group-item ol{
+            padding-left: 18px
+        }
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -164,7 +194,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -188,28 +220,47 @@
 
         /*print*/
         @media print{
-            .container{margin-left: 10px; margin-right: 10px}
+            .container{margin: 0px 0px 0px 0px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+
+            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
+            h2{font-size: 14px}
+            h3{font-size: 13px}
+            h4,h5{font-size: 12px}
+            h6{font-size: 11px}
+            p, a, li, th, td{font-size: 9px}
+
+            td > ul, td > ol{padding-left: 10px; margin-bottom: 3px;}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border-top: 1px solid black;
-                border-right: 1px solid black;
-                border-bottom: 1px solid black;
-                border-left: 1px solid black;
+            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
+            .page-header small code{
+                border-color: black;
+                border-width: : 0.4px 0.4px 0.4px 0.4px;
+            }
+            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 11px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 0.5px solid black;
             }
 
         }
@@ -447,44 +498,62 @@
 
 
 
+    </div>
+
+
+    <div class="section" id="environment_basic_law">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Env Basic Law <small>環境基本法</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                
+            </div>
+
+        </div>
+    </div>
+    
+
+
+    <div class="row">
 
 
 
 
+        
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="">
                 <div class="page-header">
                     <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
                 </div>
 
-                <div class="body">
-                    <ul class="list-group">
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                        </li> -->
-                        <!-- <li class="list-group-item">
-                            <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        </li> -->
-                    </ul>
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
 
-                </div>
             </div>
         </div>
     </div>
-    
-
     
    
     
@@ -514,7 +583,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {#} 28 (#)</p>
+            <p><code class="q_alert_done"></code> Qs / 28</p>
 
             <!-- 
             <div class="row hidden-xs-down">
@@ -634,6 +703,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group energy" id="q01">
                 <div class="card">
@@ -717,7 +794,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_17:19:01"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_17:19:01"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:34:35"> </span>
                         <br>
                         <p>食物連鎖による生物濃縮の関与があるのはどれか．</p>
 
@@ -794,7 +872,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_17:23:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_17:23:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:35:36"> </span>
                         <br>
                         <p>環境汚染物質と健康障害の組合せで誤っているのはどれか．</p>
 
@@ -869,7 +948,8 @@
                         <a href="https://qb.medilink-study.com/#/Answer/111G6" target="_blank" id="">111G6</a> &uarr;フロン
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now" id="2018-08-26_17:51:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_17:51:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:01:13"> </span>
                         <br>
                         <p>大気中のフロンの増加に関連すると考えられているのはどれか．</p>
 
@@ -934,7 +1014,9 @@
 
                         <ol type="a">
                             <li></li>
-                            <li></li>
+                            <li>酸性雨:<br>
+                                化石燃料の燃焼<br>
+                                &rArr; 硫黄酸化物, 窒素酸化物 </li>
                             <li></li>
                             <li>熱帯化 &rArr; &uarr;感染症</li>
                             <li></li>
@@ -1101,7 +1183,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group CO SO2 NO2  oxydant PM25 atmosphere pollution pri" id="q11">
+            <div class="card-group CO SO2 NO2  oxydant PM25 atmosphere pollution environment_basic_law pri" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E38" target="_blank" id="2018-02-08_20:36:34">108E38</a> 大気汚染 環境基準 達成率
@@ -1109,7 +1191,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_19:38:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_19:38:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:12:59"> </span>
                         <br>
                         <p>わが国において大気汚染の環境基準をほぼ達成しているのはどれか．3つ選べ．</p>
                         
@@ -1155,7 +1238,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_19:44:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_19:44:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:37:15"> </span>
                         <br>
                         <p>微小粒子状物質のうちPM 2.5について正しいのはどれか．</p>
                         
@@ -1202,7 +1286,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_19:53:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_19:53:34"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_17:39:06"> </span>
                         <br>
                         <p>環境基準に規定されている微小粒子状物質（PM2.5）について正しいのはどれか．</p>
                         
@@ -1219,7 +1304,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a</p>
 
@@ -1235,14 +1320,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group oxydant atmosphere pollution info" id="q14">
+            <div class="card-group oxydant atmosphere pollution environment_basic_law info" id="q14">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104B7" target="_blank" id="2018-01-25_17:15:52">104B7</a> 光化学オキシダント
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_19:56:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_19:56:44"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_17:14:23"> </span>
                         <br>
                         <p>光化学オキシダントについて正しいのはどれか．3つ選べ．</p>
                         
@@ -1290,14 +1376,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group pollution atmosphere NO NO2 " id="q15">
+            <div class="card-group pollution atmosphere NO NO2 environment_basic_law info" id="q15">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B11" target="_blank" id="2018-01-25_17:18:54">96B11</a> 自動車排気ガス対策
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_20:03:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_20:03:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:18:50"> </span>
                         <br>
                         <p>わが国の自動車排気ガス対策で重点的に規制されているのはどれか．</p>
                         
@@ -1387,17 +1474,19 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group oxydant atmosphere pollution " id="q17">
+            <div class="card-group oxydant atmosphere pollution info" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105G55" target="_blank">105G55</a> 原因物質
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_20:13:27"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_20:13:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_17:19:51"> </span>
                         <br>
                         <p>8月上旬のある日．<br>
-                            午後3時過ぎに，都市部にある中学校の生徒8人が相次いで，<u>頭痛，咽頭痛，咳，目がチカチカ</u>するなどの訴えで来院した．いずれの生徒も校庭でクラブ活動をしていたという．天気は快晴．気温35.2℃，湿度60％．風向および風速は南南西の風1.2メートル/秒であった．<br>
+                            午後3時過ぎに，都市部にある中学校の生徒8人が相次いで，<u>頭痛，咽頭痛，咳，目がチカチカ</u>するなどの訴えで来院した．いずれの生徒も校庭でクラブ活動をしていたという．<br>
+                            天気は快晴．気温35.2℃，湿度60％．風向および風速は南南西の風1.2メートル/秒であった．<br>
                             この現象の原因物質の生成に関与するのはどれか．2つ選べ.</p>
 
                         <ol type="a">
@@ -1505,14 +1594,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group pollution PCB water info" id="q19">
+            <div class="card-group pollution PCB water environment_basic_law info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G23" target="_blank" id="2018-01-25_17:30:53">98G23</a> 水質環境基準 「検出されないこと」
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_20:30:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_20:30:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:40:24"> </span>
                         <br>
                         <p>人の健康の保護に関する水質環境基準が「検出されないこと」であるのはどれか．</p>
                         
@@ -1574,14 +1664,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group pollution water e_coli pri" id="q20">
+            <div class="card-group pollution water e_coli environment_basic_law pri" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B8" target="_blank" id="2018-01-25_17:33:20">109B8</a> 水質基準 検出されない
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_20:38:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_20:38:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:42:18"> </span>
                         <br>
                         <p>水道法に基づく水質基準で検出されないことと規定されているのはどれか．</p>
                         
@@ -1628,16 +1719,17 @@
 
 
             <!-- 01 -->
-            <div class="card-group cryptosporidium water pollution" id="q21">
+            <div class="card-group cryptosporidium water pollution environment_basic_law" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99H1" target="_blank" id="2018-01-25_17:39:41">99H1</a> 水道 腹痛
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_20:39:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_20:39:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:22:33"> </span>
                         <br>
-                        <p>ある町で下痢や腹痛を訴える者が相次ぎ，住民の半数以上にのぼった．そのすべてが町営水道水を飲用していたが，煮沸した水の飲用者に症状はみられなかった．末端の給水栓からは衛生上必要な<u>遊離残留塩素</u>が検出された．<br>
+                        <p>ある町で下痢や腹痛を訴える者が相次ぎ，住民の半数以上にのぼった．そのすべてが町営水道水を飲用していたが，<u>煮沸した水の飲用者に症状はみられなかった</u>．末端の給水栓からは衛生上必要な<u>遊離残留塩素</u>が検出された．<br>
                             下痢，腹痛の原因として最も可能性が高いのはどれか．</p>
                         
 
@@ -1684,7 +1776,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_20:44:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_20:44:11"> </span>
+                        <span class="badge badge-pill mis now" id="2018-11-25_17:26:14"> </span>
                         <br>
                         <p>ダイオキシンについて誤っているのはどれか．</p>
                         
@@ -1723,13 +1816,14 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group waste pri" id="q23">
+            <div class="card-group waste environment_basic_law pri info" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G2" target="_blank" id="">111G2</a> 廃棄物処理
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-08-26_20:53:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_20:53:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:43:29"> </span>
                         <br>
                         <p>医療機関における廃棄物処理について誤っているのはどれか．</p>
 
@@ -1770,14 +1864,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group waste" id="q24">
+            <div class="card-group waste environment_basic_law" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G26" target="_blank" id="2018-01-25_17:45:25">98G26</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_20:57:54"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_20:57:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:46:50"> </span>
                         <br>
                         <p>誤っているのはどれか．</p>
                         
@@ -1810,14 +1905,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group sickhouse VOC pri 110 info" id="q25">
+            <div class="card-group sickhouse VOC environment_basic_law pri 110 info" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B7" target="_blank" id="">110B7</a> 建築物衛生法 基準
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_21:01:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_21:01:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:47:26"> </span>
                         <br>
                         <p>建築物における衛生的環境の確保に関する法律〈建築物衛生法〉に基づいて基準が定められ，建築物内で測定されるのはどれか．</p>
                         
@@ -1877,7 +1973,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-26_21:04:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-26_21:04:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:48:11"> </span>
                         <br>
                         
                         <p class="card-text">
@@ -1960,17 +2057,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-26_21:12:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-26_21:12:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-11-25_17:31:57"> </span>
                         <br>
                         <p>45歳の女性．住宅建築会社の事務職員．<br>
-                            のどの痛みを主訴に，会社の衛生管理者に付き添われて来院した．<br>
-                            2ヵ月前，住宅展示場の新築住宅案内係に異動した直後から屋内の刺激臭が気になっていた．1ヵ月前から，出勤日に限って頭痛，鼻閉感，のどの痛み及び吐き気を自覚するようになり，3日前からのどの痛みが強くなった．<br>
-                            身長155cm，体重50kg．体温36.6℃．血圧120/60mmHg．結膜は左右とも充血し，咽頭粘膜はびまん性に発赤している．皮膚に発疹を認めない．心音，呼吸音および腹部に異常を認めない．<br>
-                            尿所見：蛋白（－），潜血（－）．<br>
-                            血液所見：赤沈10mm/1時間，赤血球400万，Hb 12.5g/dL，白血球8,000．<br>
-                            血液生化学所見：AST 12IU/L，ALT 6IU/L．<br>
+                            <u>のどの痛み</u>を主訴に，会社の衛生管理者に付き添われて来院した．<br>
+                            2ヵ月前，<u>住宅展示場の新築住宅案内係に異動</u>した直後から<u>屋内の刺激臭</u>が気になっていた．<br>
+                            1ヵ月前から，<u>出勤日に限って</u>頭痛，鼻閉感，のどの痛み及び吐き気を自覚するようになり，3日前からのどの痛みが強くなった．<br>
+                            身長155cm，体重50kg．体温36.6℃．血圧120/60mmHg．<br>
+                            結膜は左右とも充血し，咽頭粘膜はびまん性に発赤している．皮膚に発疹を認めない．心音，呼吸音および腹部に異常を認めない．<br>
+                            尿所見：<br>
+                            蛋白（－），潜血（－）．<br>
+                            血液所見：<br>
+                            <u>赤沈10mm/1時間</u>，赤血球400万，Hb 12.5g/dL，白血球8,000．<br>
+                            血液生化学所見：<br>
+                            AST 12IU/L，ALT 6IU/L．<br>
                             会社の衛生管理者が，勤務場所周辺での屋内化学物質濃度の測定結果を持参している．その結果は次のとおりである．<br>
-                            測定条件：展示場の休業日に，住宅の出入り口と窓を閉めて測定．室内温度28.5℃，湿度45％．ホルムアルデヒド39μg/m3（指針値100），総揮発性有機化合物365μg/m3（目標値400）．<br>
+                            測定条件：<br>
+                            展示場の休業日に，住宅の出入り口と窓を閉めて測定．<br>
+                            室内温度28.5℃，湿度45％．<u>ホルムアルデヒド39μg/m3</u>（指針値100），<u>総揮発性有機化合物365μg/m3</u>（目標値400）．<br>
                             衛生管理者に対して，この受診者への対応について述べる意見として適切なのはどれか．</p>
                         
 
@@ -2121,7 +2226,11 @@ $('document').ready(function(){
     $('.nav-revised').html(revised_date);
 
     var version = $('meta[name="version"]').attr('content');
+    version = "v" + version;
     $('.nav-version').html(version);
+
+    var title_ver = title + "." + version;
+    $(document).attr("title", title_ver);
 
     // time
     var now = new Date();
@@ -2131,6 +2240,27 @@ $('document').ready(function(){
     if (hr < 6 || 24 < hr ) {
         $('body').addClass('night');
     }
+
+    var date = now.getDate();
+    if (date < 10) {
+        date = '0'+ date;
+    }
+
+    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+    var month = months[now.getMonth()];
+    var year = now.getYear();
+    year -= 100;
+    var print_date = year + "-" + month + "-" + date;
+    var printDate = year + month + date;
+
+    $('.page-header > h1').append(' <small class="print_date"></small>');
+
+    $('.page-header > h1').append(' <small class="version"></small>');
+    
+
+    var title_date = title + "_" + printDate;
+    $(document).attr("title", title_date);
+
 
     $('span.day').hide();
     $('span.day').click(function(){
@@ -2149,7 +2279,19 @@ $('document').ready(function(){
         $('#app').toggle();
         $('#ref').toggle();
         $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
+
+        $('#q li:has(a.all)').toggle();
+        $('#q li:has(a.untag)').toggle();
+        $('#q li:has(a.done)').toggle();
+        $('#q li:has(a.pri)').toggle();
+        $('#q li:has(a.req)').toggle();
+        $('#q li:has(a.qb)').toggle();
+        $('#q li:has(a.110)').toggle();
+        $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.info)').toggle();
+
+        $('.page-header > h1 > small.print_date').html(print_date);
+        $('.page-header > h1 > small.version').html(version);
 
         // $('#def').toggle();
         // $('#cls').toggle();
@@ -2193,13 +2335,14 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
 
     // $('div.mis').next().find('span.now').addClass('mis');
@@ -2216,63 +2359,77 @@ $('document').ready(function(){
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -2286,6 +2443,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -2315,6 +2475,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -2502,93 +2665,144 @@ $('document').ready(function(){
     $('div.progress > div.progress-rev').html(n_rev);
     $('div.progress > div.progress-hit').html(n_hit);
 
+    
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
 
 
     $('#energy h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.energy)').toggle();
+        $('div.card-group:not(.energy)').slideToggle(100);
     });
-    $('#energy').find('code').html($('div.energy').size());
+    $('#energy').find('small > code').html(
+        $('div.energy > .card > .mis').size() + '+' +
+        $('div.energy > .card > .cau').size() + '/' +
+        $('div.energy').size());
 
 
     $('#pollution h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.pollution)').toggle();
+        $('div.card-group:not(.pollution)').slideToggle(100);
     });
-    $('#pollution').find('code').html($('div.pollution').size());
+    $('#pollution').find('small > code').html(
+        $('div.pollution > .card > .mis').size() + '+' +
+        $('div.pollution > .card > .cau').size() + '/' +
+        $('div.pollution').size());
+
+
+
+    $('#environment_basic_law h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.environment_basic_law)').slideToggle(100);
+    });
+    $('#environment_basic_law').find('small > code').html(
+        $('div.environment_basic_law > .card > .mis').size() + '+' +
+        $('div.environment_basic_law > .card > .cau').size() + '/' +
+        $('div.environment_basic_law').size()
+    );
+
 
 
     $('#Hg').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Hg)').toggle();
+        $('div.card-group:not(.Hg)').slideToggle(100);
     });
-    $('#Hg').find('code').html($('div.Hg').size());
+    $('#Hg').find('small > code').html(
+        $('div.Hg > .card > .mis').size() + '+' +
+        $('div.Hg > .card > .cau').size() + '/' +
+        $('div.Hg').size());
 
     $('#atmosphere h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.atmosphere)').toggle();
+        $('div.card-group:not(.atmosphere)').slideToggle(100);
     });
-    $('#atmosphere').find('code').html($('div.atmosphere').size());
+    $('#atmosphere').find('small > code').html(
+        $('div.atmosphere > .card > .mis').size() + '+' +
+        $('div.atmosphere > .card > .cau').size() + '/' +
+        $('div.atmosphere').size());
 
 
     $('#flon').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.flon)').toggle();
+        $('div.card-group:not(.flon)').slideToggle(100);
     });
-    $('#flon').find('code').html($('div.flon').size());
+    $('#flon').find('small > code').html(
+        $('div.flon > .card > .mis').size() + '+' +
+        $('div.flon > .card > .cau').size() + '/' +
+        $('div.flon').size());
 
 
     $('#PM25').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PM25)').toggle();
+        $('div.card-group:not(.PM25)').slideToggle(100);
     });
-    $('#PM25').find('code').html($('div.PM25').size());
+    $('#PM25').find('small > code').html(
+        $('div.PM25 > .card > .mis').size() + '+' +
+        $('div.PM25 > .card > .cau').size() + '/' +
+        $('div.PM25').size());
 
 
     $('#oxydant').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.oxydant)').toggle();
+        $('div.card-group:not(.oxydant)').slideToggle(100);
     });
-    $('#oxydant').find('code').html($('div.oxydant').size());
+    $('#oxydant').find('small > code').html(
+        $('div.oxydant > .card > .mis').size() + '+' +
+        $('div.oxydant > .card > .cau').size() + '/' +
+        $('div.oxydant').size());
 
 
     $('#water h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.water)').toggle();
+        $('div.card-group:not(.water)').slideToggle(100);
     });
-    $('#water').find('code').html($('div.water').size());
+    $('#water').find('small > code').html(
+        $('div.water > .card > .mis').size() + '+' +
+        $('div.water > .card > .cau').size() + '/' +
+        $('div.water').size());
 
 
     $('#PCB').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PCB)').toggle();
+        $('div.card-group:not(.PCB)').slideToggle(100);
     });
-    $('#PCB').find('code').html($('div.PCB').size());
+    $('#PCB').find('small > code').html(
+        $('div.PCB > .card > .mis').size() + '+' +
+        $('div.PCB > .card > .cau').size() + '/' +
+        $('div.PCB').size());
 
 
     $('#waste h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.waste)').toggle();
+        $('div.card-group:not(.waste)').slideToggle(100);
     });
-    $('#waste').find('code').html($('div.waste').size());
+    $('#waste').find('small > code').html(
+        $('div.waste > .card > .mis').size() + '+' +
+        $('div.waste > .card > .cau').size() + '/' +
+        $('div.waste').size());
 
 
     $('#sickhouse h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.sickhouse)').toggle();
+        $('div.card-group:not(.sickhouse)').slideToggle(100);
     });
-    $('#sickhouse').find('code').html($('div.sickhouse').size());
+    $('#sickhouse').find('small > code').html(
+        $('div.sickhouse > .card > .mis').size() + '+' +
+        $('div.sickhouse > .card > .cau').size() + '/' +
+        $('div.sickhouse').size());
 
 
 
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

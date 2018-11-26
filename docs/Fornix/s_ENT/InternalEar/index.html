@@ -4,12 +4,18 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-11-07 11:02:37
+@Last modified time: 2018-11-26 16:02:08
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+
 04.01.33    18 11 06    .mis size
 04.01.32    18 11 01    v..., print date 2 digit
 04.01.31    18 10 29    css @media print
@@ -107,8 +113,8 @@
     <title>Internal Ear</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-07 11:03:05" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.33">
+    <meta name="revised" content="2018-11-26 16:02:20" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -126,6 +132,9 @@
 
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -163,7 +172,7 @@
         code.q_alert_done{color: rgb(126, 64, 177)}
         #q div.card-group{margin-bottom: 10px}
         div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
+        td > ul, td > ol{padding-left: 12px; margin-bottom: 5px}
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
@@ -186,7 +195,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -221,7 +232,7 @@
             h6{font-size: 11px}
             p, a, li, th, td{font-size: 9px}
 
-            td > ul{padding-left: 10px}
+            td > ul, td > ol{padding-left: 10px; margin-bottom: 3px;}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
             .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
@@ -239,7 +250,13 @@
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
@@ -2342,12 +2359,26 @@ $('document').ready(function(){
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -2361,6 +2392,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -2390,6 +2424,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -2587,7 +2624,11 @@ $('document').ready(function(){
         $('div.card-group:not(.Meniere)').slideToggle(100);
     });
     
-    $('#Meniere').find('code').html($('div.Meniere > .card > .mis').size() + '/' + $('div.Meniere').size());
+    $('#Meniere').find('code').html(
+        $('div.Meniere > .card > .mis').size() + '+' +
+        $('div.Meniere > .card > .cau').size() + '/' +
+        $('div.Meniere').size()
+    );
 
 
     $('#BPPV h2').click(function(){
@@ -2595,7 +2636,11 @@ $('document').ready(function(){
         $('div.card-group:not(.BPPV)').slideToggle(100);
     });
     
-    $('#BPPV').find('code').html($('div.BPPV > .card > .mis').size() + '/' + $('div.BPPV').size());
+    $('#BPPV').find('code').html(
+        $('div.BPPV > .card > .mis').size() + '+' +
+        $('div.BPPV > .card > .cau').size() + '/' +
+        $('div.BPPV').size()
+    );
 
 
     $('#VN h2').click(function(){
@@ -2603,7 +2648,11 @@ $('document').ready(function(){
         $('div.card-group:not(.VN)').slideToggle(100);
     });
     
-    $('#VN').find('code').html($('div.VN > .card > .mis').size() + '/' + $('div.VN').size());
+    $('#VN').find('code').html(
+        $('div.VN > .card > .mis').size() + '+' +
+        $('div.VN > .card > .cau').size() + '/' +
+        $('div.VN').size()
+    );
 
 
     $('#SSHL h2').click(function(){
@@ -2611,7 +2660,11 @@ $('document').ready(function(){
         $('div.card-group:not(.SSHL)').slideToggle(100);
     });
     
-    $('#SSHL').find('code').html($('div.SSHL > .card > .mis').size() + '/' + $('div.SSHL').size());
+    $('#SSHL').find('code').html(
+        $('div.SSHL > .card > .mis').size() + '+' +
+        $('div.SSHL > .card > .cau').size() + '/' +
+        $('div.SSHL').size()
+    );
 
 
     $('#ARHL h2').click(function(){
@@ -2619,7 +2672,11 @@ $('document').ready(function(){
         $('div.card-group:not(.ARHL)').slideToggle(100);
     });
     
-    $('#ARHL').find('code').html($('div.ARHL > .card > .mis').size() + '/' + $('div.ARHL').size());
+    $('#ARHL').find('code').html(
+        $('div.ARHL > .card > .mis').size() + '+' +
+        $('div.ARHL > .card > .cau').size() + '/' +
+        $('div.ARHL').size()
+    );
 
 
     $('#NIHL h2').click(function(){
@@ -2627,7 +2684,11 @@ $('document').ready(function(){
         $('div.card-group:not(.NIHL)').slideToggle(100);
     });
     
-    $('#NIHL').find('code').html($('div.NIHL > .card > .mis').size() + '/' + $('div.NIHL').size());
+    $('#NIHL').find('code').html(
+        $('div.NIHL > .card > .mis').size() + '+' +
+        $('div.NIHL > .card > .cau').size() + '/' +
+        $('div.NIHL').size()
+    );
 
 
     $('#NOHL h2').click(function(){
@@ -2635,7 +2696,11 @@ $('document').ready(function(){
         $('div.card-group:not(.NOHL)').slideToggle(100);
     });
     
-    $('#NOHL').find('code').html($('div.NOHL > .card > .mis').size() + '/' + $('div.NOHL').size());
+    $('#NOHL').find('code').html(
+        $('div.NOHL > .card > .mis').size() + '+' +
+        $('div.NOHL > .card > .cau').size() + '/' +
+        $('div.NOHL').size()
+    );
 
 
     $('#PLF h2').click(function(){
@@ -2643,7 +2708,11 @@ $('document').ready(function(){
         $('div.card-group:not(.PLF)').slideToggle(100);
     });
     
-    $('#PLF').find('code').html($('div.PLF > .card > .mis').size() + '/' + $('div.PLF').size());
+    $('#PLF').find('code').html(
+        $('div.PLF > .card > .mis').size() + '+' +
+        $('div.PLF > .card > .cau').size() + '/' +
+        $('div.PLF').size()
+    );
 
 
     $('#Alport h2').click(function(){
@@ -2651,7 +2720,11 @@ $('document').ready(function(){
         $('div.card-group:not(.Alport)').slideToggle(100);
     });
     
-    $('#Alport').find('code').html($('div.Alport > .card > .mis').size() + '/' + $('div.Alport').size());
+    $('#Alport').find('code').html(
+        $('div.Alport > .card > .mis').size() + '+' +
+        $('div.Alport > .card > .cau').size() + '/' +
+        $('div.Alport').size()
+    );
 
 
     $('#mumps h2').click(function(){
@@ -2659,7 +2732,11 @@ $('document').ready(function(){
         $('div.card-group:not(.mumps)').slideToggle(100);
     });
     
-    $('#mumps').find('code').html($('div.mumps > .card > .mis').size() + '/' + $('div.mumps').size());
+    $('#mumps').find('code').html(
+        $('div.mumps > .card > .mis').size() + '+' +
+        $('div.mumps > .card > .cau').size() + '/' +
+        $('div.mumps').size()
+    );
 
 
     $('#ototoxicity h2').click(function(){
@@ -2667,7 +2744,11 @@ $('document').ready(function(){
         $('div.card-group:not(.ototoxicity)').slideToggle(100);
     });
     
-    $('#ototoxicity').find('code').html($('div.ototoxicity > .card > .mis').size() + '/' + $('div.ototoxicity').size());
+    $('#ototoxicity').find('code').html(
+        $('div.ototoxicity > .card > .mis').size() + '+' +
+        $('div.ototoxicity > .card > .cau').size() + '/' +
+        $('div.ototoxicity').size()
+    );
 
 
 
@@ -2675,10 +2756,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    
-    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

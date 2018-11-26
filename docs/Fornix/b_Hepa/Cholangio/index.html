@@ -4,12 +4,19 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-11-04 10:07:07
+@Last modified time: 2018-11-26 17:32:57
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+
 04.01.32    18 11 01    v..., print date 2 digit
 04.01.31    18 10 29    css @media print
 04.01.30    18 10 26    #q li toggle()
@@ -107,8 +114,8 @@
     <title>Cholangio</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-04 10:07:26" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.32">
+    <meta name="revised" content="2018-11-26 17:33:41" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.38">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -126,6 +133,9 @@
 
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -163,11 +173,11 @@
         code.q_alert_done{color: rgb(126, 64, 177)}
         #q div.card-group{margin-bottom: 10px}
         div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
+        td > ul, td > ol{padding-left: 12px; margin-bottom: 5px}
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul{
+        li.list-group-item ul, li.list-group-item ol{
             padding-left: 18px
         }
 
@@ -186,7 +196,9 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
+        ul.nav-pills .active span.q_alert_info_n, 
+        ul.nav-pills .active span.q_alert_mnemo_n, 
+        ul.nav-pills .active span.q_alert_fig_n{color: black;}
 
         /*.night*/
         body.night{background-color: rgb(33, 36, 44);}
@@ -221,7 +233,7 @@
             h6{font-size: 11px}
             p, a, li, th, td{font-size: 9px}
 
-            td > ul{padding-left: 10px}
+            td > ul, td > ol{padding-left: 10px; margin-bottom: 3px;}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
             .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
@@ -239,7 +251,13 @@
             table.table-condensed > thead > tr > th,
             table.table-condensed > tbody > tr > th,
             table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
+                border-bottom: 0.5px solid black;
+            }
+            table.table-condensed > tbody > tr:first-child > th,
+            table.table-condensed > tbody > tr:first-child > td{
+                border-top: 0.5px solid black;
+            }
+
             table.table-bordered > thead, 
             table.table-bordered > thead > tr > th, 
             table.table-bordered > tbody > tr > th, 
@@ -927,6 +945,14 @@
                     </a>
                 </li>
             </ul>
+
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
 
             <!-- 01 -->
@@ -4070,12 +4096,26 @@ $('document').ready(function(){
 
         $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
         // $('div.card-header.info').find('.correct').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
+
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+                
+
+    $('li.nav-item >a.mnemonics').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.mnemonics)').slideToggle(100);
+    });
+    $('li.nav-item >a.fig').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.fig)').slideToggle(100);
+    });
+
 
     var n_mis = $('div.mis').size();
     var n_cau = $('div.cau').size();
@@ -4089,6 +4129,9 @@ $('document').ready(function(){
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
     var n_info = $('div.info').size();
+    var n_mnemo = $('div.mnemonics').size();
+    var n_fig = $('div.fig').size();
+
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
     var n_untag = n_untag;
@@ -4118,6 +4161,9 @@ $('document').ready(function(){
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
     $('span.q_alert_info_n').html(n_info);
+    $('span.q_alert_mnemo_n').html(n_mnemo);
+    $('span.q_alert_fig_n').html(n_fig);
+
 
     $('span.q_alert_mis_per').html(per_mis);
     $('span.q_alert_cau_per').html(per_cau);
@@ -4314,35 +4360,50 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.gallstone)').slideToggle(100);
     });
-    $('#gallstone').find('code').html($('div.gallstone').size());
+    $('#gallstone').find('small > code').html(
+        $('div.gallstone > .card > .mis').size() + '+' +
+        $('div.gallstone > .card > .cau').size() + '/' +
+        $('div.gallstone').size());
 
 
     $('#cholecystitis h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.cholecystitis)').slideToggle(100);
     });
-    $('#cholecystitis').find('code').html($('div.cholecystitis').size());
+    $('#cholecystitis').find('small > code').html(
+        $('div.cholecystitis > .card > .mis').size() + '+' +
+        $('div.cholecystitis > .card > .cau').size() + '/' +
+        $('div.cholecystitis').size());
 
 
     $('#cholangitis h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.cholangitis)').slideToggle(100);
     });
-    $('#cholangitis').find('code').html($('div.cholangitis').size());
+    $('#cholangitis').find('small > code').html(
+        $('div.cholangitis > .card > .mis').size() + '+' +
+        $('div.cholangitis > .card > .cau').size() + '/' +
+        $('div.cholangitis').size());
 
 
     $('#PSC h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.PSC)').slideToggle(100);
     });
-    $('#PSC').find('code').html($('div.PSC').size());
+    $('#PSC').find('small > code').html(
+        $('div.PSC > .card > .mis').size() + '+' +
+        $('div.PSC > .card > .cau').size() + '/' +
+        $('div.PSC').size());
 
 
     $('#CBD h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.CBD)').slideToggle(100);
     });
-    $('#CBD').find('code').html($('div.CBD').size());
+    $('#CBD').find('small > code').html(
+        $('div.CBD > .card > .mis').size() + '+' +
+        $('div.CBD > .card > .cau').size() + '/' +
+        $('div.CBD').size());
 
 
 
@@ -4350,21 +4411,30 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.billary_tract_cancer)').slideToggle(100);
     });
-    $('#billary_tract_cancer').find('code').html($('div.billary_tract_cancer').size());
+    $('#billary_tract_cancer').find('small > code').html(
+        $('div.billary_tract_cancer > .card > .mis').size() + '+' +
+        $('div.billary_tract_cancer > .card > .cau').size() + '/' +
+        $('div.billary_tract_cancer').size());
 
 
     $('#PBM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.PBM)').slideToggle(100);
     });
-    $('#PBM').find('code').html($('div.PBM').size());
+    $('#PBM').find('small > code').html(
+        $('div.PBM > .card > .mis').size() + '+' +
+        $('div.PBM > .card > .cau').size() + '/' +
+        $('div.PBM').size());
 
 
     $('#GBC h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.GBC)').slideToggle(100);
     });
-    $('#GBC').find('code').html($('div.GBC').size());
+    $('#GBC').find('small > code').html(
+        $('div.GBC > .card > .mis').size() + '+' +
+        $('div.GBC > .card > .cau').size() + '/' +
+        $('div.GBC').size());
 
     
 
@@ -4372,14 +4442,20 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.GADM)').slideToggle(100);
     });
-    $('#GADM').find('code').html($('div.GADM').size());
+    $('#GADM').find('small > code').html(
+        $('div.GADM > .card > .mis').size() + '+' +
+        $('div.GADM > .card > .cau').size() + '/' +
+        $('div.GADM').size());
 
 
     $('#AOSC').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.AOSC)').slideToggle(100);
     });
-    $('#AOSC').find('code').html($('div.AOSC').size());
+    $('#AOSC').find('small > code').html(
+        $('div.AOSC > .card > .mis').size() + '+' +
+        $('div.AOSC > .card > .cau').size() + '/' +
+        $('div.AOSC').size());
 
 
     
@@ -4395,9 +4471,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

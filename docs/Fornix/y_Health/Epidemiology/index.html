@@ -374,13 +374,84 @@
                     </li>
                 </ul>
 
-                <div class="card">
+                <!-- <div class="card">
                     <img src="https://qb.medilink-study.com/images/99F003_bas_010.jpg" class="card-img-top img-fluid">
-                </div>
+                </div> -->
 
 
             </div>
+        
+            <div class="section" id="LR">
+                <div class="page-header">
+                    <h2>LR <small><code></code></small></h2>
+                </div>
+
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>Dx(+)</th>
+                            <th>Dx(-)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">Test</th>
+                            <th>(+)</th>
+                            <td>\( \text{TP} \)</td>
+                            <td>\( \text{FP} \)</td>
+                            <td>\( \text{LR}^+
+                                =  \frac{\text{TP}}{\text{FP}} \)</td>
+                        </tr>
+                        <tr>
+                            <th>(-)</th>
+                            <td>\( \text{FN} \)</td>
+                            <td>\( \text{TN} \)</td>
+                            <td>\( \text{LR}^-
+                                =  \frac{\text{FN}}{\text{TN}} \)</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"></th>
+                            <td>\( \text{Se} \\ 
+                                = \frac{\text{TP}}{\text{TP}+\text{FN}}\)</td>
+                            <td>\( \text{Sp} \\
+                              = \frac{\text{TN}}{\text{FP}+\text{TN}}\)</td>
+                              <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        \( 
+                            p_0 = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FN} + \text{FP} + \text{TN}} \\
+                            p_1 = \frac{\text{TP}}{\text{TP} + \text{FP}}
+                        \)
+                    </li>
+                    <li class="list-group-item">
+                        \( 
+                            \text{Odds}_1 = \text{Odds}_0 \times \text{LR} \\
+                            \begin{cases}
+                                \text{LR}^+ = \frac{\text{Se}}{1 - \text{Sp}} \\
+                                \text{LR}^- = \frac{1 - \text{Se}}{\text{Sp}}
+                            \end{cases}
+                        \)
+                    </li>
+                </ul>
+
+
+                <div class="card">
+                    <a href="http://www.biosoft.hacettepe.edu.tr/easyROC/" target="_blank">
+                        <img src="http://www.biosoft.hacettepe.edu.tr/easyROC/multi.png" class="card-img-top img-fluid">
+                    </a>
+                </div>
+
+            </div>
         </div>
+
     
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="risk">
@@ -4686,6 +4757,29 @@ $('document').ready(function(){
         $('div.risk > .card > .mis').size() + '+' +
         $('div.risk > .card > .cau').size() + '/' +
         $('div.risk').size()
+    );
+
+
+    $('#LR h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.LR)').slideToggle(100);
+    });
+    $('#LR').find('small > code').html(
+        $('div.LR > .card > .mis').size() + '+' +
+        $('div.LR > .card > .cau').size() + '/' +
+        $('div.LR').size()
+    );
+
+
+
+    $('#study h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.study)').slideToggle(100);
+    });
+    $('#study').find('small > code').html(
+        $('div.study > .card > .mis').size() + '+' +
+        $('div.study > .card > .cau').size() + '/' +
+        $('div.study').size()
     );
 
 

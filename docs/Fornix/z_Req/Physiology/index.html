@@ -10,6 +10,7 @@
 
 <!DOCTYPE html>
 <!--
+04.01.40    18 11 30    112
 04.01.39    18 11 27    .star 
 04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
 04.01.37    18 11 20    .nav mnemo fig
@@ -113,7 +114,7 @@
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
     <meta name="revised" content="2018-11-29 21:06:22" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.39">
+    <meta name="version" content="4.1.40">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -165,7 +166,7 @@
         span.cau:before{content: "C";}
         span.rev:before{content: "R";}
         span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
+        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n, span.q_alert_112_n{background-color: rgb(88, 211, 184);}
         span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
         span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
         code.q_alert_done{color: rgb(126, 64, 177)}
@@ -194,6 +195,7 @@
         ul.nav-pills .active span.q_alert_qb_n,
         ul.nav-pills .active span.q_alert_110_n,
         ul.nav-pills .active span.q_alert_111_n,
+        ul.nav-pills .active span.q_alert_112_n,
         ul.nav-pills .active span.q_alert_info_n, 
         ul.nav-pills .active span.q_alert_mnemo_n, 
         ul.nav-pills .active span.q_alert_fig_n{color: black;}
@@ -488,6 +490,12 @@
                     <a class="nav-link 111">
                         <span class="badge badge-pill q_alert_111_n"></span><br>
                         111
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link 112">
+                        <span class="badge badge-pill q_alert_112_n"></span><br>
+                        112
                     </a>
                 </li>
                 <li class="nav-item">
@@ -2396,6 +2404,7 @@ $('document').ready(function(){
         $('#q li:has(a.qb)').toggle();
         $('#q li:has(a.110)').toggle();
         $('#q li:has(a.111)').toggle();
+        $('#q li:has(a.112)').toggle();
         $('#q li:has(a.info)').toggle();
 
         $('.page-header > h1 > small.print_date').html(print_date);
@@ -2449,6 +2458,7 @@ $('document').ready(function(){
     $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
     $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
     $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.112').find('.card-header').append('<span class="badge badge-secondary badge-tar 112">112</span>');
     $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
     $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
     $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
@@ -2521,6 +2531,10 @@ $('document').ready(function(){
         $('div.card-group').show();
         $('div.card-group:not(.111)').slideToggle(100);
     });
+    $('li.nav-item >a.112').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.112)').slideToggle(100);
+    });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
         $('div.card-group:not(.info)').slideToggle(100);
@@ -2559,6 +2573,7 @@ $('document').ready(function(){
     var n_notqb = $('div.notqb').size();
     var n_110 = $('div.110').size();
     var n_111 = $('div.111').size();
+    var n_112 = $('div.112').size();
     var n_info = $('div.info').size();
     var n_mnemo = $('div.mnemonics').size();
     var n_fig = $('div.fig').size();
@@ -2591,6 +2606,7 @@ $('document').ready(function(){
     $('span.q_alert_qb_n').html(n_qb);
     $('span.q_alert_110_n').html(n_110);
     $('span.q_alert_111_n').html(n_111);
+    $('span.q_alert_112_n').html(n_112);
     $('span.q_alert_info_n').html(n_info);
     $('span.q_alert_mnemo_n').html(n_mnemo);
     $('span.q_alert_fig_n').html(n_fig);

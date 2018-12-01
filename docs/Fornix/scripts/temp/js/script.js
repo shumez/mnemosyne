@@ -456,15 +456,19 @@ $('document').ready(function(){
     var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
     $('button.y_Health').html(n_y_Health);
 
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
+    $('div.progress > .progress-mis').width(per_mis);
+    $('div.progress > .progress-cau').width(per_cau);
+    $('div.progress > .progress-rev').width(per_rev);
+    $('div.progress > .progress-hit').width(per_hit);
 
     $('div.progress > div.progress-mis').html(per_mis);
     $('div.progress > div.progress-cau').html(per_cau);
     $('div.progress > div.progress-rev').html(per_rev);
     $('div.progress > div.progress-hit').html(per_hit);
+
+
+    $('#q div.progress').css('height', '18px');
+    $('#q div.progress-bar').css('height', '18px');
 
     
     // $('div.page-header').();

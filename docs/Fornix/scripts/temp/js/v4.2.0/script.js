@@ -7,9 +7,9 @@
  * @Last modified time: 2018-12-01 16:03:03
  */
 
-// 4.2.0
+// 4.1.40
 $(function(){
-
+// $(document).ready(function(){
     // title
     var title = document.title;
     $('.nav-title').html(title);

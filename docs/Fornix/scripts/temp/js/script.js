@@ -7,7 +7,8 @@
  * @Last modified time: 2018-12-01 16:03:03
  */
 
-// 4.2.0
+// 4.2.1
+
 $(function(){
 
     // title
@@ -53,8 +54,8 @@ $(function(){
     var title_date = title + "_" + printDate;
     $(document).attr("title", title_date);
 
-
-    $('span.day').hide();
+    $('body').addClass('night');
+    $('span.night').hide();
     $('span.day').click(function(){
         $('body').toggleClass('night');
         $('span.night').toggle();
@@ -315,7 +316,7 @@ $(function(){
     })
 
 
-    
+
 
     $('div.progress > .progress-mis').width(per_mis);
     $('div.progress > .progress-cau').width(per_cau);

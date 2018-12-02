@@ -4,12 +4,32 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-24 15:12:05
+@Last modified time: 2018-12-02 16:23:30
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -96,8 +116,8 @@
     <title>Intestine</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-24 15:12:38" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-12-02 16:23:49" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -116,118 +136,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -274,106 +191,28 @@
 
 
 
-    <div class="row">
 
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="IBS">
-                <div class="page-header">
-                    <h2>IBS <small class="hidden-xs-down">Irritable Bowel Syndrome</small> <small><code></code></small></h2>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="FD">
-                <div class="page-header">
-                    <h2>FD <small class="hidden-xs-down">Functional Dyspepsia</small> <small><code></code></small></h2>
-                </div>
-
-                
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="FGID">
-                <div class="page-header">
-                    <h2>FGIDs <small class="hidden-xs-down">Functional GastroIntestinal Disorders</small> <small><code></code></small></h2>
-                </div>
-
-                
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="AAP">
+    <div class="section" id="INTRO">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Acute Appendicitis <small class="hidden-xs-down">AAP</small> <small><code></code></small></h2>
+                    <h2>Intro <small><code></code></small></h2>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">乳幼児
-                        <ul>
-                            <li>穿孔が多い &rArr; 汎発性腹膜炎</li>
-                            <li>高熱, 脱水, 嘔吐</li>
-                            <li>Rx: 輸液, 切除, 穿孔例は腹腔ドレナージ</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">老人
-                        <ul>
-                            <li>穿孔が多い</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">妊婦
-                        <ul>
-                            <li>虫垂が右側, 頭側に移動</li>
-                            <li>Rx: 早期に切除, LH (流産予防)</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/109A035_sup_010.jpg" class="card-img-top img-fluid">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">①McBurney点： 臍と右上前腸骨棘を結ぶ線上の右側1/3</li>
-                        <li class="list-group-item">②Lanz点： 左右上前腸骨棘を結ぶ線上の右側1/3</li>
-                    </ul>
-                </div>
-            </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>虫垂炎 S/S</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">Rosenstein sign: <br>
-                        McBurney圧迫時, 左側臥位の方が疼痛が増強</li>
-                    <li class="list-group-item">Rovsing sign:<br>
-                        背臥位で下行結腸を下から上へ押し上げると, 右下腹部痛が増強</li>
-                    <li class="list-group-item">Blumberg sign (反跳痛):<br>
-                        腹壁を深く圧迫した後離す</li>
-                    <li class="list-group-item">筋性防御:<br>
-                    </li>
-                </ul>
-
-            </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="peritonitis">
-                <div class="page-header">
-                    <h2>Peritonitis <small class="hidden-xs-down"></small> <small><code></code></small></h2>
-                </div>
 
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="section" id="IBD">
+                <div class="page-header">
+                    <h2>IBD <small>Inflammatory Bowel Disease</small> <small><code></code></small></h2>
+                </div>
             </div>
         </div>
 
@@ -391,7 +230,7 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="UC">
                 <div class="page-header">
-                    <h2>UC <small class="hidden-xs-down">Ulerative Colitis</small> <small><code></code></small></h2>
+                    <h2>UC <small><code></code></small></h2>
                 </div>
 
 
@@ -400,23 +239,26 @@
                         &xrArr; s/o CMV感染</li>
                 </ul>
 
+                <h6>重症度の6項目</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ol>
+                            <li><u>下痢 ≥ 6回/d</u></li>
+                            <li><u>顕血便(++)</u></li>
+                            <li><u>発熱 ≥ 37.5&deg;C</u></li>
+                            <li>HR ≥ 90 bpm</li>
+                            <li>Hb ≤ 10g/dL</li>
+                            <li>ESR ≥ 30mm/hr</li>
+                        </ol>
+                    </li>
+                </ul>
+
 
                 <h3 id="CMV">CMV <small><code></code></small></h3>
 
             </div>
         </div>
 
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="CRC">
-                <div class="page-header">
-                    <h2>ColoRectal Cancer <small class="hidden-xs-down">CRC</small><small>大腸癌</small> <small><code></code></small></h2>
-                </div>
-
-                <h3 id="Schnitzler">Schnitzler <small><code></code></small></h3>
-                
-            </div>
-        </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="ITB">
@@ -428,182 +270,29 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="volvulus">
-                <div class="page-header">
-                    <h2>Volvulus <small class="hidden-xs-down"></small></h2>
-                </div>
-
-                
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section" id="ileus">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-header">
-                    <h2>Ileus <small><code></code></small></h2>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">①機械的イレウス：<br>
-                        腸管に器質的疾患があり，通過障害をきたすもの．
-                        <ul>
-                            <li>単純性（閉塞性）イレウス：<br>
-                                腸管の血行障害は伴わない．<br>
-                                ［原因］
-                                <ul>
-                                    <li>術後の癒着性イレウス（最多）</li>
-                                    <li>腫瘍</li>
-                                    <li>異物（胃石など）</li>
-                                </ul>
-                                <br>
-                                ※腸管壁外からの圧排でも起こる．</li>
-                            <li>複雑性（絞扼性）イレウス：<br>
-                                腸管のねじれにより腸管の閉塞と血行障害を伴う．<br>
-                                ［原因］
-                                <ul>
-                                    <li>腸重積</li>
-                                    <li>ヘルニア嵌頓</li>
-                                    <li>腸軸捻転</li>
-                                </ul>
-                            など</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">②機能的イレウス：<br>
-                        腸管に器質的疾患がみられないが，通過障害をきたすもの．
-                        <ul>
-                            <li>麻痺性イレウス：<br>
-                                腸管の運動が麻痺した状態．</li>
-                            <li>けいれん性イレウス：<br>
-                                腸管の一部がけいれん性に収縮した状態．</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 id="obstruction">Obstruction <small><code></code></small></h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="AMAO">
+            <div class="section" id="Behcet">
                 <div class="page-header">
-                    <h2>Acute Mesenteric Artery Occulusion <small class="hidden-xs-down">AMAO</small><small> 急性腸間膜動脈閉塞症</small> <small><code></code></small></h2>
+                    <h2>Behçet <small><code></code></small></h2>
                 </div>
 
-
-                <h3>SMAO <small class="hidden-xs-down">SMA Occlusion</small></h3>
 
             </div>
         </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="intussusception">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="section" id="drug-induced">
                 <div class="page-header">
-                    <h2>Intussusception <small>腸重積</small> <small><code></code></small></h2>
+                    <h2>Drug-induced <small><code></code></small></h2>
                 </div>
 
-                
+
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="SMAS">
-                <div class="page-header">
-                    <h2>SMAS <small>上腸間膜動脈症候群</small> <small><code></code></small></h2>
-                </div>
 
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="IC">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-header">
-                    <h2>Ischemic Colitis <small class="hidden-xs-down">IC</small><small> 虚血性大腸炎</small></h2>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                        <ul>
-                            <li>便秘が誘引</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                        <ul>
-                            <li>SMA と IMAの吻合部:
-                                <ul>
-                                    <li>脾彎曲部</li>
-                                    <li>下行結腸</li>
-                                    <li>> S状結腸</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                        <ul>
-                            <li><u>突然発症</u></li>
-                        </ul>
-                    </li>
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                        <ul>
-                            <li>保存的治療
-                                <ul>
-                                    <li>絶食</li>
-                                    <li>補液</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/100H037_sup_a_010.jpg" class="card-img-top img-fluid">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">脾弯曲</li>
-                        <li class="list-group-item">下行結腸</li>
-                        <li class="list-group-item">S状結腸</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/111A031_ton_010.jpg" class="card-img-top img-fluid">
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="PMC">
                 <div class="page-header">
@@ -654,6 +343,17 @@
             </div>            
         </div>
 
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="IBS">
+                <div class="page-header">
+                    <h2>IBS <small class="hidden-xs-down">Irritable Bowel Syndrome</small> <small><code></code></small></h2>
+                </div>
+
+            </div>
+        </div>
+
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="polyp">
                 <div class="page-header">
@@ -663,20 +363,76 @@
                 
             </div>
         </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CRC">
+                <div class="page-header">
+                    <h2>CRC <small>大腸癌</small> <small><code></code></small></h2>
+                </div>
+
+                <h3 id="Schnitzler">Schnitzler <small><code></code></small></h3>
+                
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HNPCC">
+                <div class="page-header">
+                    <h2>HNPCC <small><code></code></small></h2>
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">Rt結腸(++)</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="cartinoid">
+                <div class="page-header">
+                    <h2>Cartinoid <small><code></code></small></h2>
+
+                </div>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">皮膚の潮紅</li>
+                    <li class="list-group-item">気管支喘息発作</li>
+                    <li class="list-group-item">&uarr;蠕動運動 &rArr; 水様性下痢</li>
+                    <li class="list-group-item">右心不全</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="sarcoma">
+                <div class="page-header">
+                    <h2>Sarcoma <small><code></code></small></h2>
+                </div>
+
+
+
+            </div>
+        </div>
     </div>
-
-
 
 
     <div class="section" id="FAP">
         <div class="row">
-            <div class="col-xs-12 col-md-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>FAP <small>家族性大腸腺腫症</small><small class="hidden-xs-down">Familial Adenoma Polyposis</small> <small><code></code></small></h2>
+                    <h2>FAP <small>家族性大腸腺腫症</small> <small><code></code></small></h2>
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -838,41 +594,206 @@
 
     </div>
 
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MAS">
+                <div class="page-header">
+                    <h2>MAS <small>吸収不良症候群</small> <small><code></code></small></h2>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="PLGE">
+                <div class="page-header">
+                    <h2>PLGE <small>蛋白漏出性胃腸症</small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Mentrier">
+                <div class="page-header">
+                    <h2>Ménétrier <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="section" id="IC">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Ischemic Colitis <small class="hidden-xs-down">IC</small><small> 虚血性大腸炎</small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>便秘が誘引</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                        <ul>
+                            <li>SMA と IMAの吻合部:
+                                <ul>
+                                    <li>脾彎曲部</li>
+                                    <li>下行結腸</li>
+                                    <li>> S状結腸</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li><u>突然発症</u></li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                        <ul>
+                            <li>保存的治療
+                                <ul>
+                                    <li>絶食</li>
+                                    <li>補液</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/100H037_sup_a_010.jpg" class="card-img-top img-fluid">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">脾弯曲</li>
+                        <li class="list-group-item">下行結腸</li>
+                        <li class="list-group-item">S状結腸</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/111A031_ton_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="HNPCC">
+            <div class="section" id="AMAO">
                 <div class="page-header">
-                    <h2>HNPCC <small class="hidden-xs-down">Hereditary Non-Polyposis Colorectal Cancer</small> <small><code></code></small></h2>
+                    <h2>AMAO <small>急性腸間膜動脈閉塞症</small> <small><code></code></small></h2>
                 </div>
 
 
-                <ul class="list-group">
-                    <li class="list-group-item">Rt結腸(++)</li>
-                </ul>
+                <h3>SMAO <small class="hidden-xs-down">SMA Occlusion</small></h3>
 
             </div>
-
         </div>
+    </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="cartinoid">
+    <div class="section" id="ileus">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Cartinoid <small class="hidden-xs-down"></small> <small><code></code></small></h2>
-
+                    <h2>Ileus <small><code></code></small></h2>
                 </div>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
-                    <li class="list-group-item">皮膚の潮紅</li>
-                    <li class="list-group-item">気管支喘息発作</li>
-                    <li class="list-group-item">&uarr;蠕動運動 &rArr; 水様性下痢</li>
-                    <li class="list-group-item">右心不全</li>
+                    <li class="list-group-item">①機械的イレウス：<br>
+                        腸管に器質的疾患があり，通過障害をきたすもの．
+                        <ul>
+                            <li>単純性（閉塞性）イレウス：<br>
+                                腸管の血行障害は伴わない．<br>
+                                ［原因］
+                                <ul>
+                                    <li>術後の癒着性イレウス（最多）</li>
+                                    <li>腫瘍</li>
+                                    <li>異物（胃石など）</li>
+                                </ul>
+                                <br>
+                                ※腸管壁外からの圧排でも起こる．</li>
+                            <li>複雑性（絞扼性）イレウス：<br>
+                                腸管のねじれにより腸管の閉塞と血行障害を伴う．<br>
+                                ［原因］
+                                <ul>
+                                    <li>腸重積</li>
+                                    <li>ヘルニア嵌頓</li>
+                                    <li>腸軸捻転</li>
+                                </ul>
+                            など</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">②機能的イレウス：<br>
+                        腸管に器質的疾患がみられないが，通過障害をきたすもの．
+                        <ul>
+                            <li>麻痺性イレウス：<br>
+                                腸管の運動が麻痺した状態．</li>
+                            <li>けいれん性イレウス：<br>
+                                腸管の一部がけいれん性に収縮した状態．</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="obstruction">Obstruction <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Epidemiology</h6>
+                        <ul>
+                            <li>#1 開腹後 腸管癒着</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li><u>振水音</u></li>
+                            <li>大腸イレウス: 内視鏡　観察/生検</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="diver">
                 <div class="page-header">
@@ -883,6 +804,174 @@
             </div>
         </div>
 
+    </div>
+
+
+
+    <div class="section" id="AAP">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>AAP <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li><u>37&deg;C</u><br>
+                                ≥ 38&deg;C &lArr; 穿孔</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        乳幼児
+                        <ul>
+                            <li>急性腹症 #1 </li>
+                            <li>穿孔が多い<br>
+                                &rArr; 汎発性腹膜炎</li>
+                            <li>高熱, 脱水, 嘔吐</li>
+                            <li>Rx: 輸液, 切除, 穿孔例は腹腔ドレナージ</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        老人
+                        <ul>
+                            <li>穿孔が多い</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        妊婦
+                        <ul>
+                            <li>虫垂が右側, 頭側に移動</li>
+                            <li>Rx: 早期に切除, LH (流産予防)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/109A035_sup_010.jpg" class="card-img-top img-fluid">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">①McBurney点： 臍と右上前腸骨棘を結ぶ線上の右側1/3</li>
+                        <li class="list-group-item">②Lanz点： 左右上前腸骨棘を結ぶ線上の右側1/3</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>虫垂炎 S/S</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">Rosenstein sign: <br>
+                        McBurney圧迫時, 左側臥位の方が疼痛が増強</li>
+                    <li class="list-group-item">Rovsing sign:<br>
+                        背臥位で下行結腸を下から上へ押し上げると, 右下腹部痛が増強</li>
+                    <li class="list-group-item">Blumberg sign (反跳痛):<br>
+                        腹壁を深く圧迫した後離す</li>
+                    <li class="list-group-item">筋性防御:<br>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="FD">
+                <div class="page-header">
+                    <h2>FD <small class="hidden-xs-down">Functional Dyspepsia</small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="FGID">
+                <div class="page-header">
+                    <h2>FGIDs <small class="hidden-xs-down">Functional GastroIntestinal Disorders</small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="peritonitis">
+                <div class="page-header">
+                    <h2>Peritonitis <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="volvulus">
+                <div class="page-header">
+                    <h2>Volvulus <small class="hidden-xs-down"></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="row">
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="intussusception">
+                <div class="page-header">
+                    <h2>Intussusception <small>腸重積</small> <small><code></code></small></h2>
+                </div>
+
+                
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SMAS">
+                <div class="page-header">
+                    <h2>SMAS <small>上腸間膜動脈症候群</small> <small><code></code></small></h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="row">
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="PMP">
                 <div class="page-header">
@@ -892,16 +981,6 @@
             </div>
         </div>
 
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="Mentrier">
-                <div class="page-header">
-                    <h2>Ménétrier <small class="hidden-xs-down"></small> <small><code></code></small></h2>
-                </div>
-
-
-            </div>
-        </div>
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -1160,6 +1239,14 @@
                     </a>
                 </li>
             </ul>
+
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
 
             <!-- 01 -->
@@ -1683,12 +1770,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_15:25:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_15:25:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:08:40"> </span>
                         <br>
                         <p>幼児の急性虫垂炎について正しいのはどれか．2つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_t">急性腹症の中で占める割合が最も多い．</li>
+                            <li class="ans_t star">急性腹症の中で占める割合が最も多い．</li>
                             <li class="ans_f">40℃以上の高熱で発症する．</li>
                             <li class="ans_f">嘔吐はまれである．</li>
                             <li class="ans_f">McBurney圧痛点での圧痛は認めない．</li>
@@ -2026,7 +2114,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_19:46:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_19:46:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-02_17:15:04"> </span>
                         <br>
                         <p>Crohn病に特徴的なのはどれか．2つ選べ</p>
 
@@ -2066,7 +2155,7 @@
                                 <tr>
                                     <th></th>
                                     <th>Crohn病</th>
-                                    <th>潰瘍性大腸炎</th>
+                                    <th>UC</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -2821,7 +2910,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_20:21:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_20:21:17"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:18:40"> </span>
                         <br>
                         <p>潰瘍性大腸炎の重症度判定に不可欠なのはどれか．3つ選べ．</p>
 
@@ -2851,12 +2941,16 @@
 
                         <h6>重症度の6項目</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">下痢 ≥ 6回/d</li>
-                            <li class="list-group-item">顕血便(++)</li>
-                            <li class="list-group-item">発熱 ≥ 37.5&deg;C</li>
-                            <li class="list-group-item">HR ≥ 90 bpm</li>
-                            <li class="list-group-item">Hb ≤ 10g/dL</li>
-                            <li class="list-group-item">ESR ≥ 30mm/hr</li>
+                            <li class="list-group-item">
+                                <ol>
+                                    <li>下痢 ≥ 6回/d</li>
+                                    <li>顕血便(++)</li>
+                                    <li>発熱 ≥ 37.5&deg;C</li>
+                                    <li>HR ≥ 90 bpm</li>
+                                    <li>Hb ≤ 10g/dL</li>
+                                    <li>ESR ≥ 30mm/hr</li>
+                                </ol>
+                            </li>
                         </ul>
 
 
@@ -3187,15 +3281,16 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group ileus pri" id="q032">
+            <div class="card-group ileus obstruction pri" id="q032">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107A8">107A8</a> 腸閉塞 原因
+                        <a href="https://qb.medilink-study.com/#/Answer/107A8" target="_blank">107A8</a> 腸閉塞 原因
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_15:36:29"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_15:36:29"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:21:17"> </span>
                         <br>
                         <p>わが国の成人の腸閉塞の原因で最も多いのはどれか．</p>
 
@@ -3555,7 +3650,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group ileus info" id="q038">
+            <div class="card-group ileus obstruction info" id="q038">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/99H13" target="_blank">99H13</a> 検査
@@ -3563,7 +3658,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_15:47:27"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_15:47:27"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:27:12"> </span>
                         <br>
                         <p>66歳の男性．<br>
                             朝から腹痛が出現したため来院した．開腹歴はない．2日前から排便・排ガスがない．<br>
@@ -3572,7 +3668,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/99H013.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/99H013.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/99H013.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3599,7 +3695,7 @@
                             <li></li>
                             <li></li>
                             <li></li>
-                            <li></li>
+                            <li>大腸イレウス: 狭窄部の観察 / 生検</li>
                         </ol>
 
                         <h6>Ileus</h6>
@@ -3807,17 +3903,19 @@
             <div class="card-group AMAO" id="q042">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://qb.medilink-study.com/#/Answer/97D30" target="_blank">97D30</a> 腸管壊死 検査所見
+                        <a href="https://qb.medilink-study.com/#/Answer/97D30" target="_blank">97D30</a> 腸管壊死
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_20:35:50"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_20:35:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-02_17:32:00"> </span>
                         <br>
                         <p>78歳の男性．<br>
                             腹部の激痛を主訴に救急車で午後7時に搬入された．<br>
-                            2日前に2回嘔吐し食思不振となった．その後下痢があり，本日午後4時ころ突然腹痛が出現した．いったんは寛解したが，30分位で再び痛みを覚え次第に増強，激痛が続いている．<br>
-                            意識は清明．身長168cm，体重62kg．体温37.3℃．脈拍124/分，整．血圧88/52mmHg．眼瞼結膜に貧血はなく，眼球結膜に黄疸を認めない．腹部は平坦，軟で，臍周囲に圧痛があるが，筋性防御はない．腸雑音は聴取されず，腸管壊死を疑った．<br>
+                            2日前に2回嘔吐し食思不振となった．その後下痢があり，本日午後4時ころ<u>突然腹痛</u>が出現した．いったんは寛解したが，30分位で再び痛みを覚え次第に増強，激痛が続いている．<br>
+                            意識は清明．身長168cm，体重62kg．体温37.3℃．脈拍124/分，整．血圧88/52mmHg．<br>
+                            眼瞼結膜に貧血はなく，眼球結膜に黄疸を認めない．腹部は平坦，軟で，臍周囲に圧痛があるが，筋性防御はない．腸雑音は聴取されず，<u>腸管壊死を疑った</u>．<br>
                             考えられる検査所見はどれか．3つ選べ．</p>
 
 
@@ -4123,15 +4221,16 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group ileus pri req info" id="q048">
+            <div class="card-group ileus obstruction pri req info" id="q048">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109H13">109H13</a> 波動 / 振水音
+                        <a href="https://qb.medilink-study.com/#/Answer/109H13" target="_blank">109H13</a> 波動 / 振水音
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_15:53:13"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_15:53:13"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:33:43"> </span>
                         <br>
                         <p>腹部X線写真を次に示す．<br>
                         診察所見として最も予想されるのはどれか．</p>
@@ -4225,7 +4324,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group ileus" id="q050">
+            <div class="card-group ileus obstruction" id="q050">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/90B38" target="_blank">90B38</a> AXR
@@ -4233,7 +4332,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_15:56:04"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_15:56:04"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:40:21"> </span>
                         <br>
                         <p>急性腹症で撮影された腹部X線単純写真（A，B，C，D，E）を次に示す．<br>
                             小腸の機械性イレウスはどれか．2つ選べ．</p>
@@ -4244,11 +4344,11 @@
                     <!-- <img src="https://www.qb-online.com/img/90B038C.jpg" class="img-fluid" width="49%"> -->
                     <!-- <img src="https://www.qb-online.com/img/90B038D.jpg" class="img-fluid" width="49%"> -->
                     <!-- <img src="https://www.qb-online.com/img/90B038E.jpg" class="img-fluid" width="49%"> -->
-                    <img src="https://qb.medilink-study.com/images/90B038A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/90B038B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/90B038C.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/90B038D.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/90B038E.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/90B038A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/90B038B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/90B038C.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/90B038D.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/90B038E.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -4267,10 +4367,10 @@
                         <!-- <img src="https://www.qb-online.com/img/90B038_ima_a_020.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/90B038_ima_a_030.jpg" class="img-fluid"> -->
                         <!-- <img src="https://www.qb-online.com/img/90B038_ima_a_040.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_010.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_020.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_030.jpg" class="card-img-top img-fluid" width="70%">
-                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_040.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_010.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_020.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_030.jpg" class="card-img-top img-fluid" width="%">
+                        <img src="https://qb.medilink-study.com/images/90B038_ima_a_040.jpg" class="card-img-top img-fluid" width="%">
 
 
 
@@ -4349,20 +4449,23 @@
             <!-- 02 -->
             <div class="card-group ileus " id="q052">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90D16" target="_blank">90D16</a> 消化管運動促進薬
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:42:35"> </span>
                         <br>
                         <p>56歳の女性．<br>
                             約25年前に<u>糖尿病</u>と診断され，20年前からインスリン治療を受けている．<br>
-                            4年前に視力障害を自覚し，増殖性網膜症を指摘された．約1年前から腹部膨満感と便秘とをきたすようになり，最近嘔吐もみられるので来院した．腹部エックス線単純写真を次に示す．<br>
+                            4年前に視力障害を自覚し，増殖性網膜症を指摘された．<br>
+                            約1年前から腹部膨満感と便秘とをきたすようになり，最近嘔吐もみられるので来院した．<br>
+                            腹部エックス線単純写真を次に示す．<br>
                             適切な治療薬はどれか．2つ選べ．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/90D016.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/90D016.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -4398,7 +4501,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group SMAS" id="q053">
+            <div class="card-group SMAS obstruction" id="q053">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/106I10" target="_blank">106I10</a> 十二指腸閉塞
@@ -4406,7 +4509,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_16:05:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_16:05:24"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:43:57"> </span>
                         <br>
                         <p>十二指腸を閉塞するのはどれか．</p>
 
@@ -4516,7 +4620,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_16:09:49"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_16:09:49"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:45:49"> </span>
                         <br>
                         <p>虚血性大腸炎の好発部位はどれか．2つ選べ．</p>
 
@@ -4790,28 +4895,31 @@
             <div class="card-group IC pri" id="q059">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/107A49" target="_blank">107A49</a> Dx &xrArr; Rx 
+                        <a href="https://qb.medilink-study.com/#/Answer/107A49" target="_blank">107A49</a> Rx
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_16:17:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_16:17:30"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:47:22"> </span>
                         <br>
                         <p>60歳の女性．<br>
-                        <u>血便</u>を主訴に来院した．<br>
-                        以前から<u>便秘</u>があり，下剤を使用していた．<br>
-                        数日間排便がないため，昨日就寝前に通常の2倍量の下剤を服用した．<br>
-                        本日朝下腹部痛とともに，<u>水様下痢</u>を認めた．その後も腹痛は持続し，<u>新鮮血の排泄</u>が数回あったため受診した．<br>
-                        <u>不整脈と糖尿病</u>とで治療中である．<br>
-                        体温36.7℃．脈拍92/分．血圧126/84mmHg．<br>
-                        眼瞼結膜に異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．下腹部に圧痛を認める．<br>
-                        血液所見：赤血球430万，Hb 13.1g/dL，Ht 39％，白血球8,700，血小板19万．<u>CRP 1.2mg/dL</u>．<br>
-                        下部消化管内視鏡検査を施行した．S状結腸の内視鏡像を次に示す．<br>
-                        対応として適切なのはどれか．</p>
+                            <u>血便</u>を主訴に来院した．<br>
+                            以前から<u>便秘</u>があり，下剤を使用していた．<br>
+                            数日間排便がないため，昨日就寝前に通常の2倍量の下剤を服用した．<br>
+                            本日朝下腹部痛とともに，<u>水様下痢</u>を認めた．その後も腹痛は持続し，<u>新鮮血の排泄</u>が数回あったため受診した．<br>
+                            <u>不整脈と糖尿病</u>とで治療中である．<br>
+                            体温36.7℃．脈拍92/分．血圧126/84mmHg．<br>
+                            眼瞼結膜に異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．下腹部に圧痛を認める．<br>
+                            血液所見：<br>
+                            赤血球430万，Hb 13.1g/dL，Ht 39％，白血球8,700，血小板19万．<u>CRP 1.2mg/dL</u>．<br>
+                            下部消化管内視鏡検査を施行した．<br>
+                            S状結腸の内視鏡像を次に示す．<br>
+                            対応として適切なのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/107A049.jpg" width="50%"> -->
-                    <img src="https://qb.medilink-study.com/images/107A049.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/107A049.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -5440,20 +5548,25 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group PMC 111 pri info" id="q069">
+            <div class="card-group PMC c_difficile 111 pri info" id="q069">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G57" target="_blank" id="">111G57</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_21:21:07"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_21:21:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:49:23"> </span>
                         <br>
                         <p>82歳の女性．<br>
-                            肺炎で入院中である．抗菌薬が投与され肺炎の症状は軽快していたが，3日前から<u>頻回の水様下痢</u>が続いている．高血圧症で内服治療中である．<br>
-                            意識は清明．体温37.6℃．脈拍76/分，整．血圧138/78mmHg．腹部は平坦，軟．下腹部に軽い圧痛を認める．<br>
-                            血液所見：赤血球380万，Hb 12.0g/dL，Ht 36％，白血球9,800，血小板26万．<br>
-                            腹部X線写真で異常所見を認めない．<u>便中Clostridium difficileトキシン陽性</u>．<br>
+                            肺炎で入院中である．<br>
+                            抗菌薬が投与され肺炎の症状は軽快していたが，3日前から<u>頻回の水様下痢</u>が続いている．高血圧症で内服治療中である．<br>
+                            意識は清明．体温37.6℃．脈拍76/分，整．血圧138/78mmHg．<br>
+                            腹部は平坦，軟．下腹部に軽い圧痛を認める．<br>
+                            血液所見：<br>
+                            赤血球380万，Hb 12.0g/dL，Ht 36％，白血球9,800，血小板26万．<br>
+                            腹部X線写真で異常所見を認めない．<br>
+                            <u>便中Clostridium difficileトキシン陽性</u>．<br>
                             この患者に有効と考えられる薬剤はどれか．2つ選べ．</p>
 
 
@@ -5469,7 +5582,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_dx">PMC</p>
 
@@ -5484,9 +5597,13 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">バンコマイシン</li>
-                            <li class="list-group-item">メトロニダゾール</li>
-                            <li class="list-group-item">糞便移植</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>バンコマイシン</li>
+                                    <li>メトロニダゾール</li>
+                                    <li>糞便移植</li>
+                                </ul>
+                            </li>
                         </ul>
                         
                     </div>
@@ -6238,7 +6355,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_21:27:29"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_21:27:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-02_17:52:56"> </span>
                         <br>
                         <p>大腸ポリポーシスについて正しい組合せはどれか．3つ選べ．</p>
 
@@ -6255,7 +6373,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -6286,7 +6404,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_17:26:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_17:26:30"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_17:54:30"> </span>
                         <br>
                         <p>若年性ポリープについて正しいのはどれか．3つ選べ．</p>
 
@@ -6319,31 +6438,50 @@
                             <tbody>
                                 <tr>
                                     <th colspan="2">腫瘍性</th>
-                                    <td>腺腫
+                                    <td>
                                         <ul>
-                                            <li>①腺管腺腫（約80％）</li>
-                                            <li>②腺管絨毛腺腫（約20％）</li>
-                                            <li>③絨毛腺腫</li>
+                                            <li>腺腫
+                                                <ol>
+                                                    <li>腺管腺腫 (80%)</li>
+                                                    <li>腺管絨毛腺腫 (20%)</li>
+                                                    <li>絨毛腺腫</li>
+                                                </ol>
+                                            </li>
                                         </ul>
                                     </td>
                                 </tr>
                                 <tr>
                                     <th rowspan="3">非腫瘍性</th>
                                     <th>過誤腫性</th>
-                                    <td>若年性ポリープ<br>
-                                        Peutz-Jeghers型ポリープ</td>
+                                    <td>
+                                        <ul>
+                                            <li>若年性ポリープ</li>
+                                            <li>Peutz-Jeghers型ポリープ</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>炎症性</th>
-                                    <td>炎症性ポリープ<br>
-                                        良性リンパ濾胞性ポリープ</td>
+                                    <td>
+                                        <ul>
+                                            <li>炎症性ポリープ</li>
+                                            <li>良性リンパ濾胞性ポリープ</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>その他</th>
-                                    <td>過形成性ポリープ</td>
+                                    <td>
+                                        <ul>
+                                            <li>過形成性ポリープ</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -6352,17 +6490,19 @@
             <div class="card-group CRC req" id="q084">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/104H23">104H23</a> 便潜血(+) 
+                        <a href="https://qb.medilink-study.com/#/Answer/104H23" target="_blank">104H23</a> 便潜血(+) 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill rev"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-25_10:30:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-25_10:30:28"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_18:00:44"> </span>
                         <br>
                         <p>60歳の男性．<br>
-                        大腸がん検診で便潜血陽性を指摘されたため来院した．検診結果は2回の検査のうち<u>1回は陽性</u>で，<u>1回は陰性</u>であった．自覚症状はない．<br>
-                        10年前の胃がん検診で<u>胃潰瘍瘢痕の疑い</u>を指摘されている．<br>
-                        対応として適切なのはどれか．</p>
+                            大腸がん検診で便潜血陽性を指摘されたため来院した．<br>
+                            検診結果は2回の検査のうち<u>1回は陽性</u>で，<u>1回は陰性</u>であった．自覚症状はない．<br>
+                            10年前の胃がん検診で<u>胃潰瘍瘢痕の疑い</u>を指摘されている．<br>
+                            対応として適切なのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">経過観察</li>
@@ -6510,7 +6650,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group CRC info" id="q087">
+            <div class="card-group CRC meta info" id="q087">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94E25" target="_blank">94E25</a> 検査
@@ -6518,19 +6658,22 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-24_17:30:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-24_17:30:17"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-02_18:05:04"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             <u>2日連続して血便</u>があったので来院した．<br>
                             それまで便通に異常なく，腹痛など消化器症状もない．身体所見で貧血や黄疸はなく，腹部では<u>肝を右肋骨弓下に4cm触知</u>する．下腹部に異常な腫瘤はない．<br>
-                            血液所見：赤血球392万，Hb 11.2g/dL，Ht 33％．<br>
-                            血清生化学所見：総蛋白6.9g/dL，アルブミン3.8g/dL，総ビリルビン1.0mg/dL，AST 45単位，ALT 52単位，LD 850単位（基準176～353），<u>ALP 690単位</u>（基準260以下），<u>CEA 32ng/dL</u>（基準5以下）．<br>
+                            血液所見：<br>
+                            赤血球392万，Hb 11.2g/dL，Ht 33％．<br>
+                            血清生化学所見：<br>
+                            総蛋白6.9g/dL，アルブミン3.8g/dL，総ビリルビン1.0mg/dL，AST 45単位，ALT 52単位，LD 850単位（基準176～353），<u>ALP 690単位</u>（基準260以下），<u>CEA 32ng/dL</u>（基準5以下）．<br>
                             大腸内視鏡写真を次に示す．<br>
                             病変の進展の診断に有用でないのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/94E025.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/94E025.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/94E025.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -6567,9 +6710,12 @@
 
                         <h6>直腸癌 転移様式</h6>
                         <div class="card-body">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/99A026_bas_a_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/99A026_bas_a_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/99A026_bas_a_010.jpg" class="img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -8329,7 +8475,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group diver peritonitis" id="q114">
+            <div class="card-group diver peritonitis req" id="q114">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104C28">104C28-29</a> 右下腹部痛
@@ -8337,11 +8483,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-24_18:07:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-24_18:07:26"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-01_11:04:21"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-24_21:43:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-24_21:43:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-01_11:04:34"> </span>
                         <br>
                         <p>次の文を読み，28，29の問いに答えよ．<br><br>
 
@@ -8369,8 +8517,8 @@
                         <ol type="a">
                             <li class="ans_f">消化管粘膜固有層</li>
                             <li class="ans_f">消化管筋層</li>
-                            <li class="ans_t">消化管漿膜（臓側腹膜）</li>
-                            <li class="ans_f">壁側腹膜局所</li>
+                            <li class="ans_f">消化管漿膜（臓側腹膜）</li>
+                            <li class="ans_t">壁側腹膜局所</li>
                             <li class="ans_f">壁側腹膜全体</li>
                         </ol>
 
@@ -9175,6 +9323,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -9233,645 +9382,436 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
+$(function(){
 
 
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
-
-
-    $('#IBS h2').click(function(){
+    $('#IBD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IBS)').toggle();
+        $('#q div.card-group:not(.IBD)').slideToggle(100);
     });
-    $('#IBS').find('code').html($('div.IBS').size());
-
-
-    $('#FD h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.FD)').toggle();
-    });
-    $('#FD').find('code').html($('div.FD').size());
-
-
-    $('#FGIDs h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.FGIDs)').toggle();
-    });
-    $('#FGIDs').find('code').html($('div.FGIDs').size());
-
-
-    $('#AAP h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.AAP)').toggle();
-    });
-    $('#AAP').find('code').html($('div.AAP').size());
-
-
-    $('#peritonitis h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.peritonitis)').toggle();
-    });
-    $('#peritonitis').find('code').html($('div.peritonitis').size());
+    $('#IBD').find('small > code').html(
+        $('div.IBD > .card > .mis').size() + '+' +
+        $('div.IBD > .card > .cau').size() + '/' +
+        $('div.IBD').size()
+    );
 
 
     $('#CD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CD)').toggle();
+        $('div.card-group:not(.CD)').slideToggle(100);
     });
-    $('#CD').find('code').html($('div.CD').size());
+    $('#CD').find('code').html(
+        $('div.CD > .card > .mis').size() + '+' +
+        $('div.CD > .card > .cau').size() + '/' +
+        $('div.CD').size()
+    );
 
 
     $('#UC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.UC)').toggle();
+        $('div.card-group:not(.UC)').slideToggle(100);
     });
-    $('#UC').find('code').html($('div.UC').size());
+    $('#UC').find('code').html(
+        $('div.UC > .card > .mis').size() + '+' +
+        $('div.UC > .card > .cau').size() + '/' +
+        $('div.UC').size()
+    );
 
 
     $('#ITB h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ITB)').toggle();
+        $('div.card-group:not(.ITB)').slideToggle(100);
     });
-    $('#ITB').find('code').html($('div.ITB').size());
+    $('#ITB').find('code').html(
+        $('div.ITB > .card > .mis').size() + '+' +
+        $('div.ITB > .card > .cau').size() + '/' +
+        $('div.ITB').size()
+    );
 
 
-    $('#ileus h2').click(function(){
+    $('#Behcet h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ileus)').toggle();
+        $('#q div.card-group:not(.Behcet)').slideToggle(100);
     });
-    $('#ileus').find('code').html($('div.ileus').size());
+    $('#Behcet').find('small > code').html(
+        $('div.Behcet > .card > .mis').size() + '+' +
+        $('div.Behcet > .card > .cau').size() + '/' +
+        $('div.Behcet').size()
+    );
 
-    $('#obstruction').click(function(){
+
+    $('#drug-induced h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.obstruction)').toggle();
+        $('#q div.card-group:not(.drug-induced)').slideToggle(100);
     });
-    $('#obstruction').find('code').html($('div.obstruction').size());
+    $('#drug-induced').find('small > code').html(
+        $('div.drug-induced > .card > .mis').size() + '+' +
+        $('div.drug-induced > .card > .cau').size() + '/' +
+        $('div.drug-induced').size()
+    );
 
 
-    $('#SMAS h2').click(function(){
+    $('#PMC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SMAS)').toggle();
+        $('div.card-group:not(.PMC)').slideToggle(100);
     });
-    $('#SMAS').find('code').html($('div.SMAS').size());
+    $('#PMC').find('code').html(
+        $('div.PMC > .card > .mis').size() + '+' +
+        $('div.PMC > .card > .cau').size() + '/' +
+        $('div.PMC').size()
+    );
 
 
     $('#AHC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AHC)').toggle();
+        $('div.card-group:not(.AHC)').slideToggle(100);
     });
-    $('#AHC').find('code').html($('div.AHC').size());
+    $('#AHC').find('code').html(
+        $('div.AHC > .card > .mis').size() + '+' +
+        $('div.AHC > .card > .cau').size() + '/' +
+        $('div.AHC').size()
+    );
 
 
     $('#MRSA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MRSA)').toggle();
+        $('div.card-group:not(.MRSA)').slideToggle(100);
     });
-    $('#MRSA').find('code').html($('div.MRSA').size());
+    $('#MRSA').find('code').html(
+        $('div.MRSA > .card > .mis').size() + '+' +
+        $('div.MRSA > .card > .cau').size() + '/' +
+        $('div.MRSA').size()
+    );
+
+
+    $('#IBS h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.IBS)').slideToggle(100);
+    });
+    $('#IBS').find('code').html(
+        $('div.IBS > .card > .mis').size() + '+' +
+        $('div.IBS > .card > .cau').size() + '/' +
+        $('div.IBS').size()
+    );
+
+
+
+
+    $('#CRC h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.CRC)').slideToggle(100);
+    });
+    $('#CRC').find('code').html(
+        $('div.CRC > .card > .mis').size() + '+' +
+        $('div.CRC > .card > .cau').size() + '/' +
+        $('div.CRC').size()
+    );
+
+
+    $('#HNPCC h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.HNPCC)').slideToggle(100);
+    });
+    $('#HNPCC').find('code').html(
+        $('div.HNPCC > .card > .mis').size() + '+' +
+        $('div.HNPCC > .card > .cau').size() + '/' +
+        $('div.HNPCC').size()
+    );
+
+
+    $('#cartinoid h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.cartinoid)').slideToggle(100);
+    });
+    $('#cartinoid').find('code').html(
+        $('div.cartinoid > .card > .mis').size() + '+' +
+        $('div.cartinoid > .card > .cau').size() + '/' +
+        $('div.cartinoid').size()
+    );
+
+
+
+
+
+
+
+
+
+
+    $('#FD h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.FD)').slideToggle(100);
+    });
+    $('#FD').find('code').html(
+        $('div.FD > .card > .mis').size() + '+' +
+        $('div.FD > .card > .cau').size() + '/' +
+        $('div.FD').size());
+
+
+    $('#FGID h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.FGID)').slideToggle(100);
+    });
+    $('#FGID').find('code').html(
+        $('div.FGID > .card > .mis').size() + '+' +
+        $('div.FGID > .card > .cau').size() + '/' +
+        $('div.FGID').size());
+
+
+    $('#AAP h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.AAP)').slideToggle(100);
+    });
+    $('#AAP').find('code').html(
+        $('div.AAP > .card > .mis').size() + '+' +
+        $('div.AAP > .card > .cau').size() + '/' +
+        $('div.AAP').size());
+
+
+    $('#peritonitis h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.peritonitis)').slideToggle(100);
+    });
+    $('#peritonitis').find('code').html(
+        $('div.peritonitis > .card > .mis').size() + '+' +
+        $('div.peritonitis > .card > .cau').size() + '/' +
+        $('div.peritonitis').size());
+
+
+    
+
+
+    
+
+
+    $('#ileus h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.ileus)').slideToggle(100);
+    });
+    $('#ileus').find('code').html(
+        $('div.ileus > .card > .mis').size() + '+' +
+        $('div.ileus > .card > .cau').size() + '/' +
+        $('div.ileus').size());
+
+
+    $('#obstruction').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.obstruction)').slideToggle(100);
+    });
+    $('#obstruction').find('code').html(
+        $('div.obstruction > .card > .mis').size() + '+' +
+        $('div.obstruction > .card > .cau').size() + '/' +
+        $('div.obstruction').size());
+
+
+    $('#SMAS h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SMAS)').slideToggle(100);
+    });
+    $('#SMAS').find('code').html(
+        $('div.SMAS > .card > .mis').size() + '+' +
+        $('div.SMAS > .card > .cau').size() + '/' +
+        $('div.SMAS').size());
+
+
+    
 
 
     $('#adenoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.adenoma)').toggle();
+        $('div.card-group:not(.adenoma)').slideToggle(100);
     });
-    $('#adenoma').find('code').html($('div.adenoma').size());
+    $('#adenoma').find('code').html(
+        $('div.adenoma > .card > .mis').size() + '+' +
+        $('div.adenoma > .card > .cau').size() + '/' +
+        $('div.adenoma').size());
 
 
     $('#FAP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FAP)').toggle();
+        $('div.card-group:not(.FAP)').slideToggle(100);
     });
-    $('#FAP').find('code').html($('div.FAP').size());
+    $('#FAP').find('code').html(
+        $('div.FAP > .card > .mis').size() + '+' +
+        $('div.FAP > .card > .cau').size() + '/' +
+        $('div.FAP').size());
 
 
     $('#Gardner').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Gardner)').toggle();
+        $('div.card-group:not(.Gardner)').slideToggle(100);
     });
-    $('#Gardner').find('code').html($('div.Gardner').size());
+    $('#Gardner').find('code').html(
+        $('div.Gardner > .card > .mis').size() + '+' +
+        $('div.Gardner > .card > .cau').size() + '/' +
+        $('div.Gardner').size());
 
 
     $('#PJS').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PJS)').toggle();
+        $('div.card-group:not(.PJS)').slideToggle(100);
     });
-    $('#PJS').find('code').html($('div.PJS').size());
+    $('#PJS').find('code').html(
+        $('div.PJS > .card > .mis').size() + '+' +
+        $('div.PJS > .card > .cau').size() + '/' +
+        $('div.PJS').size());
     
 
 
     $('#JPS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.JPS)').toggle();
+        $('div.card-group:not(.JPS)').slideToggle(100);
     });
-    $('#JPS').find('code').html($('div.JPS').size());
+    $('#JPS').find('code').html(
+        $('div.JPS > .card > .mis').size() + '+' +
+        $('div.JPS > .card > .cau').size() + '/' +
+        $('div.JPS').size());
 
 
     $('#Turcot').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Turcot)').toggle();
+        $('div.card-group:not(.Turcot)').slideToggle(100);
     });
-    $('#Turcot').find('code').html($('div.Turcot').size());
+    $('#Turcot').find('code').html(
+        $('div.Turcot > .card > .mis').size() + '+' +
+        $('div.Turcot > .card > .cau').size() + '/' +
+        $('div.Turcot').size());
 
 
     $('#Cronkhite-Canada').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Cronkhite-Canada)').toggle();
+        $('div.card-group:not(.Cronkhite-Canada)').slideToggle(100);
     });
-    $('#Cronkhite-Canada').find('code').html($('div.Cronkhite-Canada').size());
+    $('#Cronkhite-Canada').find('code').html(
+        $('div.Cronkhite-Canada > .card > .mis').size() + '+' +
+        $('div.Cronkhite-Canada > .card > .cau').size() + '/' +
+        $('div.Cronkhite-Canada').size());
 
 
-    $('#CRC h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.CRC)').toggle();
-    });
-    $('#CRC').find('code').html($('div.CRC').size());
-
-
-    $('#cartinoid h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.cartinoid)').toggle();
-    });
-    $('#cartinoid').find('code').html($('div.cartinoid').size());
+    
 
 
     $('#Lemmel').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Lemmel)').toggle();
+        $('div.card-group:not(.Lemmel)').slideToggle(100);
     });
-    $('#Lemmel').find('code').html($('div.Lemmel').size());
+    $('#Lemmel').find('code').html(
+        $('div.Lemmel > .card > .mis').size() + '+' +
+        $('div.Lemmel > .card > .cau').size() + '/' +
+        $('div.Lemmel').size());
 
 
     $('#Meckel h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Meckel)').toggle();
+        $('div.card-group:not(.Meckel)').slideToggle(100);
     });
-    $('#Meckel').find('code').html($('div.Meckel').size());
+    $('#Meckel').find('code').html(
+        $('div.Meckel > .card > .mis').size() + '+' +
+        $('div.Meckel > .card > .cau').size() + '/' +
+        $('div.Meckel').size());
 
 
     $('#diver h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.diver)').toggle();
+        $('div.card-group:not(.diver)').slideToggle(100);
     });
-    $('#diver').find('code').html($('div.diver').size());
+    $('#diver').find('code').html(
+        $('div.diver > .card > .mis').size() + '+' +
+        $('div.diver > .card > .cau').size() + '/' +
+        $('div.diver').size());
 
 
     $('#PMP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PMP)').toggle();
+        $('div.card-group:not(.PMP)').slideToggle(100);
     });
-    $('#PMP').find('code').html($('div.PMP').size());
+    $('#PMP').find('code').html(
+        $('div.PMP > .card > .mis').size() + '+' +
+        $('div.PMP > .card > .cau').size() + '/' +
+        $('div.PMP').size());
 
 
     $('#CMV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CMV)').toggle();
+        $('div.card-group:not(.CMV)').slideToggle(100);
     });
-    $('#CMV').find('code').html($('div.CMV').size());
+    $('#CMV').find('code').html(
+        $('div.CMV > .card > .mis').size() + '+' +
+        $('div.CMV > .card > .cau').size() + '/' +
+        $('div.CMV').size());
 
 
     $('#AMAO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AMAO)').toggle();
+        $('div.card-group:not(.AMAO)').slideToggle(100);
     });
-    $('#AMAO').find('code').html($('div.AMAO').size());
+    $('#AMAO').find('code').html(
+        $('div.AMAO > .card > .mis').size() + '+' +
+        $('div.AMAO > .card > .cau').size() + '/' +
+        $('div.AMAO').size());
 
 
     $('#intussusception h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.intussusception)').toggle();
+        $('div.card-group:not(.intussusception)').slideToggle(100);
     });
-    $('#intussusception').find('code').html($('div.intussusception').size());
+    $('#intussusception').find('code').html(
+        $('div.intussusception > .card > .mis').size() + '+' +
+        $('div.intussusception > .card > .cau').size() + '/' +
+        $('div.intussusception').size());
 
 
     $('#Schnitzler').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Schnitzler)').toggle();
+        $('div.card-group:not(.Schnitzler)').slideToggle(100);
     });
-    $('#Schnitzler').find('code').html($('div.Schnitzler').size());
+    $('#Schnitzler').find('code').html(
+        $('div.Schnitzler > .card > .mis').size() + '+' +
+        $('div.Schnitzler > .card > .cau').size() + '/' +
+        $('div.Schnitzler').size());
 
 
     $('#SMAS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SMAS)').toggle();
+        $('div.card-group:not(.SMAS)').slideToggle(100);
     });
-    $('#SMAS').find('code').html($('div.SMAS').size());
+    $('#SMAS').find('code').html(
+        $('div.SMAS > .card > .mis').size() + '+' +
+        $('div.SMAS > .card > .cau').size() + '/' +
+        $('div.SMAS').size());
 
 
     $('#abdominal_wall_hematoma h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.abdominal_wall_hematoma)').toggle();
+        $('div.card-group:not(.abdominal_wall_hematoma)').slideToggle(100);
     });
-    $('#abdominal_wall_hematoma').find('code').html($('div.abdominal_wall_hematoma').size());
+    $('#abdominal_wall_hematoma').find('code').html(
+        $('div.abdominal_wall_hematoma > .card > .mis').size() + '+' +
+        $('div.abdominal_wall_hematoma > .card > .cau').size() + '/' +
+        $('div.abdominal_wall_hematoma').size());
 
 
     $('#PMP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PMP)').toggle();
+        $('div.card-group:not(.PMP)').slideToggle(100);
     });
-    $('#PMP').find('code').html($('div.PMP').size());
+    $('#PMP').find('code').html(
+        $('div.PMP > .card > .mis').size() + '+' +
+        $('div.PMP > .card > .cau').size() + '/' +
+        $('div.PMP').size());
 
 
-    $('#PMC h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.PMC)').toggle();
-    });
-    $('#PMC').find('code').html($('div.PMC').size());
+    
 
 
-    $('#HNPCC h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.HNPCC)').toggle();
-    });
-    $('#HNPCC').find('code').html($('div.HNPCC').size());
+    
 
 
 
@@ -9883,9 +9823,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

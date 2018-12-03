@@ -87,6 +87,11 @@ $(function(){
         $('.page-header > h1 > small.print_date').html(print_date);
         $('.page-header > h1 > small.version').html(version);
 
+
+        $('body').toggleClass('night');
+        $('span.night').toggle();
+        $('span.day').toggle();
+
         // $('#def').toggle();
         // $('#cls').toggle();
         // $('#eti').toggle();

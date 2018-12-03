@@ -13,16 +13,68 @@
 
 ## [Unreleased]
 
-- [ ] push section header &xrArr; toggle .q
-- [ ] prepend #q id
+- [ ] 
 
+## [4.2.1] - 18-12-03
+- .night mode default
+- print toggle .day/.night
 
-```js
-$('.section').click(function(){
-    $('#q > .card-group').toggle();
-    var this_id = $(this).attr("id");
-});
-```
+## [04.02.00] - 18-12-01
+- $(function)
+
+## [04.01.40] - 18 11 30
+- 112, progress per_, width
+
+## [04.01.39] - 18 11 27
+- .star 
+
+## [04.01.38] - 18 11 24
+- .table-condesd tr:first-child border-top
+- td > ul, td > ol margin-bottom
+
+## [04.01.37] - 18 11 20
+- .nav mnemo fig
+
+## [04.01.36] - 18 11 17
+- mathjax
+
+## [04.01.35] - 18 11 14
+- nav .mnemonics 
+- .fig
+- #q 
+
+## [04.01.34] - 18 11 11
+- .cau size
+
+## [04.01.33] - 18 11 06
+- .mis size
+
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+
 
 ## [4.1.7] - 2018-06-16
 

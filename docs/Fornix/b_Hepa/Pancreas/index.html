@@ -4,12 +4,22 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-11-04 10:13:18
+@Last modified time: 2018-12-10 19:49:12
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+
 04.01.32    18 11 01    v..., print date 2 digit
 04.01.31    18 10 29    css @media print
 04.01.30    18 10 26    #q li toggle()
@@ -107,8 +117,8 @@
     <title>Pancreas</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-04 10:13:38" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.32">
+    <meta name="revised" content="2018-12-10 19:49:35" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -127,129 +137,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin: 0px 0px 0px 0px}
-            a[href]:after {content: none !important;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-
-            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
-            h2{font-size: 14px}
-            h3{font-size: 13px}
-            h4,h5{font-size: 12px}
-            h6{font-size: 11px}
-            p, a, li, th, td{font-size: 9px}
-
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
-            .page-header small code{
-                border-color: black;
-                border-width: : 0.4px 0.4px 0.4px 0.4px;
-            }
-            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 11px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 0.5px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -296,12 +192,37 @@
 
     
 
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        膵管拡張<br>
+                        Dilated Pancreatic duct: CIP
+                        <ul>
+                            <li>慢性膵炎 CP</li>
+                            <li>IPMN</li>
+                            <li>膵癌 Pancreatic cancer</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
 
     <div class="section" id="AP">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>AP <small class="hidden-xs-down">Acute Pancreatitis</small> <small><code></code></small></h2>
+                    <h2>AP <!-- <small class="hidden-xs-down">Acute Pancreatitis</small> --><small>急性膵炎</small> <small><code></code></small></h2>
                 </div>
             </div>
 
@@ -316,69 +237,108 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
+                        <h6>Complication</h6>
+                        <ul>
+                            <li>MODS</li>
+                            <li>膵仮性嚢胞</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>&uarr;AMY 遷延 <br>
+                                &xrArr; 仮性膵嚢胞の合併</li>
+                            <li><u>&uarr;ACCR <small>AMY Cr Clearance Ratio</small></u></li>
+                            <li>&uarr;BS &there4; insulin</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                         <ul>
-                            <li>NG Tube<br>
-                                腸管閉塞, N/Vを伴う場合</li>
+                            <li>基本的
+                                <ul>
+                                    <li>輸液</li>
+                                    <li>呼吸/循環管理</li>
+                                    <li>タンパク分解酵素阻害薬</li>
+                                    <li>NG Tube<br>
+                                        腸管閉塞, N/Vを伴う場合</li>
+                                </ul>
+                            </li>
+                            <li>重症例
+                                <ul>
+                                    <li>膵動注療法 <u>ABx</u></li>
+                                </ul>
+                            </li>
+                            <li>感染性膵壊死 / WON
+                                <ul>
+                                    
+                                </ul>
+                            </li>
+                            <li>胆石性膵炎
+                                <ul>
+                                    <!-- <li></li> -->
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">&uarr;AMY 遷延 <br>
-                        &xrArr; 仮性膵嚢胞の合併</li>
-                </ul>
-            </div>
-
+            
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>急性膵炎 病因</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">1．アルコール<br>
-                        35％（男性に多い）</li>
-                    <li class="list-group-item">2．胆石症<br>
-                        30％（女性に多い），乳頭部への嵌頓による．</li>
-                    <li class="list-group-item">3．特発性（原因不明）<br>
-                        20％（女性に多い）</li>
-                    <li class="list-group-item">4．医原性：<br>
-                        診断的ERCP，内視鏡的乳頭処置，手術</li>
-                    <li class="list-group-item">5．膵損傷：<br>
-                        腹部外傷</li>
-                    <li class="list-group-item">6．慢性膵炎急性増悪</li>
-                    <li class="list-group-item">7．膵・胆道奇形：<br>
-                        膵管胆道合流異常，膵管癒合不全，輪状膵</li>
-                    <li class="list-group-item">8．代謝・栄養障害<ul>
-                        <li>⑴　高脂血症（特に家族性Ⅴ型）<br>
-                            ⇨高脂血症（特にⅤ型．他にⅠ，Ⅳ型）では，血中トリグリセリドが上昇し，脂肪分解酵素であるリパ−ゼが活性化されやすくなるため．</li>
-                        <li>⑵　副甲状腺機能亢進症⇨高Ca血症により膵液過剰分泌を生じるため．</li>
-                    </ul></li>
-                    <li class="list-group-item">9．その他：<ul>
-                        <li>膵腫瘍</li>
-                        <li>薬剤</li>
-                        <li>感染（ムンプスウイルス，コクサッキーウイルス，HIV，マイコプラズマなど）</li>
-                    </ul></li>
+                    <li class="list-group-item">
+                        <ol>
+                            <li>アルコール<br>
+                                35％（男性に多い）</li>
+                            <li>胆石症<br>
+                                30％（女性に多い），乳頭部への嵌頓による．</li>
+                            <li>特発性（原因不明）<br>
+                                20％（女性に多い）</li>
+                            <li>医原性：<br>
+                                診断的ERCP，内視鏡的乳頭処置，手術</li>
+                            <li>膵損傷：<br>
+                                腹部外傷</li>
+                            <li>慢性膵炎急性増悪</li>
+                            <li>膵・胆道奇形：<br>
+                                膵管胆道合流異常，膵管癒合不全，輪状膵</li>
+                            <li>代謝・栄養障害
+                                <ol>
+                                    <li>高脂血症（特に家族性Ⅴ型）<br>
+                                        ⇨高脂血症（特にⅤ型．他にⅠ，Ⅳ型）では，血中トリグリセリドが上昇し，脂肪分解酵素であるリパ−ゼが活性化されやすくなるため．</li>
+                                    <li>副甲状腺機能亢進症⇨高Ca血症により膵液過剰分泌を生じるため．</li>
+                                </ol>
+                            </li>
+                            <li>その他：<ul>
+                                <li>膵腫瘍</li>
+                                <li>薬剤</li>
+                                <li>感染（ムンプスウイルス，コクサッキーウイルス，HIV，マイコプラズマなど）</li>
+                            </ul></li>
+                        </ol>
+                    </li>
                 </ul>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>膵炎 起因薬剤</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">①ジダノシン（抗HIV薬）</li>
-                    <li class="list-group-item">②L-アスパラギナーゼ</li>
-                    <li class="list-group-item">③アザチオプリン</li>
-                    <li class="list-group-item">④バルプロ酸Na</li>
-                    <li class="list-group-item">⑤ステロイドホルモン (エストロゲン)</li>
-                    <li class="list-group-item">⑥シクロスポリン</li>
-                    <li class="list-group-item">⑦テトラサイクリン</li>
-                    <li class="list-group-item">⑧ラシックス®（フロセミド）</li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>ジダノシン（抗HIV薬）</li>
+                            <li>L-アスパラギナーゼ</li>
+                            <li>アザチオプリン</li>
+                            <li>バルプロ酸Na</li>
+                            <li>ステロイドホルモン (エストロゲン)</li>
+                            <li>シクロスポリン</li>
+                            <li>テトラサイクリン</li>
+                            <li>ラシックス®（フロセミド）</li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
 
@@ -421,50 +381,59 @@
                 </div>
 
                 <h6>急性膵炎 重症度判定</h6>
-                <div class="card">
-                    <ul class="list-group">
-                        <li class="list-group-item">①予後因子：以下の項目を各1点とする．<ul>
-                            <li>
-                            1．Base Excess（BE）≦－3mEq/Lまたはショック（収縮期血圧≦80mmHg）</li>
-                            <li>2．PaO2≦60mmHgまたは呼吸不全（人工呼吸を必要とする）</li>
-                            <li>3．BUN≧40mg/dL（またはCr≧2.0mg/dL）
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        ①予後因子：<br>
+                        以下の項目を各1点とする．
+                        <ol>
+                            <li>Base Excess（BE）≦－3mEq/Lまたはショック（収縮期血圧≦80mmHg）</li>
+                            <li>PaO2≦60mmHgまたは呼吸不全（人工呼吸を必要とする）</li>
+                            <li>BUN≧40mg/dL（またはCr≧2.0mg/dL）
                             または乏尿（輸液後も一日尿量≦400mL）</li>
-                            <li>4．LDH基準値上限2倍以上</li>
-                            <li>5．血小板数≦10万/mm3</li>
-                            <li>6．低Ca血症（総Ca値≦7.5mg/dL）</li>
-                            <li>7．CRP≧15mg/dL</li>
-                            <li>8．SIRS診断基準陽性項目数≧3</li>
-                            <li>9．年齢70歳以上</li>
-                        </ul></li>
-                        <li class="list-group-item">②造影CT Grade：炎症の膵外進展度と造影不良域から重症度を判定する．<br>
-                            ※造影不良域：膵を膵頭部，膵体部，膵尾部の3つの区域に分けて判定する．</li>
-                    </ul>
-                    
+                            <li>LDH基準値上限2倍以上</li>
+                            <li>血小板数≦10万/mm3</li>
+                            <li>低Ca血症（総Ca値≦7.5mg/dL）</li>
+                            <li>CRP≧15mg/dL</li>
+                            <li>SIRS診断基準陽性項目数≧3</li>
+                            <li>年齢70歳以上</li>
+                        </ol>
+                    </li>
+                    <li class="list-group-item">②造影CT Grade：炎症の膵外進展度と造影不良域から重症度を判定する．<br>
+                        ※造影不良域：膵を膵頭部，膵体部，膵尾部の3つの区域に分けて判定する．</li>
+                </ul>
+                
+                <div class="card">
                     <img src="https://qb.medilink-study.com/images/111I079_sup_010.jpg" class="card-img-top img-fluid">
+                </div>
 
-                    <div class="card-body">
-                        <p>SIRS（全身性炎症反応症候群）診断基準項目</p>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        SIRS（全身性炎症反応症候群）診断基準項目
                         <ol>
                             <li>体温＞38℃または＜36℃</li>
                             <li>脈拍＞90回/分</li>
                             <li>呼吸数＞20回/分またはPaCO2＜32mmHg</li>
                             <li>白血球数＞12,000/mm3または＜4,000/mm3または10％超の幼若球出現</li>
                         </ol>
-                    </div>
-                </div>
+                    </li>
+                </ul>
+
+
             </div>
 
         </div>
     </div>
 
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="CP">
+    <div class="section" id="CP">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Chronic Pancreatitis <small><code></code></small></h2>
+                    <h2>CP <small>慢性膵炎</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
@@ -472,29 +441,59 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
+                        <ul>
+                            <li>DM</li>
+                            <li><u>局所門脈圧亢進症</u><br>
+                                &because; CP &rarr;脾Vに及んで &rArr; 左側PoV 圧&uarr;</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li>MRCP / ERCP
+                                <ul>
+                                    <li>狭窄 / 拡張</li>
+                                    <li><u>数珠状拡張</u></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                         <ul>
-                            <li>PPI<br>
-                                &because; 胃酸 &rArr; &uarr;膵液</li>
-                            <li>低脂肪食<br>
-                                &because; 脂肪　&rArr; &uarr;膵液</li>
-                            <li><br>
-                                &because; 胆汁酸 &rArr; &uarr;膵液</li>
+                            <li>代償期</li>
+                            <li>移行期
+                                <ul>
+                                    <li>生活指導
+                                         <ul>
+                                             <li>低脂肪食<br>
+                                                &because; 脂肪　&rArr; &uarr;膵液</li>
+                                         </ul>
+                                    </li>
+                                    <li>薬物
+                                        <ul>
+                                            <li><u>PPI</u> / H<sub>2</sub>B<br>
+                                                &because; 胃酸 &rArr; &uarr;膵液</li>
+                                            <li><br>
+                                                &because; 胆汁酸 &rArr; &uarr;膵液</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>非代償期</li>
+                            <li>合併症</li>
                         </ul>
                     </li>
                 </ul>
+            </div>
 
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>慢性膵炎 Dx criteria</h6>
                 <ul class="list-group">
                     <li class="list-group-item">①特徴的な画像所見<ul>
@@ -519,28 +518,18 @@
                         <li>①，②が確診所見とはいえないが他項目で2項目以上みられれば確定診断とする．</li>
                     </ul></li>
                 </ul>
-
-
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        膵管拡張
-                        <ul>
-                            <li>膵癌</li>
-                            <li>IPMN</li>
-                            <li>慢性膵炎</li>
-                        </ul>
-                    </li>
-                </ul>
+                
             </div>
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="AIP">
                 <div class="page-header">
-                    <h2>AIP <small><code></code></small></h2>
+                    <h2>AIP <small>自己免疫性膵炎</small> <small><code></code></small></h2>
                 </div>
-
 
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
@@ -556,6 +545,7 @@
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                         <ul>
                             <li>IgG (+)</li>
+                            <li>MRCP: <u>主膵管の狭細</u></li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -565,6 +555,11 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
+
+                <div class="card" style="width: 66%">
+                    <!-- <img src="https://qb.medilink-study.com/images/105D025_ima_b_030.jpg" class="card-img-top img-fluid"> -->
+                    <img src="https://qb.medilink-study.com/images/105D025C.jpg" class="card-img-top img-fluid" width="%">
+                </div>
             
             </div>
         </div>
@@ -621,10 +616,70 @@
             </div>
         </div>
 
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="pNET">
+                <div class="page-header">
+                    <h2>pNET <small>膵神経内分泌腫瘍</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="cyst">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Cyst <small>膵嚢胞</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td rowspan="2">仮性</td>
+                            <td colspan="2">急性膵炎後 / 慢性膵炎</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">外傷性</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">真性</td>
+                            <td>非腫瘍性</td>
+                            <td>
+                                <ul>
+                                    <li>先天性</li>
+                                    <li>単純嚢胞</li>
+                                    <li>貯留性</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>嚢胞性</td>
+                            <td>
+                                <ul>
+                                    <li>MCN</li>
+                                    <li>SCN</li>
+                                    <li>IPMN</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="PPC">
                 <div class="page-header">
-                    <h2>PeudoPanreatic Cyst <small> 膵仮性嚢胞</small> <small><code></code></small></h2>
+                    <h2>PPC<!-- PeudoPanreatic Cyst --> <small> 膵仮性嚢胞</small> <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
@@ -643,7 +698,7 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                         <ul>
-                            <li>&uarr;AMY</li>
+                            <li><u>&uarr;AMY</u></li>
                             <li>上皮(-)</li>
                         </ul>
                     </li>
@@ -667,13 +722,29 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="IPMN">
                 <div class="page-header">
-                    <h2>IPMN <small class="hidden-xs-down">Intraductal Papillary Mucinous Neoplasm</small> <small><code></code></small></h2>
+                    <h2>IPMN <small>膵管内乳頭粘液性</small><!--  <small class="hidden-xs-down">Intraductal Papillary Mucinous Neoplasm</small> --> <small><code></code></small></h2>
                 </div>
 
 
             </div>
         </div>
 
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MCN">
+                <div class="page-header">
+                    <h2>MCN <small>粘液性</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="SCN">
+                <div class="page-header">
+                    <h2>SCN <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -841,6 +912,14 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
             <div class="card-group AP info" id="q01">
                 <div class="card">
@@ -931,7 +1010,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_15:53:27"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:49:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:49:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:15:01"> </span>
                         <br>
                         <p>重症急性膵炎でみられないのはどれか．</p>
 
@@ -971,7 +1051,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_15:57:31"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:50:43"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:50:43"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:18:49"> </span>
                         <br>
                         <p>急性膵炎で血中に増加しないのはどれか．</p>
 
@@ -1008,7 +1089,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group AP info" id="q04">
+            <div class="card-group AP info mnemonics" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/92F20" target="_blank">92F20</a> 検査所見
@@ -1016,11 +1097,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_16:03:16"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:52:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:52:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:33:42"> </span>
                         <br>
                         <p>55歳の男性．<br>
                             昨晩，会食で大量に飲酒した．<br>
-                            帰宅して就寝したが，午前2時ころ強度の上腹部痛と背部痛とで目覚め，救急車で来院した．飲酒歴は機会飲酒程度であった．<br>
+                            帰宅して就寝したが，午前2時ころ強度の上腹部痛と背部痛とで目覚め，救急車で来院した．<br>
+                            飲酒歴は機会飲酒程度であった．<br>
                             緊急腹部単純X線CTを次に示す．<br>
                             この患者で予想される検査所見はどれか．3つ選べ．</p>
                     </div>
@@ -1159,19 +1242,27 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_16:20:46"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:56:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:56:08"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:38:15"> </span>
                         <br>
-
                         <p>32歳の男性．<br>
-                        <u>上腹部痛</u>のため搬入された．<br>
-                        <u>2ヵ月前</u>の腹部超音波検査を含む健康診断で左腎囊胞以外に異常はなかった．<br>
-                        夕食後約2時間で，<u>徐々に悪化する上腹部痛</u>を自覚し，耐え難い痛みとなったため救急車を要請した．<br>
-                        <u>飲酒は日本酒3合/日</u>を10年間．<br>
-                        意識は清明．身長172cm，体重78kg．<u>体温37.6℃</u>．<u>脈拍104/分</u>，整．血圧132/74mmHg．SpO2 98％（room air）．腹部は平坦，<u>心窩部に圧痛</u>を認める．肝・脾を触知しない．<br>
-                        血液所見：赤血球469万，Hb 14.9g/dL，Ht 45％，白血球16,300（桿状核好中球8％，<u>分葉核好中球64％</u>，好酸球2％，単球2％，リンパ球24％），血小板21万．<br>
-                        血液生化学所見：<u>血糖120mg/dL</u>，アルブミン3.9g/dL，尿素窒素12mg/dL，クレアチニン0.5mg/dL，総ビリルビン0.9mg/dL，AST 28IU/L，ALT 16IU/L，<u>LD 925IU/L</u>（基準176～353），<u>ALP 312IU/L</u>（基準115～359），<u>γ-GTP 56IU/L（基準8～50）</u>，<u>アミラーゼ1,934IU/L</u>（基準37～160），Na 136mEq/L，K 4.4mEq/L，Cl 100mEq/L，Ca 7.4mg/dL，CA19-9 12U/mL（基準37以下）．<u>CRP 11mg/dL</u>．<br>
-                        動脈血ガス分析（room air）：pH 7.34，<u>PaCO2 29Torr</u>，PaO2 98Torr，HCO3- 15mEq/L．絶食とし，輸液を開始した．腹部造影CTを次に示す．<br>
-                        次の対応として適切なのはどれか．</p>
+                            <u>上腹部痛</u>のため搬入された．<br>
+                            <u>2ヵ月前</u>の腹部超音波検査を含む健康診断で左腎囊胞以外に異常はなかった．<br>
+                            夕食後約2時間で，<u>徐々に悪化する上腹部痛</u>を自覚し，耐え難い痛みとなったため救急車を要請した．<br>
+                            <u>飲酒は日本酒3合/日</u>を10年間．<br>
+                            意識は清明．身長172cm，体重78kg．<u>体温37.6℃</u>．<u>脈拍104/分</u>，整．血圧132/74mmHg．SpO2 98％（room air）．<br>
+                            腹部は平坦，<u>心窩部に圧痛</u>を認める．肝・脾を触知しない．<br>
+                            血液所見：<br>
+                            赤血球469万，Hb 14.9g/dL，Ht 45％，白血球16,300（桿状核好中球8％，<u>分葉核好中球64％</u>，好酸球2％，単球2％，リンパ球24％），血小板21万．<br>
+                            血液生化学所見：<br>
+                            <u>血糖120mg/dL</u>，アルブミン3.9g/dL，尿素窒素12mg/dL，クレアチニン0.5mg/dL，総ビリルビン0.9mg/dL，AST 28IU/L，ALT 16IU/L，<br>
+                            <u>LD 925IU/L</u>（基準176～353），<u>ALP 312IU/L</u>（基準115～359），<u>γ-GTP 56IU/L（基準8～50）</u>，<u>アミラーゼ1,934IU/L</u>（基準37～160），<br>
+                            Na 136mEq/L，K 4.4mEq/L，Cl 100mEq/L，Ca 7.4mg/dL，CA19-9 12U/mL（基準37以下）．<br>
+                            <u>CRP 11mg/dL</u>．<br>
+                            動脈血ガス分析（room air）：<br>
+                            pH 7.34，<u>PaCO2 29Torr</u>，PaO2 98Torr，HCO3- 15mEq/L．<br>絶食とし，輸液を開始した．<br>
+                            腹部造影CTを次に示す．<br>
+                            次の対応として適切なのはどれか．</p>
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/107/img/107D035.jpg" class="img-fluid"> -->
@@ -1192,9 +1283,9 @@
 
                         <ul>
                             <li>WBC CRP</li>
-                            <li>AMY &rAarr; 急性膵炎</li>
+                            <li>AMY &xrArr; 急性膵炎</li>
                             <li>HR > , PaCOs , WBC &rAarr; SIRS 3項目(+)</li>
-                            <li>&uarr;LD, Ca &rAarr; 重症急性膵炎</li>
+                            <li>&uarr;LD, Ca &xrArr; 重症急性膵炎</li>
                         </ul>
 
 
@@ -1215,7 +1306,7 @@
                         </ol>
 
                         <div class="card">
-                            <img src="https://www.qb-online.com/img_kaisetsu/107D035_bas_b_010.jpg" class="card-img-top img-fluid">
+                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/107D035_bas_b_010.jpg" class="card-img-top img-fluid"> -->
                         </div>
 
                     </div>
@@ -1223,7 +1314,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group AP shock" id="q07">
+            <div class="card-group AP shock " id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95H7" target="_blank">95H7-9</a> 治療 / 画像検査 / 病態
@@ -1231,7 +1322,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_16:38:24"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:58:29"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:58:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:43:06"> </span>
                          / 
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill rev" id="2018-07-26_16:38:31"> </span>
@@ -1245,16 +1337,29 @@
 
                             46歳の男性．<br>
                             <u>背部に放散する激しい腹痛</u>を主訴に来院した．<br>
-                            現病歴：昨日の夕方に<u>大量飲酒</u>した．夜半から背部に放散する上腹部痛が出現した．今朝から疼痛がさらに増強し，腹部全体に広がり，冷汗も出現した．<br>
-                            既往歴：6年前腹部超音波検査で<u>胆石</u>を発見されたが放置している．3年前から高血圧症でカルシウム拮抗薬を投与されている．<br>
+                            現病歴：<br>
+                            昨日の夕方に<u>大量飲酒</u>した．夜半から背部に放散する上腹部痛が出現した．<br>
+                            今朝から疼痛がさらに増強し，腹部全体に広がり，冷汗も出現した．<br>
+                            既往歴：<br>
+                            6年前腹部超音波検査で<u>胆石</u>を発見されたが放置している．3年前から高血圧症でカルシウム拮抗薬を投与されている．<br>
                             嗜　好：32歳時から1日平均約<u>3合の日本酒</u>を毎日飲酒している．<br>
-                            現　症：身長165cm，体重76kg．体温37.8℃．呼吸数34/分．脈拍124/分，整．血圧76/48mmHg．心肺に異常所見はない．腹部では，全体に圧痛を認め，反跳痛も認める．<u>左背部に叩打痛</u>を認める．<br>
-                            検査所見：尿所見：蛋白1＋，糖（－）．<br>
-                            血液所見：赤血球391万，Hb 12.7g/dL，Ht 38％，白血球11,800．<br>
-                            血清生化学所見：血糖215mg/dL，総蛋白6.2g/dL，アルブミン3.3g/dL，尿素窒素50mg/dL，クレアチニン2.0mg/dL，総ビリルビン1.0mg/dL，AST 62単位，ALT 76単位，<u>LD 760単位</u>（基準176～353），<u>ALP 296単位</u>（基準260以下），<u>γ-GTP 320単位</u>（基準8～50），<u>アミラーゼ1,560単位</u>（基準37～160），Na 133mEq/L，K 5.0mEq/L，Cl 100mEq/L，Ca 7.2mg/dL．<u>CRP 38mg/dL</u>．<br>
-                            動脈血ガス分析（自発呼吸，room air）<u>PaO2 60.7Torr</u>，<u>base excess −5mEq/L</u>．</p>
+                            現　症：<br>
+                            身長165cm，体重76kg．体温37.8℃．呼吸数34/分．脈拍124/分，整．血圧76/48mmHg．<br>
+                            心肺に異常所見はない．腹部では，全体に圧痛を認め，反跳痛も認める．<u>左背部に叩打痛</u>を認める．<br>
+                            検査所見：<br>
+                            尿所見：<br>
+                            蛋白1＋，糖（－）．<br>
+                            血液所見：<br>
+                            赤血球391万，Hb 12.7g/dL，Ht 38％，白血球11,800．<br>
+                            血清生化学所見：<br>
+                            血糖215mg/dL，総蛋白6.2g/dL，アルブミン3.3g/dL，尿素窒素50mg/dL，クレアチニン2.0mg/dL，<br>
+                            総ビリルビン1.0mg/dL，AST 62単位，ALT 76単位，<u>LD 760単位</u>（基準176～353），<u>ALP 296単位</u>（基準260以下），<u>γ-GTP 320単位</u>（基準8～50），<u>アミラーゼ1,560単位</u>（基準37～160），<br>
+                            Na 133mEq/L，K 5.0mEq/L，Cl 100mEq/L，Ca 7.2mg/dL．<u>CRP 38mg/dL</u>．<br>
+                            動脈血ガス分析（自発呼吸，room air）<br>
+                            <u>PaO2 60.7Torr</u>，<u>base excess −5mEq/L</u>．</p>
 
-                        <p>[H007] 直ちに行うべき処置はどれか．2つ選べ．</p>
+                        <p>[H007] <br>
+                            直ちに行うべき処置はどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_f">蛋白分解酵素阻害薬投与</li>
@@ -1264,7 +1369,8 @@
                             <li class="ans_t">酸素投与</li>
                         </ol>
 
-                        <p>[H008] 予後を判断する上で最も有用な画像検査はどれか．</p>
+                        <p>[H008] <br>
+                            予後を判断する上で最も有用な画像検査はどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">腹部X線単純撮影 </li>
@@ -1274,7 +1380,8 @@
                             <li class="ans_f">腹腔動脈造影</li>
                         </ol>
 
-                        <p>[H009] この患者の病態で誤っているのはどれか．</p>
+                        <p>[H009] <br>
+                            この患者の病態で誤っているのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_t">血管透過性亢進</li>
@@ -1290,11 +1397,10 @@
                     <div class="card-body">
                         
                         
-
                         <ul>
                             <li>pain, AMY</li>
                             <li>Shock</li>
-                            <li>SIRS &lAarr; BT, HR, RR</li>
+                            <li>SIRS &xlArr; BT, HR, RR</li>
                         </ul>
 
                         <p class="q_dx">重症急性膵炎, ショック</p>
@@ -1343,6 +1449,8 @@
 
                         <p>Eti</p>
                         <p>血管透過性亢進, 循環血液量の低下</p>
+
+
                     </div>
                 </div>
             </div>
@@ -1476,16 +1584,29 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-26_17:00:33"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:19:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:19:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_20:48:25"> </span>
                         <br>
                         <p>43歳の女性．<br>
                             <u>意識障害</u>を主訴に救急車で搬入された．<br>
                             一昨日の午後から<u>上腹部痛</u>，<u>背部痛</u>および悪心が出現し，自宅近くの医療機関を受診し鎮痛薬と制吐薬とを処方されたが無効だった．本日早朝から呼びかけに返答できなくなり夫が救急車を要請した．<br>
-                            既往歴と家族歴とに特記すべきことはない．喫煙歴と飲酒歴はない．意識は傾眠状態だが唸り声をあげながらうずくまってしまい仰臥位で診察を受けられない．<br>
-                            身長162cm，体重60kg．体温37.2℃．<u>心拍数56/分</u>，整．<u>血圧106/58mmHg</u>．呼吸数20/分，深い大きな呼吸で<u>呼気には異臭</u>がする．<u>臍周囲に青紫色の着色斑</u>を認める．<br>
-                            尿所見：蛋白（－），糖4＋，<u>ケトン体3＋</u>．<br>
-                            血液所見：赤血球468万，Hb 14.8g/dL，白血球18,000，血小板10万．血液生化学所見：アルブミン3.2g/dL，<u>アミラーゼ820U/L</u>（基準37〜160），クレアチニン1.3mg/dL，<u>血糖1,080mg/dL</u>，HbA1c 5.6％（基準4.6〜6.2），<u>ケトン体8,540μmol/L</u>（基準28〜120），総コレステロール310mg/dL，トリグリセリド840mg/dL，Na 143mEq/L，K 4.9mEq/L，Cl 93mEq/L，Ca 6.8mg/dL．<u>CRP 24mg/dL</u>．<br>
-                            動脈血ガス分析（room air）：<u>pH 7.11</u>，PaCO2 27Torr，PaO2 86Torr，HCO3－ 15.2mEq/L．胸部X線写真で両側に<u>軽度の胸水</u>を認める．頭部CTで異常を認めない．腹部造影CTを次に示す．<br>
+                            既往歴と家族歴とに特記すべきことはない．<br>
+                            喫煙歴と飲酒歴はない．<br>
+                            意識は<u>傾眠状態</u>だが唸り声をあげながらうずくまってしまい仰臥位で診察を受けられない．<br>
+                            身長162cm，体重60kg．体温37.2℃．<u>心拍数56/分</u>，整．<u>血圧106/58mmHg</u>．呼吸数20/分，<br>
+                            深い大きな呼吸で<u>呼気には異臭</u>がする．<u>臍周囲に青紫色の着色斑</u>を認める．<br>
+                            尿所見：<br>
+                            蛋白（－），糖4＋，<u>ケトン体3＋</u>．<br>
+                            血液所見：<br>
+                            赤血球468万，Hb 14.8g/dL，白血球18,000，血小板10万．<br>
+                            血液生化学所見：<br>
+                            アルブミン3.2g/dL，<u>アミラーゼ820U/L</u>（基準37〜160），クレアチニン1.3mg/dL，<br>
+                            <u>血糖1,080mg/dL</u>，HbA1c 5.6％（基準4.6〜6.2），<u>ケトン体8,540μmol/L</u>（基準28〜120），総コレステロール310mg/dL，トリグリセリド840mg/dL，<br>
+                            Na 143mEq/L，K 4.9mEq/L，Cl 93mEq/L，<u>Ca 6.8mg/dL</u>．<u>CRP 24mg/dL</u>．<br>
+                            動脈血ガス分析（room air）：<br>
+                            <u>pH 7.11</u>，PaCO2 27Torr，PaO2 86Torr，HCO3－ 15.2mEq/L．<br>
+                            胸部X線写真で両側に<u>軽度の胸水</u>を認める．<br>
+                            頭部CTで異常を認めない．腹部造影CTを次に示す．<br>
                             静脈路を確保し生理食塩液とともに投与を開始すべきなのはどれか．3つ選べ．</p>
                     </div>
 
@@ -1499,7 +1620,7 @@
                             <li class="ans_f">副腎皮質ステロイド</li>
                             <li class="ans_t">蛋白分解酵素阻害薬</li>
                             <li class="ans_f">グルコン酸カルシウム</li>
-                            <li class="ans_t">広域スペクトル抗菌薬</li>
+                            <li class="ans_t star">広域スペクトル抗菌薬</li>
                         </ol>
                     </div>
                 </div>
@@ -1518,7 +1639,12 @@
                             <li></li>
                             <li></li>
                             <li>Alb≤ 4<br>
-                                CCa = Ca + 4 - Alb = 7.6<br>
+                                \( 
+                                    \text{Corrected Ca} \\
+                                    = \text{Ca} + 4 - \text{Alb} \\
+                                    = 7.6
+                                \)
+                                <br>
                                 &xrArr; 優先度低い</li>
                             <li>膵周囲の感染が合併する</li>
                         </ol>
@@ -1577,7 +1703,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_17:14:31"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:00:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:00:03"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:55:41"> </span>
                         <br>
                         <p>急性膵炎について正しいのはどれか．2つ選べ．</p>
 
@@ -1585,7 +1712,7 @@
                             <li class="ans_f">血清アミラーゼは膵炎の重症度と相関する．</li>
                             <li class="ans_f">急性期には肺水腫をきたしやすい．</li>
                             <li class="ans_t">膵壊死の程度が予後を左右する．</li>
-                            <li class="ans_t">血清アミラーゼ高値の遷延は仮性囊胞の合併を疑わせる．</li>
+                            <li class="ans_t star">血清アミラーゼ高値の遷延は仮性囊胞の合併を疑わせる．</li>
                             <li class="ans_f">胆石性膵炎でも急性期には内視鏡的処置は禁忌である．</li>
                         </ol>
                     </div>
@@ -1684,7 +1811,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-26_17:26:44"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_16:23:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_16:23:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_19:54:38"> </span>
                         <br>
                         <p>正しいのはどれか．3つ選べ．</p>
 
@@ -1717,7 +1845,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group CP" id="q13">
+            <div class="card-group CP PC " id="q13">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/91B43" target="_blank">91B43</a> 慢性膵炎 Qs
@@ -1725,14 +1853,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-26_19:32:10"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_16:28:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_16:28:46"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_19:56:27"> </span>
                         <br>
                         <p>慢性膵炎について正しいのはどれか．3つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">脂肪食摂取後に背部への放散痛を生じる．</li>
                             <li class="ans_t">PABA排泄試験で尿中排泄量が減少する．</li>
-                            <li class="ans_t">ERCPで主膵管の数珠状拡張がみられる．</li>
+                            <li class="ans_t star">ERCPで主膵管の数珠状拡張がみられる．</li>
                             <li class="ans_f">膵癌とは腹部単純X線CTで容易に鑑別できる．</li>
                             <li class="ans_f">手術療法の適応にならない． </li>
                         </ol>
@@ -1764,15 +1893,20 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_19:36:03"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:01:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:01:37"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-10_20:58:00"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             <u>3ヵ月前から続く背部痛</u>と<u>左上腹部痛</u>とを主訴に来院した．<br>
                             20歳過ぎから<u>アルコールを多飲</u>している．<br>
                             意識は清明．身長165cm，体重52kg．脈拍76/分，整．血圧112/78mmHg．<br>
                             腹部は平坦，軟で，肝・脾を触知しない．背部の皮膚に異常を認めない．<br>
-                            血液所見：赤血球385万，Hb 12.5g/dL，Ht 36％，白血球5,800，血小板23万．<br>
-                            血液生化学所見：空腹時血糖112mg/dL，総蛋白6.3g/dL，アルブミン3.4g/dL，総ビリルビン0.7mg/dL，AST 23IU/L，ALT 18IU/L，ALP 295IU/L（基準115～359），<u>γ-GTP 120IU/L</u>（基準8～50），<u>アミラーゼ232IU/L</u>（基準37～160），CA19-9 32U/mL（基準37以下）．<br>
+                            血液所見：<br>
+                            赤血球385万，Hb 12.5g/dL，Ht 36％，白血球5,800，血小板23万．<br>
+                            血液生化学所見：<br>
+                            空腹時血糖112mg/dL，総蛋白6.3g/dL，アルブミン3.4g/dL，<br>
+                            総ビリルビン0.7mg/dL，AST 23IU/L，ALT 18IU/L，ALP 295IU/L（基準115～359），<u>γ-GTP 120IU/L</u>（基準8～50），<u>アミラーゼ232IU/L</u>（基準37～160），<br>
+                            CA19-9 32U/mL（基準37以下）．<br>
                             この患者でみられるのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -1824,7 +1958,7 @@
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/99H014.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/99H014.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/99H014.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1875,8 +2009,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/104G041A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/104G041B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/104G041A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/104G041B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/104G041A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/104G041B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -1931,12 +2065,19 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_20:00:11"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:02:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:02:22"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-10_21:00:05"> </span>
                         <br>
                         <p>65歳の女性．<br>
-                            1ヵ月前からの左上腹部痛と背部痛とを主訴に来院した．6ヵ月前から背部の張り感を自覚していた．肝・脾は触知しない．<br>
-                            血液所見：赤血球370万，白血球6,200，血小板28万．<br>
-                            血清生化学所見：総蛋白7.0g/dL，アルブミン4.5g/dL，総ビリルビン0.4mg/dL，AST 17単位，ALT 8単位，LD 299単位（基準176～353），ALP 343単位（基準260以下），アミラーゼ40単位（基準37～160）．CA19-9 36U/mL（基準37以下）．<br>
+                            1ヵ月前からの左上腹部痛と背部痛とを主訴に来院した．<br>
+                            6ヵ月前から背部の張り感を自覚していた．<br>
+                            肝・脾は触知しない．<br>
+                            血液所見：<br>
+                            赤血球370万，白血球6,200，血小板28万．<br>
+                            血清生化学所見：<br>
+                            総蛋白7.0g/dL，アルブミン4.5g/dL，<br>
+                            総ビリルビン0.4mg/dL，AST 17単位，ALT 8単位，LD 299単位（基準176～353），ALP 343単位（基準260以下），アミラーゼ40単位（基準37～160）．<br>
+                            CA19-9 36U/mL（基準37以下）．<br>
                             腹部X線単純写真を次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
@@ -2009,17 +2150,19 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-26_20:14:38"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_16:31:04"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_16:31:04"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_20:01:14"> </span>
                         <br>
                         <p>50歳の男性．<br>
                             下痢と体重減少（6kg/6ヵ月）とを主訴に来院した．<br>
-                            アルコール依存症で10年前から治療中であった．下痢は食後に増強し絶食により軽減する．<br>
+                            アルコール依存症で10年前から治療中であった．<br>
+                            <u>下痢は食後に増強</u>し絶食により軽減する．<br>
                             尿所見：<br>
-                            蛋白（－），糖2＋．<br>
+                            蛋白（－），<u>糖2＋</u>．<br>
                             血液所見：<br>
                             赤血球352万，Hb 10.3g/dL，白血球4,700．<br>
                             血清生化学所見：<br>
-                            空腹時血糖200mg/dL，総蛋白5.8g/dL，アルブミン3.1g/dL，総ビリルビン1.2mg/dL，直接ビリルビン0.3mg/dL，AST 150単位，ALT 80単位，γ-GTP 120単位（基準8～50），血清アミラーゼ280単位（基準37～160），Ca 7.7mg/dL．<br>
+                            空腹時血糖200mg/dL，総蛋白5.8g/dL，アルブミン3.1g/dL，総ビリルビン1.2mg/dL，直接ビリルビン0.3mg/dL，AST 150単位，ALT 80単位，<u>γ-GTP 120単位</u>（基準8～50），<u>血清アミラーゼ280単位</u>（基準37～160），Ca 7.7mg/dL．<br>
                             常食（脂肪50g）摂取で便中脂肪排泄量10g/日（基準6以下）．D-キシロース吸収試験（5g経口法）のD-キシロース尿中排泄率は5時間値で40％（基準30以上）．<br>
                             腹部X線単純写真（A，B）を次に示す．<br>
                             適切な治療はどれか．3つ選べ．</p>
@@ -2035,7 +2178,7 @@
                             <li class="ans_t">低脂肪食</li>
                             <li class="ans_f">抗菌薬投与</li>
                             <li class="ans_f">胆汁酸製剤投与</li>
-                            <li class="ans_t">胃酸分泌抑制薬投与</li>
+                            <li class="ans_t star">胃酸分泌抑制薬投与</li>
                             <li class="ans_t">リパーゼ含有消化酵素薬投与</li>
                         </ol>
                     </div>
@@ -2111,9 +2254,9 @@
                     <!-- <img src="https://www.qb-online.com/img/105D025A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/105D025B.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/105D025C.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/105D025A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/105D025B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/105D025C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/105D025A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/105D025B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/105D025C.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2168,7 +2311,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group AIP" id="q20">
+            <div class="card-group AIP AP CP cyst NET" id="q20">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/104A10" target="_blank">104A10</a> 膵疾患 - 検査
@@ -2176,14 +2319,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_20:29:33"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_17:04:08"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_17:04:08"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_20:06:16"> </span>
                         <br>
                         <p>疾患と検査法の組合せで正しいのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">急性膵炎 － ICG試験</li>
                             <li class="ans_f">慢性膵炎 － ウレアーゼ試験</li>
-                            <li class="ans_t">自己免疫性膵炎 － 内視鏡的逆行性胆管膵管造影〈ERCP〉</li>
+                            <li class="ans_t star">自己免疫性膵炎 － 内視鏡的逆行性胆管膵管造影〈ERCP〉</li>
                             <li class="ans_f">囊胞性膵疾患 － 線維化マーカー</li>
                             <li class="ans_f">膵内分泌腫瘍 － 細胞表面抗原</li>
                         </ol>
@@ -2230,13 +2374,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_20:45:38"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:04:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:04:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:02:15"> </span>
                         <br>
                         <p>膵癌について正しいのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">女性に多い．</li>
-                            <li class="ans_t">膵頭部に多い．</li>
+                            <li class="ans_t star">膵頭部に多い．</li>
                             <li class="ans_f">肝癌よりも予後が良い．</li>
                             <li class="ans_f">罹患率が低下している．</li>
                             <li class="ans_f">ウイルス感染と関連が深い．</li>
@@ -2245,6 +2390,7 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
 
                         <p class="q_answer_true">b</p>
 
@@ -2255,12 +2401,13 @@
                             <li></li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group PC info" id="q22">
+            <div class="card-group PC star info" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94B45" target="_blank">94B45</a> 膵癌 画像
@@ -2268,7 +2415,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_20:52:18"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:05:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:05:35"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:04:00"> </span>
                         <br>
                         <p>膵癌にみられる画像所見はどれか．2つ選べ．</p>
 
@@ -2426,24 +2574,28 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group PC info" id="q25">
+            <div class="card-group PC CA19-9 info" id="q25">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97D28" target="_blank">97D28</a> 腫瘍マーカー
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_21:16:59"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:06:21"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:06:21"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:06:03"> </span>
                         <br>
                         <p>58歳の男性．<br>
                             <u>心窩部痛</u>を主訴に来院した．<br>
-                            2ヵ月前から断続的に出現していた心窩部痛が，最近毎食後出現するようになった．この2ヵ月で体重が3kg減少した．発熱はない．心窩部に圧痛を認めるが，腫瘤は触知しない．血液所見と血清生化学所見とに異常は認めない．腹部超音波写真を次に示す．<br>
+                            2ヵ月前から断続的に出現していた心窩部痛が，最近毎食後出現するようになった．<br>
+                            この2ヵ月で体重が3kg減少した．発熱はない．心窩部に圧痛を認めるが，腫瘤は触知しない．<br>
+                            血液所見と血清生化学所見とに異常は認めない．<br>
+                            腹部超音波写真を次に示す．<br>
                             予想される疾患で最も感度の高い腫瘍マーカーはどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/97D028.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/97D028.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/97D028.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2451,7 +2603,7 @@
                             <li class="ans_f">CEA</li>
                             <li class="ans_t">CA19-9</li>
                             <li class="ans_f">SCC</li>
-                            <li class="ans_f">PA〈PSA</li>
+                            <li class="ans_f">PA〈PSA〉</li>
                         </ol>
                     </div>
                 </div>
@@ -2475,14 +2627,21 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">CA19-9</li>
-                            <li class="list-group-item">CEA</li>
-                            <li class="list-group-item">エラスターゼI</li>
-                            <li class="list-group-item">DUPIN-II</li>
-                            <li class="list-group-item">SPan-1</li>
-                            <li class="list-group-item">SLX</li>
-                            <li class="list-group-item">CA-50</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>CA19-9</li>
+                                    <li>CEA</li>
+                                    <li>エラスターゼI</li>
+                                    <li>DUPIN-II</li>
+                                    <li>SPan-1</li>
+                                    <li>SLX</li>
+                                    <li>CA-50</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -2676,19 +2835,23 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis" id="2018-07-26_21:42:55"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:34:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:34:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:18:25"> </span>
                         <br>
                         <p>62歳の女性．<br>
                             黄疸と上腹部痛とを訴えて来院した．<br>
-                            右肋骨弓下に鶏卵大の腫瘤を触れる．赤血球368万，白血球6,800．<br>
-                            血清生化学所見：総ビリルビン18.2mg/dL，AST 96単位，ALT 64単位，ALP 720単位（正常260以下），アミラーゼ312単位（正常37～160）．経皮経肝胆管ドレナージ後の胆管と上部消化管との同時造影写真（A）とERCP写真（B）とを次に示す．<br>
+                            右肋骨弓下に<u>鶏卵大の腫瘤</u>を触れる．<br>
+                            赤血球368万，白血球6,800．<br>
+                            血清生化学所見：<br>
+                            総ビリルビン18.2mg/dL，AST 96単位，ALT 64単位，<u>ALP 720単位</u>（正常260以下），<u>アミラーゼ312単位</u>（正常37～160）．<br>
+                            経皮経肝胆管ドレナージ後の胆管と上部消化管との同時造影写真（A）とERCP写真（B）とを次に示す．<br>
                             最も適切な治療法はどれか．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/88D048A.jpg" class="img-fluid"> -->
                     <!-- <img src="https://www.qb-online.com/img/88D048B.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/88D048A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/88D048B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/88D048A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/88D048B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2722,9 +2885,13 @@
 
                         <h6>主膵管/総胆管 壁不整/途絶</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">①膵頭部癌</li>
-                            <li class="list-group-item">②下部胆管癌</li>
-                            <li class="list-group-item">③十二指腸乳頭部癌</li>
+                            <li class="list-group-item">
+                                <ol>
+                                    <li>膵頭部癌</li>
+                                    <li>下部胆管癌</li>
+                                    <li>十二指腸乳頭部癌</li>
+                                </ol>
+                            </li>
                         </ul>
 
                         <h6>膵頭十二指腸切除術 (PD)</h6>
@@ -2744,7 +2911,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-26_21:49:20"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_16:39:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_16:39:05"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_20:10:54"> </span>
                         <br>
                         <p>57歳の女性．<br>
                             背部痛を主訴に来院した．<br>
@@ -2807,13 +2975,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-07-26_21:55:15"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:08:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:08:07"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_21:21:31"> </span>
                         <br>
                         <p>58歳の女性．<br>
                             <u>褐色尿</u>を主訴に来院した．<br>
                             画像診断で<u>膵頭部癌</u>による<u>閉塞性黄疸</u>と診断されたが，転移巣は描出されなかった．<br>
                             内視鏡的逆行性胆管ドレナージで減黄術を行い，膵頭十二指腸切除術を予定した．<br>
-                            手術開腹時に，肝両葉の表面に小結節状の転移巣を5個と，腹膜に同様の結節を十数個認めた．<br>
+                            手術開腹時に，<u>肝両葉の表面に小結節状の転移巣を5個</u>と，<u>腹膜に同様の結節を十数個</u>認めた．<br>
                             対応として適切なのはどれか．</p>
 
                         <ol type="a">
@@ -2833,9 +3002,9 @@
                             <li>腹膜播種</li>
                         </ul>
 
-                        <p>&xrArr; 非切除</p>
-                        
                         <p class="q_dx">膵頭部癌  肝転移 / 腹膜播種(+)</p>
+
+                        <p>&xrArr; 非切除</p>
 
                         <p class="q_answer_true">a</p>
 
@@ -2908,13 +3077,17 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-27_13:57:32"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:08:46"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:08:46"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-10_21:25:57"> </span>
                         <br>
                         <p>79歳の女性．<br>
                             最近，<u>上腹部の圧迫感</u>を覚えるようになり来院した．<br>
                             3ヵ月前に溝に転落し<u>上腹部を強打</u>した．<br>
-                            喫煙と飲酒歴とはない．貧血と黄疸とは認めない．腹部は軟だが，<u>右上腹部に軽度膨隆</u>を認め，<u>軽い圧痛</u>がある．<br>
-                            上部消化管内視鏡検査で異常はない．腹部造影CTを次に示す．<br>
+                            喫煙と飲酒歴とはない．<br>
+                            貧血と黄疸とは認めない．<br>
+                            腹部は軟だが，<u>右上腹部に軽度膨隆</u>を認め，<u>軽い圧痛</u>がある．<br>
+                            上部消化管内視鏡検査で異常はない．<br>
+                            腹部造影CTを次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
 
@@ -2935,7 +3108,7 @@
                     <div class="card-body">
 
                         <ul>
-                            <li>外傷歴 &rAarr; 胆膵系の臓器損傷, 膵胆汁瘻, 巨大嚢胞</li>
+                            <li>外傷歴 &xrArr; 胆膵系の臓器損傷, 膵胆汁瘻, 巨大嚢胞</li>
                         </ul>
 
                         <!-- <img src="https://www.qb-online.com/img/98A030_ima_b_010.jpg" class="img-fluid"> -->
@@ -2965,10 +3138,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-27_14:39:31"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_16:41:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_16:41:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_20:12:09"> </span>
                         <br>
                         <p>36歳の男性．<br>
-                            3ヵ月前にアルコール性急性膵炎で内科的治療を受けた．2日前から上腹部痛と悪心とを自覚して来院した．腹部造影X線CTを次に示す．<br>
+                            3ヵ月前にアルコール性急性膵炎で内科的治療を受けた．<br>
+                            2日前から上腹部痛と悪心とを自覚して来院した．<br>
+                            腹部造影X線CTを次に示す．<br>
                             この病変について正しいのはどれか．3つ選べ．</p>
                     </div>
 
@@ -2980,14 +3156,15 @@
                             <li class="ans_f">自然に消失することはない．</li>
                             <li class="ans_t">膵外傷にも続発する．</li>
                             <li class="ans_t">合併症として感染や出血がある．</li>
-                            <li class="ans_t">癌化することはない．</li>
+                            <li class="ans_t star">癌化することはない．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <img src="https://www.qb-online.com/img/94F013_ima_b_010.jpg" class="img-fluid">
+                        <!-- <img src="https://www.qb-online.com/img/94F013_ima_b_010.jpg" class="img-fluid"> -->
+                        <img src="https://qb.medilink-study.com/images/94F013_ima_b_010.jpg" class="card-img-top img-fluid">
 
                         <p class="q_dx">アルコール性急性膵炎 &rArr; 膵仮性嚢胞</p>
 
@@ -3013,12 +3190,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau" id="2018-07-27_14:44:08"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:09:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:09:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:27:21"> </span>
                         <br>
 
                         <p>30歳の男性．<br>
                             <u>上腹部の違和感</u>を訴えて来院した．<br>
-                            2週前，乗用車を運転中に交通事故を起こし，ハンドルで<u>腹部を強打</u>した．<u>上腹部に圧痛を伴う表面平滑な腫瘤</u>を触れる．腹部超音波検査で<u>膵頭部に径8cm大の囊胞性病変</u>を認める．<br>
+                            2週前，乗用車を運転中に交通事故を起こし，ハンドルで<u>腹部を強打</u>した．<u>上腹部に圧痛を伴う表面平滑な腫瘤</u>を触れる．<br>
+                            腹部超音波検査で<u>膵頭部に径8cm大の囊胞性病変</u>を認める．<br>
                             この疾患で正しいのはどれか．
 
                             <ol type="a">
@@ -3026,7 +3205,7 @@
                                 <li class="ans_f">自然消失しない．</li>
                                 <li class="ans_f">膵癌を合併しやすい．</li>
                                 <li class="ans_f">囊胞内容の主成分は粘液である．</li>
-                                <li class="ans_t">血清アミラーゼ値が上昇する．</li>
+                                <li class="ans_t star">血清アミラーゼ値が上昇する．</li>
                             </ol>
                         </p>
                     </div>
@@ -3059,7 +3238,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis" id="2018-07-27_14:54:10"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_16:46:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_16:46:24"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_20:14:10"> </span>
                         <br>
                         <p>膵管内乳頭粘液性腫瘍〈IPMN〉で誤っているのはどれか．</p>
 
@@ -3068,13 +3248,14 @@
                             <li class="ans_f">主膵管のびまん性狭窄</li>
                             <li class="ans_t">膵管内の乳頭状増生</li>
                             <li class="ans_t">膵管分枝のブドウの房状拡張</li>
-                            <li class="ans_t">Vater乳頭口の開大</li>
+                            <li class="ans_t star">Vater乳頭口の開大</li>
                         </ol>
 
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
                         <p class="q_answer_false">b</p>
 
                         <ol type="a">
@@ -3106,7 +3287,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau" id="2018-07-27_15:04:24"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:10:15"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:10:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_21:29:21"> </span>
                         <br>
                         <p>膵管内乳頭粘液性腫瘍〈IPMN〉の検査所見で誤っているのはどれか．</p>
 
@@ -3114,18 +3296,21 @@
                             <li class="ans_f">造影CT － 全体に肥厚した被膜</li>
                             <li class="ans_t">内視鏡的逆行性胆管膵管造影〈ERCP〉 － 膵管の拡張</li>
                             <li class="ans_t">磁気共鳴胆管膵管撮影〈MRCP〉 － ブドウの房状の形態</li>
-                            <li class="ans_t">十二指腸内視鏡検査 － Vater乳頭口開大</li>
+                            <li class="ans_t star">十二指腸内視鏡検査 － Vater乳頭口開大</li>
                             <li class="ans_t">膵管鏡検査 － イクラ状上皮</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_false">a</p>
 
                         <ol type="a">
                             <li>MCN 被膜の肥厚</li>
-                            <li>膵管の狭窄 &rArr; 尾側の主膵管/分枝膵管の拡張</li>
+                            <li>膵管の狭窄<br>
+                                &rArr; 尾側の主膵管/分枝膵管の拡張</li>
                             <li></li>
                             <li></li>
                             <li></li>
@@ -3159,7 +3344,7 @@
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/108/img/108I065.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/108I065.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/108I065.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -3305,24 +3490,29 @@
             <div class="card-group IPMN pri 111 info" id="q40">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111A43">111A43</a> 治療
+                        <a href="https://qb.medilink-study.com/#/Answer/111A43" target="_blank">111A43</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-07-27_15:31:45"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_16:48:29"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_16:48:29"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-10_21:31:29"> </span>
                         <br>
 
                         <p>69歳の男性．<br>
                             <u>膵腫瘤の増大</u>を指摘されて来院した．<br>
                             4年前の人間ドックで初めて径15mmの<u>膵腫瘤</u>を指摘され，経過観察とされていたが，その後医療機関を受診していなかった．<br>
                             今回，人間ドックで<u>腫瘤の増大</u>を指摘され紹介されて受診した．<br>
-                            体温36.2℃．脈拍72/分，整．血圧132/80mmHg．呼吸数12/分．腹部は平坦，軟で，肝・脾を触知せず，圧痛を認めない．<br>
-                            血液所見：赤血球402万，Hb 14.0g/dL，Ht 43％，白血球6,800，血小板19万．<br>
-                            血液生化学所見：総蛋白7.0g/dL，アルブミン4.0g/dL，総ビリルビン0.8mg/dL，AST 23U/L，ALT 22U/L，ALP 213U/L（基準115〜359），γ-GTP 17U/L（基準8〜50），アミラーゼ42U/L（基準37〜160），血糖98mg/dL．CRP 0.2mg/dL．<br>
+                            体温36.2℃．脈拍72/分，整．血圧132/80mmHg．呼吸数12/分．<br>
+                            腹部は平坦，軟で，肝・脾を触知せず，圧痛を認めない．<br>
+                            血液所見：<br>
+                            赤血球402万，Hb 14.0g/dL，Ht 43％，白血球6,800，血小板19万．<br>
+                            血液生化学所見：<br>
+                            総蛋白7.0g/dL，アルブミン4.0g/dL，総ビリルビン0.8mg/dL，AST 23U/L，ALT 22U/L，ALP 213U/L（基準115〜359），γ-GTP 17U/L（基準8〜50），アミラーゼ42U/L（基準37〜160），血糖98mg/dL．<br>
+                            CRP 0.2mg/dL．<br>
                             腹部造影CT（A）とMRCP（B）とを次に示す．<br>
-                            腹部造影CTで腫瘤の最大径は35mmである．<br>
+                            腹部造影CTで腫瘤の<u>最大径は35mm</u>である．<br>
                             適切な手術はどれか．</p>
                     </div>
 
@@ -3496,7 +3686,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau" id="2018-07-27_15:53:39"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:11:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:11:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:33:38"> </span>
                         <br>
 
                         <p>囊胞性膵疾患で正しいのはどれか．</p>
@@ -3536,7 +3727,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-07-27_15:58:13"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_17:11:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_17:11:58"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-10_21:34:25"> </span>
                         <br>
 
                         <p>膵腫瘍と画像所見の組合せで正しいのはどれか．</p>
@@ -3679,474 +3871,78 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "v" + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    if (date < 10) {
-        date = '0'+ date;
-    }
-
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    var printDate = year + month + date;
-
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
+$(function(){
     
 
-    var title_date = title + "_" + printDate;
-    $(document).attr("title", title_date);
-
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-
-        $('#q li:has(a.all)').toggle();
-        $('#q li:has(a.untag)').toggle();
-        $('#q li:has(a.done)').toggle();
-        $('#q li:has(a.pri)').toggle();
-        $('#q li:has(a.req)').toggle();
-        $('#q li:has(a.qb)').toggle();
-        $('#q li:has(a.110)').toggle();
-        $('#q li:has(a.111)').toggle();
-        $('#q li:has(a.info)').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#AP h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.AP)').slideToggle(100);
     });
-    $('#AP').find('code').html($('div.AP').size());
+    $('#AP').find('code').html(
+        $('div.AP > .card > .mis').size() + '+' +
+        $('div.AP > .card > .cau').size() + '/' +
+        $('div.AP').size());
 
 
     $('#CP h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.CP)').slideToggle(100);
     });
-    $('#CP').find('code').html($('div.CP').size());
+    $('#CP').find('code').html(
+        $('div.CP > .card > .mis').size() + '+' +
+        $('div.CP > .card > .cau').size() + '/' +
+        $('div.CP').size());
 
 
     $('#AIP h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.AIP)').slideToggle(100);
     });
-    $('#AIP').find('code').html($('div.AIP').size());
+    $('#AIP').find('code').html(
+        $('div.AIP > .card > .mis').size() + '+' +
+        $('div.AIP > .card > .cau').size() + '/' +
+        $('div.AIP').size()
+    );
+
+
+    $('#pNET h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.pNET)').slideToggle(100);
+    });
+    $('#pNET').find('small > code').html(
+        $('div.pNET > .card > .mis').size() + '+' +
+        $('div.pNET > .card > .cau').size() + '/' +
+        $('div.pNET').size()
+    );
 
 
     $('#cyst h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.cyst)').slideToggle(100);
     });
-    $('#cyst').find('code').html($('div.cyst').size());
+    $('#cyst').find('code').html(
+        $('div.cyst > .card > .mis').size() + '+' +
+        $('div.cyst > .card > .cau').size() + '/' +
+        $('div.cyst').size());
 
 
     $('#PPC h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.PPC)').slideToggle(100);
     });
-    $('#PPC').find('code').html($('div.PPC').size());
+    $('#PPC').find('code').html(
+        $('div.PPC > .card > .mis').size() + '+' +
+        $('div.PPC > .card > .cau').size() + '/' +
+        $('div.PPC').size());
 
 
 
@@ -4154,14 +3950,43 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.PC)').slideToggle(100);
     });
-    $('#PC').find('code').html($('div.PC').size());
+    $('#PC').find('code').html(
+        $('div.PC > .card > .mis').size() + '+' +
+        $('div.PC > .card > .cau').size() + '/' +
+        $('div.PC').size());
 
 
     $('#IPMN h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.IPMN)').slideToggle(100);
     });
-    $('#IPMN').find('code').html($('div.IPMN').size());
+    $('#IPMN').find('code').html(
+        $('div.IPMN > .card > .mis').size() + '+' +
+        $('div.IPMN > .card > .cau').size() + '/' +
+        $('div.IPMN').size()
+    );
+
+
+    $('#MCN h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.MCN)').slideToggle(100);
+    });
+    $('#MCN').find('small > code').html(
+        $('div.MCN > .card > .mis').size() + '+' +
+        $('div.MCN > .card > .cau').size() + '/' +
+        $('div.MCN').size()
+    );
+
+
+    $('#SCN h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.SCN)').slideToggle(100);
+    });
+    $('#SCN').find('small > code').html(
+        $('div.SCN > .card > .mis').size() + '+' +
+        $('div.SCN > .card > .cau').size() + '/' +
+        $('div.SCN').size()
+    );
 
 
 
@@ -4171,9 +3996,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

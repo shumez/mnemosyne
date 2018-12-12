@@ -4,12 +4,32 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-29 17:14:11
+@Last modified time: 2018-12-12 15:33:48
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -96,8 +116,8 @@
     <title>Valvulopathy</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-29 17:14:31" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-12-12 15:34:57" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -116,125 +136,22 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title hidden-xs-down">Valvulopathy <small></small></h1>
-        <h1 class="title hidden-sm-up">Valvulopathy</h1>
+        <h1 class="title">Valvulopathy <small></small></h1>
+        <!-- <h1 class="title hidden-sm-up">Valvulopathy</h1> -->
     </div>
 <!-- </nav> -->
 
@@ -1080,14 +997,22 @@
             </ul>
 
 
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group">
+            <div class="card-group MR pri" id="q01">
                 <div class="card">
-                    <div class="card-header hit pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107A31" target="_blank">107A31</a> MR Qs
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill hit"> </span>
+                        <span class="badge badge-pill hit now"> </span>
                         <br>
                         <p>43歳の女性．<br>
                         1ヵ月前から<u>労作時の息切れ</u>を自覚し，<u>心尖部</u>にⅢ/Ⅵ度の<u>汎〈全〉収縮期雑音</u>を聴取する．心エコー図（A，B）を次に示す．<br>
@@ -1139,14 +1064,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group VR 111 pri info">
+            <div class="card-group VR 111 pri info" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A15" target="_blank" id="">111A15</a> 人工弁置換術
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_17:50:02"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_17:50:02"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_16:59:32"> </span>
                         <br>
                         <p>人工弁置換術について正しいのはどれか．2つ選べ．</p>
 
@@ -1203,7 +1129,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group VR pri info">
+            <div class="card-group VR pri info" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107G56" target="_blank">107G56</a> 弁置換 説明
@@ -1211,12 +1137,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_19:56:59"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_19:56:59"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_17:11:34"> </span>
                         <br>
                         <p>79歳の男性．<br>
                             息切れと胸痛とを主訴に来院した．<br>
-                            生来健康であったが，5年前から心雑音を指摘されていた．1ヵ月前から坂道や階段歩行で息切れと胸痛とを自覚したため受診した．<br>
-                            体温36.2℃．脈拍72/分，整．血圧118/72mmHg．下腿に浮腫を認めない．聴診で収縮期駆出性〈収縮中期性〉雑音を聴取する．心エコーで大動脈弁の高度石灰化を認め，大動脈弁口面積は0.8cm2であった．<br>
+                            生来健康であったが，5年前から心雑音を指摘されていた．<br>
+                            1ヵ月前から坂道や階段歩行で息切れと胸痛とを自覚したため受診した．<br>
+                            体温36.2℃．脈拍72/分，整．血圧118/72mmHg．<br>
+                            下腿に浮腫を認めない．聴診で収縮期駆出性〈収縮中期性〉雑音を聴取する．心エコーで大動脈弁の高度石灰化を認め，大動脈弁口面積は0.8cm2であった．<br>
                             人工弁の写真（①，②）を次に示す．<br>
                             この患者の手術治療における2種類の人工弁に関する説明で最も適切なのはどれか．</p>
                     </div>
@@ -1238,8 +1167,6 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">e</p>
 
@@ -1283,12 +1210,15 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 04 -->
-            <div class="card-group VR pri info">
+            <div class="card-group VR MS pri info" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G57" target="_blank">109G57</a> 生体弁の適応
@@ -1296,7 +1226,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:00:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:00:40"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-12_17:15:11"> </span>
                         <br>
                         <p>38歳の女性．<br>
                             <u>労作時息切れ</u>を主訴に来院した．<br>
@@ -1318,9 +1249,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>先天性MS</p>
+                        <p class="q_dx">先天性MS</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li>Wafarin 催奇形性<br>
@@ -1334,24 +1265,31 @@
                         <h6>生体弁の適応</h6>
                         <p>Wafarin が必要ない</p>
                         <ul class="list-group">
-                            <li class="list-group-item">易出血性(+)</li>
-                            <li class="list-group-item">≥ 70 y/o</li>
-                            <li class="list-group-item">挙児希望</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>易出血性(+)</li>
+                                    <li>≥ 70 y/o</li>
+                                    <li>挙児希望</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group MS pri info">
+            <div class="card-group MS OS DEM pri info" id="q05">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/104E56" target="_blank">104E56</a>  心雑音
+                        <a href="https://qb.medilink-study.com/#/Answer/104E56" target="_blank">104E56</a> murmur
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:07:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:07:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_17:19:57"> </span>
                         <br>
                         <p>62歳の女性．<br>
                             <u>労作時の息切れ</u>を主訴に来院した．<br>
@@ -1368,7 +1306,7 @@
 
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_t">opening snap</li>
+                            <li class="ans_t star">opening snap</li>
                             <li class="ans_f">収縮中期クリック</li>
                             <li class="ans_f">収縮期駆出性雑音</li>
                             <li class="ans_f">拡張早期高調性雑音</li>
@@ -1414,7 +1352,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group MS info">
+            <div class="card-group MS S1 OS DEM info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95A73" target="_blank">95A73</a> MS 聴診
@@ -1422,13 +1360,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-29_20:15:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_20:15:19"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-12_15:50:32"> </span>
                         <br>
                         <p>僧帽弁狭窄症にみられない所見はどれか．</p>
 
 
                         <ol type="a">
-                            <li class="ans_t">Ⅰ音の亢進</li>
+                            <li class="ans_t star">Ⅰ音の亢進</li>
                             <li class="ans_f">Ⅲ音</li>
                             <li class="ans_t">僧帽弁開放音〈opening snap〉</li>
                             <li class="ans_t">拡張期ランブル</li>
@@ -1452,25 +1391,28 @@
                             <li class="list-group-item">&uarr;S<sub>1</sub></li>
                             <li class="list-group-item">Opening Snap</li>
                             <li class="list-group-item">拡張期ランブル</li>
-                            <li class="list-group-item">全収縮期雑音</li>
+                            <li class="list-group-item">前収縮期雑音</li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group MS">
+            <div class="card-group MS DEM" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103D57" target="_blank">103D57</a> U/S &xrArr; 聴診
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-29_17:56:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_17:56:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_15:57:20"> </span>
                         <br>
                         <p>55歳の女性．<br>
                             息切れを主訴に来院した．<br>
-                            30歳時から心拡大と不整脈とを指摘されていた．数年前から階段を昇るときに息切れを自覚するようになり次第に増悪した．心エコー図（A，B）を次に示す．<br>
+                            30歳時から心拡大と不整脈とを指摘されていた．<br>
+                            数年前から階段を昇るときに息切れを自覚するようになり次第に増悪した．<br>
+                            心エコー図（A，B）を次に示す．<br>
                             心臓の聴診所見はどれか．</p>
                     </div>
 
@@ -1487,7 +1429,7 @@
                             <li class="ans_f">b</li>
                             <li class="ans_f">c</li>
                             <li class="ans_f">d</li>
-                            <li class="ans_f">e</li>
+                            <li class="ans_f star">e</li>
                             <li class="ans_t">f</li>
                             <li class="ans_f">g</li>
                         </ol>
@@ -1504,12 +1446,12 @@
                         <p class="q_answer_true">f</p>
 
                         <ol type="a">
-                            <li>Sys 駆出性雑音</li>
-                            <li>Sys 駆出性雑音</li>
-                            <li>Sys 逆流性雑音</li>
-                            <li>Sys 逆流性雑音 (汎sys雑音)</li>
+                            <li>SEM Sys 駆出性雑音</li>
+                            <li>SEM Sys 駆出性雑音</li>
+                            <li>SRM Sys 逆流性雑音 </li>
+                            <li>SRM Sys 逆流性雑音 (汎sys雑音)</li>
                             <li>早期逆流雑音</li>
-                            <li>拡張中期雑音 拡張中期ランブル</li>
+                            <li>DEM 拡張中期雑音 拡張中期ランブル</li>
                             <li></li>
                         </ol>
                     </div>
@@ -1517,7 +1459,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group MS CI ">
+            <div class="card-group MS CI " id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B25" target="_blank">93B25</a> 心エコー
@@ -1525,7 +1467,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:16:32"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:16:32"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_17:22:05"> </span>
                         <br>
                         <p>52歳の女性．<br>
                             今朝，突然に左半身の不全麻痺をきたし来院した．来院時の心エコー左室長軸断層像を次に示す．<br>
@@ -1567,19 +1510,21 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group MS AFib info">
+            <div class="card-group MS AFib info" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101G21" target="_blank">101G21</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:18:31"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:18:31"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-12_17:27:41"> </span>
                         <br>
                         <p>54歳の女性．<br>
                             2週前からの<u>動悸</u>を主訴に来院した．<br>
                             半年前から労作時の息切れを自覚している．<br>
-                            意識は清明．身長162cm，体重50kg．脈拍108/分，不整．血圧102/72mmHg．心尖部でⅠ音の亢進と<u>拡張期雑音</u>とを聴取する．右肋骨弓下に<u>肝を2cm触知</u>する．下腿に浮腫を認めない．<br>
+                            意識は清明．身長162cm，体重50kg．脈拍108/分，不整．血圧102/72mmHg．<br>
+                            心尖部でⅠ音の亢進と<u>拡張期雑音</u>とを聴取する．右肋骨弓下に<u>肝を2cm触知</u>する．下腿に浮腫を認めない．<br>
                             心電図（A）と心エコー図（B，C）とを次に示す．<br>
                             治療薬はどれか．2つ選べ．</p>
                     </div>
@@ -1607,12 +1552,12 @@
                         <!-- <img src="https://www.qb-online.com/img/101G021_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/101G021_ima_c_010.jpg" class="card-img-top img-fluid">
 
-                        <p class="q_dx">MS & AF</p>
+                        <p class="q_dx">MS & AFib</p>
 
                         <p class="q_answer_true">b d</p>
 
                         <ol type="a">
-                            <li><code>c/i</code> </li>
+                            <li><code>C/I</code> </li>
                             <li>rate ctrl</li>
                             <li>心室性不整脈</li>
                             <li>Warfarin</li>
@@ -1650,14 +1595,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group MS pri info">
+            <div class="card-group MS RF pri info" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/83E30" target="_blank">83E30</a> 拡張期雑音 手術
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_17:58:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_17:58:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_17:30:06"> </span>
                         <br>
                         <p>45歳の女性．<br>
                             20歳のころ<u>微熱</u>が続き，治療を受けたことがある．<br>
@@ -1737,15 +1683,16 @@
 
 
             <!-- 01 -->
-            <div class="card-group TR PHT MS">
+            <div class="card-group TR PHT MS" id="q11">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/93B26" target="_blank">93B26</a> 機能的三尖弁閉鎖不全
+                        <a href="https://qb.medilink-study.com/#/Answer/93B26" target="_blank">93B26</a> 機能的TR
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:21:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:21:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_17:32:18"> </span>
                         <br>
                         <p>機能的三尖弁閉鎖不全を合併しやすいのはどれか．2つ選べ．</p>
 
@@ -1774,19 +1721,20 @@
                             <li></li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
 
             
             <!-- 02 -->
-            <div class="card-group">
+            <div class="card-group MR pri info" id="q12">
                 <div class="card">
-                    <div class="card-header rev pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108I21" target="_blank">108I21</a> MR 原因
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill rev now"> </span>
                         <br>
                         <p>僧帽弁閉鎖不全症の直接の原因とならないのはどれか．</p>
 
@@ -1832,9 +1780,9 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group">
+            <div class="card-group MR" id="q13">
                 <div class="card">
-                    <div class="card-header rev">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104A25" target="_blank">104A25</a> 聴診
                     </div>
                     <div class="card-body">
@@ -1884,13 +1832,13 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group">
+            <div class="card-group MR AMI pri info" id="q14">
                 <div class="card">
-                    <div class="card-header rev pri info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B48">109B48</a> U/S
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill rev now"> </span>
                         <br>
                         <p>79歳の男性．<br>
                             <u>呼吸困難</u>のため搬入された．<br>
@@ -1958,10 +1906,10 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group MR pneumonia">
+            <div class="card-group MR pneumonia" id="q15">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109G64-66" target="_blank">109G64-66</a> U/S / 検査 / 対応
+                        <a href="https://qb.medilink-study.com/#/Answer/109G64" target="_blank">109G64-66</a> U/S / 検査 / 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
@@ -1969,7 +1917,8 @@
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:26:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:26:08"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-12_17:36:50"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill rev"> </span>
@@ -1978,20 +1927,29 @@
 
                             86歳の女性．<br>
                             <u>発熱</u>と<u>呼吸困難</u>とを主訴に来院した．<br>
-                            現病歴：ADLは自立していたが<u>半年前から時々食事中にむせる</u>ことがあった．<br>
+                            現病歴：<br>
+                            ADLは自立していたが<u>半年前から時々食事中にむせる</u>ことがあった．<br>
                             2日前から咳や痰を伴う38℃台の発熱が出現した．しばらく自宅で様子をみていたが，今朝になり呼吸困難も生じたため同居中の長女に付き添われて受診した．<br>
-                            既往歴：60歳ころから高血圧症，80歳ころから心房細動で投薬治療中．<br>
-                            生活歴：喫煙歴と飲酒歴とはない．<br>
-                            家族歴：父親が心筋梗塞で死亡．母親が胃癌で死亡．<br>
-                            現症：意識レベルはJCSⅠ-3．身長150cm，体重54kg．体温38.4℃．脈拍112/分，不整．血圧152/72mmHg．呼吸数24/分．SpO2 94％（鼻カニューラ2L/分 酸素投与下）．<br>
+                            既往歴：<br>
+                            60歳ころから高血圧症，80歳ころから心房細動で投薬治療中．<br>
+                            生活歴：<br>
+                            喫煙歴と飲酒歴とはない．<br>
+                            家族歴：<br>父親が心筋梗塞で死亡．母親が胃癌で死亡．<br>
+                            現症：<br>
+                            意識レベルはJCSⅠ-3．身長150cm，体重54kg．体温38.4℃．脈拍112/分，不整．血圧152/72mmHg．呼吸数24/分．SpO2 94％（鼻カニューラ2L/分 酸素投与下）．<br>
                             <u>頸静脈の怒張</u>を認める．<u>Ⅲ音</u>を聴取する．Ⅳ音を聴取しない．<u>心尖部を最強点とするⅢ/Ⅵの汎〈全〉収縮期雑音</u>を聴取する．右背下部で<u>coarse crackles</u>を聴取する．腹部は平坦，軟で，肝・脾を触知しない．両側下腿に浮腫を認める．<br>
                             検査所見：<br>
-                            尿所見：蛋白（－），糖（－），潜血1＋，沈渣に白血球を認めない．<br>
-                            血液所見：赤血球347万，Hb 9.9g/dL，Ht 30％，白血球10,200（桿状核好中球30％，分葉核好中球45％，好酸球1％，好塩基球1％，単球6％，リンパ球17％），血小板28万．<br>
-                            血液生化学所見：総蛋白5.4g/dL，アルブミン2.7g/dL，総ビリルビン0.9mg/dL，AST 28IU/L，ALT 26IU/L，LD 280IU/L（基準176～353），ALP 174IU/L（基準115～359），γ-GTP 24IU/L（基準8～50），アミラーゼ72IU/L（基準37～160），CK 135IU/L（基準30～140），尿素窒素27mg/dL，クレアチニン1.1mg/dL，尿酸6.9mg/dL，血糖112mg/dL，HbA1c 6.0％（基準4.6～6.2），Na 133mEq/L，K 4.0mEq/L，Cl 97mEq/L．<u>CRP 7.4mg/dL</u>．胸部X線写真で<u>右下肺野浸潤影</u>，肺血管陰影の増強，<u>右肋骨横隔膜角鈍化</u>，<u>右第2弓の二重陰影</u>および<u>左第4弓の突出</u>を認める．12誘導心電図で心拍数110/分の<u>心房細動</u>を認める．</p>
+                            尿所見：<br>
+                            蛋白（－），糖（－），潜血1＋，沈渣に白血球を認めない．<br>
+                            血液所見：<br>
+                            赤血球347万，Hb 9.9g/dL，Ht 30％，白血球10,200（桿状核好中球30％，分葉核好中球45％，好酸球1％，好塩基球1％，単球6％，リンパ球17％），血小板28万．<br>
+                            血液生化学所見：<br>
+                            総蛋白5.4g/dL，アルブミン2.7g/dL，総ビリルビン0.9mg/dL，AST 28IU/L，ALT 26IU/L，LD 280IU/L（基準176～353），ALP 174IU/L（基準115～359），γ-GTP 24IU/L（基準8～50），アミラーゼ72IU/L（基準37～160），CK 135IU/L（基準30～140），尿素窒素27mg/dL，クレアチニン1.1mg/dL，尿酸6.9mg/dL，血糖112mg/dL，HbA1c 6.0％（基準4.6～6.2），Na 133mEq/L，K 4.0mEq/L，Cl 97mEq/L．<u>CRP 7.4mg/dL</u>．<br>
+                            胸部X線写真で<u>右下肺野浸潤影</u>，肺血管陰影の増強，<u>右肋骨横隔膜角鈍化</u>，<u>右第2弓の二重陰影</u>および<u>左第4弓の突出</u>を認める．12誘導心電図で心拍数110/分の<u>心房細動</u>を認める．</p>
 
 
-                        <p>[G064] 経胸壁心エコー検査で予想されるのはどれか．</p>
+                        <p>[G064] <br>
+                            経胸壁心エコー検査で予想されるのはどれか．</p>
                         <ol type="a">
                             <li class="ans_f">大動脈弁狭窄症</li>
                             <li class="ans_f">大動脈弁閉鎖不全症</li>
@@ -2000,7 +1958,8 @@
                             <li class="ans_f">肺動脈弁狭窄症</li>
                         </ol>
 
-                        <p>[G065] 次に行うべきなのはどれか．</p>
+                        <p>[G065] <br>
+                            次に行うべきなのはどれか．</p>
                         <ol type="a">
                             <li class="ans_t">喀痰培養</li>
                             <li class="ans_f">腰椎穿刺</li>
@@ -2009,8 +1968,9 @@
                             <li class="ans_f">経食道心エコー検査</li>
                         </ol>
 
-                        <p>[G066] 入院し，ベッド上安静とした上で治療を開始した．入院3日目には発熱と呼吸不全とは改善した．同日の夕方から落ち着きがなくなり，夜には大声をあげるようになった．翌日に撮影した頭部CTで脳全体の萎縮を認める．<br>
-                        今後の対応として正しいのはどれか．</p>
+                        <p>[G066] <br>
+                            入院し，ベッド上安静とした上で治療を開始した．入院3日目には発熱と呼吸不全とは改善した．同日の夕方から落ち着きがなくなり，夜には大声をあげるようになった．翌日に撮影した頭部CTで脳全体の萎縮を認める．<br>
+                            今後の対応として正しいのはどれか．</p>
                         <ol type="a">
                             <li class="ans_f">胃瘻造設</li>
                             <li class="ans_f">身体拘束</li>
@@ -2023,9 +1983,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p class="q_dx">MR <br>
-                            細菌性肺炎<br>
-                            せん妄</p>
+                        <p class="q_dx">MR  / 細菌性肺炎 / せん妄</p>
 
                         <p class="q_answer_true">d</p>
                         <ol type="a">
@@ -2061,13 +2019,13 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group">
+            <div class="card-group MR pri" id="q16">
                 <div class="card">
-                    <div class="card-header rev pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108A57" target="_blank">108A57</a> 診断 &xrArr; 治療
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill rev"> </span>
+                        <span class="badge badge-pill rev now"> </span>
                         <br>
                         <p>52歳の男性．<br>
                             階段昇降などの<u>労作時での息切れ</u>を主訴に来院した．<br>
@@ -2114,7 +2072,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group MVP MR">
+            <div class="card-group MVP MR" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100A23" target="_blank">100A23</a> 聴診所見
@@ -2122,11 +2080,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-29_18:04:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_18:04:30"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-12_16:10:39"> </span>
                         <br>
                         <p>26歳の女性．<br>
                             会社の健康診断で心雑音を指摘され来院した．<br>
-                            身長164cm，体重50kg．体温36.2℃．呼吸数16/分．脈拍56/分，整．血圧112/72mmHg．心エコー図（A，B）を次に示す．<br>
+                            身長164cm，体重50kg．体温36.2℃．呼吸数16/分．脈拍56/分，整．血圧112/72mmHg．<br>
+                            心エコー図（A，B）を次に示す．<br>
                             この病態に特徴的なのはどれか．2つ選べ．</p>
                     </div>
 
@@ -2151,9 +2111,9 @@
                         <!-- <img src="https://www.qb-online.com/img/100A023_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/100A023_ima_c_010.jpg" class="card-img-top img-fluid">
 
-                        <p>僧帽弁逸脱症候群</p>
+                        <p class="q_dx">僧帽弁逸脱症候群</p>
 
-                        <p>True: a,c</p>
+                        <p class="q_answer_true">a c</p>
 
                         <ol type="a">
                             <li>MVP &rArr; MR 収縮後期</li>
@@ -2167,17 +2127,21 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group Marfan MVP info">
+            <div class="card-group Marfan MVP info" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104I48" target="_blank">104I48</a> 心雑音
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-29_20:30:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_20:30:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_16:15:35"> </span>
                         <br>
                         <p>15歳の女子．<br>
-                            学校の健康診断で心雑音を指摘され来院した．小児期から強度の近視と漏斗胸とを指摘されているが，健常な生活を送っている．身長168cm，体重48kg．脈拍72/分，整．血圧118/72mmHg．心エコー図を次に示す．<br>
+                            学校の健康診断で心雑音を指摘され来院した．<br>
+                            小児期から<u>強度の近視</u>と<u>漏斗胸</u>とを指摘されているが，健常な生活を送っている．<br>
+                            <u>身長168cm</u>，体重48kg．脈拍72/分，整．血圧118/72mmHg．<br>
+                            心エコー図を次に示す．<br>
                             心雑音の特徴はどれか．</p>
                     </div>
 
@@ -2215,25 +2179,33 @@
 
                         <h6>MV逸脱 &rArr; MR</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">S<sub>1</sub>: &rarr; / &darr;</li>
-                            <li class="list-group-item">S<sub>2</sub>: 分裂が拡大</li>
-                            <li class="list-group-item">S<sub>3</sub> (+)</li>
-                            <li class="list-group-item">収縮中期クリック: MV逸脱による高調</li>
-                            <li class="list-group-item">収縮後期駆出性雑音: 逆流の音</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>S<sub>1</sub>: &rarr; / &darr;</li>
+                                    <li>S<sub>2</sub>: 分裂が拡大</li>
+                                    <li>S<sub>3</sub> (+)</li>
+                                    <li>収縮中期クリック: MV逸脱による高調</li>
+                                    <li>収縮後期駆出性雑音: 逆流の音</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group AS info">
+            <div class="card-group AS info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95I12" target="_blank">95I12</a> AS Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:32:09"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:32:09"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-12_17:39:12"> </span>
                         <br>
                         <p>成人の大動脈弁狭窄症で正しいのはどれか．2つ選べ．</p>
 
@@ -2242,8 +2214,8 @@
                             <li class="ans_f">大動脈弁の石灰化はみられない．</li>
                             <li class="ans_t">左室の求心性肥大がみられる．</li>
                             <li class="ans_t">二尖弁は原因となる．</li>
-                            <li class="ans_f">弁口面積が3cm<sup>2</sup>以下で症状が出現する．</li>
-                            <li class="ans_f">心不全発症後の平均生存期間は約10年である．</li>
+                            <li class="ans_f star">弁口面積が3cm<sup>2</sup>以下で症状が出現する．</li>
+                            <li class="ans_f star">心不全発症後の平均生存期間は約10年である．</li>
                         </ol>
                     </div>
                 </div>
@@ -2313,14 +2285,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group AS 110 info">
+            <div class="card-group AS 110 info" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A20" target="_blank" id="">110A20</a> AS 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-29_20:35:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:35:34"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-12_17:40:06"> </span>
                         <br>
                         <p>大動脈弁狭窄症について予後不良の症候はどれか．3つ選べ．</p>
 
@@ -2372,9 +2345,9 @@
 
 
             <!-- 01 -->
-            <div class="card-group">
+            <div class="card-group AS 110 pri" id="q21">
                 <div class="card">
-                    <div class="card-header rev 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D40" target="_blank" id="">110D40</a> 診断 &xrArr; 検査
                     </div>
                     <div class="card-body">
@@ -2422,7 +2395,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group AS">
+            <div class="card-group AS SEM S4" id="q22">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102D24" target="_blank">102D24</a> U/S &xrArr; Qs
@@ -2430,7 +2403,8 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_20:37:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:37:35"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_17:41:17"> </span>
 						<br>
 						<p>72歳の女性．<br>
 							胸部圧迫感を主訴に来院した．<br>
@@ -2479,9 +2453,9 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group">
+            <div class="card-group AS info" id="q23">
 				<div class="card">
-					<div class="card-header rev info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/100I26" target="_blank">100I26</a> カーテル &xrArr; Qs
 					</div>
 					<div class="card-body">
@@ -2537,14 +2511,15 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group AS info pri">
+            <div class="card-group AS SEM info pri" id="q24">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108I63" target="_">108I63</a> 診断 &xrArr; 治療
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_20:38:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:38:56"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-12_17:43:40"> </span>
 						<br>
 						<p>74歳の女性．<br>
                             <u>意識消失</u>を主訴に来院した．<br>
@@ -2585,6 +2560,8 @@
                         <img src="https://qb.medilink-study.com/images/108I063_ima_020.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/108I063_ima_030.jpg" class="card-img-top img-fluid">
 
+                        <p class="q_dx">AS</p>
+
 						<p class="q_answer_true">c</p>
 
 						<ol type="a">
@@ -2614,7 +2591,7 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group AR AS info">
+            <div class="card-group AR AS info" id="q25">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/93F7" target="_blank">93F7</a> 手術適応
@@ -2622,11 +2599,15 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_20:41:46"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_20:41:46"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-12_16:21:04"> </span>
 						<br>
 						<p>70歳の男性．<br>
 							10年前に心雑音を指摘されたが症状がなく放置していた．<br>
-							1年前に労作時に動悸を感じ，最近では労作時に胸痛を感じるようになったため来院した．胸骨右縁第2肋間に3/6度の収縮期雑音と胸骨左縁第3肋間に拡張期雑音とを聴取する．心電図（A），胸部X線写真正面像（B）および側面像（C）を次に示す．心カテーテル検査では，肺動脈楔入圧10mmHg，左室収縮期圧180mmHg，大動脈圧100/70mmHg．<br>
+							1年前に労作時に動悸を感じ，最近では労作時に胸痛を感じるようになったため来院した．<br>
+                            胸骨右縁第2肋間に3/6度の収縮期雑音と胸骨左縁第3肋間に拡張期雑音とを聴取する．<br>
+                            心電図（A），胸部X線写真正面像（B）および側面像（C）を次に示す．<br>
+                            心カテーテル検査では，肺動脈楔入圧10mmHg，<u>左室収縮期圧180mmHg，大動脈圧100/70mmHg</u>．<br>
 							この患者の手術適応因子はどれか．2つ選べ．</p>
                     </div>
 
@@ -2639,7 +2620,7 @@
 
                     <div class="card-body">
 						<ol type="a">
-							<li class="ans_t">狭心痛</li>
+							<li class="ans_t star">狭心痛</li>
 							<li class="ans_f">左室肥大</li>
 							<li class="ans_f">大動脈弁位の石灰化像</li>
 							<li class="ans_f">肺動脈楔入圧</li>
@@ -2686,13 +2667,13 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group">
+            <div class="card-group AS pri" id="q26">
 				<div class="card">
-					<div class="card-header rev pri">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109A17" target="_blank">109A17</a> AS 治療
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill rev"> </span>
+						<span class="badge badge-pill rev now"> </span>
 						<br>
 						<p>大動脈弁狭窄症の治療について正しいのはどれか．2つ選べ．</p>
 
@@ -2730,15 +2711,16 @@
             <!-- <h4>AR</h4> -->
 
             <!-- 07 -->
-            <div class="card-group AR pri info">
+            <div class="card-group AR DRM pri info" id="q27">
 				<div class="card">
 					<div class="card-header ">
-						<a href="https://qb.medilink-study.com/#/Answer/106G46" target="_blank">106G46</a>　聴診の姿勢
+						<a href="https://qb.medilink-study.com/#/Answer/106G46" target="_blank">106G46</a> 聴診の姿勢
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_20:43:09"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:43:09"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_17:44:57"> </span>
 						<br>
 						<p>53歳の女性．<br>
                             会社の健康診断で<u>心雑音</u>を指摘され来院した．<br>
@@ -2791,14 +2773,14 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group">
+            <div class="card-group AR" id="q28">
 				<div class="card">
-					<div class="card-header rev">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102D25" target="_blank">102D25</a> 検査
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-						<span class="badge badge-pill rev"> </span>
+						<span class="badge badge-pill rev now"> </span>
 						<br>
 						<p>58歳の男性．<br>
 							1ヵ月前からの胸痛を主訴に来院した．<br>
@@ -2838,18 +2820,21 @@
 			</div>
 
             <!-- 09 -->
-            <div class="card-group AR info">
+            <div class="card-group AR Austin-Flint info" id="q29">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/97I28" target="_blank">97I28</a> 診断 &xrArr; 症候
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_20:45:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:45:22"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_17:47:58"> </span>
 						<br>
 						<p>50歳の男性．<br>
 							夜間の呼吸困難で来院した．<br>
-							20年前に心雑音を指摘され，心電図で心肥大を認めている．血圧152/34mmHg．胸骨右縁第3肋間に駆出性収縮期雑音と拡張早期雑音とを聴取する．<br>
+							20年前に心雑音を指摘され，心電図で心肥大を認めている．<br>
+                            <u>血圧152/34mmHg</u>．<br>
+                            胸骨右縁第3肋間に駆出性収縮期雑音と拡張早期雑音とを聴取する．<br>
 							この疾患でみられるのはどれか．2つ選べ．</p>
 
 
@@ -2858,7 +2843,7 @@
 							<li class="ans_f">奇脈</li>
 							<li class="ans_f">Ⅱ音分裂</li>
 							<li class="ans_f">僧帽弁開放音</li>
-							<li class="ans_t">Austin Flint雑音</li>
+							<li class="ans_t star">Austin Flint雑音</li>
 						</ol>
 					</div>
 				</div>
@@ -2963,14 +2948,15 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group AR info">
+            <div class="card-group AR info" id="q30">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103A6" target="_blank">103A6</a> AR Qs
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_20:48:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_20:48:18"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-12_16:24:53"> </span>
 						<br>
 						<p>大動脈弁閉鎖不全症でみられるのはどれか．2つ選べ．</p>
 
@@ -3023,7 +3009,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group AR Marfan pri">
+            <div class="card-group AR Marfan pri" id="q31">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109I53" target="_blank">109I53</a> 診断 &xrArr; 検査
@@ -3088,7 +3074,7 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group AR">
+            <div class="card-group AR VR" id="q32">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/101A20" target="_blank">101A20</a> 診断 &xrArr; 治療
@@ -3096,13 +3082,15 @@
 					<div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_20:52:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:52:28"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-12_17:50:38"> </span>
 						<br>
 						<p>55歳の男性．<br>
 							胸痛と息苦しさとを主訴に来院した．<br>
 							3ヵ月前から，時々，めまいと前胸部痛とを自覚していた．<br>
                             意識は清明．身長166cm，体重66kg．脈拍88/分，整．<u>血圧102/28mmHg</u>．<br>
-                            <u>胸骨左縁第4肋間に拡張期雑音</u>を聴取する．呼吸音に異常はない．肝・脾は触知しない．<br>
+                            <u>胸骨左縁第4肋間に拡張期雑音</u>を聴取する．<br>
+                            呼吸音に異常はない．肝・脾は触知しない．<br>
 							大動脈造影（A，B，C）と冠動脈造影（D，E，F）とを次に示す．<br>
 							治療として適切なのはどれか．</p>
                     </div>
@@ -3160,14 +3148,15 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group AR pri info mnemonics">
+            <div class="card-group AR pri info mnemonics" id="q33">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109I36" target="_blank">109I36</a> AR 症候
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_18:07:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_18:07:09"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_16:31:00"> </span>
 						<br>
 						<p>大動脈弁閉鎖不全症の進行を示唆する徴候はどれか．2つ選べ</p>
 
@@ -3176,7 +3165,7 @@
 							<li class="ans_t">狭心痛の出現</li>
 							<li class="ans_f">爪床血管拍動の消失</li>
 							<li class="ans_f">拡張期心雑音の高調化</li>
-							<li class="ans_t">心尖拍動の左下方への偏位</li>
+							<li class="ans_t star">心尖拍動の左下方への偏位</li>
 						</ol>
 					</div>
 				</div>
@@ -3208,6 +3197,49 @@
 
 
 						<h6>AR 症候</h6>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="2"><u></u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ある </td>
+                                    <td>AR（大動脈弁閉鎖不全症）</td>
+                                </tr>
+                                <tr>
+                                    <td>昼、 </td>
+                                    <td>Hill's sign</td>
+                                </tr>
+                                <tr>
+                                    <td>とあるママ、 </td>
+                                    <td>to and fro murmur</td>
+                                </tr>
+                                <tr>
+                                    <td>出店で </td>
+                                    <td>de Musset's sign（頭部のゆれ）</td>
+                                </tr>
+                                <tr>
+                                    <td>不倫し、 </td>
+                                    <td>Austin Flint雑音</td>
+                                </tr>
+                                <tr>
+                                    <td>たい </td>
+                                    <td>大脈</td>
+                                </tr>
+                                <tr>
+                                    <td>そう </td>
+                                    <td>速脈</td>
+                                </tr>
+                                <tr>
+                                    <td>愉快 </td>
+                                    <td>床→爪床部の毛細血管拍動（Quincke徴候）</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
@@ -3260,14 +3292,15 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group MS info">
+            <div class="card-group MS CI info" id="q34">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/101F26" target="_blank">101F26</a> 心原性脳塞栓症
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_20:53:58"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_20:53:58"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_16:36:20"> </span>
 						<br>
 						<p>心原性脳塞栓症を起こす頻度が最も高いのはどれか．</p>
 
@@ -3311,7 +3344,7 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group AS ">
+            <div class="card-group AS " id="q35">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/104B31" target="_blank">104B31</a> 弁膜症 &rArr; 心筋虚血
@@ -3319,7 +3352,8 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_20:58:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_20:58:03"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-12_16:42:36"> </span>
 						<br>
 						<p>体血管抵抗の低下によって心筋虚血に陥る可能性が最も高いのはどれか．</p>
 
@@ -3359,13 +3393,13 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group AS">
+            <div class="card-group AS pri info" id="q36">
 				<div class="card">
-					<div class="card-header hit pri info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/106B32" target="_blank">106B32</a> 突然死
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill hit"> </span>
+						<span class="badge badge-pill hit now"> </span>
 						<br>
 						<p>突然死をきたしやすいのはどれか．</p>
 
@@ -3415,7 +3449,7 @@
             <!-- <h4>IE</h4> -->
 
             <!-- 07 -->
-            <div class="card-group MR AS AR IE">
+            <div class="card-group MR AS AR IE RF" id="q37">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/97H24" target="_blank">97H24</a> 弁膜症 Qs
@@ -3423,14 +3457,15 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_20:59:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_20:59:58"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-12_17:52:47"> </span>
 						<br>
 						<p>正しいのはどれか．</p>
 
 
 						<ol type="a">
 							<li class="ans_f">リウマチ性弁膜症は増加している．</li>
-							<li class="ans_f">僧帽弁閉鎖不全症の原因はリウマチ性が多い．</li>
+							<li class="ans_f star">僧帽弁閉鎖不全症の原因はリウマチ性が多い．</li>
 							<li class="ans_t">感染性心内膜炎は僧帽弁閉鎖不全をきたしやすい．</li>
 							<li class="ans_f">大動脈弁狭窄症は主に内科的治療を行う．</li>
 							<li class="ans_f">下行大動脈解離は大動脈弁閉鎖不全を伴う．</li>
@@ -3468,9 +3503,9 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group">
+            <div class="card-group IE 110 pri" id="q38">
                 <div class="card">
-                    <div class="card-header rev 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A23" target="_blank" id="">110A23</a> 検査
                     </div>
                     <div class="card-body">
@@ -3521,7 +3556,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group IE info">
+            <div class="card-group IE info" id="q39">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/104I47" target="_blank">104I47</a> 診断 &xrArr; 検査
@@ -3529,16 +3564,24 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_21:01:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_21:01:23"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-12_17:53:51"> </span>
 						<br>
 						<p>45歳の女性．<br>
 							<u>発熱</u>を主訴に来院した．<br>
-							<u>2週前から倦怠感，食欲不振および発熱</u>があった．既往歴に特記すべきことはない．<br>
+							<u>2週前から倦怠感，食欲不振および発熱</u>があった．<br>
+                            既往歴に特記すべきことはない．<br>
 							意識は清明．身長155cm，体重70kg．体温37.5℃．脈拍88/分，整．血圧120/60mmHg．<br>
-                            <u>眼瞼結膜に点状出血</u>を認める．<u>第3肋間胸骨左縁で2/6度の拡張期逆流性雑音</u>を聴取する．呼吸音に異常を認めない．<u>左小指末節の指腹部に圧痛を伴う赤色の結節</u>を2ヵ所認める．腹部は平坦，軟で，圧痛を認めない．肝・脾を触知しない．下肢に浮腫を認めない．尿所見：蛋白1＋，糖（－），潜血1＋，沈渣に赤血球10～20/1視野．<br>
-							血液所見：赤血球405万，Hb 11.0g/dL，Ht 33％，白血球9,200，血小板35万．<br>
-							血液生化学所見：総蛋白8.0g/dL，アルブミン4.0g/dL，尿素窒素18mg/dL，クレアチニン0.8mg/dL，総ビリルビン1.0mg/dL，AST 20IU/L，ALT 15IU/L．CRP 2.6mg/dL．<br>
-							心電図と胸部X線写真とに異常を認めない．経胸壁心エコー検査で弁の疣贅を認めない．<br>
+                            <u>眼瞼結膜に点状出血</u>を認める．<u>第3肋間胸骨左縁で2/6度の拡張期逆流性雑音</u>を聴取する．呼吸音に異常を認めない．<u>左小指末節の指腹部に圧痛を伴う赤色の結節</u>を2ヵ所認める．<br>
+                            腹部は平坦，軟で，圧痛を認めない．肝・脾を触知しない．下肢に浮腫を認めない．<br>
+                            尿所見：<br>
+                            蛋白1＋，糖（－），潜血1＋，沈渣に赤血球10～20/1視野．<br>
+							血液所見：<br>
+                            赤血球405万，Hb 11.0g/dL，Ht 33％，白血球9,200，血小板35万．<br>
+							血液生化学所見：<br>
+                            総蛋白8.0g/dL，アルブミン4.0g/dL，尿素窒素18mg/dL，クレアチニン0.8mg/dL，総ビリルビン1.0mg/dL，AST 20IU/L，ALT 15IU/L．<u>CRP 2.6mg/dL</u>．<br>
+							心電図と胸部X線写真とに異常を認めない．<br>
+                            経胸壁心エコー検査で弁の疣贅を認めない．<br>
 							診断に有用なのはどれか．</p>
 
 
@@ -3576,7 +3619,7 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group IE pri info ">
+            <div class="card-group IE pri info " id="q40">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109G24" target="_blank">109G24</a> 感度の高い検査
@@ -3584,7 +3627,8 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_21:03:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_21:03:02"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_16:45:01"> </span>
 						<br>
 						<p>感染性心内膜炎の疣贅を検出する感度が最も高いのはどれか．</p>
 
@@ -3631,13 +3675,13 @@
 
 
             <!-- 01 -->
-            <div class="card-group">
+            <div class="card-group IE pri" id="q41">
 				<div class="card">
-					<div class="card-header rev pri IE">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/107A32" target="_blank">107A32</a> 合併症
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill rev"> </span>
+						<span class="badge badge-pill rev now"> </span>
 						<br>
 						<p>42歳の女性．<br>
 							<u>発熱</u>を主訴に来院した．<br>
@@ -3691,22 +3735,24 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group IE">
+            <div class="card-group IE" id="q42">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/104D25" target="_blank">104D25</a> 診断 &xrArr; 合併症
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_18:14:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_18:14:31"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-12_16:50:33"> </span>
 						<br>
 						<p>34歳の女性．<br>
 							3週前から持続する発熱と易疲労感とを主訴に来院した．<br>
-                            体温37.6℃．脈拍92/分，整．血圧136/72mmHg．心尖部で3/6度の収縮期雑音を聴取する．赤沈62mm/1時間．<br>
+                            体温37.6℃．脈拍92/分，整．血圧136/72mmHg．<br>
+                            心尖部で3/6度の収縮期雑音を聴取する．赤沈62mm/1時間．<br>
                             血液所見：<br>
                             赤血球382万，Hb 11.0g/dL，Ht 31％，白血球9,800，血小板10万．CRP 11.8mg/dL．<br>
 							来院時の心エコー図（A，B）を次に示す．<br>
-							合併する病態として考えにくいのはどれか．</p>
+							合併する病態として<u>考えにくい</u>のはどれか．</p>
                     </div>
 
 					<!-- <img src="https://www.qb-online.com/img/104D025A.jpg" width="49%"> -->
@@ -3749,7 +3795,7 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group IE pri info">
+            <div class="card-group IE pri info" id="q43">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103I80" target="_blank">103I80</a> 診断 &xrArr; 検査
@@ -3757,15 +3803,19 @@
 					<div class="card-body">
 						<span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_21:03:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_21:03:56"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-12_17:55:30"> </span>
 						<br>
 						<p>28歳の男性．<br>
 							<u>めまい</u>と<u>嘔気</u>のため搬入された．<br>
 							<u>1ヵ月前から微熱</u>を自覚していた．<br>
 							今朝から<u>回転性のめまい</u>と嘔気とが持続している．<br>
 							体温37.8℃．脈拍96/分，整．血圧122/58mmHg．<br>
-							<u>胸骨左縁第3肋間に拡張期雑音</u>を聴取する．水平性の眼振と構音障害とを認める．眼底に<u>小出血斑</u>を認める．<br>
-							血液所見：赤血球413万，<u>白血球10,200</u>．<u>CRP 6.6mg/dL</u>．頭部単純MRIのFLAIR像（A，B）を次に示す．<br>
+							<u>胸骨左縁第3肋間に拡張期雑音</u>を聴取する．<br>
+                            水平性の眼振と構音障害とを認める．眼底に<u>小出血斑</u>を認める．<br>
+							血液所見：<br>
+                            赤血球413万，<u>白血球10,200</u>．<u>CRP 6.6mg/dL</u>．<br>
+                            頭部単純MRIのFLAIR像（A，B）を次に示す．<br>
 							まず行うのはどれか．2つ選べ．</p>
                     </div>
 
@@ -3788,9 +3838,9 @@
 					<div class="card-body">
 
 						<ul>
-							<li>vertigo, N/V &rAarr; 小脳/前庭</li>
-							<li>3LSB 拡張期雑音 &rAarr; AoV, PVの逆流</li>
-							<li>眼底に小出血斑 &rAarr; 小血管障害, s/o Roth斑</li>
+							<li>vertigo, N/V &xrArr; 小脳/前庭</li>
+							<li>3LSB 拡張期雑音 &xrArr; AoV, PVの逆流</li>
+							<li>眼底に小出血斑 &xrArr; 小血管障害, s/o Roth斑</li>
 						</ul>
 
 						<!-- <img src="https://www.qb-online.com/img/103I080_ima_c_010.jpg" class="img-fluid"> -->
@@ -3798,7 +3848,7 @@
 
 						<ul>
 							<li>心雑音</li>
-							<li>多発性梗塞 &rAarr; 心原性</li>
+							<li>多発性梗塞 &xrArr; 心原性</li>
 						</ul>
 						<p class="q_dx">s/o IE</p>
 
@@ -3834,14 +3884,15 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group IE info">
+            <div class="card-group IE info" id="q44">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/94F6" target="_blank">94F6</a> 診断 &xrArr; Qs
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_18:17:45"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_18:17:45"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-12_16:54:12"> </span>
 						<br>
 						<p>29歳の女性．<br>
 							3ヵ月前から頭痛と微熱とが出現し，近医にて感冒の診断で内服治療を続けていた．<br>
@@ -3858,7 +3909,7 @@
 						<ol type="a">
 							<li class="ans_f">慢性型は黄色ブドウ球菌によるものが多い．</li>
 							<li class="ans_t">指尖の有痛性小結節が出現する．</li>
-							<li class="ans_t">血漿フィブリノゲンが増加する．</li>
+							<li class="ans_t star">血漿フィブリノゲンが増加する．</li>
 							<li class="ans_t">拡張期雑音を聴取する．
 							<li class="ans_f">脈圧が減少する．</li>
 						</ol>
@@ -3963,7 +4014,7 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group IE pri info mnemonics">
+            <div class="card-group IE pri info mnemonics" id="q45">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/106I42" target="_blank">106I42</a> 治療
@@ -3971,15 +4022,20 @@
 					<div class="card-body">
 						<span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_21:06:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_21:06:16"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-12_17:57:32"> </span>
 						<br>
 						<p>36歳の男性．<br>
                             <u>発熱</u>と<u>全身倦怠感</u>とを主訴に来院した．<br>
                             4週前に<u>口蓋扁桃摘出術</u>を受けた．<br>
                             3週前から<u>悪寒戦慄を伴う37～40℃の発熱</u>があり，市販の総合感冒薬を内服しても解熱しなかったため受診した．<br>
-                            息苦しさは自覚していない．脈拍100/分，整．血圧120/82mmHg．<br>
+                            息苦しさは自覚していない．<br>
+                            脈拍100/分，整．血圧120/82mmHg．<br>
                             <u>心尖部に収縮期雑音</u>を聴取する．両手掌に2mm大の小出血斑を認める．<br>
-                            血液所見：赤血球310万，Hb 11.2g/dL，Ht 30％，<u>白血球15,800</u>，血小板15万．<u>CRP 10mg/dL</u>．血液培養の結果はまだ分からない．心エコー図を次に示す．<br>
+                            血液所見：<br>
+                            赤血球310万，Hb 11.2g/dL，Ht 30％，<u>白血球15,800</u>，血小板15万．<u>CRP 10mg/dL</u>．<br>
+                            血液培養の結果はまだ分からない．<br>
+                            心エコー図を次に示す．<br>
                             直ちに開始する治療として適切なのはどれか．</p>
                     </div>
 
@@ -4071,14 +4127,15 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group IE pri info">
+            <div class="card-group IE streptococcus VR ASD pri info" id="q46">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/90B24" target="_blank">90B24</a> 感染性心内膜炎 Qs
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_21:09:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_21:09:41"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_17:58:41"> </span>
 						<br>
 						<p>感染性心内膜炎について正しいのはどれか．3つ選べ．</p>
 
@@ -4187,14 +4244,15 @@
 			</div>
 
             <!-- 07 -->
-            <div class="card-group IE">
+            <div class="card-group IE " id="q47">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/97H69" target="_blank">97H69</a> 感染性心内膜炎
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-29_21:12:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-29_21:12:13"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_18:00:33"> </span>
 						<br>
 						<p>感染性心内膜炎で正しいのはどれか．</p>
 
@@ -4203,7 +4261,7 @@
 							<li class="ans_t">弁膜症と先天性心疾患とに発症しやすい．</li>
 							<li class="ans_f">起因菌の同定には1回の動脈血培養で十分である．</li>
 							<li class="ans_f">黄色ブドウ球菌が主な起因菌である．</li>
-							<li class="ans_f">広いスペクトルの抗菌薬で治療する．</li>
+							<li class="ans_f star">広いスペクトルの抗菌薬で治療する．</li>
 							<li class="ans_f">弁疣贅は大きさにかかわらず外科手術の絶対適応となる．</li>
 						</ol>
 					</div>
@@ -4218,11 +4276,13 @@
 						<ol type="a">
 							<li></li>
 							<li></li>
-							<li>起因菌<ol>
-								<li>緑色レンサ球菌</li>
-								<li>腸球菌</li>
-								<li>ブドウ球菌</li>
-							</ol></li>
+							<li>起因菌
+                                <ol>
+    								<li>緑色レンサ球菌</li>
+    								<li>腸球菌</li>
+    								<li>ブドウ球菌</li>
+    							</ol>
+                            </li>
 							<li></li>
 							<li></li>
 						</ol>
@@ -4231,21 +4291,22 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group IE info">
+            <div class="card-group IE info" id="q48">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/92B23" target="_blank">92B23</a> 感染性心内膜炎 手術適応
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-29_18:19:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-29_18:19:17"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-12_16:55:57"> </span>
 						<br>
 						<p>感染性心内膜炎の急性期に手術適応となるのはどれか．3つ選べ．</p>
 
 
 						<ol type="a">
 							<li class="ans_f">疣贅の存在</li>
-							<li class="ans_t">膿瘍の形成</li>
+							<li class="ans_t star">膿瘍の形成</li>
 							<li class="ans_t">心不全の悪化</li>
 							<li class="ans_t">反復する塞栓症</li>
 							<li class="ans_f">ペニシリンアレルギー</li>
@@ -4254,7 +4315,9 @@
 				</div>
 				<div class="card answer">
 					<div class="card-body">
-						<p>True: b,c,d</p>
+
+
+						<p class="q_answer_true">b c d</p>
 
 						<ol type="a">
 							<li>疣贅だけでは手術適応にはならない</li>
@@ -4274,9 +4337,6 @@
 							<li class="list-group-item">人工弁に伴う心内膜炎</li>
 							<li class="list-group-item">膿瘍の形成</li>
 						</ul>
-
-
-
 
 					</div>
 				</div>
@@ -4384,457 +4444,97 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
 
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#MS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MS)').toggle();
+        $('#q div.card-group:not(.MS)').slideToggle(100);
     });
-    $('#MS').find('code').html($('div.MS').size());
+    $('#MS').find('small > code').html(
+        $('div.MS > .card > .mis').size() + '+' +
+        $('div.MS > .card > .cau').size() + '/' +
+        $('div.MS').size());
 
 
     $('#TR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TR)').toggle();
+        $('#q div.card-group:not(.TR)').slideToggle(100);
     });
-    $('#TR').find('code').html($('div.TR').size());
+    $('#TR').find('small > code').html(
+        $('div.TR > .card > .mis').size() + '+' +
+        $('div.TR > .card > .cau').size() + '/' +
+        $('div.TR').size());
 
 
     $('#MVP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MVP)').toggle();
+        $('#q div.card-group:not(.MVP)').slideToggle(100);
     });
-    $('#MVP').find('code').html($('div.MVP').size());
+    $('#MVP').find('small > code').html(
+        $('div.MVP > .card > .mis').size() + '+' +
+        $('div.MVP > .card > .cau').size() + '/' +
+        $('div.MVP').size());
 
 
     $('#MR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MR)').toggle();
+        $('#q div.card-group:not(.MR)').slideToggle(100);
     });
-    $('#MR').find('code').html($('div.MR').size());
+    $('#MR').find('small > code').html(
+        $('div.MR > .card > .mis').size() + '+' +
+        $('div.MR > .card > .cau').size() + '/' +
+        $('div.MR').size());
 
 
 
     $('#AS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AS)').toggle();
+        $('#q div.card-group:not(.AS)').slideToggle(100);
     });
-    $('#AS').find('code').html($('div.AS').size());
+    $('#AS').find('small > code').html(
+        $('div.AS > .card > .mis').size() + '+' +
+        $('div.AS > .card > .cau').size() + '/' +
+        $('div.AS').size());
 
 
     $('#AR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AR)').toggle();
+        $('#q div.card-group:not(.AR)').slideToggle(100);
     });
-    $('#AR').find('code').html($('div.AR').size());
+    $('#AR').find('small > code').html(
+        $('div.AR > .card > .mis').size() + '+' +
+        $('div.AR > .card > .cau').size() + '/' +
+        $('div.AR').size());
 
 
     $('#IE h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IE)').toggle();
+        $('#q div.card-group:not(.IE)').slideToggle(100);
     });
-    $('#IE').find('code').html($('div.IE').size());
+    $('#IE').find('small > code').html(
+        $('div.IE > .card > .mis').size() + '+' +
+        $('div.IE > .card > .cau').size() + '/' +
+        $('div.IE').size());
 
 
     $('#VR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.VR)').toggle();
+        $('#q div.card-group:not(.VR)').slideToggle(100);
     });
-    $('#VR').find('code').html($('div.VR').size());
+    $('#VR').find('small > code').html(
+        $('div.VR > .card > .mis').size() + '+' +
+        $('div.VR > .card > .cau').size() + '/' +
+        $('div.VR').size());
 
 
 
@@ -4845,9 +4545,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

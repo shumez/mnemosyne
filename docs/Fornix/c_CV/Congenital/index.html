@@ -4,12 +4,32 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-29 21:51:53
+@Last modified time: 2018-12-13 13:58:18
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -93,11 +113,11 @@
 -->
 <html>
 <head>
-    <title>Congenital</title>
+    <title>Congenital-CV</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-29 21:52:26" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-12-13 13:58:37" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -116,125 +136,22 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title hidden-xs-down">Congenital <small></small></h1>
-        <h1 class="title hidden-sm-up"></h1>
+        <h1 class="title">Congenital <small>CV</small></h1>
+        <!-- <h1 class="title hidden-sm-up"></h1> -->
     </div>
 <!-- </nav> -->
 
@@ -272,6 +189,196 @@
         </div>
     </div>
 
+
+
+
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>&uarr;AoVの血流量</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">shunt:<br>
+                        R&rarr;L<ul>
+                        <li>PDA</li>
+                    </ul></li>
+                    <li class="list-group-item">逆流:<br>
+                        &uarr;LV血流<ul>
+                        <li>AR</li>
+                    </ul></li>
+                    <li class="list-group-item">Hyperdynamic state:<br>
+                        <ul>
+                        <li>&uarr;Thyro</li>
+                    </ul></li>
+                </ul>
+                
+
+                <table class="table table-condensed" style="width: 66%">
+                    <thead>
+                        <tr>
+                            <th colspan="4">ASD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">RA</td>
+                            <td align="center" colspan="2">&xlArr;</td>
+                            <td align="center">LA</td>
+                        </tr>
+                        <tr>
+                            <td align="center">&dArr;</td>
+                            <td>&uarr;&uarr;PA</td>
+                            <td>　</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td align="center">&uarr;&uarr;RV</td>
+                            <td align="center" colspan="2">|</td>
+                            <td align="center">LV</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+                <table class="table table-condensed" style="width: 66%">
+                    <thead>
+                        <tr>
+                            <th colspan="4">VSD</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="center">RA</td>
+                            <td align="center" colspan="2">|</td>
+                            <td align="center">LA</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&uarr;&uarr;PA</td>
+                            <td>　</td>
+                            <td align="center">&dArr;</td>
+                        </tr>
+                        <tr>
+                            <td align="center">RV</td>
+                            <td align="center" colspan="2">&xlArr;</td>
+                            <td align="center">&uarr;&uarr;LV</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>ばち指</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        先天性
+                        <ul>
+                            <li>強皮骨膜症</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        心疾患
+                        <ul>
+                            <li>Cyanosis 先天性心疾患</li>
+                            <li>感染性心内膜炎</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        肺疾患
+                        <ul>
+                            <li>肺癌</li>
+                            <li>肺線維症</li>
+                            <li>気管支拡張症</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        消化管 / 肝
+                        <ul>
+                            <li>肝硬変</li>
+                            <li>IBD (Crohn, UC)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/108I046_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+
+            
+
+        </div>
+    </div>
+
+
+
+    <div class="section" id="ASD">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>ASD <!-- <small class="hidden-xs-down">Atrial Septal Defect</small>  --><small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        <ul>
+                            <li>&uarr;RV 容量<br>
+                                &rArr; 
+                                <ul>
+                                    <li>相対的PS</li>
+                                    <li>RBBB</li>
+                                    <li>AFib</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                        <ul>
+                            <li><u>乳幼児: 無症状</u></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        <ul>
+                            <li>S<sub>2</sub>固定性分裂</li>
+                            <li><u>心室中隔期異性運動</u><br>
+                                &because; RV容量負荷</li>
+                        </ul>
+                    </li>
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/93E023_bas_c_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
 
     
     <div class="section" id="VSD">
@@ -320,86 +427,93 @@
                 </ul>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-4 col-md-4">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/102G050_bas_c_010.jpg" class="card-img-top img-fluid">
-                    <div class="card-body">
-                        <h6>Eisenmenger VSD</h6>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">R&rarr;L shunt<ul>
-                            <li>Cyanosis</li>
-                            <li>ばち指</li>
-                        </ul></li>
-                        <li class="list-group-item">PHTN<ul>
-                            <li>単一S<sub>2</sub> IIpのみ</li>
-                        </ul></li>
-                    </ul>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-    <div class="section" id="ASD">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-header">
-                    <h2>ASD <!-- <small class="hidden-xs-down">Atrial Septal Defect</small>  --><small><code></code></small></h2>
                 </div>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        R&rarr;L shunt
                         <ul>
-                            <li>&uarr;RV 容量<br>
-                                &rArr; 
-                                <ul>
-                                    <li>相対的PS</li>
-                                    <li>RBBB</li>
-                                    <li>AFib</li>
-                                </ul>
-                            </li>
+                            <li>Cyanosis</li>
+                            <li>ばち指</li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
                     <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                        PHTN
                         <ul>
-                            <li>S<sub>2</sub>固定性分裂</li>
-                            <li>心室中隔期異性運動<br>
-                                &because; RV容量負荷</li>
+                            <li>単一S<sub>2</sub> IIpのみ</li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
                 </ul>
-            </div>
-
-            <div class="col-xs-12 col-sm-9 col-md-9">
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/93E023_bas_c_010.jpg" class="card-img-top img-fluid">
-                </div>
 
 
             </div>
         </div>
     </div>
 
+
+
     <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Eisenmenger">
+                <div class="page-header">
+                    <h2>Eisenmenger <small> </small> <small><code></code></small></h2>
+                </div>
+
+
+                <!-- <h6>Eisenmenger をきたす</h6> -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li>PDA</li>
+                            <li>ASD</li>
+                            <li>VSD</li>
+                            <li>APW</li>
+                            <li>総動脈幹症</li>
+                            <li>TGA + VSD</li>
+                            <li>単心室</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
+            
+
+            <div class="section" id="ECD">
+                <div class="page-header">
+                    <h2>ECD <small><code></code></small></h2>
+                </div>
+
+
+
+            </div>
+        </div>
+
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="PDA">
                 <div class="page-header">
@@ -407,12 +521,25 @@
                 </div>
 
 
-                <div class="card">
+                <div class="card" style="width: 66%">
                     <img src="https://qb.medilink-study.com/images/103I009_bas_c_010.jpg" class="card-img-top img-fluid">
                 </div>
 
             </div>
+        </div>
 
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CoA">
+                <div class="page-header">
+                    <h2>CoA <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="TS">
                 <div class="page-header">
                     <h2>TS <small class="hidden-xs-down">Tricuspid valve Stenosis</small> <small><code></code></small></h2>
@@ -450,95 +577,7 @@
 
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="Eisenmenger">
-                <div class="page-header">
-                    <h2>Eisenmenger <small> </small> <small><code></code></small></h2>
-                </div>
-
-
-                <!-- <h6>Eisenmenger をきたす</h6> -->
-                <ul class="list-group">
-                    <li class="list-group-item">PDA</li>
-                    <li class="list-group-item">ASD</li>
-                    <li class="list-group-item">VSD</li>
-                    <li class="list-group-item">APW</li>
-                    <li class="list-group-item">総動脈幹症</li>
-                    <li class="list-group-item">TGA + VSD</li>
-                    <li class="list-group-item">単心室</li>
-                </ul>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>&uarr;AoVの血流量</h6>
-            <ul class="list-group">
-                <li class="list-group-item">shunt:<br>
-                    R&rarr;L<ul>
-                    <li>PDA</li>
-                </ul></li>
-                <li class="list-group-item">逆流:<br>
-                    &uarr;LV血流<ul>
-                    <li>AR</li>
-                </ul></li>
-                <li class="list-group-item">Hyperdynamic state:<br>
-                    <ul>
-                    <li>&uarr;Thyro</li>
-                </ul></li>
-            </ul>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>ばち指</h6>
-            <ul class="list-group">
-                <li class="list-group-item">先天性<ul>
-                    <li>強皮骨膜症</li>
-                </ul></li>
-                <li class="list-group-item">心疾患<ul>
-                    <li>Cyanosis 先天性心疾患</li>
-                    <li>感染性心内膜炎</li>
-                </ul></li>
-                <li class="list-group-item">肺疾患<ul>
-                    <li>肺癌</li>
-                    <li>肺線維症</li>
-                    <li>気管支拡張症</li>
-                </ul></li>
-                <li class="list-group-item">消化管/肝<ul>
-                    <li>肝硬変</li>
-                    <li>IBD (Crohn, UC)</li>
-                </ul></li>
-            </ul>
-
-            <div class="card">
-                <img src="https://qb.medilink-study.com/images/108I046_bas_010.jpg" class="card-img-top img-fluid">
-            </div>
-        </div>
-
-
+        
 
 
 
@@ -681,15 +720,25 @@
             </ul>
 
 
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+
             <!-- 01 -->
-            <div class="card-group VSD">
+            <div class="card-group VSD" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/86B53" target="_blank" id="">86B53</a> VSD 自然経過
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-30_14:51:44"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_14:51:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-13_14:28:53"> </span>
                         <br>
                         <p>心室中隔欠損症で可能性のある自然経過はどれか．3つ選べ．</p>
 
@@ -711,32 +760,39 @@
                         <p class="q_answer_true">b c d</p>
 
                         <ol type="a">
-                            <li>自然閉鎖が期待できる<ul>
-                                <li>膜様部: 自然閉鎖(+++)</li>
-                                <li>漏斗部: 自然閉鎖(-)</li>
-                                <li>ASD: 自然閉鎖(-)</li>
-                            </ul></li>
+                            <li>自然閉鎖が期待できる
+                                <ul>
+                                    <li>膜様部: 自然閉鎖(+++)</li>
+                                    <li>漏斗部: 自然閉鎖(-)</li>
+                                    <li>ASD: 自然閉鎖(-)</li>
+                                </ul>
+                            </li>
                             <li>欠損孔が大きくなければ, 小児期は無症状</li>
                             <li></li>
                             <li></li>
-                            <li><ul>
-                                <li>ASD: IEまれ</li>
-                                <li>VSD: IE(++)</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>ASD: IEまれ</li>
+                                    <li>VSD: IE(++)</li>
+                                </ul>
+                            </li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 02 -->
-            <div class="card-group ASD">
+            <div class="card-group ASD" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/83B56" target="_blank" id="">83B56</a> ASD Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-30_14:54:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_14:54:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-13_14:34:21"> </span>
                         <br>
                         <p>心房中隔欠損症について正しいのはどれか．2つ選べ．</p>
 
@@ -746,7 +802,7 @@
                             <li class="ans_t">大部分は乳児期を無症状で経過する．</li>
                             <li class="ans_t">自然閉鎖する確率は低い．</li>
                             <li class="ans_f">胸骨左縁第3～4肋間に逆流性収縮期雑音を聴取する．</li>
-                            <li class="ans_f">肺高血圧症の合併が多い．</li>
+                            <li class="ans_f star">肺高血圧症の合併が多い．</li>
                         </ol>
                     </div>
                 </div>
@@ -769,23 +825,26 @@
                             <li>相対的PS &rArr; PVにSEM</li>
                             <li></li>
                         </ol>
+
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group ASD info">
+            <div class="card-group ASD info" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93E23" target="_blank">93E23</a> 診断 &xrArr; 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-30_15:01:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_15:01:57"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-13_14:27:17"> </span>
                         <br>
                         <p>20歳の男性．<br>
                             10歳頃から労作時の息切れを自覚し始め，徐々に増悪した．<br>
-                            現在は休まずに100mほどの歩行ができる．喀痰，咳嗽および胸痛の自覚症状はない．<br>
+                            現在は休まずに100mほどの歩行ができる．<br>
+                            喀痰，咳嗽および胸痛の自覚症状はない．<br>
                             胸部X線写真の正面像（A），側面像（B）および心電図（C）を次に示す．<br>
                             この疾患にみられるのはどれか．3つ選べ．</p>
                     </div>
@@ -844,7 +903,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group ASD pri">
+            <div class="card-group ASD pri" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D54" target="_blank">109D54</a> 診断 &xrArr; 治療
@@ -921,14 +980,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group ASD">
+            <div class="card-group ASD" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97B22" target="_blank">97B22</a> ASD 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-30_15:03:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_15:03:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-13_14:37:18"> </span>
                         <br>
                         <p>心房中隔欠損症でみられるのはどれか．2つ選べ．</p>
 
@@ -938,14 +998,12 @@
                             <li class="ans_f">左室拡大</li>
                             <li class="ans_f">Austin Flint雑音</li>
                             <li class="ans_t">Ⅱ音の固定性分裂</li>
-                            <li class="ans_t">心室中隔奇異性運動</li>
+                            <li class="ans_t star">心室中隔奇異性運動</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">d e</p>
 
@@ -954,16 +1012,19 @@
                                 &rArr; R&rarr;L<br>
                                 &rArr; Cyanosis</li>
                             <li>L&rarr;R</li>
-                            <li>Austin Flint: ARで相対的にMSでランブル</li>
+                            <li>Austin Flint:<br>
+                                ARで相対的にMSでランブル</li>
                             <li></li>
                             <li>RV負荷</li>
                         </ol>
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 06 -->
-            <div class="card-group ASD">
+            <div class="card-group ASD" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90A87" target="_blank">90A87</a> ASD CXR
@@ -971,7 +1032,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-30_15:07:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_15:07:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-13_14:41:18"> </span>
                         <br>
                         <p>心房中隔欠損症の胸部X線写真について正しいのはどれか．3つ選べ．</p>
 
@@ -989,10 +1051,22 @@
                     <div class="card-body">
 
                         <p>ASD: L&rarr;R</p>
-                        <ul>
-                            <li>RA拡大</li>
-                            <li>RV拡大</li>
-                            <li>肺動脈拡大</li>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>LA &rarr;RA</li>
+                                    <li>&uarr;RA</li>
+                                    <li>&uarr;RV</li>
+                                    <li>&uarr;PA</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>RA拡大</li>
+                                    <li>RV拡大</li>
+                                    <li>肺動脈拡大</li>
+                                </ul>
+                            </li>
                         </ul>
 
 
@@ -1010,7 +1084,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group ASD pri">
+            <div class="card-group ASD pri" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97G99" target="_blank">97G99</a> 酸素飽和度
@@ -1045,23 +1119,27 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group VSD eisenmenger pri info">
+            <div class="card-group VSD Eisenmenger pri info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102G50" target="_blank">102G50</a> 突然死
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-30_15:10:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-30_15:10:47"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-13_14:51:19"> </span>
                         <br>
                         <p>19歳の女性．<br>
                             以前から<u>心疾患</u>のため外来に通院していた．<br>
                             日常の動作はできるが階段や坂を上ると<u>息苦し</u>くなった．<br>
                             2年前に<u>少量の喀血</u>があった．<br>
                             1ヵ月前に受診したときの現症は，<br>
-                            身長157cm，体重42kg．<u>軽度のチアノーゼ</u>と<u>ばち指</u>とを認めた．<u>Ⅱ音の亢進</u>を認めたが，心雑音は聴取しなかった．呼吸音に異常を認めなかった．腹部は平坦，軟で，肝・脾を触知しなかった．浮腫を認めなかった．<br>
+                            身長157cm，体重42kg．<br>
+                            <u>軽度のチアノーゼ</u>と<u>ばち指</u>とを認めた．<u>Ⅱ音の亢進</u>を認めたが，心雑音は聴取しなかった．<br>
+                            呼吸音に異常を認めなかった．腹部は平坦，軟で，肝・脾を触知しなかった．浮腫を認めなかった．<br>
                             この時の心電図（A）と胸部X線写真（B）とを次に示す．<br>
-                            今朝，起床して洗顔をしている途中に倒れ，<u>心肺停止状態</u>で搬入された．蘇生術が行われたが死亡が確認された．<br>
+                            今朝，起床して洗顔をしている途中に倒れ，<u>心肺停止状態</u>で搬入された．<br>
+                            蘇生術が行われたが死亡が確認された．<br>
                             診断はどれか．</p>
                     </div>
 
@@ -1134,7 +1212,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group ASD AFib 111 pri">
+            <div class="card-group ASD AFib 111 pri" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I65" target="_blank">111I65</a> 診断
@@ -1183,7 +1261,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group Eisenmenger info">
+            <div class="card-group Eisenmenger info" id="q10">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/93B23" target="_blank">93B23</a> Eisenmenger症候群
@@ -1238,14 +1316,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group PDA info">
+            <div class="card-group PDA info" id="q11">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103I9" target="_blank">103I9</a> LV容量負荷
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-30_15:12:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-30_15:12:18"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-13_14:54:27"> </span>
 						<br>
 						<p>左室容量負荷をきたすのはどれか．</p>
 
@@ -1287,20 +1366,21 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group AR PDA info">
+            <div class="card-group AR PDA info" id="q12">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/91B17" target="_blank">91B17</a> 大動脈弁口 &uarr;血流量
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-30_15:06:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_15:06:14"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-13_14:45:32"> </span>
 						<br>
 						<p>大動脈弁口の血流量が増加するのはどれか．2つ選べ．</p>
 
 
 						<ol type="a">
-							<li class="ans_t">動脈管開存症</li>
+							<li class="ans_t star">動脈管開存症</li>
 							<li class="ans_f">心室中隔欠損症</li>
 							<li class="ans_f">大動脈縮窄症</li>
 							<li class="ans_f">大動脈弁狭窄症</li>
@@ -1313,19 +1393,29 @@
 
                         <h6>&uarr;AoVの血流量</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">shunt:<br>
-                                R&rarr;L<ul>
-                                <li>PDA</li>
-                            </ul></li>
-                            <li class="list-group-item">逆流:<br>
-                                &uarr;LV血流<ul>
-                                <li>AR</li>
-                            </ul></li>
-                            <li class="list-group-item">Hyperdynamic state:<br>
+                            <li class="list-group-item">
+                                shunt:<br>
+                                R&rarr;L
                                 <ul>
-                                <li>&uarr;Thyro</li>
-                            </ul></li>
+                                    <li>PDA</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                逆流:<br>
+                                &uarr;LV血流
+                                <ul>
+                                    <li>AR</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                Hyperdynamic state:<br>
+                                <ul>
+                                    <li>&uarr;Thyro</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
 
 						<p class="q_answer_true">a e</p>
 
@@ -1341,14 +1431,15 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group PS">
+            <div class="card-group PS" id="q13">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/97G116" target="_blank" id="2018-01-21_11:01:31">97G116</a> 血管内留置ステント
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-						<span class="badge badge-pill mis now" id="2018-09-30_15:19:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-30_15:19:54"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-13_14:48:45"> </span>
 						<br>
 						<p>血管内留置ステントによる治療の適応はどれか．</p>
 
@@ -1365,9 +1456,9 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p></p>
+						<!-- <p></p> -->
 
-						<p>True: c</p>
+						<p class="q_answer_true">c</p>
 
 						<ol type="a">
 							<li></li>
@@ -1376,12 +1467,14 @@
 							<li></li>
 							<li>TGA: Jatene手術 (switch over)</li>
 						</ol>
+
+
 					</div>
 				</div>
 			</div>
 
             <!-- 04 -->
-            <div class="card-group TS Fontan pri info">
+            <div class="card-group TS Fontan pri info" id="q14">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108I46" target="_blank">108I46</a> 所見
@@ -1456,14 +1549,15 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group cyanosis VSD info">
+            <div class="card-group cyanosis VSD Eisenmenger info" id="q15">
 				<div class="card">
 					<div class="card-header">
-						<a href="https://qb.medilink-study.com/#/Answer/88B27" target="_blank">88B27</a> チアノーゼ性先天性心疾患
+						<a href="https://qb.medilink-study.com/#/Answer/88B27" target="_blank">88B27</a> チアノーゼ
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-09-30_15:13:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-30_15:13:47"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-13_14:55:53"> </span>
 						<br>
 						<p>チアノーゼ性先天性心疾患でみられるのはどれか．3つ選べ．</p>
 
@@ -1516,6 +1610,8 @@
 					</div>
 				</div>
 			</div>
+
+
         </div>
     </div>
 
@@ -1617,443 +1713,111 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
 
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#ASD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ASD)').toggle();
+        $('#q div.card-group:not(.ASD)').slideToggle(100);
     });
-    $('#ASD').find('code').html($('div.ASD').size());
+    $('#ASD').find('small > code').html(
+        $('div.ASD > .card > .mis').size() + '+' +
+        $('div.ASD > .card > .cau').size() + '/' +
+        $('div.ASD').size()
+    );
+
 
 
     $('#VSD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.VSD)').toggle();
+        $('#q div.card-group:not(.VSD)').slideToggle(100);
     });
-    $('#VSD').find('code').html($('div.VSD').size());
-
-
-    $('#PDA h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.PDA)').toggle();
-    });
-    $('#PDA').find('code').html($('div.PDA').size());
-
-
-    $('#TS h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.TS)').toggle();
-    });
-    $('#TS').find('code').html($('div.TS').size());
-
-
-    $('#PS h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.PS)').toggle();
-    });
-    $('#PS').find('code').html($('div.PS').size());
+    $('#VSD').find('small > code').html(
+        $('div.VSD > .card > .mis').size() + '+' +
+        $('div.VSD > .card > .cau').size() + '/' +
+        $('div.VSD').size()
+    );
 
 
 
     $('#Eisenmenger h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Eisenmenger)').toggle();
+        $('#q div.card-group:not(.Eisenmenger)').slideToggle(100);
     });
-    $('#Eisenmenger').find('code').html($('div.Eisenmenger').size());
+    $('#Eisenmenger').find('small > code').html(
+        $('div.Eisenmenger > .card > .mis').size() + '+' +
+        $('div.Eisenmenger > .card > .cau').size() + '/' +
+        $('div.Eisenmenger').size()
+    );
+
+
+    $('#ECD h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.ECD)').slideToggle(100);
+    });
+    $('#ECD').find('small > code').html(
+        $('div.ECD > .card > .mis').size() + '+' +
+        $('div.ECD > .card > .cau').size() + '/' +
+        $('div.ECD').size()
+    );
+
+
+
+
+    $('#PDA h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.PDA)').slideToggle(100);
+    });
+    $('#PDA').find('small > code').html(
+        $('div.PDA > .card > .mis').size() + '+' +
+        $('div.PDA > .card > .cau').size() + '/' +
+        $('div.PDA').size()
+    );
+
+
+    $('#CoA h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.CoA)').slideToggle(100);
+    });
+    $('#CoA').find('small > code').html(
+        $('div.CoA > .card > .mis').size() + '+' +
+        $('div.CoA > .card > .cau').size() + '/' +
+        $('div.CoA').size()
+    );
+
+
+
+    $('#TS h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.TS)').slideToggle(100);
+    });
+    $('#TS').find('small > code').html(
+        $('div.TS > .card > .mis').size() + '+' +
+        $('div.TS > .card > .cau').size() + '/' +
+        $('div.TS').size());
+
+
+    $('#PS h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.PS)').slideToggle(100);
+    });
+    $('#PS').find('small > code').html(
+        $('div.PS > .card > .mis').size() + '+' +
+        $('div.PS > .card > .cau').size() + '/' +
+        $('div.PS').size());
+
+
+
+    
 
 
 
@@ -2063,9 +1827,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

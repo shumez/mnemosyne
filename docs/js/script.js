@@ -16,4 +16,7 @@ $(document).ready(function(){
 		this_id = '.' + this_id;
 		$(this_id).toggleClass('active');
 	});
+
+	$('.my_subtitle').hide();
+	// $('.mdl-layout__tab-bar #scroll-tab-a_GE').
 });

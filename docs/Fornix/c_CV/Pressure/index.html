@@ -4,12 +4,35 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-04-18 16:11:13
+@Last modified time: 2018-10-04 14:11:58
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.01.23    18 10 03    js .slideToggle()
+04.01.22    18 09 20    js .pri glyphicon
+04.01.21    18 09 12    print margin padding
+04.01.20    18 08 28    print  css .card .list-group padding
+04.01.19    18 08 27    js .pri glyphicon
+04.01.18    18 08 26    style font-size
+04.01.17    18 08 26    .section layout
+04.01.16    18 08 26    print table-bordered
+04.01.15    18 08 23    version
+04.01.14    18 08 22    js print
+04.01.13    18 08 21    js .mnemonics badge
+04.01.12    18 08 20    js .info badge
+04.01.11    18 08 17    .append size()
+04.01.10    18 08 17    #temp click toggle
+04.01.09    18 08 09    .card-group .pri .req .110 .111 .notqb
+04.01.08    18 07 27    add etio epi s/s ex dx rx
+04.01.07    18 06 16    span .rtack .ltack .utack .dtack symbol
+04.01.06    18 06 03    js latex
+04.01.05    18 06 01    p.q_dx p.q_answer_true p.q_answer_false
+04.01.04    18 05 28    meta viewport
+04.01.03    18 05 26    .q #q##
+04.01.02    18 05 09    js span.now addClass
+
 04.01.01    18 04 23    js #q card click
 04.01.00    18 04 23    material design for bootstrap
 04.00.01    18 04 18    fix marigin
@@ -73,8 +96,11 @@
 <head>
     <title>Pressure</title>
     <meta charset="UTF-8">
-    <meta name="author" content="shume">
-    <meta name="revised" content="" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="author" content="shumez">
+    <meta name="revised" content="2018-10-04 14:12:32" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.1.23">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="icon" href="../../scripts/img/favicon.png">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -87,6 +113,9 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"> -->
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script> -->
+
+    <!-- latex -->
+    <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
@@ -128,6 +157,8 @@
         div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
         }
         .page-header{margin-top: 10px; margin-bottom: 5px}
+
+
         /*.nav-pills*/
         ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
         ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
@@ -168,23 +199,32 @@
         @media print{
             .container{margin-left: 10px; margin-right: 10px}
             a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 20px;}
+            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
             h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2{font-size: 18px}
-            p, a, li, th, td{font-size: 11px}
-            td > ul{padding-left: 20px}
+            h2, h3{font-size: 14px}
+            h6{font-size: 12px}
+            p, a, li, th, td{font-size: 10px}
+            td > ul{padding-left: 10px}
             b{color: rgb(88, 211, 184);}
             u{color: rgb(126, 64, 177)}
-            div.card{border-color: black; border-width: 1px}
-            li.list-group-item{border-color: black; border-width: 1px;}
-            .table-condensed > thead > tr > th,
-            .table-condensed > tbody > tr > th,
-            .table-condensed > tbody > tr > td{
+            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
+            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
+            ul.list-group{margin: 2px 0px 2px 0px}
+            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
+            table{margin: 2px 0px 2px 0px}
+            div.card-header{font-size: 12px}
+            
+            table.table-condensed > thead,
+            table.table-condensed > thead > tr > th,
+            table.table-condensed > tbody > tr > th,
+            table.table-condensed > tbody > tr > td{
                 border-bottom: 1px solid black;}
-            .table-bordered > thead > tr > th,
-            .table-bordered > tbody > tr > th,
-            .table-bordered > tbody > tr > td{
-                border: 1px solid black;}
+            table.table-bordered > thead, 
+            table.table-bordered > thead > tr > th, 
+            table.table-bordered > tbody > tr > th, 
+            table.table-bordered > tbody > tr > td{
+                border: 1px solid black;
+            }
 
         }
     </style>
@@ -233,133 +273,158 @@
         </div>
     </div>
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>EHT <small class="hidden-xs-down">Essential Hypertension</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h4>MHT <small class="hidden-xs-down">Masked HT</small></h4>
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
+    <div class="section" id="EHT">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>EHT <small class="hidden-xs-down">Essential Hypertension</small> <small><code></code></small></h2>
                 </div>
             </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h6></h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/109I008_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <h6></h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/109I008_bas_020.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+
+            
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>若年<br>
+                                中年<br>
+                                前期高齢者(65-74)</th>
+                            <td>< 140/90</td>
+                        </tr>
+                        <tr>
+                            <th>後期高齢者 (≥75)</th>
+                            <td>< 150/90</td>
+                        </tr>
+                        <tr>
+                            <th>DM</th>
+                            <td>< 130/80</td>
+                        </tr>
+                        <tr>
+                            <th>CKD</th>
+                            <td>< 130/80</td>
+                        </tr>
+                        <tr>
+                            <th>脳血管障害<br>
+                                冠動脈疾患</th>
+                            <td>< 140/90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="SysHT">SysHT <small>Systolic HT</small> <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                        動脈硬化<br>
+                        &rArr; 大動脈脈波伝搬速度が速い<br>
+                        &rArr; <u>&uarr;SBP</u> &darr;DBP
+                    </li>
+                </ul>
+            </div>
+
+        
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3>MHT <small class="hidden-xs-down">Masked HT</small> <small><code></code></small></h3>
+                <ul class="list-group">
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="section" id="OH">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>OH <small class="hidden-xs-down">Orthostatic Hypotension</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
 
         </div>
     </div>
 
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>OH <small class="hidden-xs-down">Orthostatic Hypotension</small></h2>
-            <!-- <h2 class="hidden-sm-up">#d</h2> -->
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-9 col-md-9">
+            <h6></h6>
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/109G046_bas_010.jpg" class="card-img-top img-fluid">
             </div>
-
         </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h6></h6>
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/109G046_bas_020.jpg" class="card-img-top img-fluid">
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-10 col-md-10">
+            <div class="card">
+                <img src="https://qb.medilink-study.com/images/109C014_bas_010.jpg" class="card-img-top img-fluid">
+            </div>
+        </div>
+
     </div>
 
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
 
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
+
+
+    <div class="row">
+
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="">
+                <div class="page-header">
+                    <h2> <small> </small> <small><code></code></small></h2>
                 </div>
-            </div>
 
+                <!-- <ul class="list-group"> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
+                    </li> -->
+                    <!-- <li class="list-group-item">
+                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
+                    </li> -->
+                <!-- </ul> -->
+            </div>
         </div>
     </div>
-    -->
-
-    <!--
-    <div class="section" id="">
-        <div class="page-header">
-            <h2>#dx <small class="hidden-xs-down">#diag</small></h2>
-            <h2 class="hidden-sm-up">#d</h2>
-        </div>
-
-        <div class="body">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3 class="">§</h3>
-
-                    <ul class="list-group">
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <img src="" class="card-img-top img-fluid" alt="...">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"></li>
-                        </ul>
-                        <div class="card-body">
-                            <h4 class="card-title"></h4>
-                            <p class="card-text"></p>
-                            <a href="" class="btn btn-secondary">REF</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <table class="table table-condensed">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <tr>
-                                    <th></th>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-6">
-                    <h3>§</h3>
-                    <div class="card">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <iframe class="embed-responsive-item" src=""></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-    -->
 
 
     <div class="section" id="app">
@@ -385,7 +450,7 @@
         </div>
 
         <div>
-            <p><code class="q_alert_done"></code> Qs / {} 25 ()</p>
+            <p><code class="q_alert_done"></code> Qs / 23</p>
 
             <!-- <div class="btn-toolbar" role="toolbar" id="q-tab">
                 <div class="btn-group" role="group">
@@ -437,6 +502,13 @@
                     </button>
                 </div>
             </div> -->
+
+            <div class="progress" style="height: 3px">
+                <div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
 
 
@@ -523,13 +595,14 @@
 
 
             <!-- 01 -->
-            <div class="card-group EHT">
+            <div class="card-group EHT pri info">
 				<div class="card">
-					<div class="card-header cau pri info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109I8" target="_blank" id="2018-01-20_21:47:08">109I8</a> 家庭血圧
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill rev now" id="2018-10-04_15:24:23"> </span>
 						<br>
 						<p>本態性高血圧患者における家庭血圧の測定について正しいのはどれか．</p>
 
@@ -548,7 +621,7 @@
 
 						<p></p>
 
-						<p>True: b</p>
+						<p class="q_answer_true">b</p>
 
 						<ol type="a">
 							<li></li>
@@ -558,16 +631,23 @@
 							<li></li>
 						</ol>
 
+
+                        <h6></h6>
 						<div class="card">
-							<!-- <img src="https://www.qb-online.com/img_kaisetsu/109I008_bas_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109I008_bas_010.jpg" class="card-img-top img-fluid">
 						</div>
-						<br>
 
+
+                        <h6></h6>
 						<div class="card">
-							<!-- <img src="https://www.qb-online.com/img_kaisetsu/109I008_bas_020.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109I008_bas_020.jpg" class="card-img-top img-fluid">
 						</div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109I008_bas_010.jpg" class="card-img-top img-fluid"> -->
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109I008_bas_020.jpg" class="card-img-top img-fluid"> -->
+
+
 					</div>
 				</div>
 			</div>
@@ -636,19 +716,24 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group HTN EHT DLP DM">
+            <div class="card-group HTN EHT DLP DM pri info">
 				<div class="card">
-					<div class="card-header cau pri">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109G46" target="_blank" id="2018-01-20_21:34:39">109G46</a> 指導
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill rev"> </span>
-						<span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill rev now" id="2018-10-04_15:25:46"> </span>
 						<br>
 						<p>62歳の女性．事務職．<br>
-							特定健康診査で異常を指摘され来院した．自覚症状はない．既往歴に特記すべきことはない．飲酒はビール350mL，2日に1回を30年間．<br>
+							特定健康診査で異常を指摘され来院した．<br>
+                            自覚症状はない．<br>
+                            既往歴に特記すべきことはない．<br>
+                            飲酒はビール350mL，2日に1回を30年間．<br>
 							身長155cm，体重52kg，腹囲63cm．血圧144/92mmHg．<br>
-							尿所見：蛋白（－），糖（－）．24時間蓄尿から1日の塩分摂取量は11gと推定された．血液生化学所見：AST 11IU/L，ALT 12IU/L，γ-GTP 14IU/L（基準8～50），トリグリセリド45mg/dL，LDLコレステロール110mg/dL，HDLコレステロール89mg/dL，血糖91mg/dL．<br>
+							尿所見：蛋白（－），糖（－）．24時間蓄尿から1日の<u>塩分摂取量は11g</u>と推定された．<br>
+                            血液生化学所見：AST 11IU/L，ALT 12IU/L，γ-GTP 14IU/L（基準8～50），トリグリセリド45mg/dL，LDLコレステロール110mg/dL，HDLコレステロール89mg/dL，血糖91mg/dL．<br>
 							現時点での指示として適切なのはどれか．</p>
 
 
@@ -664,9 +749,9 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p>HTN</p>
+						<p class="q_dx">HTN</p>
 
-						<p>True: b</p>
+						<p class="q_answer_true">b</p>
 
 						<ol type="a">
 							<li></li>
@@ -676,14 +761,20 @@
 							<li></li>
 						</ol>
 
+
+                        <h6></h6>
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/109G046_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
-                        <br>
 
+
+                        <h6></h6>
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/109G046_bas_020.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
 					</div>
 				</div>
 			</div>
@@ -728,14 +819,15 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group HTN EHT">
+            <div class="card-group HTN EHT pri req info">
 				<div class="card">
-					<div class="card-header mis pri req info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109C14" target="_blank" id="2018-01-20_21:39:37">109C14</a> 目標 摂取エネルギー 食塩
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-10-04_14:45:19"> </span>
 						<br>
 						<p>身長180cm，体重90kgで，高血圧のある事務職の男性に勧めるべき摂取エネルギーと食塩量の組合せで適切なのはどれか．</p>
 
@@ -794,7 +886,7 @@
 
 						<p>塩: 6g/day</p>
 
-						<p>True: c</p>
+						<p class="q_answer_true">c</p>
 
 						<ol type="a">
 							<li></li>
@@ -805,7 +897,6 @@
 						</ol>
 
 						<div class="card">
-							<!-- <img src="https://www.qb-online.com/img_kaisetsu/109C014_bas_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/109C014_bas_010.jpg" class="card-img-top img-fluid">
 						</div>
 
@@ -845,18 +936,24 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/109C014_bas_010.jpg" class="card-img-top img-fluid"> -->
+
+
 					</div>
 				</div>
 			</div>
 
             <!-- 06 -->
-            <div class="card-group HTN EHT">
+            <div class="card-group HTN EHT 111 ">
                 <div class="card">
-                    <div class="card-header cau 111">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E49" target="_blank" id="">111E49</a> 栄養指導
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill mis now" id="2018-10-04_15:30:12"> </span>
                         <br>
                         <p>48歳の男性．<br>
                             職場の健康診断で産業医との面談を勧められて訪れた．自覚症状はない．既往歴に特記すべきことはない．仕事はデスクワークで喫煙は20本/日を28年間．飲酒は日本酒4合/日を25年間．運動不足で食事は塩辛いものを好む．<br>
@@ -921,9 +1018,9 @@
                             <li>塩分: M ≤ 8g/day, F ≤ 7g/day</li>
                         </ul>
 
-                        <p>HTN</p>
+                        <p class="q_dx">HTN</p>
 
-                        <p>True: c</p>
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li></li>
@@ -1006,15 +1103,21 @@
             <!-- 08 -->
             <div class="card-group HTN EHT">
 				<div class="card">
-					<div class="card-header mis">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105G39" target="_blank" id="2018-01-20_20:54:48">105G39</a> 初診 HTN 対応
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_14:47:55"> </span>
 						<br>
 						<p>42歳の男性．<br>
 							高血圧症治療中の父が脳梗塞を発症したため，自身の血圧を心配して来院した．<br>
-							職場の健康診断は毎年受診しているが，異常を指摘されたことはない．喫煙歴はない．12年前からビール350mLを毎日飲んでいる．運動は月に1回のゴルフを10年間．身長175cm，体重70kg．脈拍72/分，整．血圧164/92mmHg．心音に異常を認めない．腹部に血管性雑音を聴取しない．浮腫を認めない．<br>
+							<u>職場の健康診断は毎年受診しているが，異常を指摘されたことはない</u>．<br>
+                            喫煙歴はない．<br>
+                            12年前からビール350mLを毎日飲んでいる．<br>
+                            運動は月に1回のゴルフを10年間．<br>
+                            身長175cm，体重70kg．脈拍72/分，整．血圧164/92mmHg．<br>
+                            心音に異常を認めない．腹部に血管性雑音を聴取しない．浮腫を認めない．<br>
 							Ïまず勧めるのはどれか．</p>
 
 
@@ -1054,20 +1157,23 @@
             <!-- 09 -->
             <div class="card-group HTN EHT">
 				<div class="card">
-					<div class="card-header mis">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/104G43" target="_blank" id="2018-01-29_15:32:17">104G43</a> HTN 目標
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-10-04_14:54:22"> </span>
 						<br>
 						<p>45歳の男性．独身．事務職．<br>
 							会社の定期健康診断の結果を持って医務室を訪れた．自家用車で通勤している．<br>
-							普段は朝食をとらずに出社し，昼と夜の食事は外食が多い．休日は自宅で映画のDVDを鑑賞して過ごしている．<br>
-							喫煙歴はない．飲酒は日本酒2合/週を23年間．<br>
-							定期健康診断の結果：身長165cm，体重60kg，腹囲78cm．<u>血圧142/88mmHg</u>．<br>
+							普段は朝食をとらずに出社し，昼と夜の食事は外食が多い．<u>休日は自宅で映画のDVDを鑑賞して過ごしている．</u><br>
+							喫煙歴はない．<br>
+                            飲酒は<u>日本酒2合/週</u>を23年間．<br>
+							定期健康診断の結果：<u>身長165cm，体重60kg</u>，腹囲78cm．<u>血圧142/88mmHg</u>．<br>
 							尿所見：蛋白（－），糖（－）．<br>
 							血液生化学所見：空腹時血糖100mg/dL，HDL-コレステロール36mg/dL，LDL-コレステロール120mg/dL（基準65～139），トリグリセリド120mg/dL，AST 25IU/L，ALT 30IU/L，γ-GTP 40IU/L（基準8～50）．<br>
-							胸部X線写真と心電図とに異常を認めない．同時に実施した食事調査では摂取エネルギー量2,200kcal/日，塩分摂取量12.5g/日であった．<br>
+							胸部X線写真と心電図とに異常を認めない．<br>
+                            同時に実施した食事調査では<u>摂取エネルギー量2,200kcal/日</u>，<u>塩分摂取量12.5g/日</u>であった．<br>
 							指導として適切なのはどれか．2つ選べ．</p>
 
 
@@ -1083,9 +1189,11 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p>HTN</p>
+                        <p>適正体重: 59.9</p>
 
-						<p>True: b,d</p>
+						<p class="q_dx">HTN</p>
+
+						<p class="q_answer_true">b d</p>
 
 						<ol type="a">
 							<li></li>
@@ -1100,17 +1208,22 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group HTN EHT MHT">
+            <div class="card-group HTN EHT MHT pri info">
 				<div class="card">
-					<div class="card-header cau pri info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/107A58" target="_blank" id="">107A58</a> 説明
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_15:34:06"> </span>
 						<br>
 						<p>60歳の男性．<br>
 							自宅で測定した血圧が高いことを主訴に来院した．<br>
-							5年前から健康診断で高血圧を指摘されているが，自覚症状がないためそのままにしていた．高血圧症治療中の兄が1ヵ月前に脳梗塞を発症したため心配になり，自宅で血圧を測定するようになった．最近1週間の血圧測定結果を持参して来院した．喫煙は20本/日を40年間．現在も喫煙を続けている．飲酒歴はない．身長170cm，体重80kg．脈拍72/分，整．血圧136/84mmHg．心音と呼吸音とに異常を認めない．下腿に浮腫を認めない．</p>
+							5年前から健康診断で高血圧を指摘されているが，自覚症状がないためそのままにしていた．高血圧症治療中の兄が1ヵ月前に脳梗塞を発症したため心配になり，自宅で血圧を測定するようになった．最近1週間の血圧測定結果を持参して来院した．<br>
+                            喫煙は20本/日を40年間．現在も喫煙を続けている．<br>
+                            飲酒歴はない．<br>
+                            身長170cm，体重80kg．脈拍72/分，整．血圧136/84mmHg．<br>
+                            心音と呼吸音とに異常を認めない．下腿に浮腫を認めない．</p>
 
 						<table class="table table-condensed">
 							<thead>
@@ -1159,6 +1272,8 @@
 							</tbody>
 						</table>
 
+                        <p>この患者に対する説明で適切なのはどれか．2つ選べ．</p>
+
 						<ol type="a">
 							<li class="ans_t">「禁煙が必要です」</li>
 							<li class="ans_f">「短時間作用型の降圧薬が適しています」</li>
@@ -1171,9 +1286,9 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p>仮面高血圧 (早朝高血圧)</p>
+						<p class="q_dx">仮面高血圧 (早朝高血圧)</p>
 
-						<p>True: a,e</p>
+						<p class="q_answer_true">a e</p>
 
 						<ol type="a">
 							<li></li>
@@ -1185,7 +1300,6 @@
 
 
 						<div class="card">
-							<!-- <img src="https://www.qb-online.com/img_kaisetsu/107A058_bas_c_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107A058_bas_c_010.jpg" class="card-img-top img-fluid">
 						</div>
 
@@ -1216,6 +1330,11 @@
                                 </tr>
                             </tbody>
                         </table>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/107A058_bas_c_010.jpg" class="card-img-top img-fluid"> -->
+
+
+
 					</div>
 				</div>
 			</div>
@@ -1275,13 +1394,14 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group HTN">
+            <div class="card-group HTN pri">
 				<div class="card">
-					<div class="card-header cau pri">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108G55" target="_blank" id="2018-01-20_21:19:25">108G55</a> HTN 治療
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_15:37:05"> </span>
 						<br>
 						<p>78歳の男性．<br>
 							3週前からの頭重感を主訴に来院した．<br>
@@ -1304,19 +1424,21 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p>HTN</p>
+						<p class="q_dx">HTN</p>
 
-						<p>True: a</p>
+						<p class="q_answer_true">a</p>
 
 						<ol type="a">
 							<li>高齢者HTNは低用量から開始</li>
 							<li>長時間作用型</li>
 							<li>HTN-III</li>
-							<li>#1<ul>
-                                <li>Thiaside</li>
-                                <li>CCB</li>
-                                <li>ACEI / ARB</li>
-                            </ul></li>
+							<li>#1
+                                <ul>
+                                    <li>Thiaside</li>
+                                    <li>CCB</li>
+                                    <li>ACEI / ARB</li>
+                                </ul>
+                            </li>
 							<li>目標: < 140/90</li>
 						</ol>
 					</div>
@@ -1324,13 +1446,14 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group HTN EHT">
+            <div class="card-group HTN EHT SysHT 110 pri">
                 <div class="card">
-                    <div class="card-header mis 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D10" target="_blank" id="">110D10</a> 高齢者 HTN
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-10-04_14:58:58"> </span>
                         <br>
                         <p>高齢者における高血圧症について正しいのはどれか．</p>
 
@@ -1351,9 +1474,9 @@
                             &rArr; 大動脈脈波伝搬速度が速い<br>
                             &rArr; &uarr;SBP &darr;DBP</p>
 
-                        <p>孤立性収縮期高血圧</p>
+                        <p class="q_dx">孤立性収縮期高血圧</p>
 
-                        <p>True: a</p>
+                        <p class="q_answer_true">a</p>
 
                         <ol type="a">
                             <li></li>
@@ -1367,13 +1490,14 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group HTN AHT">
+            <div class="card-group HTN AHT PIH pri">
 				<div class="card">
-					<div class="card-header cau pri">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102G46" target="_blank" id="2018-01-20_20:33:13">102G46</a> リスクファクター
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill rev now" id="2018-10-04_15:39:13"> </span>
 						<br>
 						<p>40歳の女性．<br>
 							健康診断で血圧高値を指摘され来院した．<br>
@@ -1394,9 +1518,9 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p>高血圧性腎硬化症</p>
+						<p class="q_dx">高血圧性腎硬化症</p>
 
-						<p>True: b</p>
+						<p class="q_answer_true">b</p>
 
 						<ol type="a">
 							<li></li>
@@ -1410,13 +1534,14 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group HTN ACEI">
+            <div class="card-group HTN ACEI info">
 				<div class="card">
-					<div class="card-header mis">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/94B25" target="_blank" id="2018-01-20_20:46:01">94B25</a> ACEI 適応
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_15:14:24"> </span>
 						<br>
 						<p>高血圧症の患者で，アンジオテンシン変換酵素（ACE）阻害薬が適応となる病態はどれか．3つ選べ．</p>
 
@@ -1432,7 +1557,10 @@
 				</div>
 				<div class="card answer">
 					<div class="card-body">
-						<p>True: a,b,c</p>
+
+
+
+						<p class="q_answer_true">a b c</p>
 
 						<ol type="a">
 							<li></li>
@@ -1443,22 +1571,31 @@
 							<li></li>
 						</ol>
 
-						<p>ACEI:<br>
-                            AT-II による糸球体輸出動脈の収縮作用の抑制<br>
-							&rArr; 糸球体輸出動脈 拡張<br>
-							&rArr; &darr;濾過量</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                ACEI:<br>
+                                AT-II による糸球体輸出動脈の収縮作用の抑制<br>
+                                &rArr; 糸球体輸出動脈 拡張<br>
+                                &rArr; &darr;濾過量
+                            </li>
+                        </ul>
+
+
+
+
 					</div>
 				</div>
 			</div>
 
             <!-- 06 -->
-            <div class="card-group HTN HoK">
+            <div class="card-group HTN HoK info">
 				<div class="card">
-					<div class="card-header cau info">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103B11" target="_blank" id="2018-01-20_20:48:02">103B11</a> 薬剤性 &darr;K
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_15:40:48"> </span>
 						<br>
 						<p>低カリウム血症を起こすのはどれか．</p>
 
@@ -1473,7 +1610,8 @@
 				</div>
 				<div class="card answer">
 					<div class="card-body">
-						<p>True: c</p>
+
+						<p class="q_answer_true">c</p>
 
 						<ol type="a">
 							<li></li>
@@ -1551,12 +1689,13 @@
             <!-- 07 -->
             <div class="card-group HTN ">
 				<div class="card">
-					<div class="card-header cau">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/93B29" target="_blank" id="2018-01-20_21:51:41">93B29</a> 降圧薬 - 副作用
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_15:43:27"> </span>
 						<br>
 						<p>降圧薬と副作用との組合せで正しいのはどれか．3つ選べ．</p>
 
@@ -1575,14 +1714,17 @@
 
 						<p></p>
 
-						<p>True: a,b,c</p>
+						<p class="q_answer_true">a b c</p>
 
 						<ol type="a">
-							<li>Thiazide:<br>
-                                &darr;K<br>
-                                &uarr;Ca<br>
-                                耐糖能異常<br>
-                                &uarr;UA</li>
+							<li>Thiazide:
+                                <ul>
+                                    <li>&darr;K</li>
+                                    <li>&uarr;Ca</li>
+                                    <li>耐糖能異常</li>
+                                    <li>&uarr;UA</li>
+                                </ul>
+                            </li>
 							<li></li>
 							<li>&alpha;B:<br>
                                 血管拡張</li>
@@ -1598,13 +1740,14 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group AP HF HrK ASTH HrUA">
+            <div class="card-group AP HF HrK asthma HrUA">
 				<div class="card">
-					<div class="card-header cau">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/97B24" target="_blank" id="2018-01-20_20:48:59">97B24</a> 病態 - 治療薬
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill cau now" id="2018-10-04_15:45:18"> </span>
 						<br>
 						<p>病態と治療薬の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -1620,7 +1763,10 @@
 				</div>
 				<div class="card answer">
 					<div class="card-body">
-						<p>True: a,b</p>
+
+
+
+						<p class="q_answer_true">a b</p>
 
 						<ol type="a">
 							<li>狭心症: CCB</li>
@@ -1637,18 +1783,20 @@
 							</ul></li>
 						</ol>
 
+
 					</div>
 				</div>
 			</div>
 
             <!-- 09 -->
-            <div class="card-group HTN">
+            <div class="card-group HTN PIH">
 				<div class="card">
-					<div class="card-header cau">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102D9" target="_blank" id="">102D9</a> 降圧薬 禁忌
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+						<span class="badge badge-pill rev now" id="2018-10-04_15:47:19"> </span>
 						<br>
 						<p>降圧薬の選択で禁忌はどれか．</p>
 
@@ -1667,7 +1815,7 @@
 
 						<p></p>
 
-						<p>False: a</p>
+						<p class="q_answer_false">a</p>
 
 						<ol type="a">
 							<li>妊婦: ヒドララジン, メチルドパ</li>
@@ -1812,15 +1960,20 @@
             <!-- 02 -->
             <div class="card-group OH">
 				<div class="card">
-					<div class="card-header mis">
+					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102G47" target="_blank" id="2018-01-20_21:23:32">102G47</a> 起立試験
 					</div>
 					<div class="card-body">
-						<span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+						<span class="badge badge-pill mis now" id="2018-10-04_15:21:08"> </span>
 						<br>
 						<p>24歳の女性．<br>
 							立ちくらみを主訴に来院した．<br>
-							2年前から臥位から急に起立すると立ちくらみを起こすことがしばしばあった．3ヵ月前から起立時に眼前が暗くなって倒れることが3回あった．意識は清明．身長155cm，体重47kg．脈拍80/分，整．血圧124/76mmHg．胸部所見に異常はない．神経学的所見に異常はない．起立試験の結果を次に示す．<br>
+							2年前から臥位から<u>急に起立すると立ちくらみ</u>を起こすことがしばしばあった．<br>
+                            3ヵ月前から起立時に眼前が暗くなって倒れることが3回あった．<br>
+                            意識は清明．身長155cm，体重47kg．脈拍80/分，整．血圧124/76mmHg．<br>
+                            胸部所見に異常はない．神経学的所見に異常はない．<br>
+                            起立試験の結果を次に示す．<br>
 							異常と考えられるのはどれか．2つ選べ．</p>
                     </div>
 
@@ -1843,9 +1996,9 @@
 						<!-- <img src="https://www.qb-online.com/img/102G047_ima_c_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/102G047_ima_c_010.jpg" class="card-img-top img-fluid">
 
-						<p>起立性調節障害</p>
+						<p class="q_dx">起立性調節障害</p>
 
-						<p>True: d,e</p>
+						<p class="q_answer_true">d e</p>
 
 						<ol type="a">
 							<li>脈圧: 48 mmHg</li>
@@ -1854,6 +2007,9 @@
 							<li></li>
 							<li></li>
 						</ol>
+
+
+
 					</div>
 				</div>
 			</div>
@@ -1989,6 +2145,7 @@
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a class="nav-link nav-title"></a></li>
                 <li class="nav-item"><a class="nav-link nav-revised"></a></li>
+                <li class="nav-item"><a class="nav-link nav-version"></a></li>
                 <li class="nav-item dropdown">
                     <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu">
@@ -2057,6 +2214,9 @@ $('document').ready(function(){
     var revised_date = $('meta[name="revised"]').attr('content');
     $('.nav-revised').html(revised_date);
 
+    var version = $('meta[name="version"]').attr('content');
+    $('.nav-version').html(version);
+
     // time
     var now = new Date();
     var hr = now.getHours();
@@ -2078,27 +2238,34 @@ $('document').ready(function(){
         $('span.day').toggle();
     });
     $('span.glyphicon-print').click(function(){
-        $('#def').toggle();
-        $('#cls').toggle();
-        $('#eti').toggle();
-        $('#epi').toggle();
-        $('#ss').toggle();
-        $('#ex').toggle();
-        $('#dx').toggle();
-        $('#rx').toggle();
+
+        $('#key').toggle();
         $('#app').toggle();
         $('#ref').toggle();
+        $('#q .card-group:not(.print)').toggle();
+        $('#q ul.nav-pills').toggle();
 
-        $('#q div.card-group').hide();
-        $('div.card-header.mis').parent().parent().show();
-        $('div.card-header.cau').parent().parent().show();
-        $('div.card-header.info').parent().parent().show();
-        $('div.card-header.110').parent().parent().show();
-        $('div.card-header.111').parent().parent().show();
+        // $('#def').toggle();
+        // $('#cls').toggle();
+        // $('#eti').toggle();
+        // $('#epi').toggle();
+        // $('#ss').toggle();
+        // $('#ex').toggle();
+        // $('#dx').toggle();
+        // $('#rx').toggle();
+        // $('#app').toggle();
+        // $('#ref').toggle();
 
-        $('.card-body').find('.ans_t').toggleClass('correct-show');
-        $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        $('div.answer').find('.card-body').show();
+        // $('#q div.card-group').hide();
+        // $('div.card-header.mis').parent().parent().show();
+        // $('div.card-header.cau').parent().parent().show();
+        // $('div.card-header.info').parent().parent().show();
+        // $('div.card-header.110').parent().parent().show();
+        // $('div.card-header.111').parent().parent().show();
+
+        // $('.card-body').find('.ans_t').toggleClass('correct-show');
+        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
+        // $('div.answer').find('.card-body').show();
 
         // $('div.card-header:not(.rev)').parent().parent().toggle();
 
@@ -2120,78 +2287,85 @@ $('document').ready(function(){
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
-    $('div.pri').append('<span class="badge badge-secondary badge-vio pri">#1</span>');
-    $('div.req').append('<span class="badge badge-secondary badge-vio req">Req</span>');
-    $('div.110').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
+    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
+    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
+    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
+    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
+    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
+    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
-    $('div.mis').next().find('span.now').addClass('mis');
-    $('div.cau').next().find('span.now').addClass('cau');
-    $('div.rev').next().find('span.now').addClass('rev');
-    $('div.hit').next().find('span.now').addClass('hit');
+    // $('div.mis').next().find('span.now').addClass('mis');
+    // $('div.cau').next().find('span.now').addClass('cau');
+    // $('div.rev').next().find('span.now').addClass('rev');
+    // $('div.hit').next().find('span.now').addClass('hit');
+
+    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
+    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
+    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
+    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
 
     // $('.card .pri').find('.card-header').html('#1');
 
     $('li.nav-item >a.mis').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
+        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.cau').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
+        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.rev').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
+        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.hit').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.all').click(function(){
         $('div.card-group').show();
     });
     $('li.nav-item >a.untag').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
+        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.done').click(function(){
         $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
+        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
     });
     $('li.nav-item >a.pri').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.pri)').parent().parent().toggle('slow');
+        $('div.card-group:not(.pri)').slideToggle(100);
     });
     $('li.nav-item >a.req').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.req)').parent().parent().toggle('slow');
+        $('div.card-group:not(.req)').slideToggle(100);
     });
     $('li.nav-item >a.qb').click(function(){
         $('div.card-group').show();
-        $('div.card-header.notqb').parent().parent().toggle('slow');
+        $('div.card-group.notqb').slideToggle(100);
     });
     $('li.nav-item >a.110').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.110)').parent().parent().toggle('slow');
+        $('div.card-group:not(.110)').slideToggle(100);
     });
     $('li.nav-item >a.111').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.111)').parent().parent().toggle('slow');
+        $('div.card-group:not(.111)').slideToggle(100);
     });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
-        $('div.card-header:not(.info)').parent().parent().toggle('slow');
+        $('div.card-group:not(.info)').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').parent().next().find('.card-body').slideToggle(100);
+        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
 
-        $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
+        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
+        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
     var n_mis = $('div.mis').size();
@@ -2244,6 +2418,19 @@ $('document').ready(function(){
     $('code.q_alert_done').html(n_done);
 
 
+    $('p.q_dx').prepend('<code>Dx</code>: ');
+
+    $('p.q_answer_true').prepend('True: ');
+    $('p.q_answer_false').prepend('False: ');
+
+    // tack
+    $('span.rtack').append('⊣');
+    $('span.ltack').append('⊢');
+    $('span.utack').append('⊤');
+    $('span.dtack').append('⊥');
+
+    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+    
     $('#q-tab a').on('click', function (e) {
         e.preventDefault()
         $(this).tab('show')
@@ -2411,6 +2598,49 @@ $('document').ready(function(){
 
     // $('div.page-header').();
     // $('.dropdown-item').appendTo();
+
+
+    $('#EHT h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.EHT)').toggle();
+    });
+    $('#EHT').find('code').html($('div.EHT').size());
+
+
+    $('#OH h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.OH)').toggle();
+    });
+    $('#OH').find('code').html($('div.OH').size());
+
+
+    $('#MHT').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.MHT)').toggle();
+    });
+    $('#MHT').find('code').html($('div.MHT').size());
+
+
+    $('#SysHT h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.SysHT)').toggle();
+    });
+    $('#SysHT').find('code').html($('div.SysHT').size());
+
+
+
+
+
+
+
+
+
+    $('# h2').click(function(){
+        $('.card-group').show();
+        $('div.card-group:not(.)').toggle();
+    });
+    $('#').find('code').html($('div.').size());
+
 });
 </script>
 </body>

@@ -4,12 +4,31 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-07 11:02:04
+@Last modified time: 2018-12-16 20:11:04
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+
 04.01.23    18 10 03    js .slideToggle()
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
@@ -97,8 +116,8 @@
     <title>Carbohydrate</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-07 11:02:26" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.23">
+    <meta name="revised" content="2018-12-16 20:11:22" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -117,118 +136,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -657,9 +573,9 @@
         </div>
 
         <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="SD">
+            <div class="section" id="SID">
                 <div class="page-header">
-                    <h2>SD <small>ステロイド糖尿病</small> <small><code></code></small></h2>
+                    <h2>SID <small>ステロイド糖尿病</small> <small><code></code></small></h2>
                 </div>
 
                 <ul class="list-group">
@@ -1068,14 +984,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group PHYSIO HrBS HoBS pri 110 info" id="q01">
+            <div class="card-group INTRO PHYSIO T2DM HrBS HoBS pri 110 info" id="q01">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110B36" target="_blank" id="">110B36</a> BS ~ Insulin
+                        <a href="https://qb.medilink-study.com/#/Answer/110B36" target="_blank" id="">110B36</a> <!-- BS ~ Insulin  -->\( \text{BS} \propto \text{Insulin} \)
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_15:34:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_15:34:13"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-16_21:31:24"> </span>
                         <br>
                         <p>血糖値と血清インスリン値とが正常に比し同方向に変化（両方とも上昇，または，両方とも低下）するのはどれか．2つ選べ．</p>
 
@@ -1092,7 +1009,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1110,30 +1027,38 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th>血清インスリン値↑</th>
-                                    <th>血清インスリン値↓</th>
+                                    <th>&uarr;Insulin</th>
+                                    <th>&darr;Insulin</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>血糖値↑</th>
-                                    <td><ul>
-                                        <li>インスリン抵抗性を主病態とする2型糖尿病</li>
-                                        <li>インスリン受容体異常症</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>1型糖尿病</li>
-                                    </ul></td>
+                                    <th>&uarr;BS</th>
+                                    <td>
+                                        <ul>
+                                            <li>インスリン抵抗性を主病態とする2型糖尿病</li>
+                                            <li>インスリン受容体異常症</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>1型糖尿病</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th>血糖値↓</th>
-                                    <td><ul>
-                                        <li>インスリノーマ</li>
-                                        <li>インスリン自己免疫症候群に伴う低血糖</li>
-                                    </ul></td>
-                                    <td><ul>
-                                        <li>下垂体副腎不全症，飢餓状態</li>
-                                    </ul></td>
+                                    <th>&darr;BS</th>
+                                    <td>
+                                        <ul>
+                                            <li>インスリノーマ</li>
+                                            <li>インスリン自己免疫症候群に伴う低血糖</li>
+                                        </ul>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>下垂体副腎不全症，飢餓状態</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1145,14 +1070,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PHYSIO KB 110 pri" id="q02">
+            <div class="card-group INTRO PHYSIO KB 110 pri" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E18" target="_blank" id="">110E18</a> &darr;摂食
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_15:36:18"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_15:36:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_21:33:36"> </span>
                         <br>
                         <p>摂食量の低下が持続した際に血液中の濃度が上昇するのはどれか．</p>
 
@@ -1187,14 +1113,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PHYSIO HoGl HoBS 110" id="q03">
+            <div class="card-group INTRO PHYSIO HoGl HoBS 110" id="q03">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E40" target="_blank" id="">110E40</a> &darr;BS
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now" id="2018-10-07_15:37:28"> </span>
                         <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_15:37:28"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-16_21:35:53"> </span>
                         <br>
                         <p>低血糖時に血中濃度が上昇するホルモンはどれか．3つ選べ．</p>
 
@@ -1211,7 +1138,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1237,7 +1164,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_11:21:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_11:21:35"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_21:38:16"> </span>
                         <br>
                         <p>16歳の男子．<br>
                             全身倦怠感と口渇とを主訴に来院した．<br>
@@ -1249,7 +1177,7 @@
 
                         <ol type="a">
                             <li class="ans_f">ブドウ糖負荷試験</li>
-                            <li class="ans_f">インスリン負荷試験</li>
+                            <li class="ans_f star">インスリン負荷試験</li>
                             <li class="ans_t">抗インスリン抗体測定</li>
                             <li class="ans_t">膵島細胞抗体測定</li>
                             <li class="ans_t">尿中Cペプチド測定</li>
@@ -1356,7 +1284,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_11:24:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_11:24:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_20:18:25"> </span>
                         <br>
                         <p>38歳の女性．<br>
                             近医で<u>高血糖</u>を指摘されて2ヵ月前に来院した．<br>
@@ -1369,7 +1298,7 @@
 
                         <ol type="a">
                             <li class="ans_f">インスリン負荷試験</li>
-                            <li class="ans_t">グルカゴン負荷試験</li>
+                            <li class="ans_t star">グルカゴン負荷試験</li>
                             <li class="ans_f">メトピロン負荷試験</li>
                             <li class="ans_f">フロセマイド負荷試験</li>
                             <li class="ans_f">絶食試験</li>
@@ -1403,7 +1332,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group BS DM pri info" id="q07">
+            <div class="card-group INTRO PHYSIO BS DM pri info" id="q07">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109B12" target="_blank" id="2018-01-28_16:09:01">109B12</a> 糖代謝 Qs
@@ -1411,7 +1340,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_15:38:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_15:38:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_21:39:31"> </span>
                         <br>
                         <p>糖代謝の臨床的評価で正しいのはどれか．</p>
                         
@@ -1419,7 +1349,7 @@
                         <ol type="a">
                             <li class="ans_f">ケトン体は蛋白分解の亢進で増加する．</li>
                             <li class="ans_f">血糖値は静脈血の方が毛細血管より高い．</li>
-                            <li class="ans_f">尿糖は血糖150mg/dLを超えると陽性を示す．</li>
+                            <li class="ans_f star">尿糖は血糖150mg/dLを超えると陽性を示す．</li>
                             <li class="ans_t">インスリン分泌能は尿中Cペプチド排泄量で評価する． </li>
                             <li class="ans_f">インスリン抵抗性はBMI〈Body Mass Index〉で評価する．</li>
                         </ol>
@@ -1428,7 +1358,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">d</p>
 
@@ -1445,6 +1375,16 @@
                             <img src="https://qb.medilink-study.com/images/109B012_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
 
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                \( 
+                                    \text{Insulinogenic Index}\\
+                                    =  \frac{\Delta \text{IRI}}{\Delta \text{PG}} \\
+                                    \text{(75gOGTT)}
+                                \)
+                            </li>
+                        </ul>
+
 
 
                     </div>
@@ -1460,7 +1400,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_15:43:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_15:43:12"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_21:43:26"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             <u>嘔吐</u>と<u>腹痛</u>とを主訴に来院した．<br>
@@ -1478,7 +1419,7 @@
                             <li class="ans_f">2型糖尿病</li>
                             <li class="ans_f">副腎クリーゼ</li>
                             <li class="ans_f">甲状腺クリーゼ</li>
-                            <li class="ans_f">アセトン血性嘔吐症</li>
+                            <li class="ans_f star">アセトン血性嘔吐症</li>
                         </ol>
                     </div>
                 </div>
@@ -1531,12 +1472,16 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_15:48:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_15:48:53"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-16_21:44:02"> </span>
                         <br>
                         <p>17歳の男子．<br>
                             学校検尿で2回とも尿糖陽性であったために精査を勧められて来院した．<br>
-                            これまで口渇，多飲および体重減少は認めなかった．身長174cm，<u>体重96kg</u>．血圧118/78mmHg．<u>腋窩に黒色表皮腫</u>を認める．<br>
-                            血液生化学所見：随時血糖201mg/dL，HbA1c（NGSP）7.0％（基準4.6～6.2）．<br>
+                            これまで口渇，多飲および体重減少は認めなかった．<br>
+                            身長174cm，<u>体重96kg</u>．血圧118/78mmHg．<br>
+                            <u>腋窩に黒色表皮腫</u>を認める．<br>
+                            血液生化学所見：<br>
+                            <u>随時血糖201mg/dL</u>，<u>HbA1c（NGSP）7.0％</u>（基準4.6～6.2）．<br>
                             最も考えられるのはどれか．</p>
                         
 
@@ -1584,6 +1529,7 @@
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-10-07_15:59:25"> </span>
+                        <span class="badge badge-pill mis" id="2018-12-16_20:23:46"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
@@ -1591,16 +1537,18 @@
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_15:59:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_15:59:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_20:23:55"> </span>
                         <br>
                         <p>次の文を読み，64～66の問いに答えよ．<br><br>
 
                             51歳の男性．<br>
                             <u>口渇，多飲</u>および<u>全身倦怠感</u>を主訴に来院した．<br>
                             現病歴：<br>
-                            1ヵ月前から<u>口渇</u>が出現し，清涼飲料水を<u>多飲</u>している．2週前から全身倦怠感を自覚している．<br>
+                            1ヵ月前から<u>口渇</u>が出現し，清涼飲料水を<u>多飲</u>している．<br>
+                            2週前から全身倦怠感を自覚している．<br>
                             既往歴：<br>
-                            1年前にC型肝炎で，インターフェロンα-2bとリバビリンとの治療が開始され，1ヵ月前に終了した．<br>
+                            1年前にC型肝炎で，<u>インターフェロンα-2b</u>とリバビリンとの治療が開始され，1ヵ月前に終了した．<br>
                             生活歴：<br>
                             喫煙歴はない．飲酒は機会飲酒．<br>
                             家族歴：<br>
@@ -1620,7 +1568,8 @@
                             FT3 2.9pg/mL（基準2.5～4.5），FT4 1.1ng/dL（基準0.8～2.2），尿中アルブミン208mg/g・Cr（基準22以下）．<u>CRP 1.2mg/dL</u>．<br>
                             <u>24時間クレアチニンクリアランス78mL/分</u>（基準90以上）．</p>
 
-                        <p>[G064] この病態でみられる症候はどれか．</p>
+                        <p>[G064] <br>
+                            この病態でみられる症候はどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">難聴</li>
@@ -1630,7 +1579,8 @@
                             <li class="ans_f">黒色表皮腫</li>
                         </ol>
 
-                        <p>[G065] 診断に有用なのはどれか</p>
+                        <p>[G065] <br>
+                            診断に有用なのはどれか</p>
                         <ol type="a">
                             <li class="ans_t">自己抗体</li>
                             <li class="ans_f">補体</li>
@@ -1639,7 +1589,8 @@
                             <li class="ans_f">食菌能</li>
                         </ol>
 
-                        <p>[G066] 対応として適切なのはどれか．2つ選べ．</p>
+                        <p>[G066] <br>
+                            対応として適切なのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">食事療法</li>
                             <li class="ans_f">降圧薬投与</li>
@@ -1729,7 +1680,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group T2DM DM pri info mnemonics" id="q11">
+            <div class="card-group T2DM PCOS DM pri info mnemonics" id="q11">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107D47" target="_blank" id="2018-02-05_14:42:35">107D47</a> 挙児希望
@@ -1737,7 +1688,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-07_16:06:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-07_16:06:50"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-16_21:46:15"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             <u>挙児希望</u>のため不妊外来を受診し，その後内科外来へ紹介された．<br>
@@ -1899,12 +1851,13 @@
             <div class="card-group DIET info pri" id="q14">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/106E23" target="_blank" id="2018-01-28_16:14:43">106E23</a> 食事療法 エネルギー
+                        <a href="https://qb.medilink-study.com/#/Answer/106E23" target="_blank" id="2018-01-28_16:14:43">106E23</a> 食事療法 E
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_14:00:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_14:00:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_20:32:37"> </span>
                         <br>
                         <p>2型糖尿病の食事療法について誤っているのはどれか．</p>
                         
@@ -1912,7 +1865,7 @@
                         <ol type="a">
                             <li class="ans_f">食物繊維は指示エネルギーに含まれる． </li>
                             <li class="ans_t">脂質は指示エネルギー量の25％以内とする．</li>
-                            <li class="ans_t">炭水化物は指示エネルギー量の60％以内とする．</li>
+                            <li class="ans_t star">炭水化物は指示エネルギー量の60％以内とする．</li>
                             <li class="ans_t">蛋白質は標準体重（kg）当たり1.2g/日以内とする． </li>
                             <li class="ans_t">総摂取エネルギー量は標準体重×生活活動強度で求める．</li>
                         </ol>
@@ -1921,7 +1874,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_false">a</p>
 
@@ -2037,7 +1990,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_14:06:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_14:06:56"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_20:34:41"> </span>
                         <br>
                         <p>糖尿病の患者で毎日のウォーキングを積極的に勧めてよいのはどれか．</p>
                         
@@ -2069,31 +2023,20 @@
                         <h6>運動療法 禁止/制限</h6>
                         <ul class="list-group">
                             <li class="list-group-item">
-                                コントロール不良
                                 <ul>
-                                    <li>FBS ≥ 250</li>
+                                    <li>コントロール不良
+                                        <ul>
+                                            <li>FBS ≥ 250</li>
+                                        </ul>
+                                    </li>
+                                    <li>増殖網膜症(+) &rArr; 眼底出血</li>
+                                    <li>腎不全状態</li>
+                                    <li>虚血性心疾患 / 心肺機能に障害</li>
+                                    <li>骨/関節疾患</li>
+                                    <li>急性感染</li>
+                                    <li>糖尿病壊疽</li>
+                                    <li>高度の自立神経障害</li>
                                 </ul>
-                            </li>
-                            <li class="list-group-item">
-                                増殖網膜症(+) &rArr; 眼底出血
-                            </li>
-                            <li class="list-group-item">
-                                腎不全状態
-                            </li>
-                            <li class="list-group-item">
-                                虚血性心疾患 / 心肺機能に障害
-                            </li>
-                            <li class="list-group-item">
-                                骨/関節疾患
-                            </li>
-                            <li class="list-group-item">
-                                急性感染
-                            </li>
-                            <li class="list-group-item">
-                                糖尿病壊疽
-                            </li>
-                            <li class="list-group-item">
-                                高度の自立神経障害
                             </li>
                         </ul>
 
@@ -2269,12 +2212,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_16:12:57"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_16:12:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_20:38:35"> </span>
                         <br>
                         <p><u>33歳の男性</u>．<br>
                             <u>増殖前糖尿病網膜症の治療</u>を目的とし紹介されて来院した．<br>
-                            10年前から健康診断で<u>尿糖陽性</u>を指摘されていたが自覚症状がないためそのままにしていた．<u>最近，視力低下</u>を自覚したため自宅近くの眼科を受診した．<br>
-                            増殖前糖尿病網膜症と診断され，紹介されて受診した．<u>父親が糖尿病</u>で治療中である．<br>
+                            10年前から健康診断で<u>尿糖陽性</u>を指摘されていたが自覚症状がないためそのままにしていた．<br>
+                            <u>最近，視力低下</u>を自覚したため自宅近くの眼科を受診した．<br>
+                            増殖前糖尿病網膜症と診断され，紹介されて受診した．<br>
+                            <u>父親が糖尿病</u>で治療中である．<br>
                             身長172cm，体重64kg．脈拍88/分，整．<u>血圧176/92mmHg</u>．<br>
                             尿所見：<br>
                             <u>蛋白4＋</u>，<u>糖3＋</u>．<br>
@@ -2683,7 +2629,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group DM info" id="q25">
+            <div class="card-group DM  info" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99E64" target="_blank" id="2018-01-28_16:41:53">99E64</a> 経口糖尿病薬 - 作用
@@ -2691,24 +2637,25 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_16:24:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_16:24:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_20:40:40"> </span>
                         <br>
                         <p>経口糖尿病薬と主な作用の組合せで誤っているのはどれか．</p>
                         
 
                         <ol type="a">
                             <li class="ans_t">スルホニルウレア薬 － インスリン分泌促進</li>
-                            <li class="ans_t">ビグアナイド薬 － 肝の糖産生抑制</li>
+                            <li class="ans_t star">ビグアナイド薬 － 肝の糖産生抑制</li>
                             <li class="ans_t">α-グルコシダーゼ阻害薬 － 糖質吸収抑制</li>
-                            <li class="ans_t">チアゾリジン薬 － インスリン抵抗性改善</li>
-                            <li class="ans_f">フェニルアラニン誘導体 － インスリン作用増強 </li>
+                            <li class="ans_t star">チアゾリジン薬 － インスリン抵抗性改善</li>
+                            <li class="ans_f star">フェニルアラニン誘導体 － インスリン作用増強 </li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_false">e</p>
 
@@ -3027,14 +2974,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group SD 110 pri" id="q31">
+            <div class="card-group SID star 110 pri" id="q31">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110I13" target="_blank" id="">110I13</a> ステロイド糖尿病
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_14:24:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_14:24:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_20:46:16"> </span>
                         <br>
                         <p>入院中の患者に対して副腎皮質ステロイド療法（プレドニゾロン25mg/日を4〜6週間使用）を行うことになった．<br>
                             ステロイド糖尿病の発症を効率的に発見するため繰り返し行うべき検査はどれか．</p>
@@ -3081,15 +3029,18 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_14:39:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_14:39:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-16_20:57:13"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-10-07_14:40:08"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-16_20:57:21"> </span>
                          / 
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_14:40:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_14:40:28"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_20:57:31"> </span>
                         <br>
                         <p>次の文を読み，65～67の問いに答えよ．<br><br>
 
@@ -3115,7 +3066,8 @@
                             <u>随時血糖406mg/dL</u>，<u>HbA1c（NGSP）11.0％</u>，AST 88IU/L，ALT 64IU/L，<u>LD 429IU/L</u>（基準176～353），クレアチニン 0.6mg/dL．</p>
                         
 
-                        <p>[E065] 病態として考えられるのはどれか．2つ選べ．</p>
+                        <p>[E065] <br>
+                            病態として考えられるのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_f">腎性糖尿</li>
                             <li class="ans_t">アシドーシス</li>
@@ -3124,7 +3076,8 @@
                             <li class="ans_f">エリスロポエチン分泌低下</li>
                         </ol>
 
-                        <p>[E066] この患者にみられるのはどれか．</p>
+                        <p>[E066] <br>
+                            この患者にみられるのはどれか．</p>
                         <ol type="a">
                             <li class="ans_t">難聴</li>
                             <li class="ans_f">無月経</li>
@@ -3133,7 +3086,8 @@
                             <li class="ans_f">平衡機能障害</li>
                         </ol>
 
-                        <p>[E067] 治療の組合せで正しいのはどれか．</p>
+                        <p>[E067] <br>
+                            治療の組合せで正しいのはどれか．</p>
 
                         <table class="table table-condensed">
                             <thead>
@@ -3438,32 +3392,49 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_15:12:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_15:12:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-16_21:05:36"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-10-07_15:12:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-12-16_21:05:49"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_21:05:57"> </span>
                         <br>
                         <p>次の文を読み，28～30の問いに答えよ．<br><br>
                             
-                            7歳の女児．意識障害のため救急車で搬入された．
-                            現病歴：2ヵ月前から夜間排尿に起きるようになり，その都度水を飲んでいた．<br>
-                            2週前から，学校から帰ると疲れたと言って昼寝をするようになった．1週前から咽頭痛，耳下腺部痛および発熱を認め，近医で<u>流行性耳下腺炎と診断</u>された．入院前日から頭痛と発熱とを認め，食欲が低下した．体重が2ヵ月前に比べて3kg減少した．<br>
+                            7歳の女児．<br>
+                            意識障害のため救急車で搬入された．<br>
+                            現病歴：<br>
+                            2ヵ月前から夜間排尿に起きるようになり，その都度水を飲んでいた．<br>
+                            2週前から，学校から帰ると疲れたと言って昼寝をするようになった．<br>
+                            1週前から咽頭痛，耳下腺部痛および発熱を認め，近医で<u>流行性耳下腺炎と診断</u>された．<br>
+                            入院前日から頭痛と発熱とを認め，食欲が低下した．<br>
+                            体重が2ヵ月前に比べて3kg減少した．<br>
                             入院当日の朝，<u>頭痛</u>を訴えて嘔吐した．その後，急速に意識状態が悪化し，呼名に反応しなくなった．<br>
-                            発育歴：在胎39週，正常分娩．身長49cm，体重3,000gで出生した．新生児期の黄疸は正常であった．成長・発達に異常はない．<br>
-                            家族歴：特記すべきことはない．<br>
-                            現　症：意識混濁があり，痛みにかろうじて反応する．身長119cm，体重22kg．体温38℃．胸腹部に異常はなく，肝・脾を触れない．<u>項部硬直</u>と<u>Kernig徴候</u>とを認める．<br>
+                            発育歴：<br>
+                            在胎39週，正常分娩．身長49cm，体重3,000gで出生した．新生児期の黄疸は正常であった．成長・発達に異常はない．<br>
+                            家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            意識混濁があり，痛みにかろうじて反応する．身長119cm，体重22kg．体温38℃．<br>
+                            胸腹部に異常はなく，肝・脾を触れない．<u>項部硬直</u>と<u>Kernig徴候</u>とを認める．<br>
                             検査所見：<br>
-                            尿所見：蛋白1＋，<u>糖4＋</u>，<u>ケトン体3＋</u>．<br>
-                            血液所見：赤血球460万，Hb 14.6g/dL，Ht 40％，白血球11,000．<br>
-                            血清生化学所見：<u>血糖782mg/dL</u>，尿素窒素35mg/dL，クレアチニン1.2mg/dL，<br>
+                            尿所見：<br>
+                            蛋白1＋，<u>糖4＋</u>，<u>ケトン体3＋</u>．<br>
+                            血液所見：<br>
+                            赤血球460万，Hb 14.6g/dL，Ht 40％，白血球11,000．<br>
+                            血清生化学所見：<br>
+                            <u>血糖782mg/dL</u>，尿素窒素35mg/dL，クレアチニン1.2mg/dL，<br>
                             Na 130mEq/L，K 4.0mEq/L，Cl 92mEq/L．<br>
-                            動脈血ガス分析（自発呼吸，room air）：pH 7.00，HCO3− 8mEq/L，BE －23mEq/L．</p>
+                            動脈血ガス分析（自発呼吸，room air）：<br>
+                            pH 7.00，HCO3− 8mEq/L，BE －23mEq/L．</p>
                         
-                        <p>[C028] この患児の脳脊髄液所見でみられるのはどれか．2つ選べ．</p>
+                        <p>[C028] <br>
+                            この患児の脳脊髄液所見でみられるのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_f">圧の低下</li>
                             <li class="ans_f">黄色調外観</li>
@@ -3472,20 +3443,22 @@
                             <li class="ans_t">pHの低下</li>
                         </ol>
 
-                        <p>[C029] この患児でみられるのはどれか．</p>
+                        <p>[C029] <br>
+                            この患児でみられるのはどれか．</p>
                         <ol type="a">
                             <li class="ans_t">血漿浸透圧高値</li>
-                            <li class="ans_f">血清膵型アミラーゼ高値</li>
+                            <li class="ans_f star">血清膵型アミラーゼ高値</li>
                             <li class="ans_f">PaCO2正常</li>
                             <li class="ans_f">アニオンギャップ低下</li>
                             <li class="ans_f">尿比重低下</li>
                         </ol>
 
-                        <p>[C030] 適切な初期治療はどれか．2つ選べ．</p>
+                        <p>[C030] <br>
+                            適切な初期治療はどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">生理食塩液点滴</li>
                             <li class="ans_t">インスリン持続点滴</li>
-                            <li class="ans_f">7％重炭酸ナトリウム静注</li>
+                            <li class="ans_f star">7％重炭酸ナトリウム静注</li>
                             <li class="ans_f">腹膜透析</li>
                             <li class="ans_f">人工呼吸管理</li>
                         </ol>
@@ -3495,11 +3468,11 @@
                     <div class="card-body">
 
 
-                        <ul>
+                        <!-- <ul>
                             <li></li>
                             <li></li>
                             <li></li>
-                        </ul>
+                        </ul> -->
 
                         <p>感染を契機して, DMケトアシドーシス</p>
 
@@ -3538,10 +3511,13 @@
                         </ol>
 
 
-                        <div lang="latex">\text{OSM} = 2 (\text{Na} + \text{K}) + \frac{\text{BS}}{18} + \frac{\text{BUN}}{2.8}
-                        </div>
+                        \( \text{OSM} = 2 (\text{Na} + \text{K}) + \frac{\text{BS}}{18} + \frac{\text{BUN}}{2.8} \)
+                        
 
-                        <div lang="latex">\text{AG} = [\text{Na}^+] - ([\text{Cl}^-] + [\text{HCO}_3^- ])</div>
+                        \( \text{AG} = [\text{Na}^+] - ([\text{Cl}^-] + [\text{HCO}_3^- ]) \)
+
+
+
                     </div>
                 </div>
             </div>
@@ -3734,7 +3710,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group DKA DM T1DM infusion req info" id="q39">
+            <div class="card-group Meta DKA DM T1DM infusion req info" id="q39">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101D47" target="_blank" id="2018-01-28_17:06:04">101D47-48</a> DM昏睡 / 輸液後再意識障害
@@ -3742,19 +3718,23 @@
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill mis now" id="2018-12-06_15:04:40"> </span>
+                        <span class="badge badge-pill mis" id="2018-12-06_15:04:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-16_21:11:19"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-10-07_16:49:52"> </span>
                         <span class="badge badge-pill cau" id="2018-12-06_15:04:49"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_21:11:28"> </span>
                         <br>
                         <p>次の文を読み，47，48の問いに答えよ．<br><br>
 
                             54歳の男性．<br>
                             意識障害を主訴に来院した．<br>
                             現病歴：<br>
-                            5年前に<u>1型糖尿病</u>と診断され，インスリン治療を開始した．1週前から38℃台の発熱と咽頭痛とがあり，2日前食欲低下と嘔気とを認めたためインスリン注射を自己中止した．今朝，意識がもうろうとしているところを家族に気付かれた．<br>
+                            5年前に<u>1型糖尿病</u>と診断され，インスリン治療を開始した．<br>
+                            1週前から38℃台の発熱と咽頭痛とがあり，2日前食欲低下と嘔気とを認めたためインスリン注射を自己中止した．<br>
+                            今朝，意識がもうろうとしているところを家族に気付かれた．<br>
                             家族歴：<br>
                             特記すべきことはない．<br>
                             現　症：<br>
@@ -3962,14 +3942,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group HHS pri" id="q42">
+            <div class="card-group HHS T2DM pri" id="q42">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105A21" target="_blank" id="2018-01-28_14:58:14">105A21</a> PreDx &xrArr; 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now"> </span>
+                        <span class="badge badge-pill mis"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_21:14:11"> </span>
                         <br>
                         <p>69歳の男性．<br>
                             <u>意識障害</u>のため搬入された．<br>
@@ -4031,7 +4012,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group HHS" id="q43">
+            <div class="card-group HHS T2DM" id="q43">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90B85" target="_blank" id="2018-01-28_17:28:23">90B85</a> 非ケトン性高浸透圧性昏睡
@@ -4039,13 +4020,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_15:19:17"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_15:19:17"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_21:16:44"> </span>
                         <br>
                         <p>非ケトン性高浸透圧性昏睡について正しいのはどれか．2つ選べ．</p>
                         
 
                         <ol type="a">
-                            <li class="ans_f">1型糖尿病の患者に多い．</li>
+                            <li class="ans_f star">1型糖尿病の患者に多い．</li>
                             <li class="ans_t">中高年者に多い．</li>
                             <li class="ans_t">血圧低下を伴う．</li>
                             <li class="ans_f">Kussmaul呼吸を伴う．</li>
@@ -4189,7 +4171,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group HoGl HoBS IAS insulinoma info" id="q46">
+            <div class="card-group HoGl HoBS IAS insulinoma dumping  info" id="q46">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/90B86" target="_blank">90B86</a> 低血糖
@@ -4197,15 +4179,16 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_15:21:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_15:21:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_21:18:09"> </span>
                         <br>
                         <p>早朝空腹時の血糖が40mg/dLであった．<br>
                             考えられるのはどれか．3つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">ACTH単独欠損症</li>
-                            <li class="ans_f">ダンピング症候群</li>
-                            <li class="ans_f">ロイシン過敏症</li>
+                            <li class="ans_f star">ダンピング症候群</li>
+                            <li class="ans_f star">ロイシン過敏症</li>
                             <li class="ans_t">インスリン自己免疫症候群</li>
                             <li class="ans_t">インスリノーマ</li>
                         </ol>
@@ -4254,16 +4237,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_15:23:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_15:23:37"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_21:19:53"> </span>
                         <br>
                         <p>低血糖をきたすのはどれか．2つ選べ．</p>
 
 
                         <ol type="a">
-                            <li class="ans_t">大量の飲酒</li>
+                            <li class="ans_t star">大量の飲酒</li>
                             <li class="ans_f">乳糖不耐症</li>
                             <li class="ans_t">胃全摘術後</li>
-                            <li class="ans_f">インターフェロン投与</li>
+                            <li class="ans_f star">インターフェロン投与</li>
                             <li class="ans_f">非ステロイド性抗炎症薬〈NSAIDs〉投与</li>
                         </ol>
                     </div>
@@ -4271,7 +4255,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -4537,7 +4521,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group HoGl HoBS info" id="q53">
+            <div class="card-group HoGl HoBS  info" id="q53">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103G25" target="_blank" id="2018-01-28_17:48:55">103G25</a> 低血糖 治療
@@ -4545,7 +4529,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-07_15:31:31"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-07_15:31:31"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_21:22:59"> </span>
                         <br>
                         <p>低血糖の原因となりやすい注射薬はどれか．</p>
                         
@@ -4553,7 +4538,7 @@
                         <ol type="a">
                             <li class="ans_f">カリウム </li>
                             <li class="ans_f">ジギタリス </li>
-                            <li class="ans_t">ジソピラミド </li>
+                            <li class="ans_t star">ジソピラミド </li>
                             <li class="ans_f">抗ヒスタミン薬</li>
                             <li class="ans_f">エリスロポエチン</li>
                         </ol>
@@ -4562,7 +4547,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">c</p>
 
@@ -4716,504 +4701,174 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
 
+    $('#INTRO h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.INTRO)').slideToggle(100);
+    });
+    $('#INTRO').find('small > code').html(
+        $('div.INTRO > .card > .mis').size() + '+' +
+        $('div.INTRO > .card > .cau').size() + '/' +
+        $('div.INTRO').size()
+    );
 
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#PHYSIO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PHYSIO)').toggle();
+        $('div.card-group:not(.PHYSIO)').slideToggle(100);
     });
-    $('#PHYSIO').find('code').html($('div.PHYSIO').size());
+    $('#PHYSIO').find('small > code').html(
+        $('div.PHYSIO > .card > .mis').size() + '+' +
+        $('div.PHYSIO > .card > .cau').size() + '/' +
+        $('div.PHYSIO').size());
 
 
     $('#DM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DM)').toggle();
+        $('div.card-group:not(.DM)').slideToggle(100);
     });
-    $('#DM').find('code').html($('div.DM').size());
+    $('#DM').find('small > code').html(
+        $('div.DM > .card > .mis').size() + '+' +
+        $('div.DM > .card > .cau').size() + '/' +
+        $('div.DM').size());
 
 
     $('#T1DM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.T1DM)').toggle();
+        $('div.card-group:not(.T1DM)').slideToggle(100);
     });
-    $('#T1DM').find('code').html($('div.T1DM').size());
+    $('#T1DM').find('small > code').html(
+        $('div.T1DM > .card > .cau').size() + '/' +
+        $('div.T1DM').size());
 
 
     $('#FT1DM').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FT1DM)').toggle();
+        $('div.card-group:not(.FT1DM)').slideToggle(100);
     });
-    $('#FT1DM').find('code').html($('div.FT1DM').size());
+    $('#FT1DM').find('small > code').html(
+        $('div.FT1DM > .card > .mis').size() + '+' +
+        $('div.FT1DM > .card > .cau').size() + '/' +
+        $('div.FT1DM').size());
 
 
     $('#SPIDDM').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SPIDDM)').toggle();
+        $('div.card-group:not(.SPIDDM)').slideToggle(100);
     });
-    $('#SPIDDM').find('code').html($('div.SPIDDM').size());
+    $('#SPIDDM').find('small > code').html(
+        $('div.SPIDDM > .card > .mis').size() + '+' +
+        $('div.SPIDDM > .card > .cau').size() + '/' +
+        $('div.SPIDDM').size());
 
 
     $('#T2DM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.T2DM)').toggle();
+        $('div.card-group:not(.T2DM)').slideToggle(100);
     });
-    $('#T2DM').find('code').html($('div.T2DM').size());
+    $('#T2DM').find('small > code').html(
+        $('div.T2DM > .card > .mis').size() + '+' +
+        $('div.T2DM > .card > .cau').size() + '/' +
+        $('div.T2DM').size());
 
 
-    $('#SD h2').click(function(){
+    $('#SID h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SD)').toggle();
+        $('div.card-group:not(.SID)').slideToggle(100);
     });
-    $('#SD').find('code').html($('div.SD').size());
+    $('#SID').find('small > code').html(
+        $('div.SID > .card > .mis').size() + '+' +
+        $('div.SID > .card > .cau').size() + '/' +
+        $('div.SID').size());
 
 
     $('#DKA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DKA)').toggle();
+        $('div.card-group:not(.DKA)').slideToggle(100);
     });
-    $('#DKA').find('code').html($('div.DKA').size());
+    $('#DKA').find('small > code').html(
+        $('div.DKA > .card > .mis').size() + '+' +
+        $('div.DKA > .card > .cau').size() + '/' +
+        $('div.DKA').size());
 
 
     $('#HHS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HHS)').toggle();
+        $('div.card-group:not(.HHS)').slideToggle(100);
     });
-    $('#HHS').find('code').html($('div.HHS').size());
+    $('#HHS').find('small > code').html(
+        $('div.HHS > .card > .mis').size() + '+' +
+        $('div.HHS > .card > .cau').size() + '/' +
+        $('div.HHS').size());
 
 
     $('#DFS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DFS)').toggle();
+        $('div.card-group:not(.DFS)').slideToggle(100);
     });
-    $('#DFS').find('code').html($('div.DFS').size());
+    $('#DFS').find('small > code').html(
+        $('div.DFS > .card > .mis').size() + '+' +
+        $('div.DFS > .card > .cau').size() + '/' +
+        $('div.DFS').size());
 
 
     $('#MIDD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MIDD)').toggle();
+        $('div.card-group:not(.MIDD)').slideToggle(100);
     });
-    $('#MIDD').find('code').html($('div.MIDD').size());
+    $('#MIDD').find('small > code').html(
+        $('div.MIDD > .card > .mis').size() + '+' +
+        $('div.MIDD > .card > .cau').size() + '/' +
+        $('div.MIDD').size());
 
 
     $('#MODY h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MODY)').toggle();
+        $('div.card-group:not(.MODY)').slideToggle(100);
     });
-    $('#MODY').find('code').html($('div.MODY').size());
+    $('#MODY').find('small > code').html(
+        $('div.MODY > .card > .mis').size() + '+' +
+        $('div.MODY > .card > .cau').size() + '/' +
+        $('div.MODY').size());
 
 
     $('#IAS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IAS)').toggle();
+        $('div.card-group:not(.IAS)').slideToggle(100);
     });
-    $('#IAS').find('code').html($('div.IAS').size());
+    $('#IAS').find('small > code').html(
+        $('div.IAS > .card > .mis').size() + '+' +
+        $('div.IAS > .card > .cau').size() + '/' +
+        $('div.IAS').size());
 
 
     $('#DN').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DN)').toggle();
+        $('div.card-group:not(.DN)').slideToggle(100);
     });
-    $('#DN').find('code').html($('div.DN').size());
+    $('#DN').find('small > code').html(
+        $('div.DN > .card > .mis').size() + '+' +
+        $('div.DN > .card > .cau').size() + '/' +
+        $('div.DN').size());
 
     $('#DR').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DR)').toggle();
+        $('div.card-group:not(.DR)').slideToggle(100);
     });
-    $('#DR').find('code').html($('div.DR').size());
+    $('#DR').find('small > code').html(
+        $('div.DR > .card > .mis').size() + '+' +
+        $('div.DR > .card > .cau').size() + '/' +
+        $('div.DR').size());
 
 
 
@@ -5221,9 +4876,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

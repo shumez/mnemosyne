@@ -4,12 +4,31 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-06 14:35:47
+@Last modified time: 2018-12-16 14:40:39
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+
 04.01.23    18 10 03    js .slideToggle()
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
@@ -97,8 +116,8 @@
     <title>Parathyroid</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-06 14:36:13" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.23">
+    <meta name="revised" content="2018-12-16 14:41:00" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -117,118 +136,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -275,14 +191,18 @@
 
 
     
-    <div class="section" id="PHYSIO">
+    <div class="section" id="INTRO">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Physiology <small> </small> <small><code></code></small></h2>
+                    <h2>Intro <small><code></code></small></h2>
                 </div>
             </div>
-            
+                
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h3 id="PHYSIO">Physiology <small><code></code></small></h3>
+            </div>
+
             <div class="col-xs-12 col-sm-6 col-md-6">   
                 <h6>PTH</h6>
                 <table class="table table-condensed">
@@ -297,15 +217,12 @@
                     <tbody>
                         <tr>
                             <th>骨</th>
-                            <td>&uarr;</td>
-                            <td>&uarr;</td>
-                            <td>&rarr;</td>
+                            <td rowspan="2">&uarr;</td>
+                            <td rowspan="2">&uarr;</td>
+                            <td rowspan="2">&rarr;</td>
                         </tr>
                         <tr>
                             <th>腸管</th>
-                            <td>&uarr;</td>
-                            <td>&uarr;</td>
-                            <td>&rarr;</td>
                         </tr>
                         <tr>
                             <th>尿細管</th>
@@ -313,17 +230,23 @@
                             <td><u>&darr;</u></td>
                             <td><u>&darr;</u></td>
                         </tr>
+                        <tr>
+                            <th>血漿</th>
+                            <td>&uarr;</td>
+                            <td>&darr;</td>
+                            <td>&darr;</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/92B079_bas_d_010.jpg" class="card-img-top img-fluid">
                 </div>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-9 col-md-9">
+            <div class="col-xs-12 col-sm-9 col-md-6">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -390,129 +313,6 @@
     </div>
 
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="PHrPT">
-                <div class="page-header">
-                    <h2>PHrPT <small class="hidden-xs-down">Primary HyperParaThyroidism</small> <small><code></code></small></h2>
-                </div>
-
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/89E043_bas_d_010.jpg" class="card-img-top img-fluid">
-                </div>
-
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        PTH
-                        <ul>
-                            <li>&uarr;Ca</li>
-                            <li>&darr;P</li>
-                            <li>&darr;HCO<sub>3</sub><br>
-                                &rArr; &uarr;Cl (代償性)</li>
-                        </ul>
-                    </li>
-                </ul>
-
-
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="PHP">
-                <div class="page-header">
-                    <h2>PHP <small>偽性副甲状腺機能低下症</small> <small><code></code></small></h2>
-                </div>
-
-
-                <h6>Classification</h6>
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th colspan="2"></th>
-                            <th>Ia</th>
-                            <th>PPHP</th>
-                            <th>Ib</th>
-                            <th>II</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th colspan="2">Etio</th>
-                            <td colspan="2"></td>
-                            <td colspan="2"></td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">AHO</th>
-                            <td>(+)</td>
-                            <td>(+)</td>
-                            <td>(-)</td>
-                            <td>(-)</td>
-                        </tr>
-                        <tr>
-                            <th rowspan="2">PTH</th>
-                            <th>尿cAMP</th>
-                            <td>&darr;</td>
-                            <td>&rarr;</td>
-                            <td>&darr;</td>
-                            <td>&rarr;</td>
-                        </tr>
-                        <tr>
-                            <th>尿P</th>
-                            <td>&darr;</td>
-                            <td>&rarr;</td>
-                            <td>&darr;</td>
-                            <td>&darr;</td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <ul class="list-group">
-                    <li class="list-group-item">I: <br>
-                        PTH-R &rarr; cAMP</li>
-                    <li class="list-group-item">II: <br>
-                        cAMP &rarr; </li>
-                </ul>
-
-
-                <h3>PPHP <small>偽性偽性副甲状腺機能低下症</small> <small><code></code></small></h3>
-
-
-                <h3 id="AHO">AHO <small class="hidden-xs-down">Albright Hereditary Osteodystrophy</small> <small class="hidden-xs-down">/</small> <small class="hidden-xs-down">遺伝性骨異栄養症</small> <small><code></code></small></h3>
-
-
-                <div class="card">
-                    <a href="http://www.nature.com/nrendo/journal/v11/n12/full/nrendo.2015.139.html?WT.feed_name=subjects_calcium-and-phosphate-metabolic-disorders" target="_blank">
-                        <img src="https://images.nature.com/full/nature-assets/nrendo/journal/v11/n12/images/nrendo.2015.139-f1.jpg" class="card-img-top img-fluid">
-                    </a>
-                </div>
-
-
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <h6>Ellsworth-Howard試験</h6>
-                        <ul>
-                            <li>腎尿細管がヒトPTHに反応するかを，腎での</li>
-                            <li>cAMPの産生（その一部は尿中へ排泄される）</li>
-                            <li>尿中へのリン酸の排泄量</li>
-                            <li>偽性副甲状腺機能低下症の分類の診断</li>
-                            <li>PTH分泌低下による特発性副甲状腺機能低下症 &xrArr; 外因性PTHにより，リン酸排泄が増加</li>
-                            <li>偽性Ⅰ型はcAMPの排泄もリン酸の排泄も増加しない</li>
-                            <li>偽性Ⅱ型はcAMPの増加はみられるが，リン酸の排泄増加がみられない．</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    </div>
-
-
     <div class="section" id="HrCa">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -521,7 +321,7 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">内分泌疾患：
                         <ul>
@@ -548,23 +348,9 @@
                     </li>
                     <li class="list-group-item">※結核などの肉芽腫性病変においても高Ca血症を呈することがある．</li>
                 </ul>
-            </div>
+            </div> -->
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">易疲労感</li>
-                    <li class="list-group-item">多尿, 口渇, 脱水</li>
-                    <li class="list-group-item">
-                        消化管運動低下<br>
-                        &rArr; N/V, 便秘</li>
-                    <li class="list-group-item">
-                        &uarr;ガストリン<br>
-                        &rArr; &uarr;胃酸分泌<br>
-                        &rArr; 消化性潰瘍, 膵炎
-                    </li>
-                </ul>
-            </div>
-
+            
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
@@ -573,9 +359,19 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
+                        <ul>
+                            <li>易疲労感</li>
+                            <li>多尿 / 口渇 / 脱水</li>
+                            <li>消化管運動低下<br>
+                                &rArr; N/V, 便秘</li>
+                            <li><u>消化性潰瘍</u> / 膵炎<br>
+                                &because; &uarr;ガストリン<br>
+                                &rArr; &uarr;胃酸分泌
+                            </li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                     </li> -->
@@ -599,6 +395,94 @@
                     </li>
                 </ul>
             </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>&uarr;Ca</th>
+                            <th>&darr;Ca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>中枢神経症状</th>
+                            <td>
+                                <ul>
+                                    <li>意識障害</li>
+                                    <li>せん妄</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>けいれん</li>
+                                    <li>意識消失発作</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>末梢神経，筋症状</th>
+                            <td>
+                                <ul>
+                                    <li>腱反射低下</li>
+                                    <li>筋力低下</li>
+                                    <li>易疲労感</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>腱反射亢進</li>
+                                    <li>筋けいれん</li>
+                                    <li>テタニー</li>
+                                    <li>Chvostek徴候</li>
+                                    <li>Trousseau徴候</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>消化器症状</th>
+                            <td>
+                                <ul>
+                                    <li>悪心</li>
+                                    <li>嘔吐</li>
+                                    <li>便秘</li>
+                                    <li>消化性潰瘍</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>下痢</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>腎症状</th>
+                            <td>
+                                <ul>
+                                    <li>多尿</li>
+                                    <li>脱水</li>
+                                    <li>腎障害</li>
+                                    <li>尿路結石</li>
+                                </ul>
+                            </td>
+                            <td>※</td>
+                        </tr>
+                        <tr>
+                            <th>心電図変化</th>
+                            <td>QT短縮</td>
+                            <td>QT延長</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="HHM">HHM <small></small> <small><code></code></small></h3>
+            </div>
+
         </div>
     </div>
 
@@ -609,7 +493,7 @@
                     <h2>&darr;Mg <small> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
@@ -619,99 +503,24 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
+                        <ul>
+                            <li><u>&darr;K</u> / <u>&darr;Ca</u></li>
+                            <li>Wide QT</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
-                <!-- </ul> -->
+                </ul>
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>&uarr;Ca</th>
-                        <th>&darr;Ca</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>中枢神経症状</th>
-                        <td>
-                            <ul>
-                                <li>意識障害</li>
-                                <li>せん妄</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>けいれん</li>
-                                <li>意識消失発作</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>末梢神経，筋症状</th>
-                        <td>
-                            <ul>
-                                <li>腱反射低下</li>
-                                <li>筋力低下</li>
-                                <li>易疲労感</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>腱反射亢進</li>
-                                <li>筋けいれん</li>
-                                <li>テタニー</li>
-                                <li>Chvostek徴候</li>
-                                <li>Trousseau徴候</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>消化器症状</th>
-                        <td>
-                            <ul>
-                                <li>悪心</li>
-                                <li>嘔吐</li>
-                                <li>便秘</li>
-                                <li>消化性潰瘍</li>
-                            </ul>
-                        </td>
-                        <td>
-                            <ul>
-                                <li>下痢</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>腎症状</th>
-                        <td>
-                            <ul>
-                                <li>多尿</li>
-                                <li>脱水</li>
-                                <li>腎障害</li>
-                                <li>尿路結石</li>
-                            </ul>
-                        </td>
-                        <td>※</td>
-                    </tr>
-                    <tr>
-                        <th>心電図変化</th>
-                        <td>QT短縮</td>
-                        <td>QT延長</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <h6>電解質異常</h6>
@@ -759,15 +568,291 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+
+    <div class="section" id="HrPT">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>&uarr;PT <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="PHrPT">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>PHrPT <small>原発性副甲状腺機能亢進症</small> <!-- <small class="hidden-xs-down">Primary HyperParaThyroidism</small>  --><small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/89E043_bas_d_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        PTH
+                        <ul>
+                            <li>&uarr;Ca</li>
+                            <li>&darr;P</li>
+                            <li>&darr;HCO<sub>3</sub><br>
+                                &rArr; &uarr;Cl (代償性)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section" id="SHrPT">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>SHrPT <small>続発性副甲状腺機能亢進症</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Etiology</h6>
+                        <ul>
+                            <li>CKD</li>
+                            <li>vit.D欠乏</li>
+                            <li>PTH不応</li>
+                            <li><u>横紋筋融解症</u></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="rHPT">rHPT <small>腎性副甲状腺機能亢進症</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Etiology</h6>
+                        <ul>
+                            <li>CKD:
+                                <ul>
+                                    <li>&darr;Ca</li>
+                                    <li>&uarr;P</li>
+                                </ul>
+                            </li>
+                            <li>&uarr;PTH</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li>L/D
+                                <ul>
+                                    <li>&uarr;P</li>
+                                    <li>&uarr;ALP</li>
+                                    <li>&darr;1,25(OH)<sub>2</sub>D<sub>3</sub></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="MAH">MAH <small>悪性腫瘍随伴&uarr;Ca</small> <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Classification</h6>
+                        <ul>
+                            <li>HHM <small>腫瘍随伴体液性&uarr;Ca</small>
+                                <ul>
+                                    <li>肺</li>
+                                    <li>ATLL</li>
+                                </ul>
+                            </li>
+                            <li>LOH <small>局所性骨溶解性&uarr;Ca</small>
+                                <ul>
+                                    <li>乳癌</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="section" id="HoPT">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <H2>&darr;PT <small><code></code></small></H2>
+                </div>
+            </div>
+
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item"></li>
+                </ul>
+            </div> -->
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="HAM">HAM <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Definition</h6>
+                        <ol start="2">
+                            <li><u>H</u>ypoparathyroidism</li>
+                            <li><u>A</u>ddison</li>
+                        </ol>
+                        <ol>
+                            <li><u>M</u></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section" id="PHP">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>PHP <small>偽性副甲状腺機能低下症</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>Ia</th>
+                            <th>PPHP</th>
+                            <th>Ib</th>
+                            <th>II</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th colspan="2">Etio</th>
+                            <td colspan="2"></td>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">AHO</th>
+                            <td>(+)</td>
+                            <td>(+)</td>
+                            <td>(-)</td>
+                            <td>(-)</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">PTH</th>
+                            <th>尿cAMP</th>
+                            <td>&darr;</td>
+                            <td>&rarr;</td>
+                            <td>&darr;</td>
+                            <td>&rarr;</td>
+                        </tr>
+                        <tr>
+                            <th>尿P</th>
+                            <td>&darr;</td>
+                            <td>&rarr;</td>
+                            <td>&darr;</td>
+                            <td>&darr;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Classification</h6>
+                        <ul>
+                            <li>I : <br>
+                                PTH-R &rarr; cAMP<br>
+                                にシグナル伝達障害</li>
+                            <li>II : <br>
+                                cAMP &rarr; <br>
+                                にシグナル伝達障害</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li><u>Ellsworth-Howard試験</u></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6></h6>
+                        <ul>
+                            <li>腎尿細管がヒトPTHに反応するかを，腎での</li>
+                            <li>cAMPの産生（その一部は尿中へ排泄される）</li>
+                            <li>尿中へのリン酸の排泄量</li>
+                            <li>偽性副甲状腺機能低下症の分類の診断</li>
+                            <li>PTH分泌低下による特発性副甲状腺機能低下症 &xrArr; 外因性PTHにより，リン酸排泄が増加</li>
+                            <li>偽性Ⅰ型はcAMPの排泄もリン酸の排泄も増加しない</li>
+                            <li>偽性Ⅱ型はcAMPの増加はみられるが，リン酸の排泄増加がみられない．</li>
+                        </ul>
+                    </li>
+                </ul> -->
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <a href="http://www.nature.com/nrendo/journal/v11/n12/full/nrendo.2015.139.html?WT.feed_name=subjects_calcium-and-phosphate-metabolic-disorders" target="_blank">
+                        <img src="https://images.nature.com/full/nature-assets/nrendo/journal/v11/n12/images/nrendo.2015.139-f1.jpg" class="card-img-top img-fluid">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3>PPHP <small>偽性偽性副甲状腺機能低下症</small> <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="AHO">AHO<!-- <small class="hidden-xs-down">Albright Hereditary Osteodystrophy</small> --> <small>Albright遺伝性骨異栄養症</small> <small><code></code></small></h3>
+
+                <!-- <ul class="list-group">
+                    <li class="list-group-item">
+                        
+                    </li>
+                </ul> -->
+
+                
+
+            </div>
+        </div>
+    </div>
+
+
+    
 
 
 
 
 
 
-
-
-
+    <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="">
@@ -969,15 +1054,16 @@
 
 
             <!-- 01 -->
-            <div class="card-group PHYSIO PTH info" id="q01">
+            <div class="card-group INTRO PHYSIO PTH info" id="q01">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://www.qb-online.com/#/list/92B79" target="_blank" id="2018-01-29_18:01:38">92B79</a> 副甲状腺ホルモン
+                        <a href="https://www.qb-online.com/#/list/92B79" target="_blank" id="2018-01-29_18:01:38">92B79</a> PTH
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_14:40:26"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_14:40:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_14:50:13"> </span>
                         <br>
                         <p>副甲状腺ホルモンの腎における作用はどれか．3つ選べ．</p>
                         
@@ -987,7 +1073,7 @@
                             <li class="ans_t">活性型ビタミンD産生促進</li>
                             <li class="ans_f">エリスロポエチン産生促進</li>
                             <li class="ans_f">カルシウム再吸収抑制</li>
-                            <li class="ans_t">重炭酸イオン再吸収抑制</li>
+                            <li class="ans_t star">重炭酸イオン再吸収抑制</li>
                         </ol>
                     </div>
                 </div>
@@ -1090,7 +1176,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PHYSIO PTH" id="q02">
+            <div class="card-group INTRO PHYSIO PTH CKD VDD PHP" id="q02">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/96H56" target="_blank">96H56</a> &uarr;PTH
@@ -1098,7 +1184,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_15:07:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_15:07:38"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:27:50"> </span>
                         <br>
                         <p>血漿副甲状腺ホルモン値が上昇するのはどれか．3つ選べ．</p>
 
@@ -1119,25 +1206,30 @@
                         <p class="q_answer_true">a d e</p>
 
                         <ol type="a">
-                            <li>vit.D活性&darr; &rArr; &darr;Ca &rArr; feedback</li>
+                            <li>vit.D活性&darr;<br>
+                                &rArr; &darr;Ca<br>
+                                &rArr; feedback</li>
                             <li></li>
                             <li></li>
-                            <li>vit.D欠乏 &rArr; &darr;Ca</li>
-                            <li>偽性副甲状腺機能低下症 &rArr; </li>
+                            <li>vit.D欠乏<br>
+                                &rArr; &darr;Ca</li>
+                            <li>偽性副甲状腺機能低下症<br>
+                                &rArr; &uarr;PTH</li>
                         </ol>
                     </div>
                 </div>
             </div>
 
             <!-- 03 -->
-            <div class="card-group PTH pri info" id="q03">
+            <div class="card-group PTH pri info mnemonics" id="q03">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/109D19" target="_blank">109D19</a> Ca P 
+                        <a href="https://qb.medilink-study.com/#/Answer/109D19" target="_blank">109D19</a> \( \text{Ca} \propto \text{P} \)
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:30:23"> </span>
                         <br>
                         <p>血清Ca値と血清P値とが反対方向に変化（一方が上昇し他方が低下）する疾患はどれか．2つ選べ．</p>
 
@@ -1165,12 +1257,28 @@
                             <li>腫瘍由来のFGF23 産生 &rArr; &darr;P-emia</li>
                         </ol>
 
-                        <h6>&darr;Ca &uarr;P <u>CAP</u></h6>
-                        <ul class="list-group">
-                            <li class="list-group-item">CKD</li>
-                            <li class="list-group-item">Acromegaly</li>
-                            <li class="list-group-item">&darr;PTH</li>
-                        </ul>
+                        <h6></h6>
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>&darr;Ca &uarr;P <u>CAP</u></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>C</td>
+                                    <td>CKD</td>
+                                </tr>
+                                <tr>
+                                    <td>A</td>
+                                    <td>Acromegaly</td>
+                                </tr>
+                                <tr>
+                                    <td>P</td>
+                                    <td>&darr;PTH</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
 
                         <h6>TIO <small>Tumor-Induced Osteomalacia</small> <small>腫瘍性低リン血症性骨軟化症</small></h6>
@@ -1184,18 +1292,20 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group PHrPT pri 110" id="q04">
+            <div class="card-group PHrPT HrCa HoP pri 110" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110I42" target="_blank" id="">110I42</a>
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:22:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:22:49"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-16_15:33:59"> </span>
                         <br>
                         <p>43歳の女性．<br>
                             職場の健康診断で血清ALPと血清Caの異常を指摘されて来院した．特に自覚症状はない．<br>
-                            血液生化学所見：ALP 548IU/L（基準115〜359），Ca 11.8mg/dL，P 2.3mg/dL．<br>
+                            血液生化学所見：<br>
+                            ALP 548IU/L（基準115〜359），Ca 11.8mg/dL，P 2.3mg/dL．<br>
                             最も考えられるのはどれか．</p>
 
 
@@ -1243,14 +1353,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group PHYSIO PTH 111 info" id="q05">
+            <div class="card-group INTRO PHYSIO PTH 111 star info" id="q05">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111B25" target="_blank" id="">111B25</a> Ca &prop; 1/PTH
+                        <a href="https://qb.medilink-study.com/#/Answer/111B25" target="_blank" id="">111B25</a> <!-- Ca &prop; 1/PTH --> \( \text{PTH} \propto \frac{1}{\text{Ca}} \)
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_15:09:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_15:09:35"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:35:32"> </span>
                         <br>
                         <p>血液中の副甲状腺ホルモン〈PTH〉とカルシウムが同方向に変化（両方とも増加，または，両方とも減少）するのはどれか．</p>
 
@@ -1389,12 +1500,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:23:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:23:45"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:39:06"> </span>
                         <br>
                         <p>68歳の女性．<br>
-                            5年前から腰痛があり，骨粗鬆症と診断されて活性型ビタミンDの投与を受けている．<br>
+                            5年前から腰痛があり，<u>骨粗鬆症</u>と診断されて<u>活性型ビタミンDの投与</u>を受けている．<br>
                             最近，脱力感が強くなり，尿量の増加と便秘の傾向が強くなった．<br>
-                            血清生化学所見：Na 141mEq/L，K 4.2mEq/L，Cl 98mEq/L，<u>Ca 12.8mg/dL</u>，P 3.8mg/dL．<br>
+                            血清生化学所見：<br>
+                            Na 141mEq/L，K 4.2mEq/L，Cl 98mEq/L，<u>Ca 12.8mg/dL</u>，P 3.8mg/dL．<br>
                             この患者の心電図で最も予想される所見はどれか．</p>
 
 
@@ -1428,38 +1541,48 @@
                                 <tr>
                                     <th rowspan="2">K</th>
                                     <td>&darr;</td>
-                                    <td><ul>
-                                        <li>U波増大</li>
-                                        <li>ST低下</li>
-                                        <li>T波平坦化</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>U波増大</li>
+                                            <li>ST低下</li>
+                                            <li>T波平坦化</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>&uarr;</td>
-                                    <td><ul>
-                                        <li>テント状T</li>
-                                        <li>QRS延長</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>テント状T</li>
+                                            <li>QRS延長</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th rowspan="2">Ca</th>
                                     <td>&darr;</td>
-                                    <td><ul>
-                                        <li>QT延長</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>QT延長</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>&uarr;</td>
-                                    <td><ul>
-                                        <li>QT短縮</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>QT短縮</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th rowspan="2">Mg</th>
                                     <td>&darr;</td>
-                                    <td rowspan="2"><ul>
-                                        <li>QT延長</li>
-                                    </ul></td>
+                                    <td rowspan="2">
+                                        <ul>
+                                            <li>QT延長</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>&uarr;</td>
@@ -1547,7 +1670,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group HrCa SARC MEN MEN-I info" id="q09">
+            <div class="card-group INTRO HrCa SARC MEN MEN-I HrPT info" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104E10" target="_blank" id="2018-01-26_14:53:20">104E10</a> &uarr;Ca
@@ -1555,7 +1678,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:24:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:24:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:42:54"> </span>
                         <br>
                         <p>高カルシウム血症を呈するのはどれか．2つ選べ．</p>
 
@@ -1623,7 +1747,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group HoCa PHP CKD SARC ATLL " id="q10">
+            <div class="card-group INTRO HoCa PHP CKD SARC ATLL " id="q10">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/94A45" target="_blank">94A45</a> &darr;Ca
@@ -1631,12 +1755,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:28:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:28:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:46:22"> </span>
                         <br>
                         <p>血清総カルシウム値が低下するのはどれか．3つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_t">低アルブミン血症</li>
+                            <li class="ans_t star">低アルブミン血症</li>
                             <li class="ans_t">偽性副甲状腺機能低下症</li>
                             <li class="ans_f">サルコイドーシス</li>
                             <li class="ans_f">成人T細胞白血病</li>
@@ -1653,9 +1778,11 @@
 
                         <ol type="a">
                             <li>Alb-Ca 結合している</li>
-                            <li>&darr;PTH: &darr;Ca, &uarr;P</li>
+                            <li>&darr;PTH:<br>
+                                &darr;Ca, &uarr;P</li>
                             <li></li>
-                            <li>ATLL: PTHrP &rArr; &uarr;Ca</li>
+                            <li>ATLL:<br>
+                                PTHrP &rArr; &uarr;Ca</li>
                             <li>&darr;GFR &rArr; &uarr;P, vit.D活性化障害</li>
                         </ol>
                     </div>
@@ -1672,7 +1799,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group calc" id="q11">
+            <div class="card-group CALC Ca INTRO" id="q11">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/103G68" target="_blank" id="2018-01-26_15:09:09">103G68</a> 補正Ca
@@ -1706,9 +1833,9 @@
                         <p><u>Corrected Ca <br>
                             = Ca + (4.0 - Alb)</u></p>
 
-                        <div lang="latex">\text{Corrected Ca}
-                        = \text{Ca} + (4.0 - \text{Alb})
-                        </div>
+                        \( \text{Corrected Ca} \\
+                            = \text{Ca} + (4.0 - \text{Alb}) \)
+
 
                         <p>7.3 + 4 - 2.9<br>
                             = 8.4</p>
@@ -1724,7 +1851,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group HrCa CKD" id="q12">
+            <div class="card-group HrCa CKD HrPT SHrPT MAH " id="q12">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/102G52" target="_blank" id="2018-01-26_15:39:10">102G52</a> 傾眠 検査項目
@@ -1787,7 +1914,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_15:11:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_15:11:24"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_14:56:23"> </span>
                         <br>
                         <p>高カルシウム血症でみられないのはどれか．</p>
 
@@ -1795,8 +1923,8 @@
                         <ol type="a">
                             <li class="ans_t">多尿</li>
                             <li class="ans_t">せん妄</li>
-                            <li class="ans_t">易疲労感</li>
-                            <li class="ans_t">消化性潰瘍</li>
+                            <li class="ans_t star">易疲労感</li>
+                            <li class="ans_t star">消化性潰瘍</li>
                             <li class="ans_f">筋けいれん</li>
                         </ol>
                     </div>
@@ -1899,15 +2027,16 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group HrCa info" id="q14">
+            <div class="card-group HrCa PHrPT info" id="q14">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://qb.medilink-study.com/#/Answer/101F62">101F62</a> 合併 
+                        <a href="https://qb.medilink-study.com/#/Answer/101F62" target="_blank">101F62</a> PHrPT 合併 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:28:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:28:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:47:50"> </span>
                         <br>
                         <p>原発性副甲状腺機能亢進症に合併するのはどれか．</p>
 
@@ -1938,8 +2067,12 @@
 
                         <p>&uarr;Ca</p>
                         <ul class="list-group">
-                            <li class="list-group-item">易疲労感</li>
-                            <li class="list-group-item">多尿, 口渇, 脱水</li>
+                            <li class="list-group-item">
+                                易疲労感
+                            </li>
+                            <li class="list-group-item">
+                                多尿, 口渇, 脱水
+                            </li>
                             <li class="list-group-item">
                                 消化管運動低下<br>
                                 &rArr; N/V, 便秘</li>
@@ -1957,20 +2090,22 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group HrPT info" id="q15">
+            <div class="card-group HrPT star info" id="q15">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/89E43" target="_blank" id="">89E43</a> Dx &xrArr; HCO<sub>3</sub><sup>-</sup> / Cl / P
+                        <a href="https://qb.medilink-study.com/#/Answer/89E43" target="_blank" id="">89E43</a> HCO<sub>3</sub><sup>-</sup> / Cl / P
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_15:18:20"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_15:18:20"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_14:58:08"> </span>
                         <br>
                         <p>20歳の男性．<br>
                             右側腹部痛発作と血尿とを訴えて来院した．<br>
                             4年前尿管結石を自然排石したことがある．<br>
-                            血清生化学所見：総蛋白6.8g/dL，アルブミン4.0g/dL，尿素窒素18mg/dL，クレアチニン1.0mg/dL，<br>
-                            Na 140mEq/L，K 4.0mEq/L，Ca 11.5mg/dL．<br>
+                            血清生化学所見：<br>
+                            総蛋白6.8g/dL，アルブミン4.0g/dL，尿素窒素18mg/dL，クレアチニン1.0mg/dL，<br>
+                            Na 140mEq/L，K 4.0mEq/L，<u>Ca 11.5mg/dL</u>．<br>
                             <u>副甲状腺ホルモン90pg/mL</u> （正常10～60）．<br>
                             予想される血中の検査値はどれか．</p>
 
@@ -2028,7 +2163,6 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
                         <ul>
                             <li>&uarr;Ca &darr;P</li>
                             <li>&uarr;H &darr;HCO<sub>3</sub></li>
@@ -2071,7 +2205,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group PHrPT pri" id="q16">
+            <div class="card-group PHrPT crisis HrCa pri" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97A51" target="_blank">97A51</a> &uarr;PTH 治療
@@ -2079,7 +2213,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_16:30:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_16:30:51"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_15:07:29"> </span>
                         <br>
                         <p>49歳の男性．<br>
                             高カルシウム血症のため入院した．<br>
@@ -2101,7 +2236,7 @@
                     <div class="card-body">
 
 
-                        <p class="q_dx">&uarr;Ca クリーゼ, 原発性副甲状腺機能亢進症</p>
+                        <p class="q_dx">&uarr;Ca クリーゼ / 原発性副甲状腺機能亢進症</p>
 
                         <p class="q_answer_false">e</p>
 
@@ -2119,7 +2254,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group HrCa" id="q17">
+            <div class="card-group HrCa thiazide" id="q17">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/86A24" target="_blank" id="2018-01-26_14:55:17">86A24</a> &uarr;Ca 治療
@@ -2127,16 +2262,17 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_15:24:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_15:24:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:09:51"> </span>
                         <br>
                         <p>高カルシウム血症の治療に有効なのはどれか．3つ選べ．</p>
 
 
                         <ol type="a">
                             <li class="ans_t">フロセミド</li>
-                            <li class="ans_f">サイアザイド薬</li>
+                            <li class="ans_f star">サイアザイド薬</li>
                             <li class="ans_f">テトラサイクリン</li>
-                            <li class="ans_t">副腎皮質ステロイド薬</li>
+                            <li class="ans_t star">副腎皮質ステロイド薬</li>
                             <li class="ans_t">生理食塩水</li>
                         </ol>
                     </div>
@@ -2152,7 +2288,7 @@
                         <ol type="a">
                             <li></li>
                             <li><code>C/I</code><br>
-                                Thyazide <span class="rtack"></span> Ca排泄 <br>
+                                Thiazide <span class="rtack"></span> Ca排泄 <br>
                                 &rArr; &uarr;Ca</li>
                             <li>テトラサイクリン: &darr;Na(SIADH)</li>
                             <li>ステロイド &rArr; 骨吸収, 小腸での吸収 を抑制</li>
@@ -2162,6 +2298,7 @@
                         <h6>&uarr;Ca</h6>
                         <ul class="list-group">
                             <li class="list-group-item">
+                                <h6>Treatment</h6>
                                 <ul>
                                     <li>生食大量IV</li>
                                     <li>フロセミド</li>
@@ -2178,7 +2315,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group HrPT pri" id="q18">
+            <div class="card-group HrPT SHrPT rHPT CKD  pri" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93E38">93E38</a> 透析 
@@ -2186,7 +2323,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_15:32:20"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_15:32:20"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_15:15:03"> </span>
                         <br>
                         <p>68歳の男性．<br>
                             <u>慢性糸球体腎炎による腎不全</u>で，12年前から<u>血液透析</u>を行っている．<br>
@@ -2199,7 +2337,7 @@
                             <li class="ans_f">LD</li>
                             <li class="ans_f">尿素窒素</li>
                             <li class="ans_f">カルシウム</li>
-                            <li class="ans_t">リン</li>
+                            <li class="ans_t star">リン</li>
                         </ol>
                     </div>
                 </div>
@@ -2229,23 +2367,27 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group CKD HrPT MBD pri info" id="q19">
+            <div class="card-group CKD HrPT SHrPT rHPT MBD pri info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101A37" target="_blank" id="2018-01-21_18:22:04">101A37</a> 合併症 検査
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:52:10"> </span>
                         <br>
                         <p>75歳の女性．<br>
                             <u>膝と踵との痛み</u>を主訴に来院した．<br>
                             25年前から糸球体腎炎による<u>末期腎不全のため血液透析</u>を受けている．<br>
                             6ヵ月前から<u>歩行時の両膝の痛み</u>を自覚し，最近は踵にも痛みを感じるようになった．<br>
-                            血液所見：赤沈40mm/1時間，赤血球360万，Hb 10.8g/dL，Ht 32％．<br>
-                            血清生化学所見：尿素窒素86mg/dL，<u>クレアチニン9.2mg/dL</u>，<u>ALP 600IU/L</u>（基準260以下），<br>
+                            血液所見：<br>
+                            赤沈40mm/1時間，赤血球360万，Hb 10.8g/dL，Ht 32％．<br>
+                            血清生化学所見：<br>
+                            尿素窒素86mg/dL，<u>クレアチニン9.2mg/dL</u>，<u>ALP 600IU/L</u>（基準260以下），<br>
                             Na 140mEq/L，K 5.3mEq/L，Cl 106mEq/L，Ca 11.5mg/dL，P 6.4mg/dL，<u>PTH 880pg/mL</u>（基準10～60）．<br>
-                            動脈血ガス分析（自発呼吸，room air）：pH 7.43，PaO2 82Torr，PaCO2 47Torr，HCO3− 28mEq/L．<br>
+                            動脈血ガス分析（自発呼吸，room air）：<br>
+                            pH 7.43，PaO2 82Torr，PaCO2 47Torr，HCO3− 28mEq/L．<br>
                             ほかに行う検査として適切なのはどれか．2つ選べ．</p>
 
                         <ol type="a">
@@ -2294,7 +2436,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group HrCa HHM 111 info" id="q20">
+            <div class="card-group HrCa MAH HHM CRC 111 info" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111A55" target="_blank">111A55</a> 治療
@@ -2302,7 +2444,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_15:43:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_15:43:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:57:27"> </span>
                         <br>
                         <p>82歳の女性．<br>
                             傾眠状態のため家族に連れられて来院した．<br>
@@ -2336,7 +2479,7 @@
 
                         <p class="q_dx">悪性腫瘍 
                             &rarr; &uarr;PTHrP 
-                            &rArr; &uarrr;Ca</p>
+                            &rArr; &uarr;Ca</p>
 
                         <p class="q_answer_true">c d</p>
 
@@ -2416,7 +2559,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:38:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:38:48"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_16:00:51"> </span>
                         <br>
                         <p>56歳の女性．<br>
                             易疲労感と下肢の筋力低下とを訴えて来院した．<br>
@@ -2437,7 +2581,7 @@
                             <li class="ans_f">リン酸1水素カリウム</li>
                             <li class="ans_f">重炭酸ナトリウム</li>
                             <li class="ans_t">グルコン酸カルシウム</li>
-                            <li class="ans_t">1,25(OH)2D3</li>
+                            <li class="ans_t star">1,25(OH)2D3</li>
                             <li class="ans_f">ビタミンK</li>
                         </ol>
                     </div>
@@ -2445,7 +2589,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <img src="https://qb.medilink-study.com/images/90D048_ima_d_010.jpg" class="card-img-top img-fluid">
 
@@ -2531,7 +2675,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group HoCa info" id="q23">
+            <div class="card-group HoCa info fig" id="q23">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/108I55" target="_blank">108I55</a>
@@ -2539,7 +2683,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:39:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:39:58"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-16_16:01:35"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             手指の<u>しびれ感</u>と<u>つっぱり感</u>とを主訴に来院した．症状は数年前からあったというが，本日，いつも以上に強くなったため受診した．<br>
@@ -2549,8 +2694,8 @@
 
                     <!-- <img src="https://www.qb-online.com/img/108I055A.jpg" width="45%"> -->
                     <!-- <img src="https://www.qb-online.com/img/108I055B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/108I055A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/108I055B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/108I055A.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/108I055B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -2651,11 +2796,12 @@
             <div class="card-group PHP AHO" id="q25">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/88E40" target="_blank" id="">88E40</a> 診断 &xrArr; 所見
+                        <a href="https://qb.medilink-study.com/#/Answer/88E40" target="_blank" id="">88E40</a> Ex
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_15:51:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_15:51:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-16_15:20:48"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             学校ではクラスで一<u>番身長が低かった</u>．<br>
@@ -2663,9 +2809,10 @@
                             3年前から手指のしびれとつっぱりとを訴えるようになった．<br>
                             昨日，突然家族の呼び掛けに応答しなくなり，その状態が10分持続する発作があり来院した．<br>
                             身長140cm，体重52kg．<br>
-                            恥毛は認められない．深部腱反射亢進．病的反射はない．<br>
+                            恥毛は認められない．<u>深部腱反射亢進</u>．病的反射はない．<br>
                             血清生化学所見：<br>
-                            総蛋白7.0g/dL，アルブミン4.2g/dL，Na 140mEq/L，K 4.0mEq/L，Ca 5.2mg/dL，P 6.4mg/dL．<br>
+                            総蛋白7.0g/dL，アルブミン4.2g/dL，<br>
+                            Na 140mEq/L，K 4.0mEq/L，<u>Ca 5.2mg/dL</u>，<u>P 6.4mg/dL</u>．<br>
                             手のX線単純写真を次に示す．<br>
                             この患者で高値を示すのはどれか．2つ選べ．</p>
                     </div>
@@ -2677,7 +2824,7 @@
                             <li class="ans_t">血清副甲状腺ホルモン（PTH）濃度</li>
                             <li class="ans_f">血清カルシトニン濃度</li>
                             <li class="ans_f">血清1,25-dihydroxy-vitamin D濃度</li>
-                            <li class="ans_f">PTH負荷後尿中cAMP排泄量</li>
+                            <li class="ans_f star">PTH負荷後尿中cAMP排泄量</li>
                             <li class="ans_t">尿細管リン再吸収率</li>
                         </ol>
                     </div>
@@ -2719,7 +2866,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:41:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:41:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_16:02:40"> </span>
                         <br>
                         <p>29歳の男性．<br>
                             <u>手足のしびれ感</u>と<u>労作時の疲労感</u>とを主訴に来院した．<br>
@@ -2733,7 +2881,7 @@
 
                         <ol type="a">
                             <li class="ans_f">Donath-Landsteiner試験</li>
-                            <li class="ans_t">Ellsworth-Howard試験</li>
+                            <li class="ans_t star">Ellsworth-Howard試験</li>
                             <li class="ans_f">L-Dopa負荷試験</li>
                             <li class="ans_f">フロセミド負荷試験</li>
                             <li class="ans_f">セクレチン試験</li>
@@ -2795,7 +2943,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-06_16:45:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-06_16:45:44"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_16:03:37"> </span>
                         <br>
                         <p>マグネシウム欠乏で頻度が高いのはどれか．</p>
 
@@ -2803,7 +2952,7 @@
                             <li class="ans_f">高ナトリウム血症</li>
                             <li class="ans_f">高カリウム血症</li>
                             <li class="ans_f">高クロール血症</li>
-                            <li class="ans_t">低カルシウム血症</li>
+                            <li class="ans_t star">低カルシウム血症</li>
                             <li class="ans_f">低リン血症</li>
                         </ol>
                     </div>
@@ -2849,23 +2998,27 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group HoMg HoCa " id="q28">
+            <div class="card-group HoMg HoCa ATN" id="q28">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100F39" target="_blank" id="2018-01-26_12:14:01">100F39</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-06_16:04:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-06_16:04:18"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-16_15:25:38"> </span>
                         <br>
                         <p>46歳の男性．<br>
                             1週前から続く<u>下肢の脱力感</u>と<u>全身倦怠感</u>とを主訴に来院した．<br>
-                            生来健康で，一人暮らしをしている．最近は飲酒量が増加し，<u>日本酒を毎日5合</u>飲んでいる．<br>
+                            生来健康で，一人暮らしをしている．<br>
+                            最近は飲酒量が増加し，<u>日本酒を毎日5合</u>飲んでいる．<br>
                             身長170cm，体重63kg．脈拍72/分，整．血圧138/84mmHg．<br>
                             胸部と腹部とに異常はない．下腿に浮腫を認めない．<br>
-                            尿所見：蛋白（－），糖（－），潜血（－），沈渣に異常はない．尿中Na排泄量150mEq/日，K排泄量52mEq/日（基準25～60）．<br>
-                            血清生化学所見：総蛋白6.0g/dL，アルブミン3.5g/dL，尿素窒素13mg/dL，クレアチニン0.8mg/dL，<u>CK 180単位</u>（基準10～40），<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－），潜血（－），沈渣に異常はない．尿中Na排泄量150mEq/日，K排泄量52mEq/日（基準25～60）．<br>
+                            血清生化学所見：<br>
+                            総蛋白6.0g/dL，アルブミン3.5g/dL，尿素窒素13mg/dL，クレアチニン0.8mg/dL，<u>CK 180単位</u>（基準10～40），<br>
                             Na 135mEq/L，<u>K 2.8mEq/L</u>，Cl 90mEq/L，<u>Ca 7.0mg/dL</u>，<u>Mg 1.5mg/dL</u>（基準1.8～2.5），<br>
                             アルドステロン8ng/dL（基準5～10），血漿レニン活性1.5ng/mL/時間（基準1.2～2.5）．<br>
                             補充療法として最も適切なのはどれか．</p>
@@ -2875,7 +3028,7 @@
                             <li class="ans_f">ナトリウム</li>
                             <li class="ans_f">カリウム</li>
                             <li class="ans_f">カルシウム</li>
-                            <li class="ans_t">マグネシウム</li>
+                            <li class="ans_t star">マグネシウム</li>
                             <li class="ans_f">重炭酸イオン</li>
                         </ol>
                     </div>
@@ -3013,449 +3166,181 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
 
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
-
-
-    $('#PHYSIO h2').click(function(){
+    $('#INTRO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PHYSIO)').toggle();
+        $('#q div.card-group:not(.INTRO)').slideToggle(100);
     });
-    $('#PHYSIO').find('code').html($('div.PHYSIO').size());
+    $('#INTRO').find('small > code').html(
+        $('div.INTRO > .card > .mis').size() + '+' +
+        $('div.INTRO > .card > .cau').size() + '/' +
+        $('div.INTRO').size()
+    );
 
 
-    $('#PHrPT h2').click(function(){
+
+    $('#PHYSIO').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PHrPT)').toggle();
+        $('#q div.card-group:not(.PHYSIO)').slideToggle(100);
     });
-    $('#PHrPT').find('code').html($('div.PHrPT').size());
+    $('#PHYSIO').find('small > code').html(
+        $('div.PHYSIO > .card > .mis').size() + '+' +
+        $('div.PHYSIO > .card > .cau').size() + '/' +
+        $('div.PHYSIO').size()
+    );
 
 
     $('#HrCa h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HrCa)').toggle();
+        $('#q div.card-group:not(.HrCa)').slideToggle(100);
     });
-    $('#HrCa').find('code').html($('div.HrCa').size());
-
-
-    $('#PHP h2').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.PHP)').toggle();
-    });
-    $('#PHP').find('code').html($('div.PHP').size());
-
-
-    $('#HHM').click(function(){
-        $('.card-group').show();
-        $('div.card-group:not(.HHM)').toggle();
-    });
-    $('#HHM').find('code').html($('div.HHM').size());
+    $('#HrCa').find('small > code').html(
+        $('div.HrCa > .card > .mis').size() + '+' +
+        $('div.HrCa > .card > .cau').size() + '/' +
+        $('div.HrCa').size()
+    );
 
 
     $('#HoMg h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HoMg)').toggle();
+        $('#q div.card-group:not(.HoMg)').slideToggle(100);
     });
-    $('#HoMg').find('code').html($('div.HoMg').size());
+    $('#HoMg').find('small > code').html(
+        $('div.HoMg > .card > .mis').size() + '+' +
+        $('div.HoMg > .card > .cau').size() + '/' +
+        $('div.HoMg').size()
+    );
 
 
+
+
+
+
+
+    $('#HrPT h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.HrPT)').slideToggle(100);
+    });
+    $('#HrPT').find('small > code').html(
+        $('div.HrPT > .card > .mis').size() + '+' +
+        $('div.HrPT > .card > .cau').size() + '/' +
+        $('div.HrPT').size()
+    );
+
+
+
+    $('#PHrPT h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.PHrPT)').slideToggle(100);
+    });
+    $('#PHrPT').find('small > code').html(
+        $('div.PHrPT > .card > .mis').size() + '+' +
+        $('div.PHrPT > .card > .cau').size() + '/' +
+        $('div.PHrPT').size()
+    );
+
+
+    $('#SHrPT h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.SHrPT)').slideToggle(100);
+    });
+    $('#SHrPT').find('small > code').html(
+        $('div.SHrPT > .card > .mis').size() + '+' +
+        $('div.SHrPT > .card > .cau').size() + '/' +
+        $('div.SHrPT').size()
+    );
+
+
+    $('#rHPT').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.rHPT)').slideToggle(100);
+    });
+    $('#rHPT').find('small > code').html(
+        $('div.rHPT > .card > .mis').size() + '+' +
+        $('div.rHPT > .card > .cau').size() + '/' +
+        $('div.rHPT').size()
+    );
+
+
+    $('#MAH').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.MAH)').slideToggle(100);
+    });
+    $('#MAH').find('small > code').html(
+        $('div.MAH > .card > .mis').size() + '+' +
+        $('div.MAH > .card > .cau').size() + '/' +
+        $('div.MAH').size()
+    );
+
+
+    $('#HHM').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.HHM)').slideToggle(100);
+    });
+    $('#HHM').find('small > code').html(
+        $('div.HHM > .card > .mis').size() + '+' +
+        $('div.HHM > .card > .cau').size() + '/' +
+        $('div.HHM').size());
+
+
+
+
+    $('#HoPT h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.HoPT)').slideToggle(100);
+    });
+    $('#HoPT').find('small > code').html(
+        $('div.HoPT > .card > .mis').size() + '+' +
+        $('div.HoPT > .card > .cau').size() + '/' +
+        $('div.HoPT').size()
+    );
+
+
+
+
+
+    $('#PHP h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.PHP)').slideToggle(100);
+    });
+    $('#PHP').find('small > code').html(
+        $('div.PHP > .card > .mis').size() + '+' +
+        $('div.PHP > .card > .cau').size() + '/' +
+        $('div.PHP').size()
+    );
+
+
+    $('#PPHP').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.PPHP)').slideToggle(100);
+    });
+    $('#PPHP').find('small > code').html(
+        $('div.PPHP > .card > .mis').size() + '+' +
+        $('div.PPHP > .card > .cau').size() + '/' +
+        $('div.PPHP').size()
+    );
+
+
+
+
+    
     $('#AHO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AHO)').toggle();
+        $('#q div.card-group:not(.AHO)').slideToggle(100);
     });
-    $('#AHO').find('code').html($('div.AHO').size());
+    $('#AHO').find('small > code').html(
+        $('div.AHO > .card > .mis').size() + '+' +
+        $('div.AHO > .card > .cau').size() + '/' +
+        $('div.AHO').size());
 
 
 
@@ -3464,9 +3349,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

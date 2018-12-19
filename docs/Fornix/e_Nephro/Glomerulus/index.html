@@ -4,12 +4,31 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-09 17:41:25
+@Last modified time: 2018-12-19 15:30:43
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+
 04.01.23    18 10 03    js .slideToggle()
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
@@ -97,8 +116,8 @@
     <title>Glomerulus</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-09 17:41:52" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.23">
+    <meta name="revised" content="2018-12-19 15:31:04" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -117,118 +136,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -273,51 +189,89 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>&darr;Comp</h6>
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th colspan="2"><u>ループに 糸を 巻くぞう</u></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ループに</td>
-                        <td>Lupus</td>
-                    </tr>
-                    <tr>
-                        <td>糸を</td>
-                        <td>AGN</td>
-                    </tr>
-                    <tr>
-                        <td>巻くぞう</td>
-                        <td>MPGN</td>
-                    </tr>
-                </tbody>
-            </table>
 
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th colspan="2"><u>co MPL ement</u></th>
-                    </tr>
-                    <tr>
-                        <td>MP</td>
-                        <td>MPGN</td>
-                    </tr>
-                    <tr>
-                        <td>P</td>
-                        <td>PSAGN</td>
-                    </tr>
-                    <tr>
-                        <td>L</td>
-                        <td>Lupus</td>
-                    </tr>
-                </thead>
-            </table>
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro </h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <h6>&darr;Comp</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>co MPL ement</u></th>
+                        </tr>
+                        <tr>
+                            <td>MP</td>
+                            <td>MPGN</td>
+                        </tr>
+                        <tr>
+                            <td>P</td>
+                            <td>PSAGN</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>Lupus</td>
+                        </tr>
+                    </thead>
+                </table>
+
+                <!-- 
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="2"><u>ループに 糸を 巻くぞう</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ループに</td>
+                            <td>Lupus</td>
+                        </tr>
+                        <tr>
+                            <td>糸を</td>
+                            <td>AGN</td>
+                        </tr>
+                        <tr>
+                            <td>巻くぞう</td>
+                            <td>MPGN</td>
+                        </tr>
+                    </tbody>
+                </table> 
+                -->
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li><code>C/I</code> NSAIDs</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            
         </div>
+    </div>
+
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Acute </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="PSAGN">
                 <div class="page-header">
@@ -355,11 +309,79 @@
 
             </div>
         </div>
+    </div>
 
+
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Rapidly Progressive</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CGN">
+                <div class="page-header">
+                    <h2>CGN <small class="hidden-xs-down">Crescentic Glomerulonephropathy</small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MPA">
+                <div class="page-header">
+                    <h2>MPA <small class="hidden-xs-down">Microscopic </small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="GPA">
+                <div class="page-header">
+                    <h2>GPA <small class="hidden-xs-down">#diag</small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Goodpasture">
+                <div class="page-header">
+                    <h2>Goodpasture <small class="hidden-xs-down"></small> <small><code></code></small></h2>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Chronic </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="IgAN">
                 <div class="page-header">
-                    <h2>IgAN <small class="hidden-xs-down">IgA Nephropathy</small> <small><code></code></small></h2>
+                    <h2>IgAN <small>IgA腎症</small><!-- <small class="hidden-xs-down">IgA Nephropathy</small> --> <small><code></code></small></h2>
                 </div>
 
 
@@ -379,38 +401,56 @@
                             <li>UP(+) UB(+)</li>
                         </ul>
                     </li>
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
+                        <ul>
+                            <li>Mes(++)</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
+                        進行性の経過
+                        <ul>
+                            <li><u>HTN</u></li>
+                            <li><u>UP</u> > .5-1.0 g/day</li>
+                            <li>eGFR < 60 mL/min</li>
+                            <li>糸球体の割合 > 25%</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
 
 
-                <h6>IgAN Prognostic fator</h6>
-                <ul class="list-group">
-                    <li class="list-group-item"><u>HTN</u></li>
-                    <li class="list-group-item"><u>UP</u> > .5-1.0 g/day</li>
-                    <li class="list-group-item">eGFR < 60 mL/min</li>
-                    <li class="list-group-item">糸球体の割合</li>
-                </ul>
+                <div class="card" style="width: 66%">
+                    <img src="https://qb.medilink-study.com/images/109A039A.jpg" class="card-img-top img-fluid">
+                </div>
 
             </div>
         </div>
+    </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="NS">
+
+
+    <div class="section" id="NS">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>NS <small class="hidden-xs-down">Nephrotic Syndrome</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>Nephrosis Criteria</h6>
                 <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>成人</th>
+                            <th>小児</th>
+                        </tr>
+                    </thead>
                     <tbody>
                         <tr>
                             <th>必須</th>
@@ -422,18 +462,73 @@
                                         Alb ≤ 3.0g/dL</li>
                                 </ul>
                             </td>
+                            <td rowspan="2">
+                                <ul>
+                                    <li>Alb ≤ 2.5</li>
+                                    <li>ステロイド感受性</li>
+                                    <li>再発</li>
+                                </ul>
+                            </td>
                         </tr>
                         <tr>
                             <th></th>
-                            <td><ul>
-                                <li></li>
-                            </ul></td>
+                            <td>
+                                <ul>
+                                    <li>浮腫</li>
+                                    <li>脂質異常症<br>
+                                        &uarr;LDL-Chol</li>
+                                </ul>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Virus</th>
+                            <th>GN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HBV</td>
+                            <td>MN</td>
+                        </tr>
+                        <tr>
+                            <td>HCV</td>
+                            <td>MPGN</td>
+                        </tr>
+                        <tr>
+                            <td>HIV</td>
+                            <td>FSGS</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        \(
+                            \begin{align*}
+                                \text{Selectivity Index} 
+                                &= \frac{C_{IgG}}{C_{trans}} \\
+                                &= \frac{\text{IgG clearance}}{\text{transferrin clearance}}
+                            \end{align*}
+                        \)
+                    </li>
+                </ul>
+
+                
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="MCN">
                 <div class="page-header">
@@ -488,28 +583,7 @@
                 </ul>
 
 
-                 <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th>Virus</th>
-                            <th>GN</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>HBV</td>
-                            <td>MN</td>
-                        </tr>
-                        <tr>
-                            <td>HCV</td>
-                            <td>MPGN</td>
-                        </tr>
-                        <tr>
-                            <td>HIV</td>
-                            <td>FSGS</td>
-                        </tr>
-                    </tbody>
-                </table>
+                 
 
             </div>
         </div>
@@ -529,52 +603,7 @@
         </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="CGN">
-                <div class="page-header">
-                    <h2>CGN <small class="hidden-xs-down">Crescentic Glomerulonephropathy</small> <small><code></code></small></h2>
-                </div>
-
-
-            </div>
-        </div>
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="MPA">
-                <div class="page-header">
-                    <h2>MPA <small class="hidden-xs-down">Microscopic </small> <small><code></code></small></h2>
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="GPA">
-                <div class="page-header">
-                    <h2>GPA <small class="hidden-xs-down">#diag</small> <small><code></code></small></h2>
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="Goodpasture">
-                <div class="page-header">
-                    <h2>Goodpasture <small class="hidden-xs-down"></small> <small><code></code></small></h2>
-                </div>
-
-
-            </div>
-        </div>
-
-
-
-
-
-
+        
 
 
         <div class="col-xs-12 col-sm-6 col-md-6">
@@ -942,12 +971,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:27:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:27:07"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:37:33"> </span>
                         <br>
                         <p><u>16歳の女子</u>．<br>
                             <u>浮腫</u>を主訴に来院した．<br>
                             <u>2週前に発熱と咽頭痛</u>とが出現したが3日で症状は消失した．<br>
-                            昨日から<u>尿量の減少</u>を自覚し，本日，排尿がほとんどなく，下腿浮腫が出現したため来院した．3ヵ前の学校検尿では異常を指摘されなかった．<br>
+                            昨日から<u>尿量の減少</u>を自覚し，本日，排尿がほとんどなく，下腿浮腫が出現したため来院した．<br>
+                            3ヵ前の学校検尿では異常を指摘されなかった．<br>
                             身長156cm，体重48kg．体温36.2℃．呼吸数12/分．脈拍80/分，整．血圧138/88mmHg．<br>
                             <u>口蓋扁桃の軽度腫大</u>を認める．前脛骨部に<u>圧痕浮腫</u>を認める．<br>
                             尿所見：<br>
@@ -955,7 +986,8 @@
                             血液所見：<br>
                             赤血球400万，Hb 12.8g/dL，Ht 38％，白血球6,400，血小板22万．<br>
                             血液生化学所見：<br>
-                            総蛋白7.0g/dL，アルブミン3.8g/dL，IgG 1,440mg/dL（基準739～1,649），IgA 215mg/dL（基準107～363），尿素窒素22mg/dL，クレアチニン1.2mg/dL，Na 140mEq/L，K 5.6mEq/L，Cl 104mEq/L．<br>
+                            総蛋白7.0g/dL，アルブミン3.8g/dL，IgG 1,440mg/dL（基準739～1,649），IgA 215mg/dL（基準107～363），尿素窒素22mg/dL，クレアチニン1.2mg/dL，<br>
+                            Na 140mEq/L，K 5.6mEq/L，Cl 104mEq/L．<br>
                             免疫学所見：<br>
                             CRP 0.3mg/dL，<u>ASO 1,280単位</u>（基準250以下），抗核抗体陰性，<u>CH50 18U/mL</u>（基準30～50）．<br>
                             超音波検査で腎の大きさと形状とに異常を認めない．<br>
@@ -1004,7 +1036,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:33:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:33:39"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:39:04"> </span>
                         <br>
                         <p><u>9歳の男児</u>．<br>
                             今朝からの<u>眼瞼浮腫</u>と<u>血尿</u>とを主訴に来院した．<br>
@@ -1044,17 +1077,22 @@
 
                         <h6>低補体血症</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">Lupus</li>
-                            <li class="list-group-item">MPGN</li>
-                            <li class="list-group-item">AGN</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>Lupus</li>
+                                    <li>MPGN</li>
+                                    <li>AGN</li>
+                                </ul>
+                            </li>
                         </ul>
+
 
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group IgAN pri" id="q05">
+            <div class="card-group IgAN fig pri" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109A39">109A39</a> 診断
@@ -1062,15 +1100,17 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_17:47:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_17:47:09"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_15:39:25"> </span>
                         <br>
-                        <p class="card-text">
-                            
-                            <u>48歳の男性</u>．<br>
+                        <p><u>48歳の男性</u>．<br>
                             健康診断の尿検査で異常を指摘されて来院した．<br>
-                            3年前から<u>尿潜血</u>を指摘されていた．2年前から<u>尿蛋白</u>も陽性になったがそのままにしていた．今回は3年連続して尿検査で異常を指摘されたため心配になり受診した．<br>
+                            3年前から<u>尿潜血</u>を指摘されていた．<br>
+                            2年前から<u>尿蛋白</u>も陽性になったがそのままにしていた．<br>
+                            今回は3年連続して尿検査で異常を指摘されたため心配になり受診した．<br>
                             脈拍76/分，整．<u>血圧150/90mmHg</u>．<br>
-                            尿所見：<u>蛋白2＋</u>，蛋白定量1.2g/日，糖（－），<u>潜血3＋</u>，沈渣に赤血球10～29/1視野，顆粒円柱1/数視野，赤血球円柱1/全視野．<br>
+                            尿所見：<br>
+                            <u>蛋白2＋</u>，蛋白定量1.2g/日，糖（－），<u>潜血3＋</u>，沈渣に赤血球10～29/1視野，顆粒円柱1/数視野，赤血球円柱1/全視野．<br>
                             血液生化学所見：<br>
                             総蛋白7.7g/dL，アルブミン4.2g/dL，IgG 1,510mg/dL（基準960～1,960），IgA 390mg/dL（基準110～410），尿素窒素19mg/dL，クレアチニン1.0mg/dL，尿酸6.0mg/dL，血糖87mg/dL，HbA1c 5.6％（基準4.6～6.2），総コレステロール235mg/dL，CH50 35U/mL（基準30～40）．<br>
                             腎生検のPAS染色標本（A）と蛍光抗体IgA染色標本（B）とを次に示す．<br>
@@ -1086,7 +1126,7 @@
                         <ol type="a">
                             <li class="ans_f">Ⅳ型コラーゲンの遺伝子変異による．</li>
                             <li class="ans_t">わが国の慢性腎炎症候群の中で最も多い．</li>
-                            <li class="ans_f">肉眼的血尿で発症したものは予後が悪い．</li>
+                            <li class="ans_f star">肉眼的血尿で発症したものは予後が悪い．</li>
                             <li class="ans_f">ネフローゼ症候群をきたすことが多い．</li>
                             <li class="ans_f">わが国の透析導入の原因として最も多い．</li>
                         </ol>
@@ -1122,21 +1162,25 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group IgAN" id="q06">
+            <div class="card-group IgAN star" id="q06">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/102D51">102D51</a> 治療
+                        <a href="https://qb.medilink-study.com/#/Answer/102D51" target="_blank">102D51</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_18:25:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_18:25:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_15:43:17"> </span>
                         <br>
-                        <p class="card-text">
-                            
-                            48歳の男性．1週前からの<u>感冒症状後</u>，<u>尿が赤ぶどう酒色</u>となったことを主訴に来院した．健康診断で5年前から<u>尿潜血陽性</u>を指摘されている．脈拍72/分，整．血圧110/62mmHg．<br>
-                            尿所見：蛋白1＋，糖（－），沈渣に赤血球 無数/1視野，白血球1～5/1視野．<br>
-                            血液生化学所見：アルブミン4.0g/dL，尿素窒素18.0mg/dL，クレアチニン0.7mg/dL，尿酸5.8mg/dL，総コレステロール200mg/dL，Na 134mEq/L，K 3.8mEq/L，Cl 102mEq/L，Ca 9.0mg/dL．<br>
+                        <p>48歳の男性．<br>
+                            1週前からの<u>感冒症状後</u>，<u>尿が赤ぶどう酒色</u>となったことを主訴に来院した．<br>
+                            健康診断で5年前から<u>尿潜血陽性</u>を指摘されている．<br>
+                            脈拍72/分，整．血圧110/62mmHg．<br>
+                            尿所見：<br>
+                            蛋白1＋，糖（－），沈渣に赤血球 無数/1視野，白血球1～5/1視野．<br>
+                            血液生化学所見：<br>
+                            アルブミン4.0g/dL，尿素窒素18.0mg/dL，クレアチニン0.7mg/dL，尿酸5.8mg/dL，総コレステロール200mg/dL，Na 134mEq/L，K 3.8mEq/L，Cl 102mEq/L，Ca 9.0mg/dL．<br>
                             2ヵ月後の腎生検で，軽度の<u>メサンギウム増殖性</u>糸球体腎炎であった．<u>蛋白尿は0.2g/日</u>，糸球体濾過値は<u>140mL/分</u>であった．<br>
                             対応として適切なのはどれか．</p>
 
@@ -1171,13 +1215,14 @@
             <!-- 07 -->
             <div class="card-group IgAN" id="q07">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105A46" target="_blank">105A46</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_18:30:15"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_18:30:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_15:49:32"> </span>
                         <br>
                         <p><u>48歳の女性</u>．<br>
                             尿検査の異常を主訴に来院した．<br>
@@ -1193,7 +1238,7 @@
                             総蛋白6.8g/dL，アルブミン3.8g/dL，IgG 1,560mg/dL（基準739～1,649），IgA 360mg/dL（基準107～363），尿素窒素24mg/dL，クレアチニン1.4mg/dL，尿酸8.5mg/dL，Na 136mEq/L，K 4.0mEq/L，Cl 104mEq/L．<br>
                             免疫学所見：<br>
                             CRP 0.3mg/dL，抗核抗体陰性．<br>
-                            腎生検のPAS染色標本（A），蛍光抗体IgA染色標本（B）及びC3染色標本（C）を次に示す．<br>
+                            腎生検のPAS染色標本（A），蛍光抗体<u>IgA</u>染色標本（B）及びC3染色標本（C）を次に示す．<br>
                             この患者に対する治療方針として適切でないのはどれか．</p>
                     </div>
 
@@ -1291,7 +1336,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group IgAN" id="q09">
+            <div class="card-group IgAN CKD" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/90B60" target="_blank">90B60</a> IgA腎症
@@ -1299,7 +1344,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_19:53:29"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_19:53:29"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:40:18"> </span>
                         <br>
                         <p>IgA腎症について正しいのはどれか．</p>
 
@@ -1307,7 +1353,7 @@
                             <li class="ans_t">わが国の慢性糸球体腎炎の中で最も多い．</li>
                             <li class="ans_f">ネフローゼ症候群を伴うことはない．</li>
                             <li class="ans_f">血清補体価の低下を伴うことが多い．</li>
-                            <li class="ans_f">IgAの沈着部位は糸球体係蹄壁が主である．</li>
+                            <li class="ans_f star">IgAの沈着部位は糸球体係蹄壁が主である．</li>
                             <li class="ans_f">慢性腎不全に進行することはない．</li>
                         </ol>
                     </div>
@@ -1332,7 +1378,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group IgAN cast" id="q10">
+            <div class="card-group IgAN cast info" id="q10">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/105G19" target="_blank" id="2018-01-26_16:51:08">105G19</a> 診断
@@ -1340,7 +1386,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:35:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:35:25"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_16:41:12"> </span>
                         <br>
                         <p>健康診断で尿異常を指摘されて来院した患者の尿沈渣の顕微鏡写真を次に示す．<br>
                             尿所見：<br>
@@ -1482,14 +1529,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_19:57:56"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_19:57:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_15:51:26"> </span>
                         <br>
                         <p>IgA腎症で腎機能低下の予測因子となるのはどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">高血圧</li>
                             <li class="ans_t">高度蛋白尿</li>
-                            <li class="ans_f">肉眼的血尿</li>
+                            <li class="ans_f star">肉眼的血尿</li>
                             <li class="ans_f">血清IgA高値</li>
                             <li class="ans_f">血清補体C3低値</li>
                         </ol>
@@ -1529,14 +1577,16 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:48:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:48:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:45:16"> </span>
                         <br>
 
                         <p><u>30歳</u>の女性．<br>
                             定期受診で来院した．<br>
                             18歳の時に学校検尿で<u>尿蛋白</u>と<u>尿潜血</u>とを指摘され，腎生検を行い<u>IgA腎症と診断</u>されたが特に治療しなかった．<br>
                             25歳の第1子の妊娠時に高血圧を指摘され，第1子を出産後からアンジオテンシンⅡ受容体拮抗薬で治療していた．<br>
-                            半年前，第2子を希望しIgA腎症の評価のため腎生検を実施した．その後アンジオテンシンⅡ受容体拮抗薬を中止し，ヒドララジンにより治療していた．<br>
+                            半年前，第2子を希望しIgA腎症の評価のため腎生検を実施した．<br>
+                            その後アンジオテンシンⅡ受容体拮抗薬を中止し，ヒドララジンにより治療していた．<br>
                             1週前に妊娠が判明したという．<br>
                             血圧134/74mmHg．下肢に浮腫を認めない．<br>
                             尿所見：<br>
@@ -1554,7 +1604,7 @@
                         <ol type="a">
                             <li class="ans_f">「降圧薬は中止します」</li>
                             <li class="ans_f">「人工妊娠中絶が必要です」 </li>
-                            <li>「慢性腎臓病の病期Ⅳです」</li>
+                            <li class="ans_tf star">「慢性腎臓病の病期Ⅳです」</li>
                             <li class="ans_t">「腎機能が悪化するリスクが高いです」</li>
                             <li class="ans_f">「副腎皮質ステロイドの大量療法が必要です」</li>
                         </ol>
@@ -1604,13 +1654,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:00:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:00:14"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_15:52:38"> </span>
                         <br>
                         <p>ネフローゼ症候群の診断基準で必須項目はどれか．2つ選べ．</p>
                         
 
                         <ol type="a">
-                            <li class="ans_f">浮腫</li>
+                            <li class="ans_f star">浮腫</li>
                             <li class="ans_f">脂肪円柱</li>
                             <li class="ans_t">尿蛋白3.5g/日以上の持続</li>
                             <li class="ans_t">血清総蛋白6.0g/dL以下</li>
@@ -1621,7 +1672,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">c d</p>
 
@@ -1649,9 +1700,11 @@
                                 </tr>
                                 <tr>
                                     <th></th>
-                                    <td><ul>
-                                        <li></li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li></li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -1669,14 +1722,15 @@
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:49:31"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:49:31"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:47:15"> </span>
                         <br>
 
                         <p>ネフローゼ症候群をきたしやすいのはどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">アミロイド腎症</li>
-                            <li class="ans_f">腎硬化症</li>
+                            <li class="ans_f star">腎硬化症</li>
                             <li class="ans_f">多発性囊胞腎</li>
                             <li class="ans_t">膜性腎症</li>
                             <li class="ans_f">慢性腎盂腎炎</li>
@@ -1742,7 +1796,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:55:01"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:55:01"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:48:38"> </span>
                         <br>
                         <p>32歳の女性．<br>
                             浮腫を主訴に来院した．<br>
@@ -1754,7 +1809,8 @@
                             この患者にみられるのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/100A038A.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/100A038A.jpg" class="card-img-top img-fluid" width="%">
+
                     <img src="https://qb.medilink-study.com/images/100A038B.jpg" class="card-img-top img-fluid">
 
                     <div class="card-body">
@@ -1770,7 +1826,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <img src="https://qb.medilink-study.com/images/100A038_ima_e_010.jpg" class="card-img-top img-fluid">
 
@@ -1786,15 +1842,25 @@
                             <li></li>
                         </ol>
 
-                        <div lang="latex">\text{Selectivity Index} 
-                            = \frac{C_{IgG}}{C_{trans}} \\
-                            = \frac{\text{IgG clearance}}{\text{transferrin clearance}}
-                            
-                        </div>
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                \(
+                                    \begin{align*}
+                                        \text{Selectivity Index} 
+                                        &= \frac{C_{IgG}}{C_{trans}} \\
+                                        &= \frac{\text{IgG clearance}}{\text{transferrin clearance}}
+                                    \end{align*}
+                                \)
+                            </li>
+                        </ul>
 
                         <div class="cardd">
                             <img src="https://qb.medilink-study.com/images/100A038_ref_e_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1860,7 +1926,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group MCN pri" id="q17">
+            <div class="card-group GN MCN AKI preRF ARF pri" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/105I57" target="_blank" id="2018-01-21_21:07:52">105I57</a> 検査
@@ -1868,12 +1934,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev "> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_20:58:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_20:58:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:51:50"> </span>
                         <br>
                         <p>20歳の女性．<br>
                             全身浮腫を主訴に来院した．<br>
-                            3日前から顔面と下腿とに<u>浮腫</u>が出現し，急速に増悪してきた．現在までに<u>体重が6kg増加</u>した．<br>
-                            身長156cm，体重60kg．体温35.6℃．脈拍72/分，整．血圧110/76mmHg．全身浮腫が高度である．<br>
+                            3日前から顔面と下腿とに<u>浮腫</u>が出現し，急速に増悪してきた．<br>
+                            現在までに<u>体重が6kg増加</u>した．<br>
+                            身長156cm，体重60kg．体温35.6℃．脈拍72/分，整．血圧110/76mmHg．<br>
+                            全身浮腫が高度である．<br>
                             尿所見：<br>
                             <u>蛋白4＋</u>，糖（－），潜血（－）．<br>
                             血液生化学所見：<br>
@@ -1923,7 +1992,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:00:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:00:39"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_16:53:57"> </span>
                         <br>
                         <p>微小変化型ネフローゼ症候群について正しいのはどれか．</p>
 
@@ -1940,7 +2010,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -2066,7 +2136,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_21:04:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_21:04:37"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_15:55:17"> </span>
                         <br>
                         <p>25歳の男性．<br>
                             下腿の浮腫を主訴に来院した．<br>
@@ -2098,7 +2169,7 @@
 
                         <img src="https://qb.medilink-study.com/images/110A052_ima_010.jpg" class="card-img-top img-fluid">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_dx">FSGS &rArr; NS</p>
 
@@ -2178,12 +2249,13 @@
             <div class="card-group FSGS" id="q20">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/100F40" target="_blank" id="">100F40</a> Dx &xrArr; Qs
+                        <a href="https://qb.medilink-study.com/#/Answer/100F40" target="_blank" id="">100F40</a> Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:07:15"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:07:15"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_16:59:01"> </span>
                         <br>
                         <p>13歳の男子．<br>
                             学校検尿で異常を指摘され来院した．<br>
@@ -2196,7 +2268,8 @@
                             赤血球420万，白血球7,800．<br>
                             血清生化学所見：<br>
                             総蛋白6.8g/dL，アルブミン3.6g/dL，尿素窒素17mg/dL，クレアチニン0.7mg/dL，総コレステロール190mg/dL．<br>
-                            腎生検の光顕PAS染色標本（A）と蛍光IgM免疫組織染色標本（B）とを次に示す．腎生検で採取された糸球体のいくつかに同様の所見を認める．<br>
+                            腎生検の光顕PAS染色標本（A）と蛍光IgM免疫組織染色標本（B）とを次に示す．<br>
+                            腎生検で採取された糸球体のいくつかに同様の所見を認める．<br>
                             この疾患について正しいのはどれか．</p>
                     </div>
 
@@ -2206,7 +2279,7 @@
                     <div class="card-body">
                         <ol type="a">
                             <li class="ans_f">小児の慢性糸球体腎炎で最も多い．</li>
-                            <li class="ans_f">血清C3が低下する．</li>
+                            <li class="ans_f star">血清C3が低下する．</li>
                             <li class="ans_t">IgGクリアランスが増加する．</li>
                             <li class="ans_f">副腎皮質ステロイド薬が著効する．</li>
                             <li class="ans_f">予後は良好である．</li>
@@ -2219,7 +2292,7 @@
                         <img src="https://qb.medilink-study.com/images/100F040_ima_e_010.jpg" class="card-img-top img-fluid">
                         <img src="https://qb.medilink-study.com/images/100F040_ima_e_020.jpg" class="card-img-top img-fluid">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_dx">FSGS</p>
 
@@ -2255,7 +2328,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:09:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:09:40"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_17:00:31"> </span>
                         <br>
                         <p>巣状糸球体硬化症（FGS）について正しいのはどれか．</p>
 
@@ -2263,7 +2337,7 @@
                         <ol type="a">
                             <li class="ans_f">血尿はまれである．</li>
                             <li class="ans_t">ネフローゼ症候群を呈する．</li>
-                            <li class="ans_f">血清IgMが高値である．</li>
+                            <li class="ans_f star">血清IgMが高値である．</li>
                             <li class="ans_f">血清補体価は低値を示す．</li>
                             <li class="ans_f">副腎皮質ステロイド薬が著効を示す．</li>
                         </ol>
@@ -2272,7 +2346,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -2298,7 +2372,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:11:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:11:25"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_17:01:23"> </span>
                         <br>
 
                         <p>68歳の男性．<br>
@@ -2322,11 +2397,11 @@
                             <li class="ans_t">金製剤</li>
                             <li class="ans_t">大腸癌</li>
                             <li class="ans_t">B型肝炎</li>
-                            <li class="ans_f">高血圧症</li>
+                            <li class="ans_f star">高血圧症</li>
                             <li class="ans_t">関節リウマチ</li>
                             <li class="ans_t">悪性リンパ腫</li>
                             <li class="ans_t">D-ペニシラミン</li>
-                            <li class="ans_t">全身性エリテマトーデス〈SLE〉</li>
+                            <li class="ans_t star">全身性エリテマトーデス〈SLE〉</li>
                         </ol>
                     </div>
                 </div>
@@ -2529,7 +2604,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group MN pri" id="q24">
+            <div class="card-group MN pri fig" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106D21" target="_blank">106D21</a> IC
@@ -2538,7 +2613,8 @@
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:14:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:14:06"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_17:02:32"> </span>
                         <br>
 
                         <p><u>66歳の男性</u>．<br>
@@ -2557,7 +2633,7 @@
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/106/img/106D021A.jpg" width="45%"> -->
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/106/img/106D021B.jpg" width="45%"> -->
-                    <img src="https://qb.medilink-study.com/images/106D021A.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/106D021A.jpg" class="card-img-top img-fluid" width="%">
                     <img src="https://qb.medilink-study.com/images/106D021B.jpg" class="card-img-top img-fluid">
 
                     <div class="card-body">
@@ -2654,22 +2730,26 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:04:35"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:04:35"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_16:02:55"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis" id="2018-10-09_20:04:42"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-19_16:03:04"> </span>
                          / 
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-10-09_20:04:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-12-19_16:03:11"> </span>
                         <br>
 
                         <p>次の文を読み，67～69の問いに答えよ．<br><br>
 
                             <u>58歳の男性</u>．<br>
                             <u>体重増加</u>と<u>下肢の浮腫</u>とを主訴に来院した．<br>
-                            現病歴：<u>3年前から降圧薬</u>の投与を受けていた．<br>
+                            現病歴：<br>
+                            <u>3年前から降圧薬</u>の投与を受けていた．<br>
                             3ヵ月前から尿の泡立ちに気付き，<br>
                             1ヵ月前から下肢の浮腫と3kgの<u>体重増加</u>とを認めている．<br>
                             既往歴：<br>
@@ -2687,7 +2767,8 @@
                             血液所見：<br>
                             赤血球420万，Hb 12.4g/dL，Ht 38％．<br>
                             血液生化学所見：<br>
-                            血糖98mg/dL，HbA1c（NGSP）5.6％，総蛋白5.0g/dL，アルブミン2.4g/dL，尿素窒素18mg/dL，クレアチニン1.0mg/dL，尿酸6.2mg/dL，総コレステロール325mg/dL，Na 142mEq/L，K 3.6mEq/L，Cl 108mEq/L，Ca 8.4mg/dL，P 2.7mg/dL．<br>
+                            血糖98mg/dL，HbA1c（NGSP）5.6％，総蛋白5.0g/dL，アルブミン2.4g/dL，尿素窒素18mg/dL，クレアチニン1.0mg/dL，尿酸6.2mg/dL，総コレステロール325mg/dL，<br>
+                            Na 142mEq/L，K 3.6mEq/L，Cl 108mEq/L，Ca 8.4mg/dL，P 2.7mg/dL．<br>
                             腎生検のH-E染色標本（B），蛍光抗体基底膜（緑）とIgG（赤）染色標本（C）及び電子顕微鏡写真（D）を次に示す．</p>
                     </div>
 
@@ -2701,16 +2782,18 @@
                     <img src="https://qb.medilink-study.com/images/104E067-069D.jpg" class="card-img-top img-fluid">
 
                     <div class="card-body">
-                        <p>[E067] 尿沈渣にみられるのはどれか．2つ選べ．</p>
+                        <p>[E067] <br>
+                            尿沈渣にみられるのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_t">脂肪円柱</li>
-                            <li class="ans_f">硝子円柱</li>
+                            <li class="ans_f table">硝子円柱</li>
                             <li class="ans_f">赤血球円柱</li>
                             <li class="ans_t">卵円形脂肪体</li>
                             <li class="ans_f">尿細管上皮細胞</li>
                         </ol>
                         
-                        <p>[E068] 診断はどれか．</p>
+                        <p>[E068] <br>
+                            診断はどれか．</p>
                         <ol type="a">
                             <li class="ans_t">膜性腎症</li>
                             <li class="ans_f">微小変化群</li>
@@ -2719,9 +2802,10 @@
                             <li class="ans_f">巣状分節性糸球体硬化症</li>
                         </ol>
                         
-                        <p>[E069] 治療として適切でないのはどれか．</p>
+                        <p>[E069] <br>
+                            治療として適切でないのはどれか．</p>
                         <ol type="a">
-                            <li class="ans_t">免疫抑制薬投与</li>
+                            <li class="ans_t star">免疫抑制薬投与</li>
                             <li class="ans_t">アルブミン製剤投与</li>
                             <li class="ans_t">塩分制限（6g未満/日）</li>
                             <li class="ans_f">摂取エネルギー量制限（25kcal/kg/日）</li>
@@ -2776,12 +2860,13 @@
             <div class="card-group HBV NS MN" id="q27">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://qb.medilink-study.com/#/Answer/91B55" target="_blank" id="2018-01-21_21:12:28">91B55</a> HB ネフローゼ
+                        <a href="https://qb.medilink-study.com/#/Answer/91B55" target="_blank" id="2018-01-21_21:12:28">91B55</a> HBV ネフローゼ
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis "> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_21:19:28"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_21:19:28"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_16:06:04"> </span>
                         <br>
                         <p>B型肝炎に伴う続発性ネフローゼ症候群について正しいのはどれか．2つ選べ．</p>
                         
@@ -2791,7 +2876,7 @@
                             <li class="ans_t">膜性腎症の組織像がみられる．</li>
                             <li class="ans_t">蛍光抗体法で糸球体にHBe抗原が陽性となる．</li>
                             <li class="ans_f">副腎皮質ステロイドが著効する．</li>
-                            <li class="ans_f">HBe抗体が陽性になっても寛解しない．</li>
+                            <li class="ans_f star">HBe抗体が陽性になっても寛解しない．</li>
                         </ol>
                     </div>
                 </div>
@@ -2814,7 +2899,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group MPGN info " id="q28">
+            <div class="card-group MPGN star info " id="q28">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103A42">103A42</a> Dx &xrArr; Qs
@@ -2822,11 +2907,13 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_21:23:26"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_21:23:26"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:08:17"> </span>
                         <br>
                         <p><u>60歳の男性</u>．<br>
                             <u>体重増加</u>を主訴に来院した．<br>
-                            3ヵ月前に<u>下肢の浮腫</u>に気付き，現在までに体重が5kg増加した．58歳ころから健康診断で<u>肝機能の軽度異常</u>，<u>尿蛋白および血尿</u>を指摘されていたが，自覚症状はなく放置していた．<br>
+                            3ヵ月前に<u>下肢の浮腫</u>に気付き，現在までに体重が5kg増加した．<br>
+                            58歳ころから健康診断で<u>肝機能の軽度異常</u>，<u>尿蛋白および血尿</u>を指摘されていたが，自覚症状はなく放置していた．<br>
                             意識は清明．血圧142/90mmHg．下肢に紫斑と前脛骨部に<u>圧痕を伴う浮腫</u>とを認める．<br>
                             尿所見：<br>
                             <u>蛋白4＋</u>，潜血1＋，赤血球10～20/1視野，硝子円柱多数，顆粒円柱陽性，卵円形脂肪体陽性．<br>
@@ -2928,7 +3015,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group MPGN NS pri 111 info" id="q29">
+            <div class="card-group MPGN NS star pri 111 info" id="q29">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I57" target="_blank">111I57</a> 診断
@@ -2936,7 +3023,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:25:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:25:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_17:04:15"> </span>
                         <br>
                         <p>13歳の女子．<br>
                             <u>下肢の浮腫</u>を主訴に母親に連れられて来院した．<br>
@@ -3246,7 +3334,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:07:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:07:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:12:17"> </span>
                         <br>
 
                         <p>腎生検PAM染色標本を次に示す．<br>
@@ -3260,7 +3349,7 @@
                         <ol type="a">
                             <li class="ans_f">扁桃炎罹患2週後に乏尿となった男児</li>
                             <li class="ans_f">全身浮腫が数日の経過で出現した20歳台の男性</li>
-                            <li class="ans_f">発熱，関節痛，顔面の紅斑および浮腫が出現した20歳台の女性</li>
+                            <li class="ans_f star">発熱，関節痛，顔面の紅斑および浮腫が出現した20歳台の女性</li>
                             <li class="ans_f">糖尿病腎症の治療中に浮腫が出現し増悪した60歳台の女性</li>
                             <li class="ans_t">浮腫と腎機能低下とが数ヵ月で進行した70歳台の男性</li>
                         </ol>
@@ -3297,17 +3386,25 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:28:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:28:05"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_17:05:41"> </span>
                         <br>
                         <p>70歳の男性．<br>
                             <u>腎機能悪化</u>を指摘されたため来院した．<br>
                             <u>2ヵ月前から発熱，咳嗽および全身倦怠感</u>が出現し次第に体重が減少してきた．心配になり自宅近くの診療所を受診し，<u>血清クレアチニンの上昇</u>が認められたため紹介されて受診した．<br>
                             <u>喫煙は20本/日を50年間．飲酒は日本酒1合/日を50年間</u>．<br>
-                            意識は清明．身長153cm，体重48kg．体温37.2℃．脈拍76/分，整．血圧150/76mmHg．呼吸数22/分．SpO2 98％（room air）．<u>眼瞼結膜は貧血様</u>である．心音に異常を認めない．両側の背下部で<u>fine crackles</u>を聴取する．<u>顔面と下腿とに浮腫</u>を認める．<br>
-                            尿所見：蛋白1＋，蛋白定量0.87g/日，糖（－），潜血3＋，沈渣に赤血球 多数/1視野，白血球1～5/1視野．<br>
-                            血液所見：赤血球352万，Hb 10.2g/dL，Ht 32％，<u>白血球10,700</u>（桿状核好中球2％，分葉核好中球87％，好酸球1％，単球1％，リンパ球9％），血小板36万．<br>
-                            血液生化学所見：総蛋白6.3g/dL，アルブミン3.1g/dL，尿素窒素34mg/dL，クレアチニン2.5mg/dL，尿酸7.6mg/dL，Na 138mEq/L，K 4.5mEq/L，Cl 106mEq/L．<br>
-                            免疫血清学所見：<u>CRP 4.5mg/dL</u>，HBs抗原陰性，HCV抗体陰性，<u>MPO-ANCA 160EU/mL</u>（基準20未満），抗核抗体陰性．腎生検のPAS染色標本を次に示す．<u>蛍光抗体法で糸球体に免疫グロブリンの沈着を認めない</u>．<br>
+                            意識は清明．身長153cm，体重48kg．体温37.2℃．脈拍76/分，整．血圧150/76mmHg．呼吸数22/分．SpO2 98％（room air）．<br>
+                            <u>眼瞼結膜は貧血様</u>である．心音に異常を認めない．両側の背下部で<u>fine crackles</u>を聴取する．<u>顔面と下腿とに浮腫</u>を認める．<br>
+                            尿所見：<br>
+                            蛋白1＋，蛋白定量0.87g/日，糖（－），<u>潜血3＋</u>，沈渣に赤血球 多数/1視野，白血球1～5/1視野．<br>
+                            血液所見：<br>
+                            赤血球352万，Hb 10.2g/dL，Ht 32％，<u>白血球10,700</u>（桿状核好中球2％，分葉核好中球87％，好酸球1％，単球1％，リンパ球9％），血小板36万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.3g/dL，アルブミン3.1g/dL，尿素窒素34mg/dL，クレアチニン2.5mg/dL，尿酸7.6mg/dL，<br>
+                            Na 138mEq/L，K 4.5mEq/L，Cl 106mEq/L．<br>
+                            免疫血清学所見：<br>
+                            <u>CRP 4.5mg/dL</u>，HBs抗原陰性，HCV抗体陰性，<u>MPO-ANCA 160EU/mL</u>（基準20未満），抗核抗体陰性．<br>
+                            腎生検のPAS染色標本を次に示す．<u>蛍光抗体法で糸球体に免疫グロブリンの沈着を認めない</u>．<br>
                             直ちに行うべき治療はどれか．</p>
                     </div>
 
@@ -3319,7 +3416,7 @@
                             <li class="ans_f">血液透析</li>
                             <li class="ans_f">赤血球輸血</li>
                             <li class="ans_t">副腎皮質ステロイドのパルス療法</li>
-                            <li class="ans_f">非ステロイド性抗炎症薬〈NSAIDs〉投与</li>
+                            <li class="ans_f star">非ステロイド性抗炎症薬〈NSAIDs〉投与</li>
                             <li class="ans_f">アンジオテンシン変換酵素〈ACE〉阻害薬投与</li>
                         </ol>
                     </div>
@@ -3397,12 +3494,13 @@
             <div class="card-group CGN RPGN ANCA info 110" id="q33">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/110B20">110B20</a> 病理診断
+                        <a href="https://qb.medilink-study.com/#/Answer/110B20" target="_blank">110B20</a> 病理診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:29:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:29:16"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_17:27:05"> </span>
                         <br>
                         <p>
                             腎生検のPAS染色標本を次に示す．<br>
@@ -3431,6 +3529,14 @@
 
                         <p class="q_answer_true">c</p>
 
+                        <ol type="a">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+
 
                         <h6>DDx: CGN</h6>
                         <div class="card">
@@ -3450,7 +3556,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:09:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:09:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:23:18"> </span>
                         <br>
 
                         <p><u>64歳の男性</u>．<br>
@@ -3465,7 +3572,7 @@
                             血液生化学所見：<br>
                             空腹時血糖132mg/dL，<u>HbA1c（NGSP）6.4％</u>（基準4.6～6.2），総蛋白6.8g/dL，アルブミン3.0g/dL，尿素窒素69mg/dL，クレアチニン4.3mg/dL，総コレステロール266mg/dL，トリグリセリド215mg/dL，Na 140mEq/L，K 6.0mEq/L，Cl 110mEq/L，Ca 8.6mg/dL，P 5.0mg/dL．<br>
                             免疫学所見：<br>
-                            CRP 3.5mg/dL，<u>CH50 54.7U/L</u>（基準30～40）．<br>
+                            <u>CRP 3.5mg/dL</u>，<u>CH50 54.7U/L</u>（基準30～40）．<br>
                             腎生検のPAS染色標本を次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
@@ -3521,7 +3628,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group Goodpasture RPGN  info" id="q35">
+            <div class="card-group Goodpasture RPGN info" id="q35">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104A47" target="_blank">104A47</a> 診断 &xrArr; 病態
@@ -3529,20 +3636,22 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-09_21:30:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-09_21:30:23"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-19_17:30:26"> </span>
                         <br>
                         <p>35歳の男性．<br>
                             2週前から続く<u>血尿</u>と<u>血痰</u>とを主訴に来院した．<br>
                             意識は清明．<br>
                             身長171cm，体重63kg．体温37.2℃．脈拍80/分，整．血圧172/104mmHg．<br>
-                            眼瞼と両側下腿とに浮腫を認める．両側上中肺野にcoarse cracklesを聴取する．<br>
+                            眼瞼と両側下腿とに浮腫を認める．<br>
+                            両側上中肺野に<u>coarse crackles</u>を聴取する．<br>
                             尿所見：<br>
                             肉眼的血尿，蛋白2＋，糖（－）．<br>
                             血液所見：<br>
                             赤血球350万，Hb 10.2g/dL，Ht 30％，白血球8,200，血小板16万．<br>
                             血液生化学所見：<br>
                             総蛋白6.4g/dL，アルブミン4.5g/dL，尿素窒素52mg/dL，クレアチニン4.7mg/dL，尿酸7.5mg/dL．<br>
-                            胸部X線写真で両側上中肺野に斑状陰影を認める．全身状態が悪く，腎生検を施行できない．正常ヒト糸球体組織に患者血清と標識抗ヒトIgG抗体とを反応させた蛍光写真を次に示す．<br>
+                            胸部X線写真で<u>両側上中肺野に斑状陰影</u>を認める．全身状態が悪く，腎生検を施行できない．正常ヒト糸球体組織に患者血清と標識抗ヒトIgG抗体とを反応させた蛍光写真を次に示す．<br>
                             病態として考えられるのはどれか．</p>
                     </div>
 
@@ -3631,18 +3740,28 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_21:36:04"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_21:36:04"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:27:59"> </span>
                          / 
                         <span class="badge badge-pill cau" id="2018-10-09_21:36:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-19_16:28:07"> </span>
                         <br>
                         <p>次の文を読み，19，20の問いに答えよ．<br><br>
 
                             <u>68歳の男性</u>．<br>
                             <u>発熱と体重減少</u>とを訴えて来院した．<br>
-                            現病歴：<u>2週前にかぜ様症状</u>が出現し，市販薬を服用したが軽快しなかった．その後，発熱が持続し，体重減少と関節痛とが認められるようになり来院した．<br>
-                            既往歴：特記すべきことはない．<br>
-                            現　症：身長158cm，体重46kg．体温37.8℃．脈拍92/分，整．<u>血圧162/88mmHg</u>．意識は清明．下腿に<u>2ヵ所皮膚潰瘍</u>を認める．胸部には打聴診上異常を認めない．<u>右上腹部に軽度の圧痛</u>を認めるが肝，脾は触知しない．<br>
-                            入院後の経過：腎機能の低下が明らかになり，次第に<u>血清クレアチニン値が上昇</u>したため腎生検を行った．腎生検の糸球体PAM染色標本（A）と動脈Masson-Trichrome染色標本（B）とを次に示す．腎生検蛍光抗体法で糸球体の<u>免疫グロブリンは陰性</u>であった．</p>
+                            現病歴：<br>
+                            <u>2週前にかぜ様症状</u>が出現し，市販薬を服用したが軽快しなかった．<br>
+                            その後，発熱が持続し，<u>体重減少</u>と<u>関節痛</u>とが認められるようになり来院した．<br>
+                            既往歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
+                            身長158cm，体重46kg．体温37.8℃．脈拍92/分，整．<u>血圧162/88mmHg</u>．<br>
+                            意識は清明．下腿に<u>2ヵ所皮膚潰瘍</u>を認める．胸部には打聴診上異常を認めない．<u>右上腹部に軽度の圧痛</u>を認めるが肝，脾は触知しない．<br>
+                            入院後の経過：<br>
+                            腎機能の低下が明らかになり，次第に<u>血清クレアチニン値が上昇</u>したため腎生検を行った．<br>
+                            腎生検の糸球体PAM染色標本（A）と動脈Masson-Trichrome染色標本（B）とを次に示す．<br>
+                            腎生検蛍光抗体法で糸球体の<u>免疫グロブリンは陰性</u>であった．</p>
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/91/img/91C019-020A.jpg" class="img-fluid"> -->
@@ -3758,18 +3877,19 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:17:34"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:17:34"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_16:31:40"> </span>
                         <br>
                         <p>45歳の女性．<br>
                             急激な体重増加を主訴に来院した．<br>
                             生来健康で，健康維持のために週2回スポーツジムに通っている．<br>
-                            1ヵ月前から突然，顔面と下腿とに浮腫が出現し，現在までに12kgの急激な体重増加を認め受診した．<br>
+                            1ヵ月前から突然，顔面と下腿とに浮腫が出現し，現在までに<u>12kgの急激な体重増加</u>を認め受診した．<br>
                             身長162cm，体重66kg．脈拍72/分，整．血圧100/78mmHg．<br>
                             顔面と下腿とに浮腫を認める．<br>
                             尿所見：<br>
                             蛋白4＋，糖（－），潜血（－），沈渣に卵円形脂肪体1〜4/1視野，尿蛋白9.8g/日．<br>
                             血液生化学所見：<br>
-                            総蛋白4.6g/dL，アルブミン1.0g/dL，CK 148IU/L（基準30〜140），尿素窒素38mg/dL，クレアチニン1.3mg/dL，尿酸7.3mg/dL，総コレステロール334mg/dL．CRP 0.1mg/dL．<br>
+                            総蛋白4.6g/dL，アルブミン1.0g/dL，CK 148IU/L（基準30〜140），<u>尿素窒素38mg/dL，クレアチニン1.3mg/dL</u>，尿酸7.3mg/dL，総コレステロール334mg/dL．CRP 0.1mg/dL．<br>
                             超音波検査で腎の萎縮と水腎症とを認めない．<br>
                             この患者の血清クレアチニン高値の原因として最も可能性が高いのはどれか．</p>
                         
@@ -3778,7 +3898,7 @@
                             <li class="ans_f">低血圧</li>
                             <li class="ans_f">高尿酸血症</li>
                             <li class="ans_t">低蛋白血症</li>
-                            <li class="ans_f">横紋筋融解症</li>
+                            <li class="ans_f star">横紋筋融解症</li>
                             <li class="ans_f">高コレステロール血症</li>
                         </ol>
                     </div>
@@ -3817,14 +3937,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:22:25"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:22:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:32:51"> </span>
                         <br>
                         <p>感染症と腎疾患の組合せで正しいのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">梅毒 － IgA腎症</li>
                             <li class="ans_f">B型肝炎 － アミロイド腎症</li>
-                            <li class="ans_t">C型肝炎 － 膜性増殖性糸球体腎炎</li>
+                            <li class="ans_t star">C型肝炎 － 膜性増殖性糸球体腎炎</li>
                             <li class="ans_f">HIV感染症 － 膜性腎症</li>
                             <li class="ans_f">細菌性心内膜炎 － 巣状糸球体硬化症</li>
                         </ol>
@@ -3884,7 +4005,8 @@
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-09_20:23:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-09_20:23:38"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-19_16:33:48"> </span>
                         <br>
                         <p>血清補体価が低下するのはどれか．</p>
 
@@ -3893,7 +4015,7 @@
                             <li class="ans_f">膜性腎症 </li>
                             <li class="ans_f">紫斑病性腎症</li>
                             <li class="ans_f">巣状糸球体硬化症</li>
-                            <li class="ans_t">膜性増殖性糸球体腎炎</li>
+                            <li class="ans_t star">膜性増殖性糸球体腎炎</li>
                         </ol>
                     </div>
                 </div>
@@ -3950,7 +4072,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
                         <span class="badge badge-pill hit"> </span>
-                        <span class="badge badge-pill mis now" id="2018-12-05_17:46:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-12-05_17:46:10"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-19_16:34:37"> </span>
                         <br>
                         <p><u>16歳の男子</u>．<br>
                             顔面の<u>浮腫</u>を主訴に来院した．<br>
@@ -4098,507 +4221,173 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
 
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#AGN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AGN)').toggle();
+        $('div.card-group:not(.AGN)').slideToggle(100);
     });
-    $('#AGN').find('code').html($('div.AGN').size());
+    $('#AGN').find('small > code').html(
+        $('div.AGN > .card > .mis').size() + '+' +
+        $('div.AGN > .card > .cau').size() + '/' +
+        $('div.AGN').size());
 
 
     $('#PSAGN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PSAGN)').toggle();
+        $('div.card-group:not(.PSAGN)').slideToggle(100);
     });
-    $('#PSAGN').find('code').html($('div.PSAGN').size());
+    $('#PSAGN').find('small > code').html(
+        $('div.PSAGN > .card > .mis').size() + '+' +
+        $('div.PSAGN > .card > .cau').size() + '/' +
+        $('div.PSAGN').size());
 
 
     $('#IgAN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IgAN)').toggle();
+        $('div.card-group:not(.IgAN)').slideToggle(100);
     });
-    $('#IgAN').find('code').html($('div.IgAN').size());
+    $('#IgAN').find('small > code').html(
+        $('div.IgAN > .card > .mis').size() + '+' +
+        $('div.IgAN > .card > .cau').size() + '/' +
+        $('div.IgAN').size());
 
 
     $('#NS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NS)').toggle();
+        $('div.card-group:not(.NS)').slideToggle(100);
     });
-    $('#NS').find('code').html($('div.NS').size());
+    $('#NS').find('small > code').html(
+        $('div.NS > .card > .mis').size() + '+' +
+        $('div.NS > .card > .cau').size() + '/' +
+        $('div.NS').size());
 
 
     $('#MN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MN)').toggle();
+        $('div.card-group:not(.MN)').slideToggle(100);
     });
-    $('#MN').find('code').html($('div.MN').size());
+    $('#MN').find('small > code').html(
+        $('div.MN > .card > .mis').size() + '+' +
+        $('div.MN > .card > .cau').size() + '/' +
+        $('div.MN').size());
 
 
     $('#MCN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MCN)').toggle();
+        $('div.card-group:not(.MCN)').slideToggle(100);
     });
-    $('#MCN').find('code').html($('div.MCN').size());
+    $('#MCN').find('small > code').html(
+        $('div.MCN > .card > .mis').size() + '+' +
+        $('div.MCN > .card > .cau').size() + '/' +
+        $('div.MCN').size());
 
 
     $('#FSGS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FSGS)').toggle();
+        $('div.card-group:not(.FSGS)').slideToggle(100);
     });
-    $('#FSGS').find('code').html($('div.FSGS').size());
+    $('#FSGS').find('small > code').html(
+        $('div.FSGS > .card > .mis').size() + '+' +
+        $('div.FSGS > .card > .cau').size() + '/' +
+        $('div.FSGS').size());
 
 
     $('#MPGN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MPGN)').toggle();
+        $('div.card-group:not(.MPGN)').slideToggle(100);
     });
-    $('#MPGN').find('code').html($('div.MPGN').size());
+    $('#MPGN').find('small > code').html(
+        $('div.MPGN > .card > .mis').size() + '+' +
+        $('div.MPGN > .card > .cau').size() + '/' +
+        $('div.MPGN').size());
 
 
     $('#RPGN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RPGN)').toggle();
+        $('div.card-group:not(.RPGN)').slideToggle(100);
     });
-    $('#RPGN').find('code').html($('div.RPGN').size());
+    $('#RPGN').find('small > code').html(
+        $('div.RPGN > .card > .mis').size() + '+' +
+        $('div.RPGN > .card > .cau').size() + '/' +
+        $('div.RPGN').size());
 
 
     $('#CN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CN)').toggle();
+        $('div.card-group:not(.CN)').slideToggle(100);
     });
-    $('#CN').find('code').html($('div.CN').size());
+    $('#CN').find('small > code').html(
+        $('div.CN > .card > .mis').size() + '+' +
+        $('div.CN > .card > .cau').size() + '/' +
+        $('div.CN').size());
 
 
     $('#Goodpasture h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Goodpasture)').toggle();
+        $('div.card-group:not(.Goodpasture)').slideToggle(100);
     });
-    $('#Goodpasture').find('code').html($('div.Goodpasture').size());
+    $('#Goodpasture').find('small > code').html(
+        $('div.Goodpasture > .card > .mis').size() + '+' +
+        $('div.Goodpasture > .card > .cau').size() + '/' +
+        $('div.Goodpasture').size());
 
 
     $('#MPA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MPA)').toggle();
+        $('div.card-group:not(.MPA)').slideToggle(100);
     });
-    $('#MPA').find('code').html($('div.MPA').size());
+    $('#MPA').find('small > code').html(
+        $('div.MPA > .card > .mis').size() + '+' +
+        $('div.MPA > .card > .cau').size() + '/' +
+        $('div.MPA').size());
 
 
     $('#RPGN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RPGN)').toggle();
+        $('div.card-group:not(.RPGN)').slideToggle(100);
     });
-    $('#RPGN').find('code').html($('div.RPGN').size());
+    $('#RPGN').find('small > code').html(
+        $('div.RPGN > .card > .mis').size() + '+' +
+        $('div.RPGN > .card > .cau').size() + '/' +
+        $('div.RPGN').size());
 
 
     $('#GPA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.GPA)').toggle();
+        $('div.card-group:not(.GPA)').slideToggle(100);
     });
-    $('#GPA').find('code').html($('div.GPA').size());
+    $('#GPA').find('small > code').html(
+        $('div.GPA > .card > .mis').size() + '+' +
+        $('div.GPA > .card > .cau').size() + '/' +
+        $('div.GPA').size());
+
+
+
+
 
 
 
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

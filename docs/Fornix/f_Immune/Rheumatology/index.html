@@ -4,12 +4,21 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-11-10 20:26:24
+@Last modified time: 2018-12-20 20:58:09
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+
 04.01.33    18 11 06    .mis size
 04.01.32    18 11 01    v..., print date 2 digit
 
@@ -111,8 +120,8 @@
     <title>Rhematology</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-10 20:26:41" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.33">
+    <meta name="revised" content="2018-12-20 20:58:27" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -131,129 +140,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul, li.list-group-item ol{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin: 0px 0px 0px 0px}
-            a[href]:after {content: none !important;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-
-            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
-            h2{font-size: 14px}
-            h3{font-size: 13px}
-            h4,h5{font-size: 12px}
-            h6{font-size: 11px}
-            p, a, li, th, td{font-size: 9px}
-
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
-            .page-header small code{
-                border-color: black;
-                border-width: : 0.4px 0.4px 0.4px 0.4px;
-            }
-            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 11px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 0.5px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -2104,7 +1999,8 @@
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-08-22_13:04:18"> </span>
                         <span class="badge badge-pill cau" id="2018-10-11_16:39:33"> </span>
-                        <span class="badge badge-pill cau now" id="2018-12-07_13:58:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-07_13:58:44"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-20_21:45:22"> </span>
                         <br>
                         <p>関節リウマチで関節炎がみられないのはどれか．</p>
                         
@@ -2242,14 +2138,15 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-08-22_13:12:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-08-22_13:12:50"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:47:44"> </span>
                         <br>
                         <p>関節リウマチで障害されにくいのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_t">手関節</li>
                             <li class="ans_t">肘関節</li>
-                            <li class="ans_f">仙腸関節</li>
+                            <li class="ans_f star">仙腸関節</li>
                             <li class="ans_t">膝関節</li>
                             <li class="ans_t">足関節</li>
                         </ol>
@@ -2262,10 +2159,12 @@
                         <ol type="a">
                             <li>80-90%</li>
                             <li>40-50%</li>
-                            <li>血清反応性陰性脊椎関節炎<ul>
-                                <li>強直性脊椎炎</li>
-                                <li>反応性関節炎</li>
-                            </ul></li>
+                            <li>血清反応性陰性脊椎関節炎
+                                <ul>
+                                    <li>強直性脊椎炎</li>
+                                    <li>反応性関節炎</li>
+                                </ul>
+                            </li>
                             <li>60-80%</li>
                             <li>50-80%</li>
                         </ol>
@@ -2339,7 +2238,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_13:27:52"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-11_15:21:01"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-11_15:21:01"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-20_21:48:45"> </span>
                         <br>
                         <p>48歳の女性．<br>
                             <u>手関節と手指の腫れ</u>を主訴に来院した．<br>
@@ -2534,11 +2434,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-08-22_13:49:18"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:47:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:47:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:08:23"> </span>
                         <br>
                         <p>25歳の女性．<br>
                             <u>関節痛</u>を主訴に来院した．<br>
-                            1年前から両側の手関節と中手指節関節の腫脹と疼痛とを自覚するようになった．市販の消炎鎮痛薬と貼付剤とで様子をみていたが，3ヵ月前から関節痛が増悪し，1ヵ月前からは家事をすることが困難となったため受診した．挙児希望はない．両側手関節および両側示指と中指の中手指節関節に腫脹と圧痛とを認める．皮疹は認めない．<br>
+                            1年前から両側の手関節と中手指節関節の腫脹と疼痛とを自覚するようになった．市販の消炎鎮痛薬と貼付剤とで様子をみていたが，3ヵ月前から関節痛が増悪し，1ヵ月前からは家事をすることが困難となったため受診した．<br>
+                            <u>挙児希望はない</u>．<br>
+                            両側手関節および両側示指と中指の中手指節関節に腫脹と圧痛とを認める．皮疹は認めない．<br>
                             血液所見：<br>
                             赤血球430万，Hb 12.5g/dL，Ht 38％，白血球8,300，血小板23万．<br>
                             血液生化学所見：<br>
@@ -2568,7 +2471,7 @@
                     <div class="card-body">
 
                         <!-- <img src="https://www.qb-online.com/img/111I058_ima_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/111I058_ima_010.jpg" class="card-img-top img-fluid" width="70%">
+                        <img src="https://qb.medilink-study.com/images/111I058_ima_010.jpg" class="card-img-top img-fluid" width="%">
 
                         <p class="q_dx">RA</p>
 
@@ -2594,7 +2497,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_14:13:06"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-11_15:24:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-11_15:24:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:51:59"> </span>
                         <br>
                         <p>42歳の女性．<br>
                             <u>発熱</u>と<u>乏尿</u>とを主訴に来院した．<br>
@@ -2612,15 +2516,16 @@
                             総蛋白6.8g/dL，アルブミン3.0g/dL，尿素窒素86mg/dL，クレアチニン6.6mg/dL，尿酸10.2mg/dL，Na 132mEq/L，K 5.2mEq/L，Cl 104mEq/L．<br>
                             免疫血清学所見：<br>
                             CRP 10mg/dL，<u>リウマトイド因子〈RF〉80IU/mL</u>（基準20未満），<u>抗CCP抗体245U/mL</u>（基準4.5未満）．<br>
-                            手の単純X線撮影で<u>関節にびらん</u>を認めた．入院後，<u>非ステロイド性抗炎症薬を中止したところ解熱</u>した．<br>
+                            手の単純X線撮影で<u>関節にびらん</u>を認めた．<br>
+                            入院後，<u>非ステロイド性抗炎症薬を中止したところ解熱</u>した．<br>
                             入院6日目にクレアチニンは3.0mg/dLに低下したが関節痛は悪化した．<br>
                             現時点での治療薬として最も適切なのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">抗菌薬</li>
                             <li class="ans_f">オピオイド</li>
-                            <li class="ans_t">副腎皮質ステロイド</li>
-                            <li class="ans_f">抗TNF-α抗体製剤</li>
+                            <li class="ans_t star">副腎皮質ステロイド</li>
+                            <li class="ans_f star">抗TNF-α抗体製剤</li>
                             <li class="ans_f">非ステロイド性抗炎症薬〈NSAIDs〉</li>
                         </ol>
                     </div>
@@ -2711,7 +2616,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group RA PATHO pri" id="q10">
+            <div class="card-group RA fig PATHO pri" id="q10">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109A51" target="_blank">109A51</a> 手関節の痛み
@@ -2719,7 +2624,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-08-22_14:23:57"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-11_16:55:42"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-11_16:55:42"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-20_21:54:25"> </span>
                         <br>
                         <p>69歳の女性．<br>
                             <u>手関節の痛み</u>と腫れを主訴に来院した．<br>
@@ -2737,11 +2643,11 @@
 
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_f">滑膜肉腫</li>
+                            <li class="ans_f star">滑膜肉腫</li>
                             <li class="ans_t">関節リウマチ</li>
                             <li class="ans_f">変形性関節症</li>
                             <li class="ans_f">サルコイドーシス</li>
-                            <li class="ans_f">色素性絨毛結節性滑膜炎</li>
+                            <li class="ans_f star">色素性絨毛結節性滑膜炎</li>
                         </ol>
                     </div>
                 </div>
@@ -2789,7 +2695,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_14:28:02"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_15:26:41"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_15:26:41"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:13:01"> </span>
                         <br>
                         <p>64歳の女性．<br>
                             <u>腹痛</u>と<u>血便</u>とを主訴に来院した．<br>
@@ -2799,16 +2706,18 @@
                             体温37.6℃．脈拍96/分，整．血圧136/88mmHg．<br>
                             手指に<u>スワンネック変形と尺側偏位</u>とを認める．<br>
                             血液所見：<br>
-                            <u>赤沈102mm/1時間</u>，赤血球320万，Hb 9.6g/dL，Ht 31％，白血球12,600（桿状核好中球12％，分葉核好中球73％，好酸球1％，単球2％，リンパ球12％），血小板56万．<br>
-                            <u>CRP 10.6mg/dL</u>，<u>RAHAテスト2,560倍</u>（基準40以下）．<br>
+                            <u>赤沈102mm/1時間</u>，<br>
+                            赤血球320万，Hb 9.6g/dL，Ht 31％，白血球12,600（桿状核好中球12％，分葉核好中球73％，好酸球1％，単球2％，リンパ球12％），血小板56万．<br>
+                            <u>CRP 10.6mg/dL</u>，<br>
+                            <u>RAHAテスト2,560倍</u>（基準40以下）．<br>
                             この疾患でみられるのはどれか．3つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_t">強膜炎</li>
-                            <li class="ans_t">皮下結節</li>
+                            <li class="ans_t star">強膜炎</li>
+                            <li class="ans_t star">皮下結節</li>
                             <li class="ans_t">肺線維症</li>
                             <li class="ans_f">陰部潰瘍</li>
-                            <li class="ans_f">尿道炎</li>
+                            <li class="ans_f star">尿道炎</li>
                         </ol>
                     </div>
                 </div>
@@ -2879,29 +2788,35 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-08-22_14:31:53"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:57:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:57:52"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:15:22"> </span>
                         <br>
                         <p>悪性関節リウマチについて正しいのはどれか．3つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">リウマトイド因子は高値を示す．</li>
-                            <li class="ans_f">血清補体価は上昇する．</li>
-                            <li class="ans_f">顆粒球減少がみられる．</li>
-                            <li class="ans_t">皮膚潰瘍がみられる．</li>
+                            <li class="ans_f star">血清補体価は上昇する．</li>
+                            <li class="ans_f star">顆粒球減少がみられる．</li>
+                            <li class="ans_t star">皮膚潰瘍がみられる．</li>
                             <li class="ans_t">関節の骨破壊は高度である．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
+
                         <p class="q_answer_true">a d e</p>
 
                         <ol type="a">
                             <li>&uarr;RF</li>
-                            <li><ul>
-                                <li>RA: &uarr;C</li>
-                                <li>MRA: &darr;C</li>
-                            </ul></li>
+                            <li>
+                                <ul>
+                                    <li>RA: &uarr;Comp</li>
+                                    <li>MRA: &darr;Comp</li>
+                                </ul>
+                            </li>
                             <li>&uarr;顆粒球</li>
                             <li>血管炎</li>
                             <li></li>
@@ -3701,20 +3616,23 @@
             <div class="card-group SLE info" id="q21">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/95H1" target="_blank">95H1-3</a> 症候 / 活動性 / 治療反応性低い症状
+                        <a href="https://qb.medilink-study.com/#/Answer/95H1" target="_blank">95H1-3</a> 症候 / 活動性 / 反応性低い症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-08-22_15:26:40"> </span>
                         <span class="badge badge-pill mis" id="2018-10-11_15:48:38"> </span>
-                         / 
+                        <span class="badge badge-pill mis" id="2018-12-20_21:21:25"> </span>
+                         / <br>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_15:26:30"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_15:48:49"> </span>
-                         / 
+                        <span class="badge badge-pill mis" id="2018-10-11_15:48:49"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:21:36"> </span>
+                         / <br>
                         <span class="badge badge-pill mis"> </span> 
                         <span class="badge badge-pill mis" id="2018-08-22_15:26:35"> </span> 
                         <span class="badge badge-pill mis" id="2018-10-11_15:48:56"> </span> 
+                        <span class="badge badge-pill mis" id="2018-12-20_21:21:43"> </span> 
                         <br>
                         <p>次の文を読み，1～3の問いに答えよ．<br><br>
 
@@ -3736,31 +3654,34 @@
                             総蛋白5.0g/dL，アルブミン2.1g/dL，尿素窒素18mg/dL，クレアチニン1.0mg/dL，総コレステロール360mg/dL．<br>
                             <u>抗核抗体640倍</u>（基準20以下）．</p>
                         
-                        <p>[H001] この疾患でみられるのはどれか．2つ選べ．</p>
+                        <p>[H001] <br>
+                            この疾患でみられるのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_f">鞍鼻</li>
                             <li class="ans_t">蝶形紅斑</li>
-                            <li class="ans_t">口腔潰瘍</li>
-                            <li class="ans_f">陰部潰瘍</li>
+                            <li class="ans_t star">口腔潰瘍</li>
+                            <li class="ans_f star">陰部潰瘍</li>
                             <li class="ans_f">皮膚硬化</li>
                         </ol>
 
-                        <p>[H002] この疾患の活動性の判定に有用なのはどれか．2つ選べ．</p>
+                        <p>[H002] <br>
+                            この疾患の活動性の判定に有用なのはどれか．2つ選べ．</p>
                         <ol type="a">
-                            <li class="ans_f">CRP</li>
+                            <li class="ans_f star">CRP</li>
                             <li class="ans_f">リウマトイド因子</li>
-                            <li class="ans_t">抗DNA抗体</li>
+                            <li class="ans_t star">抗DNA抗体</li>
                             <li class="ans_t">血清補体価</li>
                             <li class="ans_f">血清γ-グロブリン</li>
                         </ol>
 
-                        <p>[H003] この疾患にみられる病態で治療に対する反応性が乏しいのはどれか．2つ選べ．</p>
+                        <p>[H003] <br>
+                            この疾患にみられる病態で治療に対する反応性が乏しいのはどれか．2つ選べ．</p>
                         <ol type="a">
                             <li class="ans_f">関節炎</li>
                             <li class="ans_f">胸膜炎</li>
-                            <li class="ans_f">心内膜炎</li>
+                            <li class="ans_f star">心内膜炎</li>
                             <li class="ans_t">中枢神経病変</li>
-                            <li class="ans_t">ネフローゼ症候群</li>
+                            <li class="ans_t star">ネフローゼ症候群</li>
                         </ol>
                     </div>
                 </div>
@@ -3955,6 +3876,7 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_15:45:48"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_15:58:21"> </span>
                         <span class="badge badge-pill mis now" id="2018-10-11_15:58:21"> </span>
                         <br>
                         <p>32歳の女性．<br>
@@ -3969,9 +3891,9 @@
                         <ol type="a">
                             <li class="ans_t">一過性脳虚血発作</li>
                             <li class="ans_f">中耳炎</li>
-                            <li class="ans_f">播種性血管内凝固〈DIC〉</li>
+                            <li class="ans_f star">播種性血管内凝固〈DIC〉</li>
                             <li class="ans_t">腸間膜動脈血栓症</li>
-                            <li class="ans_t">Budd-Chiari症候群</li>
+                            <li class="ans_t star">Budd-Chiari症候群</li>
                         </ol>
                     </div>
                 </div>
@@ -4373,7 +4295,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_16:13:52"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:00:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:00:03"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:30:34"> </span>
                         <br>
                         <p>61歳の男性．<br>
                             手のこわばりを主訴に来院した．<br>
@@ -4385,7 +4308,8 @@
                             血液所見：<br>
                             赤血球383万，Hb 12.0g/dL，Ht 35％，白血球9,200，血小板28万．<br>
                             血液生化学所見：<br>
-                            総蛋白6.9g/dL，アルブミン3.5g/dL，IgG 1,686mg/dL（基準960～1,960），IgA 255mg/dL（基準110～410），IgM 70mg/dL（基準65～350），AST 20IU/L，ALT 12IU/L，LD 177IU/L（基準176～353），尿素窒素11.1mg/dL，クレアチニン0.9mg/dL，尿酸6.9mg/dL，血糖98mg/dL，Na 139mEq/L，K 3.9mEq/L，Cl 104mEq/L．<br>
+                            総蛋白6.9g/dL，アルブミン3.5g/dL，IgG 1,686mg/dL（基準960～1,960），IgA 255mg/dL（基準110～410），IgM 70mg/dL（基準65～350），AST 20IU/L，ALT 12IU/L，LD 177IU/L（基準176～353），尿素窒素11.1mg/dL，クレアチニン0.9mg/dL，尿酸6.9mg/dL，血糖98mg/dL，<br>
+                            Na 139mEq/L，K 3.9mEq/L，Cl 104mEq/L．<br>
                             免疫血清学所見：<br>
                             CRP 1.3mg/dL，抗核抗体1,280倍（基準値20以下），<u>抗Scl-70抗体陽性</u>．<br>
                             胸部CTで両側下葉に網状影を認める．皮膚硬化に対してプレドニゾロン30mg/日を投与した．<br>
@@ -4394,11 +4318,11 @@
                         
 
                         <ol type="a">
-                            <li class="ans_f">利尿薬の投与</li>
+                            <li class="ans_f star">利尿薬の投与</li>
                             <li class="ans_f">免疫抑制薬の投与</li>
                             <li class="ans_f">尿酸排泄促進薬の投与</li>
                             <li class="ans_f">副腎皮質ステロイドの増量</li>
-                            <li class="ans_t">アンジオテンシン変換酵素〈ACE〉阻害薬の投与</li>
+                            <li class="ans_t star">アンジオテンシン変換酵素〈ACE〉阻害薬の投与</li>
                         </ol>
                     </div>
                 </div>
@@ -4548,7 +4472,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_16:44:13"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:08:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:08:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:32:50"> </span>
                         <br>
                         <p>54歳の男性．<br>
                         <u>全身の皮疹</u>と<u>倦怠感</u>とを主訴に来院した．<br>
@@ -4565,8 +4490,8 @@
 
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_t">胃潰瘍</li>
-                            <li class="ans_f">骨髄障害</li>
+                            <li class="ans_t star">胃潰瘍</li>
+                            <li class="ans_f star">骨髄障害</li>
                             <li class="ans_t">骨粗鬆症</li>
                             <li class="ans_f">腎機能障害</li>
                             <li class="ans_f">アナフィラキシー</li>
@@ -5254,18 +5179,22 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-08-22_17:31:34"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_17:22:33"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_17:22:33"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:34:14"> </span>
                         <br>
                         <p>20歳の女性．<br>
                             18歳のとき，<u>Raynaud現象</u>，<u>手指の腫脹</u>，<u>顔面紅斑</u>，<u>筋力低下</u>などが出現した．<br>
-                            検査の結果，<u>白血球数の減少</u>，<u>抗DNA抗体陽性</u>，<u>LD高値</u>および<u>CKの上昇</u>を指摘され治療を受けていた．経過は順調であった．7日前から全身の筋肉痛と関節痛とが出現し，呼吸困難と発熱とがみられたので入院した．<br>
-                            赤沈65mm/1時間，白血球3,800．LD 1,020単位（基準176～353），CK 1,050単位（基準10～40）．<u>抗U1-RNP抗体陽性</u>．<br>
+                            検査の結果，<u>白血球数の減少</u>，<u>抗DNA抗体陽性</u>，<u>LD高値</u>および<u>CKの上昇</u>を指摘され治療を受けていた．経過は順調であった．<br>
+                            7日前から全身の筋肉痛と関節痛とが出現し，呼吸困難と発熱とがみられたので入院した．<br>
+                            赤沈65mm/1時間，<br>
+                            白血球3,800．LD 1,020単位（基準176～353），CK 1,050単位（基準10～40）．<br>
+                            <u>抗U1-RNP抗体陽性</u>．<br>
                             胸部X線写真を次に示す．<br>
                             この疾患について正しいのはどれか．3つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://www.qb-online.com/img/92F004.jpg" class="img-fluid"> -->
-                    <img src="https://qb.medilink-study.com/images/92F004.jpg" class="card-img-top img-fluid" width="50%">
+                    <img src="https://qb.medilink-study.com/images/92F004.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -5473,16 +5402,17 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-08-22_17:58:24"> </span>
+                        <span class="badge badge-pill mis" id="2018-08-22_17:58:24"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:36:01"> </span>
                         <br>
                         <p>Sjögren症候群にみられるのはどれか．3つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_f">回盲部潰瘍</li>
                             <li class="ans_f">吸収不全症候群</li>
-                            <li class="ans_t">原発性胆汁性肝硬変</li>
+                            <li class="ans_t star">原発性胆汁性肝硬変</li>
                             <li class="ans_t">尿細管性アシドーシス</li>
-                            <li class="ans_t">橋本病</li>
+                            <li class="ans_t star">橋本病</li>
                         </ol>
                     </div>
                 </div>
@@ -6922,24 +6852,26 @@
             <div class="card-group AS SNSA info" id="q65">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/81D35" target="_blank">81D35</a> AS 症状
+                        <a href="https://qb.medilink-study.com/#/Answer/81D35" target="_blank">81D35</a> 症状
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis" id="2018-08-22_21:46:40"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:21:12"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:21:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:38:28"> </span>
                         <br>
                         <p>40歳の男性．<br>
                             3年前から<u>背部にこわばり</u>があり，2ヵ月前から背部痛をきたした．床の上に落とした物を拾う時に躯幹の前屈ができず，膝を屈曲しなければならなくなったので来院した．<br>
-                            血圧150/60mmHg．背筋に異常な緊張があり，腰部前彎の消失がある．四肢知覚と腱反射とは正常．<br>
+                            血圧150/60mmHg．<br>
+                            背筋に異常な緊張があり，腰部前彎の消失がある．四肢知覚と腱反射とは正常．<br>
                             白血球8,000．<u>赤沈50mm/1時間</u>．<u>CRP 2＋</u>．<u>HLA-B27陽性</u>．<br>
                             この疾患にみられるのはどれか．3つ選べ．#</p>
 
                         <ol type="a">
                             <li class="ans_t">虹彩毛様体炎</li>
                             <li class="ans_f">耳下腺腫脹 </li>
-                            <li class="ans_f">血栓性静脈炎</li>
-                            <li class="ans_t">大動脈弁閉鎖不全症</li>
+                            <li class="ans_f star">血栓性静脈炎</li>
+                            <li class="ans_t star">大動脈弁閉鎖不全症</li>
                             <li class="ans_t">仙腸関節炎</li>
                         </ol>
                     </div>
@@ -7050,7 +6982,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-23_10:17:21"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:26:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:26:09"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-20_21:41:09"> </span>
                         <br>
                         <p>40歳の男性．<br>
                             発熱，右膝関節痛，左股関節痛および左足関節痛を主訴に来院した．<br>
@@ -7061,17 +6994,18 @@
                             血液所見：<br>
                             赤血球475万，Hb 14.2g/dL，Ht 45％，白血球11,000，血小板38万．<br>
                             血液生化学所見：<br>
-                            AST 20U/L，ALT 22U/L，LD 202U/L（基準176〜353），CK 45U/L（基準30〜140），クレアチニン0.7mg/dL，Na 140mEq/L，K 4.0mEq/L，Cl 103mEq/L．<br>
+                            AST 20U/L，ALT 22U/L，LD 202U/L（基準176〜353），CK 45U/L（基準30〜140），クレアチニン0.7mg/dL，<br>
+                            Na 140mEq/L，K 4.0mEq/L，Cl 103mEq/L．<br>
                             免疫血清学検査：<br>
                             <u>CRP 5.6mg/dL</u>，リウマトイド因子〈RF〉陰性．<u>尿中クラミジア抗原陽性</u>．<br>
                             この患者で認められる可能性が高いのはどれか．2つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_f">網状皮斑</li>
+                            <li class="ans_f star">網状皮斑</li>
                             <li class="ans_f">Osler結節</li>
-                            <li class="ans_t">結膜の充血</li>
+                            <li class="ans_t star">結膜の充血</li>
                             <li class="ans_f">爪下線状出血斑</li>
-                            <li class="ans_t">アキレス腱付着部の圧痛</li>
+                            <li class="ans_t star">アキレス腱付着部の圧痛</li>
                         </ol>
                     </div>
                 </div>
@@ -7553,7 +7487,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group Weber_Christian info" id="q74">
+            <div class="card-group Weber_Christian star info" id="q74">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://www.qb-online.com/#/list/96H64" target="_blank">96H64</a> Weber-Christian病 Qs
@@ -7561,7 +7495,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis" id="2018-08-23_11:01:08"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:28:29"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:28:29"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:42:42"> </span>
                         <br>
                         <p>Weber-Christian病について正しいのはどれか．2つ選べ．</p>
                         
@@ -7941,7 +7876,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-08-23_11:21:05"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-11_16:29:16"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-11_16:29:16"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-20_21:43:47"> </span>
                         <br>
                         <p>リウマトイド因子が陽性となるのはどれか．2つ選べ．</p>
 
@@ -7949,8 +7885,8 @@
                             <li class="ans_t">Felty症候群</li>
                             <li class="ans_f">強直性脊椎炎</li>
                             <li class="ans_f">Reiter症候群</li>
-                            <li class="ans_f">成人Still病</li>
-                            <li class="ans_t">混合性クリオグロブリン血症</li>
+                            <li class="ans_f star">成人Still病</li>
+                            <li class="ans_t star">混合性クリオグロブリン血症</li>
                         </ol>
                     </div>
                 </div>
@@ -9223,531 +9159,146 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "v" + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    if (date < 10) {
-        date = '0'+ date;
-    }
-
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    var printDate = year + month + date;
-
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
+$(function(){
     
-
-    var title_date = title + "_" + printDate;
-    $(document).attr("title", title_date);
-
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-
-        $('#q li:has(a.all)').toggle();
-        $('#q li:has(a.untag)').toggle();
-        $('#q li:has(a.done)').toggle();
-        $('#q li:has(a.pri)').toggle();
-        $('#q li:has(a.req)').toggle();
-        $('#q li:has(a.qb)').toggle();
-        $('#q li:has(a.110)').toggle();
-        $('#q li:has(a.111)').toggle();
-        $('#q li:has(a.info)').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
 
     $('#RA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RA)').slideToggle(100);
+        $('#q div.card-group:not(.RA)').slideToggle(100);
     });
-    $('#RA').find('code').html($('div.RA > .card > .mis').size() + '/' + $('div.RA').size());
+    $('#RA').find('small > code').html(
+        $('div.RA > .card > .mis').size() + '+' +
+        $('div.RA > .card > .cau').size() + '/' +
+        $('div.RA').size());
 
 
     $('#Felty h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Felty)').slideToggle(100);
+        $('#q div.card-group:not(.Felty)').slideToggle(100);
     });
-    $('#Felty').find('code').html($('div.Felty > .card > .mis').size() + '/' + $('div.Felty').size());
+    $('#Felty').find('small > code').html(
+        $('div.Felty > .card > .mis').size() + '+' +
+        $('div.Felty > .card > .cau').size() + '/' +
+        $('div.Felty').size());
 
 
     $('#MRA').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.MRA)').slideToggle(100);
     });
-    $('#MRA').find('code').html($('div.MRA > .card > .mis').size() + '/' + $('div.MRA').size());
+    $('#MRA').find('small > code').html(
+        $('div.MRA > .card > .mis').size() + '+' +
+        $('div.MRA > .card > .cau').size() + '/' +
+        $('div.MRA').size());
 
 
     $('#AOSD h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.AOSD)').slideToggle(100);
     });
-    $('#AOSD').find('code').html($('div.AOSD > .card > .mis').size() + '/' + $('div.AOSD').size());
+    $('#AOSD').find('small > code').html(
+        $('div.AOSD > .card > .mis').size() + '+' +
+        $('div.AOSD > .card > .cau').size() + '/' +
+        $('div.AOSD').size());
 
 
     $('#JIA h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.JIA)').slideToggle(100);
     });
-    $('#JIA').find('code').html($('div.JIA > .card > .mis').size() + '/' + $('div.JIA').size());
+    $('#JIA').find('small > code').html(
+        $('div.JIA > .card > .mis').size() + '+' +
+        $('div.JIA > .card > .cau').size() + '/' +
+        $('div.JIA').size());
 
 
     $('#SLE h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.SLE)').slideToggle(100);
     });
-    $('#SLE').find('code').html($('div.SLE > .card > .mis').size() + '/' + $('div.SLE').size());
+    $('#SLE').find('small > code').html(
+        $('div.SLE > .card > .mis').size() + '+' +
+        $('div.SLE > .card > .cau').size() + '/' +
+        $('div.SLE').size());
 
 
     $('#NPSLE').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.NPSLE)').slideToggle(100);
     });
-    $('#NPSLE').find('code').html($('div.NPSLE > .card > .mis').size() + '/' + $('div.NPSLE').size());
+    $('#NPSLE').find('small > code').html(
+        $('div.NPSLE > .card > .mis').size() + '+' +
+        $('div.NPSLE > .card > .cau').size() + '/' +
+        $('div.NPSLE').size());
 
 
     $('#APS h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.APS)').slideToggle(100);
     });
-    $('#APS').find('code').html($('div.APS > .card > .mis').size() + '/' + $('div.APS').size());
+    $('#APS').find('small > code').html(
+        $('div.APS > .card > .mis').size() + '+' +
+        $('div.APS > .card > .cau').size() + '/' +
+        $('div.APS').size());
 
 
     $('#SSc h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.SSc)').slideToggle(100);
     });
-    $('#SSc').find('code').html($('div.SSc > .card > .mis').size() + '/' + $('div.SSc').size());
+    $('#SSc').find('small > code').html(
+        $('div.SSc > .card > .mis').size() + '+' +
+        $('div.SSc > .card > .cau').size() + '/' +
+        $('div.SSc').size());
 
 
     $('#CREST').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.CREST)').slideToggle(100);
     });
-    $('#CREST').find('code').html($('div.CREST > .card > .mis').size() + '/' + $('div.CREST').size());
+    $('#CREST').find('small > code').html(
+        $('div.CREST > .card > .mis').size() + '+' +
+        $('div.CREST > .card > .cau').size() + '/' +
+        $('div.CREST').size());
 
 
     $('#MCTD h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.MCTD)').slideToggle(100);
     });
-    $('#MCTD').find('code').html($('div.MCTD > .card > .mis').size() + '/' + $('div.MCTD').size());
+    $('#MCTD').find('small > code').html(
+        $('div.MCTD > .card > .mis').size() + '+' +
+        $('div.MCTD > .card > .cau').size() + '/' +
+        $('div.MCTD').size());
 
 
     $('#PMDM h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.PMDM)').slideToggle(100);
     });
-    $('#PMDM').find('code').html($('div.PMDM > .card > .mis').size() + '/' + $('div.PMDM').size());
+    $('#PMDM').find('small > code').html(
+        $('div.PMDM > .card > .mis').size() + '+' +
+        $('div.PMDM > .card > .cau').size() + '/' +
+        $('div.PMDM').size());
 
 
     $('#SS h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.SS)').slideToggle(100);
     });
-    $('#SS').find('code').html($('div.SS > .card > .mis').size() + '/' + $('div.SS').size());
+    $('#SS').find('small > code').html(
+        $('div.SS > .card > .mis').size() + '+' +
+        $('div.SS > .card > .cau').size() + '/' +
+        $('div.SS').size());
 
 
 
@@ -9755,49 +9306,70 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.MPA)').slideToggle(100);
     });
-    $('#MPA').find('code').html($('div.MPA > .card > .mis').size() + '/' + $('div.MPA').size());
+    $('#MPA').find('small > code').html(
+        $('div.MPA > .card > .mis').size() + '+' +
+        $('div.MPA > .card > .cau').size() + '/' +
+        $('div.MPA').size());
 
 
     $('#EGPA h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.EGPA)').slideToggle(100);
     });
-    $('#EGPA').find('code').html($('div.EGPA > .card > .mis').size() + '/' + $('div.EGPA').size());
+    $('#EGPA').find('small > code').html(
+        $('div.EGPA > .card > .mis').size() + '+' +
+        $('div.EGPA > .card > .cau').size() + '/' +
+        $('div.EGPA').size());
 
 
     $('#GPA h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.GPA)').slideToggle(100);
     });
-    $('#GPA').find('code').html($('div.GPA > .card > .mis').size() + '/' + $('div.GPA').size());
+    $('#GPA').find('small > code').html(
+        $('div.GPA > .card > .mis').size() + '+' +
+        $('div.GPA > .card > .cau').size() + '/' +
+        $('div.GPA').size());
 
 
     $('#PAN h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.PAN)').slideToggle(100);
     });
-    $('#PAN').find('code').html($('div.PAN > .card > .mis').size() + '/' + $('div.PAN').size());
+    $('#PAN').find('small > code').html(
+        $('div.PAN > .card > .mis').size() + '+' +
+        $('div.PAN > .card > .cau').size() + '/' +
+        $('div.PAN').size());
 
 
     $('#GCA h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.GCA)').slideToggle(100);
     });
-    $('#GCA').find('code').html($('div.GCA > .card > .mis').size() + '/' + $('div.GCA').size());
+    $('#GCA').find('small > code').html(
+        $('div.GCA > .card > .mis').size() + '+' +
+        $('div.GCA > .card > .cau').size() + '/' +
+        $('div.GCA').size());
 
 
     $('#Behcet h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.Behcet)').slideToggle(100);
     });
-    $('#Behcet').find('code').html($('div.Behcet > .card > .mis').size() + '/' + $('div.Behcet').size());
+    $('#Behcet').find('small > code').html(
+        $('div.Behcet > .card > .mis').size() + '+' +
+        $('div.Behcet > .card > .cau').size() + '/' +
+        $('div.Behcet').size());
 
 
     $('#SNSA h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.SNSA)').slideToggle(100);
     });
-    $('#SNSA').find('code').html($('div.SNSA > .card > .mis').size() + '/' + $('div.SNSA').size());
+    $('#SNSA').find('small > code').html(
+        $('div.SNSA > .card > .mis').size() + '+' +
+        $('div.SNSA > .card > .cau').size() + '/' +
+        $('div.SNSA').size());
 
 
 
@@ -9805,21 +9377,30 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.AS)').slideToggle(100);
     });
-    $('#AS').find('code').html($('div.AS > .card > .mis').size() + '/' + $('div.AS').size());
+    $('#AS').find('small > code').html(
+        $('div.AS > .card > .mis').size() + '+' +
+        $('div.AS > .card > .cau').size() + '/' +
+        $('div.AS').size());
 
 
     $('#Reiter').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.Reiter)').slideToggle(100);
     });
-    $('#Reiter').find('code').html($('div.Reiter > .card > .mis').size() + '/' + $('div.Reiter').size());
+    $('#Reiter').find('small > code').html(
+        $('div.Reiter > .card > .mis').size() + '+' +
+        $('div.Reiter > .card > .cau').size() + '/' +
+        $('div.Reiter').size());
 
 
     $('#IgG4RD h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.IgG4RD)').slideToggle(100);
     });
-    $('#IgG4RD').find('code').html($('div.IgG4RD > .card > .mis').size() + '/' + $('div.IgG4RD').size());
+    $('#IgG4RD').find('small > code').html(
+        $('div.IgG4RD > .card > .mis').size() + '+' +
+        $('div.IgG4RD > .card > .cau').size() + '/' +
+        $('div.IgG4RD').size());
 
 
 
@@ -9827,28 +9408,40 @@ $('document').ready(function(){
         $('.card-group').show();
         $('div.card-group:not(.RF)').slideToggle(100);
     });
-    $('#RF').find('code').html($('div.RF > .card > .mis').size() + '/' + $('div.RF').size());
+    $('#RF').find('small > code').html(
+        $('div.RF > .card > .mis').size() + '+' +
+        $('div.RF > .card > .cau').size() + '/' +
+        $('div.RF').size());
 
 
     $('#vasculitis h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.vasculitis)').slideToggle(100);
     });
-    $('#vasculitis').find('code').html($('div.vasculitis > .card > .mis').size() + '/' + $('div.vasculitis').size());
+    $('#vasculitis').find('small > code').html(
+        $('div.vasculitis > .card > .mis').size() + '+' +
+        $('div.vasculitis > .card > .cau').size() + '/' +
+        $('div.vasculitis').size());
 
 
     $('#aortitis h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.aortitis)').slideToggle(100);
     });
-    $('#aortitis').find('code').html($('div.aortitis > .card > .mis').size() + '/' + $('div.aortitis').size());
+    $('#aortitis').find('small > code').html(
+        $('div.aortitis > .card > .mis').size() + '+' +
+        $('div.aortitis > .card > .cau').size() + '/' +
+        $('div.aortitis').size());
 
 
     $('#Weber_Christian h2').click(function(){
         $('.card-group').show();
         $('div.card-group:not(.Weber_Christian)').slideToggle(100);
     });
-    $('#Weber_Christian').find('code').html($('div.Weber_Christian > .card > .mis').size() + '/' + $('div.Weber_Christian').size());
+    $('#Weber_Christian').find('small > code').html(
+        $('div.Weber_Christian > .card > .mis').size() + '+' +
+        $('div.Weber_Christian > .card > .cau').size() + '/' +
+        $('div.Weber_Christian').size());
 
 
 
@@ -9856,9 +9449,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div. > .card > .mis').size() + '/' + $('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

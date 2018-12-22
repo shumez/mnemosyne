@@ -4,12 +4,30 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-10-14 20:47:49
+@Last modified time: 2018-12-22 16:24:22
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+
 04.01.24    18 10 13    style .list-group-item ul padding
 04.01.23    18 10 03    js .slideToggle()
 04.01.22    18 09 20    js .pri glyphicon
@@ -98,8 +116,8 @@
     <title>Erythorocyte</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-14 20:48:11" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.24">
+    <meta name="revised" content="2018-12-22 16:27:43" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -118,121 +136,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -1178,7 +1090,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group anemia AA pri">
+            <div class="card-group anemia AA pri" id="q01">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107G54" target="_blank">107G54</a> s/o &xrArr; 症候 
@@ -1246,7 +1158,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group RA pri">
+            <div class="card-group RA pri" id="q02">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93F32" target="_blank">93F32</a> 検査所見
@@ -1254,7 +1166,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:09:19"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:09:19"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:28:28"> </span>
                         <br>
                         <p>47歳の女性．<br>
                             8年前に<u>慢性腎炎</u>の診断をされている．<br>
@@ -1272,7 +1185,7 @@
 
                         <ol type="a">
                             <li class="ans_f">網赤血球数増加 </li>
-                            <li class="ans_t">平均赤血球血色素量正常</li>
+                            <li class="ans_t star">平均赤血球血色素量正常</li>
                             <li class="ans_t">平均赤血球容積正常 </li>
                             <li class="ans_t">白血球数正常</li>
                             <li class="ans_f">血小板数減少</li>
@@ -1306,7 +1219,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group IDA thalassemia AIHA HS MA PHYSIO info mnemonics">
+            <div class="card-group IDA thalassemia AIHA HS MA PHYSIO info mnemonics" id="q03">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/97B36" target="_blank">97B36</a> 小球性貧血
@@ -1314,14 +1227,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:11:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:11:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:29:41"> </span>
                         <br>
                         <p>小球性貧血となるのはどれか．2つ選べ．</p>
 
 
                         <ol type="a">
                             <li class="ans_f">自己免疫性溶血性貧血</li>
-                            <li class="ans_t">サラセミア</li>
+                            <li class="ans_t star">サラセミア</li>
                             <li class="ans_t">鉄欠乏性貧血</li>
                             <li class="ans_f">遺伝性球状赤血球症 </li>
                             <li class="ans_f">悪性貧血</li>
@@ -1370,7 +1284,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group MBA MDS pri">
+            <div class="card-group MBA MDS pri" id="q04">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104G49" target="_blank">104G49</a> MCV 診断
@@ -1378,7 +1292,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_16:51:37"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_16:51:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_16:43:46"> </span>
                         <br>
                         <p>54歳の男性．<br>
                             <u>半年前</u>からの労作時の<u>息切れ</u>を主訴に来院した．<br>
@@ -1392,7 +1307,7 @@
                             <li class="ans_f">サラセミア</li>
                             <li class="ans_f">鉄芽球性貧血</li>
                             <li class="ans_t">巨赤芽球性貧血</li>
-                            <li class="ans_t">骨髄異形成症候群</li>
+                            <li class="ans_t star">骨髄異形成症候群</li>
                         </ol>
                         
                     </div>
@@ -1405,8 +1320,6 @@
 
                         <p>Macro<br>
                             巨赤芽球貧血, 骨髄異形性症候群</p>
-
-
 
                         <p class="q_answer_true">d e</p>
 
@@ -1426,14 +1339,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group MDS alcohol pri info">
+            <div class="card-group MDS alcohol pri info" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108E33" target="_blank">108E33</a> Macrocytic
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:15:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:15:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:30:47"> </span>
                         <br>
                         <p>大球性貧血をきたすのはどれか．2つ選べ．</p>
 
@@ -1441,14 +1355,16 @@
                             <li class="ans_f">慢性腎不全</li>
                             <li class="ans_f">心臓弁膜症術後</li>
                             <li class="ans_t">骨髄異形成症候群</li>
-                            <li class="ans_t">長期アルコール多飲</li>
-                            <li class="ans_f">ヒトパルボウイルスB19感染</li>
+                            <li class="ans_t star">長期アルコール多飲</li>
+                            <li class="ans_f star">ヒトパルボウイルスB19感染</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: c,d</p>
+
+
+                        <p class="q_answer_true">c d</p>
 
                         <ol type="a">
                             <li>CRF: Normo</li>
@@ -1479,38 +1395,39 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group MA MBA pri info">
+            <div class="card-group MA MBA 111 pri info" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I36" target="_blank" id="">111I36</a> 大球性貧血
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-13_09:56:37"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-13_09:56:37"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:32:06"> </span>
                         <br>
                         <p>大球性貧血となるのはどれか．3つ選べ．</p>
 
 
                         <ol type="a">
-                            <li class="ans_t">悪性貧血</li>
+                            <li class="ans_t star">悪性貧血</li>
                             <li class="ans_f">サラセミア</li>
                             <li class="ans_f">鉄欠乏性貧血</li>
                             <li class="ans_t">葉酸欠乏性貧血</li>
-                            <li class="ans_t">blind loop症候群</li>
+                            <li class="ans_t star">blind loop症候群</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a d e</p>
 
                         <ol type="a">
                             <li>&darr;IF<br>
-                                &rArr; &darr;vit.B<sub>12<br>
-                                &rArr; MBA</sub></li>
+                                &rArr; &darr;vit.B<sub>12</sub><br>
+                                &rArr; MBA</li>
                             <li>thalassemia: micro</li>
                             <li>IDA: micro</li>
                             <li>&darr;葉酸<br>
@@ -1532,15 +1449,16 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group Fe PHYSIO info pri">
+            <div class="card-group Fe PHYSIO info pri" id="q07">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/105B34" target="_blank">105B34</a> 鉄代謝
+                        <a href="https://qb.medilink-study.com/#/Answer/105B34" target="_blank">105B34</a> Ferrokinetics
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_16:54:21"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_16:54:21"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_17:35:36"> </span>
                         <br>
                         <p>鉄代謝について正しいのはどれか．2つ選べ．</p>
                         
@@ -1548,16 +1466,14 @@
                         <ol type="a">
                             <li class="ans_f">回腸末端部で吸収される．</li>
                             <li class="ans_f">3価の鉄イオンとして吸収される．</li>
-                            <li class="ans_t">アスコルビン酸は鉄吸収を促進する．</li>
-                            <li class="ans_f">ヘモグロビン鉄は生体内の鉄全体の1/4である．</li>
-                            <li class="ans_t">能動的排泄機構は存在しない．</li>
+                            <li class="ans_t star">アスコルビン酸は鉄吸収を促進する．</li>
+                            <li class="ans_f star">ヘモグロビン鉄は生体内の鉄全体の1/4である．</li>
+                            <li class="ans_t star">能動的排泄機構は存在しない．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">c e</p>
 
@@ -1567,17 +1483,17 @@
                             </ul></li>
                             <li></li>
                             <li></li>
-                            <li>Fe<ul>
-                                <li>Hb-Fe: 60-70%</li>
-                                <li>貯蔵Fe: 25%</li>
-                                <li></li>
-                            </ul></li>
+                            <li>Fe
+                                <ul>
+                                    <li>Hb-Fe: 60-70%</li>
+                                    <li>貯蔵Fe: 25%</li>
+                                </ul>
+                            </li>
                             <li>Feは能動的に排泄されない<br>
                                 Hemochromatosis</li>
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/105B034_bas_g_010.jpg" class="img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/105B034_bas_g_010.jpg" class="card-img-top img-fluid">
                         </div>
 
@@ -1587,26 +1503,29 @@
                         </div>
 
 
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/105B034_bas_g_010.jpg" class="img-fluid"> -->
+
 
                     </div>
                 </div>
             </div>
 
             <!-- 08 -->
-            <div class="card-group Fe 111 info">
+            <div class="card-group Fe 111 info" id="q08">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111E20" target="_blank" id="">111E20</a> 造血 Ferokinetics
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:22:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:22:51"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:37:58"> </span>
                         <br>
                         <p>健常成人の造血について誤っているのはどれか．</p>
 
 
                         <ol type="a">
-                            <li class="ans_f">体内総鉄量は0.3〜0.4gである．</li>
+                            <li class="ans_f star">体内総鉄量は0.3〜0.4gである．</li>
                             <li class="ans_t">葉酸は体外から摂取しなければならない．</li>
                             <li class="ans_t">ヘプシジンは消化管での鉄の吸収を抑制する．</li>
                             <li class="ans_t">血清中の鉄はトランスフェリンと結合している．</li>
@@ -1637,7 +1556,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group IDA">
+            <div class="card-group IDA" id="q09">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101H16" target="_blank">101H16</a> 診断
@@ -1645,16 +1564,17 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_20:25:32"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_20:25:32"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_16:46:07"> </span>
                         <br>
                         <p>72歳の男性．<br>
-                            健康診査に訪れた．生来健康で，特別な薬物の服用もしていない．</p>
-                        <p>身長172cm，体重62kg．</p>
-                        <p>血液所見：<br>
-                            <u>赤血球456万</u>，<u>Hb 7.9g/dL</u>，<u>Ht 30％</u>，白血球8,600，血小板36万，プロトロンビン時間12.6秒（基準10～14）．</p>
-                        <p>血清生化学所見：<br>
-                            空腹時血糖98mg/dL，HbA1c（NGSP）4.9％（基準4.6～6.2），総蛋白7.6g/dL，<u>尿素窒素24mg/dL</u>，<u>クレアチニン1.0mg/dL</u>，総コレステロール218mg/dL，HDL-コレステロール48mg/dL，総ビリルビン0.5mg/dL，AST 28IU/L，ALT 26IU/L，γ-GTP 48IU/L（基準8～50）．PSA 3.8ng/mL（基準4.0以下）．</p>
-                        <p>精密検査を必要とするのはどれか．</p>
+                            健康診査に訪れた．生来健康で，特別な薬物の服用もしていない．<br>
+                            身長172cm，体重62kg．<br>
+                            血液所見：<br>
+                            <u>赤血球456万</u>，<u>Hb 7.9g/dL</u>，<u>Ht 30％</u>，白血球8,600，血小板36万，プロトロンビン時間12.6秒（基準10～14）．<br>
+                            血清生化学所見：<br>
+                            空腹時血糖98mg/dL，HbA1c（NGSP）4.9％（基準4.6～6.2），総蛋白7.6g/dL，<u>尿素窒素24mg/dL</u>，<u>クレアチニン1.0mg/dL</u>，総コレステロール218mg/dL，HDL-コレステロール48mg/dL，総ビリルビン0.5mg/dL，AST 28IU/L，ALT 26IU/L，γ-GTP 48IU/L（基準8～50）．PSA 3.8ng/mL（基準4.0以下）．<br>
+                            精密検査を必要とするのはどれか．</p>
 
 
                         <ol type="a">
@@ -1692,7 +1612,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group IDA">
+            <div class="card-group IDA" id="q10">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/98D25" target="_blank">98D25</a> 消化管出血 検査
@@ -1751,7 +1671,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group IDA info">
+            <div class="card-group IDA info" id="q11">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/97A32" target="_blank">97A32</a> 月経痛 & 貧血
@@ -1814,7 +1734,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group IDA pri info">
+            <div class="card-group IDA pri info" id="q12">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G53" target="_blank">109G53</a> 検査
@@ -1917,10 +1837,10 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group IDA vitC pri">
+            <div class="card-group IDA vitC pri" id="q13">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/106E64-66" target="_blank">106E64-66</a> 問診 / 検査結果 / vit
+                        <a href="https://qb.medilink-study.com/#/Answer/106E64" target="_blank">106E64-66</a> 問診 / Ex / Vit
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
@@ -1931,29 +1851,33 @@
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_20:48:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_20:48:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_16:50:08"> </span>
                         <br>
                         <p>次の文を読み，64～66の問いに答えよ．</p>
 
                         <p>22歳の女性．<br>
-                            <u>運動時の疲労感</u>と「理由もなく氷が食べたくなる」ことを主訴に受診した．</p>
-                        <p>現病歴：<br>
+                            <u>運動時の疲労感</u>と「理由もなく氷が食べたくなる」ことを主訴に受診した．<br>
+                            現病歴：<br>
                             受診3ヵ月前の1月から，運動時の疲労感が強いことを自覚するようになった．所属している大学剣道部の最後の大会を夏に控え，特に熱心に練習していたので，そのための疲労感だろうと考えていた．<br>
                             4月になると，軽い稽古だけで今までよりも強い疲労感を感じるようになったが，3月にあった春合宿の疲労が残っているものと考えてそのままにしていた．ただ，暑くもないのに<u>氷が食べたくなる</u>ときが増えたことは気になっていた．<br>
-                            本日，大学内の医務室前を通りがかったとき，偶然「寒い日でも氷が食べたくなったときは医務室へ相談を！」と書かれたポスターが目に入り，心配になったため受診した．</p>
-                        <p>既往歴：<br>
-                            12歳時に虫垂炎の手術を受けた．</p>
-                        <p>生活歴：<br>
-                            喫煙・飲酒はしない．</p>
-                        <p>家族歴：<br>
-                            母（48歳）が脂質異常症で内服加療中．父（52歳）は高血圧症で内服加療中．妹（18歳）と弟（15歳）とは健康である．</p>
-                        <p>月経歴：<br>
-                            初経13歳．周期28日型，整．</p>
-                        <p>現　症：<br>
+                            本日，大学内の医務室前を通りがかったとき，偶然「寒い日でも氷が食べたくなったときは医務室へ相談を！」と書かれたポスターが目に入り，心配になったため受診した．<br>
+                            既往歴：<br>
+                            12歳時に虫垂炎の手術を受けた．<br>
+                            生活歴：<br>
+                            喫煙・飲酒はしない．<br>
+                            家族歴：<br>
+                            母（48歳）が脂質異常症で内服加療中．<br>
+                            父（52歳）は高血圧症で内服加療中．<br>
+                            妹（18歳）と弟（15歳）とは健康である．<br>
+                            月経歴：<br>
+                            初経13歳．周期28日型，整．<br>
+                            現　症：<br>
                             意識は清明．身長152cm，体重40kg．体温36.8℃．脈拍96/分，整．血圧100/60mmHg．呼吸数20/分．<br>
                             <u>眼瞼結膜はやや蒼白</u>である．眼球結膜に黄染を認めない．心音と呼吸音とに異常を認めない．腹部は平坦，軟で，肝・脾を触知しない．</p>
 
-                        <p>[E064] この患者に対する医療面接で，重要度が低い情報はどれか．</p>
+                        <p>[E064] <br>
+                            この患者に対する医療面接で，重要度が低い情報はどれか．</p>
                         <ol type="a">
                             <li class="ans_t">経血量</li>
                             <li class="ans_t">便の色調</li>
@@ -1962,7 +1886,8 @@
                             <li class="ans_f">氷を食べたくなる時間帯</li>
                         </ol>
 
-                        <p>[E065] この患者の検査結果で予測されるのはどれか</p>
+                        <p>[E065] <br>
+                            この患者の検査結果で予測されるのはどれか</p>
 
                         <table class="table table-condensed">
                             <tbody>
@@ -2012,12 +1937,13 @@
                         </table>
                         
 
-                        <p>[E066] 内服薬による治療を行う場合，同時に摂取することでこの内服薬の生体への吸収効率を上昇させるのはどれか．</p>
+                        <p>[E066] <br>
+                            内服薬による治療を行う場合，同時に摂取することでこの内服薬の生体への吸収効率を上昇させるのはどれか．</p>
                         <ol type="a">
                             <li class="ans_f">ビタミンA</li>
                             <li class="ans_f">ビタミンB1</li>
                             <li class="ans_f">ビタミンB12</li>
-                            <li class="ans_t">ビタミンC</li>
+                            <li class="ans_t star">ビタミンC</li>
                             <li class="ans_f">ビタミンD</li>
                         </ol>
                     </div>
@@ -2061,15 +1987,16 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group IDA info">
+            <div class="card-group IDA info" id="q14">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/101F39" target="_blank">101F39</a> 鉄剤投与終了の指標
+                        <a href="https://qb.medilink-study.com/#/Answer/101F39" target="_blank">101F39</a> 鉄剤投与終了
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:50:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:50:39"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_17:42:12"> </span>
                         <br>
                         <p>鉄欠乏性貧血に対する鉄剤投与終了の指標はどれか．</p>
 
@@ -2097,7 +2024,7 @@
                         </ol>
 
 
-                        <p>&darr;Ferri &rArr; &darr;Hb &rArr; &darr;RBC &rArr; &darr;Ret</p>
+                        <p>&darr;Ferri &rarr; &darr;Hb &rarr; &darr;RBC &rarr; &darr;Ret</p>
 
 
                         <table class="table table-condensed">
@@ -2138,15 +2065,16 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group ACD 110 pri info">
+            <div class="card-group ACD 110 pri info" id="q15">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://www.qb-online.com/#/list/110B35" target="_blank">110B35</a> 慢性炎症 検査所見
+                        <a href="https://www.qb-online.com/#/list/110B35" target="_blank">110B35</a> 慢性炎症 Ex
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:52:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:52:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:44:26"> </span>
                         <br>
                         <p>慢性炎症に伴う貧血で上昇するのはどれか．2つ選べ．</p>
                         
@@ -2178,10 +2106,15 @@
                         <h6>DDx: IDA / ACD</h6>
                         <table class="table table-condensed">
                             <thead>
-                                <tr>
+                                <!-- <tr>
                                     <th></th>
                                     <th>鉄欠乏性貧血</th>
                                     <th>慢性疾患に伴う貧血</th>
+                                </tr> -->
+                                <tr>
+                                    <th></th>
+                                    <th>IDA</th>
+                                    <th>ACD</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -2225,7 +2158,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group ACD info">
+            <div class="card-group ACD RA info" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97D32" target="_blank">97D32</a> 貧血
@@ -2233,7 +2166,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_20:57:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_20:57:22"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_17:46:41"> </span>
                         <br>
                         <p>46歳の女性．<br>
                             貧血の精査を目的に紹介され来院した．<br>
@@ -2241,7 +2175,9 @@
                             体格栄養は中等度．体温36.8℃．脈拍76/分，整．血圧124/76mmHg．<br>
                             眼瞼結膜は貧血様である．リンパ節腫大と肝脾腫とは認めない．<br>
                             血液所見：<br>
-                            <u>赤沈78mm/1時間</u>，<u>Hb 7.8g/dL</u>，<u>MCV 75μm3</u>，白血球7,800，血小板38万．血漿フィブリノゲン580mg/dL（基準200～400）．<u>CRP 6.5mg/dL</u>．<br>
+                            <u>赤沈78mm/1時間</u>，<br>
+                            <u>Hb 7.8g/dL</u>，<u>MCV 75μm3</u>，白血球7,800，血小板38万．<u>血漿フィブリノゲン580mg/dL</u>（基準200～400）．<br>
+                            <u>CRP 6.5mg/dL</u>．<br>
                             この患者でみられる検査所見はどれか．</p>
 
                         <ol type="a">
@@ -2289,24 +2225,27 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group thalassemia pri">
+            <div class="card-group thalassemia pri" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/100F36" target="_blank">100F36</a> HbF, 標的細胞
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:02:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:02:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:48:19"> </span>
                         <br>
                         <p>49歳の女性．<br>
-                            <u>貧血</u>を指摘され来院した．</p>
-                        <p><u>若いころから</u>立ちくらみとめまいとを感じている．<br>
-                        <p>6人の同胞のうち姉と弟とが以前から貧血を指摘されている．<u>脾を左肋骨弓下に3cm触知</u>する．</p>
-                        <p>血液所見：<br>
-                            赤血球443万，<u>Hb 8.7g/dL</u>，<u>Ht 27％</u>，<u>網赤血球19‰</u>，<u>ヘモグロビンF 6.6％</u>（基準2以下），<u>ヘモグロビンA2 8.9％</u>（基準1.2～3.5），白血球4,600（桿状核好中球4％，分葉核好中球53％，単球1％，リンパ球42％），血小板29万，総鉄結合能〈TIBC〉290μg/dL（基準290～390）．</p>
-                        <p>血清生化学所見：<br>
-                            フェリチン95ng/mL（基準20～120），Fe 100μg/dL．</p>
-                        <p>末梢血塗抹May-Giemsa染色標本を次に示す．<br>
+                            <u>貧血</u>を指摘され来院した．<br>
+                            <u>若いころから</u>立ちくらみとめまいとを感じている．<br>
+                            6人の同胞のうち姉と弟とが以前から貧血を指摘されている．<u>脾を左肋骨弓下に3cm触知</u>する．<br>
+                            血液所見：<br>
+                            赤血球443万，<u>Hb 8.7g/dL</u>，<u>Ht 27％</u>，<u>網赤血球19‰</u>，<u>ヘモグロビンF 6.6％</u>（基準2以下），<u>ヘモグロビンA2 8.9％</u>（基準1.2～3.5），<br>
+                            白血球4,600（桿状核好中球4％，分葉核好中球53％，単球1％，リンパ球42％），血小板29万，<br>
+                            総鉄結合能〈TIBC〉290μg/dL（基準290～390）．<br>
+                            血清生化学所見：<br>
+                            フェリチン95ng/mL（基準20～120），Fe 100μg/dL．<br>
+                            末梢血塗抹May-Giemsa染色標本を次に示す．<br>
                             考えられる疾患はどれか．</p>
                     </div>
 
@@ -2347,10 +2286,14 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">&uarr;HbF</li>
-                            <li class="list-group-item">&uarr;HbA2</li>
-                            <li class="list-group-item">標的細胞</li>
-                            <li class="list-group-item">&xrArr; &beta;サラセミア</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>&uarr;HbF</li>
+                                    <li>&uarr;HbA2</li>
+                                    <li>標的細胞</li>
+                                    <li>&xrArr; &beta;サラセミア</li>
+                                </ul>
+                            </li>
                         </ul>
 
 
@@ -2360,14 +2303,15 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group thalassemia">
+            <div class="card-group thalassemia" id="q18">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97I14" target="_blank">97I14</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:06:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:06:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:50:33"> </span>
                         <br>
                         <p>27歳の女性．<br>
                             定期健康診断で<u>血液異常</u>を指摘され，精査を勧められて来院した．<br>
@@ -2377,7 +2321,9 @@
                             血液所見：<br>
                             Hb 12.3g/dL，MCV 78μm3，<u>網赤血球16‰</u>，白血球4,800（好中球65％，好酸球2％，好塩基球1％，単球6％，リンパ球26％），血小板28万．<br>
                             血清生化学所見：<br>
-                            総蛋白7.2g/dL，アルブミン4.3g/dL，クレアチニン0.8mg/dL，AST 16単位，ALT 12単位，LD 350単位（基準176～353），Fe 153μg/dL，TIBC 303μg/dL（基準290～390），フェリチン98ng/mL（基準20～120）．CRP陰性．<br>
+                            総蛋白7.2g/dL，アルブミン4.3g/dL，クレアチニン0.8mg/dL，AST 16単位，ALT 12単位，LD 350単位（基準176～353），<br>
+                            Fe 153μg/dL，TIBC 303μg/dL（基準290～390），フェリチン98ng/mL（基準20～120）．<br>
+                            CRP陰性．<br>
                             末梢血塗抹標本で<u>標的赤血球</u>を認める．<br>
                             この患者で予想される検査所見はどれか．</p>
 
@@ -2416,17 +2362,17 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group SA info">
+            <div class="card-group SA Fe ferrokinetics info" id="q19">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/85B22" target="_blank">85B22</a> SA 検査所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_17:03:15"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_17:03:15"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:53:09"> </span>
                         <br>
                         <p>鉄芽球性貧血の検査所見について正しいのはどれか．</p>
-
 
                         <table class="table table-condensed">
                             <thead>
@@ -2477,13 +2423,16 @@
                     <div class="card-body">
 
                         <p><u>Fe利用障害</u></p>
-
-                        <ul>
-                            <li>&uarr;Fe</li>
-                            <li>&uarr;フェリチン</li>
-                            <li>&darr;UIBC</li>
-                            <li>&darr;PIDT<sub>1/2</sub></li>
-                            <li>&darr;%RCU</li>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>&uarr;Fe</li>
+                                    <li>&uarr;フェリチン</li>
+                                    <li>&darr;UIBC</li>
+                                    <li>&darr;PIDT<sub>1/2</sub></li>
+                                    <li>&darr;%RCU</li>
+                                </ul>
+                            </li>
                         </ul>
 
                         <p class="q_answer_true">b</p>
@@ -2541,7 +2490,7 @@
                                             <li>肝細胞壊死, 幹細胞減少</li>
                                         </ul>
                                     </td>
-                                    <td>(-)</td>
+                                    <td>(–)</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2553,7 +2502,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group SA pri">
+            <div class="card-group SA fig pri" id="q20">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94F23" target="_blank">94F23</a> 診断
@@ -2561,7 +2510,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_17:05:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_17:05:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:57:05"> </span>
                         <br>
                         <p>72歳の男性．<br>
                             7年前から近医で高血圧と不整脈との治療を受けていた．<br>
@@ -2570,7 +2520,8 @@
                             血液所見：<br>
                             赤血球290万，<u>Hb 9.5g/dL</u>，Ht 31.0％，<u>網赤血球20‰</u>，白血球5,300，血小板19万．<br>
                             血清生化学所見：<br>
-                            総ビリルビン2.3mg/dL，直接ビリルビン0.5mg/dL，AST 44単位，ALT 33単位，<u>LD 550単位</u>（基準176～353）．Fe 244μg/dL，総鉄結合能298μg/dL（基準250～390），<u>フェリチン1,410ng/mL</u>（基準20～120）．ビタミンB12 850pg/mL（基準250～950），葉酸5.2ng/mL（基準2.4～9.8）．<br>
+                            総ビリルビン2.3mg/dL，直接ビリルビン0.5mg/dL，AST 44単位，ALT 33単位，<u>LD 550単位</u>（基準176～353）．<br>
+                            Fe 244μg/dL，総鉄結合能298μg/dL（基準250～390），<u>フェリチン1,410ng/mL</u>（基準20～120）．ビタミンB12 850pg/mL（基準250～950），葉酸5.2ng/mL（基準2.4～9.8）．<br>
                             骨髄血塗抹May-Giemsa染色標本（A）と鉄染色標本（B）とを次に示す．<br>
                             最も考えられるのはどれか．</p>
                     </div>
@@ -2610,9 +2561,9 @@
                             <li>環状鉄芽球</li>
                         </ul>
 
-                        <p>鉄芽球性貧血</p>
+                        <p class="q_dx">鉄芽球性貧血</p>
 
-                        <p>True: b</p>
+                        <p class="q_answer_true">b</p>
 
 
                         <ol type="a">
@@ -2638,7 +2589,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group MBA PGS 110 pri">
+            <div class="card-group MBA PGS 110 pri" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110G47" target="_blank">110G47</a> 胃全摘後
@@ -2704,7 +2655,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group MBA PGS pri">
+            <div class="card-group MBA PGS pri" id="q22">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109E53" target="_blank">109E53</a> 診断 &xrArr; 治療
@@ -2764,14 +2715,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group MBA IDA PGS pri">
+            <div class="card-group MBA IDA PGS pri" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107A38" target="_blank">107A38</a> 胃全摘 vitB12投与後
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:14:44"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:14:44"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_17:59:44"> </span>
                         <br>
                         <p>70歳の男性．<br>
                             <u>息切れ</u>を主訴に来院した．<br>
@@ -2779,8 +2731,10 @@
                             血液所見：<br>
                             赤血球185万，<u>Hb 8.3g/dL</u>，Ht 25％，網赤血球0.3％，白血球3,900，血小板8.1万．<br>
                             血液生化学所見：<br>
-                            <u>尿素窒素12mg/dL，クレアチニン0.6mg/dL</u>，総ビリルビン2.1mg/dL，直接ビリルビン0.2mg/dL，AST 28IU/L，ALT 16IU/L，LD 1,280IU/L（基準176～353），Fe 65μg/dL（基準59～161），<u>ビタミンB12 112pg/mL</u>（基準250～950），葉酸8.3ng/mL（基準2.4～9.8）．<br>
-                            末梢血塗抹標本で核に過分葉のある成熟好中球を認め，骨髄血塗抹標本で<u>巨赤芽球</u>を認める．<u>ビタミンB12の筋肉内投与</u>が行われ，貧血は改善しつつあったが，<u>治療中に改善がみられなくなった</u>．<br>
+                            <u>尿素窒素12mg/dL，クレアチニン0.6mg/dL</u>，総ビリルビン2.1mg/dL，直接ビリルビン0.2mg/dL，AST 28IU/L，ALT 16IU/L，LD 1,280IU/L（基準176～353），<br>
+                            Fe 65μg/dL（基準59～161），<u>ビタミンB12 112pg/mL</u>（基準250～950），葉酸8.3ng/mL（基準2.4～9.8）．<br>
+                            末梢血塗抹標本で核に過分葉のある成熟好中球を認め，骨髄血塗抹標本で<u>巨赤芽球</u>を認める．<br>
+                            <u>ビタミンB12の筋肉内投与</u>が行われ，貧血は改善しつつあったが，<u>治療中に改善がみられなくなった</u>．<br>
                             現時点で患者に不足していると考えられるのはどれか．</p>
 
                         <ol type="a">
@@ -2796,16 +2750,15 @@
                     <div class="card-body">
                         
                         <ul>
-                            <li>胃全摘 &rAarr; +1yr IDA, +5yr vit.B12</li>
-                            <li>MCV 135.1fL &rAarr; Macro</li>
+                            <li>胃全摘 &xrArr; +1yr IDA, +5yr vit.B12</li>
+                            <li>MCV 135.1fL &xrArr; Macro</li>
                             <li>巨赤芽球貧血</li>
                             <li>vit.B12 欠乏</li>
-                            <li></li>
                         </ul>
 
                         <p>胃全摘後,<br>
                             vit.B12欠乏性貧血に対して, vit.B12投与<br>
-                            &rarr; IDAが顕在化</p>
+                            &rArr; IDAが顕在化</p>
                         
                         <p class="q_answer_true">a</p>
 
@@ -2821,7 +2774,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group MBA info">
+            <div class="card-group MBA PGS SCDoSC vitB12 SD info" id="q24">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99H17" target="_blank">99H17</a> MBA 検査
@@ -2829,7 +2782,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:18:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:18:16"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_18:02:10"> </span>
                         <br>
                         <p>55歳の男性．<br>
                             1ヵ月前から労作時の<u>息切れ</u>と<u>舌の痛み</u>とを自覚し，5日前から<u>歩行障害</u>も出現したため来院した．<br>
@@ -2843,7 +2797,7 @@
 
                         <ol type="a">
                             <li class="ans_t">血清ビタミンB12低下</li>
-                            <li class="ans_f">抗内因子抗体陽性</li>
+                            <li class="ans_f star">抗内因子抗体陽性</li>
                             <li class="ans_t">好中球の核の過分葉</li>
                             <li class="ans_t">骨髄中の赤芽球増加</li>
                             <li class="ans_t">Howell-Jolly小体</li>
@@ -2852,8 +2806,6 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_false">b</p>
 
@@ -2878,14 +2830,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group MBA pri 111 info">
+            <div class="card-group MBA pri 111 info" id="q25">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G59" target="_blank">111G59</a> 検査所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:24:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:24:24"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_18:06:24"> </span>
                         <br>
                         <p>80歳の女性．<br>
                             半年前からの<u>労作時息切れ</u>を主訴に来院した．<br>
@@ -2898,8 +2851,8 @@
                         <ol type="a">
                             <li class="ans_f">LD</li>
                             <li class="ans_f">ALP</li>
-                            <li class="ans_t">網赤血球</li>
-                            <li class="ans_f">ガストリン</li>
+                            <li class="ans_t star">網赤血球</li>
+                            <li class="ans_f star">ガストリン</li>
                             <li class="ans_t">ビタミンB<sub>12</sub></li>
                         </ol>
                     </div>
@@ -2964,24 +2917,25 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group vitB12 MBA PHYSIO pri info">
+            <div class="card-group vitB12 MBA PHYSIO pri info" id="q26">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109G32" target="_blank">109G32</a> vit.B12 Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:29:09"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:29:09"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:07:45"> </span>
                         <br>
                         <p>ビタミンB12の代謝について正しいのはどれか．2つ選べ．</p>
 
 
                         <ol type="a">
                             <li class="ans_f">主に空腸上部で吸収される．</li>
-                            <li class="ans_f">成人の1日必要量は約2mgである．</li>
+                            <li class="ans_f star">成人の1日必要量は約2mgである．</li>
                             <li class="ans_t">血中ではトランスコバラミンと結合する．</li>
                             <li class="ans_f">胃壁細胞から分泌される外因子と結合する． </li>
-                            <li class="ans_t">胃全摘後に補充しなければ約5年で欠乏する．</li>
+                            <li class="ans_t star">胃全摘後に補充しなければ約5年で欠乏する．</li>
                         </ol>
                     </div>
                 </div>
@@ -3025,7 +2979,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group AA 110 pri info">
+            <div class="card-group AA fig 110 pri info" id="q27">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A50" target="_blank">110A50</a> 治療
@@ -3033,7 +2987,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:31:28"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:31:28"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:09:14"> </span>
                         <br>
                         <p>67歳の男性．<br>
                             <u>全身倦怠感</u>と<u>微熱</u>とを主訴に来院した．<br>
@@ -3042,9 +2997,11 @@
                             数日前から，<u>歯肉からの出血</u>もみられた．<br>
                             体温37.4℃．眼瞼結膜は<u>貧血様</u>だが眼球結膜に黄染を認めない．口腔粘膜に<u>点状出血</u>と咽頭に軽度の発赤とを認める．表在リンパ節は触知しない．心基部を最強点とするⅡ/Ⅵの収縮期駆出性雑音を聴取する．腹部は平坦，軟で，肝・脾は触知しない．両側下腿に紫斑を認める．<br>
                             血液所見：<br>
-                            <u>赤血球157万</u>，<u>Hb 5.7g/dL</u>，<u>Ht 15％</u>，網赤血球0.3％，<u>白血球1,800</u>（桿状核好中球5％，分葉核好中球13％，好酸球3％，好塩基球1％，単球6％，リンパ球72％），<u>血小板1.3万</u>，PT 99％（基準80〜120），APTT 29秒（基準対照32.2），血漿フィブリノゲン286mg/dL（基準200〜400），血清FDP 10μg/mL以下（基準10以下）．<br>
+                            <u>赤血球157万</u>，<u>Hb 5.7g/dL</u>，<u>Ht 15％</u>，網赤血球0.3％，<u>白血球1,800</u>（桿状核好中球5％，分葉核好中球13％，好酸球3％，好塩基球1％，単球6％，リンパ球72％），<u>血小板1.3万</u>，<br>
+                            PT 99％（基準80〜120），APTT 29秒（基準対照32.2），血漿フィブリノゲン286mg/dL（基準200〜400），血清FDP 10μg/mL以下（基準10以下）．<br>
                             血液生化学所見：<br>
-                            総蛋白7.0g/dL，アルブミン4.2g/dL，ハプトグロビン74mg/dL（基準19〜170），総ビリルビン0.6mg/dL，AST 28IU/L，ALT 22IU/L，LD 287IU/L（基準176〜353），尿素窒素18mg/dL，クレアチニン0.8mg/dL，尿酸3.6mg/dL，Fe 325μg/dL．CRP 1.3mg/dL．骨髄生検のH-E染色標本（A，B）を次に示す．<br>
+                            総蛋白7.0g/dL，アルブミン4.2g/dL，ハプトグロビン74mg/dL（基準19〜170），総ビリルビン0.6mg/dL，AST 28IU/L，ALT 22IU/L，LD 287IU/L（基準176〜353），尿素窒素18mg/dL，クレアチニン0.8mg/dL，尿酸3.6mg/dL，Fe 325μg/dL．CRP 1.3mg/dL．<br>
+                            骨髄生検のH-E染色標本（A，B）を次に示す．<br>
                             対応として最も適切なのはどれか．</p>
                     </div>
 
@@ -3166,7 +3123,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group AA info">
+            <div class="card-group AA info" id="q28">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99I16" target="_blank">99I16-18</a> Pancytopenia 診断 / 治療 
@@ -3174,34 +3131,42 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill rev" id="2018-12-22_18:13:33"> </span>
                          /
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_17:16:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_17:16:45"> </span>
+                        <span class="badge badge-pill rev" id="2018-12-22_18:13:52"> </span>
                          /
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:14:01"> </span>
                         <br>
 
                         <p>次の文を読み，16～18の問いに答えよ．<br><br>
 
                             28歳の男性．<br>
                             <u>全身倦怠感</u>と<u>歯肉出血</u>とのため来院した．<br>
-                            現病歴：2週前から<u>全身倦怠感</u>を自覚していたが，3日前から起床時に<u>歯肉に血</u>がにじんでいるのに気付いた．<br>
+                            現病歴：<br>
+                            2週前から<u>全身倦怠感</u>を自覚していたが，3日前から起床時に<u>歯肉に血</u>がにじんでいるのに気付いた．<br>
                             既往歴：<br>
                             特記すべきことはない．<br>
                             現　症：<br>
-                            意識は清明．体温37.2℃．脈拍98/分，整．血圧106/62mmHg．前胸部と下腿とに<u>点状出血</u>を認める．<u>眼瞼結膜は蒼白</u>．リンパ節腫脹はない．第3肋間胸骨左縁に<u>2/6度の収縮期雑音</u>を認める．肺野にラ音を聴取しない．腹部は平坦で，肝・脾を触知しない．神経学的に異常を認めない．<br>
+                            意識は清明．体温37.2℃．脈拍98/分，整．血圧106/62mmHg．<br>
+                            前胸部と下腿とに<u>点状出血</u>を認める．<u>眼瞼結膜は蒼白</u>．リンパ節腫脹はない．第3肋間胸骨左縁に<u>2/6度の収縮期雑音</u>を認める．肺野にラ音を聴取しない．腹部は平坦で，肝・脾を触知しない．神経学的に異常を認めない．<br>
                             検査所見：<br>
                             尿所見：<br>
                             蛋白1＋，糖（－），潜血2＋．便潜血反応陰性．<br>
                             血液所見：<br>
-                            赤血球205万，Hb 6.6g/dL，Ht 20％，網赤血球10‰，白血球2,500（桿状核好中球1％，分葉核好中球26％，好酸球2％，好塩基球1％，単球9％，リンパ球61％），血小板2.1万，<u>出血時間12分</u>（基準7以下），プロトロンビン時間98％（基準80～120），APTT 31秒（基準対照32.2）．<br>
+                            赤血球205万，Hb 6.6g/dL，Ht 20％，網赤血球10‰，白血球2,500（桿状核好中球1％，分葉核好中球26％，好酸球2％，好塩基球1％，単球9％，リンパ球61％），血小板2.1万，<br>
+                            <u>出血時間12分</u>（基準7以下），プロトロンビン時間98％（基準80～120），APTT 31秒（基準対照32.2）．<br>
                             血清生化学所見：<br>
-                            総蛋白7.0g/dL，アルブミン4.5g/dL，ハプトグロビン45mg/dL（基準19～170），尿素窒素18mg/dL，クレアチニン1.1mg/dL，尿酸4.6mg/dL，総コレステロール135mg/dL，総ビリルビン0.8mg/dL，AST 35単位，ALT 30単位，LD 350単位（基準176～353），Na 140mEq/L，K 4.0mEq/L，Cl 100mEq/L．CRP 0.8mg/dL．</p>
+                            総蛋白7.0g/dL，アルブミン4.5g/dL，ハプトグロビン45mg/dL（基準19～170），尿素窒素18mg/dL，クレアチニン1.1mg/dL，尿酸4.6mg/dL，総コレステロール135mg/dL，総ビリルビン0.8mg/dL，AST 35単位，ALT 30単位，LD 350単位（基準176～353），<br>
+                            Na 140mEq/L，K 4.0mEq/L，Cl 100mEq/L．CRP 0.8mg/dL．</p>
 
 
-                        <p>[I016] この患者の貧血の発生機序はどれか．</p>
+                        <p>[I016] <br>
+                            この患者の貧血の発生機序はどれか．</p>
                         <ol type="a">
                             <li class="ans_f">失血</li>
                             <li class="ans_f">赤血球寿命短縮</li>
@@ -3210,7 +3175,8 @@
                             <li class="ans_f">エリスロポエチン低下</li>
                         </ol>
 
-                        <p>[I017] この患者の出血傾向の原因はどれか．</p>
+                        <p>[I017] <br>
+                            この患者の出血傾向の原因はどれか．</p>
 
                         <ol type="a">
                             <li class="ans_t">血小板減少</li>
@@ -3221,7 +3187,8 @@
                         </ol>
 
 
-                        <p>[I018] この患者に投与する血液製剤で適切なのはどれか．2つ選べ．</p>
+                        <p>[I018] <br>
+                            この患者に投与する血液製剤で適切なのはどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">濃厚血小板</li>
@@ -3247,10 +3214,10 @@
                             <li>&darr;Hb, NOT &uarr;Reticulo<br>&rAarr; &darr;Erythropoiesis</li>
 
                         </ul>
-                        <br>
+
+
                         <ul>
                             <li>洗浄RBC: Plasma cause damage,<br> e.g.,PNH</li>
-                            <li></li>
                         </ul>
 
                         <p class="q_dx">AA</p>
@@ -3288,35 +3255,42 @@
                             <tbody>
                                 <tr>
                                     <th>&darr;血球産生</th>
-                                    <td><ul>
-                                        <li>再生不良性貧血</li>
-                                        <li>MDS</li>
-                                        <li>巨赤芽球貧血</li>
-                                        <li>AL</li>
-                                        <li>MM</li>
-                                        <li>骨髄転移</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>再生不良性貧血</li>
+                                            <li>MDS</li>
+                                            <li>巨赤芽球貧血</li>
+                                            <li>AL</li>
+                                            <li>MM</li>
+                                            <li>骨髄転移</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>&uarr;血球破壊</th>
-                                    <td><ul>
-                                        <li>脾機能&uarr;</li>
-                                        <li>膠原病</li>
-                                        <li>血球貪食症候群</li>
-                                        <li>DIC</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>脾機能&uarr;</li>
+                                            <li>膠原病</li>
+                                            <li>血球貪食症候群</li>
+                                            <li>DIC</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 09 -->
-            <div class="card-group AA 111">
+            <div class="card-group AA 111" id="q29">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/111I35">111I35</a> 再生不良性貧血 血球
+                        <a href="https://qb.medilink-study.com/#/Answer/111I35" target="_blank">111I35</a> 再生不良性貧血 血球
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
@@ -3352,15 +3326,16 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group AA">
+            <div class="card-group AA Fe ferrokinetics" id="q30">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://qb.medilink-study.com/#/Answer/81B48" target="_blank">81B48</a> 再生不良性貧血 Qs 
+                        <a href="https://qb.medilink-study.com/#/Answer/81B48" target="_blank">81B48</a> AA Qs 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:39:16"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:39:16"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:16:19"> </span>
                         <br>
                         
                         <p>再生不良性貧血について正しいのはどれか．3つ選べ．</p>
@@ -3391,7 +3366,8 @@
                         
                         <ul class="list-group">
                             <li class="list-group-item">
-                                Hemolysis &rArr;
+                                Hemolysis<br>
+                                &rArr;
                                 <ul>
                                     <li>&uarr;LD</li>
                                     <li>&uarr;U-Bil</li>
@@ -3402,6 +3378,8 @@
                                 &uarr;Plasma Fe, &uarr;PIDT, &darr;%RCU
                             </li>
                         </ul>
+
+
 
                     </div>
                 </div>
@@ -3418,7 +3396,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group PRCA HS">
+            <div class="card-group PRCA HS" id="q31">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/95G32" target="_blank">95G32</a> Post-Infxn anemia 診断
@@ -3426,7 +3404,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_17:20:19"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_17:20:19"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_16:55:59"> </span>
                         <br>
                         <p>27歳の男性．<br>
                             3日前から急に<u>めまい</u>と<u>疲労感</u>とが増強したため来院した．</p>
@@ -3485,15 +3464,16 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group PRCA">
+            <div class="card-group PRCA" id="q32">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/98D32" target="_blank">98D32</a> Anemia 治療
+                        <a href="https://qb.medilink-study.com/#/Answer/98D32" target="_blank">98D32</a> 治療
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:44:11"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:44:11"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:19:30"> </span>
                         <br>
                         <p>52歳の女性．<br>
                             <u>労作時息切れ</u>のため来院した．<br>
@@ -3514,9 +3494,9 @@
                         <ol type="a">
                             <li class="ans_f">摘脾術</li>
                             <li class="ans_f">鉄キレート薬投与</li>
-                            <li class="ans_t">シクロスポリン投与</li>
+                            <li class="ans_t star">シクロスポリン投与</li>
                             <li class="ans_f">蛋白同化ステロイド薬投与</li>
-                            <li class="ans_f">副腎皮質ステロイド薬投与</li>
+                            <li class="ans_f star">副腎皮質ステロイド薬投与</li>
                         </ol>
                     </div>
                 </div>
@@ -3534,13 +3514,18 @@
                         <img src="https://qb.medilink-study.com/images/98D032_ima_g_010.jpg" class="card-img-top img-fluid">
 
 
-                        <p>&darr;赤芽球(EB) synthesis</p>
-                        <ul>
-                            <li>Pancytopenia(+) &xrArr; AA</li>
-                            <li>Pancytopenia(-) &xrArr; PRCA</li>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                &darr;赤芽球(EB) synthesis
+                                <ul>
+                                    <li>Pancytopenia(+) &xrArr; AA</li>
+                                    <li>Pancytopenia(-) &xrArr; PRCA</li>
+                                </ul>
+                            </li>
                         </ul>
 
-                        <p class="q_dx">赤芽球癆</p>
+
+                        <p class="q_dx">赤芽球癆 PRCA</p>
 
                         <p class="q_answer_true">c</p>
 
@@ -3558,7 +3543,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group thymoma PRCA pri">
+            <div class="card-group thymoma PRCA pri" id="q33">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108D52" target="_blank">108D52</a> Anemia, tumor 診断
@@ -3566,20 +3551,21 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_17:25:18"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_17:25:18"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_17:04:50"> </span>
                         <br>
 
                         <p>68歳の男性．<br>
-                            <u>動悸</u>と<u>易疲労感</u>とを主訴に来院した．</p>
-                        <p>身長165cm，体重63kg．体温36.5℃．脈拍92/分，整．血圧122/68mmHg．<br>
-                            皮膚は灰褐色で眼瞼結膜は<u>貧血様</u>である．眼球結膜に黄染を認めない．頸部，腋窩および鼠径部の表在リンパ節は触知しない．<u>胸骨左縁第2肋間にⅡ/Ⅵの収縮期雑音</u>を聴取する．腹部は平坦，軟で，肝・脾を触知しない．下肢に浮腫や紫斑を認めない．</p>
-                        <p>血液所見：<br>
-                            赤血球233万，<u>Hb 7.1g/dL</u>，Ht 20％，網赤血球0％，白血球9,400（桿状核好中球6％，分葉核好中球54％，単球3％，リンパ球37％），血小板32万．</p>
-                        <p>血液生化学所見：<br>
-                            総蛋白6.8g/dL，アルブミン3.4g/dL，AST 56IU/L，ALT 71IU/L，<u>LD 438IU/L</u>（基準176～353），<u>尿素窒素14mg/dL，クレアチニン0.7mg/dL</u>，血糖98mg/dL，<u>Fe 234μg/dL</u>（基準59～161），<u>不飽和鉄結合能〈UIBC〉67μg/dL</u>（基準163～251）．</p>
-                        <p>骨髄は正形成で<u>巨核球</u>を散見する．</p>
-                        <p>胸部X線写真（A），胸部CT（B）及び骨髄血塗抹May-Giemsa染色標本（C）を次に示す．</p>
-                        <p>考えられるのはどれか．2つ選べ．</p>
+                            <u>動悸</u>と<u>易疲労感</u>とを主訴に来院した．<br>
+                            身長165cm，体重63kg．体温36.5℃．脈拍92/分，整．血圧122/68mmHg．<br>
+                            皮膚は灰褐色で眼瞼結膜は<u>貧血様</u>である．眼球結膜に黄染を認めない．頸部，腋窩および鼠径部の表在リンパ節は触知しない．<u>胸骨左縁第2肋間にⅡ/Ⅵの収縮期雑音</u>を聴取する．腹部は平坦，軟で，肝・脾を触知しない．下肢に浮腫や紫斑を認めない．<br>
+                            血液所見：<br>
+                            赤血球233万，<u>Hb 7.1g/dL</u>，Ht 20％，網赤血球0％，白血球9,400（桿状核好中球6％，分葉核好中球54％，単球3％，リンパ球37％），血小板32万．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.8g/dL，アルブミン3.4g/dL，AST 56IU/L，ALT 71IU/L，<u>LD 438IU/L</u>（基準176～353），<u>尿素窒素14mg/dL，クレアチニン0.7mg/dL</u>，血糖98mg/dL，<u>Fe 234μg/dL</u>（基準59～161），<u>不飽和鉄結合能〈UIBC〉67μg/dL</u>（基準163～251）．<br>
+                            骨髄は正形成で<u>巨核球</u>を散見する．<br>
+                            胸部X線写真（A），胸部CT（B）及び骨髄血塗抹May-Giemsa染色標本（C）を次に示す．<br>
+                            考えられるのはどれか．2つ選べ．</p>
                     </div>
 
                     <!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/108/img/108D052A.jpg" width="45%"> -->
@@ -3593,9 +3579,9 @@
                     <div class="card-boddy">
                         <ol type="a">
                             <li class="ans_f">肺癌</li>
-                            <li class="ans_t">胸腺腫</li>
-                            <li class="ans_t">赤芽球癆</li>
-                            <li class="ans_f">溶血性貧血</li>
+                            <li class="ans_t star">胸腺腫</li>
+                            <li class="ans_t star">赤芽球癆</li>
+                            <li class="ans_f star">溶血性貧血</li>
                             <li class="ans_f">再生不良性貧血</li>
                         </ol>
                         
@@ -3636,22 +3622,23 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group PHYSIO HA info" id="q34">
+            <div class="card-group INTRO PHYSIO HA info" id="q34">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/94A55" target="_blank">94A55</a> 溶血 検査所見
+                        <a href="https://qb.medilink-study.com/#/Answer/94A55" target="_blank">94A55</a> 溶血 Ex
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_17:46:05"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_17:46:05"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:21:55"> </span>
                         <br>
                         <p>溶血を示す検査所見はどれか．3つ選べ．</p>
 
 
                         <ol type="a">
-                            <li class="ans_f">尿ビリルビン陽性</li>
-                            <li class="ans_t">尿ヘモジデリン陽性</li>
+                            <li class="ans_f star">尿ビリルビン陽性</li>
+                            <li class="ans_t star">尿ヘモジデリン陽性</li>
                             <li class="ans_t">網赤血球増加</li>
                             <li class="ans_t">血清ハプトグロビン減少</li>
                             <li class="ans_f">血清鉄減少</li>
@@ -3660,8 +3647,6 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">b c d</p>
 
@@ -3745,30 +3730,34 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 05 -->
-            <div class="card-group HA PHYSIO info">
+            <div class="card-group HA INTRO PHYSIO info" id="q35">
                 <div class="card">
                     <div class="card-header ">
-                        <a href="https://qb.medilink-study.com/#/Answer/104G36" target="_blank">104G36</a> 溶血性貧血 症候
+                        <a href="https://qb.medilink-study.com/#/Answer/104G36" target="_blank">104G36</a> HA 症候
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_19:50:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_19:50:09"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_17:10:03"> </span>
                         <br>
                         <p>溶血性貧血でみられないのはどれか．</p>
 
 
                         <ol type="a">
                             <li class="ans_t">黄疸</li>
-                            <li class="ans_t">胆石</li>
+                            <li class="ans_t star">胆石</li>
                             <li class="ans_t">脾腫</li>
-                            <li class="ans_f">尿路結石</li>
-                            <li class="ans_t">ヘモグロビン尿</li>
+                            <li class="ans_f star">尿路結石</li>
+                            <li class="ans_t star">ヘモグロビン尿</li>
                         </ol>
                     </div>
                 </div>
@@ -3799,7 +3788,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group HA G6PDD PHYSIO">
+            <div class="card-group HA G6PDD PHYSIO info" id="q36">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104I16" target="_blank">104I16</a> 溶血性貧血
@@ -3807,13 +3796,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:48:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:48:41"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:23:20"> </span>
                         <br>
                         <p>溶血性貧血をきたすのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_t">グルコース-6-リン酸脱水素酵素欠損症</li>
-                            <li class="ans_f">アデノシンデアミナーゼ欠損症</li>
+                            <li class="ans_f star">アデノシンデアミナーゼ欠損症</li>
                             <li class="ans_f">C1インヒビター欠損症</li>
                             <li class="ans_f">ビタミンK欠乏症</li>
                             <li class="ans_f">第XⅢ因子欠乏症</li>
@@ -3845,7 +3835,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group AIHA 111 pri">
+            <div class="card-group AIHA 111 pri" id="q37">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I53" target="_blank">111I53</a> 検査
@@ -3853,16 +3843,19 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_21:51:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_21:51:27"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_18:25:50"> </span>
                         <br>
                         <p>66歳の女性．<br>
-                            2週間前から息切れと動悸があり来院した．生来健康でこれまでに貧血を指摘されたことはなく，不正性器出血はない．眼瞼結膜は強度貧血様である．眼球結膜に<u>黄染</u>を認める．肝を触知せず，<u>脾を左季肋下に3cm触知</u>する．<br>
+                            2週間前から息切れと動悸があり来院した．<br>
+                            生来健康でこれまでに貧血を指摘されたことはなく，不正性器出血はない．眼瞼結膜は強度貧血様である．眼球結膜に<u>黄染</u>を認める．肝を触知せず，<u>脾を左季肋下に3cm触知</u>する．<br>
                             尿所見：<br>
                             蛋白1＋，<u>ウロビリノゲン3＋</u>，潜血（－），ヘモジデリン（－）．<br>
                             血液所見：<br>
                             赤血球170万，Hb 5.5g/dL，Ht 17％，<u>網赤血球15％</u>，白血球7,200，血小板26万．<br>
                             血液生化学所見：<br>
-                            総ビリルビン3.2mg/dL，直接ビリルビン0.8mg/dL，AST 20U/L，ALT 18U/L，LD 684U/L（基準176〜353），<u>ハプトグロビン5mg/dL以下</u>（基準19〜170），フェリチン46ng/mL（基準20〜120）．<br>この患者の鑑別診断に有用な検査はどれか．</p>
+                            総ビリルビン3.2mg/dL，直接ビリルビン0.8mg/dL，AST 20U/L，ALT 18U/L，LD 684U/L（基準176〜353），<br>
+                            <u>ハプトグロビン5mg/dL以下</u>（基準19〜170），フェリチン46ng/mL（基準20〜120）．<br>この患者の鑑別診断に有用な検査はどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">骨髄検査</li>
@@ -3926,7 +3919,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group AIHA pri info">
+            <div class="card-group AIHA pri info" id="q38">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/101G32" target="_blank">101G32</a> AIHA 治療
@@ -3934,27 +3927,31 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-13_11:08:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-13_11:08:52"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:14:11"> </span>
                         <br>
                         
                         <p>65歳の女性．<br>
-                            坂道での<u>動悸</u>と<u>息切れ</u>とを主訴に来院した．</p>
-                        <p>3ヵ月前から家族に<u>顔色不良</u>を指摘されていた．<br>
-                            1ヵ月前から主訴を自覚しはじめ，徐々に悪化した．脈拍96/分，整．血圧134/64mmHg．表在リンパ節の腫大はない．左肋骨弓下に<u>脾を2cm触知</u>する．</p>
-                        <p>血液所見：<br>
-                            赤沈123mm/1時間，赤血球145万，<u>Hb 6.6g/dL</u>，Ht 17％，<u>網赤血球23％（230‰）</u>，白血球8,900，血小板36万．</p>
-                        <p>血清生化学所見：<br>
-                            <u>ハプトグロビン10mg/dL以下</u>（基準19～170），総ビリルビン2.7mg/dL，間接ビリルビン1.9mg/dL．AST 50IU/L，ALT 32IU/L，<u>LD 650IU/L</u>（基準176～353）．</p>
-                        <p>免疫学所見：<br>
-                            <u>直接Coombs試験陽性</u>，寒冷凝集反応32倍（基準128以下）．</p>
-                        <p>治療法として適切なのはどれか．</p>
+                            坂道での<u>動悸</u>と<u>息切れ</u>とを主訴に来院した．<br>
+                            3ヵ月前から家族に<u>顔色不良</u>を指摘されていた．<br>
+                            1ヵ月前から主訴を自覚しはじめ，徐々に悪化した．<br>
+                            脈拍96/分，整．血圧134/64mmHg．<br>
+                            表在リンパ節の腫大はない．左肋骨弓下に<u>脾を2cm触知</u>する．<br>
+                            血液所見：<br>
+                            赤沈123mm/1時間，<br>
+                            赤血球145万，<u>Hb 6.6g/dL</u>，Ht 17％，<u>網赤血球23％（230‰）</u>，白血球8,900，血小板36万．<br>
+                            血清生化学所見：<br>
+                            <u>ハプトグロビン10mg/dL以下</u>（基準19～170），総ビリルビン2.7mg/dL，間接ビリルビン1.9mg/dL．AST 50IU/L，ALT 32IU/L，<u>LD 650IU/L</u>（基準176～353）．<br>
+                            免疫学所見：<br>
+                            <u>直接Coombs試験陽性</u>，寒冷凝集反応32倍（基準128以下）．<br>
+                            治療法として適切なのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">蛋白同化ステロイド薬投与</li>
-                            <li class="ans_t">副腎皮質ステロイド薬投与</li>
+                            <li class="ans_t star">副腎皮質ステロイド薬投与</li>
                             <li class="ans_f">アザチオプリン投与</li>
                             <li class="ans_f">シクロスポリン投与</li>
-                            <li class="ans_f">脾摘術</li>
+                            <li class="ans_f star">脾摘術</li>
                         </ol>
                     </div>
                 </div>
@@ -4001,7 +3998,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group AIHA">
+            <div class="card-group AIHA" id="q39">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/90E22" target="_blank">90E22</a> 検査
@@ -4057,22 +4054,23 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group AIHA">
+            <div class="card-group AIHA" id="q40">
                 <div class="card">
-                    <div class="card-header ">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99E37" target="_blank">99E37</a> AIHA RBC morphology
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-12_19:51:30"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-12_19:51:30"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:16:55"> </span>
                         <br>
                         <p>自己免疫性溶血性貧血にみられる赤血球形態所見はどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_f">破砕赤血球</li>
                             <li class="ans_f">標的赤血球</li>
-                            <li class="ans_t">赤血球凝集</li>
+                            <li class="ans_t star">赤血球凝集</li>
                             <li class="ans_t">小球状赤血球</li>
                             <li class="ans_f">低色素性赤血球</li>
                         </ol>
@@ -4086,14 +4084,16 @@
                         <p class="q_answer_true">c d</p>
 
                         <ol type="a">
-                            <li>破砕RBC: e.g.,
+                            <li>破砕RBC:<br>
+                                e.g.,
                                 <ul>
                                     <li>DIC</li>
                                     <li>TTP</li>
                                     <li>HUS</li>
                                 </ul>
                             </li>
-                            <li>target cell: e.g.,
+                            <li>target cell:<br>
+                                e.g.,
                                 <ul>
                                     <li>サラセミア</li>
                                     <li>重症肝疾患</li>
@@ -4104,7 +4104,8 @@
                             <li>autoAb RBCに結合<br>
                                 &rArr; M&Phi; に部分的に貪食される<br>
                                 &rArr; Microcytic</li>
-                            <li>低色素: e.g., IDA</li>
+                            <li>低色素:<br>
+                                e.g., IDA</li>
                         </ol>
 
                         <ul class="list-group">
@@ -4131,7 +4132,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group AIHA ITP Evans allergy allergy2 info mnemonics">
+            <div class="card-group AIHA ITP Evans allergy allergy2 info mnemonics" id="q41">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102G44" target="_blank">102G44</a> Allergy
@@ -4139,7 +4140,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_19:52:55"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_19:52:55"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:26:58"> </span>
                         <br>
                         <p>23歳の女性．<br>
                             38℃台の発熱を主訴に来院した．<br>
@@ -4238,7 +4240,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group AIHA CAD info">
+            <div class="card-group AIHA CAD info" id="q42">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102D46" target="_blank" id="">102D46</a> 診断 &xrArr; 検査
@@ -4246,20 +4248,23 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-13_11:06:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-13_11:06:22"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_18:28:25"> </span>
                         <br>
                         <p>54歳の男性．<br>
                             倦怠感を主訴に来院した．<br>
-                            2年前から<u>冬季になると体調不良を自覚</u>していた．今年の冬は1ヵ月前から今までになく倦怠感が強くなった．同時期から，時々指尖が冷たく，痛くなった．<br>
+                            2年前から<u>冬季になると体調不良を自覚</u>していた．<br>
+                            今年の冬は1ヵ月前から今までになく倦怠感が強くなった．同時期から，時々指尖が冷たく，痛くなった．<br>
                             生来健康で喫煙歴はない．<br>
-                            意識は清明．体温37.3℃．脈拍96/分，整．血圧114/58mmHg．皮膚に発疹はない．心音と呼吸音とに異常を認めない．左肋骨弓下に脾の先端を触れる．<u>尿潜血1＋</u>．<br>
-                        <p>血液所見：<br>
-                            赤血球252万，Hb 7.9g/dL，Ht 24％，網赤血球4.8％，白血球6,700，血小板34万．</p>
-                        <p>血液生化学所見：<br>
-                            総蛋白8.0g/dL，アルブミン4.7g/dL，尿素窒素14.0mg/dL，クレアチニン1.0mg/dL，尿酸7.2mg/dL，総コレステロール220mg/dL，トリグリセリド154mg/dL，総ビリルビン3.2mg/dL，直接ビリルビン0.8mg/dL，AST 35IU/L，ALT 35IU/L，LD 770IU/L（基準176～353），ALP 220IU/L（基準260以下），Fe 230μg/dL．</p>
-                        <p>免疫学所見：<br>
-                            CRP 0.3mg/dL，抗核抗体陰性．</p>
-                        <p>末梢血塗抹Wright-Giemsa染色標本を次に示す．<br>
+                            意識は清明．体温37.3℃．脈拍96/分，整．血圧114/58mmHg．<br>
+                            皮膚に発疹はない．心音と呼吸音とに異常を認めない．左肋骨弓下に脾の先端を触れる．<u>尿潜血1＋</u>．<br>
+                            血液所見：<br>
+                            赤血球252万，Hb 7.9g/dL，Ht 24％，網赤血球4.8％，白血球6,700，血小板34万．
+                            血液生化学所見：<br>
+                            総蛋白8.0g/dL，アルブミン4.7g/dL，尿素窒素14.0mg/dL，クレアチニン1.0mg/dL，尿酸7.2mg/dL，総コレステロール220mg/dL，トリグリセリド154mg/dL，総ビリルビン3.2mg/dL，直接ビリルビン0.8mg/dL，AST 35IU/L，ALT 35IU/L，LD 770IU/L（基準176～353），ALP 220IU/L（基準260以下），Fe 230μg/dL．<br>
+                            免疫学所見：<br>
+                            CRP 0.3mg/dL，抗核抗体陰性．<br>
+                            末梢血塗抹Wright-Giemsa染色標本を次に示す．<br>
                             この患者にみられる検査所見はどれか．</p>
                     </div>
 
@@ -4333,7 +4338,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group HS pri">
+            <div class="card-group HS pri" id="q43">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/102D45" target="_blank">102D45</a> 診断
@@ -4396,7 +4401,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group PVB19 PRCA HS 110 pri">
+            <div class="card-group PVB19 B19V PRCA HS 110 pri" id="q44">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110A46" target="_blank">110A46</a> 伝染性紅斑 貧血
@@ -4404,23 +4409,25 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-13_11:03:40"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-13_11:03:40"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-22_18:29:55"> </span>
                         <br>
                         <p>3歳の男児．<br>
-                            <u>顔色不良</u>を主訴に来院した．</p>
-                        <p>2日前に<u>38℃台の発熱</u>があったが1日で解熱した．<br>
+                            <u>顔色不良</u>を主訴に来院した．<br>
+                            2日前に<u>38℃台の発熱</u>があったが1日で解熱した．<br>
                             昨日の夕方からぐずることが多くなった．<br>
                             今朝になり顔色不良に気付かれ受診した．<br>
-                            保育園で<u>伝染性紅斑</u>が流行しているとのことであった．</p>
-                        <p>意識は清明．体温37.8℃．脈拍148/分，整．血圧94/56mmHg．<br>
-                            皮膚は蒼白．眼瞼結膜は<u>貧血様</u>である．眼球結膜に<u>軽度黄染</u>を認める．<u>口腔内粘膜は蒼白</u>である．咽頭に発赤を認めない．頸部リンパ節を触知しない．胸部の聴診で<u>胸骨左縁にⅡ/Ⅵの収縮期雑音</u>を認める．呼吸音に異常を認めない．腹部は平坦，軟で，肝を触知しない．<u>脾を左肋骨弓下に3cm触知</u>する．</p>
-                        <p>血液所見：<br>
-                            赤血球120万，<u>Hb 3.6g/dL</u>，Ht 12％，網赤血球0％，白血球3,800，血小板18万，PT 72％（基準80〜120）．</p>
-                        <p>血液生化学所見：<br>
-                            総蛋白6.4g/dL，アルブミン4.0g/dL，総ビリルビン3.9mg/dL，<u>直接ビリルビン0.8mg/dL</u>，AST 29IU/L，ALT 14IU/L，LD 432IU/L（基準176〜353），尿酸4.2mg/dL．</p>
-                        <p>免疫血清学所見：<br>
-                            CRP 0.3mg/dL，直接Coombs試験陰性．</p>
-                        <p>胸部X線写真で明らかな浸潤影はなく，心胸郭比52％である．<br>
+                            保育園で<u>伝染性紅斑</u>が流行しているとのことであった．<br>
+                            意識は清明．<br>
+                            体温37.8℃．脈拍148/分，整．血圧94/56mmHg．<br>
+                            皮膚は蒼白．眼瞼結膜は<u>貧血様</u>である．眼球結膜に<u>軽度黄染</u>を認める．<u>口腔内粘膜は蒼白</u>である．咽頭に発赤を認めない．頸部リンパ節を触知しない．胸部の聴診で<u>胸骨左縁にⅡ/Ⅵの収縮期雑音</u>を認める．呼吸音に異常を認めない．腹部は平坦，軟で，肝を触知しない．<u>脾を左肋骨弓下に3cm触知</u>する．<br>
+                            血液所見：<br>
+                            赤血球120万，<u>Hb 3.6g/dL</u>，Ht 12％，網赤血球0％，白血球3,800，血小板18万，PT 72％（基準80〜120）．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.4g/dL，アルブミン4.0g/dL，総ビリルビン3.9mg/dL，<u>直接ビリルビン0.8mg/dL</u>，AST 29IU/L，ALT 14IU/L，LD 432IU/L（基準176〜353），尿酸4.2mg/dL．<br>
+                            免疫血清学所見：<br>
+                            CRP 0.3mg/dL，直接Coombs試験陰性．<br>
+                            胸部X線写真で明らかな浸潤影はなく，心胸郭比52％である．<br>
                             考えられる疾患はどれか．</p>
 
                         <ol type="a">
@@ -4454,7 +4461,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group HS pri info">
+            <div class="card-group HS pri info" id="q45">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103B9" target="_blank">103B9</a> 治療 
@@ -4462,7 +4469,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-13_11:01:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-13_11:01:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_17:21:12"> </span>
                         <br>
                         <p>乳児期から<u>貧血</u>を呈する9歳男児の末梢血塗抹May-Giemsa染色標本を次に示す．<br>
                             治療として適切なのはどれか．</p>
@@ -4524,7 +4532,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group HS">
+            <div class="card-group HS" id="q46">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/101F40" target="_blank">101F40</a> 病態生理 試験 Qs
@@ -4563,7 +4571,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group PNH 111 pri">
+            <div class="card-group PNH 111 pri" id="q47">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I63" target="_blank">111I63</a> 検査所見 
@@ -4611,7 +4619,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group PNH pri info">
+            <div class="card-group PNH pri info" id="q48">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109D11" target="_blank">109D11</a> PNH 検査
@@ -4726,7 +4734,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group PNH pri">
+            <div class="card-group PNH pri" id="q49">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107D17" target="_blank">107D17</a> PNH 検査
@@ -4776,7 +4784,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group thalassemia RA AA">
+            <div class="card-group thalassemia RA AA" id="q50">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93B49" target="_blank">93B49</a> 疾患 - 病態
@@ -4827,7 +4835,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group IDA MA Evans ITP AIHA 111 pri">
+            <div class="card-group IDA MA Evans ITP AIHA 111 pri" id="q51">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111G19" target="_blank">111G19</a> 貧血 - 症候
@@ -4835,13 +4843,14 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev "> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-13_10:59:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-13_10:59:56"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:31:27"> </span>
                         <br>
                         <p>貧血とその症候の組合せで誤っているのはどれか．</p>
                         
 
                         <ol type="a">
-                            <li class="ans_t">悪性貧血 － Hunter舌炎</li>
+                            <li class="ans_t star">悪性貧血 － Hunter舌炎</li>
                             <li class="ans_t">Evans症候群 － 紫斑 </li>
                             <li class="ans_f">再生不良性貧血 － スプーン爪</li>
                             <li class="ans_t">先天性溶血性貧血 － 胆石</li>
@@ -4881,7 +4890,7 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group vitK AA RA PRCA thalassemia PHYSIO info">
+            <div class="card-group vitK AA RA PRCA thalassemia PHYSIO info" id="q52">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/95I28" target="_blank">95I28</a> Anemia 疾患 - 治療
@@ -4889,16 +4898,17 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-12_19:59:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-12_19:59:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:32:30"> </span>
                         <br>
                         
                         <p>疾患と治療法の組合せで正しいのはどれか．3つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_f">未熟児貧血 － ビタミンK</li>
-                            <li class="ans_t">再生不良性貧血 － 抗胸腺グロブリン</li>
+                            <li class="ans_f star">未熟児貧血 － ビタミンK</li>
+                            <li class="ans_t star">再生不良性貧血 － 抗胸腺グロブリン</li>
                             <li class="ans_t">腎性貧血 － エリスロポエチン</li>
-                            <li class="ans_t">赤芽球癆 － 副腎皮質ステロイド薬</li>
+                            <li class="ans_t star">赤芽球癆 － 副腎皮質ステロイド薬</li>
                             <li class="ans_f">サラセミア － 鉄剤</li>
                         </ol>
                     </div>
@@ -4952,21 +4962,22 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PNH thalassemia PRCA AA MBA PHYSIO">
+            <div class="card-group PNH thalassemia PRCA AA MBA PHYSIO" id="q53">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/95I27" target="_blank">95I27</a> Pancytopenia 
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-22_18:33:26"> </span>
                         <br>
                         <p>汎血球減少をきたすのはどれか．3つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">発作性夜間ヘモグロビン尿症</li>
                             <li class="ans_f">サラセミア</li>
-                            <li class="ans_f">Diamond-Blackfan症候群</li>
+                            <li class="ans_f star">Diamond-Blackfan症候群</li>
                             <li class="ans_t">Fanconi貧血</li>
                             <li class="ans_t">巨赤芽球性貧血</li>
                         </ol>
@@ -5045,7 +5056,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group purpra MDS HS">
+            <div class="card-group INTRO PHYSIO purpra MDS HS" id="q54">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/100G82" target="_blank">100G82</a> 貧血
@@ -5053,7 +5064,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev "> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-13_10:57:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-13_10:57:39"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_18:34:07"> </span>
                         <br>
                         <p>貧血を伴わないのはどれか．</p>
 
@@ -5085,7 +5097,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group AA MDS HS AIHA info">
+            <div class="card-group AA MDS HS AIHA info" id="q55">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94B49" target="_blank">94B49</a> Marrow Tx: ind
@@ -5136,7 +5148,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group anemia PHYSIO INTRO pri req 110">
+            <div class="card-group anemia PHYSIO INTRO pri req 110" id="q56">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110C8" target="_blank" id="">110C8</a>
@@ -5176,14 +5188,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group anemia PGS RF HC pri req">
+            <div class="card-group anemia PGS RF HC pri req" id="q57">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/108C14" target="_blank" id="">108C14</a> Anemia - etio
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-13_10:56:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-13_10:56:56"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-22_18:35:07"> </span>
                         <br>
                         <p>全身状態・疾患とそれに伴う貧血の原因の組合せで誤っているのはどれか．</p>
 
@@ -5200,7 +5213,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_false">e</p>
 
@@ -5319,520 +5332,187 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
 
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
     
 
     $('#PHYSIO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PHYSIO)').toggle();
+        $('#q div.card-group:not(.PHYSIO)').slideToggle(100);
     });
-    $('#PHYSIO').find('code').html($('div.PHYSIO').size());
+    $('#PHYSIO').find('small > code').html(
+        $('div.PHYSIO > .card > .mis').size() + '+' +
+        $('div.PHYSIO > .card > .cau').size() + '/' +
+        $('div.PHYSIO').size());
 
 
 
     $('#RA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.RA)').toggle();
+        $('#q div.card-group:not(.RA)').slideToggle(100);
     });
-    $('#RA').find('code').html($('div.RA').size());
+    $('#RA').find('small > code').html(
+        $('div.RA > .card > .mis').size() + '+' +
+        $('div.RA > .card > .cau').size() + '/' +
+        $('div.RA').size());
 
 
     $('#IDA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IDA)').toggle();
+        $('#q div.card-group:not(.IDA)').slideToggle(100);
     });
-    $('#IDA').find('code').html($('div.IDA').size());
+    $('#IDA').find('small > code').html(
+        $('div.IDA > .card > .mis').size() + '+' +
+        $('div.IDA > .card > .cau').size() + '/' +
+        $('div.IDA').size());
 
 
     $('#thalassemia h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.thalassemia)').toggle();
+        $('#q div.card-group:not(.thalassemia)').slideToggle(100);
     });
-    $('#thalassemia').find('code').html($('div.thalassemia').size());
+    $('#thalassemia').find('small > code').html(
+        $('div.thalassemia > .card > .mis').size() + '+' +
+        $('div.thalassemia > .card > .cau').size() + '/' +
+        $('div.thalassemia').size());
 
 
     $('#MBA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MBA)').toggle();
+        $('#q div.card-group:not(.MBA)').slideToggle(100);
     });
-    $('#MBA').find('code').html($('div.MBA').size());
+    $('#MBA').find('small > code').html(
+        $('div.MBA > .card > .mis').size() + '+' +
+        $('div.MBA > .card > .cau').size() + '/' +
+        $('div.MBA').size());
 
 
     $('#MDS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MDS)').toggle();
+        $('#q div.card-group:not(.MDS)').slideToggle(100);
     });
-    $('#MDS').find('code').html($('div.MDS').size());
+    $('#MDS').find('small > code').html(
+        $('div.MDS > .card > .mis').size() + '+' +
+        $('div.MDS > .card > .cau').size() + '/' +
+        $('div.MDS').size());
 
 
     $('#Fe h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Fe)').toggle();
+        $('#q div.card-group:not(.Fe)').slideToggle(100);
     });
-    $('#Fe').find('code').html($('div.Fe').size());
+    $('#Fe').find('small > code').html(
+        $('div.Fe > .card > .mis').size() + '+' +
+        $('div.Fe > .card > .cau').size() + '/' +
+        $('div.Fe').size());
 
 
     $('#ACD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ACD)').toggle();
+        $('#q div.card-group:not(.ACD)').slideToggle(100);
     });
-    $('#ACD').find('code').html($('div.ACD').size());
+    $('#ACD').find('small > code').html(
+        $('div.ACD > .card > .mis').size() + '+' +
+        $('div.ACD > .card > .cau').size() + '/' +
+        $('div.ACD').size());
 
 
     $('#SA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SA)').toggle();
+        $('#q div.card-group:not(.SA)').slideToggle(100);
     });
-    $('#SA').find('code').html($('div.SA').size());
+    $('#SA').find('small > code').html(
+        $('div.SA > .card > .mis').size() + '+' +
+        $('div.SA > .card > .cau').size() + '/' +
+        $('div.SA').size());
 
 
     $('#AA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AA)').toggle();
+        $('#q div.card-group:not(.AA)').slideToggle(100);
     });
-    $('#AA').find('code').html($('div.AA').size());
+    $('#AA').find('small > code').html(
+        $('div.AA > .card > .mis').size() + '+' +
+        $('div.AA > .card > .cau').size() + '/' +
+        $('div.AA').size());
 
 
     $('#PRCA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PRCA)').toggle();
+        $('#q div.card-group:not(.PRCA)').slideToggle(100);
     });
-    $('#PRCA').find('code').html($('div.PRCA').size());
+    $('#PRCA').find('small > code').html(
+        $('div.PRCA > .card > .mis').size() + '+' +
+        $('div.PRCA > .card > .cau').size() + '/' +
+        $('div.PRCA').size());
 
 
     $('#AIHA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AIHA)').toggle();
+        $('#q div.card-group:not(.AIHA)').slideToggle(100);
     });
-    $('#AIHA').find('code').html($('div.AIHA').size());
+    $('#AIHA').find('small > code').html(
+        $('div.AIHA > .card > .mis').size() + '+' +
+        $('div.AIHA > .card > .cau').size() + '/' +
+        $('div.AIHA').size());
 
     $('#Evans').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Evans)').toggle();
+        $('#q div.card-group:not(.Evans)').slideToggle(100);
     });
-    $('#Evans').find('code').html($('div.Evans').size());
+    $('#Evans').find('small > code').html(
+        $('div.Evans > .card > .mis').size() + '+' +
+        $('div.Evans > .card > .cau').size() + '/' +
+        $('div.Evans').size());
 
 
     $('#HS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HS)').toggle();
+        $('#q div.card-group:not(.HS)').slideToggle(100);
     });
-    $('#HS').find('code').html($('div.HS').size());
+    $('#HS').find('small > code').html(
+        $('div.HS > .card > .mis').size() + '+' +
+        $('div.HS > .card > .cau').size() + '/' +
+        $('div.HS').size());
 
 
     $('#PNH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PNH)').toggle();
+        $('#q div.card-group:not(.PNH)').slideToggle(100);
     });
-    $('#PNH').find('code').html($('div.PNH').size());
+    $('#PNH').find('small > code').html(
+        $('div.PNH > .card > .mis').size() + '+' +
+        $('div.PNH > .card > .cau').size() + '/' +
+        $('div.PNH').size());
 
 
     $('#MBA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MBA)').toggle();
+        $('#q div.card-group:not(.MBA)').slideToggle(100);
     });
-    $('#MBA').find('code').html($('div.MBA').size());
+    $('#MBA').find('small > code').html(
+        $('div.MBA > .card > .mis').size() + '+' +
+        $('div.MBA > .card > .cau').size() + '/' +
+        $('div.MBA').size());
 
 
     $('#G6PDD h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.G6PDD)').toggle();
+        $('#q div.card-group:not(.G6PDD)').slideToggle(100);
     });
-    $('#G6PDD').find('code').html($('div.G6PDD').size());
+    $('#G6PDD').find('small > code').html(
+        $('div.G6PDD > .card > .mis').size() + '+' +
+        $('div.G6PDD > .card > .cau').size() + '/' +
+        $('div.G6PDD').size());
 
 
 
@@ -5841,9 +5521,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

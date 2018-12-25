@@ -191,15 +191,36 @@
     
 
 
-    
-    <div class="row">
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="transfusion">
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>Transfusion <small> </small> <small><code></code></small></h2>
+                    <h2>Intro <small><code></code></small></h2>
                 </div>
+            </div>
 
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        \(
+                            \begin{align*}
+                                \text{EBV} &\approx 70_{\text{mL/kg}} \times \text{BW} \\
+                                &\approx \frac{\text{BW}}{13} \times 10^3
+                            \end{align*}
+                        \)
+                        <br>
+                        \(\text{EBV}\): 推定血液量 (循環血漿量)<br>
+
+                    </li>
+                    <li class="list-group-item">7-8%</li>
+                </ul>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="transfusion">Transfusion <small> </small> <small><code></code></small></h3>
 
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -232,45 +253,56 @@
                 <!-- </ul> -->
             </div>
         </div>
+    </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="cross_match">
+    <div class="section" id="cross_match">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Cross Match <small> </small> <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <u>輸血前3day以内</u>に新たに採取された検体で実施
                     </li>
                 </ul>
+            <!-- </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6"> -->
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>主試験</th>
+                            <th>副検査</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>RBC</td>
+                            <td>供血者</td>
+                            <td>受血者</td>
+                        </tr>
+                        <tr>
+                            <td>Plasma</td>
+                            <td>受血者</td>
+                            <td>供血者</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/109F003_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
 
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
             </div>
+
         </div>
     </div>
 
@@ -785,7 +817,7 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group transfusion CALC pri" id="q06">
+            <div class="card-group transfusion CALC info pri" id="q06">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E56" target="_blank">103E56</a> 輸血量
@@ -831,7 +863,7 @@
                         </ul>
 
 
-                        <p>\( \frac{70 \times 65 \times 0.1 \times (10 - 6.5)}{14 \times 20} 
+                        <p>\( \frac{70 \times 65 \times 0.01 \times (10 - 6.5)}{14 \times 200 \times 0.01} 
                             \approx 5.7 \)</p>
 
                         <p>45.5dL</p>   
@@ -1466,6 +1498,26 @@
 $(function(){
     
 
+    $('#INTRO h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.INTRO)').slideToggle(100);
+    });
+    $('#INTRO').find('small > code').html(
+        $('div.INTRO > .card > .mis').size() + '+' +
+        $('div.INTRO > .card > .cau').size() + '/' +
+        $('div.INTRO').size()
+    );
+
+
+    $('#transfusion').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.transfusion)').slideToggle(100);
+    });
+    $('#transfusion').find('small > code').html(
+        $('div.transfusion > .card > .mis').size() + '+' +
+        $('div.transfusion > .card > .cau').size() + '/' +
+        $('div.transfusion').size()
+    );
 
 
 
@@ -1486,17 +1538,9 @@ $(function(){
     $('#cross_match').find('small > code').html(
         $('div.cross_match > .card > .mis').size() + '+' +
         $('div.cross_match > .card > .cau').size() + '/' +
-        $('div.cross_match').size());
+        $('div.cross_match').size()
+    );
 
-
-    $('#transfusion h2').click(function(){
-        $('.card-group').show();
-        $('#q div.card-group:not(.transfusion)').slideToggle(100);
-    });
-    $('#transfusion').find('small > code').html(
-        $('div.transfusion > .card > .mis').size() + '+' +
-        $('div.transfusion > .card > .cau').size() + '/' +
-        $('div.transfusion').size());
 
 
     $('#incompatibility h2').click(function(){

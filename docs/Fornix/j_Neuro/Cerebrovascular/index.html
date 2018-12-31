@@ -1,15 +1,30 @@
 <!--
-@Author: shumez
-@Date:   2018-04-09 13:09:37
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-10-19 20:34:41
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/j_Neuro/Cerebrovascular
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-05-07 16:46:0
+Modified: 	2018-12-31 17:03:44
+-----
+Copyright (c) 2018 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+
 04.01.26    18 10 19    print_date, slideToggle(100)
 04.01.25    18 10 18    title + version
 04.01.24    18 10 13    style .list-group-item ul padding
@@ -100,8 +115,8 @@
     <title>Cerebrovascular</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-20 13:04:39" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.26">
+    <meta name="revised" content="2018-12-31 13:25:20" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -120,122 +135,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
-</head>
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
@@ -290,24 +198,35 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-10 col-md-10">
+            <div class="col-xs-12 col-sm-10 col-md-6">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/106B043_bas_j_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
 
+
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 id="CECI">CECI <small>CardioEmbolic CI</small> <small><code></code></small></h3>
+                <h3 id="atherothrombotic">Atherothrombotic <small>アテローム血栓性</small> <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="CECI">CECI <small>心原性</small><!-- <small>CardioEmbolic CI</small> --> <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="lacunar">Lacunar <small>ラクナ梗塞</small> <small><code></code></small></h3>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3 id="HI">HI <small>Hemorrhagic Infarct</small> <small><code></code></small></h3>
             </div>
+        </div>
 
+        <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3 id="Gerstmann">Gerstmann <small>Syndrome</small> <small><code></code></small></h3>
 
-                <table class="table table-condensed">
+                <table class="table table-condensed" style="width: 66%">
                     <thead>
                         <tr>
                             <th colspan="2"><u>R A A 
@@ -391,6 +310,137 @@
                     </tbody>
                 </table>
 
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="TIA">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>TIA<!--  <small class="hidden-xs-down">Transient Ischemic Attack</small> --> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <!-- <div class="col-xs-12 col-sm-6 col-md-4">
+                <h6>TIA 好発部位</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/102I045_bas_j_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div> -->
+
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>TIA ICA / VA-BA</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/110B049_sup_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div> -->
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">ICA<ul>
+                        <li>失語</li>
+                        <li>脱力/麻痺/巧緻運動障害</li>
+                        <li>感覚障害</li>
+                        <li>視力障害</li>
+                        <li>同名半盲</li>
+                    </ul></li>
+                    <li class="list-group-item">VA-BA<ul>
+                        <li>運動障害</li>
+                        <li>感覚障害</li>
+                        <li>同名半盲</li>
+                        <li>前提/運動失調/回転性めまい</li>
+                    </ul></li>
+                </ul>
+
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>CEA 頸動脈内膜剥離術</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/107G057_bas_j_010.jpg" class="card-img-top img-fluid">
+                </div>
+            
+                <h6>CAS 頸動脈ステント留置術</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/107G057_bas_j_020.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>血行再建術</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>CEA<br>
+                                内膜剥離術</th>
+                            <th>CAS<br>
+                                Stent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>利点</th>
+                            <td><ul>
+                                <li>再狭窄の頻度が低い</li>
+                                <li>屈曲した頸動脈, 石灰化プラークにも施行できる</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>局所麻酔で施行可能</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>欠点</th>
+                            <td><ul>
+                                <li>全身麻酔が必要</li>
+                            </ul></td>
+                            <td><ul>
+                                <li>再狭窄が多い</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><ul>
+                                <li>#1</li>
+                            </ul></td>
+                            <td><ul>
+                                <!-- <li></li> -->
+                            </ul></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CAS">
+                <div class="page-header">
+                    <h2>Carotid Artery Stenosis <small>頸動脈狭窄症</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CeBI">
+                <div class="page-header">
+                    <h2>Cerebellar Infaction <small>小脳梗塞</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="Wallerberg">
+                <div class="page-header">
+                    <h2>Wallenberg <small><code></code></small></h2>
+                </div>
             </div>
         </div>
     </div>
@@ -483,11 +533,15 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>血腫除去術</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">被殻出血</li>
-                    <li class="list-group-item">皮質下出血</li>
-                    <li class="list-group-item">小脳出血</li>
                     <li class="list-group-item">
-                        C/I:
+                        <ul>
+                            <li>被殻出血</li>
+                            <li>皮質下出血</li>
+                            <li>小脳出血</li>
+                        </ul>
+                        <br>
+
+                        <code>C/I</code>:
                         <ul>
                             <li><u>脳幹</u></li>
                             <li>視床 (一般的にしない)</li>
@@ -497,35 +551,52 @@
             </div>
 
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <table class="table table-condensed">
                     <tbody>
                         <tr>
-                            <th>被殻</th>
-                            <td>40%</td>
+                            <td>被殻</td>
+                            <td align="right">40%</td>
                         </tr>
                         <tr>
-                            <th>視床</th>
-                            <td>30%</td>
+                            <td>視床</td>
+                            <td align="right">30%</td>
                         </tr>
                         <tr>
-                            <th>橋</th>
-                            <td>10%</td>
+                            <td>橋</td>
+                            <td align="right">10%</td>
                         </tr>
                         <tr>
-                            <th>皮質下</th>
-                            <td>10%</td>
+                            <td>皮質下</td>
+                            <td align="right">10%</td>
                         </tr>
                         <tr>
-                            <th>小脳</th>
-                            <td>10%</td>
+                            <td>小脳</td>
+                            <td align="right">10%</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 id="SCH">SCH <small>SubCortical</small> <small><code></code></small></h3>
+                <h3 id="putamen">Putaminal <small>被殻</small> <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="thalamus">Thalamus <small>視床</small> <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="pons">Pons <small>橋</small> <small><code></code></small></h3>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="CeB">CeB <small>小脳出血</small> <small><code></code></small></h3>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="SCH">SCH <small>皮質下</small> <small><code></code></small></h3>
 
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -563,7 +634,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>ICA <small>IntraCranial Aneurysm</small> <small><code></code></small></h2>
+                    <h2>IntraCranial Aneurysm <small>脳動脈瘤</small> <small><code></code></small></h2>
                 </div>
             </div>
 
@@ -628,7 +699,7 @@
                 </table>
             </div>
 
-            <div class="col-xs-12 col-sm-9 col-md-9">
+            <div class="col-xs-12 col-sm-9 col-md-6">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/104G044_bas_j_020.jpg" class="card-img-top img-fluid">
                 </div>
@@ -639,152 +710,82 @@
     </div>
 
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="SAH">
-                <div class="page-header">
-                    <h2>SAH<!--  <small class="hidden-xs-down">Subarachnoid Hemorrhage</small> --> <small><code></code></small></h2>
-                </div>
-
-    
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <h6>Complication</h6>
-                        <table class="table table-condensed">
-                            <tbody>
-                                <tr>
-                                    <td>onset-</td>
-                                    <td>脳ヘルニア<br>
-                                        急性水頭症</td>
-                                </tr>
-                                <tr>
-                                    <td>≤ 24h</td>
-                                    <td>再出血</td>
-                                </tr>
-                                <tr>
-                                    <td>72h-2w</td>
-                                    <td>脳血管攣縮</td>
-                                </tr>
-                                <tr>
-                                    <td>Ws-Ms</td>
-                                    <td>NPH</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </li>
-                </ul>
-
-
-
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="section" id="TIA">
+    <div class="section" id="SAH">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>TIA<!--  <small class="hidden-xs-down">Transient Ischemic Attack</small> --> <small><code></code></small></h2>
+                    <h2>SAH<!--  <small class="hidden-xs-down">Subarachnoid Hemorrhage</small> --> <small><code></code></small></h2>
                 </div>
             </div>
-
+        
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>TIA 好発部位</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/102I045_bas_j_010.jpg" class="card-img-top img-fluid">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>TIA ICA / VA-BA</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/110B049_sup_010.jpg" class="card-img-top img-fluid">
-                </div>
-            </div>
-
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">ICA<ul>
-                        <li>失語</li>
-                        <li>脱力/麻痺/巧緻運動障害</li>
-                        <li>感覚障害</li>
-                        <li>視力障害</li>
-                        <li>同名半盲</li>
-                    </ul></li>
-                    <li class="list-group-item">VA-BA<ul>
-                        <li>運動障害</li>
-                        <li>感覚障害</li>
-                        <li>同名半盲</li>
-                        <li>前提/運動失調/回転性めまい</li>
-                    </ul></li>
-                </ul>
-
-            </div>
-
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>CEA 頸動脈内膜剥離術</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/107G057_bas_j_010.jpg" class="card-img-top img-fluid">
-                </div>
-            
-                <h6>CAS 頸動脈ステント留置術</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/107G057_bas_j_020.jpg" class="card-img-top img-fluid">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>血行再建術</h6>
+                <h6>Complication</h6>
                 <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>CEA<br>
-                                内膜剥離術</th>
-                            <th>CAS<br>
-                                Stent</th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <th>利点</th>
-                            <td><ul>
-                                <li>再狭窄の頻度が低い</li>
-                                <li>屈曲した頸動脈, 石灰化プラークにも施行できる</li>
-                            </ul></td>
-                            <td><ul>
-                                <li>局所麻酔で施行可能</li>
-                            </ul></td>
+                            <td>onset-</td>
+                            <td>脳ヘルニア<br>
+                                急性水頭症</td>
+                            <td rowspan="3">予後不良因子</td>
                         </tr>
                         <tr>
-                            <th>欠点</th>
-                            <td><ul>
-                                <li>全身麻酔が必要</li>
-                            </ul></td>
-                            <td><ul>
-                                <li>再狭窄が多い</li>
-                            </ul></td>
+                            <td>≤ 24hr</td>
+                            <td>再出血</td>
                         </tr>
                         <tr>
-                            <th></th>
-                            <td><ul>
-                                <li>#1</li>
-                            </ul></td>
-                            <td><ul>
-                                <!-- <li></li> -->
-                            </ul></td>
+                            <td>72hr-2wk<br>
+                                peak: 7-8d</td>
+                            <td><u>脳血管攣縮</u></td>
+                        </tr>
+                        <tr>
+                            <td>wks-mns</td>
+                            <td>NPH</td>
+                            <td></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li>急性期
+                                <ul>
+                                    <li>全身管理
+                                        <ul>
+                                            <li>BP ctrl</li>
+                                        </ul>
+                                    </li>
+                                    <li>Ope<br>
+                                        spasm出現前 (<u>≤ 72hrs</u>)
+                                    </li>
+                                    <li>再出血予防
+                                        <ul>
+                                            <li>クリッピング</li>
+                                            <li><u>動脈瘤塞栓術</u></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>亜急性期</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="vasospasm">Vasospasm <small>脳血管攣縮</small> <small><code></code></small></h3>
+            </div>
 
         </div>
     </div>
+
+    
+    
 
 
     <div class="row">
@@ -796,11 +797,10 @@
 
 
                 <ul class="list-group">
-                    
                     <li class="list-group-item">
                         <h6>Treatment</h6>
                         <ul>
-                            <li>流入動脈塞栓術</li>
+                            <li><u>流入動脈塞栓術</u></li>
                         </ul>
                     </li>
                 </ul>
@@ -824,24 +824,68 @@
                             <li>小児
                                 <ul>
                                     <li>過換気</li>
-                                </ul></li>
+                                </ul>
+                            </li>
                             <li>成人
                                 <ul>
                                     <li>出血</li>
-                                </ul></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Exam</h6>
+                        <ul>
+                            <li>EEG
+                                <ul>
+                                    <li><u>全般性 徐波化</u> <u>過呼吸</u></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Tratment</h6>
+                        <ul class="list-group">
+                            <li>Ope
+                                <ul>
+                                    <li>直接血行再建術
+                                        <ul>
+                                            <li>浅側頭動脈-MCA<br>
+                                                (STA-MCA吻合術)</li>
+                                        </ul>
+                                    </li>
+                                    <li>間接血行再建術
+                                        <ul>
+                                            <li>脳硬膜動脈血管癒合術<br>
+                                                (EDAS, EMS)</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
 
-                <h6>もやもや病 外科治療</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">直接血行再建術<ul>
-                        <li>浅側頭動脈-MCA (STA-MCA吻合術)</li>
-                    </ul></li>
-                    <li class="list-group-item">間接血行再建術<ul>
-                        <li>脳硬膜動脈血管癒合術 (EDAS, EMS)</li>
-                    </ul></li>
-                </ul>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="HTNE">
+                <div class="page-header">
+                    <h2>Hypertensive Encephalopathy <small>高血圧脳症</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="CAD">
+                <div class="page-header">
+                    <h2>Cerebral Artery Dissection <small>脳動脈解離</small> <small><code></code></small></h2>
+                </div>
+
+
 
             </div>
         </div>
@@ -852,35 +896,51 @@
                 <div class="page-header">
                     <h2>CCF <small>内頸動脈海綿静脈洞瘻</small><!-- <small class="hidden-xs-down">Carotid-Cavernous Fistula</small> --> <small><code></code></small></h2>
                 </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li>拍動性<u>眼球突出</u></li>
+                            <li>拍動性雑音</li>
+                            <li>眼結膜の充血/浮腫</li>
+                        </ul>
+                    </li>
+                </ul>
             
                 <h6>CCFの3徴</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/105A032_bas_j_010.jpg" class="card-img-top img-fluid">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">拍動性眼球突出</li>
-                        <li class="list-group-item">拍動性雑音</li>
-                        <li class="list-group-item">眼結膜の充血/浮腫</li>
-                    </ul>
+
+                    
                 </div>
             
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/102I046_ima_j_020.jpg" class="card-img-top img-fluid">
                 </div>
+
+
+                <h3 id="Tolosa-Hunt">Tolosa-Hunt <small><code></code></small></h3>
             </div>
         </div>
+    </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="aphasia">
+    <div class="section" id="aphasia">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Aphasia <small class="hidden-xs-down"></small> <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/106D038_bas_j_010.jpg" class="card-img-top img-fluid">
                 </div>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -897,42 +957,42 @@
                             <th rowspan="2">運動性</th>
                             <th>Broca<br>
                                 CMA</th>
-                            <td>(-)</td>
-                            <td>(-)</td>
-                            <td>(+)</td>
+                            <td align="center">(–)</td>
+                            <td align="center">(–)</td>
+                            <td align="center">(+)</td>
                             <td>Broca</td>
                         </tr>
                         <tr>
                             <th>超皮質運動性<br>
                                 TMA</th>
-                            <td>(-)</td>
-                            <td>(+)</td>
-                            <td>(+)</td>
+                            <td align="center">(–)</td>
+                            <td align="center">(+)</td>
+                            <td align="center">(+)</td>
                             <td>前頭葉</td>
                         </tr>
                         <tr>
                             <th rowspan="2">感覚性</th>
                             <th>Wernicke<br>
                                 CSA</th>
-                            <td>(+)</td>
-                            <td>(-)</td>
-                            <td>(-)</td>
+                            <td align="center">(+)</td>
+                            <td align="center">(–)</td>
+                            <td align="center">(–)</td>
                             <td>Wernicke</td>
                         </tr>
                         <tr>
                             <th>超皮質感覚性<br>
                                 TSA</th>
-                            <td>(+)</td>
-                            <td>(+)</td>
-                            <td>(-)</td>
+                            <td align="center">(+)</td>
+                            <td align="center">(+)</td>
+                            <td align="center">(–)</td>
                             <td>頭頂葉</td>
                         </tr>
                         <tr>
                             <th colspan="2">伝導失語<br>
                                 CA</th>
-                            <td>(+)</td>
-                            <td>(-)</td>
-                            <td>(+)</td>
+                            <td align="center">(+)</td>
+                            <td align="center">(–)</td>
+                            <td align="center">(+)</td>
                             <td>縁上回 SMG</td>
                         </tr>
                     </tbody>
@@ -1190,7 +1250,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-19_21:19:48"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:19:48"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-31_14:35:33"> </span>
                         <br>
                         <p>48歳の女性．<br>
                             朝からめまいがするので，日頃かかりつけている診療所の医師に電話で相談した．<br>
@@ -1266,7 +1327,7 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group SAH info" id="q03">
+            <div class="card-group SAH RADIO CT info" id="q03">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/101B94" target="_blank" id="2018-02-06_13:24:41">101B94</a> CT有用 > MRI
@@ -1275,7 +1336,8 @@
 						<span class="badge badge-pill hit"> </span>
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_20:00:22"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_20:00:22"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_14:36:25"> </span>
 						<br>
 						<p>頭部単純CTが頭部MRIより診断に有用なのはどれか．</p>
 
@@ -1327,14 +1389,15 @@
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_20:27:07"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_20:27:07"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_14:40:30"> </span>
 						<br>
 						<p>70歳の女性．<br>
 							風呂場で倒れているのを発見された．<br>
                             来院時は呼び掛けに対し開眼したが自分の名前は言えなかった．疼痛刺激に対して，右上下肢を動かさない．<br>
                             <u>呼吸数12/分</u>．<br>
                             吸気時に前胸部が陥凹し，いびき様の音が聞こえる．<br>
-                            脈拍80/分，整．血圧230/120mmHg．<br>
+                            脈拍80/分，整．<u>血圧230/120mmHg</u>．<br>
                             来院後さらに意識が低下してきている．<br>
 							直ちに行うべき処置はどれか．3つ選べ．</p>
 
@@ -1351,9 +1414,9 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p>s/o 脳卒中</p>
+						<p class="q_dx">s/o 脳卒中</p>
 
-						<p>True: a,b,e</p>
+						<p class="q_answer_true">a b e</p>
 
 						<ol type="a">
 							<li></li>
@@ -1374,20 +1437,21 @@
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:22:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:22:13"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_14:44:56"> </span>
 						<br>
 						<p>65歳の男性．<br>
-						<u>朝起きたら左のまぶたが挙がらない</u>と言って来院した．<br>
-						<u>複視</u>を訴える．<br>
-						意識は清明．<u>左眼瞼下垂</u>，<u>左瞳孔散大</u>および左眼の外転位を認める．顔面の感覚は正常．<br>
-						この患者で考えられるのはどれか．2つ選べ．</p>
+						  <u>朝起きたら左のまぶたが挙がらない</u>と言って来院した．<br>
+						  <u>複視</u>を訴える．<br>
+						  意識は清明．<u>左眼瞼下垂</u>，<u>左瞳孔散大</u>および左眼の外転位を認める．顔面の感覚は正常．<br>
+						  この患者で考えられるのはどれか．2つ選べ．</p>
 
 						<ol type="a">
 							<li class="ans_t">脳動脈瘤</li>
 							<li class="ans_t">糖尿病</li>
 							<li class="ans_f">甲状腺機能亢進症</li>
 							<li class="ans_f">重症筋無力症</li>
-							<li class="ans_f">ミトコンドリア脳筋症</li>
+							<li class="ans_f star">ミトコンドリア脳筋症</li>
 						</ol>
 					</div>
 				</div>
@@ -1459,26 +1523,27 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group ICA CrN-III IC-PC info" id="q06">
+            <div class="card-group ICA CrN-III IC-PC BA-SCA info" id="q06">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/98B5" target="_blank" id="2018-02-06_15:20:35">98B5</a> CrN-III の圧迫
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_20:30:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_20:30:05"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_13:42:15"> </span>
 						<br>
 						<p>50歳の女性．<br>
-						突然出現した<u>右眼瞼下垂</u>を主訴に来院した．<br>
-						<u>複視</u>と<u>前頭部痛</u>とを訴えており，脳動脈瘤が疑われた．<br>
-						考えられる病変部位はどれか．2つ選べ．</p>
+						  突然出現した<u>右眼瞼下垂</u>を主訴に来院した．<br>
+						  <u>複視</u>と<u>前頭部痛</u>とを訴えており，脳動脈瘤が疑われた．<br>
+						  考えられる病変部位はどれか．2つ選べ．</p>
 
 						<ol type="a">
 							<li class="ans_f">右前大脳動脈</li>
 							<li class="ans_t">右内頸動脈・後交通動脈分岐部</li>
 							<li class="ans_f">右中大脳動脈</li>
 							<li class="ans_f">前交通動脈</li>
-							<li class="ans_t">脳底動脈・右上小脳動脈分岐部</li>
+							<li class="ans_t star">脳底動脈・右上小脳動脈分岐部</li>
 						</ol>
 					</div>
 				</div>
@@ -1509,18 +1574,20 @@
 			</div>
 
             <!-- 07 -->
-            <div class="card-group ICA " id="q07">
+            <div class="card-group ICA fig" id="q07">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/101A42" target="_blank" id="2018-02-06_15:26:27">101A42</a> 検査
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:23:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:23:50"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_14:45:59"> </span>
 						<br>
 						<p>53歳の女性．<br>
 							朝からものが<u>二重に見える</u>ことを主訴に来院した．<br>
-							意識は清明．<u>右眼瞼下垂</u>と<u>右眼球運動障害</u>とを認める．頭部単純MRIのT1強調像（A）とT2強調像（B）とを次に示す．<br>
+							意識は清明．<br>
+                            <u>右眼瞼下垂</u>と<u>右眼球運動障害</u>とを認める．頭部単純MRIのT1強調像（A）とT2強調像（B）とを次に示す．<br>
 							診断の確定に必要なのはどれか．</p>
                     </div>
 
@@ -1545,12 +1612,12 @@
 						<p>IC の位置にFlow void<br>
 						&xrArr; 血管性病変</p>
 
-						<p>両側血栓化内頚動脈瘤</p>
+						<p class="q_dx">両側血栓化内頚動脈瘤</p>
 
 						<!-- <img src="https://s3-ap-northeast-1.amazonaws.com/public.qb-online.com/kokushi/main/101/img/101A042_ima_j_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/101A042_ima_j_010.jpg" class="card-img-top img-fluid">
 
-						<p>True: c</p>
+						<p class="q_answer_true">c</p>
 
 						<ol type="a">
 							<li></li>
@@ -1683,7 +1750,8 @@
 					<div class="card-body">
 						<span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:28:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:28:33"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_14:48:27"> </span>
 						<br>
 						<p>45歳の男性．<br>
 							<u>意識障害</u>のため搬入された．<br>
@@ -1697,7 +1765,7 @@
 							<li class="ans_f">兎眼</li>
 							<li class="ans_f">除皮質硬直</li>
 							<li class="ans_f">一側の眼球突出</li>
-							<li class="ans_t">Brudzinski徴候</li>
+							<li class="ans_t star">Brudzinski徴候</li>
 							<li class="ans_t">一側の散瞳と眼瞼下垂</li>
 						</ol>
 					</div>
@@ -1774,14 +1842,15 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group SAH HCP info" id="q12">
+            <div class="card-group ICA SAH HCP info" id="q12">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/96D42" target="_blank" id="2018-02-06_15:31:38">96D42</a> CT 診断
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:29:56"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:29:56"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_14:50:02"> </span>
 						<br>
 						<p>72歳の男性．<br>
                             自宅のトイレで倒れているところを発見され，救急車で搬送された．<br>
@@ -1838,7 +1907,7 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group ICA SAH NPH IC-PC" id="q13">
+            <div class="card-group ICA SAH HI NPH IC-PC" id="q13">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103G59" target="_blank" id="2018-02-06_13:15:11">103G59-61</a> SAH 合併症
@@ -1849,28 +1918,29 @@
 						<span class="badge badge-pill rev"> </span>
                          /
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_20:41:04"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_20:41:04"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_13:46:33"> </span>
 						<br>
 						<p>次の文を読み，59～61の問いに答えよ．</p>
 						<p>62歳の女性．<br>
-							言動の変化を心配した家族に伴われて来院した．</p>
-						<p>現病歴：<br>
+							言動の変化を心配した家族に伴われて来院した．<br>
+                            現病歴：<br>
                             <u>1週前に突然頭痛</u>が出現し持続したため，自宅で休んでいた．<br>
-                            今朝からぼんやりして話のつじつまが合わないことに家族が気付いた．</p>
-						<p>既往歴：<br>
-                            30歳代から<u>高血圧症</u>で，降圧薬を服用中である．</p>
-						<p>家族歴：<br>
-                            特記すべきことはない．</p>
-						<p>現　症：<br>
+                            今朝からぼんやりして話のつじつまが合わないことに家族が気付いた．<br>
+                            既往歴：<br>
+                            30歳代から<u>高血圧症</u>で，降圧薬を服用中である．<br>
+                            家族歴：<br>
+                            特記すべきことはない．<br>
+                            現　症：<br>
                             <u>開眼しているが，名前と生年月日とが言えない</u>．<br>
                             身長153cm，体重50kg．体温37.4℃．脈拍72/分，整．血圧148/88mmHg．<br>
-                            運動麻痺と感覚障害とを認めない．<u>右眼瞼の挙上は不能</u>である．<u>右瞳孔は散大</u>し，<u>対光反射は消失</u>し，正面視で<u>右眼球は外転位</u>である．</p>
-						<p>検査所見：</p>
-						<p>尿所見：<br>
-                            蛋白（－），糖（－）．</p>
-						<p>血液所見：<br>
-                            赤血球290万，Hb 9.2g/dL，Ht 26％，白血球7,400，血小板17万．</p>
-						<p>血液生化学所見：<br>
+                            運動麻痺と感覚障害とを認めない．<u>右眼瞼の挙上は不能</u>である．<u>右瞳孔は散大</u>し，<u>対光反射は消失</u>し，正面視で<u>右眼球は外転位</u>である．<br>
+                            検査所見：<br>
+                            尿所見：<br>
+                            蛋白（－），糖（－）．<br>
+                            血液所見：<br>
+                            赤血球290万，Hb 9.2g/dL，Ht 26％，白血球7,400，血小板17万．<br>
+                            血液生化学所見：<br>
                             血糖101mg/dL，総蛋白6.1g/dL，アルブミン3.3g/dL，尿素窒素11mg/dL，クレアチニン0.5mg/dL，AST 13IU/L，ALT 10IU/L，LD 184IU/L（基準176～353），<br>
                             Na 143mEq/L，K 3.3mEq/L，Cl 102mEq/L．CRP 3.0mg/dL．</p>
 
@@ -1903,8 +1973,8 @@
 						<ol type="a">
 							<li class="ans_f">小脳出血</li>
 							<li class="ans_t">脳ヘルニア </li>
-							<li class="ans_f">出血性脳梗塞 </li>
-							<li class="ans_t">脳血管攣縮 </li>
+							<li class="ans_f star">出血性脳梗塞 </li>
+							<li class="ans_t star">脳血管攣縮 </li>
 							<li class="ans_f">細菌性髄膜炎</li>
 						</ol>
 					</div>
@@ -1937,8 +2007,8 @@
 						<ol type="a">
 							<li></li>
 							<li></li>
-							<li>72hr後</li>
-							<li>Day 7-8がピーク</li>
+							<li>出血性梗塞: ≤ 24hrs</li>
+							<li>血管攣縮: Day 7-8がピーク, ≥ 72hrs</li>
 							<li></li>
 						</ol>
 
@@ -1991,7 +2061,8 @@
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:31:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:31:47"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_14:51:51"> </span>
 						<br>
 						<p>くも膜下出血患者の予後を左右する要因として重要なのはどれか．2つ選べ．</p>
 
@@ -1999,8 +2070,8 @@
 							<li class="ans_t">意識障害の程度</li>
 							<li class="ans_f">高血圧症の合併</li>
 							<li class="ans_f">破裂脳動脈瘤の大きさ</li>
-							<li class="ans_f">脳動脈瘤の数</li>
-							<li class="ans_t">脳血管攣縮の程度</li>
+							<li class="ans_f star">脳動脈瘤の数</li>
+							<li class="ans_t star">脳血管攣縮の程度</li>
 						</ol>
 					</div>
 				</div>
@@ -2083,7 +2154,8 @@
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:32:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:32:45"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_14:53:09"> </span>
 						<br>
 						<p>頭部単純X線CTを次に示す．<br>
 							出血部位はどれか．</p>
@@ -2121,24 +2193,24 @@
                         <table class="table table-condensed">
                             <tbody>
                                 <tr>
-                                    <th>被殻</th>
-                                    <td>40%</td>
+                                    <td>被殻</td>
+                                    <td align="right">40%</td>
                                 </tr>
                                 <tr>
-                                    <th>視床</th>
-                                    <td>30%</td>
+                                    <td>視床</td>
+                                    <td align="right">30%</td>
                                 </tr>
                                 <tr>
-                                    <th>橋</th>
-                                    <td>10%</td>
+                                    <td>橋</td>
+                                    <td align="right">10%</td>
                                 </tr>
                                 <tr>
-                                    <th>皮質下</th>
-                                    <td>10%</td>
+                                    <td>皮質下</td>
+                                    <td align="right">10%</td>
                                 </tr>
                                 <tr>
-                                    <th>小脳</th>
-                                    <td>10%</td>
+                                    <td>小脳</td>
+                                    <td align="right">10%</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -2157,7 +2229,8 @@
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:35:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:35:00"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_14:56:34"> </span>
 						<br>
 						<p>頭部単純CT（A①～⑤）と意識障害患者の眼位（B）とを次に示す．<br>
 							この患者の眼位と合致するCTはどれか．</p>
@@ -2210,23 +2283,23 @@
                             <tbody>
                                 <tr>
                                     <th>Putaminal</th>
-                                    <th></th>
+                                    <td>iPsi</td>
                                     <td><img src="https://qb.medilink-study.com/images/108I025_sup_010.jpg" class="card-img-top img-fluid" width=""></td>
                                 </tr>
                                 <tr>
                                     <th>Thalamus</th>
-                                    <th></th>
+                                    <td>To nose</td>
                                     <td><img src="https://qb.medilink-study.com/images/108I025_sup_020.jpg" class="card-img-top img-fluid" width=""></td>
                                 </tr>
                                 <tr>
                                     <th>Pontine</th>
-                                    <th></th>
+                                    <td>Pinpoint</td>
                                     <td><img src="https://qb.medilink-study.com/images/108I025_sup_030.jpg" class="card-img-top img-fluid" width=""><br>
                                     <img src="https://qb.medilink-study.com/images/108I025_sup_040.jpg" class="card-img-top img-fluid" width=""></td>
                                 </tr>
                                 <tr>
-                                    <th></th>
-                                    <th></th>
+                                    <th>CeB</th>
+                                    <td>Contra</td>
                                     <td><img src="https://qb.medilink-study.com/images/108I025_sup_050.jpg" class="card-img-top img-fluid" width=""></td>
                                 </tr>
                                 <tr>
@@ -2241,7 +2314,7 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group ICH CeB req" id="q18">
+            <div class="card-group ICH CeB HCP req" id="q18">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105C17" target="_blank">105C17</a> 小脳出血 &xrArr; 症候
@@ -2249,11 +2322,13 @@
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill rev"> </span>
-						<span class="badge badge-pill cau now" id="2018-12-06_10:24:34"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-06_10:24:34"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:00:10"> </span>
 						<br>
 						<p>69歳の男性．<br>
 							夕食中に突然，頭痛と気分不良とを訴え，1時間後に家族に伴われて来院した．<br>
-							5年前から降圧薬を服用している．意識はやや混濁しており，頻繁に嘔吐している．四肢に麻痺を認めない．頭部単純CTを次に示す．<br>
+							5年前から降圧薬を服用している．<br>
+                            意識はやや混濁しており，頻繁に嘔吐している．四肢に麻痺を認めない．頭部単純CTを次に示す．<br>
 							急速な進行が予想されるのはどれか．</p>
                     </div>
 
@@ -2261,7 +2336,7 @@
 
                     <div class="card-body">
 						<ol type="a">
-							<li class="ans_t">意識障害</li>
+							<li class="ans_t star">意識障害</li>
 							<li class="ans_f">四肢麻痺</li>
 							<li class="ans_f">感覚障害</li>
 							<li class="ans_f">血圧低下</li>
@@ -2293,7 +2368,7 @@
 			</div>
 
             <!-- 09 -->
-            <div class="card-group ICH CeB">
+            <div class="card-group ICH CeB" id="q19">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/81B52" target="_blank" id="2018-02-06_15:01:01">81B52</a> 小脳出血 Qs
@@ -2329,20 +2404,21 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group ICH pons ">
+            <div class="card-group ICH pons " id="q20">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102I13" target="_blank" id="2018-02-06_15:02:22">102I13</a> 脳出血 四肢麻痺 病変部位
  					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:37:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:37:17"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:02:52"> </span>
 						<br>
 						<p>脳出血で四肢麻痺をきたす可能性があるのはどれか．</p>
 
 
 						<ol type="a">
-							<li class="ans_t">橋出血</li>
+							<li class="ans_t star">橋出血</li>
 							<li class="ans_f">被殻出血</li>
 							<li class="ans_f">視床出血</li>
 							<li class="ans_f">小脳出血</li>
@@ -2353,7 +2429,7 @@
 				<div class="card answer">
 					<div class="card-body">
 
-                        <p>両側錐体路障害 </p>
+                        <p class="q_dx">両側錐体路障害</p>
 
 						<p class="q_answer_true">a</p>
 
@@ -2379,25 +2455,26 @@
 
 
             <!-- 01 -->
-            <div class="card-group ICH CAA SCH pri 110 info">
+            <div class="card-group ICH CAA SCH pri 110 info" id="q21">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/110I73" target="_blank">110I73</a> 皮質下出血
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:39:33"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:39:33"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_15:03:58"> </span>
 						<br>
 						<p>78歳の女性．<br>
-							<u>右片麻痺</u>と<u>意識障害</u>のため救急車で搬入された．</p>
-						<p>昨晩はいつもどおりに就寝したが，本日の朝，意識がなくなっているのを夫が発見し，救急車を要請した．<br>
-                            これまでに脂質異常症を指摘されたことがある．</p>
-						<p>意識レベルはJCSⅢ-100．体温36.8℃．脈拍72/分，整．血圧156/92mmHg．呼吸数16/分．右片麻痺を認める．</p>
-						<p>血液所見：<br>
-                            赤血球410万，Hb 13.1g/dL，Ht 40％，白血球6,600，血小板31万．血糖96mg/dL．CRP 0.2mg/dL．</p>
-						<p>心電図に異常を認めない．胸部X線写真で異常を認めない．</p>
-						<p>頭部単純CT（A）を次に示す．</p>
-                        <p>開頭手術を行い血腫を除去した．<br>
+							<u>右片麻痺</u>と<u>意識障害</u>のため救急車で搬入された．<br>
+                            昨晩はいつもどおりに就寝したが，本日の朝，意識がなくなっているのを夫が発見し，救急車を要請した．<br>
+                            これまでに脂質異常症を指摘されたことがある．<br>
+                            意識レベルはJCSⅢ-100．体温36.8℃．脈拍72/分，整．血圧156/92mmHg．呼吸数16/分．右片麻痺を認める．<br>
+                            血液所見：<br>
+                            赤血球410万，Hb 13.1g/dL，Ht 40％，白血球6,600，血小板31万．血糖96mg/dL．CRP 0.2mg/dL．<br>
+                            心電図に異常を認めない．胸部X線写真で異常を認めない．<br>
+                            頭部単純CT（A）を次に示す．<br>
+                            開頭手術を行い血腫を除去した．<br>
                             術中採取した血腫周囲の脳組織のCongo-Red染色標本（B）を次に示す．<br>
 							脳出血の原因で最も考えられるのはどれか．</p>
                     </div>
@@ -2464,7 +2541,7 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group ICH putamen CeB info">
+            <div class="card-group ICH putamen CeB info" id="q22">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/80B56" target="_blank" id="2018-02-06_15:06:16">80B56</a> 血腫除去術 適応
@@ -2472,13 +2549,14 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_21:43:09"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_21:43:09"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_13:50:06"> </span>
 						<br>
 						<p>血腫除去術の効果が期待できるのはどれか．2つ選べ．</p>
 
 
 						<ol type="a">
-							<li class="ans_f">視床出血</li>
+							<li class="ans_f star">視床出血</li>
 							<li class="ans_t">被殻出血</li>
 							<li class="ans_t">小脳出血</li>
 							<li class="ans_f">橋出血</li>
@@ -2517,20 +2595,31 @@
 						</ol>
 
 						<h6>被殻出血</h6>
-						<div class="card">
-							<img src="https://www.qb-online.com/img_kaisetsu/80B056_sup_j_010.jpg" class="card-img-top img-fluid">
-						</div>
+                        <div class="card">
+                            <img src="https://qb.medilink-study.com/images/80B056_sup_j_010.jpg" class="card-img-top img">
+                        </div>
+						
 
 						<h6>視床出血</h6>
-						<div class="card">
+                        <div class="card">
+                            <img src="https://qb.medilink-study.com/images/80B056_sup_j_020.jpg" class="card-img-top img-fluid">
+                        </div>
+
+
+                        <!-- <div class="card">
+                            <img src="https://www.qb-online.com/img_kaisetsu/80B056_sup_j_010.jpg" class="card-img-top img-fluid">
+                        </div> -->
+						<!-- <div class="card">
 							<img src="https://www.qb-online.com/img_kaisetsu/80B056_sup_j_020.jpg" class="card-img-top img-fluid">
-						</div>
+						</div> -->
+
+
 					</div>
 				</div>
 			</div>
 
             <!-- 03 -->
-            <div class="card-group ICH putamen HTN">
+            <div class="card-group ICH putamen HTN" id="q23">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/99G42" target="_blank" id="2018-02-06_14:56:20">99G42</a> 治療
@@ -2539,7 +2628,8 @@
 						<span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_20:48:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_20:48:14"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_13:58:45"> </span>
 						<br>
 						<p>55歳の男性．<br>
 							歩道を歩行中に<u>突然右上下肢に脱力</u>が生じ，<u>思うように言葉がしゃべれなくなった</u>ため，救急車で搬送された．<br>
@@ -2551,8 +2641,8 @@
 							血液所見：<br>
                             赤血球460万，Hb 12.0g/dL，白血球6,200，血小板23万．<br>
 							血清生化学所見：<br>
-                            総蛋白6.5g/dL，アルブミン4.4g/dL，尿素窒素18mg/dL，クレアチニン0.9mg/dL，総コレステロール290mg/dL，トリグリセリド180mg/dL，AST 26単位，ALT 20単位，Na 139mEq/L，K 4.1mEq/L．<br>
-
+                            総蛋白6.5g/dL，アルブミン4.4g/dL，尿素窒素18mg/dL，クレアチニン0.9mg/dL，総コレステロール290mg/dL，トリグリセリド180mg/dL，AST 26単位，ALT 20単位，<br>
+                            Na 139mEq/L，K 4.1mEq/L．<br>
 							入院から3日間，絶食と安静とを保ち経過を観察した．<br>
                             <u>意識は清明</u>になった．右片麻痺と失語症との程度は入院時に比べて変化していない．<br>
                             第2，3病日の<u>血圧は130～140/80～90mmHg</u>で安定している．<br>
@@ -2560,9 +2650,9 @@
 
 
 						<ol type="a">
-							<li class="ans_f">血腫除去術を行う．</li>
+							<li class="ans_f star">血腫除去術を行う．</li>
 							<li class="ans_f">抗凝固療法を開始する．</li>
-							<li class="ans_f">降圧薬を開始する．</li>
+							<li class="ans_f star">降圧薬を開始する．</li>
 							<li class="ans_f">高脂血症治療薬を開始する．</li>
 							<li class="ans_t">リハビリテーションを開始する．</li>
 						</ol>
@@ -2587,7 +2677,7 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group CI MRI DWI pri info">
+            <div class="card-group CI MRI DWI pri info" id="q24">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/106B43" target="_blank" id="2018-02-06_13:48:53">106B43</a> 右片麻痺 急性期検査
@@ -2642,7 +2732,7 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group CI">
+            <div class="card-group CI CT" id="q25">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/98A43" target="_blank" id="2018-02-06_13:50:57">98A43</a> CI CT
@@ -2650,7 +2740,8 @@
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_20:54:47"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_20:54:47"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_15:07:07"> </span>
 						<br>
 						<p>推定年齢60歳の男性．<br>
 							路上で突然倒れるところを目撃され，救急車で搬入された．<br>
@@ -2718,31 +2809,32 @@
 
 
             <!-- 06 -->
-            <div class="card-group IC CT">
+            <div class="card-group IC CT" id="q26">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102I14" target="_blank" id="2018-02-06_14:42:05">102I14</a> 24h後のCT
     	   			</div>
     				<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-    					<span class="badge badge-pill mis now" id="2018-10-19_21:03:11"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_21:03:11"> </span>
+    					<span class="badge badge-pill mis now" id="2018-12-31_14:03:43"> </span>
     					<br>
     					<p>右片麻痺を発症した5名の患者の頭部単純CT（①～⑤）を次に示す．<br>
 						  発症後24時間以内に撮影されたCTはどれか．2つ選べ．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/102I014A.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/102I014B.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/102I014C.jpg" class="card-img-top img-fluid" width="49%">
-                    <img src="https://qb.medilink-study.com/images/102I014D.jpg" class="card-img-top img-fluid" width="49%">
-    				<img src="https://qb.medilink-study.com/images/102I014E.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/102I014A.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/102I014B.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/102I014C.jpg" class="card-img-top img-fluid" width="%">
+                    <img src="https://qb.medilink-study.com/images/102I014D.jpg" class="card-img-top img-fluid" width="%">
+    				<img src="https://qb.medilink-study.com/images/102I014E.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
     					<ol type="a">
-    						<li class="ans_f">①</li>
+    						<li class="ans_f star">①</li>
     						<li class="ans_f">②</li>
     						<li class="ans_t">③</li>
-    						<li class="ans_t">④</li>
+    						<li class="ans_t star">④</li>
     						<li class="ans_f">⑤</li>
     					</ol>
     				</div>
@@ -2772,7 +2864,7 @@
 			</div>
 
             <!-- 07 -->
-            <div class="card-group CI CECI MRA DWI pri">
+            <div class="card-group CI CECI MRA DWI pri" id="q27">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105A60" target="_blank" id="2018-02-06_13:40:52">105A60</a> DWI MRA
@@ -2833,7 +2925,7 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group CI CECI Gerstmann 111 pri info">
+            <div class="card-group CI CECI Gerstmann 111 pri info" id="q28">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/111A22" target="_blank">111A22</a> DWI &xrArr; 症候
@@ -2841,13 +2933,15 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:44:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:44:57"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:09:16"> </span>
 						<br>
 						<p>80歳の女性．右利き．<br>
 							突然，会話ができなくなったため，家族に連れられて来院した．<br>
 							本日午前8時，朝食中に<u>突然話している言葉が異常</u>になり，内容を家族が理解できなくなった．問いかけには返答せず，しきりに何かを訴えていたという．<br>
 							手足の動きはいつもと変わりなく，歩くことも可能であったが，言葉が改善しないため受診した．<br>
-							意識は清明．身長150cm，体重41kg．体温36.7℃．脈拍104/分，不整．血圧164/88mmHg．<br>
+							意識は清明．<br>
+                            身長150cm，体重41kg．体温36.7℃．脈拍104/分，不整．血圧164/88mmHg．<br>
 							何かを話しかけてくるが，<u>造語のため理解できない</u>．開口や上肢挙上などの簡単な指示に従わない．顔面は左右対称で舌に麻痺はなく，発語時に表情筋の左右差はない．四肢に麻痺はなく，勝手に起き上がろうとする．腱反射は正常，Babinski徴候は陰性である．感覚系と小脳系とに異常を認めない．<br>
 							胸部X線写真で<u>心胸郭比58％</u>．心電図で<u>心房細動</u>を認める．<br>
 							頭部MRIの拡散強調像を次に示す．<br>
@@ -2888,12 +2982,14 @@
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/111A022_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+
 					</div>
 				</div>
 			</div>
 
             <!-- 09 -->
-            <div class="card-group CI CECI Wernicke aphasia info">
+            <div class="card-group CI CECI Wernicke aphasia info" id="q29">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/106D38" target="_blank" id="2018-02-06_11:35:32">106D38</a> 診断
@@ -2951,7 +3047,7 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group CI CECI TSA pri info">
+            <div class="card-group CI CECI TSA pri info" id="q30">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109B59" target="_blank" id="2018-02-06_11:35:59">109B59-61</a>
@@ -2959,39 +3055,42 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:48:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:48:03"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:12:49"> </span>
                          /
 						<span class="badge badge-pill rev"> </span>
                          /
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau" id="2018-10-19_21:48:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:48:10"> </span>
+						<span class="badge badge-pill rev" id="2018-12-31_15:12:56"> </span>
 						<br>
 						<p>次の文を読み，59～61の問いに答えよ．</p>
 
 						<p>78歳の女性．右利き．<br>
-							<u>会話が困難</u>になったため搬入された．</p>
-						<p>現病歴：<br>
+							<u>会話が困難</u>になったため搬入された．<br>
+                            現病歴：<br>
                             今朝，食事中に会話のつじつまが合わないことに家族が気付き，改善がみられないため救急車を要請した．<br>
-                            昨夜の就寝までは異常はなかったという．</p>
-						<p>既往歴：<br>
-                            50歳時の健康診断で耐糖能異常を指摘されたがそのままにしていた．</p>
-						<p>生活歴：<br>
-                            息子夫婦と3人暮らし．喫煙歴はない．飲酒は機会飲酒．</p>
-						<p>家族歴：<br>
-                            両親ともに高血圧．父親が脳出血で死亡．</p>
-						<p>現症：<br>
+                            昨夜の就寝までは異常はなかったという．<br>
+                            既往歴：<br>
+                            50歳時の健康診断で耐糖能異常を指摘されたがそのままにしていた．<br>
+                            生活歴：<br>
+                            息子夫婦と3人暮らし．喫煙歴はない．飲酒は機会飲酒．<br>
+                            家族歴：<br>
+                            両親ともに高血圧．父親が脳出血で死亡．<br>
+                            現症：<br>
                             意識は清明．身長148cm，体重43kg．体温36.1℃．脈拍104/分，不整．血圧152/74mmHg．呼吸数16/分．<br>
                             過剰心音と心雑音とを認めない．呼吸音に異常を認めない．<br>
-                            <u>発語は流暢</u>であるが，<u>錯語</u>がみられ，<u>言語理解が悪く</u>，<u>物品呼称も障害</u>されている．<u>復唱は可能</u>である．読字は困難で，書字は可能であるが文意がとれない．構音障害を含め脳神経に異常を認めない．<br>
-                            四肢の運動系と感覚系に異常を認めない．腱反射は正常で，Babinski徴候は陰性．</p>
-						<p>検査所見：<br>
-                            尿所見に異常を認めない．</p>
-						<p>血液所見：<br>
-                            赤血球412万，Hb 12.1g/dL，Ht 40％，白血球6,300，血小板20万，PT-INR〈prothrombin time-international normalized ratio〉1.09（基準0.9～1.1），APTT 24.3秒（基準対照32.2），血漿フィブリノゲン306mg/dL（基準200～400），Dダイマー2.2μg/mL（基準1.0以下）．</p>
-						<p>血液生化学所見：<br>
-                            総蛋白6.1g/dL，アルブミン3.5g/dL，AST 26IU/L，ALT 18IU/L，LD 232IU/L（基準176～353），血糖138mg/dL，HbA1c 6.6％（基準4.6～6.2），トリグリセリド154mg/dL，HDLコレステロール38mg/dL，LDLコレステロール143mg/dL．</p>
-						<p>12誘導心電図で心房細動を認める．胸部X線写真で心胸郭比52％．心エコー検査で左室壁運動は良好で，弁膜症を認めない．頸動脈エコー検査で左右とも有意な狭窄を認めない．</p>
-						<p>頭部MRIの拡散強調像（A，B）を次に示す．<br>
+                            <u>発語は流暢</u>であるが，<u>錯語</u>がみられ，<u>言語理解が悪く</u>，<u>物品呼称も障害</u>されている．<u>復唱は可能</u>である．<u>読字は困難</u>で，書字は可能であるが文意がとれない．構音障害を含め脳神経に異常を認めない．<br>
+                            四肢の運動系と感覚系に異常を認めない．腱反射は正常で，Babinski徴候は陰性．<br>
+                            検査所見：<br>
+                            尿所見に異常を認めない．<br>
+                            血液所見：<br>
+                            赤血球412万，Hb 12.1g/dL，Ht 40％，白血球6,300，血小板20万，PT-INR〈prothrombin time-international normalized ratio〉1.09（基準0.9～1.1），APTT 24.3秒（基準対照32.2），血漿フィブリノゲン306mg/dL（基準200～400），Dダイマー2.2μg/mL（基準1.0以下）．<br>
+                            血液生化学所見：<br>
+                            総蛋白6.1g/dL，アルブミン3.5g/dL，AST 26IU/L，ALT 18IU/L，LD 232IU/L（基準176～353），血糖138mg/dL，HbA1c 6.6％（基準4.6～6.2），トリグリセリド154mg/dL，HDLコレステロール38mg/dL，LDLコレステロール143mg/dL．<br>
+                            12誘導心電図で<u>心房細動</u>を認める．<br>
+                            胸部X線写真で心胸郭比52％．心エコー検査で左室壁運動は良好で，弁膜症を認めない．頸動脈エコー検査で左右とも有意な狭窄を認めない．<br>
+                            頭部MRIの拡散強調像（A，B）を次に示す．<br>
 							同時に行った頭部MRAに異常を認めない．</p>
                     </div>
 
@@ -2999,17 +3098,19 @@
 					<img src="https://qb.medilink-study.com/images/109B059-061B.jpg" class="card-img-top img-fluid" width="%">
 
                     <div class="card-body">
-						<p>[B059] この患者の失語はどれか．</p>
+						<p>[B059] <br>
+                            この患者の失語はどれか．</p>
 						<ol type="a">
 							<li class="ans_f">全失語</li>
 							<li class="ans_f">伝導失語</li>
 							<li class="ans_f">Broca失語</li>
 							<li class="ans_f">Wernicke失語 </li>
-							<li class="ans_t">超皮質性感覚失語</li>
+							<li class="ans_t star">超皮質性感覚失語</li>
 						</ol>
 
 
-						<p>[B060] 病変部位はどれか．</p>
+						<p>[B060] <br>
+                            病変部位はどれか．</p>
 						<ol type="a">
 							<li class="ans_f">島</li>
 							<li class="ans_f">前頭葉</li>
@@ -3019,7 +3120,8 @@
 						</ol>
 
 
-						<p>[B061] 治療として適切なのはどれか．</p>
+						<p>[B061] <br>
+                            治療として適切なのはどれか．</p>
 						<ol type="a">
 							<li class="ans_t">抗凝固療法 </li>
 							<li class="ans_f">血栓溶解療法 </li>
@@ -3032,7 +3134,7 @@
 				<div class="card answer">
 					<div class="card-body">
 
-						<p></p>
+						<!-- <p></p> -->
 
                         <img src="https://qb.medilink-study.com/images/109B059_ima_010.jpg" class="card-img-top img-fluid">
 
@@ -3090,41 +3192,41 @@
 									<th rowspan="2">運動性</th>
 									<th>Broca<br>
                                         CMA</th>
-									<td>(-)</td>
-									<td>(-)</td>
-									<td>(+)</td>
+									<td align="center">(–)</td>
+									<td align="center">(–)</td>
+									<td align="center">(+)</td>
 									<td>Broca</td>
 								</tr>
 								<tr>
 									<th>超皮質運動性<br>
                                         TMA</th>
-									<td>(-)</td>
-									<td>(+)</td>
-									<td>(+)</td>
+									<td align="center">(–)</td>
+									<td align="center">(+)</td>
+									<td align="center">(+)</td>
 									<td>前頭葉</td>
 								</tr>
 								<tr>
 									<th rowspan="2">感覚性</th>
 									<th>Wernicke<br>
                                         CSA</th>
-									<td>(+)</td>
-									<td>(-)</td>
-									<td>(-)</td>
+									<td align="center">(+)</td>
+									<td align="center">(–)</td>
+									<td align="center">(–)</td>
 									<td>Wernicke</td>
 								</tr>
 								<tr>
 									<th>超皮質感覚性<br>
                                         TSA</th>
-									<td>(+)</td>
-									<td>(+)</td>
-									<td>(-)</td>
+									<td align="center">(+)</td>
+									<td align="center">(+)</td>
+									<td align="center">(–)</td>
 									<td>頭頂葉</td>
 								</tr>
 								<tr>
 									<th colspan="2">伝導失語</th>
-									<td>(+)</td>
-									<td>(-)</td>
-									<td>(+)</td>
+									<td align="center">(+)</td>
+									<td align="center">(–)</td>
+									<td align="center">(+)</td>
 									<td>縁上回 SMG</td>
 								</tr>
 							</tbody>
@@ -3143,7 +3245,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group BEHAV CECI pri info">
+            <div class="card-group BEHAV CECI pri info" id="q31">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108B44" target="_blank" id="2018-02-06_13:45:17">108B44</a> 高次機能障害
@@ -3201,7 +3303,7 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group CI CECI IE MR Marfan 111">
+            <div class="card-group CI CECI IE MR Marfan 111" id="q32">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/111D49" target="_blank">111D49</a> 診断
@@ -3257,16 +3359,20 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group CI HI">
+            <div class="card-group CI HI fig" id="q33">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/95G43" target="_blank" id="2018-02-06_14:04:39">95G43</a> CT
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:52:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:52:20"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_15:16:43"> </span>
 						<br>
-						<p>61歳の男性．昨日，意識障害と右片麻痺とが出現し，今日になって急に悪化したため救急車で搬送された．昏睡状態で自発運動を認めない．頭部単純CTを次に示す．<br>
+						<p>61歳の男性．<br>
+                            昨日，意識障害と右片麻痺とが出現し，今日になって急に悪化したため救急車で搬送された．<br>
+                            昏睡状態で自発運動を認めない．<br>
+                            頭部単純CTを次に示す．<br>
 							最も考えられるのはどれか．</p>
                     </div>
 
@@ -3305,7 +3411,7 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group t-PA CI pri info">
+            <div class="card-group t-PA CI pri info" id="q34">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/107I35" target="_blank" id="2018-02-06_13:29:13">107I35</a> t-PA
@@ -3365,7 +3471,7 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group CI t-PA pri info">
+            <div class="card-group CI t-PA pri info" id="q35">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109I21" target="_blank" id="2018-02-06_13:27:28">109I21</a> rt-PA
@@ -3373,14 +3479,15 @@
 					<div class="card-body">
 						<span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:53:24"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:53:24"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:18:27"> </span>
 						<br>
 						<p>脳梗塞に対してt-PA〈tissue plasminogen activator〉による血栓溶解療法を行う際に，事前に確認する必要がないのはどれか．</p>
 
 						<ol type="a">
 							<li class="ans_t">血小板数</li>
 							<li class="ans_t">頭部単純CT</li>
-							<li class="ans_f">動脈血ガス分析</li>
+							<li class="ans_f star">動脈血ガス分析</li>
 							<li class="ans_t">頭蓋内出血の既往歴</li>
 							<li class="ans_t">PT-INR〈prothrombin time-international normalized ratio〉</li>
 						</ol>
@@ -3394,11 +3501,11 @@
 						<p class="q_answer_false">c</p>
 
 						<ol type="a">
-							<li>Plt ≤ 100000 <u>DON'T</u></li>
+							<li>Plt ≤ 100000 <u>C/I</u></li>
 							<li>early CT sign</li>
 							<li></li>
-							<li><u>DON'T</u></li>
-							<li>PT-INR ≥ 1.7 <u>DON'T</u></li>
+							<li><u>C/I</u></li>
+							<li>PT-INR ≥ 1.7 <u>C/I</u></li>
 						</ol>
 
 
@@ -3445,14 +3552,15 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group CI t-PA 110">
+            <div class="card-group CI t-PA 110" id="q36">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/110I10" target="_blank">110I10</a> t-PA C/I
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:56:09"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:56:09"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:19:44"> </span>
 						<br>
 						<p>急性期の脳梗塞でt-PA〈tissue plasminogen activator〉の投与が禁忌となる検査値はどれか．</p>
 
@@ -3484,14 +3592,15 @@
 			</div>
 
             <!-- 07 -->
-            <div class="card-group TIA info">
+            <div class="card-group TIA info" id="q37">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102I45" target="_blank">102I45</a> TIA 病変
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:56:58"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:56:58"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:23:23"> </span>
 						<br>
 						<p>50歳の男性．<br>
 							半年前に<u>右眼の一過性の視力障害</u>をきたした後，月に1回程度の<u>左上下肢の脱力発作</u>を繰り返している．<br>
@@ -3499,7 +3608,7 @@
 
 						<ol type="a">
 							<li class="ans_f">右総頸動脈閉塞</li>
-							<li class="ans_t">右内頸動脈起始部狭窄</li>
+							<li class="ans_t star">右内頸動脈起始部狭窄</li>
 							<li class="ans_f">右内頸動脈終末部狭窄</li>
 							<li class="ans_f">右中大脳動脈狭窄</li>
 							<li class="ans_f">右後大脳動脈閉塞</li>
@@ -3537,20 +3646,23 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group 110 pri">
+            <div class="card-group TIA 110 pri info" id="q38">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E56" target="_blank">110E56</a> 対応
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-20_09:32:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:32:20"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-31_15:24:26"> </span>
                         <br>
                         <p>47歳の男性．<br>
 							定期健康診断で高血圧症を指摘され産業医面談に訪れた．<br>
-							話をよく聞くと，2週前に右片麻痺と言語障害が出現したが，1時間後にはすべての症状が消失した．その後は症状がないためそのままにしていたという．このことは家族，会社には話していない．路線バスの運転手で，時々長距離ツアーバスの運転をしている．<br>
+							話をよく聞くと，2週前に<u>右片麻痺</u>と<u>言語障害</u>が出現したが，<u>1時間後にはすべての症状が消失</u>した．その後は症状がないためそのままにしていたという．<br>
+                            このことは家族，会社には話していない．<br>
+                            路線バスの運転手で，時々長距離ツアーバスの運転をしている．<br>
                             残業は月10時間程度である．定期健康診断の結果は以下のとおりである．<br>
-							身長170cm，体重71kg．血圧182/96mmHg．<br>
+							身長170cm，体重71kg．<u>血圧182/96mmHg</u>．<br>
 							血液所見：<br>
                             赤血球490万，Hb 14.8g/dL．<br>
 							血液生化学所見：<br>
@@ -3641,7 +3753,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group TIA 110 info pri">
+            <div class="card-group TIA 110 info pri" id="q39">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/110B49" target="_blank">110B49</a> 検査
@@ -3695,7 +3807,7 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group TIA pri info">
+            <div class="card-group TIA pri info" id="q40">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108E58" target="_blank" id="2018-02-06_14:50:36">108E58</a> 治療
@@ -3772,7 +3884,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group TIA 110 pri info">
+            <div class="card-group TIA 110 pri info" id="q41">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/110G51" target="_blank">110G51</a> 治療
@@ -3780,7 +3892,8 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:32:04"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:32:04"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:27:02"> </span>
 						<br>
 						<p>55歳の男性．<br>
 							<u>脱力発作</u>を主訴に来院した．<br>
@@ -3811,7 +3924,7 @@
 							<li class="ans_f">血栓溶解療法</li>
 							<li class="ans_f">脳動脈瘤塞栓術</li>
 							<li class="ans_f">頸動脈内膜剝離術</li>
-							<li class="ans_t">頸動脈ステント留置術</li>
+							<li class="ans_t star">頸動脈ステント留置術</li>
 						</ol>
 					</div>
 				</div>
@@ -3917,7 +4030,7 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group TIA info">
+            <div class="card-group TIA info" id="q42">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/96H47" target="_blank" id="2018-02-06_14:51:19">96H47</a> TIA 症候
@@ -3978,14 +4091,15 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group AVM 111 pri info">
+            <div class="card-group AVM 111 pri info" id="q43">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/111E44" target="_blank">111E44</a> 血管内治療
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:34:42"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:34:42"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:29:08"> </span>
 						<br>
 						<p>42歳の女性．<br>
 							<u>左片麻痺</u>と<u>意識障害</u>のため救急車で搬入された．<br>
@@ -4014,7 +4128,7 @@
 							<li class="ans_f">経皮血管形成術</li>
 							<li class="ans_f">ステント留置術</li>
 							<li class="ans_f">脳動脈瘤塞栓術</li>
-							<li class="ans_t">流入動脈塞栓術</li>
+							<li class="ans_t star">流入動脈塞栓術</li>
 						</ol>
 					</div>
 				</div>
@@ -4058,7 +4172,7 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group AVM pri">
+            <div class="card-group AVM pri" id="q44">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103D38" target="_blank" id="2018-02-06_15:52:20">103D38</a> 診断
@@ -4110,14 +4224,15 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group AVM pri">
+            <div class="card-group AVM pri" id="q45">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105I37" target="_blank" id="2018-02-06_15:58:50">105I37</a> 症候
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:37:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:37:35"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:29:49"> </span>
 						<br>
 						<p>脳血管造影写真側面像を次に示す．<br>
 							この疾患の初発症状として多くみられるのはどれか．3つ選べ．</p>
@@ -4156,21 +4271,22 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group moyamoya">
+            <div class="card-group moyamoya" id="q46">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/95B51" target="_blank" id="2018-02-06_16:00:50">95B51</a> 症候 Qs
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:38:39"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:38:39"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_15:31:06"> </span>
 						<br>
 						<p>もやもや病で誤っているのはどれか．</p>
 
 						<ol type="a">
 							<li class="ans_f">脳主幹動脈の拡張性疾患である．</li>
 							<li class="ans_t">小児では過換気で症状が発現する．</li>
-							<li class="ans_t">急性小児片麻痺の原因となる．</li>
+							<li class="ans_t star">急性小児片麻痺の原因となる．</li>
 							<li class="ans_t">小児では症状が進行性のものが多い．</li>
 							<li class="ans_t">成人では出血で発症することが多い．</li>
 						</ol>
@@ -4194,14 +4310,15 @@
 			</div>
 
             <!-- 07 -->
-            <div class="card-group pri">
+            <div class="card-group moyamoya fig pri" id="q47">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105A30" target="_blank" id="2018-02-06_15:59:51">105A30</a> MRI &xrArr; 診断
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:39:41"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:39:41"> </span>
+						<span class="badge badge-pill rev now" id="2018-12-31_15:31:47"> </span>
 						<br>
 						<p>5歳の男児．<br>
 							1時間前から<u>数分間持続</u>する<u>全身の強直性間代性けいれん</u>を3回繰り返したため搬入された．<br>
@@ -4231,7 +4348,8 @@
 							<li></li>
 						</ul> -->
 
-						<img src="https://www.qb-online.com/img/105A030_ima_j_010.jpg" class="img-fluid">
+						<!-- <img src="https://www.qb-online.com/img/105A030_ima_j_010.jpg" class="img-fluid"> -->
+                        <img src="https://qb.medilink-study.com/images/105A030_ima_j_010.jpg" class="card-img-top img-fluid">
 						<p>Flow void</p>
 
 						<p class="q_answer_true">b</p>
@@ -4248,7 +4366,7 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group moyamoya 111 pri info">
+            <div class="card-group moyamoya 111 pri info" id="q48">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/111I68" target="_blank">111I68</a> 診断
@@ -4256,7 +4374,8 @@
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_21:04:40"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_21:04:40"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_14:05:35"> </span>
 						<br>
 						<p>12歳の男児．<br>
 							<u>脱力発作</u>を主訴に母親に連れられて来院した．<br>
@@ -4278,11 +4397,11 @@
 
                     <div class="card-body">
 						<ol type="a">
-							<li class="ans_t">血行再建術</li>
+							<li class="ans_t star">血行再建術</li>
 							<li class="ans_f">腫瘍摘出術</li>
 							<li class="ans_f">動脈塞栓術</li>
 							<li class="ans_f">血栓溶解療法</li>
-							<li class="ans_f">ステント留置術</li>
+							<li class="ans_f star">ステント留置術</li>
 						</ol>
 					</div>
 				</div>
@@ -4323,7 +4442,7 @@
 			</div>
 
             <!-- 09 -->
-            <div class="card-group CCF pri">
+            <div class="card-group CCF pri" id="q49">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/102I46" target="_blank" id="2018-02-06_16:05:56">102I46</a> 外傷性 治療
@@ -4382,7 +4501,7 @@
 			</div>
 
             <!-- 10 -->
-            <div class="card-group CCF pri info">
+            <div class="card-group CCF pri info" id="q50">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105A32" target="_blank" id="2018-02-06_16:01:31">105A32</a> 診断
@@ -4454,22 +4573,23 @@
 
 
             <!-- 01 -->
-            <div class="card-group CCF">
+            <div class="card-group CCF" id="q51">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/100B49" target="_blank" id="2018-02-06_16:04:55">100B49</a> 症候
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:42:01"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:42:01"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_15:37:09"> </span>
 						<br>
 						<p>内頸動脈海綿静脈洞瘻でみられるのはどれか．</p>
 
 
 						<ol type="a">
 							<li class="ans_f">縮瞳</li>
-							<li class="ans_t">眼球突出</li>
-							<li class="ans_f">視力低下</li>
+							<li class="ans_t star">眼球突出</li>
+							<li class="ans_f star">視力低下</li>
 							<li class="ans_f">角膜潰瘍</li>
 							<li class="ans_f">視野障害</li>
 						</ol>
@@ -4499,7 +4619,7 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group ICH ICA CI HI TIA info">
+            <div class="card-group ICH ICA CI HI TIA info" id="q52">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/103E11" target="_blank" id="2018-02-06_11:31:36">103E11</a> 治療法 選択
@@ -4577,7 +4697,7 @@
 			</div>
 
             <!-- 03 -->
-            <div class="card-group INTRO moyamoya CI SAH CI CECI HTN pri">
+            <div class="card-group INTRO moyamoya CI SAH CI CECI HTN pri" id="q53">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109B27" target="_blank" id="2018-02-06_13:36:41">109B27</a> 脳血管障害 - 治療
@@ -4585,14 +4705,15 @@
 					<div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:08:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:08:14"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_15:38:42"> </span>
 						<br>
 						<p>脳血管障害とその治療の組合せで適切なのはどれか．</p>
 
 						<ol type="a">
-							<li class="ans_f">もやもや病 － 動脈塞栓術</li>
+							<li class="ans_f star">もやもや病 － 動脈塞栓術</li>
 							<li class="ans_f">ラクナ梗塞 － 経皮血管形成術〈PTA〉</li>
-							<li class="ans_t">くも膜下出血 － 動脈瘤塞栓術</li>
+							<li class="ans_t star">くも膜下出血 － 動脈瘤塞栓術</li>
 							<li class="ans_f">心原性脳塞栓 － 頸動脈内膜剝離術</li>
 							<li class="ans_f">高血圧性脳出血 － 血栓溶解療法</li>
 						</ol>
@@ -4617,7 +4738,7 @@
 			</div>
 
             <!-- 04 -->
-            <div class="card-group CI REHAB 111 pri">
+            <div class="card-group CI REHAB 111 pri" id="q54">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/111B5" target="_blank">111B5</a> リハビリで予防できる
@@ -4655,18 +4776,21 @@
 			</div>
 
             <!-- 05 -->
-            <div class="card-group CI REHAB 110 pri info">
+            <div class="card-group CI REHAB 110 pri info" id="q55">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/110B46" target="_blank">110B46</a> 回復期 リハビリ
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_21:11:45"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_21:11:45"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_14:28:11"> </span>
 						<br>
 						<p>77歳の女性．<br>
 							突然の意識障害と<u>右片麻痺</u>のため搬入され入院中である．<br>
-							入院1週後では，開眼し視線は合うが自発語はない．口頭命令で閉眼は可能である．時折，唾液でむせる．右上下肢に随意運動を認めず，上腕二頭筋の筋緊張が亢進している．座位の保持には支えが必要である．<br>
+							入院1週後では，開眼し視線は合うが自発語はない．<br>
+                            <u>口頭命令で閉眼は可能</u>である．<br>
+                            時折，<u>唾液でむせる</u>．右上下肢に随意運動を認めず，上腕二頭筋の筋緊張が亢進している．座位の保持には支えが必要である．<br>
                             入院時の頭部MRIの拡散強調像を次に示す．<br>
 							この時期のケアとして適切なのはどれか．</p>
                     </div>
@@ -4679,8 +4803,8 @@
 							<li class="ans_f">嚥下訓練は飲水から開始する．</li>
 							<li class="ans_f">文字板を用いて意思疎通を図る．</li>
 							<li class="ans_f">麻痺側へ寝返って起き上がるように指導する．</li>
-							<li class="ans_t">仰臥位姿勢では右肘関節を伸展位に保持するように指導する．</li>
-							<li class="ans_f">拘縮予防のために右肩関節を積極的に動かすよう家族に指導する．</li>
+							<li class="ans_t star">仰臥位姿勢では右肘関節を伸展位に保持するように指導する．</li>
+							<li class="ans_f star">拘縮予防のために右肩関節を積極的に動かすよう家族に指導する．</li>
 						</ol>
 					</div>
 				</div>
@@ -4716,14 +4840,15 @@
 			</div>
 
             <!-- 06 -->
-            <div class="card-group CI REHAB info">
+            <div class="card-group CI REHAB info" id="q56">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/96I44" target="_blank" id="2018-02-06_14:36:35">96I44</a> リハビリ
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill mis now" id="2018-10-19_21:15:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-19_21:15:14"> </span>
+						<span class="badge badge-pill mis now" id="2018-12-31_14:33:21"> </span>
 						<br>
 						<p>68歳の男性．<br>
 							前日から言語障害と歩行障害とが生じ入院した．<br>
@@ -4733,11 +4858,11 @@
 							リハビリテーション開始時に適切なのはどれか．3つ選べ．</p>
 
 						<ol type="a">
-							<li class="ans_t">起座位訓練</li>
+							<li class="ans_t star">起座位訓練</li>
 							<li class="ans_t">麻痺肢の他動運動</li>
 							<li class="ans_t">摂食・嚥下の評価</li>
 							<li class="ans_f">短下肢装具の作製</li>
-							<li class="ans_f">言語訓練</li>
+							<li class="ans_f star">言語訓練</li>
 						</ol>
 					</div>
 				</div>
@@ -4767,7 +4892,7 @@
 			</div>
 
             <!-- 07 -->
-            <div class="card-group CI REHAB pri">
+            <div class="card-group CI REHAB pri" id="q57">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/105E58" target="_blank" id="2018-02-06_13:21:06">105E58</a> 嚥下障害
@@ -4820,7 +4945,7 @@
 			</div>
 
             <!-- 08 -->
-            <div class="card-group CI REHAB pri info">
+            <div class="card-group CI REHAB pri info" id="q58">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/108G51" target="_blank">108G51</a> リハビリ
@@ -4865,14 +4990,15 @@
 			</div>
 
             <!-- 09 -->
-            <div class="card-group REHAB putamen ICH 111 pri">
+            <div class="card-group REHAB putamen ICH 111 pri" id="q59">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B40" target="_blank" id="">111B40</a> リハビリ
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-20_09:51:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:51:45"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-31_15:39:22"> </span>
                         <br>
                         <p>53歳の男性．<br>
                             視床出血後の左片麻痺のため回復期リハビリテーション病棟に入院中である．<br>
@@ -4883,11 +5009,11 @@
                             この患者に用いるのに適切なのはどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/111B040A.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111B040B.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111B040C.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111B040D.jpg" class="card-img-top img-fluid" width="32%">
-                    <img src="https://qb.medilink-study.com/images/111B040E.jpg" class="card-img-top img-fluid" width="32%">
+                    <img src="https://qb.medilink-study.com/images/111B040A.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111B040B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111B040C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111B040D.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/111B040E.jpg" class="card-img-top img-fluid" width="49%">
 
                     <div class="card-body">
                         <ol type="a">
@@ -4918,7 +5044,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group CI REHAB pri">
+            <div class="card-group CI REHAB pri" id="q60">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/107E27" target="_blank" id="2018-02-06_13:37:56">107E27</a> リハビリ
@@ -4926,7 +5052,8 @@
 					<div class="card-body">
 						<span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-20_09:53:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-20_09:53:35"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:40:10"> </span>
 						<br>
 						<p>脳血管障害による片麻痺患者のリハビリテーションで最も大きな阻害因子となるのはどれか．</p>
 
@@ -4969,7 +5096,7 @@
 
 
             <!-- 01 -->
-            <div class="card-group SAH pri req">
+            <div class="card-group SAH pri req" id="q61">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/109F22" target="_blank" id="2018-02-06_15:29:53">109F22</a> 頭痛
@@ -5013,14 +5140,15 @@
 			</div>
 
             <!-- 02 -->
-            <div class="card-group SAH pri req 110">
+            <div class="card-group SAH pri req 110" id="q62">
 				<div class="card">
 					<div class="card-header">
 						<a href="https://qb.medilink-study.com/#/Answer/110F19" target="_blank">110F19</a> 検査
 					</div>
 					<div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-						<span class="badge badge-pill cau now" id="2018-10-19_21:17:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-19_21:17:12"> </span>
+						<span class="badge badge-pill cau now" id="2018-12-31_15:42:01"> </span>
 						<br>
 						<p>50歳の女性．<br>
 							<u>頭痛</u>を主訴に来院した．<br>
@@ -5170,526 +5298,190 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getFullYear();
-    var print_date = year + "-" + month + "-" + date;
-    $('.page-header > h1').append(' <small class="print_date"></small>');
+$(function(){
     
 
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
 
 
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
     $('#SAH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SAH)').slideToggle(100);
+        $('#q div.card-group:not(.SAH)').slideToggle(100);
     });
-    $('#SAH').find('code').html($('div.SAH').size());
+    $('#SAH').find('small > code').html(
+        $('div.SAH > .card > .mis').size() + '+' +
+        $('div.SAH > .card > .cau').size() + '/' +
+        $('div.SAH').size()
+    );
+
+
+    $('#vasospasm').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.vasospasm)').slideToggle(100);
+    });
+    $('#vasospasm').find('small > code').html(
+        $('div.vasospasm > .card > .mis').size() + '+' +
+        $('div.vasospasm > .card > .cau').size() + '/' +
+        $('div.vasospasm').size()
+    );
 
 
     $('#ICA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ICA)').slideToggle(100);
+        $('#q div.card-group:not(.ICA)').slideToggle(100);
     });
-    $('#ICA').find('code').html($('div.ICA').size());
+    $('#ICA').find('small > code').html(
+        $('div.ICA > .card > .mis').size() + '+' +
+        $('div.ICA > .card > .cau').size() + '/' +
+        $('div.ICA').size());
 
 
     $('#ICH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ICH)').slideToggle(100);
+        $('#q div.card-group:not(.ICH)').slideToggle(100);
     });
-    $('#ICH').find('code').html($('div.ICH').size());
+    $('#ICH').find('small > code').html(
+        $('div.ICH > .card > .mis').size() + '+' +
+        $('div.ICH > .card > .cau').size() + '/' +
+        $('div.ICH').size());
 
 
     $('#SCH').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SCH)').slideToggle(100);
+        $('#q div.card-group:not(.SCH)').slideToggle(100);
     });
-    $('#SCH').find('code').html($('div.SCH').size());
+    $('#SCH').find('small > code').html(
+        $('div.SCH > .card > .mis').size() + '+' +
+        $('div.SCH > .card > .cau').size() + '/' +
+        $('div.SCH').size());
 
 
     $('#CAA').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CAA)').slideToggle(100);
+        $('#q div.card-group:not(.CAA)').slideToggle(100);
     });
-    $('#CAA').find('code').html($('div.CAA').size());
+    $('#CAA').find('small > code').html(
+        $('div.CAA > .card > .mis').size() + '+' +
+        $('div.CAA > .card > .cau').size() + '/' +
+        $('div.CAA').size());
 
 
     $('#CI h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CI)').slideToggle(100);
+        $('#q div.card-group:not(.CI)').slideToggle(100);
     });
-    $('#CI').find('code').html($('div.CI').size());
+    $('#CI').find('small > code').html(
+        $('div.CI > .card > .mis').size() + '+' +
+        $('div.CI > .card > .cau').size() + '/' +
+        $('div.CI').size());
 
 
     $('#CECI').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CECI)').slideToggle(100);
+        $('#q div.card-group:not(.CECI)').slideToggle(100);
     });
-    $('#CECI').find('code').html($('div.CECI').size());
+    $('#CECI').find('small > code').html(
+        $('div.CECI > .card > .mis').size() + '+' +
+        $('div.CECI > .card > .cau').size() + '/' +
+        $('div.CECI').size());
 
 
     $('#HI').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HI)').slideToggle(100);
+        $('#q div.card-group:not(.HI)').slideToggle(100);
     });
-    $('#HI').find('code').html($('div.HI').size());
+    $('#HI').find('small > code').html(
+        $('div.HI > .card > .mis').size() + '+' +
+        $('div.HI > .card > .cau').size() + '/' +
+        $('div.HI').size());
 
 
     $('#Gerstmann').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Gerstmann)').slideToggle(100);
+        $('#q div.card-group:not(.Gerstmann)').slideToggle(100);
     });
-    $('#Gerstmann').find('code').html($('div.Gerstmann').size());
+    $('#Gerstmann').find('small > code').html(
+        $('div.Gerstmann > .card > .mis').size() + '+' +
+        $('div.Gerstmann > .card > .cau').size() + '/' +
+        $('div.Gerstmann').size());
 
 
     $('#t-PA').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.t-PA)').slideToggle(100);
+        $('#q div.card-group:not(.t-PA)').slideToggle(100);
     });
-    $('#t-PA').find('code').html($('div.t-PA').size());
+    $('#t-PA').find('small > code').html(
+        $('div.t-PA > .card > .mis').size() + '+' +
+        $('div.t-PA > .card > .cau').size() + '/' +
+        $('div.t-PA').size());
 
 
     $('#TIA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TIA)').slideToggle(100);
+        $('#q div.card-group:not(.TIA)').slideToggle(100);
     });
-    $('#TIA').find('code').html($('div.TIA').size());
+    $('#TIA').find('small > code').html(
+        $('div.TIA > .card > .mis').size() + '+' +
+        $('div.TIA > .card > .cau').size() + '/' +
+        $('div.TIA').size());
 
 
     $('#AVM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.AVM)').slideToggle(100);
+        $('#q div.card-group:not(.AVM)').slideToggle(100);
     });
-    $('#AVM').find('code').html($('div.AVM').size());
+    $('#AVM').find('small > code').html(
+        $('div.AVM > .card > .mis').size() + '+' +
+        $('div.AVM > .card > .cau').size() + '/' +
+        $('div.AVM').size());
 
 
     $('#CCF h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CCF)').slideToggle(100);
+        $('#q div.card-group:not(.CCF)').slideToggle(100);
     });
-    $('#CCF').find('code').html($('div.CCF').size());
+    $('#CCF').find('small > code').html(
+        $('div.CCF > .card > .mis').size() + '+' +
+        $('div.CCF > .card > .cau').size() + '/' +
+        $('div.CCF').size());
 
 
 
     $('#REHAB h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.REHAB)').slideToggle(100);
+        $('#q div.card-group:not(.REHAB)').slideToggle(100);
     });
-    $('#REHAB').find('code').html($('div.REHAB').size());
+    $('#REHAB').find('small > code').html(
+        $('div.REHAB > .card > .mis').size() + '+' +
+        $('div.REHAB > .card > .cau').size() + '/' +
+        $('div.REHAB').size());
 
 
     $('#moyamoya h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.moyamoya)').slideToggle(100);
+        $('#q div.card-group:not(.moyamoya)').slideToggle(100);
     });
-    $('#moyamoya').find('code').html($('div.moyamoya').size());
+    $('#moyamoya').find('small > code').html(
+        $('div.moyamoya > .card > .mis').size() + '+' +
+        $('div.moyamoya > .card > .cau').size() + '/' +
+        $('div.moyamoya').size());
 
 
     $('#aphasia h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.aphasia)').slideToggle(100);
+        $('#q div.card-group:not(.aphasia)').slideToggle(100);
     });
-    $('#aphasia').find('code').html($('div.aphasia').size());
+    $('#aphasia').find('small > code').html(
+        $('div.aphasia > .card > .mis').size() + '+' +
+        $('div.aphasia > .card > .cau').size() + '/' +
+        $('div.aphasia').size());
 
 
 
@@ -5701,9 +5493,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

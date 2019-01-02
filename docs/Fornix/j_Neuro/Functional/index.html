@@ -1,15 +1,29 @@
 <!--
-@Author: shumez
-@Date:   2018-04-09 13:09:37
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-10-21 16:03:19
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/j_Neuro/Functional
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-05-15 16:22:5
+Modified: 	2019-01-02 16:03:29
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+
 04.01.27    18 10 21    .img glyphicon-picture
 04.01.26    18 10 19    print_date, slideToggle(100)
 04.01.25    18 10 18    title + version
@@ -101,8 +115,8 @@
     <title>Functional</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-21 16:03:42" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.27">
+    <meta name="revised" content="2019-01-02 13:35:30" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -121,121 +135,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -280,62 +188,242 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>誘発因子</h6>
-            <table class="table table-condensed">
-                <tbody>
-                    <tr>
-                        <th>Migraine</th>
-                        <td><ul>
-                            <li>月経周期</li>
-                            <li>疲労</li>
-                            <li>睡眠不足/過多</li>
-                            <li>週末</li>
-                        </ul></td>
-                    </tr>
-                    <tr>
-                        <th>TAC</th>
-                        <td><ul>
-                            <li>アルコール摂取</li>
-                        </ul></td>
-                    </tr>
-                    <tr>
-                        <th>Tension-type</th>
-                        <td><ul>
-                            <li>VDT作業</li>
-                            <li>同一姿勢</li>
-                            <li>ストレス</li>
-                        </ul></td>
-                    </tr>
-                    <tr>
-                        <th>三叉神経痛</th>
-                        <td><ul>
-                            <li>咀嚼</li>
-                            <li>顔面の感覚刺激</li>
-                            <li>顔面運動</li>
-                            <li>洗顔</li>
-                            <li>歯磨き</li>
-                        </ul></td>
-                    </tr>
-                    <tr>
-                        <th>舌咽神経痛</th>
-                        <td><ul>
-                            <li>咀嚼</li>
-                            <li>嚥下</li>
-                        </ul></td>
-                    </tr>
-                </tbody>
-            </table>
+
+
+
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="EEG">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>EEG <small> </small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/94A061_bas_j_010.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>速波</th>
+                            <th colspan="3">徐波</th>
+                        </tr>
+                        <tr>
+                            <th>&beta;</th>
+                            <th>&alpha;</th>
+                            <th>&theta;</th>
+                            <th>&delta;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>14-25Hz</td>
+                            <td>8-14Hz</td>
+                            <td>4-7Hz</td>
+                            <td>1-3Hz</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>開眼</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>閉眼</li>
+                                    <li>後頭部</li>
+                                    <li>安静</li>
+                                </ul>
+                            </td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6>賦活法</h6>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li><u>睡眠</u></li>
+                            <li>過呼吸</li>
+                            <li>光刺激</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th colspan="3">てんかん性</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">全般</td>
+                            <td><u>1.5-2Hz SWC</u></td>
+                            <td><u>LGS</u></td>
+                        </tr>
+                        <tr>
+                            <td><u>3Hz SWC</u></td>
+                            <td><u>欠神発作</u></td>
+                        </tr>
+                        <tr>
+                            <td>Poly SWC</td>
+                            <td>ミオクロニー発作</td>
+                        </tr>
+                        <tr>
+                            <td>Hypsarrhythmia</td>
+                            <td>West</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">突発性</th>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">PSD<br>
+                                周期性同期性放電</td>
+                            <td>周期性同期性<br>
+                                高振幅鋭波 spike</td>
+                            <td><u>CJD</u></td>
+                        </tr>
+                        <tr>
+                            <td>周期性同期性<br>
+                                高振幅徐波 wave</td>
+                            <td><u>亜急性硬化性全脳炎</u></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">周期性一側てんかん型放電</td>
+                            <td>HSV</td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">非突発性</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2">三相波</td>
+                            <td><u>肝性脳症</u></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
+    </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="MH">
+
+
+    <div class="section" id="HA">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Headache <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>誘発因子</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Migraine</th>
+                            <td>
+                                <ul>
+                                    <li>月経周期</li>
+                                    <li>疲労</li>
+                                    <li>睡眠不足/過多</li>
+                                    <li>週末</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>群発性<br>
+                                TAC</th>
+                            <td>
+                                <ul>
+                                    <li>アルコール摂取</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>緊張型<br>
+                                Tension-type</th>
+                            <td>
+                                <ul>
+                                    <li>VDT作業</li>
+                                    <li>同一姿勢</li>
+                                    <li>ストレス</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>三叉神経痛</th>
+                            <td>
+                                <ul>
+                                    <li>咀嚼</li>
+                                    <li>顔面の感覚刺激</li>
+                                    <li>顔面運動</li>
+                                    <li>洗顔</li>
+                                    <li>歯磨き</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>舌咽神経痛</th>
+                            <td>
+                                <ul>
+                                    <li>咀嚼</li>
+                                    <li>嚥下</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        拍動性
+                        <ul>
+                            <li>片頭痛</li>
+                            <li>巨細胞性動脈炎</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        明け方
+                        <ul>
+                            <li>群発性</li>
+                            <li>脳腫瘍</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section" id="MH">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Migraine <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h6>Treatment</h6>
@@ -343,31 +431,47 @@
                             <li>急性期
                                 <ul>
                                     <li>Triptan</li>
+                                    <li>NSAIDs</li>
                                     <li><u>Ergotamine</u></li>
-                                </ul></li>
-                            <li>予防薬
+                                </ul>
+                            </li>
+                            <li>予防
                                 <ul>
                                     <li>CCB</li>
                                     <li><u>&beta;B</u></li>
-                                </ul></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                 </ul>
-                
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <div  class="card">
                     <img src="https://qb.medilink-study.com/images/103I014_sup_j_010.jpg" class="card-img-top img-fluid">
                 </div>
 
             </div>
         </div>
+    </div>
 
-        
+            
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">        
             <div class="section" id="TTH">
                 <div class="page-header">
-                    <h2>TTH <small class="hidden-xs-down">Tension-Type Headache</small> <small><code></code></small></h2>
+                    <h2>Tension-Type <small>緊張型</small> <small><code></code></small></h2>
                 </div>
 
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li><u>数min - 数days</u></li>
+                        </ul>
+                    </li>
+                </ul>
         
             </div>
         </div>
@@ -376,19 +480,61 @@
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="TAC">
                 <div class="page-header">
-                    <h2>TAC <small class="hidden-xs-down">Trigeminal Autonomic Cephalalgia</small> <small><code></code></small></h2>
+                    <h2>Trigeminal Autonomic Cephalalgia <small>群発性</small> <small><code></code></small></h2>
                 </div>
 
                 <div class="card">
-                    <img src="https://clinicalgate.com/wp-content/uploads/2015/04/B9780323033541500638_cetable2.jpg" class="card-img-top img-fluid">
+                    <a href="https://clinicalgate.com/trigeminal-autonomic-cephalalgias-cluster-headache-and-related-conditions/" target="_blank">
+                        <img src="https://clinicalgate.com/wp-content/uploads/2015/04/B9780323033541500638_cetable2.jpg" class="card-img-top img-fluid">
+                    </a>
                 </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li>副交感神経症状
+                                <ul>
+                                    <li>鼻閉</li>
+                                </ul>
+                            </li>
+                            <li>Horner sign</li>
+                        </ul>
+                    </li>
+                </ul>
+
             </div>
         </div>
 
 
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="MOH">
+                <div class="page-header">
+                    <h2>Medicatio-Overdose Headache <small>薬物使用過多</small> <small><code></code></small></h2>
+                </div>
 
 
 
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Epilepsy <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="TCS">
                 <div class="page-header">
@@ -424,94 +570,7 @@
 
 
         
-    <div class="section" id="EEG">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-header">
-                    <h2>EEG <small> </small> <small><code></code></small></h2>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/94A061_bas_j_010.jpg" class="card-img-top img-fluid">
-                </div>
-
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>&beta;</th>
-                            <th>&alpha;</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th></th>
-                            <td>
-                                <ul>
-                                    <li>開眼</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>閉眼</li>
-                                    <li>後頭部</li>
-                                    <li>安静</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h6>賦活法</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">睡眠</li>
-                    <li class="list-group-item">過呼吸</li>
-                    <li class="list-group-item">光刺激</li>
-                </ul>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <th colspan="2">てんかん性</th>
-                        </tr>
-                        <tr>
-                            <td><u>1.5-2Hz SWC</u></td>
-                            <td><u>LGS</u></td>
-                        </tr>
-                        <tr>
-                            <td>Hypsarrhythmia</td>
-                            <td>West</td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">PSD 周期性同期性放電</th>
-                        </tr>
-                        <tr>
-                            <td>周期性同期性<br>
-                                高振幅鋭波 spike</td>
-                            <td><u>CJD</u></td>
-                        </tr>
-                        <tr>
-                            <td>周期性同期性<br>
-                            高振幅徐波 wave</td>
-                            <td><u>亜急性硬化性全脳炎</u></td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">非突発性</th>
-                        </tr>
-                        <tr>
-                            <td>三相波</td>
-                            <td><u>肝性脳症</u></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </div>
+    
 
 
 
@@ -726,7 +785,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-21_16:11:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-21_16:11:54"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-02_14:34:07"> </span>
                         <br>
                         <p>頭痛について正しいのはどれか．3つ選べ．</p>
 
@@ -734,14 +794,15 @@
                             <li class="ans_t">髄膜炎による頭痛では，発熱，悪心および嘔吐を伴うのが特徴的である．</li>
                             <li class="ans_t">急激な視力障害に激しい頭痛を伴う場合は急性緑内障の可能性が高い． </li>
                             <li class="ans_f">緊張性頭痛では悪心と嘔吐とを伴うのが特徴的である． </li>
-                            <li class="ans_f">脳腫瘍では拍動性頭痛が特徴的である．</li>
+                            <li class="ans_f start">脳腫瘍では拍動性頭痛が特徴的である．</li>
                             <li class="ans_t">うつ病では頭痛を伴うことが多い． </li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a,b,e</p>
+
+                        <p class="q_answer_true">a b e</p>
 
                         <ol type="a">
                             <li></li>
@@ -797,6 +858,119 @@
                                 </tr>
                             </tbody>
                         </table>
+
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>起こり方</th>
+                                    <th>疾患</th>
+                                    <th>特徴</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>突発的に起こる</td>
+                                    <td>
+                                        <ol>
+                                            <li>くも膜下出血</li>
+                                            <li>脳出血，脳梗塞</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>髄膜刺激症状，眼底の硝子体下出血，乳頭浮腫，CTにてくも膜下腔の出血</li>
+                                            <li>巣症状，CT，MRI</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>急性〜亜急性<br>
+                                        発熱（＋）<br>
+                                        （1日〜2週で起こる）</td>
+                                    <td>
+                                        <ol>
+                                            <li>髄膜炎</li>
+                                            <li>脳膿瘍</li>
+                                            <li>感冒，全身感染症</li>
+                                            <li>側頭動脈炎</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>髄膜刺激症状，髄液検査</li>
+                                            <li>中枢神経症状，早朝時の頭痛，CT，MRI</li>
+                                            <li>全身症状</li>
+                                            <li>高齢女性，側頭動脈の発赤腫脹，自発痛</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>発熱（−）</td>
+                                    <td>
+                                        <ol>
+                                            <li>慢性硬膜下血腫</li>
+                                            <li>脳腫瘍</li>
+                                            <li>高血圧性脳症</li>
+                                            <li>中毒・代謝異常</li>
+                                            <li>薬物によるもの</li>
+                                            <li>眼科領域</li>
+                                            <li>耳鼻科領域</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>中枢神経症状，CT，MRI</li>
+                                            <li>中枢神経症状，早朝頭痛，CT，MRI</li>
+                                            <li>高血圧，MRI（後頭部病変）</li>
+                                            <li>低血糖，anoxia（低O2）</li>
+                                            <li>頭蓋内血管拡張をきたす
+                                                （テオフィリン，インドメタシン，ニトログリセリンなど）</li>
+                                            <li>近視，乱視</li>
+                                            <li>副鼻腔炎</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>急性反復性</td>
+                                    <td>
+                                        <ol>
+                                            <li>片頭痛</li>
+                                            <li>群発頭痛</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>発作性・拍動性の頭痛<br>
+                                                痛みの部位が同じ<br>
+                                                前兆を伴う型（典型的）<br>
+                                                前兆を伴わない型（普通型）</li>
+                                            <li>眼球を中心とした片側性の激しい痛み</li>
+                                            <li>深夜早朝：流涙，顔面紅潮</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>慢性</td>
+                                    <td>
+                                        <ol start="3">
+                                            <li>緊張型頭痛</li>
+                                        </ol>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>筋緊張，精神的緊張による．<br>
+                                                日中持続するが，夜間寛解する．<br>
+                                                肩コリ，頸筋のコリがみられる．<br>
+                                                両側性，絞扼感あり，肩・後頸部圧痛</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -932,7 +1106,7 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group MH pri info">
+            <div class="card-group MH pri info" id="q5">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/109I40" target="_blank">109I40</a> MH Qs 
@@ -940,7 +1114,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill hit"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-21_16:15:23"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-21_16:15:23"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-02_15:01:57"> </span>
                         <br>
                             
                         <p>片頭痛で正しいのはどれか．2つ選べ．</p>
@@ -950,7 +1125,7 @@
                             <li class="ans_f">入眠中に多い．</li>
                             <li class="ans_t">拍動性の痛みが多い．</li>
                             <li class="ans_t">セロトニンが関与する．</li>
-                            <li class="ans_f">発作予防にトリプタンを用いる</li>
+                            <li class="ans_f star">発作予防にトリプタンを用いる</li>
                         </ol>
                     </div>
                 </div>
@@ -1049,20 +1224,21 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group MH info">
+            <div class="card-group MH info" id="q7">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/103I14">103I14</a> Migraine Preventive
+                        <a href="https://qb.medilink-study.com/#/Answer/103I14" target="_blank">103I14</a> Migraine Preventive
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-21_16:39:00"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-21_16:39:00"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-02_14:47:41"> </span>
                         <br>
                         <p>片頭痛の予防薬はどれか．2つ選べ．</p>
 
                         <ol type="a">
-                            <li class="ans_t">β遮断薬</li>
+                            <li class="ans_t star">β遮断薬</li>
                             <li class="ans_f">トリプタン</li>
                             <li class="ans_f">エルゴタミン</li>
                             <li class="ans_t">カルシウム拮抗薬</li>
@@ -1135,14 +1311,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group TTH 111 pri info">
+            <div class="card-group TTH 111 pri info" id="q9">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111I25" target="_blank">111I25</a> VDT
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-21_16:40:38"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-21_16:40:38"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-02_15:04:04"> </span>
                         <br>
                         <p>VDT作業が誘因となるのはどれか．</p>
 
@@ -1174,46 +1351,59 @@
                             <tbody>
                                 <tr>
                                     <th>Migraine</th>
-                                    <td><ul>
-                                        <li>月経周期</li>
-                                        <li>疲労</li>
-                                        <li>睡眠不足/過多</li>
-                                        <li>週末</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>月経周期</li>
+                                            <li>疲労</li>
+                                            <li>睡眠不足/過多</li>
+                                            <li>週末</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>TAC</th>
-                                    <td><ul>
-                                        <li>アルコール摂取</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>アルコール摂取</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>Tension-type</th>
-                                    <td><ul>
-                                        <li>VDT作業</li>
-                                        <li>同一姿勢</li>
-                                        <li>ストレス</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>VDT作業</li>
+                                            <li>同一姿勢</li>
+                                            <li>ストレス</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>三叉神経痛</th>
-                                    <td><ul>
-                                        <li>咀嚼</li>
-                                        <li>顔面の感覚刺激</li>
-                                        <li>顔面運動</li>
-                                        <li>洗顔</li>
-                                        <li>歯磨き</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>咀嚼</li>
+                                            <li>顔面の感覚刺激</li>
+                                            <li>顔面運動</li>
+                                            <li>洗顔</li>
+                                            <li>歯磨き</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>舌咽神経痛</th>
-                                    <td><ul>
-                                        <li>咀嚼</li>
-                                        <li>嚥下</li>
-                                    </ul></td>
+                                    <td>
+                                        <ul>
+                                            <li>咀嚼</li>
+                                            <li>嚥下</li>
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1270,14 +1460,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group TLE pri">
+            <div class="card-group TLE pri" id="q1">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/107I65" target="_blank" id="">107I65</a> 診断
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-21_16:41:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-21_16:41:53"> </span>
+                        <span class="badge badge-pill rev now" id="2019-01-02_15:05:58"> </span>
                         <br>
                         <p>58歳の女性．<br>
                             時々記憶がなくなることを主訴に夫に伴われて来院した．<br>
@@ -1318,14 +1509,15 @@
             </div>
 
             <!-- 02 -->
-            <div class="card-group AD SGE 111 info">
+            <div class="card-group AD SGE 111 info" id="q2">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111D8" target="_blank">111D8</a> 変性疾患 &rArr; てんかん
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-21_16:43:51"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-21_16:43:51"> </span>
+                        <span class="badge badge-pill rev now" id="2019-01-02_15:06:46"> </span>
                         <br>
                         <p>高齢者で初発するてんかんの原因として最も頻度が高い変性疾患はどれか．</p>
 
@@ -1333,7 +1525,7 @@
                             <li class="ans_f">多系統萎縮症</li>
                             <li class="ans_f">前頭側頭型認知症</li>
                             <li class="ans_f">Lewy小体型認知症</li>
-                            <li class="ans_t">Alzheimer型認知症</li>
+                            <li class="ans_t star">Alzheimer型認知症</li>
                             <li class="ans_f">筋萎縮性側索硬化症〈ALS〉</li>
                         </ol>
                     </div>
@@ -1359,6 +1551,8 @@
                                 <li>AD など, 大脳皮質の変性</li>
                             </ul></li>
                         </ul>
+
+
                     </div>
                 </div>
             </div>
@@ -1406,14 +1600,15 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group WS FSz LGS">
+            <div class="card-group WS FSz LGS" id="q4">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106A18" target="_blank" id="">106A18</a> 疾患 - 治療薬
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-21_16:46:35"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-21_16:46:35"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-02_15:07:30"> </span>
                         <br>
                         <p>疾患と治療薬の組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -1430,7 +1625,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a e</p>
 
@@ -1498,20 +1693,21 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group EEG info">
+            <div class="card-group EEG info" id="q6">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/89A85" target="_blank" id="">89A85</a> EEG 賦活法
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-21_16:17:05"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-21_16:17:05"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-02_14:52:08"> </span>
                         <br>
                         <p>脳波検査で賦活法としてよく用いられるのはどれか．3つ選べ．</p>
 
 
                         <ol type="a">
-                            <li class="ans_t">睡眠</li>
+                            <li class="ans_t star">睡眠</li>
                             <li class="ans_t">過呼吸</li>
                             <li class="ans_t">光刺激</li>
                             <li class="ans_f">音刺激</li>
@@ -1522,7 +1718,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a b c</p>
 
@@ -1535,23 +1731,31 @@
                         </ol>
 
                         <ul class="list-group">
-                            <li class="list-group-item">睡眠</li>
-                            <li class="list-group-item">過呼吸</li>
-                            <li class="list-group-item">光刺激</li>
+                            <li class="list-group-item">
+                                <ul>
+                                    <li>睡眠</li>
+                                    <li>過呼吸</li>
+                                    <li>光刺激</li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
 
             <!-- 07 -->
-            <div class="card-group EEG info">
+            <div class="card-group EEG info" id="q7">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/94A61" target="_blank" id="">94A61</a> EEG Qs
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-21_16:19:06"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-21_16:19:06"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-02_14:54:32"> </span>
                         <br>
                         <p>脳波について正しいのはどれか．</p>
 
@@ -1559,7 +1763,7 @@
                         <ol type="a">
                             <li class="ans_f">10歳児では過呼吸賦活時の徐波化は異常である．</li>
                             <li class="ans_f">成人では開眼によりアルファ波が増加する．</li>
-                            <li class="ans_t">成人ではアルファ波は後頭部優位に出現する．</li>
+                            <li class="ans_t star">成人ではアルファ波は後頭部優位に出現する．</li>
                             <li class="ans_f">成人では入眠直後に高振幅デルタ波が出現する．</li>
                             <li class="ans_f">高齢者ではアルファ波の出現頻度が増加する．</li>
                         </ol>
@@ -1568,7 +1772,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">c</p>
 
@@ -1615,23 +1819,24 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group EEG ">
+            <div class="card-group EEG LC narcolepsy CJD spasm ICH " id="q8">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/96B43" target="_blank" id="">96B43</a> 病態 - 脳波所見
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-21_16:37:06"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-21_16:37:06"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-02_14:57:16"> </span>
                         <br>
                         <p>病態と脳波所見の組合せで誤っているのはどれか．</p>
 
 
                         <ol type="a">
                             <li class="ans_t">肝性昏睡 － 三相波</li>
-                            <li class="ans_t">ナルコレプシー － 早期REM睡眠</li>
+                            <li class="ans_t star">ナルコレプシー － 早期REM睡眠</li>
                             <li class="ans_t">Creutzfeldt-Jakob病 － 周期性同期性発作波</li>
-                            <li class="ans_f">橋出血 － θ波</li>
+                            <li class="ans_f star">橋出血 － θ波</li>
                             <li class="ans_t">点頭てんかん － ヒプスアリスミア</li>
                         </ol>
                     </div>
@@ -1639,9 +1844,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
-                        <p>False: d</p>
+                        <p class="q_answer_false">d</p>
 
                         <ol type="a">
                             <li></li>
@@ -1655,7 +1860,7 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group EEG">
+            <div class="card-group EEG moyamoya SSPE absence TLS" id="q9">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/97H49" target="_blank">97H49</a> EEG
@@ -1663,14 +1868,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-21_16:38:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-21_16:38:14"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-02_14:59:23"> </span>
                         <br>
                         <p>正しい組合せはどれか．</p>
 
 
                         <ol type="a">
                             <li class="ans_t">もやもや病 － 過呼吸による全般性連続性徐波</li>
-                            <li class="ans_f">亜急性硬化性全脳炎 － 一側周期性高振幅徐波</li>
+                            <li class="ans_f star">亜急性硬化性全脳炎 － 一側周期性高振幅徐波</li>
                             <li class="ans_f">欠神発作 － 両側同期性5Hz棘徐波複合</li>
                             <li class="ans_f">複雑部分発作 － 一側性低電位脳波</li>
                             <li class="ans_f">閉じ込め症候群 － 全般性棘徐波複合</li>
@@ -2037,484 +2243,112 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getFullYear();
-    var print_date = year + "-" + month + "-" + date;
-    $('.page-header > h1').append(' <small class="print_date"></small>');
+$(function(){
     
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#MH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MH)').slideToggle(100);
+        $('#q div.card-group:not(.MH)').slideToggle(100);
     });
-    $('#MH').find('code').html($('div.MH').size());
+    $('#MH').find('small > code').html(
+        $('div.MH > .card > .mis').size() + '+' +
+        $('div.MH > .card > .cau').size() + '/' +
+        $('div.MH').size());
 
 
 
     $('#TTH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TTH)').slideToggle(100);
+        $('#q div.card-group:not(.TTH)').slideToggle(100);
     });
-    $('#TTH').find('code').html($('div.TTH').size());
+    $('#TTH').find('small > code').html(
+        $('div.TTH > .card > .mis').size() + '+' +
+        $('div.TTH > .card > .cau').size() + '/' +
+        $('div.TTH').size());
 
 
 
     $('#TAC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TAC)').slideToggle(100);
+        $('#q div.card-group:not(.TAC)').slideToggle(100);
     });
-    $('#TAC').find('code').html($('div.TAC').size());
+    $('#TAC').find('small > code').html(
+        $('div.TAC > .card > .mis').size() + '+' +
+        $('div.TAC > .card > .cau').size() + '/' +
+        $('div.TAC').size());
 
 
     $('#TCS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TCS)').slideToggle(100);
+        $('#q div.card-group:not(.TCS)').slideToggle(100);
     });
-    $('#TCS').find('code').html($('div.TCS').size());
+    $('#TCS').find('small > code').html(
+        $('div.TCS > .card > .mis').size() + '+' +
+        $('div.TCS > .card > .cau').size() + '/' +
+        $('div.TCS').size());
 
 
 
 
     $('#TLE h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TLE)').slideToggle(100);
+        $('#q div.card-group:not(.TLE)').slideToggle(100);
     });
-    $('#TLE').find('code').html($('div.TLE').size());
+    $('#TLE').find('small > code').html(
+        $('div.TLE > .card > .mis').size() + '+' +
+        $('div.TLE > .card > .cau').size() + '/' +
+        $('div.TLE').size());
 
 
     $('#SGE h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SGE)').slideToggle(100);
+        $('#q div.card-group:not(.SGE)').slideToggle(100);
     });
-    $('#SGE').find('code').html($('div.SGE').size());
+    $('#SGE').find('small > code').html(
+        $('div.SGE > .card > .mis').size() + '+' +
+        $('div.SGE > .card > .cau').size() + '/' +
+        $('div.SGE').size());
 
 
     $('#FSz h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FSz)').slideToggle(100);
+        $('#q div.card-group:not(.FSz)').slideToggle(100);
     });
-    $('#FSz').find('code').html($('div.FSz').size());
+    $('#FSz').find('small > code').html(
+        $('div.FSz > .card > .mis').size() + '+' +
+        $('div.FSz > .card > .cau').size() + '/' +
+        $('div.FSz').size());
 
 
     $('#EEG h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.EEG)').slideToggle(100);
+        $('#q div.card-group:not(.EEG)').slideToggle(100);
     });
-    $('#EEG').find('code').html($('div.EEG').size());
+    $('#EEG').find('small > code').html(
+        $('div.EEG > .card > .mis').size() + '+' +
+        $('div.EEG > .card > .cau').size() + '/' +
+        $('div.EEG').size());
 
 
 
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

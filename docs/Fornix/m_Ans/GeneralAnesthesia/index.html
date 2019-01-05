@@ -1,15 +1,27 @@
 <!--
-@Author: shumez
-@Date:   2018-09-18 15:50:28
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-10-23 20:18:51
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/m_Ans/GeneralAnesthesia
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-09-18 21:50:0
+Modified: 	2019-01-05 18:05:25
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+
 04.01.29    18 10 24    title_date
 04.01.28    18 10 23    .page-header border-bottom
 04.01.27    18 10 21    .img glyphicon-picture
@@ -100,11 +112,11 @@
 -->
 <html>
 <head>
-    <title>General</title>
+    <title>General Ans</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-23 20:19:07" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.29">
+    <meta name="revised" content="2019-01-05 17:01:50" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -123,127 +135,21 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul, li.list-group-item ol{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.75px solid;}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">General <small class="hidden-xs-down">Ans</small></h1>
+        <h1 class="title">General Anesthesia</h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -1541,11 +1447,12 @@
             <div class="card-group assoc PTX N2O info" id="q02">
                 <div class="card">
                     <div class="card-header">
-                        <a href="https://qb.medilink-study.com/#/Answer/104G42" target="_blank">104G42</a> 使用できない麻酔
+                        <a href="https://qb.medilink-study.com/#/Answer/104G42" target="_blank">104G42</a> 使用不可麻酔
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill rev" id="2018-09-18_16:05:49"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-24_09:54:45"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-24_09:54:45"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:52:04"> </span>
                         <br>
                         <p>42歳の男性．<br>
                             全身麻酔下で緊急脳動脈瘤クリッピング術を行う．術前の胸部X線写真を次に示す．<br>
@@ -1557,7 +1464,7 @@
 
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_t">亜酸化窒素</li>
+                            <li class="ans_t star">亜酸化窒素</li>
                             <li class="ans_f">セボフルラン</li>
                             <li class="ans_f">イソフルラン</li>
                             <li class="ans_f">チオペンタール</li>
@@ -1733,22 +1640,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-18_16:36:02"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-18_16:36:02"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-05_17:20:04"> </span>
                         <br>
                         <p>46歳の男性．<br>
                             肺癌の診断で肺葉切除術を受けるため入院した．<br>
-                            5年前に気管支喘息と診断され，以後発作時に吸入薬を頓用していた．最近の発作は3ヵ月前であった．<br>
-                            呼吸数14/分．脈拍76/分，整．血圧116/82mmHg．胸部にwheezes〈笛様音〉を聴取しない．<br>
+                            5年前に<u>気管支喘息</u>と診断され，以後発作時に吸入薬を頓用していた．最近の発作は3ヵ月前であった．<br>
+                            呼吸数14/分．脈拍76/分，整．血圧116/82mmHg．<br>
+                            胸部に<u>wheezes〈笛様音〉</u>を聴取しない．<br>
                             血液所見に異常はなく，心電図は正常範囲である．<br>
-                            スパイロメトリ：VC 3.2L，％VC 92％，FEV1.0 2.2L，FEV1.0％ 68％．<br>
+                            スパイロメトリ：<br>
+                            VC 3.2L，％VC 92％，FEV1.0 2.2L，<u>FEV1.0％ 68％</u>．<br>
                             麻酔管理で適切なのはどれか．2つ選べ．</p>
 
 
                         <ol type="a">
                             <li class="ans_f">硬膜外麻酔単独で管理する．</li>
                             <li class="ans_f">麻酔導入前に気管切開を行う．</li>
-                            <li class="ans_f">人工呼吸は吸気時間：呼気時間比を1：1とする．</li>
-                            <li class="ans_t">揮発性麻酔薬を使用する．</li>
+                            <li class="ans_f star">人工呼吸は吸気時間：呼気時間比を1：1とする．</li>
+                            <li class="ans_t star">揮発性麻酔薬を使用する．</li>
                             <li class="ans_t">発作時にはアミノフィリンを投与する．</li>
                         </ol>
                     </div>
@@ -1856,7 +1766,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-18_16:49:03"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-18_16:49:03"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:23:01"> </span>
                         <br>
                         <p>35歳の初産婦．<br>
                             妊娠38週5日に胎児が<u>骨盤位</u>のため脊髄麻酔下の<u>帝王切開術が予定</u>され入院した．<br>
@@ -1934,7 +1845,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-18_17:02:28"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_20:38:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_20:38:57"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:53:56"> </span>
                         <br>
                         <p>28歳の女性．<br>
                             全身麻酔下の緊急帝王切開で男児を出産した．<br>
@@ -1984,20 +1896,24 @@
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-18_17:12:40"> </span>
                         <span class="badge badge-pill cau" id="2018-10-23_20:44:52"> </span>
+                        <span class="badge badge-pill mis" id="2019-01-05_17:38:35"> </span>
                          / 
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill mis" id="2018-09-18_17:12:48"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-23_20:45:04"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-23_20:45:04"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-05_17:39:07"> </span>
                         <br>
                         <p>次の文を読み，56～58の問いに答えよ．<br><br>
                             
                             60歳の男性．<br>
                             <u>オートバイで転倒</u>したため搬入された．<br>
-                            現病歴：2時間前，オートバイで走行中に転倒し大腿部を挟まれた．<br>
+                            現病歴：<br>
+                            2時間前，オートバイで走行中に転倒し大腿部を挟まれた．<br>
                             既往歴：<br>
                             特記すべきことはない．<br>
                             現　症：<br>
-                            意識レベルはJCSⅠ-3．身長160cm，体重60kg．体温35.5℃．<u>脈拍120/分</u>，整．<u>血圧80/50mmHg</u>．呼吸数24/分．SpO2 98％（リザーバー付マスク10L/分　酸素投与下）．<br>
+                            意識レベルはJCSⅠ-3．<br>
+                            身長160cm，体重60kg．体温35.5℃．<u>脈拍120/分</u>，整．<u>血圧80/50mmHg</u>．呼吸数24/分．SpO2 98％（リザーバー付マスク10L/分　酸素投与下）．<br>
                             表情は苦悶様で<u>左大腿部の痛み</u>を訴えている．顔面は蒼白で，<u>皮膚は冷たく湿潤</u>している．心音と呼吸音とに異常を認めない．左大腿部に挫滅創と活動性外出血とを認め，骨が露出している．濃い尿を少量認める．<br>
                             検査所見：<br>
                             尿所見：<br>
@@ -2011,7 +1927,8 @@
                             胸部X線写真と全身CTで下肢を除いて異常を認めない．<br>
                             <u>左大腿骨開放骨折</u>に対し，赤血球濃厚液，新鮮凍結血漿および濃厚血小板を準備し，止血，デブリドマン及び骨整復固定術が予定された．急速輸血を行った．</p>
 
-                        <p>[B056] 輸液の組成として適切なのはどれか．</p>
+                        <p>[B056] <br>
+                            輸液の組成として適切なのはどれか．</p>
 
                         <table class="table table-condensed">
                             <thead>
@@ -2074,13 +1991,14 @@
                         </table>
                         
 
-                        <p>[B057] 最も適切な麻酔法はどれか</p>
+                        <p>[B057] <br>
+                            最も適切な麻酔法はどれか</p>
                         <ol type="a">
                             <li class="ans_f">伝達麻酔</li>
                             <li class="ans_t">全身麻酔</li>
                             <li class="ans_f">硬膜外麻酔</li>
-                            <li class="ans_f">脊髄くも膜下麻酔</li>
-                            <li class="ans_f">全身麻酔と硬膜外麻酔の併用</li>
+                            <li class="ans_f sta">脊髄くも膜下麻酔</li>
+                            <li class="ans_f star">全身麻酔と硬膜外麻酔の併用</li>
                         </ol>
 
                         <p>[B058] <br>
@@ -2100,8 +2018,8 @@
                             <li class="ans_f">気胸</li>
                             <li class="ans_f">心不全</li>
                             <li class="ans_f">気管支喘息</li>
-                            <li class="ans_t">脂肪塞栓症</li>
-                            <li class="ans_f">肺血栓塞栓症</li>
+                            <li class="ans_t star">脂肪塞栓症</li>
+                            <li class="ans_f star">肺血栓塞栓症</li>
                         </ol>
                     </div>
                 </div>
@@ -2453,7 +2371,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-18_18:00:51"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-23_21:12:25"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-23_21:12:25"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-05_17:45:58"> </span>
                         <br>
                         <p>麻酔について正しいのはどれか．3つ選べ．</p>
 
@@ -2461,9 +2380,9 @@
                         <ol type="a">
                             <li class="ans_t">MAC（minimum alveolar concentration）が小さいほど，麻酔作用が強い．</li>
                             <li class="ans_f">揮発性吸入麻酔薬は体内で分解されない．</li>
-                            <li class="ans_t">半閉鎖法ではソーダライムを使用する．</li>
+                            <li class="ans_t star">半閉鎖法ではソーダライムを使用する．</li>
                             <li class="ans_t">血液・ガス溶解係数が小さいと，導入が速やかである．</li>
-                            <li class="ans_f">心拍出量が多いほど，導入が速やかである．</li>
+                            <li class="ans_f star">心拍出量が多いほど，導入が速やかである．</li>
                         </ol>
                     </div>
                 </div>
@@ -2634,7 +2553,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-18_18:39:32"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_20:50:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_20:50:36"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:54:41"> </span>
                         <br>
                         <p>成人に対する全身麻酔の急速導入で最初に投与するのはどれか．</p>
                         
@@ -2753,14 +2673,15 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-18_20:04:51"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-23_20:52:27"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-23_20:52:27"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-05_17:48:17"> </span>
                         <br>
                         <p>チオペンタールの利点はどれか．2つ選べ．</p>
 
                         <ol type="a">
                             <li class="ans_t">効果発現が速い．</li>
-                            <li class="ans_t">導入時の興奮が少ない．</li>
-                            <li class="ans_f">鎮痛作用が強い．</li>
+                            <li class="ans_t star">導入時の興奮が少ない．</li>
+                            <li class="ans_f star">鎮痛作用が強い．</li>
                             <li class="ans_f">呼吸抑制が少ない．</li>
                             <li class="ans_f">喉頭けいれんの発生が少ない．</li>
                         </ol>
@@ -2836,16 +2757,17 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis" id="2018-09-18_20:10:15"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-23_20:56:51"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-23_20:56:51"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:49:51"> </span>
                         <br>
                         <p>筋弛緩薬について正しいのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">脱分極性は非脱分極性より作用時間が長い．</li>
-                            <li class="ans_f">脱分極性筋弛緩薬ではテタヌス刺激により減衰が認められる．</li>
+                            <li class="ans_f star">脱分極性筋弛緩薬ではテタヌス刺激により減衰が認められる．</li>
                             <li class="ans_f">非脱分極性筋弛緩薬では線維束攣縮がみられる． </li>
                             <li class="ans_t">広範囲熱傷では脱分極性筋弛緩薬による高カリウム血症に注意する．</li>
-                            <li class="ans_f">家族歴に悪性高熱症があれば脱分極性筋弛緩薬を選択する．</li>
+                            <li class="ans_f star">家族歴に悪性高熱症があれば脱分極性筋弛緩薬を選択する．</li>
                         </ol>
                     </div>
                 </div>
@@ -2937,23 +2859,23 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-18_20:20:41"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_21:03:10"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_21:03:10"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:56:24"> </span>
                         <br>
                         <p>サクシニルコリン・クロライドについて誤っているのはどれか．</p>
 
 
                         <ol type="a">
                             <li class="ans_t">線維束性攣縮（fasciculation）を起こす．</li>
-                            <li class="ans_f">非脱分極性筋弛緩薬である． </li>
-                            <li class="ans_t">低体温で作用時間が延長する． </li>
-                            <li class="ans_t">眼圧を上昇させる．</li>
+                            <li class="ans_f star">非脱分極性筋弛緩薬である． </li>
+                            <li class="ans_t star">低体温で作用時間が延長する． </li>
+                            <li class="ans_t star">眼圧を上昇させる．</li>
                             <li class="ans_t">血清コリンエステラーゼで分解される． </li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
 
 
                         <p class="q_answer_true">b</p>
@@ -2994,7 +2916,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-18_20:27:24"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_21:15:50"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_21:15:50"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:58:44"> </span>
                         <br>
                         <p>妊産婦の麻酔管理について正しいのはどれか．3つ選べ．</p>
 
@@ -3003,8 +2926,8 @@
                             <li class="ans_t">非妊婦に比べ胃での食物排出時間が遅延する．</li>
                             <li class="ans_t">非妊婦に比べ同程度の出血量ではショックを起こしにくい．</li>
                             <li class="ans_f">仰臥位では硬膜外麻酔による低血圧が生じにくい． </li>
-                            <li class="ans_f">脊椎麻酔で第7胸髄分節まで無痛でも怒責可能である．</li>
-                            <li class="ans_t">第10胸髄から第1腰髄までブロックすると分娩第1期の産痛は除去される．</li>
+                            <li class="ans_f star">脊椎麻酔で第7胸髄分節まで無痛でも怒責可能である．</li>
+                            <li class="ans_t star">第10胸髄から第1腰髄までブロックすると分娩第1期の産痛は除去される．</li>
                         </ol>
                     </div>
                 </div>
@@ -3056,7 +2979,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis" id="2018-09-18_20:32:14"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_21:05:31"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_21:05:31"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_17:59:52"> </span>
                         <br>
                         <p>帝王切開のための脊髄くも膜下麻酔時に最も高頻度に起こるのはどれか．</p>
 
@@ -3073,7 +2997,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -3111,7 +3035,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-18_20:36:52"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_21:19:49"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_21:19:49"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_18:00:58"> </span>
                         <br>
                         <p>肥満者の麻酔管理について正しいのはどれか．3つ選べ．</p>
 
@@ -3120,7 +3045,7 @@
                             <li class="ans_t">肥満はそれだけでリスク要因になる． </li>
                             <li class="ans_t">胸郭コンプライアンスは低下する．</li>
                             <li class="ans_t">気管内挿管の確認には呼気炭酸ガス濃度モニターが特に有用である．</li>
-                            <li class="ans_f">意識下気管内挿管は禁忌である．</li>
+                            <li class="ans_f star">意識下気管内挿管は禁忌である．</li>
                             <li class="ans_f">覚醒遅延の頻度は減少する．</li>
                         </ol>
                     </div>
@@ -3194,17 +3119,18 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-18_20:43:02"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_21:21:27"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_21:21:27"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_18:02:01"> </span>
                         <br>
                         <p>全身麻酔について正しいのはどれか．3つ選べ．</p>
 
 
                         <ol type="a">
-                            <li class="ans_t">フェンタニルは呼吸抑制作用が強い．</li>
+                            <li class="ans_t star">フェンタニルは呼吸抑制作用が強い．</li>
                             <li class="ans_t">ケタミン麻酔では夢や幻覚をみることが多い．</li>
                             <li class="ans_t">吸入麻酔によって体温は低下する．</li>
-                            <li class="ans_f">ショック患者では吸入麻酔の導入速度は遅くなる．</li>
-                            <li class="ans_f">パンクロニウムは悪性高熱症の原因となる．</li>
+                            <li class="ans_f star">ショック患者では吸入麻酔の導入速度は遅くなる．</li>
+                            <li class="ans_f star">パンクロニウムは悪性高熱症の原因となる．</li>
                         </ol>
                     </div>
                 </div>
@@ -3277,7 +3203,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-09-18_20:50:26"> </span>
-                        <span class="badge badge-pill cau now" id="2018-10-23_21:25:14"> </span>
+                        <span class="badge badge-pill cau" id="2018-10-23_21:25:14"> </span>
+                        <span class="badge badge-pill rev now" id="2019-01-05_18:02:48"> </span>
                         <br>
                         <p>全身麻酔で意識レベルを下げるために使用するのはどれか．</p>
 
@@ -3286,7 +3213,7 @@
                             <li class="ans_f">アトロピン</li>
                             <li class="ans_f">リドカイン</li>
                             <li class="ans_f">ベクロニウム</li>
-                            <li class="ans_t">チオペンタール</li>
+                            <li class="ans_t star">チオペンタール</li>
                             <li class="ans_f">ネオスチグミン</li>
                         </ol>
                     </div>
@@ -3470,13 +3397,14 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-18_21:04:20"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-18_21:04:20"> </span>
+                        <span class="badge badge-pill cau now" id="2019-01-05_18:04:17"> </span>
                         <br>
                         <p>抜管後の術後呼吸抑制の原因薬物と拮抗薬の組合せで適切なのはどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">ジアゼパム － アトロピン</li>
-                            <li class="ans_t">フェンタニル － ナロキソン</li>
+                            <li class="ans_t star">フェンタニル － ナロキソン</li>
                             <li class="ans_f">ベクロニウム － ロクロニウム</li>
                             <li class="ans_f">チオペンタール － スガマデクス</li>
                             <li class="ans_f">スキサメトニウム － ダントロレン</li>
@@ -3580,24 +3508,25 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis" id="2018-09-18_21:13:43"> </span>
-                        <span class="badge badge-pill mis now" id="2018-10-23_21:07:49"> </span>
+                        <span class="badge badge-pill mis" id="2018-10-23_21:07:49"> </span>
+                        <span class="badge badge-pill mis now" id="2019-01-05_17:51:09"> </span>
                         <br>
                         <p>薬物とその拮抗薬との組合せで正しいのはどれか．2つ選べ．</p>
 
 
                         <ol type="a">
-                            <li class="ans_t">アセトアミノフェン － アセチルシステイン</li>
-                            <li class="ans_f">バルビツール酸 － フルマゼニル</li>
+                            <li class="ans_t star">アセトアミノフェン － アセチルシステイン</li>
+                            <li class="ans_f star">バルビツール酸 － フルマゼニル</li>
                             <li class="ans_f">ワルファリン － ヒドロキソコバラミン</li>
                             <li class="ans_f">フェンタニル － エタノール</li>
-                            <li class="ans_t">ヘパリン － プロタミン</li>
+                            <li class="ans_t star">ヘパリン － プロタミン</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -3831,495 +3760,115 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "ver." + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
-    
-
-    var title_date = title + "-" + print_date;
-    $(document).attr("title", title_date);
-
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
+$(function(){
 
 
     $('#management h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.management)').slideToggle(100);
+        $('#q div.card-group:not(.management)').slideToggle(100);
     });
-    $('#management').find('code').html($('div.management').size());
+    $('#management').find('small > code').html(
+        $('div.management > .card > .mis').size() + '+' +
+        $('div.management > .card > .cau').size() + '/' +
+        $('div.management').size());
 
 
     $('#preanesthesic').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.preanesthesic)').slideToggle(100);
+        $('#q div.card-group:not(.preanesthesic)').slideToggle(100);
     });
-    $('#preanesthesic').find('code').html($('div.preanesthesic').size());
+    $('#preanesthesic').find('small > code').html(
+        $('div.preanesthesic > .card > .mis').size() + '+' +
+        $('div.preanesthesic > .card > .cau').size() + '/' +
+        $('div.preanesthesic').size());
 
 
     $('#induction').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.induction)').slideToggle(100);
+        $('#q div.card-group:not(.induction)').slideToggle(100);
     });
-    $('#induction').find('code').html($('div.induction').size());
+    $('#induction').find('small > code').html(
+        $('div.induction > .card > .mis').size() + '+' +
+        $('div.induction > .card > .cau').size() + '/' +
+        $('div.induction').size());
 
 
     $('#airway').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.airway)').slideToggle(100);
+        $('#q div.card-group:not(.airway)').slideToggle(100);
     });
-    $('#airway').find('code').html($('div.airway').size());
+    $('#airway').find('small > code').html(
+        $('div.airway > .card > .mis').size() + '+' +
+        $('div.airway > .card > .cau').size() + '/' +
+        $('div.airway').size());
 
 
 
     $('#INTRO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.INTRO)').slideToggle(100);
+        $('#q div.card-group:not(.INTRO)').slideToggle(100);
     });
-    $('#INTRO').find('code').html($('div.INTRO').size());
+    $('#INTRO').find('small > code').html(
+        $('div.INTRO > .card > .mis').size() + '+' +
+        $('div.INTRO > .card > .cau').size() + '/' +
+        $('div.INTRO').size());
 
 
     $('#INH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.INH)').slideToggle(100);
+        $('#q div.card-group:not(.INH)').slideToggle(100);
     });
-    $('#INH').find('code').html($('div.INH').size());
+    $('#INH').find('small > code').html(
+        $('div.INH > .card > .mis').size() + '+' +
+        $('div.INH > .card > .cau').size() + '/' +
+        $('div.INH').size());
 
 
     $('#sevoflurane').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.sevoflurane)').slideToggle(100);
+        $('#q div.card-group:not(.sevoflurane)').slideToggle(100);
     });
-    $('#sevoflurane').find('code').html($('div.sevoflurane').size());
+    $('#sevoflurane').find('small > code').html(
+        $('div.sevoflurane > .card > .mis').size() + '+' +
+        $('div.sevoflurane > .card > .cau').size() + '/' +
+        $('div.sevoflurane').size());
 
 
     $('#isoflurane').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.isoflurane)').slideToggle(100);
+        $('#q div.card-group:not(.isoflurane)').slideToggle(100);
     });
-    $('#isoflurane').find('code').html($('div.isoflurane').size());
+    $('#isoflurane').find('small > code').html(
+        $('div.isoflurane > .card > .mis').size() + '+' +
+        $('div.isoflurane > .card > .cau').size() + '/' +
+        $('div.isoflurane').size());
 
 
     $('#desflurane').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.desflurane)').slideToggle(100);
+        $('#q div.card-group:not(.desflurane)').slideToggle(100);
     });
-    $('#desflurane').find('code').html($('div.desflurane').size());
+    $('#desflurane').find('small > code').html(
+        $('div.desflurane > .card > .mis').size() + '+' +
+        $('div.desflurane > .card > .cau').size() + '/' +
+        $('div.desflurane').size());
 
 
     $('#N2O').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.N2O)').slideToggle(100);
+        $('#q div.card-group:not(.N2O)').slideToggle(100);
     });
-    $('#N2O').find('code').html($('div.N2O').size());
+    $('#N2O').find('small > code').html(
+        $('div.N2O > .card > .mis').size() + '+' +
+        $('div.N2O > .card > .cau').size() + '/' +
+        $('div.N2O').size());
 
 
 
@@ -4328,44 +3877,62 @@ $('document').ready(function(){
 
     $('#IV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.IV)').slideToggle(100);
+        $('#q div.card-group:not(.IV)').slideToggle(100);
     });
-    $('#IV').find('code').html($('div.IV').size());
+    $('#IV').find('small > code').html(
+        $('div.IV > .card > .mis').size() + '+' +
+        $('div.IV > .card > .cau').size() + '/' +
+        $('div.IV').size());
 
 
     $('#propofol').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.propofol)').slideToggle(100);
+        $('#q div.card-group:not(.propofol)').slideToggle(100);
     });
-    $('#propofol').find('code').html($('div.propofol').size());
+    $('#propofol').find('small > code').html(
+        $('div.propofol > .card > .mis').size() + '+' +
+        $('div.propofol > .card > .cau').size() + '/' +
+        $('div.propofol').size());
 
 
     $('#barbiturate').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.barbiturate)').slideToggle(100);
+        $('#q div.card-group:not(.barbiturate)').slideToggle(100);
     });
-    $('#barbiturate').find('code').html($('div.barbiturate').size());
+    $('#barbiturate').find('small > code').html(
+        $('div.barbiturate > .card > .mis').size() + '+' +
+        $('div.barbiturate > .card > .cau').size() + '/' +
+        $('div.barbiturate').size());
 
 
     $('#thiopental').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.thiopental)').slideToggle(100);
+        $('#q div.card-group:not(.thiopental)').slideToggle(100);
     });
-    $('#thiopental').find('code').html($('div.thiopental').size());
+    $('#thiopental').find('small > code').html(
+        $('div.thiopental > .card > .mis').size() + '+' +
+        $('div.thiopental > .card > .cau').size() + '/' +
+        $('div.thiopental').size());
 
 
     $('#ketamine').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ketamine)').slideToggle(100);
+        $('#q div.card-group:not(.ketamine)').slideToggle(100);
     });
-    $('#ketamine').find('code').html($('div.ketamine').size());
+    $('#ketamine').find('small > code').html(
+        $('div.ketamine > .card > .mis').size() + '+' +
+        $('div.ketamine > .card > .cau').size() + '/' +
+        $('div.ketamine').size());
 
 
     $('#BZD').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.BZD)').slideToggle(100);
+        $('#q div.card-group:not(.BZD)').slideToggle(100);
     });
-    $('#BZD').find('code').html($('div.BZD').size());
+    $('#BZD').find('small > code').html(
+        $('div.BZD > .card > .mis').size() + '+' +
+        $('div.BZD > .card > .cau').size() + '/' +
+        $('div.BZD').size());
 
 
 
@@ -4373,30 +3940,42 @@ $('document').ready(function(){
 
     $('#analgesic h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.analgesic)').slideToggle(100);
+        $('#q div.card-group:not(.analgesic)').slideToggle(100);
     });
-    $('#analgesic').find('code').html($('div.analgesic').size());
+    $('#analgesic').find('small > code').html(
+        $('div.analgesic > .card > .mis').size() + '+' +
+        $('div.analgesic > .card > .cau').size() + '/' +
+        $('div.analgesic').size());
 
 
     $('#opioid').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.opioid)').slideToggle(100);
+        $('#q div.card-group:not(.opioid)').slideToggle(100);
     });
-    $('#opioid').find('code').html($('div.opioid').size());
+    $('#opioid').find('small > code').html(
+        $('div.opioid > .card > .mis').size() + '+' +
+        $('div.opioid > .card > .cau').size() + '/' +
+        $('div.opioid').size());
 
 
     $('#morphine').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.morphine)').slideToggle(100);
+        $('#q div.card-group:not(.morphine)').slideToggle(100);
     });
-    $('#morphine').find('code').html($('div.morphine').size());
+    $('#morphine').find('small > code').html(
+        $('div.morphine > .card > .mis').size() + '+' +
+        $('div.morphine > .card > .cau').size() + '/' +
+        $('div.morphine').size());
 
 
     $('#fentanyl').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.fentanyl)').slideToggle(100);
+        $('#q div.card-group:not(.fentanyl)').slideToggle(100);
     });
-    $('#fentanyl').find('code').html($('div.fentanyl').size());
+    $('#fentanyl').find('small > code').html(
+        $('div.fentanyl > .card > .mis').size() + '+' +
+        $('div.fentanyl > .card > .cau').size() + '/' +
+        $('div.fentanyl').size());
 
 
 
@@ -4406,31 +3985,43 @@ $('document').ready(function(){
 
     $('#relaxant h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.relaxant)').slideToggle(100);
+        $('#q div.card-group:not(.relaxant)').slideToggle(100);
     });
-    $('#relaxant').find('code').html($('div.relaxant').size());
+    $('#relaxant').find('small > code').html(
+        $('div.relaxant > .card > .mis').size() + '+' +
+        $('div.relaxant > .card > .cau').size() + '/' +
+        $('div.relaxant').size());
 
 
     $('#DMR').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.DMR)').slideToggle(100);
+        $('#q div.card-group:not(.DMR)').slideToggle(100);
     });
-    $('#DMR').find('code').html($('div.DMR').size());
+    $('#DMR').find('small > code').html(
+        $('div.DMR > .card > .mis').size() + '+' +
+        $('div.DMR > .card > .cau').size() + '/' +
+        $('div.DMR').size());
 
 
 
     $('#SCC').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SCC)').slideToggle(100);
+        $('#q div.card-group:not(.SCC)').slideToggle(100);
     });
-    $('#SCC').find('code').html($('div.SCC').size());
+    $('#SCC').find('small > code').html(
+        $('div.SCC > .card > .mis').size() + '+' +
+        $('div.SCC > .card > .cau').size() + '/' +
+        $('div.SCC').size());
 
 
     $('#NDMR').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NDMR)').slideToggle(100);
+        $('#q div.card-group:not(.NDMR)').slideToggle(100);
     });
-    $('#NDMR').find('code').html($('div.NDMR').size());
+    $('#NDMR').find('small > code').html(
+        $('div.NDMR > .card > .mis').size() + '+' +
+        $('div.NDMR > .card > .cau').size() + '/' +
+        $('div.NDMR').size());
 
 
 
@@ -4438,51 +4029,72 @@ $('document').ready(function(){
 
     $('#antagonist h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.antagonist)').slideToggle(100);
+        $('#q div.card-group:not(.antagonist)').slideToggle(100);
     });
-    $('#antagonist').find('code').html($('div.antagonist').size());
+    $('#antagonist').find('small > code').html(
+        $('div.antagonist > .card > .mis').size() + '+' +
+        $('div.antagonist > .card > .cau').size() + '/' +
+        $('div.antagonist').size());
 
 
     $('#assoc h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.assoc)').slideToggle(100);
+        $('#q div.card-group:not(.assoc)').slideToggle(100);
     });
-    $('#assoc').find('code').html($('div.assoc').size());
+    $('#assoc').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.assoc').size());
 
 
     $('#SHS').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SHS)').slideToggle(100);
+        $('#q div.card-group:not(.SHS)').slideToggle(100);
     });
-    $('#SHS').find('code').html($('div.SHS').size());
+    $('#SHS').find('small > code').html(
+        $('div.SHS > .card > .mis').size() + '+' +
+        $('div.SHS > .card > .cau').size() + '/' +
+        $('div.SHS').size());
 
 
     $('#asthma').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.asthma)').slideToggle(100);
+        $('#q div.card-group:not(.asthma)').slideToggle(100);
     });
-    $('#asthma').find('code').html($('div.asthma').size());
+    $('#asthma').find('small > code').html(
+        $('div.asthma > .card > .mis').size() + '+' +
+        $('div.asthma > .card > .cau').size() + '/' +
+        $('div.asthma').size());
 
 
     $('#pregnancy').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.pregnancy)').slideToggle(100);
+        $('#q div.card-group:not(.pregnancy)').slideToggle(100);
     });
-    $('#pregnancy').find('code').html($('div.pregnancy').size());
+    $('#pregnancy').find('small > code').html(
+        $('div.pregnancy > .card > .mis').size() + '+' +
+        $('div.pregnancy > .card > .cau').size() + '/' +
+        $('div.pregnancy').size());
 
 
     $('#obesity').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.obesity)').slideToggle(100);
+        $('#q div.card-group:not(.obesity)').slideToggle(100);
     });
-    $('#obesity').find('code').html($('div.obesity').size());
+    $('#obesity').find('small > code').html(
+        $('div.obesity > .card > .mis').size() + '+' +
+        $('div.obesity > .card > .cau').size() + '/' +
+        $('div.obesity').size());
 
 
     $('#MHrT').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.MHrT)').slideToggle(100);
+        $('#q div.card-group:not(.MHrT)').slideToggle(100);
     });
-    $('#MHrT').find('code').html($('div.MHrT').size());
+    $('#MHrT').find('small > code').html(
+        $('div.MHrT > .card > .mis').size() + '+' +
+        $('div.MHrT > .card > .cau').size() + '/' +
+        $('div.MHrT').size());
 
 
 
@@ -4500,9 +4112,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

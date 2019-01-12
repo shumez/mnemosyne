@@ -1,15 +1,25 @@
 <!--
-@Author: shumez
-@Date:   2018-08-31 12:05:32
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-10-31 11:36:00
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/p_OB/Pregnancy
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-09-02 14:50:0
+Modified: 	2019-01-12 19:24:45
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--    
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+
 04.01.31    18 10 29    css @media print
 04.01.30    18 10 26    #q li toggle()
 04.01.29    18 10 24    title_date
@@ -105,8 +115,8 @@
     <title>Preg</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-10-31 11:36:22" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.31">
+    <meta name="revised" content="2019-01-12 19:25:16" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -125,129 +135,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul, li.list-group-item ol{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin: 0px 0px 0px 0px}
-            a[href]:after {content: none !important;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-
-            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
-            h2{font-size: 14px}
-            h3{font-size: 13px}
-            h4,h5{font-size: 12px}
-            h6{font-size: 11px}
-            p, a, li, th, td{font-size: 9px}
-
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
-            .page-header small code{
-                border-color: black;
-                border-width: : 0.4px 0.4px 0.4px 0.4px;
-            }
-            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 11px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 0.5px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -292,8 +188,118 @@
         </div>
     </div>
 
-    <div class="page-header">
-        <h2>1st</h2>
+
+
+    <div class="section" id="INTRO">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Intro</h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-8">
+                <h6>産科疾患の治療薬</h6>
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>薬剤名</th>
+                            <th>作用</th>
+                            <th>適応症</th>
+                            <th>禁忌 / 注意点</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>メチルドパ<br>
+                                ヒドララジン</th>
+                            <td>降圧薬</td>
+                            <td>妊娠高血圧症候群</td>
+                            <td>特になし</td>
+                        </tr>
+                        <tr>
+                            <th>オキシトシン<br>
+                                プロスタグランジンF2α<br>
+                                E2※</th>
+                            <td>陣痛誘発<br>
+                                促進薬</td>
+                            <td>微弱陣痛</td>
+                            <td>前置胎盤<br>
+                                胎児機能不全<br>
+                                CPD</td>
+                        </tr>
+                        <tr>
+                            <th>インドメタシン</th>
+                            <td>鎮痛薬<br>
+                                子宮弛緩作用</td>
+                            <td>産科的適応なし</td>
+                            <td>妊娠中の使用は禁忌</td>
+                        </tr>
+                        <tr>
+                            <th>硫酸マグネシウム</th>
+                            <td>子宮弛緩薬</td>
+                            <td>子癇発作<br>
+                                切迫早産</td>
+                            <td>筋力低下</td>
+                        </tr>
+                        <tr>
+                            <th>塩酸リトドリン</th>
+                            <td>子宮弛緩薬<br>（β2-受容体刺激薬）</td>
+                            <td>切迫早産</td>
+                            <td>輸液過剰により肺水腫<br>
+                                糖尿病<br>
+                                心疾患</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>子宮収縮促進の適応 / 禁忌</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>適応</th>
+                            <td>
+                                <ul>
+                                    <li>微弱陣痛</li>
+                                    <li>分娩時間の短縮</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><code>C/I</code></th>
+                            <td>
+                                <ul>
+                                    <li>回旋異常</li>
+                                    <li>胎児機能不全</li>
+                                    <li>子宮手術の適応 (C/S)</li>
+                                    <li><u>常位胎盤早期剥離</u>, 切迫子宮破裂, 絞縮輪難産</li>
+                                    <li>CPD</li>
+                                    <li>前置胎盤</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>1st Term</h2>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="section" id="HG">
@@ -360,29 +366,117 @@
                 </div>
             </div>
 
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" align="center">W0</td>
+                            <td></td>
+                            <td colspan="2" align="center"><u>W12</u></td>
+                            <td></td>
+                            <td colspan="2" align="center">W22</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">行政</th>
+                            <td rowspan="2"></td>
+                            <td rowspan="2"></td>
+                            <td>&larr;</td>
+                            <td align="center" colspan="4">死産</td>
+                            <td align="right">&rarr;</td>
+                        </tr>
+                        <tr>
+                            <td>&larr;</td>
+                            <td align="center">前期</td>
+                            <td align="right">&rarr;</td>
+                            <td>&larr;</td>
+                            <td align="center">後期</td>
+                            <td align="right">&rarr;</td>
+                        </tr>
+                        <!-- <tr>
+                            <th rowspan="2">学会</th>
+                            <td align="center" colspan="4">流産</td>
+                            <td align="right">&rarr;</td>
+                            <td>&larr;</td>
+                            <td align="center">死産</td>
+                            <td align="right">&rarr;</td>
+                        </tr>
+                        <tr>
+                            <td align="center">早期</td>
+                            <td align="right">&rarr;</td>
+                            <td>&larr;</td>
+                            <td align="center">後期</td>
+                            <td align="right">&rarr;</td>
+                            <td></td>
+                            <td align="center"></td>
+                            <td align="right"></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-9 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td colspan="2" align="center">W12</td>
+                            <td></td>
+                            <td colspan="2" align="center"><u>W22</u></td>
+                            <td></td>
+                            <td colspan="2" align="center">出産</td>
+                            <td></td>
+                            <td colspan="2" align="center"><u>1w</u></td>
+                            <td></td>
+                            <td colspan="2" align="center">4w</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&larr;</td>
+                            <td align="center">前期死産</td>
+                            <td align="right">&rarr;</td>
+                            <td>&larr;</td>
+                            <td align="center">後期死産</td>
+                            <td align="right">&rarr;</td>
+                            <td>&larr;</td>
+                            <td align="center">早期新生児死亡</td>
+                            <td align="right">&rarr;</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"></td>
+                            <td>&larr;</td>
+                            <td align="center" colspan="4"><u>周産期</u>死亡</td>
+                            <td align="right">&rarr;</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
             <!-- <div class="col-xs-12 col-sm-2 col-md-2">
                 <table class="table table-condensed">
                     
                 </table>
             </div> -->
 
-            <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="col-xs-12 col-sm-9 col-md-8">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/109C021_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <h3 id="threatened_abortion">Thretened Abortion <small><code></code></small></h3>
                 
             </div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <h3 id="missed_abortion">Missed Abortion <small>稽留流産</small><small><code></code></small></h3>
                 
             </div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <ol>
@@ -462,8 +556,14 @@
     </div>
 
 
-    <div class="page-header">
-        <h2>2nd / 3rd</h2>
+    <div class="section" id="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>2nd / 3rd Term</h2>
+                </div>
+            </div>
+        </div>
     </div>
 
 
@@ -1077,12 +1177,12 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th colspan="2">Week</th>
-                            <th colspan="2">BW</th>
+                            <th>Week</th>
+                            <th>BW</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>W24</td>
                             <td>- 6w</td>
                             <td align="right">500</td>
@@ -1093,6 +1193,10 @@
                             <td>- 3w</td>
                             <td align="right">1000</td>
                             <td align="right">- 500g</td>
+                        </tr> -->
+                        <tr>
+                            <td align="right">- 3 &times; n</td>
+                            <td align="right">- 500 &times; n</td>
                         </tr>
                         <tr>
                             <td><u>W30</u></td>
@@ -1101,23 +1205,27 @@
                             <td align="right"></td>
                         </tr>
                         <tr>
+                            <td align="right">+ 3 &times; n</td>
+                            <td align="right">+ 500 &times; n</td>
+                        </tr>
+                        <!-- <tr>
                             <td>W33</td>
                             <td>+ 3w</td>
                             <td align="right">2000</td>
                             <td align="right">+ 500g</td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <td>W36</td>
                             <td>+ 6w</td>
                             <td align="right">2500</td>
                             <td align="right">+ 1000g</td>
-                        </tr>
-                        <tr>
+                        </tr> -->
+                        <!-- <tr>
                             <td>W39</td>
                             <td>+ 9w</td>
                             <td align="right">3000</td>
                             <td align="right">+ 1500g</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -1125,14 +1233,16 @@
     </div>
 
 
-    <div class="row">
-        
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="blood_type_incompability">
+
+    <div class="section" id="blood_type_incompability">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Blood Type Incompability <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
@@ -1168,22 +1278,28 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>抗D抗体の胎児への影響</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/111D055_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="fetal_hydrops">
+
+    <div class="section" id="fetal_hydrops">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Fetal Hydrops <small>胎児水腫</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3>Immume <small>免疫性</small></h3>
                 <ul class="list-group">
                     <!-- <li class="list-group-item">
@@ -1211,7 +1327,9 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h3>Non-immune <small>非免疫性</small></h3>
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -1242,8 +1360,9 @@
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
                     </li> -->
                 </ul>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>胎児水腫の機序と原因</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/109A022_sup_010.jpg" class="card-img-top img-fluid">
@@ -1251,8 +1370,10 @@
 
             </div>
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="threatened_premature_delivery">
                 <div class="page-header">
@@ -1350,7 +1471,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>PROM <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
+                    <h2>PROM <small>前期破水</small> <small><code></code></small></h2>
                 </div>
             </div>
 
@@ -1368,9 +1489,9 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
                         <ul>
-                            <li>プロスタグランジン</li>
                             <li>AFP</li>
                             <li>羊歯状 (シダ状)結晶</li>
+                            <li>プロスタグランジン (局所で分解)</li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -1472,7 +1593,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
-                    <h2>NRFS <small>胎児機能不全</small> <small class="hidden-xs-down">Non-Reassuring Fetal Status</small> <small><code></code></small></h2>
+                    <h2>NRFS <small>胎児機能不全</small> <!-- <small class="hidden-xs-down">Non-Reassuring Fetal Status</small>  --><small><code></code></small></h2>
                 </div>
             </div>
 
@@ -1504,6 +1625,26 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        CTG :
+                        <ul>
+                            <li>高度徐脈 持続</li>
+                            <li>基線変動(&darr;/–)</li>
+                            <li>反復する
+                                <ul>
+                                    <li>変動一過性</li>
+                                    <li>遅発性一過性</li>
+                                    <li>遷延性</li>
+                                </ul>
+                            </li>
+                            <li>Sinusoidal pattern</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>胎児機能不全徴候</h6>
                 <div class="card">
                     <div class="card-body">
@@ -1566,7 +1707,7 @@
                         <h6>human placental lactogen（hPL）</h6>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
 
@@ -1651,141 +1792,11 @@
         </div>
 
 
-        
 
-
-
-        
-
-        
-
-
-        
 
 
 
         
-
-
-        <div class="col-xs-12 col-sm-6 col-md-8">
-            <h6>産科疾患の治療薬</h6>
-            <table class="table table-condensed">
-                <thead>
-                    <tr>
-                        <th>薬剤名</th>
-                        <th>作用</th>
-                        <th>適応症</th>
-                        <th>禁忌 / 注意点</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>メチルドパ<br>
-                            ヒドララジン</th>
-                        <td>降圧薬</td>
-                        <td>妊娠高血圧症候群</td>
-                        <td>特になし</td>
-                    </tr>
-                    <tr>
-                        <th>オキシトシン<br>
-                            プロスタグランジンF2α<br>
-                            E2※</th>
-                        <td>陣痛誘発<br>
-                            促進薬</td>
-                        <td>微弱陣痛</td>
-                        <td>前置胎盤<br>
-                            胎児機能不全<br>
-                            CPD</td>
-                    </tr>
-                    <tr>
-                        <th>インドメタシン</th>
-                        <td>鎮痛薬<br>
-                            子宮弛緩作用</td>
-                        <td>産科的適応なし</td>
-                        <td>妊娠中の使用は禁忌</td>
-                    </tr>
-                    <tr>
-                        <th>硫酸マグネシウム</th>
-                        <td>子宮弛緩薬</td>
-                        <td>子癇発作<br>
-                            切迫早産</td>
-                        <td>筋力低下</td>
-                    </tr>
-                    <tr>
-                        <th>塩酸リトドリン</th>
-                        <td>子宮弛緩薬<br>（β2-受容体刺激薬）</td>
-                        <td>切迫早産</td>
-                        <td>輸液過剰により肺水腫<br>
-                            糖尿病<br>
-                            心疾患</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <h6>子宮収縮促進の適応 / 禁忌</h6>
-            <table class="table table-condensed">
-                <tbody>
-                    <tr>
-                        <th>適応</th>
-                        <td><ul>
-                            <li>微弱陣痛</li>
-                            <li>分娩時間の短縮</li>
-                        </ul></td>
-                    </tr>
-                    <tr>
-                        <th><code>C/I</code></th>
-                        <td><ul>
-                            <li>回旋異常</li>
-                            <li>胎児機能不全</li>
-                            <li>子宮手術の適応 (C/S)</li>
-                            <li><u>常位胎盤早期剥離</u>, 切迫子宮破裂, 絞縮輪難産</li>
-                            <li>CPD</li>
-                            <li>前置胎盤</li>
-                        </ul></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-
-
-
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
-                <div class="page-header">
-                    <h2> <small class="hidden-xs-down"> </small> <small><code></code></small></h2>
-                </div>
-
-                <ul class="list-group">
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                </ul>
-
-            </div>
-        </div>
-
-
 
     </div>
     
@@ -2527,7 +2538,7 @@
                             <li class="ans_f">尿中hCGの高値が予想される．</li>
                             <li class="ans_f">Douglas窩穿刺の適応である．</li>
                             <li class="ans_f">子宮収縮抑制薬投与の適応である．</li>
-                            <li class="ans_t">妊娠の継続は望めない．</li>
+                            <li class="ans_t star">妊娠の継続は望めない．</li>
                         </ol>
                     </div>
                 </div>
@@ -2673,7 +2684,7 @@
                         <p>流産の原因として最も多いのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_t">胎芽の欠損</li>
+                            <li class="ans_t star">胎芽の欠損</li>
                             <li class="ans_f">双角子宮</li>
                             <li class="ans_f">頸管無力症</li>
                             <li class="ans_f">子宮収縮</li>
@@ -2907,8 +2918,8 @@
                         <ol type="a">
                             <li class="ans_f">両側卵管切除術</li>
                             <li class="ans_f">右側付属器摘出術</li>
-                            <li class="ans_t">右側卵管切除術</li>
-                            <li class="ans_f">右側卵管結紮術</li>
+                            <li class="ans_t star">右側卵管切除術</li>
+                            <li class="ans_f star">右側卵管結紮術</li>
                             <li class="ans_f">右側卵巣提索結紮術</li>
                         </ol>
                     </div>
@@ -3180,7 +3191,7 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group PIH FGR CTG" id="q023">
+            <div class="card-group PIH FGR CTG fig" id="q023">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/99H2" target="_blank">99H2</a> CTG
@@ -3210,7 +3221,7 @@
                             <li class="ans_f">子宮頸管は熟化している．</li>
                             <li class="ans_f">胎児発育は週数相当である．</li>
                             <li class="ans_f">児頭が圧迫されている．</li>
-                            <li class="ans_t">急遂分娩が必要である．</li>
+                            <li class="ans_t star">急遂分娩が必要である．</li>
                         </ol>
                     </div>
                 </div>
@@ -3224,10 +3235,12 @@
                             <li>Bishop 2pt</li>
                             <li>W34 1400g &xrArr; 胎児発育不全, GHTN &rArr; 胎盤機能不全</li>
                         </ul>
+                    </div>
 
-                        <!-- <img src="https://www.qb-online.com/img/99H002_ima_p_010.jpg" class="img-fluid"> -->
-                        <img src="https://qb.medilink-study.com/images/99H002_ima_p_010.jpg" class="card-img-top img-fluid">
+                    <!-- <img src="https://www.qb-online.com/img/99H002_ima_p_010.jpg" class="img-fluid"> -->
+                    <img src="https://qb.medilink-study.com/images/99H002_ima_p_010.jpg" class="card-img-top img-fluid">
 
+                    <div class="card-body">
                         <p class="q_dx">遅発一過性徐脈</p>
 
                         <p class="q_answer_true">e</p>
@@ -3277,7 +3290,7 @@
                             <li class="ans_f">メチルドパの増量</li>
                             <li class="ans_f">塩酸リトドリンの増量</li>
                             <li class="ans_f">副腎皮質ステロイド薬の投与</li>
-                            <li class="ans_t">分娩誘発</li>
+                            <li class="ans_t star">分娩誘発</li>
                         </ol>
                     </div>
                 </div>
@@ -3827,8 +3840,8 @@
 
                         <ol type="a">
                             <li class="ans_t">胎児心拍数陣痛計の装着</li>
-                            <li class="ans_t">血液生化学検査</li>
-                            <li class="ans_f">降圧薬の投与</li>
+                            <li class="ans_t star">血液生化学検査</li>
+                            <li class="ans_f star">降圧薬の投与</li>
                             <li class="ans_f">子宮収縮抑制薬の投与</li>
                             <li class="ans_f">輸血</li>
                         </ol>
@@ -4665,7 +4678,7 @@
                             <li class="ans_t">多産婦に多い．</li>
                             <li class="ans_t">癒着胎盤が多い．</li>
                             <li class="ans_t">無痛性出血をみる．</li>
-                            <li class="ans_f">妊娠15週で診断できる．</li>
+                            <li class="ans_f star">妊娠15週で診断できる．</li>
                             <li class="ans_t">人工妊娠中絶術の既往は危険因子である．</li>
                         </ol>
                     </div>
@@ -5939,18 +5952,18 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill rev" id="2018-09-01_14:35:06"> </span>
-                         / 
+                         / <br>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis" id="2018-09-01_14:35:11"> </span>
                         <span class="badge badge-pill mis now" id="2018-10-31_14:06:57"> </span>
-                         / 
+                         / <br>
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau" id="2018-09-01_14:35:18"> </span>
                         <span class="badge badge-pill mis" id="2018-10-31_14:07:07"> </span>
                         <br>
-                        <p>次の文を読み，61～63の問いに答えよ．<br><br>
+                        <p>次の文を読み，61～63の問いに答えよ．</p>
 
-                            28歳の1回経産婦．<br>
+                        <p>28歳の1回経産婦．<br>
                             妊娠35週時に<u>胎児発育異常</u>を指摘され紹介状を持って来院した．<br>
                             現病歴：<br>
                             分娩予定日は最終月経から算出された．定期的に妊婦健康診査を受けており，これまで血圧や尿検査の異常を指摘されたことはない．<br>
@@ -5988,7 +6001,7 @@
                             <li class="ans_t">頭囲/腹囲比の高値</li>
                             <li class="ans_t">胎児呼吸様運動の消失</li>
                             <li class="ans_t">臍帯動脈RI〈resistance index〉の増加</li>
-                            <li class="ans_f">中大脳動脈RI〈resistance index〉の増加</li>
+                            <li class="ans_f star">中大脳動脈RI〈resistance index〉の増加</li>
                         </ol>
 
                         <p>[G063] 入院後のBPS〈biophysical profile score〉は6点であった．<br>
@@ -6561,7 +6574,7 @@
                             <li class="ans_f">アルブミン投与</li>
                             <li class="ans_f">ハプトブロビン投与</li>
                             <li class="ans_f">副腎皮質ステロイド投与</li>
-                            <li class="ans_t">抗D人免疫グロブリン投与</li>
+                            <li class="ans_t star">抗D人免疫グロブリン投与</li>
                         </ol>
                     </div>
                 </div>
@@ -6607,7 +6620,7 @@
                         <ol type="a">
                             <li class="ans_f">A，Rh（－）</li>
                             <li class="ans_f">B，Rh（＋）</li>
-                            <li class="ans_t">AB，Rh（－）</li>
+                            <li class="ans_t star">AB，Rh（－）</li>
                             <li class="ans_f">AB，Rh（＋）</li>
                             <li class="ans_f">O，Rh（＋）</li>
                         </ol>
@@ -6920,7 +6933,8 @@
 
                     <div class="card-body">
 
-                        <p>[C007] 最も適切な処置はどれか．</p>
+                        <p>[C007] <br>
+                            最も適切な処置はどれか．</p>
 
                         <ol type="a">
                             <li class="ans_f">子宮収縮抑制薬の投与 </li>
@@ -6930,13 +6944,14 @@
                             <li class="ans_t">胎児採血</li>
                         </ol>
 
-                        <p>[C008] 発生する可能性の最も高い病態はどれか．</p>
+                        <p>[C008] <br>
+                            発生する可能性の最も高い病態はどれか．</p>
                         <ol type="a">
                             <li class="ans_f">羊水過少</li>
                             <li class="ans_f">母体DIC</li>
                             <li class="ans_f">前期破水</li>
                             <li class="ans_f">胎児発育不全</li>
-                            <li class="ans_t">胎児水腫</li>
+                            <li class="ans_t star">胎児水腫</li>
                         </ol>
                     </div>
                 </div>
@@ -7098,10 +7113,10 @@
 
                         <ol type="a">
                             <li class="ans_t">伝染性紅斑</li>
-                            <li class="ans_f">Potter症候群</li>
+                            <li class="ans_f star">Potter症候群</li>
                             <li class="ans_t">双胎間輸血症候群</li>
                             <li class="ans_t">血液型不適合妊娠</li>
-                            <li class="ans_t">胎児頸部リンパ囊</li>
+                            <li class="ans_t star">胎児頸部リンパ囊</li>
                         </ol>
                     </div>
                 </div>
@@ -7239,9 +7254,9 @@
                     <div class="card-body">
                         <ol type="a">
                             <li class="ans_f">経過観察</li>
-                            <li class="ans_f">経腹的羊水除去</li>
+                            <li class="ans_f star">経腹的羊水除去</li>
                             <li class="ans_f">子宮頸管縫縮術</li>
-                            <li class="ans_t">子宮収縮抑制薬の点滴静注</li>
+                            <li class="ans_t star">子宮収縮抑制薬の点滴静注</li>
                             <li class="ans_f">帝王切開術</li>
                         </ol>
                     </div>
@@ -7386,9 +7401,9 @@
 
                         <ol type="a">
                             <li class="ans_t">胎児心拍数陣痛計の装着</li>
-                            <li class="ans_t">子宮内感染の有無の検索</li>
+                            <li class="ans_t star">子宮内感染の有無の検索</li>
                             <li class="ans_f">骨盤高位でベッド上安静</li>
-                            <li class="ans_f">陣痛抑制薬の静注</li>
+                            <li class="ans_tf star">陣痛抑制薬の静注</li>
                             <li class="ans_f">副腎皮質ステロイド薬の投与</li>
                         </ol>
                     </div>
@@ -7676,18 +7691,18 @@
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill cau" id="2018-09-01_18:22:43"> </span>
                         <span class="badge badge-pill cau" id="2018-10-31_14:51:19"> </span>
-                         / 
+                         / <br>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau" id="2018-09-01_18:22:50"> </span>
                         <span class="badge badge-pill cau" id="2018-10-31_14:51:25"> </span>
-                         / 
+                         / <br>
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill mis now" id="2018-09-01_18:22:56"> </span>
                         <span class="badge badge-pill mis now" id="2018-10-31_14:51:32"> </span>
                         <br>
-                        <p>次の文を読み，4～6の問いに答えよ．<br><br>
+                        <p>次の文を読み，4～6の問いに答えよ．</p>
                             
-                            28歳の妊婦．<br>
+                        <p>28歳の妊婦．<br>
                             今朝，<u>突然の中等量性器出血と水様帯下</u>とを認めて来院した．<br>
                             現病歴：<br>
                             妊娠初期には特に異常はなかったが，妊娠24週3日に上記症状を呈した．下腹部痛はない．<br>
@@ -7732,7 +7747,7 @@
                         <ol type="a">
                             <li class="ans_f">胎児貧血</li>
                             <li class="ans_f">胎児低血糖</li>
-                            <li class="ans_t">肺低形成</li>
+                            <li class="ans_t star">肺低形成</li>
                             <li class="ans_f">胎児発育不全</li>
                             <li class="ans_t">子宮内感染</li>
                         </ol>
@@ -7764,7 +7779,7 @@
                         <ol type="a">
                             <li></li>
                             <li></li>
-                            <li>羊水過少 &rArr; 肺低形成</li>
+                            <li></li>
                             <li></li>
                             <li>上行感染</li>
                         </ol>
@@ -7774,7 +7789,7 @@
                         <ol type="a">
                             <li></li>
                             <li></li>
-                            <li></li>
+                            <li>羊水過少 &rArr; 肺低形成</li>
                             <li></li>
                             <li></li>
                         </ol>
@@ -7916,7 +7931,7 @@
                             <li class="ans_f">経過観察</li>
                             <li class="ans_f">子宮収縮抑制薬投与</li>
                             <li class="ans_f">副腎皮質ステロイド薬投与</li>
-                            <li class="ans_t">分娩誘発</li>
+                            <li class="ans_t star">分娩誘発</li>
                             <li class="ans_f">緊急帝王切開術</li>
                         </ol>
                     </div>
@@ -7960,9 +7975,9 @@
 
 
                         <ol type="a">
-                            <li class="ans_f">プロスタグランジン</li>
-                            <li class="ans_t">α-フェトプロテイン</li>
-                            <li class="ans_t">羊歯状結晶</li>
+                            <li class="ans_f star">プロスタグランジン</li>
+                            <li class="ans_t star">α-フェトプロテイン</li>
+                            <li class="ans_t star">羊歯状結晶</li>
                             <li class="ans_f">カンジダ</li>
                             <li class="ans_f">Döderlein桿菌</li>
                         </ol>
@@ -8645,7 +8660,7 @@
                             <li class="ans_t">Rh不適合妊娠 － 胎児水腫</li>
                             <li class="ans_f">二卵性双胎 － 一絨毛膜性</li>
                             <li class="ans_f">新生児仮死 － BPS〈biophysical profile score〉</li>
-                            <li class="ans_t">早産予知 － 頸管長</li>
+                            <li class="ans_t star">早産予知 － 頸管長</li>
                         </ol>
                     </div>
                 </div>
@@ -8954,7 +8969,7 @@
 
                         <ol type="a">
                             <li class="ans_t">妊娠高血圧症候群軽症</li>
-                            <li class="ans_f">常位胎盤早期剝離</li>
+                            <li class="ans_f star">常位胎盤早期剝離</li>
                             <li class="ans_f">絞窄輪難産</li>
                             <li class="ans_t">非適時破水</li>
                             <li class="ans_t">微弱陣痛</li>
@@ -9188,621 +9203,286 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "ver." + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
-    
-
-    var title_date = title + "-" + print_date;
-    $(document).attr("title", title_date);
-
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-
-        $('#q li:has(a.all)').toggle();
-        $('#q li:has(a.untag)').toggle();
-        $('#q li:has(a.done)').toggle();
-        $('#q li:has(a.pri)').toggle();
-        $('#q li:has(a.req)').toggle();
-        $('#q li:has(a.qb)').toggle();
-        $('#q li:has(a.110)').toggle();
-        $('#q li:has(a.111)').toggle();
-        $('#q li:has(a.info)').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
+$(function(){
 
 
 
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#HG h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HG)').slideToggle(100);
+        $('#q div.card-group:not(.HG)').slideToggle(100);
     });
-    $('#HG').find('code').html($('div.HG').size());
+    $('#HG').find('small > code').html(
+        $('div.HG > .card > .mis').size() + '+' +
+        $('div.HG > .card > .cau').size() + '/' +
+        $('div.HG').size());
 
 
     $('#ODIC h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ODIC)').slideToggle(100);
+        $('#q div.card-group:not(.ODIC)').slideToggle(100);
     });
-    $('#ODIC').find('code').html($('div.ODIC').size());
+    $('#ODIC').find('small > code').html(
+        $('div.ODIC > .card > .mis').size() + '+' +
+        $('div.ODIC > .card > .cau').size() + '/' +
+        $('div.ODIC').size());
 
 
     $('#abortion h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.abortion)').slideToggle(100);
+        $('#q div.card-group:not(.abortion)').slideToggle(100);
     });
-    $('#abortion').find('code').html($('div.abortion').size());
+    $('#abortion').find('small > code').html(
+        $('div.abortion > .card > .mis').size() + '+' +
+        $('div.abortion > .card > .cau').size() + '/' +
+        $('div.abortion').size());
 
     $('#threatened_abortion').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.threatened_abortion)').slideToggle(100);
+        $('#q div.card-group:not(.threatened_abortion)').slideToggle(100);
     });
-    $('#threatened_abortion').find('code').html($('div.threatened_abortion').size());
+    $('#threatened_abortion').find('small > code').html(
+        $('div.threatened_abortion > .card > .mis').size() + '+' +
+        $('div.threatened_abortion > .card > .cau').size() + '/' +
+        $('div.threatened_abortion').size());
 
 
     $('#missed_abortion').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.missed_abortion)').slideToggle(100);
+        $('#q div.card-group:not(.missed_abortion)').slideToggle(100);
     });
-    $('#missed_abortion').find('code').html($('div.missed_abortion').size());
+    $('#missed_abortion').find('small > code').html(
+        $('div.missed_abortion > .card > .mis').size() + '+' +
+        $('div.missed_abortion > .card > .cau').size() + '/' +
+        $('div.missed_abortion').size());
 
 
     $('#ectopic_pregnancy h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ectopic_pregnancy)').slideToggle(100);
+        $('#q div.card-group:not(.ectopic_pregnancy)').slideToggle(100);
     });
-    $('#ectopic_pregnancy').find('code').html($('div.ectopic_pregnancy').size());
+    $('#ectopic_pregnancy').find('small > code').html(
+        $('div.ectopic_pregnancy > .card > .mis').size() + '+' +
+        $('div.ectopic_pregnancy > .card > .cau').size() + '/' +
+        $('div.ectopic_pregnancy').size());
 
 
     $('#PIH h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PIH)').slideToggle(100);
+        $('#q div.card-group:not(.PIH)').slideToggle(100);
     });
-    $('#PIH').find('code').html($('div.PIH').size());
+    $('#PIH').find('small > code').html(
+        $('div.PIH > .card > .mis').size() + '+' +
+        $('div.PIH > .card > .cau').size() + '/' +
+        $('div.PIH').size());
 
 
     $('#NRFS h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NRFS)').slideToggle(100);
+        $('#q div.card-group:not(.NRFS)').slideToggle(100);
     });
-    $('#NRFS').find('code').html($('div.NRFS').size());
+    $('#NRFS').find('small > code').html(
+        $('div.NRFS > .card > .mis').size() + '+' +
+        $('div.NRFS > .card > .cau').size() + '/' +
+        $('div.NRFS').size());
 
 
     $('#FGR h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.FGR)').slideToggle(100);
+        $('#q div.card-group:not(.FGR)').slideToggle(100);
     });
-    $('#FGR').find('code').html($('div.FGR').size());
+    $('#FGR').find('small > code').html(
+        $('div.FGR > .card > .mis').size() + '+' +
+        $('div.FGR > .card > .cau').size() + '/' +
+        $('div.FGR').size());
 
 
     $('#eclampsia h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.eclampsia)').slideToggle(100);
+        $('#q div.card-group:not(.eclampsia)').slideToggle(100);
     });
-    $('#eclampsia').find('code').html($('div.eclampsia').size());
+    $('#eclampsia').find('small > code').html(
+        $('div.eclampsia > .card > .mis').size() + '+' +
+        $('div.eclampsia > .card > .cau').size() + '/' +
+        $('div.eclampsia').size());
 
 
     $('#HELLP h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.HELLP)').slideToggle(100);
+        $('#q div.card-group:not(.HELLP)').slideToggle(100);
     });
-    $('#HELLP').find('code').html($('div.HELLP').size());
+    $('#HELLP').find('small > code').html(
+        $('div.HELLP > .card > .mis').size() + '+' +
+        $('div.HELLP > .card > .cau').size() + '/' +
+        $('div.HELLP').size());
 
 
     $('#placental_abruption h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.placental_abruption)').slideToggle(100);
+        $('#q div.card-group:not(.placental_abruption)').slideToggle(100);
     });
-    $('#placental_abruption').find('code').html($('div.placental_abruption').size());
+    $('#placental_abruption').find('small > code').html(
+        $('div.placental_abruption > .card > .mis').size() + '+' +
+        $('div.placental_abruption > .card > .cau').size() + '/' +
+        $('div.placental_abruption').size());
 
 
     $('#placenta_previa h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.placenta_previa)').slideToggle(100);
+        $('#q div.card-group:not(.placenta_previa)').slideToggle(100);
     });
-    $('#placenta_previa').find('code').html($('div.placenta_previa').size());
+    $('#placenta_previa').find('small > code').html(
+        $('div.placenta_previa > .card > .mis').size() + '+' +
+        $('div.placenta_previa > .card > .cau').size() + '/' +
+        $('div.placenta_previa').size());
 
 
     $('#placenta_accreta h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.placenta_accreta)').slideToggle(100);
+        $('#q div.card-group:not(.placenta_accreta)').slideToggle(100);
     });
-    $('#placenta_accreta').find('code').html($('div.placenta_accreta').size());
+    $('#placenta_accreta').find('small > code').html(
+        $('div.placenta_accreta > .card > .mis').size() + '+' +
+        $('div.placenta_accreta > .card > .cau').size() + '/' +
+        $('div.placenta_accreta').size());
 
 
     $('#hydramnios h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hydramnios)').slideToggle(100);
+        $('#q div.card-group:not(.hydramnios)').slideToggle(100);
     });
-    $('#hydramnios').find('code').html($('div.hydramnios').size());
+    $('#hydramnios').find('small > code').html(
+        $('div.hydramnios > .card > .mis').size() + '+' +
+        $('div.hydramnios > .card > .cau').size() + '/' +
+        $('div.hydramnios').size());
 
 
     $('#oligoamnios h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.oligoamnios)').slideToggle(100);
+        $('#q div.card-group:not(.oligoamnios)').slideToggle(100);
     });
-    $('#oligoamnios').find('code').html($('div.oligoamnios').size());
+    $('#oligoamnios').find('small > code').html(
+        $('div.oligoamnios > .card > .mis').size() + '+' +
+        $('div.oligoamnios > .card > .cau').size() + '/' +
+        $('div.oligoamnios').size());
 
     $('#PROM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PROM)').slideToggle(100);
+        $('#q div.card-group:not(.PROM)').slideToggle(100);
     });
-    $('#PROM').find('code').html($('div.PROM').size());
+    $('#PROM').find('small > code').html(
+        $('div.PROM > .card > .mis').size() + '+' +
+        $('div.PROM > .card > .cau').size() + '/' +
+        $('div.PROM').size());
 
 
 
     $('#twin h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.twin)').slideToggle(100);
+        $('#q div.card-group:not(.twin)').slideToggle(100);
     });
-    $('#twin').find('code').html($('div.twin').size());
+    $('#twin').find('small > code').html(
+        $('div.twin > .card > .mis').size() + '+' +
+        $('div.twin > .card > .cau').size() + '/' +
+        $('div.twin').size());
 
 
     $('#TTTS').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.TTTS)').slideToggle(100);
+        $('#q div.card-group:not(.TTTS)').slideToggle(100);
     });
-    $('#TTTS').find('code').html($('div.TTTS').size());
+    $('#TTTS').find('small > code').html(
+        $('div.TTTS > .card > .mis').size() + '+' +
+        $('div.TTTS > .card > .cau').size() + '/' +
+        $('div.TTTS').size());
 
 
     $('#diaphragmatic_hernia h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.diaphragmatic_hernia)').slideToggle(100);
+        $('#q div.card-group:not(.diaphragmatic_hernia)').slideToggle(100);
     });
-    $('#diaphragmatic_hernia').find('code').html($('div.diaphragmatic_hernia').size());
+    $('#diaphragmatic_hernia').find('small > code').html(
+        $('div.diaphragmatic_hernia > .card > .mis').size() + '+' +
+        $('div.diaphragmatic_hernia > .card > .cau').size() + '/' +
+        $('div.diaphragmatic_hernia').size());
 
 
     $('#blood_type_incompability h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.blood_type_incompability)').slideToggle(100);
+        $('#q div.card-group:not(.blood_type_incompability)').slideToggle(100);
     });
-    $('#blood_type_incompability').find('code').html($('div.blood_type_incompability').size());
+    $('#blood_type_incompability').find('small > code').html(
+        $('div.blood_type_incompability > .card > .mis').size() + '+' +
+        $('div.blood_type_incompability > .card > .cau').size() + '/' +
+        $('div.blood_type_incompability').size());
 
 
     $('#hydatidiform_mole h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.hydatidiform_mole)').slideToggle(100);
+        $('#q div.card-group:not(.hydatidiform_mole)').slideToggle(100);
     });
-    $('#hydatidiform_mole').find('code').html($('div.hydatidiform_mole').size());
+    $('#hydatidiform_mole').find('small > code').html(
+        $('div.hydatidiform_mole > .card > .mis').size() + '+' +
+        $('div.hydatidiform_mole > .card > .cau').size() + '/' +
+        $('div.hydatidiform_mole').size());
 
 
     $('#fetal_hydrops h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.fetal_hydrops)').slideToggle(100);
+        $('#q div.card-group:not(.fetal_hydrops)').slideToggle(100);
     });
-    $('#fetal_hydrops').find('code').html($('div.fetal_hydrops').size());
+    $('#fetal_hydrops').find('small > code').html(
+        $('div.fetal_hydrops > .card > .mis').size() + '+' +
+        $('div.fetal_hydrops > .card > .cau').size() + '/' +
+        $('div.fetal_hydrops').size());
 
     $('#threatened_premature_delivery h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.threatened_premature_delivery)').slideToggle(100);
+        $('#q div.card-group:not(.threatened_premature_delivery)').slideToggle(100);
     });
-    $('#threatened_premature_delivery').find('code').html($('div.threatened_premature_delivery').size());
+    $('#threatened_premature_delivery').find('small > code').html(
+        $('div.threatened_premature_delivery > .card > .mis').size() + '+' +
+        $('div.threatened_premature_delivery > .card > .cau').size() + '/' +
+        $('div.threatened_premature_delivery').size());
 
 
     $('#CAM h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.CAM)').slideToggle(100);
+        $('#q div.card-group:not(.CAM)').slideToggle(100);
     });
-    $('#CAM').find('code').html($('div.CAM').size());
+    $('#CAM').find('small > code').html(
+        $('div.CAM > .card > .mis').size() + '+' +
+        $('div.CAM > .card > .cau').size() + '/' +
+        $('div.CAM').size());
 
 
     $('#post-term h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.post-term)').slideToggle(100);
+        $('#q div.card-group:not(.post-term)').slideToggle(100);
     });
-    $('#post-term').find('code').html($('div.post-term').size());
+    $('#post-term').find('small > code').html(
+        $('div.post-term > .card > .mis').size() + '+' +
+        $('div.post-term > .card > .cau').size() + '/' +
+        $('div.post-term').size());
 
 
 
     $('#Potter h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Potter)').slideToggle(100);
+        $('#q div.card-group:not(.Potter)').slideToggle(100);
     });
-    $('#Potter').find('code').html($('div.Potter').size());
+    $('#Potter').find('small > code').html(
+        $('div.Potter > .card > .mis').size() + '+' +
+        $('div.Potter > .card > .cau').size() + '/' +
+        $('div.Potter').size());
 
 
     
@@ -9813,9 +9493,14 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
+
 
 });
 </script>

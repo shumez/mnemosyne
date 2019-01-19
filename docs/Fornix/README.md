@@ -1,13 +1,12 @@
 <!--
-@Author: shumez
-@Date:   2017-08-28 11:37:29
-@Project: Fornix
-@Filename: README.md
-@Last modified by:   shumez
-@Last modified time: 2018-03-26 16:17:51
+Filename: 	README.md
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix
+Author: 	shumez <https://github.com/shumez>
+Created: 	2017-08-28 11:46:0
+Modified: 	2019-01-19 17:52:3
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 Fornix
 ======
 
@@ -29,263 +28,419 @@ Files
 ```
 Fornix
 ├── CHANGELOG.md
+├── LICENSE.md
 ├── README.md
 ├── a_GE
 │   ├── Anus
+│   ├── CHANGELOG.md
+│   ├── General
 │   ├── Intestine
 │   ├── Intro
+│   ├── LICENSE.md
 │   ├── Oesophagus
-│   ├── Pediatrics
 │   ├── Peritoneum
+│   ├── README.md
 │   └── Stomach
 ├── b_Hepa
+│   ├── CHANGELOG.md
 │   ├── Cholangio
-│   ├── Intro
+│   ├── General
+│   ├── IntroCholangio
+│   ├── IntroLiver
+│   ├── IntroPancreas
+│   ├── LICENSE.md
 │   ├── Liver
-│   └── Pancreas
+│   ├── Pancreas
+│   └── README.md
 ├── c_CV
 │   ├── Arrhythmia
-│   ├── Artery
+│   ├── CHANGELOG.md
 │   ├── Cardiomyopathy
 │   ├── Congenital
+│   ├── General
+│   ├── HeartFailure
 │   ├── Intro
 │   ├── Ischemia
+│   ├── LICENSE.md
+│   ├── Pericardium
 │   ├── Pressure
+│   ├── README.md
 │   ├── Tumor
 │   ├── Valvulopathy
+│   ├── Vasculature
 │   └── Vein
 ├── d_Endo
 │   ├── Adrenal
+│   ├── CHANGELOG.md
 │   ├── EndocrineTumor
-│   ├── Gonad
+│   ├── General
 │   ├── Hypothalamus-Pituitary
-│   ├── Intro
+│   ├── LICENSE.md
+│   ├── MEN
 │   ├── Parathyroid
+│   ├── README.md
 │   └── Thyroid
 ├── d_Meta
 │   ├── Bone
+│   ├── CHANGELOG.md
 │   ├── Carbohydrate
-│   ├── Congenital
-│   ├── FattyAcid
-│   ├── Intro
-│   ├── LSD
+│   ├── LICENSE.md
+│   ├── Lipid
+│   ├── MetabolicSyndrome
 │   ├── NucleicAcid
-│   ├── Nutrition
-│   └── Other
+│   ├── Other
+│   ├── README.md
+│   └── Vitamin
+├── docs
+│   ├── README.md
+│   ├── calc
+│   ├── memo
+│   └── mnemonics
 ├── e_Elctr
-│   ├── Ca
-│   ├── H
+│   ├── CHANGELOG.md
 │   ├── Intro
-│   ├── K
-│   ├── Mg
-│   ├── Na
-│   └── P
+│   ├── LICENSE.md
+│   └── README.md
 ├── e_Nephro
+│   ├── CHANGELOG.md
+│   ├── General
 │   ├── Glomerulus
 │   ├── Hereditary
 │   ├── Intro
+│   ├── LICENSE.md
+│   ├── README.md
 │   ├── RenalFailure
 │   ├── Renovascular
-│   ├── Sytemic
+│   ├── Systemic
 │   └── Tubule
 ├── f_Immune
 │   ├── Allergy
-│   ├── Arthritis
-│   ├── ConnectiveTissue
+│   ├── CHANGELOG.md
 │   ├── Immunodeficiency
 │   ├── Intro
-│   └── Vasculitis
+│   ├── LICENSE.md
+│   ├── README.md
+│   └── Rheumatology
 ├── g_Heme
-│   ├── AcuteLeukemia
 │   ├── Anemia
+│   ├── CHANGELOG.md
 │   ├── Coagulation
-│   ├── Hemolysis
+│   ├── General
 │   ├── Intro
+│   ├── LICENSE.md
+│   ├── Leukemia
 │   ├── Lymphocyte
 │   ├── Myelocyte
+│   ├── README.md
 │   ├── Transfusion
 │   └── Transplantation
 ├── h_Infxn
-│   ├── ABx
-│   ├── Anaerobic
-│   ├── Arthropod
+│   ├── Antibiotics
+│   ├── CHANGELOG.md
+│   ├── Compromised
+│   ├── Dermatology
 │   ├── Fungi
-│   ├── GNB
-│   ├── GNC
-│   ├── GPC
-│   ├── Intro
+│   ├── Gastroenterology
+│   ├── General
+│   ├── ImportedInfection
+│   ├── LICENSE.md
+│   ├── Musculoskeletal
 │   ├── Mycobacterium
-│   ├── Nematode
-│   ├── Protozoan
-│   ├── Rickettsia
-│   ├── Spirochete
-│   ├── Tapeworm
-│   ├── Trematode
-│   └── Virus
+│   ├── Other
+│   ├── Pneumonia
+│   ├── README.md
+│   └── fig
+├── handout
+│   ├── a_GE
+│   ├── b_Hepa
+│   ├── c_CV
+│   ├── d_Endo
+│   ├── d_Meta
+│   ├── e_Elctr
+│   ├── e_Nephro
+│   ├── f_Immune
+│   ├── g_Heme
+│   ├── h_Infxn
+│   ├── i_Pulmo
+│   ├── j_Neuro
+│   ├── k_Tox
+│   ├── l_ER
+│   ├── m_Ans
+│   ├── n_Med
+│   ├── o_Ped
+│   ├── p_OB
+│   ├── q_GYN
+│   ├── r_Oph
+│   ├── s_ENT
+│   ├── t_Ortho
+│   ├── trends.md
+│   ├── u_Ψ
+│   ├── v_Derm
+│   ├── w_GU
+│   ├── x_Radio
+│   └── y_Health
 ├── i_Pulmo
-│   ├── Acute\ Lung\ Injury
 │   ├── Allergy
+│   ├── CHANGELOG.md
 │   ├── Circulation
-│   ├── Immune
-│   ├── Infection
+│   ├── General
+│   ├── Immunology
 │   ├── Interstinum
 │   ├── Intro
+│   ├── LICENSE.md
 │   ├── Mediastinum
 │   ├── Obstructive
 │   ├── Organic
-│   ├── Other
 │   ├── Pleura
+│   ├── README.md
 │   ├── Tumor
 │   └── Ventilation
-├── i_Thorax
-│   └── Mammary
 ├── j_Neuro
+│   ├── BrainStem
+│   ├── CHANGELOG.md
 │   ├── Cerebrovascular
+│   ├── CranialNerve
+│   ├── Dementia
 │   ├── Demyelinating
 │   ├── Functional
+│   ├── General
 │   ├── Hydrocephalus
 │   ├── Infection
 │   ├── Intro
+│   ├── LICENSE.md
 │   ├── Malformation
+│   ├── Metabolism
 │   ├── Myopathy
 │   ├── NMJ
 │   ├── Neurocutaneous
 │   ├── Neurodegenerative
 │   ├── Neuropathy
 │   ├── Pressure
+│   ├── README.md
+│   ├── Sensorimotor
 │   ├── Trauma
 │   └── Tumor
 ├── k_Tox
-│   ├── Drug
+│   ├── Alcohol
+│   ├── CHANGELOG.md
 │   ├── Food
 │   ├── Gas
-│   ├── Intro
+│   ├── General
+│   ├── Heat
+│   ├── LICENSE.md
 │   ├── Medication
 │   ├── Metal
-│   ├── Organic\ Compound
-│   ├── Organic\ Solvant
+│   ├── Organic
 │   ├── Pesticide
-│   └── Physical
+│   ├── Physical
+│   └── README.md
 ├── l_ER
+│   ├── AcuteAbdomen
+│   ├── Anaphylaxis
+│   ├── Burn
+│   ├── CHANGELOG.md
+│   ├── Cardiogenic
+│   ├── CrushSyndrome
 │   ├── Disaster
-│   ├── Intro
+│   ├── Drown
+│   ├── Hypovolemic
+│   ├── LICENSE.md
+│   ├── README.md
+│   ├── Resuscitation
+│   ├── Sepsis
 │   ├── Shock
+│   ├── Swallowing
 │   └── Trauma
 ├── m_Ans
-│   ├── General
-│   ├── Intro
-│   ├── Local
-│   └── Palliative
-├── n_Geri
-│   ├── Assessment
-│   └── Syndrome
+│   ├── CHANGELOG.md
+│   ├── GeneralAnesthesia
+│   ├── LICENSE.md
+│   ├── LocalAnesthesia
+│   ├── Palliative
+│   ├── Perioperative
+│   └── README.md
+├── n_Med
+│   ├── AgedSociety
+│   ├── Decubitus
+│   ├── Disuse
+│   ├── Surgery
+│   ├── Tumor
+│   └── Tutorial
 ├── o_Ped
+│   ├── CHANGELOG.md
 │   ├── Cardiovascular
-│   ├── Congenital
+│   ├── Chromosome
+│   ├── Development
 │   ├── Gastroenterology
-│   ├── Health
+│   ├── Hematology
 │   ├── Hepatology
+│   ├── Hereditary
+│   ├── Immunology
 │   ├── Infection
-│   ├── Intro
+│   ├── LICENSE.md
+│   ├── Metabolism
 │   ├── Neonate
-│   └── Respiratory
+│   ├── Nephrology
+│   ├── Neurology
+│   ├── Nutrition
+│   ├── README.md
+│   ├── Respiratory
+│   ├── Symptom
+│   └── Tumor
 ├── p_OB
-│   ├── 1st
-│   ├── 2nd-3rd
-│   ├── Abnormal_Labor
+│   ├── CHANGELOG.md
 │   ├── Complication
 │   ├── Confinement
+│   ├── Delivery
 │   ├── Infection
 │   ├── Injury
+│   ├── IntroDelivery
+│   ├── IntroPregnancy
+│   ├── LICENSE.md
 │   ├── Neonate
-│   ├── Normal_Labor
-│   └── Pregnancy
+│   ├── Pregnancy
+│   └── README.md
 ├── q_GYN
 │   ├── Aging
-│   ├── Chorio
+│   ├── CHANGELOG.md
 │   ├── Development
 │   ├── Endocrine
+│   ├── General
 │   ├── Infertility
 │   ├── Intro
+│   ├── LICENSE.md
+│   ├── Mammary
+│   ├── README.md
 │   ├── STI
 │   ├── Tumor
-│   └── Uterus
+│   └── fig
 ├── r_Oph
-│   ├── Conjunctive
+│   ├── Accomodation
+│   ├── Anatomy
+│   ├── CHANGELOG.md
+│   ├── Examination
 │   ├── Eyelid
+│   ├── Function
 │   ├── Glaucoma
-│   ├── Intro
+│   ├── Keratoconjunctive
+│   ├── LICENSE.md
 │   ├── Lens
 │   ├── Nerve
+│   ├── Other
+│   ├── README.md
 │   ├── Retina
+│   ├── Strabismus
+│   ├── Symptom
 │   ├── Trauma
-│   └── Uvea
+│   ├── Treatment
+│   ├── Uvea
+│   └── fig
 ├── s_ENT
-│   ├── External
-│   ├── Inner
-│   ├── Intro
+│   ├── Anatomy
+│   ├── CHANGELOG.md
+│   ├── Examination
+│   ├── InternalEar
+│   ├── LICENSE.md
 │   ├── Laryngopharynx
-│   ├── Middle
-│   ├── Mouth
+│   ├── MiddleEar
+│   ├── Neurotology
 │   ├── Nose
-│   └── Symptom
+│   ├── OralCavity
+│   ├── README.md
+│   ├── Symptom
+│   ├── Treatment
+│   └── fig
+├── scripts
+│   ├── img
+│   └── temp
 ├── t_Ortho
+│   ├── Anatomy
+│   ├── CHANGELOG.md
 │   ├── Collagen
 │   ├── Dislocation
 │   ├── Endocrine
+│   ├── Exam
 │   ├── Fracture
 │   ├── Infection
-│   ├── Intro
 │   ├── Joint
+│   ├── LICENSE.md
 │   ├── LowerLimb
-│   ├── Neuropahy
+│   ├── Neuropathy
 │   ├── Other
+│   ├── README.md
 │   ├── Spine
-│   ├── Tendon
+│   ├── Treatment
 │   ├── Tumor
 │   └── UpperLimb
 ├── u_Ψ
-│   ├── Anxiety
-│   ├── Development
+│   ├── CHANGELOG.md
+│   ├── Care
+│   ├── Dementia
 │   ├── Eating
-│   ├── Intro
+│   ├── Examination
+│   ├── LICENSE.md
 │   ├── Mood
+│   ├── Neurology
+│   ├── Neurosis
+│   ├── Organic
 │   ├── Pediatrics
+│   ├── Personality
+│   ├── Psychiatry
+│   ├── README.md
 │   ├── Schizophrenia
-│   ├── Sleep-Wake
-│   └── Stress
+│   ├── Sleep
+│   ├── Substance
+│   └── Treatment
 ├── v_Derm
 │   ├── BenignTumor
 │   ├── Bullosis
+│   ├── CHANGELOG.md
 │   ├── Carcinoma
-│   ├── Drug-induced
+│   ├── Dysplasia
 │   ├── Eczema
 │   ├── Erythema
+│   ├── Exam
 │   ├── Infection
 │   ├── Intro
 │   ├── Keratosis
+│   ├── LICENSE.md
 │   ├── Metabolism
 │   ├── Nevus
 │   ├── Other
-│   ├── Pigment
 │   ├── Pustulosis
-│   └── Urticaria
+│   ├── README.md
+│   ├── Symptom
+│   └── Treatment
 ├── w_GU
+│   ├── CHANGELOG.md
 │   ├── Congenital
+│   ├── Exam
 │   ├── Genitalia
 │   ├── Infection
+│   ├── Intro
+│   ├── LICENSE.md
+│   ├── README.md
+│   ├── Stone
+│   ├── Symptom
 │   ├── Trauma
 │   ├── Treatment
 │   ├── Tumor
-│   └── Urinary\ Tract
+│   └── UrinaryTract
 ├── x_Radio
+│   ├── CHANGELOG.md
 │   ├── Diagnosis
+│   ├── Exposure
+│   ├── IVR
+│   ├── LICENSE.md
+│   ├── Nuclear
+│   ├── README.md
 │   └── Therapy
 ├── y_Health
+│   ├── CHANGELOG.md
 │   ├── Certificate
 │   ├── Child
 │   ├── Community
-│   ├── Disablity
+│   ├── Disability
 │   ├── Doctor
 │   ├── Elderly
 │   ├── EndOfLife
@@ -293,21 +448,35 @@ Fornix
 │   ├── Epidemiology
 │   ├── Ethics
 │   ├── Food
+│   ├── Guideline
 │   ├── HealthPromotion
 │   ├── Infection
 │   ├── International
 │   ├── Intro
+│   ├── LICENSE.md
 │   ├── Labor
 │   ├── MedicalCare
 │   ├── MentalHealth
 │   ├── Nutrition
+│   ├── README.md
 │   ├── School
 │   ├── SocialSecurity
 │   ├── Standardization
 │   └── Stat
 └── z_Req
-    ├── Quiz
-    └── Required
+    ├── CHANGELOG.md
+    ├── DecisionMaking
+    ├── Examination
+    ├── LICENSE.md
+    ├── PhysicalExamination
+    ├── Physiology
+    ├── PrimaryHealthCare
+    ├── Procedure
+    ├── Quality
+    ├── README.md
+    ├── Symptom
+    ├── Syndrome
+    └── trend.md
 ```
 
 Resources

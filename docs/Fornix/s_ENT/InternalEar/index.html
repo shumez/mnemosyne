@@ -1,16 +1,19 @@
 <!--
-@Author: shumez
-@Date:   2018-07-02 17:01:23
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-11-26 16:02:08
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/s_ENT/InternalEar
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-07-02 17:01:9
+Modified: 	2019-01-19 11:33:4
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
-04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+
+04.01.38    18 11 24    .table-condensed tr:first-child border-top; td > ul, td > ol margin-bottom
 04.01.37    18 11 20    .nav mnemo fig
 04.01.36    18 11 17    mathjax
 04.01.35    18 11 14    nav .mnemonics .fig, #q 
@@ -113,8 +116,8 @@
     <title>Internal Ear</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-26 16:02:20" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.38">
+    <meta name="revised" content="2019-01-19 10:34:19" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -138,135 +141,10 @@
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul, td > ol{padding-left: 12px; margin-bottom: 5px}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul, li.list-group-item ol{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n, 
-        ul.nav-pills .active span.q_alert_mnemo_n, 
-        ul.nav-pills .active span.q_alert_fig_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin: 0px 0px 0px 0px}
-            a[href]:after {content: none !important;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-
-            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
-            h2{font-size: 14px}
-            h3{font-size: 13px}
-            h4,h5{font-size: 12px}
-            h6{font-size: 11px}
-            p, a, li, th, td{font-size: 9px}
-
-            td > ul, td > ol{padding-left: 10px; margin-bottom: 3px;}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
-            .page-header small code{
-                border-color: black;
-                border-width: : 0.4px 0.4px 0.4px 0.4px;
-            }
-            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 11px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;
-            }
-            table.table-condensed > tbody > tr:first-child > th,
-            table.table-condensed > tbody > tr:first-child > td{
-                border-top: 0.5px solid black;
-            }
-
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 0.5px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -315,11 +193,13 @@
 
     <div class="section" id="INTRO">
         <div class="row">
-            <div class="col-xs-12 col-sm-8 col-md-8">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Intro</h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-8 col-md-6">
                 <h6>回転性めまい</h6>
                 <table class="table table-condensed">
                     <thead>
@@ -333,27 +213,27 @@
                     <tbody>
                         <tr>
                             <th>BPPV</th>
-                            <td>頭位変換で誘発</td>
-                            <td>数秒から数十秒</td>
-                            <td>(-)</td>
+                            <td>頭位変換</td>
+                            <td>数s-数十s</td>
+                            <td align="center">(–)</td>
                         </tr>
                         <tr>
                             <th>Ménière病</th>
                             <td>なし</td>
-                            <td>30分から数時間</td>
-                            <td>(+)</td>
+                            <td>30min-数h</td>
+                            <td align="center">(+)</td>
                         </tr>
                         <tr>
                             <th>前庭神経炎</th>
                             <td>先行感染</td>
-                            <td>数日から数週間</td>
-                            <td>(-)</td>
+                            <td>数d-数w</td>
+                            <td align="center">(–)</td>
                         </tr>
                         <tr>
                             <th>聴神経鞘腫</th>
                             <td>なし</td>
                             <td>持続性</td>
-                            <td>(+)</td>
+                            <td align="center">(+)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -361,13 +241,58 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="Meniere">
-                <div class="page-header">
-                    <h2>Ménière <small class="hidden-xs-down"></small> <small><code></code></small></h2>
-                </div>
 
+    <div class="section" id="inner_ear_malformation">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Inner Ear Malformation <small>内耳奇形</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>Michel型</th>
+                            <td>内耳のすべて(–)</td>
+                            <td>AD</td>
+                        </tr>
+                        <tr>
+                            <th>Mondini型</th>
+                            <td>蝸牛/前庭の形成不全</td>
+                            <td>AD</td>
+                        </tr>
+                        <tr>
+                            <th>Sheibe型</th>
+                            <td>球形嚢/蝸牛管の形成不全</td>
+                            <td>AR</td>
+                        </tr>
+                        <tr>
+                            <th>Alexander型</th>
+                            <td>ラセン器/ラセン神経節の形成不全</td>
+                            <td>AD/AR</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="large_vestibular_aqueduct_syndrome">Large Vestibular Aqueduct Syndrome <small>前庭水管拡大症</small> <small><code></code></small></h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="Meniere">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Ménière <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h6>Etiology</h6>
@@ -385,21 +310,45 @@
                     <li class="list-group-item">
                         <h6>Exam</h6>
                         <ul>
-                            <li>低音障害</li>
+                            <li><u>低音障害</u></li>
                             <li>補充現象(+)</li>
                             <li>温度眼振検査 (カロリックテスト)</li>
                         </ul>
                     </li>
                 </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li>発作時:
+                                <ul>
+                                    <li>7%重曹水 (メイロン) / 鎮静薬 / 鎮吐薬</li>
+                                </ul>
+                            </li>
+                            <li>間欠期:
+                                <ul>
+                                    <li>利尿薬 / 血管拡張薬 / 循環改善薬 / 自律神経調整薬</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/97H013.jpg" class="card-img-top img-fluid" width="%">
                 </div>
 
             </div>
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="BPPV">
                 <div class="page-header">
@@ -417,10 +366,7 @@
                 </ul>
         
             </div>
-        </div>
 
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="VN">
                 <div class="page-header">
                     <h2>VN <small>前庭神経炎</small> <small><code></code></small></h2>
@@ -463,19 +409,35 @@
                                 cf. Ménière: 反復性</li>
                         </ul>
                     </li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        早期治療 1-2w
+                        <ul>
+                            <li>薬物
+                                <ul>
+                                    <li>ステロイド / vit.B12 / PG / ATP</li>
+                                </ul>
+                            </li>
+                            <li>高圧酸素療法</li>
+                            <li>星状神経節ブロック</li>
+                        </ul>
+                    </li>
                 </ul>
 
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="ARHL">
+
+    <div class="section" id="ARHL">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Age-related <small>老人性難聴</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h6>Symptom</h6>
@@ -485,22 +447,27 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/103E054_ima_s_010.jpg" class="card-img-top img-fluid">
                 </div>
         
             </div>
         </div>
+    </div>
 
 
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="NIHL">
+    <div class="section" id="NIHL">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Noise-Induced <small>音響外傷 / 騒音性難聴</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
                         <h6>Etiology</h6>
@@ -511,7 +478,7 @@
                     <li class="list-group-item">
                         <h6>Symptom</h6>
                         <ul>
-                            <li>C<sub>5</sub> dip (<u>4096 Hz</u>)</li>
+                            <li>C<sub>5</sub> dip <u>4k</u> (4096 Hz)</li>
                             <li>両側性</li>
                             <li><u>補充現象(+)</u></li>
                         </ul>
@@ -523,7 +490,9 @@
                         </ul>
                     </li>
                 </ul>
+            </div>
 
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/107I031_ima_s_010.jpg" class="card-img-top img-fluid">
                 </div>
@@ -532,8 +501,10 @@
             </div>
 
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="mumps">
                 <div class="page-header">
@@ -542,25 +513,52 @@
 
 
             </div>
-        
+        </div>
+    </div>
 
 
-            <div class="section" id="ototoxicity">
+    <div class="section" id="ototoxicity">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="page-header">
                     <h2>Ototoxicity <small>耳毒性</small> <small><code></code></small></h2>
                 </div>
+            </div>
 
-
+            <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
+                        中毒性平衡障害
+                        <ul>
+                            <li>
+                                アミノ配糖体系抗菌薬
+                                <ul>
+                                    <li>ジヒドロストレプトマイシン</li>
+                                    <li>カナマイシン</li>
+                                    <li>ゲンタマイシン</li>
+                                </ul>
+                            </li>
+                            <li>シスプラチン</li>
+                            <li>アスピリン</li>
+                            <li>ループ利尿薬</li>
+                        </ul>
+
+                        <br>
+
+                        不可逆な変化
+                        <ul>
+                            <li>アミノグリコシド系</li>
+                            <li>シスプラチン</li>
+                        </ul>
+                    </li>
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
                     </li> -->
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
+                            <li>両側性内耳性難聴</li>
                             <li><u>Jumbling 現象</u>: 歩行時の動揺視</li>
                         </ul>
                     </li>
@@ -575,28 +573,20 @@
                     </li> -->
                 </ul>
 
+
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/104I070.jpg" class="card-img-top img-fluid">
                 </div>
-
-                <h6>中毒性平衡障害</h6>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        アミノ配糖体系抗菌薬
-                        <ul>
-                            <li>ジヒドロストレプトマイシン</li>
-                            <li>カナマイシン</li>
-                            <li>ゲンタマイシン</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">抗がん薬（白金製剤）</li>
-                    <li class="list-group-item">アスピリン</li>
-                    <li class="list-group-item">ループ利尿薬</li>
-                </ul>
             </div>
+
         </div>
+    </div>
 
 
+    <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="NOHL">
                 <div class="page-header">
@@ -676,42 +666,6 @@
 
 
 
-
-
-
-    <div class="row">
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
-                <div class="page-header">
-                    <h2> <small> </small> <small><code></code></small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
-        </div>
-    </div>
 
 
 
@@ -1163,7 +1117,8 @@
                             <u>めまい</u>のため搬入された．<br>
                             6日前から微熱がありのどが痛く，風邪だと思ったが放置していた．<br>
                             今朝，目が覚めたら天井が<u>回る感じ</u>がして，立ち上がると倒れそうになった．寝ていてもめまいが強く，吐き気があり，動けない状態になった．<br>
-                            意識は清明．体温36.8℃．脈拍76/分，整．血圧140/84mmHg．<br>
+                            意識は清明．<br>
+                            体温36.8℃．脈拍76/分，整．血圧140/84mmHg．<br>
                             難聴はなく，<u>眼振</u>を認める．眼球運動に異常を認めない．頭部単純CTで異常を認めない．<br>
                             この患者で見られる眼振はどれか．</p>
                     </div>
@@ -1181,11 +1136,11 @@
                         
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_f"></li>
-                            <li class="ans_t"></li>
-                            <li class="ans_f"></li>
-                            <li class="ans_f"></li>
-                            <li class="ans_f"></li>
+                            <li class="ans_f">　</li>
+                            <li class="ans_t">　</li>
+                            <li class="ans_f">　</li>
+                            <li class="ans_f">　</li>
+                            <li class="ans_f">　</li>
                         </ol>
                     </div>
                 </div>
@@ -1355,7 +1310,7 @@
                         <ol type="a">
                             <li class="ans_f">耳硬化症</li>
                             <li class="ans_f">Ménière病</li>
-                            <li class="ans_t">老人性難聴</li>
+                            <li class="ans_t star">老人性難聴</li>
                             <li class="ans_f">突発性難聴</li>
                             <li class="ans_f">ムンプス難聴</li>
                         </ol>
@@ -1602,17 +1557,15 @@
 
                         <ol type="a">
                             <li class="ans_f">混合性難聴である．</li>
-                            <li class="ans_f">補充現象は陰性である．</li>
+                            <li class="ans_f star">補充現象は陰性である．</li>
                             <li class="ans_f">短時間曝露では発生しない．</li>
                             <li class="ans_f">曝露を中止すると回復する．</li>
-                            <li class="ans_t">高周波数騒音で発生しやすい．</li>
+                            <li class="ans_t star">高周波数騒音で発生しやすい．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-
-
 
                         <p class="q_answer_true">e</p>
 
@@ -1933,7 +1886,7 @@
                             <li class="ans_f">外リンパ瘻</li>
                             <li class="ans_f">前庭神経炎</li>
                             <li class="ans_f">突発性難聴</li>
-                            <li class="ans_t">中毒性平衡障害</li>
+                            <li class="ans_t star">中毒性平衡障害</li>
                         </ol>
                     </div>
                 </div>
@@ -2075,7 +2028,7 @@
 
         <div>
             <ol>
-                <li><a href=""></a></li>
+                <!-- <li><a href=""></a></li> -->
             </ol>
         </div>
     </div>
@@ -2164,467 +2117,49 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "v" + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    if (date < 10) {
-        date = '0'+ date;
-    }
-
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    var printDate = year + month + date;
-
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
-    
-
-    var title_date = title + "_" + printDate;
-    $(document).attr("title", title_date);
+$(function(){
 
 
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
+    $('#inner_ear_malformation h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.inner_ear_malformation)').slideToggle(100);
     });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-
-        $('#q li:has(a.all)').toggle();
-        $('#q li:has(a.untag)').toggle();
-        $('#q li:has(a.done)').toggle();
-        $('#q li:has(a.pri)').toggle();
-        $('#q li:has(a.req)').toggle();
-        $('#q li:has(a.qb)').toggle();
-        $('#q li:has(a.110)').toggle();
-        $('#q li:has(a.111)').toggle();
-        $('#q li:has(a.info)').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
-
-    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
-                
-
-    $('li.nav-item >a.mnemonics').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.mnemonics)').slideToggle(100);
-    });
-    $('li.nav-item >a.fig').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.fig)').slideToggle(100);
-    });
-
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-    var n_mnemo = $('div.mnemonics').size();
-    var n_fig = $('div.fig').size();
-
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-    $('span.q_alert_mnemo_n').html(n_mnemo);
-    $('span.q_alert_fig_n').html(n_fig);
-
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
+    $('#inner_ear_malformation').find('small > code').html(
+        $('div.inner_ear_malformation.star').size() + '* ' +
+        $('div.inner_ear_malformation > .card > .mis').size() + '+' +
+        $('div.inner_ear_malformation > .card > .cau').size() + '/' +
+        $('div.inner_ear_malformation').size()
+    );
 
 
 
+    $('#large_vestibular_aqueduct_syndrome h2').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.large_vestibular_aqueduct_syndrome)').slideToggle(100);
+    });
+    $('#large_vestibular_aqueduct_syndrome').find('small > code').html(
+        $('div.large_vestibular_aqueduct_syndrome.star').size() + '* ' +
+        $('div.large_vestibular_aqueduct_syndrome > .card > .mis').size() + '+' +
+        $('div.large_vestibular_aqueduct_syndrome > .card > .cau').size() + '/' +
+        $('div.large_vestibular_aqueduct_syndrome').size()
+    );
 
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#Meniere h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Meniere)').slideToggle(100);
+        $('#q div.card-group:not(.Meniere)').slideToggle(100);
     });
     
-    $('#Meniere').find('code').html(
+    $('#Meniere').find('small > code').html(
+        $('div.Meniere.star').size() + '* ' +
         $('div.Meniere > .card > .mis').size() + '+' +
         $('div.Meniere > .card > .cau').size() + '/' +
         $('div.Meniere').size()
@@ -2633,10 +2168,11 @@ $('document').ready(function(){
 
     $('#BPPV h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.BPPV)').slideToggle(100);
+        $('#q div.card-group:not(.BPPV)').slideToggle(100);
     });
     
-    $('#BPPV').find('code').html(
+    $('#BPPV').find('small > code').html(
+        $('div.BPPV.star').size() + '* ' +
         $('div.BPPV > .card > .mis').size() + '+' +
         $('div.BPPV > .card > .cau').size() + '/' +
         $('div.BPPV').size()
@@ -2645,10 +2181,11 @@ $('document').ready(function(){
 
     $('#VN h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.VN)').slideToggle(100);
+        $('#q div.card-group:not(.VN)').slideToggle(100);
     });
     
-    $('#VN').find('code').html(
+    $('#VN').find('small > code').html(
+        $('div.VN.star').size() + '* ' +
         $('div.VN > .card > .mis').size() + '+' +
         $('div.VN > .card > .cau').size() + '/' +
         $('div.VN').size()
@@ -2657,10 +2194,11 @@ $('document').ready(function(){
 
     $('#SSHL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.SSHL)').slideToggle(100);
+        $('#q div.card-group:not(.SSHL)').slideToggle(100);
     });
     
-    $('#SSHL').find('code').html(
+    $('#SSHL').find('small > code').html(
+        $('div.SSHL.star').size() + '* ' +
         $('div.SSHL > .card > .mis').size() + '+' +
         $('div.SSHL > .card > .cau').size() + '/' +
         $('div.SSHL').size()
@@ -2669,10 +2207,11 @@ $('document').ready(function(){
 
     $('#ARHL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ARHL)').slideToggle(100);
+        $('#q div.card-group:not(.ARHL)').slideToggle(100);
     });
     
-    $('#ARHL').find('code').html(
+    $('#ARHL').find('small > code').html(
+        $('div.ARHL.star').size() + '* ' +
         $('div.ARHL > .card > .mis').size() + '+' +
         $('div.ARHL > .card > .cau').size() + '/' +
         $('div.ARHL').size()
@@ -2681,10 +2220,11 @@ $('document').ready(function(){
 
     $('#NIHL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NIHL)').slideToggle(100);
+        $('#q div.card-group:not(.NIHL)').slideToggle(100);
     });
     
-    $('#NIHL').find('code').html(
+    $('#NIHL').find('small > code').html(
+        $('div.NIHL.star').size() + '* ' +
         $('div.NIHL > .card > .mis').size() + '+' +
         $('div.NIHL > .card > .cau').size() + '/' +
         $('div.NIHL').size()
@@ -2693,10 +2233,11 @@ $('document').ready(function(){
 
     $('#NOHL h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.NOHL)').slideToggle(100);
+        $('#q div.card-group:not(.NOHL)').slideToggle(100);
     });
     
-    $('#NOHL').find('code').html(
+    $('#NOHL').find('small > code').html(
+        $('div.NOHL.star').size() + '* ' +
         $('div.NOHL > .card > .mis').size() + '+' +
         $('div.NOHL > .card > .cau').size() + '/' +
         $('div.NOHL').size()
@@ -2705,10 +2246,11 @@ $('document').ready(function(){
 
     $('#PLF h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PLF)').slideToggle(100);
+        $('#q div.card-group:not(.PLF)').slideToggle(100);
     });
     
-    $('#PLF').find('code').html(
+    $('#PLF').find('small > code').html(
+        $('div.PLF.star').size() + '* ' +
         $('div.PLF > .card > .mis').size() + '+' +
         $('div.PLF > .card > .cau').size() + '/' +
         $('div.PLF').size()
@@ -2717,10 +2259,11 @@ $('document').ready(function(){
 
     $('#Alport h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Alport)').slideToggle(100);
+        $('#q div.card-group:not(.Alport)').slideToggle(100);
     });
     
-    $('#Alport').find('code').html(
+    $('#Alport').find('small > code').html(
+        $('div.Alport.star').size() + '* ' +
         $('div.Alport > .card > .mis').size() + '+' +
         $('div.Alport > .card > .cau').size() + '/' +
         $('div.Alport').size()
@@ -2729,10 +2272,11 @@ $('document').ready(function(){
 
     $('#mumps h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.mumps)').slideToggle(100);
+        $('#q div.card-group:not(.mumps)').slideToggle(100);
     });
     
-    $('#mumps').find('code').html(
+    $('#mumps').find('small > code').html(
+        $('div.mumps.star').size() + '* ' +
         $('div.mumps > .card > .mis').size() + '+' +
         $('div.mumps > .card > .cau').size() + '/' +
         $('div.mumps').size()
@@ -2741,10 +2285,11 @@ $('document').ready(function(){
 
     $('#ototoxicity h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ototoxicity)').slideToggle(100);
+        $('#q div.card-group:not(.ototoxicity)').slideToggle(100);
     });
     
-    $('#ototoxicity').find('code').html(
+    $('#ototoxicity').find('small > code').html(
+        $('div.ototoxicity.star').size() + '* ' +
         $('div.ototoxicity > .card > .mis').size() + '+' +
         $('div.ototoxicity > .card > .cau').size() + '/' +
         $('div.ototoxicity').size()
@@ -2759,6 +2304,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('small > code').html(
+        $('div..star').size() + '* ' +
         $('div. > .card > .mis').size() + '+' +
         $('div. > .card > .cau').size() + '/' +
         $('div.').size()

@@ -7,7 +7,7 @@
  * @Last modified time: 2018-12-01 16:03:03
  */
 
-// 4.2.1
+// 4.2.2
 
 $(function(){
 
@@ -132,7 +132,7 @@ $(function(){
         $(this).find('.ans_t').toggleClass('correct-show');
         $(this).find('.ans_f').toggleClass('correct-hide');
 
-        // $(this).find('li.star').toggleClass('span.glyphicon-stars');
+        $(this).find('li.star > span.opt_star').toggle();
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
@@ -147,7 +147,10 @@ $(function(){
     $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
 
     // star
-    $('li.star').parent().parent().parent().find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-star"></span></span>');
+    // $('li.star').parent().parent().parent().find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-star"></span></span>');
+    $('li.star').parent().parent().parent().parent().addClass('star');
+    $('li.star').append(' <span class="glyphicon glyphicon-star opt_star"> </span>');
+    $('.opt_star').hide();
     $('div.star').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-star"></span></span>');
 
 
@@ -213,10 +216,6 @@ $(function(){
         $('div.card-group').show();
         $('div.card-group:not(.111)').slideToggle(100);
     });
-    $('li.nav-item >a.112').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.112)').slideToggle(100);
-    });
     $('li.nav-item >a.info').click(function(){
         $('div.card-group').show();
         $('div.card-group:not(.info)').slideToggle(100);
@@ -229,10 +228,16 @@ $(function(){
         // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
     });
 
+    $('#q ul.nav li.nav-item:has(a.111)').after('<li class="nav-item"><a class="nav-link 112"><span class="badge badge-pill q_alert_112_n"></span><br>112</a></li>');
     $('#q ul.nav').append('<li class="nav-item"><a class="nav-link mnemonics"><span class="badge badge-pill q_alert_mnemo_n"></span><br>Mnemo</a></li>');
 
     $('#q ul.nav').append('<li class="nav-item"><a class="nav-link fig"><span class="badge badge-pill q_alert_fig_n"></span><br>Fig</a></li>');
+    $('#q ul.nav').append('<li class="nav-item"><a class="nav-link star"><span class="badge badge-pill q_alert_star_n"></span><br>Star</a></li>');
 
+    $('li.nav-item >a.112').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.112)').slideToggle(100);
+    });
 
     $('li.nav-item >a.mnemonics').click(function(){
         $('div.card-group').show();
@@ -242,6 +247,14 @@ $(function(){
         $('div.card-group').show();
         $('div.card-group:not(.fig)').slideToggle(100);
     });
+    $('li.nav-item >a.star').click(function(){
+        $('div.card-group').show();
+        $('div.card-group:not(.star)').slideToggle(100);
+    });
+
+
+
+    
 
 
     var n_mis = $('div.mis').size();
@@ -259,6 +272,7 @@ $(function(){
     var n_info = $('div.info').size();
     var n_mnemo = $('div.mnemonics').size();
     var n_fig = $('div.fig').size();
+    var n_star = $('div.star').size();
 
 
     var n_done = n_mis + n_cau + n_rev + n_hit;
@@ -292,6 +306,7 @@ $(function(){
     $('span.q_alert_info_n').html(n_info);
     $('span.q_alert_mnemo_n').html(n_mnemo);
     $('span.q_alert_fig_n').html(n_fig);
+    $('span.q_alert_star_n').html(n_star);
 
 
     $('span.q_alert_mis_per').html(per_mis);
@@ -338,6 +353,80 @@ $(function(){
     $('#q div.progress-bar').css('height', '18px');
 
 
-    
+    // $('div.section').each(function(){
+    // 	var id = $(this).attr('id');
+
+    // 	$(this).find('h2').click(function(){
+    //     	$('.card-group').show();
+    //     	$('#q div.card-group:not(.'+ id + ')').slideToggle(100);
+
+    // 	};
+
+    // });
+
+    // $('.section:not(#key, #app, #q) .page-header').after(
+    // 	'<div class="progress" style="height: 3px">'
+    // 	+'<div class="progress-bar progress-mis" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>'
+    // 	+'<div class="progress-bar progress-cau" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>'
+    // 	+'<div class="progress-bar progress-rev" role="progressbar" style="height: 3px;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>'
+    // 	+'<div class="progress-bar progress-hit" role="progressbar" style="height: 3px; background-color: white" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>'
+    // 	+'</div>'
+    // );
+
+
+
+
+    $('div.section').each(function(){
+    	var id = $(this).attr('id');
+
+    });
+
+
+    $('a[href]').each(function(index){
+    	var link = $(this).attr('href');
+
+
+    	if (link == '' || link == '#key' || link == '#def' || link == '#cls' || link == '#eti' || link == '#epi' || link == '#ss' || link == '#ex' || link == '#dx' || link == '#rx' || link == '#app' || link == '#q') {
+
+    	} else if (link == 'https://qb.medilink-study.com/#/MyPage') {
+
+    	} else {
+    		$('#ref ol').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
+
+    	}
+    });
+
+
+    $('img').each(function(index){
+    	var link = $(this).attr('src');
+
+    	if (link == '../../scripts/img/favicon.png') {
+
+    	} else {
+    		$('#ref ol').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
+    	}
+    });
+
+
+
+    $('iframe').each(function(index){
+    	var link = $(this).attr('src');
+
+    	if (link == '../../scripts/img/favicon.png') {
+
+    	} else {
+    		$('#ref ol').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
+    	}
+    });
+
+
+
+    $('#ref ol').hide();
+    $('#ref .page-header').click(function(){
+    	$('#ref ol').toggle();
+    });
+
+
+   
 
 });

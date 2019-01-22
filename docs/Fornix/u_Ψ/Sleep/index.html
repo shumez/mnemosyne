@@ -1,15 +1,22 @@
 <!--
-@Author: shumez
-@Date:   2018-08-06 16:41:35
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-11-13 10:56:33
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/u_Ψ/Sleep
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-08-06 20:15:0
+Modified: 	2019-01-22 21:47:11
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+
 04.01.34    18 11 11    .cau size
 04.01.33    18 11 06    .mis size
 04.01.32    18 11 01    v..., print date 2 digit
@@ -108,8 +115,8 @@
     <title>Sleep</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-13 10:56:56" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.34">
+    <meta name="revised" content="2019-01-22 20:35:36" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -128,129 +135,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul, li.list-group-item ol{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin: 0px 0px 0px 0px}
-            a[href]:after {content: none !important;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-
-            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
-            h2{font-size: 14px}
-            h3{font-size: 13px}
-            h4,h5{font-size: 12px}
-            h6{font-size: 11px}
-            p, a, li, th, td{font-size: 9px}
-
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
-            .page-header small code{
-                border-color: black;
-                border-width: : 0.4px 0.4px 0.4px 0.4px;
-            }
-            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 11px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 0.5px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -387,7 +280,7 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <ul class="list-group">
                     <li class="list-group-item">
-                        Circadian rhythm: <u>24-25hrs</u>
+                        Circadian rhythm: 24-25hrs
                     </li>
                     <li class="list-group-item">
                         REM: 
@@ -457,7 +350,7 @@
                     <li class="list-group-item">
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
-                            <li>入眠後に 周期性四肢運動障害
+                            <li>入眠後に 周期性四肢運動障害 不随意運動
                                 <ul>
                                     <li><u>足関節と膝の屈曲</u></li>
                                     <li><u>足趾の背屈</u></li>
@@ -476,9 +369,11 @@
                         <ul>
                             <li><u>DAergic</u>
                                 <ul>
-                                    <li><u>Pramipexole プラミペキソール</u></li>
+                                    <li>Pramipexole <u>プラミペキソール</u></li>
                                 </ul>
                             </li>
+                            <li>GABA誘導体</li>
+                            <li>BZD</li>
                         </ul>
                     </li>
                 </ul>
@@ -491,6 +386,21 @@
                 <div class="page-header">
                     <h2>PLMD <small>周期性四肢運動障害</small> <small><code></code></small></h2>
                 </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <h6>Symptom</h6>
+                        <ul>
+                            <li>睡眠中 四肢の周期的な不随意運動</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h6>Treatment</h6>
+                        <ul>
+                            <li>プラミペキソール</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -513,7 +423,8 @@
                     <h2>SAS <small> </small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <h3 id="OSAS">OSAS <small><code></code></small></h3>
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
@@ -529,10 +440,13 @@
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
                     </li> -->
-                    <!-- <li class="list-group-item">
+                    <li class="list-group-item">
                         <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
+                        <ul>
+                            <li>CPAP</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         <!-- </div>
 
@@ -570,16 +484,26 @@
                         <ul>
                             <li>中枢神経刺激薬: 
                                 <ul>
-                                    <li><u>Methylphenidate</u></li>
+                                    <li><u>メチルフェニデート Methylphenidate</u></li>
                                 </ul>
                             </li>
                             <li>Antidepressant: 
                                 <ul>
-                                    <li>TCA Imipramine</li>
-                                    <li>REM睡眠を防ぐ</li>
+                                    <li><u>TCA</u> Imipramine<br>
+                                        REM睡眠を防ぐ</li>
                                 </ul>
                             </li>
                         </ul>
+                    </li>
+                </ul>
+
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        カタプレキシー: 情動脱力発作
+                    </li>
+                    <li class="list-group-item">
+                        カタレプシー: 
                     </li>
                 </ul>
 
@@ -694,9 +618,9 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>夢中遊行症</th>
-                            <th>REM睡眠行動障害</th>
+                            <th width="20%"></th>
+                            <th width="40%">夢中遊行症</th>
+                            <th width="40%">REM睡眠行動障害</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -707,18 +631,18 @@
                         </tr>
                         <tr>
                             <th>睡眠段階</th>
-                            <td>徐波睡眠（non-REM睡眠）</td>
+                            <td><u>non-REM睡眠</u> (徐波睡眠)</td>
                             <td>REM睡眠</td>
                         </tr>
                         <tr>
                             <th>時間</th>
                             <td>睡眠の最初の3時間</td>
-                            <td>朝方に多い</td>
+                            <td>朝方</td>
                         </tr>
                         <tr>
                             <th>刺激による覚醒</th>
-                            <td>覚醒困難で，自分の言動を覚えていない．</td>
-                            <td>速やかに覚醒し夢の内容を想起可能．</td>
+                            <td>覚醒困難で，<u>自分の言動を覚えていない</u></td>
+                            <td>速やかに覚醒し<u>夢の内容を想起可能</u></td>
                         </tr>
                     </tbody>
                 </table>
@@ -746,7 +670,9 @@
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
                             <li><u>Non-REM</u></li>
-                            <li>入眠後 + <u>3hrs</u> で出現</li>
+                            <li>入眠後 + <u>≤ 3hrs</u> で出現</li>
+                            <li>急に起き上がって, 意味のある行動<br>
+                                e.g., 徘徊, 扉を開ける</li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -762,15 +688,15 @@
                 
             </div>
 
-        <!-- </div>
+        </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6"> -->
+        <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="night_terror">
                 <div class="page-header">
                     <h2>Night Terror <small>夜驚症</small> <small><code></code></small></h2>
                 </div>
 
-                <!-- <ul class="list-group"> -->
+                <ul class="list-group">
                     <!-- <li class="list-group-item">
                         <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
                     </li> -->
@@ -781,7 +707,8 @@
                         <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
                         <ul>
                             <li><u>Non-REM</u></li>
-                            <li>入眠後 + <u>3hr</u></li>
+                            <li>入眠後 + <u>≤ 3hr</u></li>
+                            <li>急に悲鳴を上げながら, 起き上がる, 自律神経症状</li>
                         </ul>
                     </li>
                     <!-- <li class="list-group-item">
@@ -797,7 +724,10 @@
             </div>
         </div>
 
+    </div>
 
+
+    <div class="row">
 
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="section" id="RBD">
@@ -837,39 +767,6 @@
 
 
 
-
-
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
-                <div class="page-header">
-                    <h2> <small> </small> <small><code></code></small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
-        </div>
     </div>
 
 
@@ -1056,7 +953,7 @@
 
                         <ol type="a">
                             <li class="ans_t">高照度光によって変化する．</li>
-                            <li class="ans_t">深部体温の日内変動が指標となる．</li>
+                            <li class="ans_t star">深部体温の日内変動が指標となる．</li>
                             <li class="ans_f">成人における周期は約27時間である．</li>
                             <li class="ans_f">加齢によって後退し睡眠時間帯が遅くなる．</li>
                             <li class="ans_f">時差への適応は，後退よりも前進させる方が容易である．</li>
@@ -1066,7 +963,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         
                         <p class="q_answer_true">a b</p>
@@ -1170,11 +1067,11 @@
                         <p>むずむず脚症候群について正しいのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f">レム〈REM〉睡眠と関係が深い．</li>
+                            <li class="ans_f star">レム〈REM〉睡眠と関係が深い．</li>
                             <li class="ans_f">ドパミン遮断薬が有効である．</li>
                             <li class="ans_f">加齢とともに患者数は減少する．</li>
                             <li class="ans_f">脚の異常感覚は運動によって改善しない．</li>
-                            <li class="ans_t">足関節などの不随意運動が入眠後にみられる．</li>
+                            <li class="ans_t star">足関節などの不随意運動が入眠後にみられる．</li>
                         </ol>
                     </div>
                 </div>
@@ -1280,16 +1177,16 @@
                         <ol type="a">
                             <li class="ans_f">抗てんかん薬</li>
                             <li class="ans_t">精神刺激薬</li>
-                            <li class="ans_t">三環系抗うつ薬</li>
+                            <li class="ans_t star">三環系抗うつ薬</li>
                             <li class="ans_f">持続的気道陽圧法</li>
-                            <li class="ans_f">高照度光照射</li>
+                            <li class="ans_f star">高照度光照射</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_dx">ナルコレプシー</p>
 
@@ -1335,10 +1232,10 @@
 
                         <ol type="a">
                             <li class="ans_f">上司から厳しく注意してもらう．</li>
-                            <li class="ans_f">抗うつ薬を投与する．</li>
+                            <li class="ans_f star">抗うつ薬を投与する．</li>
                             <li class="ans_f">ハロペリドールを投与する．</li>
                             <li class="ans_t">睡眠導入薬を投与する．</li>
-                            <li class="ans_t">高照度光療法を行う．</li>
+                            <li class="ans_t star">高照度光療法を行う．</li>
                         </ol>
                     </div>
                 </div>
@@ -1412,7 +1309,7 @@
                         <ol type="a">
                             <li class="ans_f">夜驚症</li>
                             <li class="ans_f">悪夢障害</li>
-                            <li class="ans_t">夢中遊行症</li>
+                            <li class="ans_t star">夢中遊行症</li>
                             <li class="ans_f">レム〈REM〉睡眠行動障害</li>
                             <li class="ans_f">睡眠覚醒スケジュール障害</li>
                         </ol>
@@ -1421,7 +1318,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <ul>
                             <li>睡眠障害</li>
@@ -1508,7 +1405,7 @@
                         <ol type="a">
                             <li class="ans_f">せん妄</li>
                             <li class="ans_f">悪夢障害</li>
-                            <li class="ans_t">夢中遊行症</li>
+                            <li class="ans_t star">夢中遊行症</li>
                             <li class="ans_f">ナルコレプシー</li>
                             <li class="ans_f">睡眠覚醒スケジュール障害</li>
                         </ol>
@@ -1554,7 +1451,7 @@
                             <li class="ans_f">Alzheimer型認知症に移行する可能性が高い．</li>
                             <li class="ans_f">徐波睡眠相に一致して行動異常が出現する．</li>
                             <li class="ans_f">妻に対する無意識の敵意が原因である．</li>
-                            <li class="ans_t">寝室環境の調整が必要である．</li>
+                            <li class="ans_t star">寝室環境の調整が必要である．</li>
                             <li class="ans_f">過眠を伴うことが多い．</li>
                         </ol>
                     </div>
@@ -1562,7 +1459,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_dx">REM睡眠行動障害 REM sleep behavior disorder</p>
 
@@ -1614,7 +1511,7 @@
                         <ol type="a">
                             <li class="ans_f">深睡眠は朝方に増加する．</li>
                             <li class="ans_f">深睡眠期に夢をみることが多い．</li>
-                            <li class="ans_f">REM睡眠は乳幼児では少ない．</li>
+                            <li class="ans_f star">REM睡眠は乳幼児では少ない．</li>
                             <li class="ans_t">REM睡眠では寝返りを打たない．</li>
                             <li class="ans_f">総睡眠時間は青年期以降一定である．</li>
                         </ol>
@@ -1666,8 +1563,8 @@
                             <li class="ans_t">REM睡眠時に夢をみることが多い．</li>
                             <li class="ans_f">老人の不眠では入眠困難が特徴的である．</li>
                             <li class="ans_f">躁病では睡眠障害は少ない．</li>
-                            <li class="ans_f">摂食障害では睡眠・覚醒リズム障害が多い．</li>
-                            <li class="ans_t">うつ病では熟眠感が失われることが多い．</li>
+                            <li class="ans_f star">摂食障害では睡眠・覚醒リズム障害が多い．</li>
+                            <li class="ans_t star">うつ病では熟眠感が失われることが多い．</li>
                         </ol>
                     </div>
                 </div>
@@ -1707,7 +1604,7 @@
 
                         <ol type="a">
                             <li class="ans_f">入眠直後に多い．</li>
-                            <li class="ans_t">高齢者では減少する．</li>
+                            <li class="ans_t star">高齢者では減少する．</li>
                             <li class="ans_f">抗重力筋の緊張が亢進する．</li>
                             <li class="ans_f">脳波で高振幅徐波を認める．</li>
                             <li class="ans_f">緩徐な眼球運動が特徴である．</li>
@@ -1717,7 +1614,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1788,18 +1685,18 @@
 
 
                         <ol type="a">
-                            <li class="ans_f">ナルコレプシーではカタレプシーが起こる．</li>
+                            <li class="ans_f star">ナルコレプシーではカタレプシーが起こる．</li>
                             <li class="ans_f">うつ病の睡眠障害は悪夢が特徴である．</li>
                             <li class="ans_t">睡眠時無呼吸症候群では昼間の眠気を伴う．</li>
                             <li class="ans_f">夢中遊行症は男子より女子に多い．</li>
-                            <li class="ans_f">夜驚症はREM睡眠期に起こる．</li>
+                            <li class="ans_f star">夜驚症はREM睡眠期に起こる．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1830,11 +1727,11 @@
                         <p>睡眠障害と治療薬の組合せで誤っているのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_t">ナルコレプシー － メチルフェニデート</li>
+                            <li class="ans_t star">ナルコレプシー － メチルフェニデート</li>
                             <li class="ans_f">睡眠時無呼吸症候群 － ジアゼパム</li>
                             <li class="ans_t">睡眠覚醒スケジュール障害 － メラトニン</li>
-                            <li class="ans_t">むずむず脚症候群 － プラミペキソール</li>
-                            <li class="ans_t">レム〈REM〉睡眠行動障害 － クロナゼパム</li>
+                            <li class="ans_t star">むずむず脚症候群 － プラミペキソール</li>
+                            <li class="ans_t star">レム〈REM〉睡眠行動障害 － クロナゼパム</li>
                         </ol>
                     </div>
                 </div>
@@ -1971,439 +1868,16 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "v" + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    if (date < 10) {
-        date = '0'+ date;
-    }
-
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    var printDate = year + month + date;
-
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
-    
-
-    var title_date = title + "_" + printDate;
-    $(document).attr("title", title_date);
+$(function(){
 
 
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-
-        $('#q li:has(a.all)').toggle();
-        $('#q li:has(a.untag)').toggle();
-        $('#q li:has(a.done)').toggle();
-        $('#q li:has(a.pri)').toggle();
-        $('#q li:has(a.req)').toggle();
-        $('#q li:has(a.qb)').toggle();
-        $('#q li:has(a.110)').toggle();
-        $('#q li:has(a.111)').toggle();
-        $('#q li:has(a.info)').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#INTRO h2').click(function(){
@@ -2411,6 +1885,7 @@ $('document').ready(function(){
         $('div.card-group:not(.INTRO)').slideToggle(100);
     });
     $('#INTRO').find('small > code').html(
+        $('div.INTRO.star').size() + '* ' +
         $('div.INTRO > .card > .mis').size() + '+' +
         $('div.INTRO > .card > .cau').size() + '/' +
         $('div.INTRO').size()
@@ -2423,6 +1898,7 @@ $('document').ready(function(){
         $('div.card-group:not(.PHYSIO)').slideToggle(100);
     });
     $('#PHYSIO').find('small > code').html(
+        $('div.PHYSIO.star').size() + '* ' +
         $('div.PHYSIO > .card > .mis').size() + '+' +
         $('div.PHYSIO > .card > .cau').size() + '/' +
         $('div.PHYSIO').size()
@@ -2435,6 +1911,7 @@ $('document').ready(function(){
         $('div.card-group:not(.insomnia)').slideToggle(100);
     });
     $('#insomnia').find('small > code').html(
+        $('div.insomnia.star').size() + '* ' +
         $('div.insomnia > .card > .mis').size() + '+' +
         $('div.insomnia > .card > .cau').size() + '/' +
         $('div.insomnia').size()
@@ -2447,6 +1924,7 @@ $('document').ready(function(){
         $('div.card-group:not(.RLS)').slideToggle(100);
     });
     $('#RLS').find('small > code').html(
+        $('div.RLS.star').size() + '* ' +
         $('div.RLS > .card > .mis').size() + '+' +
         $('div.RLS > .card > .cau').size() + '/' +
         $('div.RLS').size()
@@ -2458,6 +1936,7 @@ $('document').ready(function(){
         $('div.card-group:not(.PLMD)').slideToggle(100);
     });
     $('#PLMD').find('small > code').html(
+        $('div.PLMD.star').size() + '* ' +
         $('div.PLMD > .card > .mis').size() + '+' +
         $('div.PLMD > .card > .cau').size() + '/' +
         $('div.PLMD').size()
@@ -2470,6 +1949,7 @@ $('document').ready(function(){
         $('div.card-group:not(.SAS)').slideToggle(100);
     });
     $('#SAS').find('small > code').html(
+        $('div.SAS.star').size() + '* ' +
         $('div.SAS > .card > .mis').size() + '+' +
         $('div.SAS > .card > .cau').size() + '/' +
         $('div.SAS').size()
@@ -2482,6 +1962,7 @@ $('document').ready(function(){
         $('div.card-group:not(.narcolepsy)').slideToggle(100);
     });
     $('#narcolepsy').find('small > code').html(
+        $('div.narcolepsy.star').size() + '* ' +
         $('div.narcolepsy > .card > .mis').size() + '+' +
         $('div.narcolepsy > .card > .cau').size() + '/' +
         $('div.narcolepsy').size()
@@ -2493,6 +1974,7 @@ $('document').ready(function(){
         $('div.card-group:not(.recurrent_hypersomnia)').slideToggle(100);
     });
     $('#recurrent_hypersomnia').find('small > code').html(
+        $('div.recurrent_hypersomnia.star').size() + '* ' +
         $('div.recurrent_hypersomnia > .card > .mis').size() + '+' +
         $('div.recurrent_hypersomnia > .card > .cau').size() + '/' +
         $('div.recurrent_hypersomnia').size()
@@ -2504,6 +1986,7 @@ $('document').ready(function(){
         $('div.card-group:not(.circadian_rhythm_sleep_disorder)').slideToggle(100);
     });
     $('#circadian_rhythm_sleep_disorder').find('small > code').html(
+        $('div.circadian_rhythm_sleep_disorder.star').size() + '* ' +
         $('div.circadian_rhythm_sleep_disorder > .card > .mis').size() + '+' +
         $('div.circadian_rhythm_sleep_disorder > .card > .cau').size() + '/' +
         $('div.circadian_rhythm_sleep_disorder').size()
@@ -2516,6 +1999,7 @@ $('document').ready(function(){
         $('div.card-group:not(.DSPS)').slideToggle(100);
     });
     $('#DSPS').find('small > code').html(
+        $('div.DSPS.star').size() + '* ' +
         $('div.DSPS > .card > .mis').size() + '+' +
         $('div.DSPS > .card > .cau').size() + '/' +
         $('div.DSPS').size()
@@ -2528,6 +2012,7 @@ $('document').ready(function(){
         $('div.card-group:not(.somnambulism)').slideToggle(100);
     });
     $('#somnambulism').find('small > code').html(
+        $('div.somnambulism.star').size() + '* ' +
         $('div.somnambulism > .card > .mis').size() + '+' +
         $('div.somnambulism > .card > .cau').size() + '/' +
         $('div.somnambulism').size()
@@ -2539,6 +2024,7 @@ $('document').ready(function(){
         $('div.card-group:not(.night_terror)').slideToggle(100);
     });
     $('#night_terror').find('small > code').html(
+        $('div.night_terror.star').size() + '* ' +
         $('div.night_terror > .card > .mis').size() + '+' +
         $('div.night_terror > .card > .cau').size() + '/' +
         $('div.night_terror').size()
@@ -2551,6 +2037,7 @@ $('document').ready(function(){
         $('div.card-group:not(.RBD)').slideToggle(100);
     });
     $('#RBD').find('small > code').html(
+        $('div.RBD.star').size() + '* ' +
         $('div.RBD > .card > .mis').size() + '+' +
         $('div.RBD > .card > .cau').size() + '/' +
         $('div.RBD').size()
@@ -2563,6 +2050,7 @@ $('document').ready(function(){
         $('div.card-group:not(.REM)').slideToggle(100);
     });
     $('#REM').find('small > code').html(
+        $('div.REM.star').size() + '* ' +
         $('div.REM > .card > .mis').size() + '+' +
         $('div.REM > .card > .cau').size() + '/' +
         $('div.REM').size()
@@ -2574,9 +2062,10 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').slideToggle(100);
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('small > code').html(
+        $('div..star').size() + '* ' +
         $('div. > .card > .mis').size() + '+' +
         $('div. > .card > .cau').size() + '/' +
         $('div.').size()

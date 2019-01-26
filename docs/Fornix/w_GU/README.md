@@ -1,14 +1,14 @@
 <!--
-@Author: shumez
-@Date:   2018-05-23 13:54:05
-@Project: proj
-@Filename: README.md
-@Last modified by:   shumez
-@Last modified time: 2018-05-24 13:36:84
+Filename: 	README.md
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/w_GU
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-06-15 20:45:4
+Modified: 	2019-01-26 11:23:51
+-----
+Copyright (c) 2019 shumez
 -->
 
-
-# proj
+# w. GU
 
 
 [docs] / [DOCS.md]

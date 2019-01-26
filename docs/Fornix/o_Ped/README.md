@@ -1,14 +1,14 @@
 <!--
-@Author: shumez
-@Date:   2018-05-23 13:54:05
-@Project: proj
-@Filename: README.md
-@Last modified by:   shumez
-@Last modified time: 2018-05-24 13:36:84
+Filename: 	README.md
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/o_Ped
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-06-15 20:43:9
+Modified: 	2019-01-26 11:22:0
+-----
+Copyright (c) 2019 shumez
 -->
 
-
-# proj
+# o. Ped
 
 
 [docs] / [DOCS.md]

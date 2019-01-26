@@ -1,14 +1,14 @@
 <!--
-@Author: shumez
-@Date:   2018-05-23 13:54:05
-@Project: proj
-@Filename: README.md
-@Last modified by:   shumez
-@Last modified time: 2018-05-24 13:36:84
+Filename: 	README.md
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/q_GYN
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-06-15 20:43:4
+Modified: 	2019-01-26 11:22:25
+-----
+Copyright (c) 2019 shumez
 -->
 
-
-# proj
+# q. GYN
 
 
 [docs] / [DOCS.md]

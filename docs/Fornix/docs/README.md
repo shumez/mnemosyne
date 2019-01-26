@@ -1,14 +1,16 @@
 <!--
-Filename: 	README.md
-Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/t_Ortho
-Author: 	shumez <https://github.com/shumez>
-Created: 	2018-06-15 20:44:3
-Modified: 	2019-01-26 11:23:4
------
-Copyright (c) 2019 shumez
+@Author: shumez
+@Date:   2018-12-14 17:00:36
+@Project:
+@Filename: README.md
+@Last modified by:   shumez
+@Last modified time: 2018-12-14 17:00:36
 -->
 
-# t. Ortho
+
+# Docs
+
+[![cover](img/)][img]
 
 
 [docs] / [DOCS.md]
@@ -57,6 +59,7 @@ Copyright (c) 2019 shumez
 
 <!-- ------------------------------- -->
 [shumez]: shumez
+[img]: img/
 [DOCS.md]: docs/DOCS.md
 [docs]: docs/
 [CHANGELOG.md]: CHANGELOG.md

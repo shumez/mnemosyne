@@ -1,15 +1,20 @@
 <!--
-@Author: shumez
-@Date:   2018-08-03 17:00:01
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-11-16 17:43:01
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/y_Health/Statistics
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-08-03 18:35:0
+Modified: 	2019-01-27 17:11:43
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+
 04.01.36    18 11 17    mathjax
 04.01.35    18 11 14    nav .mnemonics .fig, #q 
 04.01.34    18 11 11    .cau size
@@ -110,8 +115,8 @@
     <title>Stat</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-11-16 17:43:11" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.36">
+    <meta name="revised" content="2019-01-27 14:38:02" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -135,133 +140,16 @@
 
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177); font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-        li.list-group-item ul, li.list-group-item ol{
-            padding-left: 18px
-        }
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin: 0px 0px 0px 0px}
-            a[href]:after {content: none !important;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-
-            h1.title{color: rgb(126, 64, 177); font-size: 15px;}
-            h2{font-size: 14px}
-            h3{font-size: 13px}
-            h4,h5{font-size: 12px}
-            h6{font-size: 11px}
-            p, a, li, th, td{font-size: 9px}
-
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 8px; margin-bottom: 2px; padding-top: 0px; padding-bottom: 0px; border-bottom: 0.5px solid;}
-            .page-header small code{
-                border-color: black;
-                border-width: : 0.4px 0.4px 0.4px 0.4px;
-            }
-            div.card{border-color: black; border-width: 0.5px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 0.5px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 11px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 0.5px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 0.5px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
 <!-- <nav class="navbar navbar-fixed-top nav-title"> -->
     <div class="page-header">
-        <h1 class="title">Stat <small></small></h1>
+        <h1 class="title">Statistics <small></small></h1>
         <!-- <h1 class="title hidden-sm-up">#tit</h1> -->
     </div>
 <!-- </nav> -->
@@ -309,14 +197,10 @@
                     <h2>Intro <small><code></code></small></h2>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-6">
+
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
                             <td rowspan="2">人口統計</td>
@@ -363,37 +247,17 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-    </div>
 
-    <div class="row">
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="env">
-                <div class="page-header">
-                    <h2>Env <small>社会環境</small> <small><code></code></small></h2>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="census">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="page-header">
-                    <h2>Census <small>国勢調査</small> <small><code></code></small></h2>
-                </div>
-            </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>人口静態統計(国勢調査) / 人口動態統計</h6>
+                <h6>人口静態統計 <small>国勢調査</small> / 人口動態統計</h6>
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>人口静態統計<br>
+                            <th width="20%"></th>
+                            <th width="40%">人口静態統計<br>
                                 (国勢調査)</th>
-                            <th>人口動態統計</th>
+                            <th width="40%">人口動態統計</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -403,8 +267,8 @@
                         </tr>
                         <tr>
                             <td>調査期間</td>
-                            <td>5y毎</td>
-                            <td>毎年</td>
+                            <td align="center">5y毎</td>
+                            <td align="center">毎年</td>
                         </tr>
                         <tr>
                             <td>調査内容</td>
@@ -439,15 +303,132 @@
                             <td></td>
                             <td>
                                 <ul>
-                                    <li>国内常住外国人</li>
+                                    <li><u>国内常住外国人</u></li>
                                 </ul>
                             </td>
                             <td></td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="section" id="env">
+                <div class="page-header">
+                    <h2>Env <small>社会環境</small> <small><code></code></small></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="census">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Census <small>国勢調査</small> <small><code></code></small></h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+
+                <h6>2014</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>総人口</th>
+                            <td align="right">1億2708万人</td>
+                            <td align="center">&darr;</td>
+                        </tr>
+                        <tr>
+                            <th>自然増減数</th>
+                            <td align="right">– 27万人</td>
+                            <td align="center">&darr;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h6>年齢3区分 2016</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>年少</th>
+                            <td>≤　14yo</td>
+                            <td align="right">12.4%</td>
+                            <td align="right">1582万</td>
+                            <td align="center">&darr;</td>
+                        </tr>
+                        <tr>
+                            <th>生産年齢</th>
+                            <td>15-64</td>
+                            <td align="right">60.3%</td>
+                            <td align="right">7656万</td>
+                            <td align="center">&darr;</td>
+                        </tr>
+                        <tr>
+                            <th>老年</th>
+                            <td>≥　65yo</td>
+                            <td align="right"><u>27.3%</u></td>
+                            <td align="right">3459万</td>
+                            <td align="center">&uarr;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>指数 2014</h6>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>年少人口指数</th>
+                            <td>\( \frac{\text{年少人口}}{\text{生産年齢人口}} \)</td>
+                            <td align="right">20.9</td>
+                            <td align="center">&rarr;</td>
+                        </tr>
+                        <tr>
+                            <th>老年人口指数</th>
+                            <td>\( \frac{\text{老年人口}}{\text{生産年齢人口}} \)</td>
+                            <td align="right">42.4</td>
+                            <td align="center">&uarr;</td>
+                        </tr>
+                        <tr>
+                            <th>従属人口指数</th>
+                            <td>\( \frac{\text{年少人口} + \text{老年人口}}{\text{生産年齢人口}} \)</td>
+                            <td align="right">63.2</td>
+                            <td align="center">&uarr;</td>
+                        </tr>
+                        <tr>
+                            <th>老年化指数</th>
+                            <td>\( \frac{\text{老年人口}}{\text{年少人口}}  \)</td>
+                            <td align="right">203.3</td>
+                            <td align="center">&uarr;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
             
 
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h6>人口転換</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/104E039.jpg" class="card-img-top img-fluid">
+                </div>
+
+                <h6>人口ピラミッド</h6>
+                <div class="card">
+                    <img src="https://qb.medilink-study.com/images/104E039_bas_010.jpg" class="card-img-top img-fluid">
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <table class="table table-condensed">
                     <thead>
                         <tr>
@@ -468,102 +449,40 @@
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>年齢3区分 2016</h6>
+                <a href="https://boxil.jp/mag/a3592/" target="_blank">
+                    <h6>2025年 問題</h6>
+                </a>
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th colspan="5"></th>
+                            <th></th>
+                            <th>2015</th>
+                            <th>2025</th>
+                            <th>2055</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th>年少</th>
-                            <td>0-14yo</td>
-                            <td>12.4%</td>
-                            <td>1582万人</td>
-                            <td>&darr;</td>
+                            <th>≥ 65yo</th>
+                            <td align="right">3,395万人<br>
+                                (26.8%)</td>
+                            <td align="right">3,657万人 <br>
+                                (<u>30.3%</u>)</td>
+                            <td align="right">3,626万人 <br>
+                                (39.4%)</td>
                         </tr>
                         <tr>
-                            <th>生産年齢</th>
-                            <td>15-64</td>
-                            <td>60.3%</td>
-                            <td>7656万人</td>
-                            <td>&darr;</td>
-                        </tr>
-                        <tr>
-                            <th>老年</th>
-                            <td>65yo-</td>
-                            <td><u>27.3%</u></td>
-                            <td>3459万人</td>
-                            <td>&uarr;</td>
+                            <th>≥ 75yo</th>
+                            <td align="right">1,646万人<br>
+                                (13.0%) </td>
+                            <td align="right">2,179万人<br>
+                                (18.1%)</td>
+                            <td align="right">2,401万人 <br>
+                                (26.1%)</td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>指数 2014</h6>
-                <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th colspan="4"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>年少人口指数</th>
-                            <td>
-                                \(
-                                    \frac{\text{年少人口}}{\text{生産年齢人口}} 
-                                \)
-                            </td>
-                            <td>20.9</td>
-                            <td>&rarr;</td>
-                        </tr>
-                        <tr>
-                            <th>老年人口指数</th>
-                            <td>
-                                \(
-                                    \frac{\text{老年人口}}{\text{生産年齢人口}}
-                                \)
-                            </td>
-                            <td>42.4</td>
-                            <td>&uarr;</td>
-                        </tr>
-                        <tr>
-                            <th>従属人口指数</th>
-                            <td>
-                                \(
-                                    \frac{\text{年少人口} + \text{老年人口}}{\text{生産年齢人口}} 
-                                \)
-                            </td>
-                            <td>63.2</td>
-                            <td>&uarr;</td>
-                        </tr>
-                        <tr>
-                            <th>老年化指数</th>
-                            <td>
-                                \(
-                                    \frac{\text{老年人口}}{\text{年少人口}} 
-                                \)
-                            </td>
-                            <td>203.3</td>
-                            <td>&uarr;</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <h6>人口転換</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/104E039.jpg" class="card-img-top img-fluid">
-                </div>
-
-                <h6>人口ピラミッド</h6>
-                <div class="card">
-                    <img src="https://qb.medilink-study.com/images/104E039_bas_010.jpg" class="card-img-top img-fluid">
-                </div>
+                <small><a href="https://www.mhlw.go.jp/shingi/2006/09/dl/s0927-8e.pdf">REF</a></small>
             </div>
 
         </div>
@@ -578,21 +497,15 @@
                 </div>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-9 col-md-6">
                 <h6>出生</h6>
                 <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <th>出生</th>
-                            <td></td>
-                            <td>1%</td>
+                            <th width="30%">出生</th>
+                            <td width="50%"></td>
+                            <td width="10%">1%</td>
+                            <td width="10%"></td>
                         </tr>
                         <tr>
                             <th>出生数</th>
@@ -649,21 +562,15 @@
                 </table>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="col-xs-12 col-sm-9 col-md-6">
                 <h6>死亡</h6>
                 <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <th>死亡</th>
-                            <td></td>
-                            <td>1%</td>
+                            <th width="30%">死亡</th>
+                            <td width="50%"></td>
+                            <td width="10%">1%</td>
+                            <td width="10%"></td>
                         </tr>
                         <tr>
                             <th>死亡数</th>
@@ -705,13 +612,17 @@
                 <h6>年齢階級別出生率</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/106E010_bas_010.jpg" class="card-img-top img-fluid">
-                    <div class="card-body">
+                </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
                         <ul>
-                            <li>2005 -: 30s前半</li>
+                            <li>2005 -: <u>30s前半</u></li>
                             <li>- 2005: 20s後半</li>
                         </ul>
-                    </div>
-                </div>
+                    </li>
+                </ul>
+
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -726,9 +637,7 @@
 
                 <ul class="list-group">
                     <li class="list-group-item">
-                        \(
-                            e_x = \frac{T_x}{l_x}
-                        \)
+                        \( e_x = \frac{T_x}{l_x} \)
                         <ul>
                             <li>\(e_x\): 平均余命</li>
                             <li>\(T_x\): 定常人口</li>
@@ -743,6 +652,16 @@
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/111B021_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        平均余命 :
+                        <ul>
+                            <li>M : 81.1yo</li>
+                            <li>F : 87.3yo</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
 
 
@@ -780,117 +699,244 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>順位</th>
+                            <th>#</th>
                             <th>死因</th>
                             <th>死亡数</th>
-                            <th>死亡率</th>
-                            <th>割合（％）</th>
+                            <!-- <th>死亡率</th> -->
+                            <th>%</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td align="right">1</td>
                             <td>悪性新生物</td>
-                            <td>370,346</td>
-                            <td>295.5</td>
-                            <td>28.7％</td>
+                            <td align="right">370,346</td>
+                            <!-- <td align="right">295.5</td> -->
+                            <td align="right"><u>28.7%</u></td>
                         </tr>
                         <tr>
                             <td align="right">2</td>
                             <td>心疾患</td>
-                            <td>196,113</td>
-                            <td>156.5</td>
-                            <td>15.2％</td>
+                            <td align="right">196,113</td>
+                            <!-- <td align="right">156.5</td> -->
+                            <td align="right">15.2%</td>
                         </tr>
                         <tr>
                             <td align="right">3</td>
                             <td>肺炎</td>
-                            <td>120,953</td>
-                            <td>96.5</td>
-                            <td>9.4％</td>
+                            <td align="right">120,953</td>
+                            <!-- <td align="right">96.5</td> -->
+                            <td align="right">9.4%</td>
                         </tr>
                         <tr>
                             <td align="right">4</td>
                             <td>脳血管疾患</td>
-                            <td>111,973</td>
-                            <td>89.4</td>
-                            <td>8.7％</td>
+                            <td align="right">111,973</td>
+                            <!-- <td align="right">89.4</td> -->
+                            <td align="right">8.7%</td>
                         </tr>
                         <tr>
                             <td align="right">5</td>
                             <td>老衰</td>
-                            <td>84,810</td>
-                            <td>67.7</td>
-                            <td>6.6％</td>
+                            <td align="right">84,810</td>
+                            <!-- <td align="right">67.7</td> -->
+                            <td align="right">6.6%</td>
                         </tr>
                         <tr>
                             <td align="right">6</td>
                             <td>不慮の事故</td>
-                            <td>38,306</td>
-                            <td>30.6</td>
-                            <td>3.0％</td>
+                            <td align="right">38,306</td>
+                            <!-- <td align="right">30.6</td> -->
+                            <td align="right">3.0%</td>
                         </tr>
                         <tr>
                             <td align="right">7</td>
                             <td>腎不全</td>
-                            <td>24,560</td>
-                            <td>19.6</td>
-                            <td>1.9％</td>
+                            <td align="right">24,560</td>
+                            <!-- <td align="right">19.6</td> -->
+                            <td align="right">1.9%</td>
                         </tr>
                         <tr>
                             <td align="right">8</td>
                             <td>自殺</td>
-                            <td>23,152</td>
-                            <td>18.5</td>
-                            <td>1.8％</td>
+                            <td align="right">23,152</td>
+                            <!-- <td align="right">18.5</td> -->
+                            <td align="right">1.8%</td>
                         </tr>
                         <tr>
                             <td align="right">9</td>
                             <td>大動脈瘤及び解離</td>
-                            <td>16,887</td>
-                            <td>13.5</td>
-                            <td>1.3％</td>
+                            <td align="right">16,887</td>
+                            <!-- <td align="right">13.5</td> -->
+                            <td align="right">1.3%</td>
                         </tr>
                         <tr>
                             <td align="right">10</td>
                             <td>慢性閉塞性肺疾患</td>
-                            <td>15,756</td>
-                            <td>12.6</td>
-                            <td>1.2％</td>
+                            <td align="right">15,756</td>
+                            <!-- <td align="right">12.6</td> -->
+                            <td align="right">1.2%</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item"><u>あっ し は の ろい 不良 じ じいと 帰りに 万引き</u>
-                    <ol>
-                        <li>悪性新生物</li>
-                        <li>心疾患</li>
-                        <li>肺炎</li>
-                        <li>脳血管障害</li>
-                        <li>老衰</li>
-                        <li>不慮の事故</li>
-                        <li>腎不全</li>
-                        <li>自殺</li>
-                        <li>解離 (大動脈瘤/解離)</li>
-                        <li>慢性閉塞性肺疾患</li>
-                    </ol></li>
-                </ul>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th colspan="3"><u>あっ し は の ろい 不良 じ じいと 帰りに 万引き</u></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="right">1</td>
+                            <td>あっ</td>
+                            <td>悪性新生物</td>
+                        </tr>
+                        <tr>
+                            <td align="right">2</td>
+                            <td>し</td>
+                            <td>心疾患</td>
+                        </tr>
+                        <tr>
+                            <td align="right">3</td>
+                            <td>は</td>
+                            <td>肺炎</td>
+                        </tr>
+                        <tr>
+                            <td align="right">4</td>
+                            <td>の</td>
+                            <td>脳血管障害</td>
+                        </tr>
+                        <tr>
+                            <td align="right">5</td>
+                            <td>ろい</td>
+                            <td>老衰</td>
+                        </tr>
+                        <tr>
+                            <td align="right">6</td>
+                            <td>不良</td>
+                            <td>不慮の事故</td>
+                        </tr>
+                        <tr>
+                            <td align="right">7</td>
+                            <td>じ</td>
+                            <td>腎不全</td>
+                        </tr>
+                        <tr>
+                            <td align="right">8</td>
+                            <td>じいと</td>
+                            <td>自殺</td>
+                        </tr>
+                        <tr>
+                            <td align="right">9</td>
+                            <td>帰りに</td>
+                            <td>解離 (大動脈瘤/解離)</td>
+                        </tr>
+                        <tr>
+                            <td align="right">10</td>
+                            <td>万引き</td>
+                            <td>慢性閉塞性肺疾患</td>
+                        </tr>
+                    </tbody>
+                </table>
 
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <h3 id="cancer">Cancer <small><code></code></small></h3>
             </div>
+
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>M</th>
+                            <th>F</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>&uarr;</th>
+                            <td>
+                                <ul>
+                                    <li>膵</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>膵</li>
+                                    <li>乳房</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&darr;</th>
+                            <td>
+                                <ul>
+                                    <li>胃</li>
+                                    <li><u>肝</u></li>
+                                    <li>肺</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>胃</li>
+                                    <li><u>肝</u></li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>1</th>
+                            <td>肺</td>
+                            <td>乳房</td>
+                        </tr>
+                        <tr>
+                            <th>2</th>
+                            <td>胃</td>
+                            <td>大腸</td>
+                        </tr>
+                        <tr>
+                            <th>3</th>
+                            <td>大腸</td>
+                            <td>肺</td>
+                        </tr>
+                        <tr>
+                            <th>4</th>
+                            <td>肝</td>
+                            <td>膵</td>
+                        </tr>
+                        <tr>
+                            <th>5</th>
+                            <td>膵</td>
+                            <td>胃</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
             <div class="col-xs-12 col-sm-8 col-md-8">
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/106E068_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="suicide">Suicide <small><code></code></small></h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <ul>
+                            <li><u>2.4万人</u></li>
+                        </ul>
+                    </li>
+                </ul>
 
             </div>
+
         </div>
 
     </div>
@@ -909,9 +955,9 @@
                 <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>国民生活基礎調査</th>
-                            <th>患者調査</th>
+                            <th width="20%"></th>
+                            <th width="40%">国民生活基礎調査</th>
+                            <th width="40%">患者調査</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -942,24 +988,28 @@
                             <th>調査内容</th>
                             <td>世帯側から<br>
                                 「健康票」
+                                <ol>
+                                    <li><u>有訴者率</u>（有訴者の状況）</li>
+                                    <li><u>通院者率</u>（通院者の状況）</li>
+                                    <li>治療方法</li>
+                                    <li>健康状態</li>
+                                    <li>健康診断受診状況</li>
+                                </ol>
                                 <ul>
-                                    <li>①<u>有訴者率</u>（有訴者の状況）</li>
-                                    <li>②<u>通院者率</u>（通院者の状況）</li>
-                                    <li>③治療方法</li>
-                                    <li>④健康状態</li>
-                                    <li>⑤健康診断受診状況</li>
+                                    <li>家族構成 (世帯票)</li>
+                                    <li><u>所得票</u></li>
+                                    <li>貯蓄票</li>
+                                    <li><u>介護票</u> (介護・ADL状況, 原因)</li>
                                 </ul>
-                                ほかに，<br>
-                                「世帯票」⇒家族構成など<br>
-                                「<u>所得票</u>」，「貯蓄票」<br>
-                                「<u>介護票</u>」⇒介護・ADL状況，原因</td>
+                            </td>
                             <td>医療施設側から<br>
-                                <ul>
-                                    <li>①<u>受療率</u>（入院受療率，外来受療率）</li>
-                                    <li>②推計患者数</li>
-                                    <li>③<u>平均在院日数</u></li>
-                                </ul>
-                            などが分かる</td>
+                                <ol>
+                                    <li><u>受療率</u>（入院受療率，外来受療率）</li>
+                                    <li>推計患者数</li>
+                                    <li><u>平均在院日数</u></li>
+                                </ol>
+                                etc
+                            </td>
                         </tr>
                         <tr>
                             <th>傷病名</th>
@@ -975,11 +1025,16 @@
                 <h3 id="living_condition">Living Condition <small>国民生活基礎調査</small> <small><code></code></small></h3>
 
                 <ul class="list-group">
-                    <li class="list-group-item">有訴者数</li>
-                    <li class="list-group-item">通院者数</li>
-                    <li  class="list-group-item">所得</li>
-                    <li class="list-group-item">介護</li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>有訴者数</li>
+                            <li>通院者数</li>
+                            <li>所得</li>
+                            <li>介護</li>
+                        </ul>
+                    </li>
                 </ul>
+
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-6">
@@ -993,15 +1048,13 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         受療率:<br>
-                        \(
-                            \frac{\text{推計患者数}}{\text{人口}} \times 100000
-                        \)
+                        \( \frac{\text{推計患者数}}{\text{人口}} \times 100000 \)
                     </li>
                     <!-- <li class="list-group-item"></li> -->
                     <!-- <li class="list-group-item"></li> -->
                 </ul>
 
-                <h6>年齢階級別にみた入院（重症度等）の状況別推計入院患者の構成割合（2014年）</h6>
+                <h6><!-- 年齢階級別にみた入院（重症度等）の -->状況別推計入院患者<!-- の構成割合（ -->(2014)</h6>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/110E010_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
@@ -1011,7 +1064,7 @@
                     <tbody>
                         <tr>
                             <td>生命の危険</td>
-                            <td align="right">5.7%</td>
+                            <td align="right"><u>5.7%</u></td>
                         </tr>
                         <tr>
                             <td>入院治療を要する</td>
@@ -1019,7 +1072,7 @@
                         </tr>
                         <tr>
                             <td>受け入れ条件が整えば退院</td>
-                            <td align="right">13.6%</td>
+                            <td align="right"><u>13.6%</u></td>
                         </tr>
                         <tr>
                             <td>検査入院</td>
@@ -1051,39 +1104,6 @@
     </div>
 
 
-    <div class="row">
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
-                <div class="page-header">
-                    <h2> <small> </small> <small><code></code></small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
-        </div>
-    </div>
 
 
     <div class="section" id="app">
@@ -1271,7 +1291,7 @@
                             <li class="ans_t">全数調査である．</li>
                             <li class="ans_t">自記式で行われる．</li>
                             <li class="ans_t">外国人も対象となる．</li>
-                            <li class="ans_f">人口動態調査である．</li>
+                            <li class="ans_f star">人口動態調査である．</li>
                             <li class="ans_t">5年に1度実施される．</li>
                         </ol>
                     </div>
@@ -1279,7 +1299,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_false">d</p>
 
@@ -1362,14 +1382,14 @@
                             <li class="ans_f">出生数は死亡数を上回っている．</li>
                             <li class="ans_f">生産年齢人口割合は増加している．</li>
                             <li class="ans_f">合計特殊出生率は1.5を超えている．</li>
-                            <li class="ans_t">65歳以上の者のみの世帯は全世帯の約25％である．</li>
+                            <li class="ans_t star">65歳以上の者のみの世帯は全世帯の約25％である．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1539,14 +1559,14 @@
                             <li class="ans_t">ステージ2の前半に総人口が急増する．</li>
                             <li class="ans_t">ステージ2の前半に減少度が大きいのは乳児死亡率である．</li>
                             <li class="ans_t">ステージ2の後半に増加度が大きいのは生活習慣病の粗死亡率である．</li>
-                            <li class="ans_f">ステージ3の後半の人口ピラミッドはすそ野が広い三角形である．</li>
+                            <li class="ans_f star">ステージ3の後半の人口ピラミッドはすそ野が広い三角形である．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_false">e</p>
 
@@ -1635,7 +1655,7 @@
 
                         <ol type="a">
                             <li class="ans_f">純再生産率は0.1を下回る．</li>
-                            <li class="ans_t">合計特殊出生率は1.5を下回る．</li>
+                            <li class="ans_t star">合計特殊出生率は1.5を下回る．</li>
                             <li class="ans_f">出生率（人口千対）は15を上回る．</li>
                             <li class="ans_f">粗死亡率（人口千対）は15を上回る．</li>
                             <li class="ans_f">自然増減率（人口千対）はプラス値である．</li>
@@ -1645,7 +1665,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">b</p>
 
@@ -1678,8 +1698,8 @@
 
                         <ol type="a">
                             <li class="ans_f">20～24歳</li>
-                            <li class="ans_f">25～29歳</li>
-                            <li class="ans_t">30～34歳</li>
+                            <li class="ans_f star">25～29歳</li>
+                            <li class="ans_t star">30～34歳</li>
                             <li class="ans_f">35～39歳</li>
                             <li class="ans_f">40～44歳</li>
                         </ol>
@@ -1688,7 +1708,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">c</p>
 
@@ -1752,20 +1772,20 @@
                             <img src="https://qb.medilink-study.com/images/110G011_kaihou.jpg" class="card-img-top img-fluid">
                             <img src="https://qb.medilink-study.com/images/110G011_kaihou2.jpg" class="card-img-top img-fluid">
                             <div class="card-body">
-                                <div lang="latex">
-                                    \begin{align*}
-                                        T_x = l_x \cdot e_x
-                                    \end{align*} \\
+                                \( T_x = l_x \cdot e_x \)
+                                <br>
+
+                                \( 
                                     \begin{cases}
                                         T_x \text{: } \\
                                         l_x \text{: 定常人口} \\
                                         e_x \text{: }
                                     \end{cases}
-                                </div>
+                                \)
                             </div>
                         </div>
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">b</p>
 
@@ -1870,7 +1890,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1923,8 +1943,8 @@
 
                         <ol type="a">
                             <li class="ans_f">3年</li>
-                            <li class="ans_f">6年</li>
-                            <li class="ans_t">12年</li>
+                            <li class="ans_f star">6年</li>
+                            <li class="ans_t star">12年</li>
                             <li class="ans_f">18年</li>
                             <li class="ans_f">24年</li>
                         </ol>
@@ -1933,7 +1953,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -1972,15 +1992,17 @@
 
                         <ol type="a">
                             <li class="ans_t">老衰</li>
-                            <li class="ans_t">自殺</li>
+                            <li class="ans_t star">自殺</li>
                             <li class="ans_t">肺炎</li>
-                            <li class="ans_f">糖尿病</li>
+                            <li class="ans_f star">糖尿病</li>
                             <li class="ans_t">腎不全 </li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_false">d</p>
 
                         <ol type="a">
@@ -2118,9 +2140,9 @@
 
                     <div class="card-body">
                         <ol type="a">
-                            <li class="ans_t">肺炎</li>
-                            <li class="ans_f">心疾患</li>
-                            <li class="ans_f">悪性新生物</li>
+                            <li class="ans_t star">肺炎</li>
+                            <li class="ans_f star">心疾患</li>
+                            <li class="ans_f star">悪性新生物</li>
                             <li class="ans_f">脳血管疾患</li>
                             <li class="ans_f">不慮の事故</li>
                         </ol>
@@ -2129,7 +2151,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -2250,8 +2272,8 @@
                         <ol type="a">
                             <li class="ans_f">胃</li>
                             <li class="ans_f">大腸</li>
-                            <li class="ans_t">肝臓</li>
-                            <li class="ans_f">肺</li>
+                            <li class="ans_t star">肝臓</li>
+                            <li class="ans_f star">肺</li>
                             <li class="ans_f">前立腺</li>
                         </ol>
                     </div>
@@ -2259,7 +2281,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -2309,7 +2331,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <p>1億人 1%死亡/yr<br>
+                            死亡率 #1 ≥ 30%<br>
+                            ≥ 30万人</p>
 
                         <p class="q_answer_true">b</p>
 
@@ -2334,7 +2358,7 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group cancer cause_of_death info" id="q17">
+            <div class="card-group cancer cause_of_death star info" id="q17">
                 <div class="card">
                     <div class="card-header ">
                         <a href="https://qb.medilink-study.com/#/Answer/106E68" target="_blank" id="2018-01-22_15:04:21">106E68</a> 悪性新生物死亡数割合
@@ -2482,7 +2506,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <ul>
                             <li>粗死亡率: 増加傾向</li>
@@ -2804,10 +2828,10 @@
                         <p>過去5年（2009～2013年）の自殺の動向で正しいのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_f">総数は増加し続けている</li>
+                            <li class="ans_f star">総数は増加し続けている</li>
                             <li class="ans_f">40歳代女性の死因の第1位である．</li>
                             <li class="ans_f">男性の自殺数は女性の5倍を超える．</li>
-                            <li class="ans_f">自殺率は40歳以降，年齢とともに単調に増加する．</li>
+                            <li class="ans_f star">自殺率は40歳以降，年齢とともに単調に増加する．</li>
                             <li class="ans_t">判明した自殺者の動機で最も多いのは健康問題である．</li>
                         </ol>
                     </div>
@@ -2852,7 +2876,7 @@
                             <li class="ans_f">性別では女性が多い．</li>
                             <li class="ans_t">手段では縊首が最も多い．</li>
                             <li class="ans_t">動機では健康問題が最も多い．</li>
-                            <li class="ans_f">年間自殺者数は2万人以下になっている．</li>
+                            <li class="ans_f star">年間自殺者数は2万人以下になっている．</li>
                             <li class="ans_f">人口10万人あたりの自殺者数は先進7ヵ国で最も少ない．</li>
                         </ol>
                     </div>
@@ -2897,7 +2921,7 @@
                         <ol type="a">
                             <li class="ans_f">国勢調査</li>
                             <li class="ans_f">人口動態調査</li>
-                            <li class="ans_t">国民生活基礎調査</li>
+                            <li class="ans_t star">国民生活基礎調査</li>
                             <li class="ans_f">国民健康・栄養調査</li>
                             <li class="ans_f">身体障害者実態調査</li>
                         </ol>
@@ -2906,7 +2930,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">c</p>
 
@@ -3063,7 +3087,7 @@
                         <ol type="a">
                             <li class="ans_f">全数調査である．</li>
                             <li class="ans_f">疾患の罹患率がわかる．</li>
-                            <li class="ans_f">国勢調査と同時に行われる．</li>
+                            <li class="ans_f star">国勢調査と同時に行われる．</li>
                             <li class="ans_t">介護についての調査が含まれる．</li>
                             <li class="ans_f">所得に関する調査は含まれない</li>
                         </ol>
@@ -3072,7 +3096,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">d</p>
 
@@ -3117,9 +3141,9 @@
                         
 
                         <ol type="a">
-                            <li class="ans_f">毎年1回実施される．</li>
+                            <li class="ans_f star">毎年1回実施される．</li>
                             <li class="ans_f">世帯を対象として調査する．</li>
-                            <li class="ans_f">年齢別の有訴者率が分かる．</li>
+                            <li class="ans_f star">年齢別の有訴者率が分かる．</li>
                             <li class="ans_t">傷病別の平均在院日数が分かる．</li>
                             <li class="ans_f">医療費についての調査が含まれる．</li>
                         </ol>
@@ -3128,7 +3152,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">d</p>
 
@@ -3165,7 +3189,7 @@
                         
 
                         <ol type="a">
-                            <li class="ans_t">約 5％</li>
+                            <li class="ans_t star">約 5％</li>
                             <li class="ans_f">約15％</li>
                             <li class="ans_f">約25％</li>
                             <li class="ans_f">約35％</li>
@@ -3176,7 +3200,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a</p>
 
@@ -3223,7 +3247,7 @@
                         <ol type="a">
                             <li class="ans_f">①</li>
                             <li class="ans_f">②</li>
-                            <li class="ans_t">③</li>
+                            <li class="ans_t star">③</li>
                             <li class="ans_f">④</li>
                             <li class="ans_f">⑤</li>
                         </ol>
@@ -3232,7 +3256,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">c</p>
 
@@ -3297,9 +3321,9 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group env population aging" id="q30">
+            <div class="card-group env population aging pri 111 info" id="q30">
                 <div class="card">
-                    <div class="card-header pri 111 info">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/111B13" target="_blank" id="">111B13</a> 高齢化
                     </div>
                     <div class="card-body">
@@ -3324,7 +3348,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <!-- <p class="q_dx"></p> -->
 
@@ -3419,7 +3443,7 @@
                             <li class="ans_t">平均在院日数が最も長い．</li>
                             <li class="ans_f">人口千人当たりの医師数が最も多い．</li>
                             <li class="ans_f">人口千人当たりの病床数が最も少ない．</li>
-                            <li class="ans_f">国内総生産〈GDP〉に対する国民医療費の割合が最も高い．</li>
+                            <li class="ans_f star">国内総生産〈GDP〉に対する国民医療費の割合が最も高い．</li>
                         </ol>
                     </div>
                 </div>
@@ -3467,7 +3491,7 @@
 
         <div>
             <ol>
-                <li><a href=""></a></li>
+                <!-- <li><a href=""></a></li> -->
             </ol>
         </div>
     </div>
@@ -3556,453 +3580,16 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    version = "v" + version;
-    $('.nav-version').html(version);
-
-    var title_ver = title + "." + version;
-    $(document).attr("title", title_ver);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    var date = now.getDate();
-    if (date < 10) {
-        date = '0'+ date;
-    }
-
-    var months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
-    var month = months[now.getMonth()];
-    var year = now.getYear();
-    year -= 100;
-    var print_date = year + "-" + month + "-" + date;
-    var printDate = year + month + date;
-
-    $('.page-header > h1').append(' <small class="print_date"></small>');
-
-    $('.page-header > h1').append(' <small class="version"></small>');
-    
-
-    var title_date = title + "_" + printDate;
-    $(document).attr("title", title_date);
+$(function(){
 
 
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-
-        $('#q li:has(a.all)').toggle();
-        $('#q li:has(a.untag)').toggle();
-        $('#q li:has(a.done)').toggle();
-        $('#q li:has(a.pri)').toggle();
-        $('#q li:has(a.req)').toggle();
-        $('#q li:has(a.qb)').toggle();
-        $('#q li:has(a.110)').toggle();
-        $('#q li:has(a.111)').toggle();
-        $('#q li:has(a.info)').toggle();
-
-        $('.page-header > h1 > small.print_date').html(print_date);
-        $('.page-header > h1 > small.version').html(version);
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-    $('div.fig').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-picture"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().slideToggle(100);
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').slideToggle(100);
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').slideToggle(100);
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').slideToggle(100);
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').slideToggle(100);
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').slideToggle(100);
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-    $('li.nav-item >a.mnemonics').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.mnemonics)').slideToggle(100);
-    });
-    $('li.nav-item >a.fig').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.fig)').slideToggle(100);
-    });
-
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-    var n_mnemo = $('div.mnemonics').size();
-    var n_fig = $('div.fig').size();
-
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-    $('span.q_alert_mnemo_n').html(n_mnemo);
-    $('span.q_alert_fig_n').html(n_fig);
-
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
-    
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#env h2').click(function(){
@@ -4010,6 +3597,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.env)').slideToggle(100);
     });
     $('#env').find('small > code').html(
+        $('div.env.star').size() + '* ' +
         $('div.env > .card > .mis').size() + '+' +
         $('div.env > .card > .cau').size() + '/' +
         $('div.env').size()
@@ -4022,6 +3610,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.census)').slideToggle(100);
     });
     $('#census').find('small > code').html(
+        $('div.census.star').size() + '* ' +
         $('div.census > .card > .mis').size() + '+' +
         $('div.census > .card > .cau').size() + '/' +
         $('div.census').size()
@@ -4033,6 +3622,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.vital_statistics)').slideToggle(100);
     });
     $('#vital_statistics').find('small > code').html(
+        $('div.vital_statistics.star').size() + '* ' +
         $('div.vital_statistics > .card > .mis').size() + '+' +
         $('div.vital_statistics > .card > .cau').size() + '/' +
         $('div.vital_statistics').size()
@@ -4045,6 +3635,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.cause_of_death)').slideToggle(100);
     });
     $('#cause_of_death').find('small > code').html(
+        $('div.cause_of_death.star').size() + '* ' +
         $('div.cause_of_death > .card > .mis').size() + '+' +
         $('div.cause_of_death > .card > .cau').size() + '/' +
         $('div.cause_of_death').size()
@@ -4056,6 +3647,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.cancer)').slideToggle(100);
     });
     $('#cancer').find('small > code').html(
+        $('div.cencer.star').size() + '* ' +
         $('div.cancer > .card > .mis').size() + '+' +
         $('div.cancer > .card > .cau').size() + '/' +
         $('div.cancer').size()
@@ -4068,6 +3660,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.statistic_on_disease)').slideToggle(100);
     });
     $('#statistic_on_disease').find('small > code').html(
+        $('div.statistic_on_disease.star').size() + '* ' +
         $('div.statistic_on_disease > .card > .mis').size() + '+' +
         $('div.statistic_on_disease > .card > .cau').size() + '/' +
         $('div.statistic_on_disease').size()
@@ -4080,6 +3673,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.living_condition)').slideToggle(100);
     });
     $('#living_condition').find('small > code').html(
+        $('div.living_condition.star').size() + '* ' +
         $('div.living_condition > .card > .mis').size() + '+' +
         $('div.living_condition > .card > .cau').size() + '/' +
         $('div.living_condition').size()
@@ -4092,6 +3686,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.patient_survey)').slideToggle(100);
     });
     $('#patient_survey').find('small > code').html(
+        $('div.patient_survey.star').size() + '* ' +
         $('div.patient_survey > .card > .mis').size() + '+' +
         $('div.patient_survey > .card > .cau').size() + '/' +
         $('div.patient_survey').size()
@@ -4104,6 +3699,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.demo)').slideToggle(100);
     });
     $('#demo').find('small > code').html(
+        $('div.demo.star').size() + '* ' +
         $('div.demo > .card > .mis').size() + '+' +
         $('div.demo > .card > .cau').size() + '/' +
         $('div.demo').size()
@@ -4116,6 +3712,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.survey)').slideToggle(100);
     });
     $('#survey').find('small > code').html(
+        $('div.survey.star').size() + '* ' +
         $('div.survey > .card > .mis').size() + '+' +
         $('div.survey > .card > .cau').size() + '/' +
         $('div.survey').size()
@@ -4133,6 +3730,7 @@ $('document').ready(function(){
         $('#q div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('small > code').html(
+        $('div..star').size() + '* ' +
         $('div. > .card > .mis').size() + '+' +
         $('div. > .card > .cau').size() + '/' +
         $('div.').size()

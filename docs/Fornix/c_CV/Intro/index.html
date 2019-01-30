@@ -4,12 +4,32 @@
 @Project: Fornix
 @Filename: index.html
 @Last modified by:   shumez
-@Last modified time: 2018-09-27 20:31:49
+@Last modified time: 2018-12-11 14:34:56
 -->
 
 
 <!DOCTYPE html>
 <!--
+04.02.00    18 12 01    $(function)
+04.01.40    18 11 30    112, progress per_, width
+04.01.39    18 11 27    .star 
+04.01.38    18 11 24    .table-condesd tr:first-child border-top; td > ul, td > ol margin-bottom
+04.01.37    18 11 20    .nav mnemo fig
+04.01.36    18 11 17    mathjax
+04.01.35    18 11 14    nav .mnemonics .fig, #q 
+04.01.34    18 11 11    .cau size
+04.01.33    18 11 06    .mis size
+04.01.32    18 11 01    v..., print date 2 digit
+04.01.31    18 10 29    css @media print
+04.01.30    18 10 26    #q li toggle()
+04.01.29    18 10 24    title_date
+04.01.28    18 10 23    .page-header border-bottom
+04.01.27    18 10 21    .img glyphicon-picture
+04.01.26    18 10 19    print_date, slideToggle(100)
+04.01.25    18 10 18    title + version
+04.01.24    18 10 13    style .list-group-item ul padding
+04.01.23    18 10 03    js .slideToggle()
+
 04.01.22    18 09 20    js .pri glyphicon
 04.01.21    18 09 12    print margin padding
 04.01.20    18 08 28    print  css .card .list-group padding
@@ -93,11 +113,11 @@
 -->
 <html>
 <head>
-    <title>Intro - CV</title>
+    <title>Intro-CV</title>
     <meta charset="UTF-8">
     <meta name="author" content="shumez">
-    <meta name="revised" content="2018-09-27 20:32:46" scheme="YYYY-MM-DD hh:mm:ss">
-    <meta name="version" content="4.1.22">
+    <meta name="revised" content="2018-12-11 14:35:58" scheme="YYYY-MM-DD hh:mm:ss">
+    <meta name="version" content="4.2.1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="../../scripts/img/favicon.png">
@@ -116,118 +136,15 @@
     <!-- latex -->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
+    <!-- mathjax -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
     <link rel="stylesheet" href="https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css">
 
-    <style type="text/css">
-        @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
-
-        h1, h2, h3, h4, h5, h6, p, a, b, u, small, li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-        body{padding-bottom: 70px; position: relative}
-        /*{padding-top: 100px; }*/
-        h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 36px;}
-        h2{font-size: 24px;}
-        h3{font-size: 22px;}
-        h4{font-size: 20px;}
-        p, li, dt, dd, th, td{font-size: 14px}
-        a{color: black;};
-        /**h1, h2, h3, h4, h5, p, a,li, th, td, dt, dd{font-family: Fira Code Light;};**/
-        a:hover{color: rgb(126, 64, 177);
-        text-decoration-style: underline;
-        /**font-weight: bold;**/}
-        b{color: rgb(88, 211, 184);}
-        /**th{text-transform: capitalize;/**color: rgb(126, 64, 177);**//**}**/
-        u{color: rgb(126, 64, 177)}
-        code{color: rgb(126, 64, 177)}
-
-        span.mis{background-color: rgb(88, 211, 184);}
-        span.cau{background-color: rgb(126, 64, 177);}
-        span.rev{background-color: grey;}
-        span.mis:before{content: "M";}
-        span.cau:before{content: "C";}
-        span.rev:before{content: "R";}
-        span.hit:before{content: "H";}
-        span.q_alert_mis_n, span.q_alert_mis_per, div.progress-mis, span.q_alert_110_n, span.q_alert_111_n{background-color: rgb(88, 211, 184);}
-        span.q_alert_cau_n, span.q_alert_cau_per, div.progress-cau{background-color: rgb(126, 64, 177);}
-        span.q_alert_rev_n, span.q_alert_rev_per, div.progress-hit, div.progress-rev{background-color: grey;}
-        code.q_alert_done{color: rgb(126, 64, 177)}
-        #q div.card-group{margin-bottom: 10px}
-        div.card-body{padding: 10px 10px 10px 10px;}
-        td > ul{padding-left: 12px;}
-        div.card, ul.list-group, table.table{margin-top: 10px;margin-bottom: 10px;
-        }
-        .page-header{margin-top: 10px; margin-bottom: 5px}
-
-
-        /*.nav-pills*/
-        ul.nav-pills > li > a:hover.nav-link, ul.nav-pills > .active > .nav-link{background-color: rgb(200, 200, 200);}
-        ul.nav-pills .active span.q_alert_mis_n{color: rgb(88, 211, 184);}
-        ul.nav-pills .active span.q_alert_cau_n{color: rgb(126, 64, 177);}
-        ul.nav-pills .active span.q_alert_hit_n,
-        ul.nav-pills .active span.q_alert_rev_n,
-        ul.nav-pills .active span.q_alert_all_n,
-        ul.nav-pills .active span.q_alert_untag_n,
-        ul.nav-pills .active span.q_alert_done_n,
-        ul.nav-pills .active span.q_alert_pri_n,
-        ul.nav-pills .active span.q_alert_req_n,
-        ul.nav-pills .active span.q_alert_qb_n,
-        ul.nav-pills .active span.q_alert_110_n,
-        ul.nav-pills .active span.q_alert_111_n,
-        ul.nav-pills .active span.q_alert_info_n{color: black;}
-
-        /*.night*/
-        body.night{background-color: rgb(33, 36, 44);}
-        .night h1,.night h2,.night h3,.night h4,.night p, .night a,.night li,.night th,.night td, .night .card-header{color: white}
-        .night h1.title, .night div#q div.card-body u{color: rgb(88, 211, 184)}
-        .night .card, .night .card-header, .night .card-body, .night li.list-group-item, .night a.btn, .night nav.navbar, .night div.dropdown-menu{background-color: rgb(33, 36, 44);}
-        .night .card, .night .card-header{border-color: white}
-        .night .correct-show{color: rgb(88, 211, 184); font-weight: bold;}
-        .night .correct-hide{color: grey;}
-
-        span.day{color: rgb(88, 211, 184); border-color: rgb(88, 211, 184)}
-        span.night{color: rgb(126, 64, 177); border-color: rgb(126, 64, 177)}
-
-        .correct-show{color: rgb(126, 64, 177); font-weight: bold;}
-        .correct-hide{color: grey; text-decoration: line-through;}
-        .clear{color: white;}
-        .card div.mis{border-bottom-style: solid;  border-bottom-color: rgb(88, 211, 184); border-bottom-width: 5px }
-        .card div.cau{border-bottom-style: solid;  border-bottom-color: rgb(126, 64, 177); border-bottom-width: 5px }
-        .card div.rev{border-bottom-style: solid;  border-bottom-color: gray; border-bottom-width: 5px }
-
-
-        /*print*/
-        @media print{
-            .container{margin-left: 10px; margin-right: 10px}
-            a[href]:after {content: none !important;}
-            h1.title{color: rgb(126, 64, 177);text-transform: capitalize;font-size: 16px;}
-            h1, h2, h3, h4, h5, h6, p, a, b, u, small,ul, ol li th, td, span, div{font-family: "Helvetica Neue"; font-weight: thin;}
-            h2, h3{font-size: 14px}
-            h6{font-size: 12px}
-            p, a, li, th, td{font-size: 10px}
-            td > ul{padding-left: 10px}
-            b{color: rgb(88, 211, 184);}
-            u{color: rgb(126, 64, 177)}
-            .page-header{margin-top: 5px; margin-bottom: 5px; padding-top: 0px; padding-bottom: 0px}
-            div.card{border-color: black; border-width: 1px; margin: : 2px 0px 2px 0px}
-            ul.list-group{margin: 2px 0px 2px 0px}
-            li.list-group-item{border-color: black; border-width: 1px; padding: 5px 5px 5px 5px}
-            table{margin: 2px 0px 2px 0px}
-            div.card-header{font-size: 12px}
-            
-            table.table-condensed > thead,
-            table.table-condensed > thead > tr > th,
-            table.table-condensed > tbody > tr > th,
-            table.table-condensed > tbody > tr > td{
-                border-bottom: 1px solid black;}
-            table.table-bordered > thead, 
-            table.table-bordered > thead > tr > th, 
-            table.table-bordered > tbody > tr > th, 
-            table.table-bordered > tbody > tr > td{
-                border: 1px solid black;
-            }
-
-        }
-    </style>
     <link rel="stylesheet" type="text/css" href="../../scripts/css/Fornix.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/temp/v4.2.0/css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../scripts/temp/css/main.css">
 </head>
 <body data-spy="scroll" data-target="#navbar-example">
 <div class="container">
@@ -463,7 +380,7 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 id="s1">S<sub>1</sub></h3>
+                <h3 id="s1">S<sub>1</sub> <small><code></code></small></h3>
                 <table class="table table-condensed">
                     <tbody>
                         <tr>
@@ -495,7 +412,7 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <h3 id="s2">S<sub>2</sub></h3>
+                <h3 id="s2">S<sub>2</sub> <small><code></code></small></h3>
                 <ul class="list-group">
                     <li class="list-group-item">固定性
                         <ul>
@@ -529,7 +446,7 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h3>S<sub>2</sub> split</h3>
+                <h3 id="s2split">S<sub>2</sub> split <small><code></code></small></h3>
                 <div class="card">
                     <img src="https://qb.medilink-study.com/images/110E030_bas_010.jpg" class="card-img-top img-fluid">
                 </div>
@@ -1092,7 +1009,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:01:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:01:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:39:41"> </span>
                         <br>
                         <p>心臓・脈管の構造と機能について正しいのはどれか．2つ選べ．</p>
 
@@ -1125,14 +1043,15 @@
             </div>
 
             <!-- 05 -->
-            <div class="card-group ANA pri" id="q05">
+            <div class="card-group ANA pri info" id="q05">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106B13" target="_blank">106B13</a> 弁
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_20:57:22"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_20:57:22"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_14:59:41"> </span>
                         <br>
                         <p>心臓の弁について正しいのはどれか．</p>
 
@@ -1148,6 +1067,8 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_true">e</p>
 
                         <ol type="a">
@@ -1160,21 +1081,36 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item">僧帽弁<ul>
-                                <li>二尖弁</li>
-                                <li>後尖弁輪周囲をLCXが走行</li>
-                            </ul></li>
-                            <li class="list-group-item">三尖弁<ul>
-                                <li>三尖</li>
-                                <li>中隔尖弁輪, 冠静脈洞, Todaro腱索に囲まれたコッホ三角の頂点近傍にAVnode</li>
-                            </ul></li>
-                            <li class="list-group-item">肺動脈弁<ul>
-                                <li></li>
-                            </ul></li>
-                            <li class="list-group-item">大動脈弁<ul>
-                                <li></li>
-                            </ul></li>
+                            <li class="list-group-item">
+                                僧帽弁
+                                <ul>
+                                    <li>二尖弁</li>
+                                    <li>後尖弁輪周囲をLCXが走行</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                三尖弁
+                                <ul>
+                                    <li>三尖</li>
+                                    <li>中隔尖弁輪, 冠静脈洞, Todaro腱索に囲まれたコッホ三角の頂点近傍にAVnode</li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                肺動脈弁
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
+                            <li class="list-group-item">
+                                大動脈弁
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1187,7 +1123,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_20:59:47"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_20:59:47"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:03:32"> </span>
                         <br>
                         <p>心臓について正しいのはどれか．2つ選べ．</p>
 
@@ -1231,7 +1168,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:05:26"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:05:26"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:43:04"> </span>
                         <br>
                         <p>冠動脈について正しいのはどれか．</p>
 
@@ -1241,13 +1179,14 @@
                             <li class="ans_f">左冠動脈前下行枝は冠状溝を走行する．</li>
                             <li class="ans_t">左冠動脈前下行枝から心室中隔枝が分枝する．</li>
                             <li class="ans_f">左冠動脈回旋枝近位部は後室間溝を走行する．</li>
-                            <li class="ans_f">左冠動脈前下行枝はValsalva洞から起始する．</li>
+                            <li class="ans_f star">左冠動脈前下行枝はValsalva洞から起始する．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: c</p>
+
+                        <p class="q_answer_true">c</p>
 
                         <ol type="a">
                             <li>LAD: 前室間溝</li>
@@ -1263,9 +1202,12 @@
                         </ol>
 
                         <div class="card">
-                            <!-- <img src="https://www.qb-online.com/img_kaisetsu/107E009_bas_c_010.jpg" class="card-img-top img-fluid"> -->
                             <img src="https://qb.medilink-study.com/images/107E009_bas_c_010.jpg" class="card-img-top img-fluid">
                         </div>
+
+                        <!-- <img src="https://www.qb-online.com/img_kaisetsu/107E009_bas_c_010.jpg" class="card-img-top img-fluid"> -->
+
+
                     </div>
                 </div>
             </div>
@@ -1321,7 +1263,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:04:38"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:04:38"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:06:43"> </span>
                         <br>
                         <p>安静時に心拍出量の約5％が灌流する臓器はどれか．</p>
 
@@ -1361,7 +1304,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill rev"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:19:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:19:53"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-11_15:45:47"> </span>
                         <br>
                         <p>冠循環について正しいのはどれか．2つ選べ．</p>
 
@@ -1370,7 +1314,7 @@
                             <li class="ans_f">安静時冠血流量は心拍出量の約20％である．</li>
                             <li class="ans_f">心筋は心外膜側が心内膜側に比べて虚血になりやすい．</li>
                             <li class="ans_t">左冠動脈は主に拡張期に流れる．</li>
-                            <li class="ans_f">左冠動脈主幹部は主肺動脈の前方を通過する．</li>
+                            <li class="ans_f star">左冠動脈主幹部は主肺動脈の前方を通過する．</li>
                             <li class="ans_t">左冠動脈前下行枝は左室前壁と心室中隔とを栄養する．</li>
                         </ol>
                     </div>
@@ -1411,7 +1355,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:22:17"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:22:17"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-11_15:46:44"> </span>
                         <br>
                         <p>心臓について正しいのはどれか．</p>
 
@@ -1419,7 +1364,7 @@
                         <ol type="a">
                             <li class="ans_t">冠静脈洞は右房に開口する．</li>
                             <li class="ans_f">大動脈弁には腱索が付着する．</li>
-                            <li class="ans_f">洞結節は心房中隔下端に位置する．</li>
+                            <li class="ans_f star">洞結節は心房中隔下端に位置する．</li>
                             <li class="ans_f">Valsalva洞は肺動脈の起部に位置する．</li>
                             <li class="ans_f">心筋への冠動脈血流は主に収縮期に流れる．</li>
                         </ol>
@@ -1428,7 +1373,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a</p>
 
@@ -1489,7 +1434,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:27:57"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:27:57"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:48:46"> </span>
                         <br>
                         <p>大動脈弓の高さにおける解剖学的位置関係で誤っているのはどれか．</p>
 
@@ -1498,13 +1444,15 @@
                             <li class="ans_t">胸腺は食道より前方に位置する．</li>
                             <li class="ans_t">気管は食道より前方に位置する．</li>
                             <li class="ans_t">横隔神経は椎体より前方に位置する．</li>
-                            <li class="ans_t">上大静脈は気管より前方に位置する．</li>
+                            <li class="ans_t star">上大静脈は気管より前方に位置する．</li>
                             <li class="ans_f">交感神経幹は大動脈弓より前方に位置する．</li>
                         </ol>
                     </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
+
+
                         <p class="q_answer_false">e</p>
 
                         <ol type="a">
@@ -1535,17 +1483,18 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_21:06:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_21:06:25"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:51:54"> </span>
                         <br>
                         <p>心臓の刺激伝導系で正しいのはどれか．</p>
 
 
                         <ol type="a">
                             <li class="ans_f">洞結節は下大静脈にある．</li>
-                            <li class="ans_t">房室結節は右房にある．</li>
+                            <li class="ans_t star">房室結節は右房にある．</li>
                             <li class="ans_f">His束は左房にある．</li>
                             <li class="ans_f">右脚は右房にある．</li>
-                            <li class="ans_f">Purkinje線維は心内膜内にある．</li>
+                            <li class="ans_f star">Purkinje線維は心内膜内にある．</li>
                         </ol>
                     </div>
                 </div>
@@ -1573,7 +1522,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:14:42"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:14:42"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:08:57"> </span>
                         <br>
                         <p>刺激伝導に最も時間がかかるのはどれか．</p>
 
@@ -1610,14 +1560,15 @@
             </div>
 
             <!-- 06 -->
-            <div class="card-group PHYSIO" id="q16">
+            <div class="card-group PHYSIO info" id="q16">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/104E29" target="_blank">104E29</a> 心室圧－容積曲線
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:31:06"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:31:06"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-11_15:53:30"> </span>
                         <br>
                         <p>心室圧－容積曲線を示す．<br>
                             投与によってAからBに変化するのはどれか．</p>
@@ -1662,13 +1613,14 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group PHYSIO 110 pri" id="q17">
+            <div class="card-group DA PHYSIO 110 pri" id="q17">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110B6" target="_blank" id="">110B6</a> Frank-Starling
                     </div>
                     <div class="card-body">
-                        <span class="badge badge-pill cau now"> </span>
+                        <span class="badge badge-pill cau"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:54:40"> </span>
                         <br>
                         <p>心機能曲線の模式図を示す．<br>
                             曲線Aを矢印の方向に最も大きく移動させるのはどれか．</p>
@@ -1713,7 +1665,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:15:54"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:15:54"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:13:43"> </span>
                         <br>
                         <p>心拍出量が増加するのはどれか．</p>
 
@@ -1730,8 +1683,6 @@
                 <div class="card answer">
                     <div class="card-body">
 
-
-
                         <p class="q_answer_true">e</p>
 
                         <ol type="a">
@@ -1742,6 +1693,8 @@
                             <li>BP維持のため</li>
                         </ol>
 
+
+
                         <ul class="list-group">
                             <li class="list-group-item">HR</li>
                             <li class="list-group-item">Preload</li>
@@ -1749,6 +1702,12 @@
                             <li class="list-group-item">収縮力</li>
                         </ul>
 
+
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                \( \text{CO} = \text{HR} \times \text{SV} \)
+                            </li>
+                        </ul>
 
                     </div>
                 </div>
@@ -1762,7 +1721,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_21:17:25"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_21:17:25"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:57:27"> </span>
                         <br>
                         <p>心筋酸素消費量の主な決定因子はどれか．3つ選べ．</p>
 
@@ -1777,7 +1737,9 @@
                 </div>
                 <div class="card answer">
                     <div class="card-body">
-                        <p>True: a,b,e</p>
+
+
+                        <p class="q_answer_true">a b e</p>
 
                         <ol type="a">
                             <li></li>
@@ -1790,13 +1752,28 @@
 
                         <h6>心筋酸素消費量</h6>
                         <ul class="list-group">
-                            <li class="list-group-item">RRP<br>
-                                 <small>Pressure Rate Product</small><br>
-                                = 収縮期圧 &times; 心拍数</li>
-                            <li class="list-group-item">SPTI<br>
+                            <li class="list-group-item">
+                                PRP<br>
+                                <small>Pressure Rate Product</small><br>
+                                <!-- = 収縮期圧 &times; 心拍数 -->
+                                \( 
+                                    \text{PRP} \\ 
+                                    =\text{SBP} \times \text{HR} 
+                                \)
+                            </li>
+                            <li class="list-group-item">
+                                SPTI<br>
                                 <small>Systolic Pressure Time Index</small><br>
-                                = 収縮期圧 &times; 収縮期時間</li>
+                                <!-- = 収縮期圧 &times; 収縮期時間 -->
+                                \( 
+                                    \text{SPTI} \\
+                                    = \text{SBP} \times \text{収縮期時間}
+                                 \)
+                            </li>
                         </ul>
+
+
+
                     </div>
                 </div>
             </div>
@@ -1846,14 +1823,15 @@
 
 
             <!-- 01 -->
-            <div class="card-group PHYSIO info" id="q21">
+            <div class="card-group s3 PHYSIO info" id="q21">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/103E15" target="_blank">103E15</a> S<sub>3</sub>
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:21:10"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:21:10"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:20:21"> </span>
                         <br>
                         <p>心電図と左心の心周期とを図に示す．<br>
                         Ⅲ音を聴取するのはどこか．</p>
@@ -1903,7 +1881,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:35:12"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:35:12"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:02:06"> </span>
                         <br>
                         <p>心臓の聴診所見で正しいのはどれか．3つ選べ．</p>
 
@@ -1937,28 +1916,28 @@
                         <table class="table table-condensed">
                             <tbody>
                                 <tr>
-                                    <th>S<sub>I</sub></th>
+                                    <th>S<sub>1</sub></th>
                                     <td><ul>
                                         <li>MV/TVの閉鎖音</li>
                                         <li>MS</li>
                                     </ul></td>
                                 </tr>
                                 <tr>
-                                    <th>S<sub>II</sub></th>
+                                    <th>S<sub>2</sub></th>
                                     <td><ul>
                                         <li>PV/AoVの閉鎖音</li>
                                         <li>HTN, PH</li>
                                     </ul></td>
                                 </tr>
                                 <tr>
-                                    <th>S<sub>III</sub></th>
+                                    <th>S<sub>3</sub></th>
                                     <td><ul>
                                         <li>拡張早期に心室に充満する</li>
                                         <li>心不全, (若年者:生理的)</li>
                                     </ul></td>
                                 </tr>
                                 <tr>
-                                    <th>S<sub>IV</sub></th>
+                                    <th>S<sub>4</sub></th>
                                     <td><ul>
                                         <li>拡張早期に心房収縮により心室壁が振動する</li>
                                         <li>拡張不全</li>
@@ -1971,14 +1950,15 @@
             </div>
 
             <!-- 03 -->
-            <div class="card-group auscultation s2 pri info" id="q23">
+            <div class="card-group auscultation s2 pri info 110" id="q23">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110E30" target="_blank" id="">110E30</a> S<sub>2</sub>
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:44:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:44:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:04:10"> </span>
                         <br>
                         <p>心音のⅡ音について正しいのはどれか．</p>
 
@@ -2116,7 +2096,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:24:40"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:24:40"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:23:41"> </span>
                         <br>
                         <p>組合せで正しいのはどれか．2つ選べ．</p>
 
@@ -2133,7 +2114,7 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
                         <p class="q_answer_true">a e</p>
 
@@ -2183,14 +2164,15 @@
             </div>
 
             <!-- 07 -->
-            <div class="card-group" id="q27">
+            <div class="card-group hyperdynamic anemia pregnancy HrThyro 110 pri" id="q27">
                 <div class="card">
-                    <div class="card-header mis 110 pri">
+                    <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110D19" target="_blank" id="">110D19</a> 2LSB 収縮早期雑音
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:35:53"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:35:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:25:34"> </span>
                         <br>
                         <p>心疾患のない女性で，胸骨左縁第2肋間を最強点とする収縮早期雑音の原因となるのはどれか．3つ選べ．</p>
 
@@ -2198,7 +2180,7 @@
                         <ol type="a">
                             <li class="ans_t">貧血</li>
                             <li class="ans_t">妊娠</li>
-                            <li class="ans_f">脱水</li>
+                            <li class="ans_f star">脱水</li>
                             <li class="ans_f">肥満</li>
                             <li class="ans_t">甲状腺機能亢進症</li>
                         </ol>
@@ -2224,7 +2206,7 @@
             </div>
 
             <!-- 08 -->
-            <div class="card-group DCM tamponade" id="q28">
+            <div class="card-group DCM tamponade AS HOCM " id="q28">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/98G75" target="_blank" id="2018-01-20_22:30:11">98G75</a> 脈 - 疾患
@@ -2232,7 +2214,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:39:55"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:39:55"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:28:36"> </span>
                         <br>
                         <p>正しい組合せはどれか．2つ選べ．</p>
 
@@ -2265,14 +2248,15 @@
             </div>
 
             <!-- 09 -->
-            <div class="card-group pulse PHYSIO " id="q29">
+            <div class="card-group pulse PDA AS tamponade  PHYSIO " id="q29">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/93A49" target="_blank" id="2018-01-20_22:59:26">93A49</a> 脈 - 疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-27_21:42:00"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-27_21:42:00"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:05:25"> </span>
                         <br>
                         <p>脈と疾患との組合せで正しいのはどれか．3つ選べ．</p>
 
@@ -2280,7 +2264,7 @@
                         <ol type="a">
                             <li class="ans_f">頻脈 － 完全右脚ブロック</li>
                             <li class="ans_f">徐脈 － 三尖弁閉鎖症</li>
-                            <li class="ans_t">速脈 － 動脈管開存症</li>
+                            <li class="ans_t star">速脈 － 動脈管開存症</li>
                             <li class="ans_t">遅脈 － 大動脈弁狭窄症</li>
                             <li class="ans_t">奇脈 － 心タンポナーデ</li>
                         </ol>
@@ -2289,9 +2273,9 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p></p>
+                        <!-- <p></p> -->
 
-                        <p>True: c,d,e</p>
+                        <p class="q_answer_true">c d e</p>
 
                         <ol type="a">
                             <li></li>
@@ -2312,14 +2296,15 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group pulse info" id="q30">
+            <div class="card-group pulse AR info" id="q30">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/97G79" target="_blank" id="2018-01-20_23:03:45">97G79</a> 脈 - 疾患
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_10:47:53"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_10:47:53"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:06:33"> </span>
                         <br>
                         <p>脈拍に関する組合せで正しいのはどれか．</p>
 
@@ -2482,22 +2467,33 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-28_10:50:14"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-28_10:50:14"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_15:30:12"> </span>
                         <br>
                         <p>心電図検査を行う際の胸部誘導の電極と肋骨の位置関係を次に示す．<br>
                             正しい電極の位置はどれか．</p>
                     </div>
 
-                    <img src="https://qb.medilink-study.com/images/105H018A.jpg" class="card-img-top img-fluid" width="30%">
-                    <img src="https://qb.medilink-study.com/images/105H018B.jpg" class="card-img-top img-fluid" width="30%">
-                    <img src="https://qb.medilink-study.com/images/105H018C.jpg" class="card-img-top img-fluid" width="30%">
-                    <img src="https://qb.medilink-study.com/images/105H018D.jpg" class="card-img-top img-fluid" width="30%">
-                    <img src="https://qb.medilink-study.com/images/105H018E.jpg" class="card-img-top img-fluid" width="30%">
+                    <img src="https://qb.medilink-study.com/images/105H018A.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/105H018B.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/105H018C.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/105H018D.jpg" class="card-img-top img-fluid" width="49%">
+                    <img src="https://qb.medilink-study.com/images/105H018E.jpg" class="card-img-top img-fluid" width="49%">
 
+                    <div class="card-body">
+                        <ol type="a">
+                            <li class="ans_f"></li>
+                            <li class="ans_t"></li>
+                            <li class="ans_f"></li>
+                            <li class="ans_f"></li>
+                            <li class="ans_f"></li>
+                        </ol>
+                    </div>
                 </div>
                 <div class="card answer">
                     <div class="card-body">
 
+                        
                         <p class="q_answer_true">b</p>
 
                         <div class="card">
@@ -2513,7 +2509,7 @@
             </div>
 
             <!-- 04 -->
-            <div class="card-group ECG 110 info pri req" id="q34">
+            <div class="card-group ECG AVB 110 info pri req" id="q34">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/110F7" target="_blank">110F7</a> ECG
@@ -2521,7 +2517,9 @@
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:43:52"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:43:52"> </span>
+                        <span class="badge badge-pill cau" id="2018-12-04_16:15:54"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:08:14"> </span>
                         <br>
                         <p>心電図を次に示す．<br>
                         認められる所見はどれか．</p>
@@ -2542,10 +2540,13 @@
                 <div class="card answer">
                     <div class="card-body">
 
-                        <p>True: e</p>
 
                         <!-- <img src="https://www.qb-online.com/img/110F007_ima_010.jpg" class="img-fluid"> -->
                         <img src="https://qb.medilink-study.com/images/110F007_ima_010.jpg" class="card-img-top img-fluid">
+
+                        <p class="q_dx">AVB</p>
+
+                        <p class="q_answer_true">e</p>
 
                         <ol type="a">
                             <li>左軸偏位</li>
@@ -2555,12 +2556,14 @@
                             <li>PQ > .2sec (1マス)</li>
                         </ol>
 
+
+                        <h6>電気軸の求め方</h6>
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/110F007_bas_010.jpg" class="card-img-top img-fluid">
                         </div>
-                        <br>
 
 
+                        <h6>脚ブロックの心電図</h6>
                         <div class="card">
                             <img src="https://qb.medilink-study.com/images/110F007_sup_010.jpg" class="card-img-top img-fluid">
                         </div>
@@ -2584,7 +2587,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_11:05:03"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_11:05:03"> </span>
+                        <span class="badge badge-pill rev now" id="2018-12-11_16:09:19"> </span>
                         <br>
                         <p>心電図を次に示す．<br>
                             考えられるのはどれか．</p>
@@ -2836,7 +2840,7 @@
             </div>
 
             <!-- 10 -->
-            <div class="card-group catheter pri info" id="q40">
+            <div class="card-group catheter Swan-Ganz pri info" id="q40">
                 <div class="card">
                     <div class="card-header">
                         <a href="https://qb.medilink-study.com/#/Answer/106G35" target="_blank">106G35</a> Swan-Ganzカテーテル
@@ -2844,7 +2848,8 @@
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_11:06:36"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_11:06:36"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:10:24"> </span>
                         <br>
                         <p>Swan-Ganzカテーテル検査で評価可能なのはどれか．2つ選べ．</p>
 
@@ -2892,7 +2897,8 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill mis"> </span>
-                        <span class="badge badge-pill mis now" id="2018-09-27_21:46:23"> </span>
+                        <span class="badge badge-pill mis" id="2018-09-27_21:46:23"> </span>
+                        <span class="badge badge-pill mis now" id="2018-12-11_15:38:01"> </span>
                         <br>
                         <p>成人における異常値はどれか．</p>
 
@@ -3031,12 +3037,13 @@
                     </div>
                     <div class="card-body">
                         <span class="badge badge-pill cau"> </span>
-                        <span class="badge badge-pill cau now" id="2018-09-28_11:11:13"> </span>
+                        <span class="badge badge-pill cau" id="2018-09-28_11:11:13"> </span>
+                        <span class="badge badge-pill cau now" id="2018-12-11_16:27:10"> </span>
                         <br>
                         <p>心音のⅢ音について正しいのはどれか．</p>
 
                         <ol type="a">
-                            <li class="ans_t">低調な音である．</li>
+                            <li class="ans_t star">低調な音である．</li>
                             <li class="ans_f">座位で増強する．</li>
                             <li class="ans_f">収縮期に聴取する．</li>
                             <li class="ans_f">大動脈弁領域で聴取しやすい．</li>
@@ -3192,462 +3199,107 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <script src="../../scripts/js/Hippo.js"></script>
+
+<!-- <script src="../../scripts/temp/v4.2.0/js/script.js"></script> -->
+<script src="../../scripts/temp/js/script.js"></script>
+
 <script type="text/javascript">
-$('document').ready(function(){
-    // title
-    var title = document.title;
-    $('.nav-title').html(title);
-    // revised
-    var revised_date = $('meta[name="revised"]').attr('content');
-    $('.nav-revised').html(revised_date);
-
-    var version = $('meta[name="version"]').attr('content');
-    $('.nav-version').html(version);
-
-    // time
-    var now = new Date();
-    var hr = now.getHours();
-    var mi = now.getMinutes();
-    hr = hr + mi/60;
-    if (hr < 6 || 24 < hr ) {
-        $('body').addClass('night');
-    }
-
-    $('span.day').hide();
-    $('span.day').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.night').click(function(){
-        $('body').toggleClass('night');
-        $('span.night').toggle();
-        $('span.day').toggle();
-    });
-    $('span.glyphicon-print').click(function(){
-
-        $('#key').toggle();
-        $('#app').toggle();
-        $('#ref').toggle();
-        $('#q .card-group:not(.print)').toggle();
-        $('#q ul.nav-pills').toggle();
-
-        // $('#def').toggle();
-        // $('#cls').toggle();
-        // $('#eti').toggle();
-        // $('#epi').toggle();
-        // $('#ss').toggle();
-        // $('#ex').toggle();
-        // $('#dx').toggle();
-        // $('#rx').toggle();
-        // $('#app').toggle();
-        // $('#ref').toggle();
-
-        // $('#q div.card-group').hide();
-        // $('div.card-header.mis').parent().parent().show();
-        // $('div.card-header.cau').parent().parent().show();
-        // $('div.card-header.info').parent().parent().show();
-        // $('div.card-header.110').parent().parent().show();
-        // $('div.card-header.111').parent().parent().show();
-
-        // $('.card-body').find('.ans_t').toggleClass('correct-show');
-        // $('.card-body').find('.ans_f').toggleClass('correct-hide');
-        // $('div.answer').find('.card-body').show();
-
-        // $('div.card-header:not(.rev)').parent().parent().toggle();
-
-    });
-
-    $('.glyphicon-education').click(function(){
-        $('div.answer').find('.card-body').toggle();
-
-    });
-
-    $('.answer').find('.card-body').hide();
-
-    $('#q .card').click(function(){
-        $(this).next().find('.card-body').slideToggle(100);
-
-        $(this).find('.correct').toggleClass('correct-show');
-        $(this).find('.ans_t').toggleClass('correct-show');
-        $(this).find('.ans_f').toggleClass('correct-hide');
-    });
-    // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
-
-    $('div.pri').find('.card-header').append('<span class="badge badge-secondary badge-vio pri"><span class="glyphicon glyphicon-repeat"></span></span>');
-    $('div.req').find('.card-header').append('<span class="badge badge-secondary badge-vio req"><span class="glyphicon glyphicon-asterisk"></span></span>');
-    $('div.110').find('.card-header').append('<span class="badge badge-secondary badge-tar 110">110</span>');
-    $('div.111').find('.card-header').append('<span class="badge badge-secondary badge-tar 111">111</span>');
-    $('div.notqb').find('.card-header').append('<span class="badge badge-secondary badge-dark notqb"><strike>QB</strike</span>');
-    $('div.info').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-info-sign"></span></span>');
-    $('div.mnemonics').find('.card-header').append('<span class="badge badge-secondary badge-vio "><span class="glyphicon glyphicon-tags"></span></span>');
-
-
-    // $('div.mis').next().find('span.now').addClass('mis');
-    // $('div.cau').next().find('span.now').addClass('cau');
-    // $('div.rev').next().find('span.now').addClass('rev');
-    // $('div.hit').next().find('span.now').addClass('hit');
-
-    $('span.now.mis').parent().parent().find('div.card-header').addClass('mis');
-    $('span.now.cau').parent().parent().find('div.card-header').addClass('cau');
-    $('span.now.rev').parent().parent().find('div.card-header').addClass('rev');
-    $('span.now.hit').parent().parent().find('div.card-header').addClass('hit');
-
-    // $('.card .pri').find('.card-header').html('#1');
-
-    $('li.nav-item >a.mis').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.mis)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.cau').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.cau)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.rev').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.rev)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.hit').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.hit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.all').click(function(){
-        $('div.card-group').show();
-    });
-    $('li.nav-item >a.untag').click(function(){
-        $('div.card-group').show();
-        $('div.card-header:not(.miscaurevhit)').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.done').click(function(){
-        $('div.card-group').show();
-        $('div.card-header.miscaurevhit').parent().parent().toggle('slow');
-    });
-    $('li.nav-item >a.pri').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.pri)').toggle('slow');
-    });
-    $('li.nav-item >a.req').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.req)').toggle('slow');
-    });
-    $('li.nav-item >a.qb').click(function(){
-        $('div.card-group').show();
-        $('div.card-group.notqb').toggle('slow');
-    });
-    $('li.nav-item >a.110').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.110)').toggle('slow');
-    });
-    $('li.nav-item >a.111').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.111)').toggle('slow');
-    });
-    $('li.nav-item >a.info').click(function(){
-        $('div.card-group').show();
-        $('div.card-group:not(.info)').toggle('slow');
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        $('div.card-group.info').find('.card-body .answer').slideToggle(100);
-
-        // $('div.card-header.info').find('.correct').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_t').toggleClass('correct-show');
-        // $('div.card-header.info').find('.ans_f').toggleClass('correct-hide');
-    });
-
-    var n_mis = $('div.mis').size();
-    var n_cau = $('div.cau').size();
-    var n_rev = $('div.rev').size();
-    var n_hit = $('div.hit').size();
-    var n_untag = $('div.miscaurevhit').size();
-    var n_all;
-    var n_pri = $('div.pri').size();
-    var n_req = $('div.req').size();
-    var n_notqb = $('div.notqb').size();
-    var n_110 = $('div.110').size();
-    var n_111 = $('div.111').size();
-    var n_info = $('div.info').size();
-
-    var n_done = n_mis + n_cau + n_rev + n_hit;
-    var n_untag = n_untag;
-    var n_quiz = n_done + n_untag;
-    var n_qb = n_quiz - n_notqb;
-    var per_mis = Math.round(100 * n_mis / n_quiz) + "%";
-    var per_cau = Math.round(100 * n_cau / n_quiz) + "%";
-    var per_rev = Math.round(100 * n_rev / n_quiz) + "%";
-    var per_hit = Math.round(100 * n_hit / n_quiz) + "%";
-    var per_untag = Math.round(100 * n_untag / n_quiz) + "%";
-
-    // var alert_mis = n_mis + "<br>" + per_mis;
-    // var alert_cau = n_cau + "<br>" + per_cau;
-    // var alert_rev = n_rev + "<br>" + per_rev;
-    // var alert_hit = n_hit + "<br>" + per_hit;
-
-    $('span.q_alert_mis_n').html(n_mis);
-    $('span.q_alert_cau_n').html(n_cau);
-    $('span.q_alert_rev_n').html(n_rev);
-    $('span.q_alert_hit_n').html(n_hit);
-    $('span.q_alert_untag_n').html(n_untag);
-    $('span.q_alert_done_n').html(n_done);
-    $('span.q_alert_all_n').html(n_quiz);
-    $('span.q_alert_pri_n').html(n_pri);
-    $('span.q_alert_req_n').html(n_req);
-    $('span.q_alert_qb_n').html(n_qb);
-    $('span.q_alert_110_n').html(n_110);
-    $('span.q_alert_111_n').html(n_111);
-    $('span.q_alert_info_n').html(n_info);
-
-    $('span.q_alert_mis_per').html(per_mis);
-    $('span.q_alert_cau_per').html(per_cau);
-    $('span.q_alert_rev_per').html(per_rev);
-    $('span.q_alert_hit_per').html(per_hit);
-
-    $('code.q_alert_done').html(n_done);
-
-
-    $('p.q_dx').prepend('<code>Dx</code>: ');
-
-    $('p.q_answer_true').prepend('True: ');
-    $('p.q_answer_false').prepend('False: ');
-
-    // tack
-    $('span.rtack').append('⊣');
-    $('span.ltack').append('⊢');
-    $('span.utack').append('⊤');
-    $('span.dtack').append('⊥');
-
-    // $('.q .card-header').prepend($(this).find('.card-header').attr('id') );
+$(function(){
     
-    $('#q-tab a').on('click', function (e) {
-        e.preventDefault()
-        $(this).tab('show')
-    })
-
-
-
-
-    $('button.a_GE').click(function(){
-        $('div.card-group:not(.a_GE)').toggle();
-    });
-    $('button.b_Hepa').click(function(){
-        $('div.card-group:not(.b_Hepa)').toggle();
-    });
-    $('button.c_CV').click(function(){
-        $('div.card-group:not(.c_CV)').toggle();
-    });
-    $('button.d_Endo').click(function(){
-        $('div.card-group:not(.d_Endo)').toggle();
-    });
-    $('button.d_Meta').click(function(){
-        $('div.card-group:not(.d_Meta)').toggle();
-    });
-    $('button.e_Elctr').click(function(){
-        $('div.card-group:not(.e_Elctr)').toggle();
-    });
-    $('button.e_GU').click(function(){
-        $('div.card-group:not(.e_GU)').toggle();
-    });
-    $('button.e_Nephro').click(function(){
-        $('div.card-group:not(.e_Nephro)').toggle();
-    });
-    $('button.f_Immune').click(function(){
-        $('div.card-group:not(.f_Immune)').toggle();
-    });
-    $('button.g_Heme').click(function(){
-        $('div.card-group:not(.g_Heme)').toggle();
-    });
-    $('button.h_Infxn').click(function(){
-        $('div.card-group:not(.h_Infxn)').toggle();
-    });
-    $('button.i_Pulmo').click(function(){
-        $('div.card-group:not(.i_Pulmo)').toggle();
-    });
-    $('button.i_Thorax').click(function(){
-        $('div.card-group:not(.i_Thorax)').toggle();
-    });
-    $('button.j_Neuro').click(function(){
-        $('div.card-group:not(.j_Neuro)').toggle();
-    });
-    $('button.k_Tox').click(function(){
-        $('div.card-group:not(.k_Tox)').toggle();
-    });
-    $('button.l_ER').click(function(){
-        $('div.card-group:not(.l_ER)').toggle();
-    });
-    $('button.m_Ans').click(function(){
-        $('div.card-group:not(.m_Ans)').toggle();
-    });
-    $('button.n_Geri').click(function(){
-        $('div.card-group:not(.n_Geri)').toggle();
-    });
-    $('button.o_').click(function(){
-        $('div.card-group:not(.o_)').toggle();
-    });
-    $('button.p_OB').click(function(){
-        $('div.card-group:not(.p_OB)').toggle();
-    });
-    $('button.q_GYN').click(function(){
-        $('div.card-group:not(.q_GYN)').toggle();
-    });
-    $('button.r_Oph').click(function(){
-        $('div.card-group:not(.r_Oph)').toggle();
-    });
-    $('button.s_ENT').click(function(){
-        $('div.card-group:not(.s_ENT)').toggle();
-    });
-    $('button.t_Ortho').click(function(){
-        $('div.card-group:not(.t_Ortho)').toggle();
-    });
-    $('button.u_Ψ').click(function(){
-        $('div.card-group:not(.u_Ψ)').toggle();
-    });
-    $('button.v_Derm').click(function(){
-        $('div.card-group:not(.v_Derm)').toggle();
-    });
-    $('button.w_').click(function(){
-        $('div.card-group:not(.w_)').toggle();
-    });
-    $('button.x_Radio').click(function(){
-        $('div.card-group:not(.x_Radio)').toggle();
-    });
-    $('button.y_Health').click(function(){
-        $('div.card-group:not(.y_Health)').toggle();
-    });
-
-    var n_a_GE = 'a_GE: ' + $('div.card-group.a_GE').size();
-    $('button.a_GE').html(n_a_GE);
-    var n_b_Hepa = 'b_Hepa: ' + $('div.card-group.b_Hepa').size();
-    $('button.b_Hepa').html(n_b_Hepa);
-    var n_c_CV = 'c_CV: ' + $('div.card-group.c_CV').size();
-    $('button.c_CV').html(n_c_CV);
-    var n_d_Endo= 'd_Endo: ' + $('div.card-group.d_Endo').size();
-    $('button.d_Endo').html(n_d_Endo);
-    var n_d_Meta = 'd_Meta: ' + $('div.card-group.d_Meta').size();
-    $('button.d_Meta').html(n_d_Meta);
-    var n_e_Nephro = 'e_Nephro: ' + $('div.card-group.e_Nephro').size();
-    $('button.e_Nephro').html(n_e_Nephro);
-    var n_e_GU = 'e_GU: ' + $('div.card-group.e_GU').size();
-    $('button.e_GU').html(n_e_GU);
-    var n_e_Elctr = 'e_Elctr: ' + $('div.card-group.e_Elctr').size();
-    $('button.e_Elctr').html(n_e_Elctr);
-    var n_f_Immune = 'f_Immune: ' + $('div.card-group.f_Immune').size();
-    $('button.f_Immune').html(n_f_Immune);
-    var n_g_Heme = 'g_Heme: ' + $('div.card-group.g_Heme').size();
-    $('button.g_Heme').html(n_g_Heme);
-    var n_h_Infxn = 'h_Infxn: ' + $('div.card-group.h_Infxn').size();
-    $('button.h_Infxn').html(n_h_Infxn);
-    var n_i_Pulmo = 'i_Pulmo: ' + $('div.card-group.i_Pulmo').size();
-    $('button.i_Pulmo').html(n_i_Pulmo);
-    var n_i_Thorax = 'i_Thorax: ' + $('div.card-group.i_Thorax').size();
-    $('button.i_Thorax').html(n_i_Thorax);
-    var n_j_Neuro = 'j_Neuro: ' + $('div.card-group.j_Neuro').size();
-    $('button.j_Neuro').html(n_j_Neuro);
-    var n_k_Tox = 'k_Tox: ' + $('div.card-group.k_Tox').size();
-    $('button.k_Tox').html(n_k_Tox);
-    var n_l_ER = 'l_ER: ' + $('div.card-group.l_ER').size();
-    $('button.l_ER').html(n_l_ER);
-    var n_m_Ans = 'm_Ans: ' + $('div.card-group.m_Ans').size();
-    $('button.m_Ans').html(n_m_Ans);
-    var n_n_Geri = 'n_Geri: ' + $('div.card-group.n_Geri').size();
-    $('button.n_Geri').html(n_n_Geri);
-    var n_o_Ped = 'o_Ped: ' + $('div.card-group.o_Ped').size();
-    $('button.o_Ped').html(n_o_Ped);
-    var n_p_OB = 'p_OB: ' + $('div.card-group.p_OB').size();
-    $('button.p_OB').html(n_p_OB);
-    var n_q_GYN = 'q_GYN: ' + $('div.card-group.q_GYN').size();
-    $('button.q_GYN').html(n_q_GYN);
-    var n_r_Oph = 'r_Oph: ' + $('div.card-group.r_Oph').size();
-    $('button.r_Oph').html(n_r_Oph);
-    var n_s_ENT = 's_ENT: ' + $('div.card-group.s_ENT').size();
-    $('button.s_ENT').html(n_s_ENT);
-    var n_t_Ortho = 't_Ortho: ' + $('div.card-group.t_Ortho').size();
-    $('button.t_Ortho').html(n_t_Ortho);
-    var n_u_Ψ = 'u_Ψ: ' + $('div.card-group.u_Ψ').size();
-    $('button.u_Ψ').html(n_u_Ψ);
-    var n_v_Derm = 'v_Derm: ' + $('div.card-group.v_Derm').size();
-    $('button.v_Derm').html(n_v_Derm);
-    var n_w_ = 'w_: ' + $('div.card-group.w_').size();
-    $('button.w_').html(n_w_);
-    var n_x_Radio = 'x_Radio: ' + $('div.card-group.x_Radio').size();
-    $('button.x_Radio').html(n_x_Radio);
-    var n_y_Health = 'y_Health: ' + $('div.card-group.y_Health').size();
-    $('button.y_Health').html(n_y_Health);
-
-    $('div.progress > .progress-mis').width(per_mis).html(n_mis);
-    $('div.progress > .progress-cau').width(per_cau).html(n_cau);
-    $('div.progress > .progress-rev').width(per_rev).html(n_rev);
-    $('div.progress > .progress-hit').width(per_hit).html(n_hit);
-
-    $('div.progress > div.progress-mis').html(n_mis);
-    $('div.progress > div.progress-cau').html(n_cau);
-    $('div.progress > div.progress-rev').html(n_rev);
-    $('div.progress > div.progress-hit').html(n_hit);
-
-    // $('div.page-header').();
-    // $('.dropdown-item').appendTo();
 
 
     $('#ANA h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ANA)').toggle();
+        $('div.card-group:not(.ANA)').slideToggle(100);
     });
-    $('#ANA').find('code').html($('div.ANA').size());
+    $('#ANA').find('code').html(
+        $('div.ANA > .card > .mis').size() + '+' +
+        $('div.ANA > .card > .cau').size() + '/' +
+        $('div.ANA').size());
 
 
     $('#PHYSIO h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.PHYSIO)').toggle();
+        $('div.card-group:not(.PHYSIO)').slideToggle(100);
     });
-    $('#PHYSIO').find('code').html($('div.PHYSIO').size());
+    $('#PHYSIO').find('code').html(
+        $('div.PHYSIO > .card > .mis').size() + '+' +
+        $('div.PHYSIO > .card > .cau').size() + '/' +
+        $('div.PHYSIO').size());
 
 
     $('#pulse h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.pulse)').toggle();
+        $('div.card-group:not(.pulse)').slideToggle(100);
     });
-    $('#pulse').find('code').html($('div.pulse').size());
+    $('#pulse').find('code').html(
+        $('div.pulse > .card > .mis').size() + '+' +
+        $('div.pulse > .card > .cau').size() + '/' +
+        $('div.pulse').size());
 
 
     $('#auscultation h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.auscultation)').toggle();
+        $('div.card-group:not(.auscultation)').slideToggle(100);
     });
-    $('#auscultation').find('code').html($('div.auscultation').size());
+    $('#auscultation').find('code').html(
+        $('div.auscultation > .card > .mis').size() + '+' +
+        $('div.auscultation > .card > .cau').size() + '/' +
+        $('div.auscultation').size()
+    );
+
 
     $('#s1').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.s1)').toggle();
+        $('div.card-group:not(.s1)').slideToggle(100);
     });
-    $('#s1').find('code').html($('div.s1').size());
+    $('#s1').find('code').html(
+        $('div.s1 > .card > .mis').size() + '+' +
+        $('div.s1 > .card > .cau').size() + '/' +
+        $('div.s1').size()
+    );
 
 
     $('#s2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.s2)').toggle();
+        $('div.card-group:not(.s2)').slideToggle(100);
     });
-    $('#s2').find('code').html($('div.s2').size());
+    $('#s2').find('code').html(
+        $('div.s2s > .card > .mis').size() + '+' +
+        $('div.s2s > .card > .cau').size() + '/' +
+        $('div.s2').size());
 
 
     $('#s3').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.s3)').toggle();
+        $('div.card-group:not(.s3)').slideToggle(100);
     });
-    $('#s3').find('code').html($('div.s3').size());
+    $('#s3').find('code').html(
+        $('div.s3 > .card > .mis').size() + '+' +
+        $('div.s3 > .card > .cau').size() + '/' +
+        $('div.s3').size());
 
 
     $('#Tx h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.Tx)').toggle();
+        $('div.card-group:not(.Tx)').slideToggle(100);
     });
-    $('#Tx').find('code').html($('div.Tx').size());
+    $('#Tx').find('code').html(
+        $('div.Tx > .card > .mis').size() + '+' +
+        $('div.Tx > .card > .cau').size() + '/' +
+        $('div.Tx').size());
 
 
     $('#ECG h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.ECG)').toggle();
+        $('div.card-group:not(.ECG)').slideToggle(100);
     });
-    $('#ECG').find('code').html($('div.ECG').size());
+    $('#ECG').find('code').html(
+        $('div.ECG > .card > .mis').size() + '+' +
+        $('div.ECG > .card > .cau').size() + '/' +
+        $('div.ECG').size());
 
 
 
@@ -3657,9 +3309,13 @@ $('document').ready(function(){
 
     $('# h2').click(function(){
         $('.card-group').show();
-        $('div.card-group:not(.)').toggle();
+        $('#q div.card-group:not(.)').slideToggle(100);
     });
-    $('#').find('code').html($('div.').size());
+    $('#').find('small > code').html(
+        $('div. > .card > .mis').size() + '+' +
+        $('div. > .card > .cau').size() + '/' +
+        $('div.').size()
+    );
 
 });
 </script>

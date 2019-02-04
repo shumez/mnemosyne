@@ -1,13 +1,12 @@
 <!--
-@Author: shumez
-@Date:   2018-06-26 21:39:36
-@Project: Fornix
-@Filename: index.html
-@Last modified by:   shumez
-@Last modified time: 2018-12-17 16:33:48
+Filename: 	index.html
+Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix/d_Meta/MetabolicSyndrome
+Author: 	shumez <https://github.com/shumez>
+Created: 	2018-06-27 14:41:0
+Modified: 	2019-02-04 17:20:24
+-----
+Copyright (c) 2019 shumez
 -->
-
-
 <!DOCTYPE html>
 <!--
 04.02.00    18 12 01    $(function)
@@ -222,11 +221,15 @@
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>肥満</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">原発性</li>
-                    <li class="list-group-item">内分泌性</li>
-                    <li class="list-group-item">遺伝性</li>
-                    <li class="list-group-item">中枢性（視床下部性）</li>
-                    <li class="list-group-item">薬剤性</li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>原発性</li>
+                            <li>内分泌性</li>
+                            <li>遺伝性</li>
+                            <li>中枢性（視床下部性）</li>
+                            <li>薬剤性</li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <!-- <ul class="list-group"> -->
@@ -306,27 +309,39 @@
 
 
             <div class="col-xs-12 col-sm-6 col-md-6">
-                <ul class="list-group">
-                    <li class="list-group-item">必須
-                        <ul>
-                            <li>腹囲</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">≥ 2/3
-                        <ul>
-                            <li>空腹時TG / HDL-Chol</li>
-                            <li>&uarr;BP</li>
-                            <li>&uarr;空腹時血糖</li>
-                        </ul>
-                    </li>
-                    <li class="list-group-item">
-                        <ul>
-                            <li>LDL-Chol</li>
-                            <li>T-Chol</li>
-                        </ul>
-                        は含まれない
-                    </li>
-                </ul>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <th>必須</th>
+                            <td>
+                                <ul>
+                                    <li>腹囲</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>≥ 2/3</th>
+                            <td>
+                                <ul>
+                                    <li>空腹時TG / HDL-Chol</li>
+                                    <li>&uarr;BP</li>
+                                    <li>&uarr;空腹時血糖</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <ul>
+                                    <li>LDL-Chol</li>
+                                    <li>T-Chol</li>
+                                </ul>
+                                は含まれない
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
 
 
@@ -381,39 +396,6 @@
     </div>
 
 
-    <div class="row">
-
-
-
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="section" id="">
-                <div class="page-header">
-                    <h2> <small> </small> <small><code></code></small></h2>
-                </div>
-
-                <!-- <ul class="list-group"> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Etio</h6><h6 class="hidden-xs-down">Etiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Epi</h6><h6 class="hidden-xs-down">Epidemiology</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">S/S</h6><h6 class="hidden-xs-down">Symptom</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Ex</h6><h6 class="hidden-xs-down">Exam</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Dx</h6><h6 class="hidden-xs-down">Diagnosis</h6>
-                    </li> -->
-                    <!-- <li class="list-group-item">
-                        <h6 class="hidden-sm-up">Rx</h6><h6 class="hidden-xs-down">Treatment</h6>
-                    </li> -->
-                <!-- </ul> -->
-            </div>
-        </div>
-    </div>
 
 
     <div class="section" id="app">
@@ -651,8 +633,8 @@
                             <li class="ans_t">腹囲</li>
                             <li class="ans_t">血圧</li>
                             <li class="ans_t">空腹時血糖</li>
-                            <li class="ans_t">トリグリセリド</li>
-                            <li class="ans_f">総コレステロール</li>
+                            <li class="ans_t star">トリグリセリド</li>
+                            <li class="ans_f star">総コレステロール</li>
                         </ol>
                     </div>
                 </div>
@@ -1333,6 +1315,7 @@ $(function(){
         $('#q div.card-group:not(.INTRO)').slideToggle(100);
     });
     $('#INTRO').find('small > code').html(
+        $('div.INTRO.star').size() + '* ' +
         $('div.INTRO > .card > .mis').size() + '+' +
         $('div.INTRO > .card > .cau').size() + '/' +
         $('div.INTRO').size()
@@ -1345,6 +1328,7 @@ $(function(){
         $('#q div.card-group:not(.PHYSIO)').slideToggle(100);
     });
     $('#PHYSIO').find('small > code').html(
+        $('div.PHYSIO.star').size() + '* ' +
         $('div.PHYSIO > .card > .mis').size() + '+' +
         $('div.PHYSIO > .card > .cau').size() + '/' +
         $('div.PHYSIO').size()
@@ -1356,6 +1340,7 @@ $(function(){
         $('#q div.card-group:not(.MetS)').slideToggle(100);
     });
     $('#MetS').find('small > code').html(
+        $('div.MetS.star').size() + '* ' +
         $('div.MetS > .card > .mis').size() + '+' +
         $('div.MetS > .card > .cau').size() + '/' +
         $('div.MetS').size()
@@ -1371,6 +1356,7 @@ $(function(){
         $('#q div.card-group:not(.)').slideToggle(100);
     });
     $('#').find('small > code').html(
+        $('div..star').size() + '* ' +
         $('div. > .card > .mis').size() + '+' +
         $('div. > .card > .cau').size() + '/' +
         $('div.').size()

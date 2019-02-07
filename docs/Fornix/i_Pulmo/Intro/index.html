@@ -366,10 +366,14 @@ Copyright (c) 2019 shumez
             <div class="col-xs-12 col-sm-6 col-md-6">
                 <h6>右方シフト</h6>
                 <ul class="list-group">
-                    <li class="list-group-item">&darr;pH</li>
-                    <li class="list-group-item">&uarr;PaCO<sub>2</sub></li>
-                    <li class="list-group-item">&uarr;体温</li>
-                    <li class="list-group-item">&uarr;2,3-DPG</li>
+                    <li class="list-group-item">
+                        <ul>
+                            <li>&darr;pH</li>
+                            <li>&uarr;PaCO<sub>2</sub></li>
+                            <li>&uarr;体温</li>
+                            <li>&uarr;2,3-DPG</li>
+                        </ul>
+                    </li>
                 </ul>
 
                 <div class="card">
@@ -494,6 +498,56 @@ Copyright (c) 2019 shumez
                     </tbody>
                 </table>
             </div>
+        </div>
+    </div>
+
+
+    <div class="section" id="PEx">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="page-header">
+                    <h2>Physical Examination <small><code></code></small></h2>
+                </div>
+            </div>
+
+
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <h3 id="vocal_fremitus">Vocal Fremitus <small>声音振盪</small> <small><code></code></small></h3>
+
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td align="center">&uarr;</td>
+                            <td>
+                                <ul>
+                                    <li>肺炎</li>
+                                    <li>TB</li>
+                                    <li>小さな無気肺</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">&darr;</td>
+                            <td>
+                                <ul>
+                                    <li>胸腔内の異物
+                                        <ul>
+                                            <li><u>胸水</u></li>
+                                            <li><u>気胸</u></li>
+                                        </ul>
+                                    </li>
+                                    <li>大気管支炎</li>
+                                    <li><u>大きな無気肺</u> (肺が圧縮)</li>
+                                    <li>肺気腫 (&uarr;肺内含気)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+            </div>
+
         </div>
     </div>
 
@@ -684,16 +738,9 @@ Copyright (c) 2019 shumez
                 </div>
 
                 <table class="table table-condensed">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <tr>
-                            <th><b>起座 Orthotic</b></th>
+                            <th><u>起座 Orthotic</u></th>
                             <!-- <td></td> -->
                             <td>
                                 <ul>
@@ -4186,6 +4233,17 @@ $(function(){
         $('div.SS > .card > .mis').size() + '+' +
         $('div.SS > .card > .cau').size() + '/' +
         $('div.SS').size()
+    );
+
+
+    $('#vocal_fremitus').click(function(){
+        $('.card-group').show();
+        $('#q div.card-group:not(.vocal_fremitus)').slideToggle(100);
+    });
+    $('#vocal_fremitus').find('small > code').html(
+        $('div.vocal_fremitus > .card > .mis').size() + '+' +
+        $('div.vocal_fremitus > .card > .cau').size() + '/' +
+        $('div.vocal_fremitus').size()
     );
 
 

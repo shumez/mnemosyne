@@ -133,6 +133,7 @@ $(function(){
         $(this).find('.ans_f').toggleClass('correct-hide');
 
         $(this).find('li.star > span.opt_star').toggle();
+        $(this).find('tr.star span.opt_star').toggle();
     });
     // $('.notqb:first-child').prent().parent().css('margin-top', '50px')
 
@@ -150,6 +151,10 @@ $(function(){
     // $('li.star').parent().parent().parent().find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-star"></span></span>');
     $('li.star').parent().parent().parent().parent().addClass('star');
     $('li.star').append(' <span class="glyphicon glyphicon-star opt_star"> </span>');
+
+    $('tr.star').parent().parent().parent().parent().addClass('star');
+    $('tr.star td:last-child').append(' <span class="glyphicon glyphicon-star opt_star"> </span>');
+    // $('td.star').append(' <span class="glyphicon glyphicon-star opt_star"> </span>');
     $('.opt_star').hide();
     $('div.star').find('.card-header').append('<span class="badge badge-secondary badge-vio"><span class="glyphicon glyphicon-star"></span></span>');
 
@@ -249,7 +254,7 @@ $(function(){
     });
     $('li.nav-item >a.star').click(function(){
         $('div.card-group').show();
-        $('div.card-group:not(.star)').slideToggle(100);
+        $('#q div.card-group:not(.star)').slideToggle(100);
     });
 
 
@@ -374,6 +379,13 @@ $(function(){
     // );
 
 
+    // $('#key').hide();
+    // $('#key').toggle();
+
+
+    $('img').each(function(index){
+
+    });
 
 
     $('div.section').each(function(){
@@ -396,6 +408,7 @@ $(function(){
     	}
     });
 
+    $('#ref > div:not(.page-header)').append('<h6>Image</h6><ol class="ref_img"></ol>');
 
     $('img').each(function(index){
     	var link = $(this).attr('src');
@@ -403,11 +416,12 @@ $(function(){
     	if (link == '../../scripts/img/favicon.png') {
 
     	} else {
-    		$('#ref ol').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
+    		$('#ref ol.ref_img').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
     	}
     });
 
 
+    $('#ref > div:not(.page-header)').append('<h6>Movie</h6><ol class="ref_mov"></ol>');
 
     $('iframe').each(function(index){
     	var link = $(this).attr('src');
@@ -415,15 +429,15 @@ $(function(){
     	if (link == '../../scripts/img/favicon.png') {
 
     	} else {
-    		$('#ref ol').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
+    		$('#ref ol.ref_mov').append('<li><a href="'+ link +'" target="_blank">' + link + '</a></li>');
     	}
     });
 
 
 
-    $('#ref ol').hide();
+    $('#ref > div:not(.page-header)').hide();
     $('#ref .page-header').click(function(){
-    	$('#ref ol').toggle();
+    	$('#ref > div:not(.page-header)').toggle();
     });
 
 

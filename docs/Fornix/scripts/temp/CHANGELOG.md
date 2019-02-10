@@ -15,6 +15,9 @@
 
 - [ ] 
 
+## [4.2.2] - 2018-12-03
+- after .112 
+
 ## [4.2.1] - 18-12-03
 - .night mode default
 - print toggle .day/.night

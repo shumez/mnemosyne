@@ -1,18 +1,16 @@
 <!--
 Filename: 	README.md
-Project: 	/Users/shume/Developer/doc/proj
-Author: 	shumez
-Created: 	2018-05-23 13:54:0
-Modified: 	2018-12-28 10:53:4
+Project: 	/Users/shume/Developer/mnemosyne/docs/Mammillary
+Author: 	shumez <https://github.com/shumez>
+Created: 	2019-02-22 18:29:8
+Modified: 	2019-02-22 18:31:44
 -----
-Copyright (c) 2018 shumez
+Copyright (c) 2019 shumez
 -->
 
+# Mammillary
 
-
-#
-
-[![cover](img/)][img]
+<!-- [![cover](img/)][img] -->
 
 
 [docs] / [DOCS.md]

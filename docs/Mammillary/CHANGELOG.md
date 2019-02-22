@@ -1,13 +1,12 @@
 <!--
 Filename: 	CHANGELOG.md
-Project: 	/Users/shume/Developer/doc/proj
-Author: 	shumez
-Created: 	2018-03-23 20:06:0
-Modified: 	2018-12-28 10:53:38
+Project: 	/Users/shume/Developer/mnemosyne/docs/Mammillary
+Author: 	shumez <https://github.com/shumez>
+Created: 	2019-02-22 18:29:8
+Modified: 	2019-02-22 18:32:12
 -----
-Copyright (c) 2018 shumez
+Copyright (c) 2019 shumez
 -->
-
 
 # ChangeLog
 

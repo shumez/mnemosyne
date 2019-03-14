@@ -3,7 +3,7 @@ Filename: 	glomerulus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/Mammillary/e_Nephro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-03-14 12:14:0
-Modified: 	2019-03-14 12:37:38
+Modified: 	2019-03-14 12:44:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -24,7 +24,7 @@ Copyright (c) 2019 shumez
     2. [FSGS](#FSGS)
     3. [MN](#MN)
     4. [MPGN](#MPGN)
-    5. [Secondary-NS](#Secondary-NS)
+    5. [Secondary NS](#Secondary-NS)
 
 ## Acute Nephritic Syndrome
 

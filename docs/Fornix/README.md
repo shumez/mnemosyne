@@ -3,10 +3,11 @@ Filename: 	README.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/Fornix
 Author: 	shumez <https://github.com/shumez>
 Created: 	2017-08-28 11:46:0
-Modified: 	2019-01-19 17:52:3
+Modified: 	2019-02-22 18:29:49
 -----
 Copyright (c) 2019 shumez
 -->
+
 Fornix
 ======
 
@@ -15,7 +16,7 @@ Versions
 
 - Hippo (hippocampal formation)
 - Fornix (fornix)
-- ~~MB (mammillary bodies)~~
+- Mammillary (mammillary bodies)
 - ~~MTT (mammillothalamic tract)~~
 - ~~ATN (anterior thalamic nucleus)~~
 - ~~CC (cingulum)~~

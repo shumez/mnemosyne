@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-23 21:06:1
+Modified: 	2019-04-23 21:06:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -11,7 +11,11 @@ Copyright (c) 2019 shumez
 # Stomach
 
 
+## Gastric Cancer
 
+**Etiology**
+
+* EB virus
 
 <!--
 ## 

@@ -3,12 +3,23 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-04-23 20:32:31
+Modified: 	2019-04-23 20:59:8
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Oesophagus
+
+## Esophageal Cancer
+
+**Prognosis**
+
+* 直接浸潤
+	* 下行大動脈
+	* 気管
+	* Lt 気管支
+	* LA
+	* 肺V
 
 
 <!--

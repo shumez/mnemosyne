@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-04-23 20:12:24
+Modified: 	2019-04-23 20:31:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -17,20 +17,63 @@ Copyright (c) 2019 shumez
 
 ## CMV 
 
-###### Etiology
+**Etiology**
+
 * steroid High-dose &rArr; CMV再活性化
 
-###### 
 *　ステロイド抵抗性
 
-###### Treatment
+**Treatment**
+
 * Gancyclovir
 * &gamma;-globlin
 
 
+<!--
+## 
 
+**Definition**
 
-[x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?\inline&space;x+\frac{1}{x}=1
+* 
+
+**Etiology**
+
+* 
+
+**Epidemiology**
+
+* 
+
+**Classification**
+
+* 
+
+**Sign and Symptom**
+
+* 
+
+**Association**
+
+* 
+
+**Examination**
+
+* 
+
+**Treatment**
+
+* 
+
+**Prognosis**
+
+* 
+
+**Appendix**
+
+* 
+-->
+
+<!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?\inline&space;x+\frac{1}{x}=1 -->
 <!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?x+\frac{1}{x}=1 -->
 
 <!-- <style type="text/css">

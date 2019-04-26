@@ -3,58 +3,57 @@ Filename: 	Rheumatology.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/f_Immune
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:34:3
-Modified: 	2019-04-26 10:57:29
+Modified: 	2019-04-26 11:19:13
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Rheumatology
 
-
-
-<!--
-## 
-
-**Definition**
-
-* 
-
-**Etiology**
-
-* 
-
-**Epidemiology**
-
-* 
-
-**Classification**
-
-* 
-
-**Sign and Symptom**
-
-* 
-
-**Association**
-
-* 
-
-**Examination**
-
-* 
+## RA
 
 **Treatment**
 
-* 
+* DMARDs (Disease Modifying AntiRheumatic Drugs)
+	* MTX
+	* csDMARDs (Conventional Synthetic)
+* bDMARDs (Biological)
 
-**Prognosis**
+###### bDMARDs
 
-* 
+| Generic				| Target				|   |
+|-----------------------|-----------------------|---|
+| infliximab			| TNF-&alpha;			|	|
+| etanercept			| TNF-&alpha;/&beta;	|	|
+| adalimumab			| TNF-&alpha;			|	|
+| tocilizumab			| IL-6					|	|
+| abatacept				| CD80/86				|	|
+| golimumab				| TNF-&alpha;			|	|
+| certolizumab pegol	| TNF-&alpha;			|	|
+| tofacitibib			| JAK					|	|
 
-**Appendix**
+<!-- ## -->
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
-* 
--->
 
 
 ##

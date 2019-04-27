@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-04-27 16:36:46
+Modified: 	2019-04-27 17:48:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -12,7 +12,36 @@ Copyright (c) 2019 shumez
 
 
 ## UC
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+**Association**
 
+* 腸管合併症
+	* [中毒性巨大結腸症]
+	* [大腸癌][CRC]
+	* [CMV腸炎][CMV]
+* 腸管外合併症
+	* [PSC]
+	* [壊疽性膿皮症]
+	
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
 
 ## CMV 
@@ -73,6 +102,8 @@ Copyright (c) 2019 shumez
 <!-- **Association** -->
 <!-- *  -->
 <!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
 <!-- *  -->
 <!-- **Treatment** -->
 <!-- *  -->

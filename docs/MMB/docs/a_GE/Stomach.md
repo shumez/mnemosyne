@@ -3,12 +3,61 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-27 16:55:34
+Modified: 	2019-04-27 17:30:43
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Stomach
+
+## FD
+
+**Definition**
+
+* FGID
+	* GERD
+	* FD
+	* IBS
+	
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+**Diagnosis**
+
+* Rome IV
+	* ≥ 1
+		1. 食後のもられ感
+		2. 早期飽満感
+		3. 心窩部痛
+		4. 心窩部灼熱感
+		* 1,3: PDS (食後愁訴症候群)
+		* 2,4: EPS (心窩部痛症候群)
+	* –6moから起こる, ≥3mo症状が継続
+	* 器質的疾患が上部内視鏡検査で確認されない
+
+**Treatment**
+
+* 初期
+	* PPI / H~2~RA
+	* [acotimide]
+* 二次
+	* 抗うつ
+	* 抗不安
+	* 漢方
+
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
 
 ## Gastric Cancer

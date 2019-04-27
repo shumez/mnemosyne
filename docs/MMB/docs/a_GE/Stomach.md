@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-23 21:06:26
+Modified: 	2019-04-27 16:15:6
 -----
 Copyright (c) 2019 shumez
 -->
@@ -17,49 +17,42 @@ Copyright (c) 2019 shumez
 
 * EB virus
 
-<!--
-## 
-
-**Definition**
-
-* 
-
-**Etiology**
-
-* 
-
-**Epidemiology**
-
-* 
-
-**Classification**
-
-* 
-
-**Sign and Symptom**
-
-* 
-
-**Association**
-
-* 
-
-**Examination**
-
-* 
-
 **Treatment**
 
-* 
+* CCT
+	* Primary
+		* HER2(–)
+			* [S-1] ( / [capecitabine]) + [CDDP] (/ [oxalliplatin])
+		* HER2(+)
+			* [capecitabine] (/ [S-1]) + [CDDP] (/ [oxalliplatin]) + [trastuzumab]
+	* Secondary
+		* [capexitabin]
+		* [irinotecan]
+		* [ramucirumab]
+	* Postope
+* RT
 
-**Prognosis**
-
-* 
-
-**Appendix**
-
-* 
--->
+<!-- ## -->
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
 ## 
 

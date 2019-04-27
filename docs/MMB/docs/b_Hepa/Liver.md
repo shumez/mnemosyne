@@ -1,0 +1,45 @@
+<!--
+Filename: 	Liver.md
+Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
+Author: 	shumez <https://github.com/shumez>
+Created: 	2019-04-03 17:17:3
+Modified: 	2019-04-27 18:04:43
+-----
+Copyright (c) 2019 shumez
+-->
+
+# Liver
+
+
+
+## 
+
+<!-- ## -->
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
+
+
+
+<!-- <style type="text/css">
+	img{width: 50%; float: right;}
+</style> -->

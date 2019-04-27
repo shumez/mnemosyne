@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-04-23 20:31:56
+Modified: 	2019-04-27 16:36:46
 -----
 Copyright (c) 2019 shumez
 -->
@@ -29,49 +29,57 @@ Copyright (c) 2019 shumez
 * &gamma;-globlin
 
 
-<!--
-## 
+## blind-loop
 
-**Definition**
-
-* 
-
-**Etiology**
-
-* 
-
-**Epidemiology**
-
-* 
-
-**Classification**
-
-* 
-
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
 **Sign and Symptom**
 
-* 
+* 脂肪便
+* [巨赤芽球性貧血][MBA] &lArr; Vit.B~12~消費
+* [&darr;Ca][HoCa]
 
-**Association**
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
-* 
 
-**Examination**
+##
 
-* 
-
-**Treatment**
-
-* 
-
-**Prognosis**
-
-* 
-
-**Appendix**
-
-* 
--->
+<!-- ## -->
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
 <!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?\inline&space;x+\frac{1}{x}=1 -->
 <!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?x+\frac{1}{x}=1 -->

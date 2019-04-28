@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-28 14:17:3
+Modified: 	2019-04-28 14:21:35
 -----
 Copyright (c) 2019 shumez
 -->
@@ -100,6 +100,7 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 <!-- **Examination** -->
 <!-- *  -->
+
 **Treatment**
 
 * H~2~RA

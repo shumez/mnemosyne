@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-27 17:30:43
+Modified: 	2019-04-28 14:17:3
 -----
 Copyright (c) 2019 shumez
 -->
@@ -32,6 +32,8 @@ Copyright (c) 2019 shumez
 <!-- **Examination** -->
 <!-- *  -->
 **Diagnosis**
+
+[![][img_FD]][img_FD]
 
 * Rome IV
 	* ≥ 1
@@ -132,7 +134,8 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 
 
+[img_FD]: ../img/a_GE/FD.jpg
 
-<!-- <style type="text/css">
-	img{width: 50%; float: right;}
-</style> -->
+<style type="text/css">
+	img{width: 51%; float: right;}
+</style>

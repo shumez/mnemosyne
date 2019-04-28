@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-28 17:01:46
+Modified: 	2019-04-28 17:12:40
 -----
 Copyright (c) 2019 shumez
 -->
@@ -75,7 +75,7 @@ Copyright (c) 2019 shumez
 		* HER2(+)
 			* [capecitabine] (/ [S-1]) + [CDDP] (/ [oxalliplatin]) + [trastuzumab]
 	* Secondary
-		* [capexitabin]
+		* [paclitaxel]
 		* [irinotecan]
 		* [ramucirumab]
 	* Postope
@@ -139,6 +139,7 @@ Copyright (c) 2019 shumez
 [CDDP]: .
 [oxalliplatin]: .
 [trastuzumab]: .
+[paclitaxel]: .
 [irinotecan]: .
 [ramucirumab]: .
 

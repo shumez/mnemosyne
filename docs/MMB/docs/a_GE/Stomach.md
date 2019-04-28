@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-04-28 14:21:35
+Modified: 	2019-04-28 17:01:46
 -----
 Copyright (c) 2019 shumez
 -->
@@ -36,13 +36,11 @@ Copyright (c) 2019 shumez
 [![][img_FD]][img_FD]
 
 * Rome IV
-	* ≥ 1
+	* ≥ 1 (1,3: PDS (食後愁訴症候群), 2,4: EPS (心窩部痛症候群))
 		1. 食後のもられ感
 		2. 早期飽満感
 		3. 心窩部痛
 		4. 心窩部灼熱感
-		* 1,3: PDS (食後愁訴症候群)
-		* 2,4: EPS (心窩部痛症候群)
 	* –6moから起こる, ≥3mo症状が継続
 	* 器質的疾患が上部内視鏡検査で確認されない
 
@@ -133,6 +131,16 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 <!-- **Appendix** -->
 <!-- *  -->
+
+[acotimide]: .
+
+[S-1]: . 
+[capecitabine]: . 
+[CDDP]: .
+[oxalliplatin]: .
+[trastuzumab]: .
+[irinotecan]: .
+[ramucirumab]: .
 
 
 [img_FD]: ../img/a_GE/FD.jpg

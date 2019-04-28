@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-04-28 13:43:22
+Modified: 	2019-04-28 13:48:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -72,6 +72,34 @@ Copyright (c) 2019 shumez
 <!-- **Appendix** -->
 <!-- *  -->
 
+## EHO
+
+**Definition**
+
+* 肝外門脈閉塞 &rArr; 求肝性側副血行路
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
+
+
+
 ##
 
 <!-- ## -->
@@ -97,7 +125,6 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 <!-- **Appendix** -->
 <!-- *  -->
-
 
 
 <!-- <style type="text/css">

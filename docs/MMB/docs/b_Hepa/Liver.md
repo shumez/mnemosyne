@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-04-28 16:13:3
+Modified: 	2019-04-28 16:13:32
 -----
 Copyright (c) 2019 shumez
 -->
@@ -34,7 +34,30 @@ Copyright (c) 2019 shumez
 <!-- **Appendix** -->
 <!-- *  -->
 
+## HB
 
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
 ## Portal Hypertension
 

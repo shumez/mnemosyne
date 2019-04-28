@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-04-28 14:08:14
+Modified: 	2019-04-28 14:14:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -102,9 +102,11 @@ Copyright (c) 2019 shumez
 
 **Definition**
 
+[![][img_Budd-Chiari]][img_Budd-Chiari]
+
 * IVCの閉塞
 
-[![][img_Budd-Chiari]][img_Budd-Chiari]
+
 
 <!-- **Etiology** -->
 <!-- *  -->

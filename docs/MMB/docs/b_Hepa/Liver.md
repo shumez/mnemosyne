@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-04-28 16:13:32
+Modified: 	2019-05-01 17:31:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -58,6 +58,44 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 <!-- **Appendix** -->
 <!-- *  -->
+
+
+## HC
+
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
+<!-- *  -->
+**Treatment**
+
+* DAAs ~Direct Acting Antivirals~ (IFN free)
+* IFN base
+
+* genotype 1
+	* エルバスビル + グラゾプレビル
+	* ソホスブビル + レジパスビル
+	* オムビタスビル + パリタプレビル
+* genotype 2
+	* ソホスブビル + リバビリン
+	* オムビタスビル + パリタプレビル　+ リトナビル + リバビリン
+
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
+
 
 ## Portal Hypertension
 

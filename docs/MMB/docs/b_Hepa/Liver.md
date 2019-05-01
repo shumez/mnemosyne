@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-05-01 17:31:22
+Modified: 	2019-05-01 17:58:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -97,6 +97,35 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 
 
+## LC
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Diagnosis** -->
+<!-- *  -->
+
+**Treatment**
+
+1. 抗アルドステロン薬 
+2. ループ利尿薬
+
+* トルバプタン (V~2~ ant)
+
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 ## Portal Hypertension
 
 <!-- **Definition** -->

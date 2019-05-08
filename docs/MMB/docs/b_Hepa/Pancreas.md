@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-05-08 17:48:24
+Modified: 	2019-05-08 17:55:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -25,9 +25,12 @@ Copyright (c) 2019 shumez
 
 **Classification**
 
-|	| IPMN 	| MCN 	| SCN 	|
-|---|-------|-------|-------|
-|	|		|		|		|
+|	| IPMN 	   | MCN 	| SCN 	  |
+|---|----------|--------|---------|
+|	| 膵管拡張	|        |		   |
+|	| 高齢M     | 中年F	 | 中年F    |
+|	| 膵頭部    | 膵体尾部 | 膵体尾部 |
+|	|	|	|	|
 
 
 

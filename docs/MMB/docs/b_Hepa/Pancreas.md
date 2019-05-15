@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-05-15 17:21:34
+Modified: 	2019-05-15 17:27:19
 -----
 Copyright (c) 2019 shumez
 -->
@@ -21,7 +21,47 @@ Copyright (c) 2019 shumez
 <!-- *  -->
 <!-- **Epidemiology** -->
 <!-- *  -->
-<!-- **Classification** -->
+
+**Classification**
+
+<table>
+	<tbody>
+		<tr>
+			<th rowspan='2'>Pseudo</th>
+			<th></th>
+			<td>
+				<ul>
+					<li>post AP</li>
+					<li>CP</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td>外傷性</td>
+		</tr>
+		<tr>
+			<th rowspan='3'>True</th>
+			<th>非腫瘍性</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>嚢胞性腫瘍</th>
+			<td>
+				<ul>
+					<li>MCN</li>
+					<li>SCN</li>
+					<li>IPMN</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
 <!-- *  -->
 <!-- **Sign and Symptom** -->
 <!-- *  -->

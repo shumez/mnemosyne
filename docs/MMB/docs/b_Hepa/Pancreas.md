@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-05-15 17:27:19
+Modified: 	2019-05-15 17:53:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -28,22 +28,21 @@ Copyright (c) 2019 shumez
 	<tbody>
 		<tr>
 			<th rowspan='2'>Pseudo</th>
-			<th></th>
-			<td>
-				<ul>
-					<li>post AP</li>
-					<li>CP</li>
-				</ul>
-			</td>
+			<th colspan='2'>post AP / CP</th>
 		</tr>
 		<tr>
-			<th></th>
-			<td>外傷性</td>
+			<th colspan='2'>外傷性</th>
 		</tr>
 		<tr>
 			<th rowspan='3'>True</th>
 			<th>非腫瘍性</th>
-			<td></td>
+			<td>
+				<ul>
+					<li>先天性</li>
+					<li>単純嚢胞</li>
+					<li>貯留性</li>
+				</ul>
+			</td>
 		</tr>
 		<tr>
 			<th>嚢胞性腫瘍</th>
@@ -54,10 +53,6 @@ Copyright (c) 2019 shumez
 					<li>IPMN</li>
 				</ul>
 			</td>
-		</tr>
-		<tr>
-			<th></th>
-			<td></td>
 		</tr>
 	</tbody>
 </table>
@@ -88,13 +83,54 @@ Copyright (c) 2019 shumez
 
 **Classification**
 
-|	| IPMN 	   | MCN 	| SCN 	  |
-|---|----------|--------|---------|
-|	| 膵管拡張	|        |		   |
-|	| 高齢M     | 中年F	 | 中年F    |
-|	| 膵頭部    | 膵体尾部 | 膵体尾部 |
-|	|	|	|	|
 
+<table>
+	<thead>
+		<tr>
+			<th width="8%" rowspan="2"></th>
+			<th align="center" width="46%" colspan="2">IPMN</th>
+			<th align="center" width="23%">MCN</th>
+			<th align="center" width="23%">SCN</th>
+		</tr>
+		<tr>
+			<th align="center" width="23%">主膵管</th>
+			<th align="center" width="23%">分枝</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th rowspan="2"></th>
+			<td colspan="4">
+				<img src="https://shumez.github.io/mnemosyne/Fornix/b_Hepa/fig/pancreatic_tumor.jpeg">
+			</td>
+		</tr>
+		<tr>
+			<td align="center">主膵管拡張</td>
+			<td align="center">分枝拡張</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Epid</th>
+			<td align="center" colspan="2">高齢 M</td>
+			<td align="center" colspan="2">中年 F</td>
+		</tr>
+		<tr>
+			<th>Lesion</th>
+			<td align="center" colspan="2">膵頭部</td>
+			<td align="center" colspan="2">膵尾部</td>
+		</tr>
+		<tr>
+			<th>Rx</th>
+			<td align="center">surg</td>
+			<td align="center">f/u / surg</td>
+			<td align="center">surg</td>
+			<td align="center">f/u</td>
+		</tr>
+	</tbody>
+</table>
 
 
 <!-- *  -->

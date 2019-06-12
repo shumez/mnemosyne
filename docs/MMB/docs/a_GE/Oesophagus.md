@@ -3,12 +3,58 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-04-23 20:59:8
+Modified: 	2019-06-12 17:52:15
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Oesophagus
+
+## Achalasia
+
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+
+**Classification**
+
+[![][fig_achalasia_class]][2019_DokiYuichiro_NakajimaKiyokazu_KatoRyo]
+
+* *St*: Straight type (直線型)
+* *Sg*: Sigmoid type (シグモイド型)
+* *sSg*: Advanced Sigmoid type
+
+([Kato, Ryo (2019)][2019_DokiYuichiro_NakajimaKiyokazu_KatoRyo])
+
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
+
+## Esophagitis / Esophageal Ulcer
+
+### GERD
+
+### EoE
+
+### Esophageal Candidiasis
+
+## MWS
+
+## SRE
+
+## Esophageal Benign Tumor
 
 ## Esophageal Cancer
 
@@ -22,55 +68,40 @@ Copyright (c) 2019 shumez
 	* 肺V
 
 
-<!--
-## 
+## Esophageal Varices
 
-**Definition**
-
-* 
-
-**Etiology**
-
-* 
-
-**Epidemiology**
-
-* 
-
-**Classification**
-
-* 
-
-**Sign and Symptom**
-
-* 
-
-**Association**
-
-* 
-
-**Examination**
-
-* 
-
-**Treatment**
-
-* 
-
-**Prognosis**
-
-* 
-
-**Appendix**
-
-* 
--->
+## Esophageal Diverticulum
 
 ## 
 
-[x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?\inline&space;x+\frac{1}{x}=1
-<!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?x+\frac{1}{x}=1 -->
+<!-- ## -->
+<!-- **Definition** -->
+<!-- *  -->
+<!-- **Etiology** -->
+<!-- *  -->
+<!-- **Epidemiology** -->
+<!-- *  -->
+<!-- **Classification** -->
+<!-- *  -->
+<!-- **Sign and Symptom** -->
+<!-- *  -->
+<!-- **Association** -->
+<!-- *  -->
+<!-- **Examination** -->
+<!-- *  -->
+<!-- **Treatment** -->
+<!-- *  -->
+<!-- **Prognosis** -->
+<!-- *  -->
+<!-- **Appendix** -->
+<!-- *  -->
 
-<!-- <style type="text/css">
+<!-- ref -->
+[2019_DokiYuichiro_NakajimaKiyokazu_KatoRyo]: https://link.springer.com/article/10.1007/s10388-019-00658-z
+
+<!-- fig -->
+[fig_achalasia_class]: https://media.springernature.com/lw785/springer-static/image/art%3A10.1007%2Fs10388-019-00658-z/MediaObjects/10388_2019_658_Fig1_HTML.jpg
+
+<style type="text/css">
 	img{width: 50%; float: right;}
-</style> -->
+</style>

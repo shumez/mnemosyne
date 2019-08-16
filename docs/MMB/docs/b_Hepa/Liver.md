@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-05-01 17:58:10
+Modified: 	2019-08-16 16:28:41
 -----
 Copyright (c) 2019 shumez
 -->
@@ -98,10 +98,19 @@ Copyright (c) 2019 shumez
 
 
 ## LC
+
+Liver Cirrhosis
+
 <!-- **Definition** -->
 <!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
+**Etiology**
+
+* &darr;Alb  
+	&rArr; &darr;循環血漿量  
+	&rArr; &darr;腎血流量  
+	&rArr; &uarr;RAAs, &uarr;ADH  
+	&rArr; &darr;水排泄
+
 <!-- **Epidemiology** -->
 <!-- *  -->
 <!-- **Classification** -->

@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 14:43:47
+Modified: 	2019-08-27 14:47:43
 -----
 Copyright (c) 2019 shumez
 -->
@@ -73,6 +73,39 @@ Copyright (c) 2019 shumez
 
 
 ## Esophagitis / Esophageal Ulcer
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<h6 id='esophagitis_esophageal_ulcer-eti'>Etiology</h6>
+
+- 逆流性
+	- GERD
+	- **胃切除後のGERD**
+- 感染性
+	- カンジダ
+	- HSV
+	- CMV
+	- TB
+- 薬剤性
+	- NSAIDs
+	- ステロイド
+- 腐食性
+- アレルギー性
+	- EoE
+- その他
+	- Crohn
+	- Behçet
+	- SSc
+	- 天疱瘡
+	- 食道静脈瘤内視鏡治療後
+	
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 ### GERD
 

@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 17:44:26
+Modified: 	2019-08-27 17:51:36
 -----
 Copyright (c) 2019 shumez
 -->
@@ -424,10 +424,14 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <!-- <h6 id='esophageal_cancer-def'>Definition</h6> -->
 <!-- <h6 id='esophageal_cancer-eti'>Etiology</h6> -->
-<!-- <h6 id='esophageal_cancer-epi'>Epidemiology</h6> -->
 
-<h6 id='esophageal_cancer-cls'>Classification</h6>
+<h6 id='esophageal_cancer-epi'>Epidemiology</h6>
 
+1. **Mt** (胸部中部)
+2. Lt (胸部下部)
+3. Ut (胸部上部)
+
+<!-- <h6 id='esophageal_cancer-cls'>Classification</h6> -->
 <!-- <h6 id='esophageal_cancer-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='esophageal_cancer-ass'>Association</h6> -->
 <!-- <h6 id='esophageal_cancer-ex'>Examination</h6> -->
@@ -436,12 +440,15 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <h6 id='esophageal_cancer-prg'>Prognosis</h6>
 
-* 直接浸潤
-	* 下行大動脈
-	* 気管
-	* Lt 気管支
-	* LA
-	* 肺V
+[![](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)
+
+- 直接浸潤
+	- 下行大動脈
+	- 気管
+	- Lt 気管支
+	- LA
+	- 肺V
+	- **肺動脈は近接していない**
 
 <!-- <h6 id='esophageal_cancer-app'>Appendix</h6> -->
 

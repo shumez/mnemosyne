@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 16:03:31
+Modified: 	2019-08-27 16:05:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -188,6 +188,21 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='gerd-prg'>Prognosis</h6> -->
 <!-- <h6 id='gerd-app'>Appendix</h6> -->
 
+#### Barret esophagus
+
+<h6 id='barret_esophagus-def'>Definition</h6>
+
+- 下部食道が扁平上皮 &rarr; 円柱上皮 に置換
+
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 ### EoE
 

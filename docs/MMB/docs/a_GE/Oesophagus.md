@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 16:05:52
+Modified: 	2019-08-27 16:10:42
 -----
 Copyright (c) 2019 shumez
 -->
@@ -205,6 +205,30 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-app'>Appendix</h6> -->
 
 ### EoE
+
+好酸球性食道炎
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<h6 id='eoe-eti'>Etiology</h6>
+
+- 食物抗原に刺激 &rArr; 消化管粘膜のアレルギー反応
+
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+<h6 id='eoe-ex'>Examination</h6>
+
+- 内視鏡
+	- 白班
+	- 縦走溝
+	- 気管様狭窄
+- Biopsy
+	- eos浸潤 ≥ 15/HPF
+
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 ### Esophageal Candidiasis
 

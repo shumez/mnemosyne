@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 16:29:19
+Modified: 	2019-08-27 16:33:12
 -----
 Copyright (c) 2019 shumez
 -->
@@ -298,6 +298,24 @@ Mallory-Weiss syndrome
 
 
 ## SRE
+
+Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
+
+<!-- <h6 id='sre-def'>Definition</h6> -->
+<!-- <h6 id='sre-eti'>Etiology</h6> -->
+<h6 id='sre-epi'>Epidemiology</h6>
+
+- **食道下部 左側壁**
+
+<!-- <h6 id='sre-cls'>Classification</h6> -->
+<!-- <h6 id='sre-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='sre-ass'>Association</h6> -->
+<!-- <h6 id='sre-ex'>Examination</h6> -->
+<!-- <h6 id='sre-dx'>Diagnosis</h6> -->
+<!-- <h6 id='sre-tx'>Treatment</h6> -->
+<!-- <h6 id='sre-prg'>Prognosis</h6> -->
+<!-- <h6 id='sre-app'>Appendix</h6> -->
+
 
 ## Esophageal Benign Tumor
 

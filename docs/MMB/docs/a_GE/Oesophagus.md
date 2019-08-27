@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 16:27:59
+Modified: 	2019-08-27 16:29:19
 -----
 Copyright (c) 2019 shumez
 -->
@@ -276,25 +276,25 @@ Copyright (c) 2019 shumez
 
 Mallory-Weiss syndrome
 
-<h6 id='-def'>Definition</h6>
+<h6 id='mws-def'>Definition</h6>
 
 - **腹腔内圧の上昇** (嘔吐)
 
-<!-- <h6 id='-eti'>Etiology</h6> -->
-<!-- <h6 id='-epi'>Epidemiology</h6> -->
-<!-- <h6 id='-cls'>Classification</h6> -->
-<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
-<!-- <h6 id='-ex'>Examination</h6> -->
-<!-- <h6 id='-dx'>Diagnosis</h6> -->
-<h6 id='-tx'>Treatment</h6>
+<!-- <h6 id='mws-eti'>Etiology</h6> -->
+<!-- <h6 id='mws-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mws-cls'>Classification</h6> -->
+<!-- <h6 id='mws-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='mws-ass'>Association</h6> -->
+<!-- <h6 id='mws-ex'>Examination</h6> -->
+<!-- <h6 id='mws-dx'>Diagnosis</h6> -->
+<h6 id='mws-tx'>Treatment</h6>
 
 - **保存的治療** &rarr; **自然止血**
 - **クリッピング**
 	- 大量出血のときは
 
-<!-- <h6 id='-prg'>Prognosis</h6> -->
-<!-- <h6 id='-app'>Appendix</h6> -->
+<!-- <h6 id='mws-prg'>Prognosis</h6> -->
+<!-- <h6 id='mws-app'>Appendix</h6> -->
 
 
 ## SRE

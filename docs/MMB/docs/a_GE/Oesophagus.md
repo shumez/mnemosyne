@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 17:01:44
+Modified: 	2019-08-27 17:36:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -310,9 +310,17 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 <!-- <h6 id='sre-cls'>Classification</h6> -->
 <!-- <h6 id='sre-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='sre-ass'>Association</h6> -->
-<!-- <h6 id='sre-ex'>Examination</h6> -->
+<h6 id='sre-ex'>Examination</h6>
+
+- &darr;肺呼吸音
+- &darr;声音振盪  
+	&because; &uarr;胸水
+
 <!-- <h6 id='sre-dx'>Diagnosis</h6> -->
-<!-- <h6 id='sre-tx'>Treatment</h6> -->
+<h6 id='sre-tx'>Treatment</h6>
+
+- 緊急手術
+
 <!-- <h6 id='sre-prg'>Prognosis</h6> -->
 <!-- <h6 id='sre-app'>Appendix</h6> -->
 

@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 16:12:27
+Modified: 	2019-08-27 16:23:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -232,6 +232,45 @@ Copyright (c) 2019 shumez
 
 ### Esophageal Candidiasis
 
+<!-- <h6 id='esophageal_candidiasis-def'>Definition</h6> -->
+<h6 id='esophageal_candidiasis-eti'>Etiology</h6>
+
+- 原因菌
+	- **Candida albicans**
+- **細胞性免疫**低下
+
+- 全身的要因
+	- 悪性腫瘍
+	- 膠原病
+	- HIV
+	- DM
+- 局所的要因
+	- 食道炎
+	- 食物の停滞, 異物の傷害
+	- 吸入ステロイド
+	- PPI
+
+<!-- <h6 id='esophageal_candidiasis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='esophageal_candidiasis-cls'>Classification</h6> -->
+<!-- <h6 id='esophageal_candidiasis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='esophageal_candidiasis-ass'>Association</h6> -->
+<h6 id='esophageal_candidiasis-ex'>Examination</h6>
+
+- 消化管造影
+	- **敷石状陰影**
+- 内視鏡
+	- mm 小隆起性の白色付着物 (白苔)　びまん性, 縦列状
+
+<h6 id='esophageal_candidiasis-dx'>Diagnosis</h6>
+
+- glycogenic acanthosis
+- HSV
+- CMV
+
+<!-- <h6 id='esophageal_candidiasis-tx'>Treatment</h6> -->
+<!-- <h6 id='esophageal_candidiasis-prg'>Prognosis</h6> -->
+<!-- <h6 id='esophageal_candidiasis-app'>Appendix</h6> -->
+
 ## MWS
 
 ## SRE
@@ -264,6 +303,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='-ass'>Association</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->

@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 17:43:23
+Modified: 	2019-08-27 17:44:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -399,6 +399,26 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 
 ## Esophageal Benign Tumor
+
+<!-- <h6 id='esophageal_benign_tumor-def'>Definition</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-eti'>Etiology</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-epi'>Epidemiology</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-cls'>Classification</h6> -->
+
+- 平滑筋腫 #1 食道下部
+- 横紋筋腫 中下部
+- GIST
+- 乳頭腫
+- 血管腫
+
+<!-- <h6 id='esophageal_benign_tumor-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-ex'>Examination</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-dx'>Diagnosis</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-tx'>Treatment</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-prg'>Prognosis</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-app'>Appendix</h6> -->
+
 
 ## Esophageal Cancer
 

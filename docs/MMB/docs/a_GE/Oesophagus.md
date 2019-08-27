@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 17:36:49
+Modified: 	2019-08-27 17:39:48
 -----
 Copyright (c) 2019 shumez
 -->
@@ -294,8 +294,81 @@ Mallory-Weiss syndrome
 	- 大量出血のときは
 
 <!-- <h6 id='mws-prg'>Prognosis</h6> -->
-<!-- <h6 id='mws-app'>Appendix</h6> -->
 
+<h6 id='mws-app'>Appendix</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="10%" colspan="2"></th>
+			<th width="45%">MWS</th>
+			<th width="45%">SRE</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2">
+				<img src="https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/MWS_SRE.jpg" width="70%" style="align: center">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td align="center">EGJ付近</td>
+			<td align="center"><u>食道下部左側</u></td>
+		</tr>
+		<tr>
+			<td rowspan="4">S/S</td>
+			<td>出血</td>
+			<td align="center">(++)</td>
+			<td align="center">(±)</td>
+		</tr>
+		<tr>
+			<td>疼痛</td>
+			<td align="center">(–)</td>
+			<td align="center">(+)</td>
+		</tr>
+		<tr>
+			<td>呼吸困難</td>
+			<td align="center">(–)</td>
+			<td align="center">(+)</td>
+		</tr>
+		<tr>
+			<td>ショック</td>
+			<td align="center">(–)</td>
+			<td align="center">(+)</td>
+		</tr>
+		<tr>
+			<td rowspan="2">Ex</td>
+			<td>XR</td>
+			<td align="center">nl</td>
+			<td>
+				<ul>
+					<li>縦隔気腫, 胸水, PTX</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>内視鏡</td>
+			<td align="center">EGJ付近に裂創</td>
+			<td align="center">C/I</td>
+		</tr>
+		<tr>
+			<td colspan="2">治療</td>
+			<td>
+				<ul>
+					<li>保存的治療</li>
+					<li>内視鏡的止血</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>緊急手術</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 ## SRE
 

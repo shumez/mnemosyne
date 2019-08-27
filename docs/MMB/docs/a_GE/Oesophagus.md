@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 14:47:43
+Modified: 	2019-08-27 15:22:35
 -----
 Copyright (c) 2019 shumez
 -->
@@ -108,6 +108,84 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-app'>Appendix</h6> -->
 
 ### GERD
+
+<!-- <h6 id='gerd-def'>Definition</h6> -->
+<h6 id='gerd-eti'>Etiology</h6>
+
+- LES機能不全
+	- TLESR 一過性のLES弛緩
+		- **高脂肪摂取**
+	- LES圧低下
+		- **食道裂孔ヘルニア**
+		- SSc
+		- 薬剤 (**CCB**, **亜硝酸薬**)
+		- ↑腹圧 (前屈位, 肥満, 妊娠, 亀背)
+		- 噴門機能不全
+			- **胃切除**
+			- Heller ope
+- 胃酸分泌過多
+	- H.pylori
+	- Zollinger-Ellison synd
+- 食道クリアランス不全
+	- 食道蠕動運動 
+		- SSc
+		- DM
+		- 加齢
+	- 唾液分泌障害
+		- Sjögren
+- その他
+	- **重症心身障害児**
+	- 食道閉鎖
+	- 先天性横隔膜ヘルニア術後
+
+<!-- <h6 id='gerd-epi'>Epidemiology</h6> -->
+<h6 id='gerd-cls'>Classification</h6>
+
+- びらん性GERD
+- 非びらん性GERD NERD
+	- 内視鏡で食道粘膜にびらん,潰瘍などの粘膜傷害(–)
+
+<h6 id='gerd-sx'>Sign and Symptom</h6>
+
+- 胸焼け, 呑酸
+	- 前屈位
+	- **食後**
+	- **仰臥位**
+- **NCCP** (non-cardiac chest pain) 非心臓性胸痛
+- **咳嗽**
+- 咽頭症状
+- 歯牙酸蝕 (上顎内側)
+
+<h6 id='gerd-ass'>Association</h6>
+
+- **Barrett食道**
+
+<h6 id='gerd-ex'>Examination</h6>
+
+- 内視鏡
+	- mucosal break 粘膜傷害
+- **24時間pHモニタリング**
+- 食道内圧測定
+	- **&darr;LES静止圧**
+
+<h6 id='gerd-tx'>Treatment</h6>
+
+- 生活指導
+	- 肥満是正
+	- **Fowler位**
+- 薬物
+	- PPI
+	- H~2~RA
+	- 消化管運動促進 (mosapride)
+	- 六君子湯
+- surg
+	- **逆流防止術**
+		- Nissen
+		- Toupet
+
+<!-- <h6 id='gerd-prg'>Prognosis</h6> -->
+<!-- <h6 id='gerd-app'>Appendix</h6> -->
+
 
 ### EoE
 

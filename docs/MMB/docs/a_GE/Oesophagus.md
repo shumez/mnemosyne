@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 14:42:52
+Modified: 	2019-08-27 14:43:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -52,7 +52,6 @@ Copyright (c) 2019 shumez
 	- **LESの嚥下性弛緩性反射消失**
 	- **異常収縮波の出現** (**同期性収縮**)
 - endoscopy
-	- 
 
 <h6 id='achalasia-tx'>Treatment</h6>
 

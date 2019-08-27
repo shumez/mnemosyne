@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 15:22:35
+Modified: 	2019-08-27 16:03:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -167,6 +167,8 @@ Copyright (c) 2019 shumez
 - **24時間pHモニタリング**
 - 食道内圧測定
 	- **&darr;LES静止圧**
+
+**[Revised Los Angels classification](https://www.sciencedirect.com/science/article/pii/S2212097113700463)**
 
 <h6 id='gerd-tx'>Treatment</h6>
 

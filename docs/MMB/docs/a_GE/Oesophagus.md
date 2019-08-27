@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-06-12 17:52:15
+Modified: 	2019-08-27 14:12:21
 -----
 Copyright (c) 2019 shumez
 -->
@@ -76,25 +76,15 @@ Copyright (c) 2019 shumez
 
 <!-- ## -->
 <!-- **Definition** -->
-<!-- *  -->
 <!-- **Etiology** -->
-<!-- *  -->
 <!-- **Epidemiology** -->
-<!-- *  -->
 <!-- **Classification** -->
-<!-- *  -->
 <!-- **Sign and Symptom** -->
-<!-- *  -->
 <!-- **Association** -->
-<!-- *  -->
 <!-- **Examination** -->
-<!-- *  -->
 <!-- **Treatment** -->
-<!-- *  -->
 <!-- **Prognosis** -->
-<!-- *  -->
 <!-- **Appendix** -->
-<!-- *  -->
 
 <!-- ref -->
 [2019_DokiYuichiro_NakajimaKiyokazu_KatoRyo]: https://link.springer.com/article/10.1007/s10388-019-00658-z

@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:26:26
+Modified: 	2019-08-28 20:29:46
 -----
 Copyright (c) 2019 shumez
 -->
@@ -681,6 +681,29 @@ Metastasis
 <!-- <h6 id='postgastrectomy_bone_disease-tx'>Treatment</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-prg'>Prognosis</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-app'>Appendix</h6> -->
+
+
+### Postgatrectomy Gallstone Disease
+
+胃切除後胆石症
+
+<!-- <h6 id='postgatrectomy_gallstone_disease-def'>Definition</h6> -->
+<h6 id='postgatrectomy_gallstone_disease-eti'>Etiology</h6>
+
+- 迷走神経離断, CCK分泌の変化  
+	&rArr; &darr;胆嚢収縮能  
+	&rArr; 胆汁うっ滞, 胆道感染  
+	&rArr; 結石
+
+<!-- <h6 id='postgatrectomy_gallstone_disease-epi'>Epidemiology</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-cls'>Classification</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-ass'>Association</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-ex'>Examination</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-dx'>Diagnosis</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-tx'>Treatment</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-prg'>Prognosis</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-app'>Appendix</h6> -->
 
 ## Anastomotic Ulcer
 

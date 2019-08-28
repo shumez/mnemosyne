@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 16:02:38
+Modified: 	2019-08-28 16:23:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -113,21 +113,38 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 
 ### Helicobacter pylori
 
-<!-- <h6 id='-def'>Definition</h6> -->
-<!-- <h6 id='-eti'>Etiology</h6> -->
-<!-- <h6 id='-epi'>Epidemiology</h6> -->
-<!-- <h6 id='-cls'>Classification</h6> -->
-<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='helicobacter_pylori-def'>Definition</h6> -->
 
-<h6 id='-ex'>Examination</h6>
+<h6 id='helicobacter_pylori-eti'>Etiology</h6>
+
+- \( \text{CO(NH}_2)_2 + 2\text{H}^+ + \text{H}_2\text{O} \, \xrightarrow[\text{Urease}] \, \text{CO}_2 + 2\text{NH}_4^+ \)
+
+<!-- <h6 id='helicobacter_pylori-epi'>Epidemiology</h6> -->
+<!-- <h6 id='helicobacter_pylori-cls'>Classification</h6> -->
+<!-- <h6 id='helicobacter_pylori-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='helicobacter_pylori-ass'>Association</h6> -->
+
+<h6 id='helicobacter_pylori-ex'>Examination</h6>
 
 [![](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)
 
-<!-- <h6 id='-dx'>Diagnosis</h6> -->
-<!-- <h6 id='-tx'>Treatment</h6> -->
-<!-- <h6 id='-prg'>Prognosis</h6> -->
-<!-- <h6 id='-app'>Appendix</h6> -->
+- **迅速ウレアーゼ試験**
+- **^13^C尿素呼気試験**
+
+<!-- <h6 id='helicobacter_pylori-dx'>Diagnosis</h6> -->
+<h6 id='helicobacter_pylori-tx'>Treatment</h6>
+
+- 初回
+	- **PPI** / P-CAB
+	- **CAM** (**クラリスロマイシン**)
+	- **AMPC (**アモキシシリン**)
+- 二次
+	- PPI / P-CAB
+	- MNZ (メトロニダゾール)
+	- AMPC
+
+<!-- <h6 id='helicobacter_pylori-prg'>Prognosis</h6> -->
+<!-- <h6 id='helicobacter_pylori-app'>Appendix</h6> -->
 
 
 ## FD

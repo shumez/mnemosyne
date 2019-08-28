@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 15:50:21
+Modified: 	2019-08-28 16:02:38
 -----
 Copyright (c) 2019 shumez
 -->
@@ -54,6 +54,81 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 <!-- <h6 id='agml-tx'>Treatment</h6> -->
 <!-- <h6 id='agml-prg'>Prognosis</h6> -->
 <!-- <h6 id='agml-app'>Appendix</h6> -->
+
+
+## Chronic Gastritis
+
+<!-- <h6 id='chronic_gastritis-def'>Definition</h6> -->
+<h6 id='chronic_gastritis-eti'>Etiology</h6>
+
+- HP感染
+
+<!-- <h6 id='chronic_gastritis-epi'>Epidemiology</h6> -->
+<h6 id='chronic_gastritis-cls'>Classification</h6>
+
+**Strickland-Mackay**
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">A型</th>
+			<th width="40%">B型</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>病態</th>
+			<td align="center">自己免疫</td>
+			<td align="center"><i>HP</i></td>
+		</tr>
+		<tr>
+			<th>Gastrin</th>
+			<td align="center">&uarr;&uarr;</td>
+			<td align="center">&rarr;</td>
+		</tr>
+		<tr>
+			<th>胃酸</th>
+			<td align="center">&darr;&darr;</td>
+			<td align="center">&rarr;</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='chronic_gastritis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='chronic_gastritis-ass'>Association</h6> -->
+<h6 id='chronic_gastritis-ex'>Examination</h6>
+
+- 内視鏡
+	- 表層性胃炎
+		- 稜線状発赤
+	- 萎縮性胃炎
+		- **血管透過像**
+		- 菲薄化, 褪色調粘膜
+
+<!-- <h6 id='chronic_gastritis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='chronic_gastritis-tx'>Treatment</h6> -->
+<!-- <h6 id='chronic_gastritis-prg'>Prognosis</h6> -->
+<!-- <h6 id='chronic_gastritis-app'>Appendix</h6> -->
+
+### Helicobacter pylori
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+
+<h6 id='-ex'>Examination</h6>
+
+[![](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)
+
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
+
 
 ## FD
 

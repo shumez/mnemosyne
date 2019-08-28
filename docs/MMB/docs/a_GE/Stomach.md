@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:32:42
+Modified: 	2019-08-28 20:36:25
 -----
 Copyright (c) 2019 shumez
 -->
@@ -728,32 +728,29 @@ Metastasis
 <!-- <h6 id='afferent_loop_syndrome-app'>Appendix</h6> -->
 
 
-## Anastomotic Ulcer
+### Anastomotic Ulcer
 
-**Definition**
+吻合部潰瘍
 
-* 減酸が不十分な手術で吻合部の肛門側に
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
+<h6 id='anastomotic_ulcer-def'>Definition</h6>
 
-**Treatment**
+- **減酸が不十分な手術**で**吻合部の肛門側**に
 
-* H~2~RA
-* PPI
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='anastomotic_ulcer-eti'>Etiology</h6> -->
+<!-- <h6 id='anastomotic_ulcer-epi'>Epidemiology</h6> -->
+<!-- <h6 id='anastomotic_ulcer-cls'>Classification</h6> -->
+<!-- <h6 id='anastomotic_ulcer-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='anastomotic_ulcer-ass'>Association</h6> -->
+<!-- <h6 id='anastomotic_ulcer-ex'>Examination</h6> -->
+<!-- <h6 id='anastomotic_ulcer-dx'>Diagnosis</h6> -->
+
+<h6 id='anastomotic_ulcer-tx'>Treatment</h6>
+
+- H~2~RA
+- PPI
+
+<!-- <h6 id='anastomotic_ulcer-prg'>Prognosis</h6> -->
+<!-- <h6 id='anastomotic_ulcer-app'>Appendix</h6> -->
 
 ## 
 

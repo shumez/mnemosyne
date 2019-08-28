@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:55:8
+Modified: 	2019-08-28 17:58:34
 -----
 Copyright (c) 2019 shumez
 -->
@@ -461,6 +461,26 @@ cf. Leiomyoma (平滑筋腫): benign
 
 <!-- <h6 id='maltl-prg'>Prognosis</h6> -->
 <!-- <h6 id='maltl-app'>Appendix</h6> -->
+
+
+### Aberrent Pancreas
+
+迷入膵
+
+<!-- <h6 id='aberrent_pancreas-def'>Definition</h6> -->
+<!-- <h6 id='aberrent_pancreas-eti'>Etiology</h6> -->
+<!-- <h6 id='aberrent_pancreas-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aberrent_pancreas-cls'>Classification</h6> -->
+<!-- <h6 id='aberrent_pancreas-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aberrent_pancreas-ass'>Association</h6> -->
+<h6 id='aberrent_pancreas-ex'>Examination</h6>
+
+[![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)
+
+<!-- <h6 id='aberrent_pancreas-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aberrent_pancreas-tx'>Treatment</h6> -->
+<!-- <h6 id='aberrent_pancreas-prg'>Prognosis</h6> -->
+<!-- <h6 id='aberrent_pancreas-app'>Appendix</h6> -->
 
 ## Gastric Cancer
 

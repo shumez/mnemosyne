@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:23:11
+Modified: 	2019-08-28 20:24:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -660,6 +660,22 @@ Metastasis
 <!-- <h6 id='dumping_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='dumping_syndrome-app'>Appendix</h6> -->
 
+
+### Postgastrectomy Bone Disease
+
+胃切除後骨病変
+
+<!-- <h6 id='postgastrectomy_bone_disease-def'>Definition</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-eti'>Etiology</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-epi'>Epidemiology</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-cls'>Classification</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-ass'>Association</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-ex'>Examination</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-dx'>Diagnosis</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-tx'>Treatment</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-prg'>Prognosis</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-app'>Appendix</h6> -->
 
 ## Anastomotic Ulcer
 

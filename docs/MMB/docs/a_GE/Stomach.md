@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:29:46
+Modified: 	2019-08-28 20:32:42
 -----
 Copyright (c) 2019 shumez
 -->
@@ -704,6 +704,29 @@ Metastasis
 <!-- <h6 id='postgatrectomy_gallstone_disease-tx'>Treatment</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-prg'>Prognosis</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-app'>Appendix</h6> -->
+
+
+### Afferent Loop Syndrome
+
+輸入脚症候群
+
+<!-- <h6 id='afferent_loop_syndrome-def'>Definition</h6> -->
+<h6 id='afferent_loop_syndrome-eti'>Etiology</h6>
+
+- **Billroth II**, **Roux-en-Y**後に　　
+	&rArr; blind-loop形成  
+	&rArr; 吸収不良
+
+<!-- <h6 id='afferent_loop_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-app'>Appendix</h6> -->
+
 
 ## Anastomotic Ulcer
 

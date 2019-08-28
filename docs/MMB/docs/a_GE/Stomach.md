@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 19:47:44
+Modified: 	2019-08-28 19:49:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -574,6 +574,20 @@ cf. Leiomyoma (平滑筋腫): benign
 
 <!-- <h6 id='gastric_cancer-prg'>Prognosis</h6> -->
 <!-- <h6 id='gastric_cancer-app'>Appendix</h6> -->
+
+### Signet cell 
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 ## Postgastrectomy Syndrome
 

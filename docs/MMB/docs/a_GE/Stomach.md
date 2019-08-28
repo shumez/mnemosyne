@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 19:49:10
+Modified: 	2019-08-28 20:13:23
 -----
 Copyright (c) 2019 shumez
 -->
@@ -572,8 +572,19 @@ cf. Leiomyoma (平滑筋腫): benign
 	- Postope
 - RT
 
-<!-- <h6 id='gastric_cancer-prg'>Prognosis</h6> -->
+<h6 id='gastric_cancer-prg'>Prognosis</h6>
+
+Metastasis
+
+- **Virchow**:  
+	左鎖骨下上窩リンパ節 
+- **Schinizler**:  
+	Douglas窩, 直腸膀胱窩
+- **Krukenberg tumor**:  
+	両側性の卵巣転移
+
 <!-- <h6 id='gastric_cancer-app'>Appendix</h6> -->
+
 
 ### Signet cell 
 

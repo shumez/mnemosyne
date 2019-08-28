@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 16:23:59
+Modified: 	2019-08-28 16:32:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -137,7 +137,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 - 初回
 	- **PPI** / P-CAB
 	- **CAM** (**クラリスロマイシン**)
-	- **AMPC (**アモキシシリン**)
+	- **AMPC** (**アモキシシリン**)
 - 二次
 	- PPI / P-CAB
 	- MNZ (メトロニダゾール)

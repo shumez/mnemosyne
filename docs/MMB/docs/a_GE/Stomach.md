@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 16:32:26
+Modified: 	2019-08-28 16:40:45
 -----
 Copyright (c) 2019 shumez
 -->
@@ -142,6 +142,8 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 	- PPI / P-CAB
 	- MNZ (メトロニダゾール)
 	- AMPC
+
+**K^+^競合型**: P-CAB (Pottassium-competitive acid blockade) (Vonoprazan タケキャブ)
 
 <!-- <h6 id='helicobacter_pylori-prg'>Prognosis</h6> -->
 <!-- <h6 id='helicobacter_pylori-app'>Appendix</h6> -->

@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:36:25
+Modified: 	2019-08-28 20:39:42
 -----
 Copyright (c) 2019 shumez
 -->
@@ -751,6 +751,21 @@ Metastasis
 
 <!-- <h6 id='anastomotic_ulcer-prg'>Prognosis</h6> -->
 <!-- <h6 id='anastomotic_ulcer-app'>Appendix</h6> -->
+
+
+### Postoperative GERD
+
+<!-- <h6 id='postoperative_gerd-def'>Definition</h6> -->
+<!-- <h6 id='postoperative_gerd-eti'>Etiology</h6> -->
+<!-- <h6 id='postoperative_gerd-epi'>Epidemiology</h6> -->
+<!-- <h6 id='postoperative_gerd-cls'>Classification</h6> -->
+<!-- <h6 id='postoperative_gerd-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='postoperative_gerd-ass'>Association</h6> -->
+<!-- <h6 id='postoperative_gerd-ex'>Examination</h6> -->
+<!-- <h6 id='postoperative_gerd-dx'>Diagnosis</h6> -->
+<!-- <h6 id='postoperative_gerd-tx'>Treatment</h6> -->
+<!-- <h6 id='postoperative_gerd-prg'>Prognosis</h6> -->
+<!-- <h6 id='postoperative_gerd-app'>Appendix</h6> -->
 
 ## 
 

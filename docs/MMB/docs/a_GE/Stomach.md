@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:13:23
+Modified: 	2019-08-28 20:15:25
 -----
 Copyright (c) 2019 shumez
 -->
@@ -602,17 +602,30 @@ Metastasis
 
 ## Postgastrectomy Syndrome
 
-<!-- <h6 id='-def'>Definition</h6> -->
-<!-- <h6 id='-eti'>Etiology</h6> -->
-<!-- <h6 id='-epi'>Epidemiology</h6> -->
-<!-- <h6 id='-cls'>Classification</h6> -->
-<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
-<!-- <h6 id='-ex'>Examination</h6> -->
-<!-- <h6 id='-dx'>Diagnosis</h6> -->
-<!-- <h6 id='-tx'>Treatment</h6> -->
-<!-- <h6 id='-prg'>Prognosis</h6> -->
-<!-- <h6 id='-app'>Appendix</h6> -->
+<h6 id='postgastrectomy_syndrome-def'>Definition</h6>
+
+- ダンピング
+- 小胃症候群
+- 下痢 / 消化不良 / 胆石症
+- GERD
+- 胆石症
+- 無胃性貧血  
+	⇒ Fe, Vit.B12  
+	⇒ IDA, 巨赤芽球性貧血
+- 骨病変  
+	Ca, Vit.D
+- 残胃癌
+
+<!-- <h6 id='postgastrectomy_syndrome-eti'>Etiology</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-app'>Appendix</h6> -->
 
 ## Anastomotic Ulcer
 

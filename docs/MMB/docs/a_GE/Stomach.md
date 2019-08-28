@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:39:3
+Modified: 	2019-08-28 17:49:9
 -----
 Copyright (c) 2019 shumez
 -->
@@ -385,6 +385,36 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <!-- <h6 id='submucosal_tumor-prg'>Prognosis</h6> -->
 <!-- <h6 id='submucosal_tumor-app'>Appendix</h6> -->
 
+### GIST
+
+gastrointestinal stromal tumor 消化管間質腫瘍
+
+<!-- <h6 id='gist-def'>Definition</h6> -->
+<h6 id='gist-eti'>Etiology</h6>
+
+- mut
+	- *c-kit* / *PDGFRA* gene mut
+	- **KIT**(+) / CD34(+)
+- Cajal cell (ICC) (消化管 pace maker cell)由来 
+
+<!-- <h6 id='gist-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gist-cls'>Classification</h6> -->
+<!-- <h6 id='gist-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gist-ass'>Association</h6> -->
+<h6 id='gist-ex'>Examination</h6>
+
+- KIT(+)
+- CD34(+)
+
+<!-- <h6 id='gist-dx'>Diagnosis</h6> -->
+<h6 id='gist-tx'>Treatment</h6>
+
+- **部分切除**
+- Imatinib
+
+
+<!-- <h6 id='gist-prg'>Prognosis</h6> -->
+<!-- <h6 id='gist-app'>Appendix</h6> -->
 
 ## Gastric Cancer
 

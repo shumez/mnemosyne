@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:39:42
+Modified: 	2019-08-28 20:40:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -601,6 +601,8 @@ Metastasis
 <!-- <h6 id='-app'>Appendix</h6> -->
 
 ## Postgastrectomy Syndrome
+
+[![](https://qb.medilink-study.com/images/98G101_sup_a_010.jpg)](https://qb.medilink-study.com/images/98G101_sup_a_010.jpg)
 
 <h6 id='postgastrectomy_syndrome-def'>Definition</h6>
 

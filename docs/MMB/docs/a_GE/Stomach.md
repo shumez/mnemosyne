@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:28:52
+Modified: 	2019-08-28 17:39:3
 -----
 Copyright (c) 2019 shumez
 -->
@@ -320,6 +320,70 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <h6 id='gastric_polyp-app'>Appendix</h6>
 
 - 胃底腺ポリープはPPIの長期内服との関連
+
+
+## Submucosal Tumor
+
+<!-- <h6 id='submucosal_tumor-def'>Definition</h6> -->
+<!-- <h6 id='submucosal_tumor-eti'>Etiology</h6> -->
+<!-- <h6 id='submucosal_tumor-epi'>Epidemiology</h6> -->
+<h6 id='submucosal_tumor-cls'>Classification</h6>
+
+- 間葉系
+	- **GIST**
+	- 筋原性
+		- 平滑筋腫
+		- 平滑筋肉腫
+	- 神経原性
+		- 神経鞘腫
+- **迷入膵**
+- 悪性リンパ腫 (MALTリンパ腫)
+- 転移性腫瘍
+
+<!-- <h6 id='submucosal_tumor-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='submucosal_tumor-ass'>Association</h6> -->
+<h6 id='submucosal_tumor-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)
+
+- 内視鏡
+	- なだらかな隆起
+	- **Bridging fold**
+
+<h6 id='submucosal_tumor-dx'>Diagnosis</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>KIT</th>
+			<th>CD34</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>GIST</th>
+			<td align="center">(+)</td>
+			<td align="center">(+)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>筋原性</th>
+			<td align="center" rowspan=2>(–)</td>
+			<td align="center" rowspan=2>(–)</td>
+			<td>desmin(+)</td>
+		</tr>
+		<tr>
+			<th>神経原性</th>
+			<td>S-100(+)</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='submucosal_tumor-tx'>Treatment</h6> -->
+<!-- <h6 id='submucosal_tumor-prg'>Prognosis</h6> -->
+<!-- <h6 id='submucosal_tumor-app'>Appendix</h6> -->
 
 
 ## Gastric Cancer

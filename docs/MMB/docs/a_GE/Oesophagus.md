@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-28 15:14:42
+Modified: 	2019-08-28 15:17:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -538,24 +538,24 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 ## Esophageal Varices
 
-<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='esophageal_varices-def'>Definition</h6> -->
 
-<h6 id='-eti'>Etiology</h6>
+<h6 id='esophageal_varices-eti'>Etiology</h6>
 
 - &uarr;門脈圧
 
-<!-- <h6 id='-epi'>Epidemiology</h6> -->
-<!-- <h6 id='-cls'>Classification</h6> -->
-<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_varices-epi'>Epidemiology</h6> -->
+<!-- <h6 id='esophageal_varices-cls'>Classification</h6> -->
+<!-- <h6 id='esophageal_varices-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='esophageal_varices-ass'>Association</h6> -->
 
-<h6 id='-ex'>Examination</h6>
+<h6 id='esophageal_varices-ex'>Examination</h6>
 
 - RC (Red Color sign) &xrArr; IND 内視鏡的治療
 
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 
-<h6 id='-tx'>Treatment</h6>
+<h6 id='esophageal_varices-tx'>Treatment</h6>
 
 [![](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)
 
@@ -583,7 +583,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 
-<h6 id='-app'>Appendix</h6>
+<h6 id='esophageal_varices-app'>Appendix</h6>
 
 - Eck瘻症候群 (術後脳症) (門脈-IVC吻合術)
 

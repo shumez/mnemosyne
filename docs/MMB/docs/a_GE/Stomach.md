@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:49:9
+Modified: 	2019-08-28 17:52:2
 -----
 Copyright (c) 2019 shumez
 -->
@@ -415,6 +415,31 @@ gastrointestinal stromal tumor 消化管間質腫瘍
 
 <!-- <h6 id='gist-prg'>Prognosis</h6> -->
 <!-- <h6 id='gist-app'>Appendix</h6> -->
+
+### Leiomyosarcoma
+
+平滑筋肉腫
+
+cf. Leiomyoma (平滑筋腫): benign
+
+<!-- <h6 id='leiomyosarcoma-def'>Definition</h6> -->
+<!-- <h6 id='leiomyosarcoma-eti'>Etiology</h6> -->
+<!-- <h6 id='leiomyosarcoma-epi'>Epidemiology</h6> -->
+<!-- <h6 id='leiomyosarcoma-cls'>Classification</h6> -->
+<!-- <h6 id='leiomyosarcoma-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='leiomyosarcoma-ass'>Association</h6> -->
+<h6 id='leiomyosarcoma-ex'>Examination</h6>
+
+- 消化管造影 / 内視鏡
+	- **delle** (**中心性潰瘍**)
+
+<!-- <h6 id='leiomyosarcoma-dx'>Diagnosis</h6> -->
+<h6 id='leiomyosarcoma-tx'>Treatment</h6>
+
+- 外科手術
+
+<!-- <h6 id='leiomyosarcoma-prg'>Prognosis</h6> -->
+<!-- <h6 id='leiomyosarcoma-app'>Appendix</h6> -->
 
 ## Gastric Cancer
 

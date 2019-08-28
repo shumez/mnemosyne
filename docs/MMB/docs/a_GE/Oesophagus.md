@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-28 15:11:16
+Modified: 	2019-08-28 15:14:42
 -----
 Copyright (c) 2019 shumez
 -->
@@ -589,6 +589,77 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 
 ## Esophageal Diverticulum
+
+<!-- <h6 id='esophageal_diverticulum-def'>Definition</h6> -->
+<!-- <h6 id='esophageal_diverticulum-eti'>Etiology</h6> -->
+<!-- <h6 id='esophageal_diverticulum-epi'>Epidemiology</h6> -->
+<h6 id='esophageal_diverticulum-cls'>Classification</h6>
+
+[![](https://qb.medilink-study.com/images/94B028_bas_a_010.jpg)]()
+
+<table class="table table-condensed">
+	<tbody>
+		<tr>
+			<th rowspan="3">圧出性憩室<br>
+				(仮性)</th>
+			<td colspan="2">
+				<ul>
+					<li>食道内圧の亢進</li>
+					<li>筋層(–)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Zenker憩室</th>
+			<td>
+				<ul>
+					<li>咽頭食道移行部の食道筋層 抵抗減弱部  (Laimer三角)</li>
+					<li>高齢 M</li>
+					<li>手術適応(+)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>横隔膜上憩室</th>
+			<td>
+				<ul>
+					<li>横隔膜上 抵抗減弱部位</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th rowspan="2">牽引性憩室<br>
+				(真性)</th>
+			<td colspan="2">
+				<ul>
+					<li>外部との癒着</li>
+					<li>気管分岐部</li>
+					<li>結核性リンパ節炎の瘢痕治癒</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th><u>Rokitansky憩室</u></th>
+			<td>
+				<ul>
+					<li>気管分岐部</li>
+					<li>手術適応(–)</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<!-- <h6 id='esophageal_diverticulum-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='esophageal_diverticulum-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_diverticulum-ex'>Examination</h6> -->
+<!-- <h6 id='esophageal_diverticulum-dx'>Diagnosis</h6> -->
+<!-- <h6 id='esophageal_diverticulum-tx'>Treatment</h6> -->
+<!-- <h6 id='esophageal_diverticulum-prg'>Prognosis</h6> -->
+<!-- <h6 id='esophageal_diverticulum-app'>Appendix</h6> -->
+
 
 ## 
 

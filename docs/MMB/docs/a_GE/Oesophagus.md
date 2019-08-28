@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-28 14:31:36
+Modified: 	2019-08-28 15:11:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -539,16 +539,53 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 ## Esophageal Varices
 
 <!-- <h6 id='-def'>Definition</h6> -->
-<!-- <h6 id='-eti'>Etiology</h6> -->
+
+<h6 id='-eti'>Etiology</h6>
+
+- &uarr;門脈圧
+
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='-ass'>Association</h6> -->
-<!-- <h6 id='-ex'>Examination</h6> -->
+
+<h6 id='-ex'>Examination</h6>
+
+- RC (Red Color sign) &xrArr; IND 内視鏡的治療
+
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
-<!-- <h6 id='-tx'>Treatment</h6> -->
+
+<h6 id='-tx'>Treatment</h6>
+
+[![](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)
+
+- 内視鏡
+	1. EIS 硬化療法  
+		C/I :
+		- 高度肝障害
+		- Plt < 2万
+		- DIC
+		- 腎機能低下
+	2. EVL 結紮療法
+- IVR
+	- B-RTO
+		- **左腎静脈**に
+		- IND Lg-cf (噴門部-弯窪部)/Lg-f(弯窪部) (下部)
+- surg
+	- **食道離断術**
+- 薬物
+	- &beta;B
+	- 硝酸薬
+	
+出血時
+
+- **Stengstaken-Blakemore tube** (S-B tube)
+
 <!-- <h6 id='-prg'>Prognosis</h6> -->
-<!-- <h6 id='-app'>Appendix</h6> -->
+
+<h6 id='-app'>Appendix</h6>
+
+- Eck瘻症候群 (術後脳症) (門脈-IVC吻合術)
 
 
 ## Esophageal Diverticulum

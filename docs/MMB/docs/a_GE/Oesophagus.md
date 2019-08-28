@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-27 17:52:42
+Modified: 	2019-08-28 14:31:36
 -----
 Copyright (c) 2019 shumez
 -->
@@ -431,14 +431,43 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 2. Lt (胸部下部)
 3. Ut (胸部上部)
 
-<!-- <h6 id='esophageal_cancer-cls'>Classification</h6> -->
-<!-- <h6 id='esophageal_cancer-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='esophageal_cancer-ass'>Association</h6> -->
-<!-- <h6 id='esophageal_cancer-ex'>Examination</h6> -->
-<!-- <h6 id='esophageal_cancer-dx'>Diagnosis</h6> -->
-<!-- <h6 id='esophageal_cancer-tx'>Treatment</h6> -->
+<h6 id='esophageal_cancer-cls'>Classification</h6>
 
-<h6 id='esophageal_cancer-prg'>Prognosis</h6>
+- Patho
+	- **Squamous** (**90%**) &gg; **Adenoma** (欧米では半数がadenoma)
+	- adenoma:
+		- 発生母地
+			- 食道固有腺
+			- 食道噴門腺
+			- 異所性胃粘膜
+			- Barrett粘膜
+		- 胸部下部食道 (Lt)
+- 病型
+	- 0型: 表在型
+		- 0-I: 表在隆起型
+			- 0-Ip: 有茎性
+			- 0-Is: 無茎性 (広基性)
+		- 0-II: 表面型
+			- 0-IIa: 表面隆起型
+			- 0-IIb: 表面平坦型
+			- 0-IIc: 表面陥凹型
+		- 0-III: 表在陥凹型
+	- 1型: 隆起型
+	- 2型: 潰瘍限局型
+	- 3型: 潰瘍浸潤型
+	- 4型: びまん浸潤型
+	- 5型: 分類不能型
+		- 5a: 未治療
+		- 5b: 治療後
+- TNM
+	- 表在癌
+		- &xrarr; 粘膜下層(SM)
+	- 進行形
+		- 固有筋層 (MP) &xrarr;
+
+
+
+<h6 id='esophageal_cancer-sx'>Sign and Symptom</h6>
 
 [![](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)
 
@@ -450,7 +479,61 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 	- 肺V
 	- **肺動脈は近接していない**
 
-<!-- <h6 id='esophageal_cancer-app'>Appendix</h6> -->
+- Metastasis
+	- **リンパ行性**
+	- 胸部, **縦隔**, **頸部**, 腹部リンパ節
+	- **リンパ節**, **粘膜下リンパ管**を介して, **壁内転移**(intramural metastasis 飛石転移)
+
+<!-- <h6 id='esophageal_cancer-ass'>Association</h6> -->
+
+<h6 id='esophageal_cancer-ex'>Examination</h6>
+
+- Marker
+	- SCC
+	- CYFRA
+	- CEA
+- 食道造影
+	- C/I
+		- 消化管穿孔
+		- **食道気管瘻形成**
+- 内視鏡
+	- **ルゴール** 不染領域
+
+<!-- <h6 id='esophageal_cancer-dx'>Diagnosis</h6> -->
+
+<h6 id='esophageal_cancer-tx'>Treatment</h6>
+
+- 粘膜癌
+	- **EMR**
+	- ESD
+	- **放射線療法** (^60^Co, lineac)
+
+術後合併症
+
+- 早期
+	- **肺合併症**
+		- 無気肺
+		- 肺炎
+		- 肺水腫
+	- 循環器系
+		- 術後不整脈
+		- 頻脈
+		- ショック
+	- 縫合不全
+	- **反回神経麻痺**
+	- 胸管損傷 &rArr; **乳び胸**
+	- 肝障害
+	- MRSA肺炎・腸炎
+- 晩期 +2-3w
+	- 吻合部狭窄
+	- GERD (胸腔内吻合)
+
+
+<!-- <h6 id='esophageal_cancer-prg'>Prognosis</h6> -->
+
+<h6 id='esophageal_cancer-app'>Appendix</h6>
+
+- [JCOG1109]
 
 
 ## Esophageal Varices
@@ -487,6 +570,9 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <!-- ref -->
 [2019_DokiYuichiro_NakajimaKiyokazu_KatoRyo]: https://link.springer.com/article/10.1007/s10388-019-00658-z
+
+<!-- #esophageal_cancer -->
+[JCOG1109]: https://rctportal.niph.go.jp/s/detail/jr?trial_id=jRCTs031180202
 
 <!-- fig -->
 [fig_achalasia_class]: https://media.springernature.com/lw785/springer-static/image/art%3A10.1007%2Fs10388-019-00658-z/MediaObjects/10388_2019_658_Fig1_HTML.jpg

@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:24:56
+Modified: 	2019-08-28 20:26:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -666,7 +666,12 @@ Metastasis
 胃切除後骨病変
 
 <!-- <h6 id='postgastrectomy_bone_disease-def'>Definition</h6> -->
-<!-- <h6 id='postgastrectomy_bone_disease-eti'>Etiology</h6> -->
+<h6 id='postgastrectomy_bone_disease-eti'>Etiology</h6>
+
+- vit.D, Ca不足  
+	&rArr; **骨軟化症**
+
+
 <!-- <h6 id='postgastrectomy_bone_disease-epi'>Epidemiology</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-cls'>Classification</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-sx'>Sign and Symptom</h6> -->

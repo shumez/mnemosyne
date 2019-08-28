@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:43:25
+Modified: 	2019-08-28 20:46:41
 -----
 Copyright (c) 2019 shumez
 -->
@@ -715,7 +715,7 @@ Metastasis
 <!-- <h6 id='afferent_loop_syndrome-def'>Definition</h6> -->
 <h6 id='afferent_loop_syndrome-eti'>Etiology</h6>
 
-- **Billroth II**, **Roux-en-Y**後に　　
+- **Billroth II**, **Roux-en-Y**後に  
 	&rArr; blind-loop形成  
 	&rArr; 吸収不良
 

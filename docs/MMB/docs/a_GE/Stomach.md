@@ -3,12 +3,57 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 15:19:0
+Modified: 	2019-08-28 15:50:21
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Stomach
+
+## AGML
+
+Acute Gastric Mucosal Lesion 急性胃粘膜病変
+
+<!-- <h6 id='agml-def'>Definition</h6> -->
+<h6 id='agml-eti'>Etiology</h6>
+
+- &darr; 胃粘膜血流
+
+<!-- <h6 id='agml-epi'>Epidemiology</h6> -->
+<h6 id='agml-cls'>Classification</h6>
+
+- 薬物
+	- NSAIDs
+		- インドメタシン
+		- アスピリン
+		- フェニルブタゾン
+	- ABx
+	- steroid
+	- alcohol
+- ストレス
+	- **Curling ulcer**
+		- 重症熱傷
+	- Cushing ulcer
+		- 頭部損傷
+	- 精神的ストレス
+- 感染
+	- virus
+		- CMV
+		- HSV
+	- 細菌
+	- HP
+- 医原性
+	- 内視鏡検査後のHP感染
+	- TAE (肝動脈側線療法)
+- 異物
+
+<!-- <h6 id='agml-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='agml-ass'>Association</h6> -->
+<!-- <h6 id='agml-ex'>Examination</h6> -->
+<!-- <h6 id='agml-dx'>Diagnosis</h6> -->
+<!-- <h6 id='agml-tx'>Treatment</h6> -->
+<!-- <h6 id='agml-prg'>Prognosis</h6> -->
+<!-- <h6 id='agml-app'>Appendix</h6> -->
 
 ## FD
 

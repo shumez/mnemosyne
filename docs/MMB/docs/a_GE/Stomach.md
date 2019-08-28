@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 16:44:59
+Modified: 	2019-08-28 16:50:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -195,6 +195,48 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 - HP関連機能性ディスペプシア:  
 	HP除菌後 6-12moでSxが消失,改善する
 
+
+## GDU
+
+Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
+
+<table>
+	<thead>
+		<tr>
+			<th align="center" width="30%">潰瘍</th>
+			<th align="center" width="35%">胃</th>
+			<th align="center" width="35%">十二指腸</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>高齢者</th>
+			<td align="center">40-60s</td>
+			<td align="center"><b>20-40s</b></td>
+		</tr>
+		<tr>
+			<th>胃酸</th>
+			<td colspan="2" align="center"><</td>
+		</tr>
+		<tr>
+			<th>上腹部痛</th>
+			<td align="center">食後</td>
+			<td align="center">空腹時</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 ## Gastric Cancer
 

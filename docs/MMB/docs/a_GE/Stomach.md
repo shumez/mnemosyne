@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:15:25
+Modified: 	2019-08-28 20:23:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -626,6 +626,40 @@ Metastasis
 <!-- <h6 id='postgastrectomy_syndrome-tx'>Treatment</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-app'>Appendix</h6> -->
+
+
+### Dumping Syndrome
+
+<h6 id='dumping_syndrome-def'>Definition</h6>
+
+- 胃切除, 胃腸吻合術後に高張な食物が急速に腸内に入ることで生じる
+
+<!-- <h6 id='dumping_syndrome-eti'>Etiology</h6> -->
+<!-- <h6 id='dumping_syndrome-epi'>Epidemiology</h6> -->
+<h6 id='dumping_syndrome-cls'>Classification</h6>
+
+[![](https://qb.medilink-study.com/images/108I047_bas_010.jpg)](https://qb.medilink-study.com/images/108I047_bas_010.jpg)
+
+- 早期Dumping
+- 後期Dumping:  
+	食餌  
+	&rArr; ↑BS  
+	&rArr; ↑Insulin  
+	&rArr; ↓↓BS  
+
+<!-- <h6 id='dumping_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='dumping_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='dumping_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='dumping_syndrome-dx'>Diagnosis</h6> -->
+<h6 id='dumping_syndrome-tx'>Treatment</h6>
+
+- 後期Dumping
+	- 食事療法
+	- **発作時に糖分摂取**
+
+<!-- <h6 id='dumping_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='dumping_syndrome-app'>Appendix</h6> -->
+
 
 ## Anastomotic Ulcer
 

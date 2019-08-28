@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:58:34
+Modified: 	2019-08-28 18:04:21
 -----
 Copyright (c) 2019 shumez
 -->
@@ -484,24 +484,96 @@ cf. Leiomyoma (平滑筋腫): benign
 
 ## Gastric Cancer
 
-**Etiology**
+<!-- <h6 id='gastric_cancer-def'>Definition</h6> -->
+<h6 id='gastric_cancer-eti'>Etiology</h6>
 
-* EB virus
+- EB virus
 
-**Treatment**
+<!-- <h6 id='gastric_cancer-epi'>Epidemiology</h6> -->
+<h6 id='gastric_cancer-cls'>Classification</h6>
 
-* CCT
-	* Primary
-		* HER2(–)
-			* [S-1] ( / [capecitabine]) + [CDDP] (/ [oxalliplatin])
-		* HER2(+)
-			* [capecitabine] (/ [S-1]) + [CDDP] (/ [oxalliplatin]) + [trastuzumab]
-	* Secondary
-		* [paclitaxel]
-		* [irinotecan]
-		* [ramucirumab]
-	* Postope
-* RT
+1. **0-IIc**
+
+胃癌 深達度
+
+[![](https://qb.medilink-study.com/images/108I009_bas_010.jpg)](https://qb.medilink-study.com/images/108I009_bas_010.jpg)
+
+<!-- <h6 id='gastric_cancer-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gastric_cancer-ass'>Association</h6> -->
+<h6 id='gastric_cancer-ex'>Examination</h6>
+
+[![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)
+
+[![](https://qb.medilink-study.com/images/107I057_sup_a_010.jpg)](https://qb.medilink-study.com/images/107I057_sup_a_010.jpg)
+
+- 肉眼所見
+	- 皺襞
+		- 棍棒状肥大
+		- 癒合
+	- 陥凹底
+		- 島状の再生上皮島
+
+<!-- <h6 id='gastric_cancer-dx'>Diagnosis</h6> -->
+<h6 id='gastric_cancer-tx'>Treatment</h6>
+
+- 早期胃癌の内視鏡的治療の絶対適応度
+	- ≤ 20mm の肉眼的粘膜癌
+	- 組織型: 分化型  
+	印環細胞癌 etc 低分化癌: 胃切除
+	- 肉眼型: なんでも
+	- 陥凹型では, 潰瘍(-)に限る
+
+分化型 早期胃癌 ESD適応
+
+<table>
+	<thead>
+		<tr>
+			<th>深達度</th>
+			<th>潰瘍</th>
+			<th>適応</th>
+			<th>適応拡大</th>
+			<th>適応外</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th rowspan="2">M</th>
+			<th>UL(–)</th>
+			<td align="right">≤ 2cm</td>
+			<td align="right">> 2cm</td>
+			<td align="center">(–)</td>
+		</tr>
+		<tr>
+			<th>UL(+)</th>
+			<td align="center">(–)</td>
+			<td align="right">≤ 3cm</td>
+			<td align="right">> 3cm</td>
+		</tr>
+		<tr>
+			<th>SM1</th>
+			<th>(±)</th>
+			<td align="center">(–)</td>
+			<td align="right">≤ 3cm</td>
+			<td align="right">> 3cm</td>
+		</tr>
+	</tbody>
+</table>
+
+- CCT
+	- Primary
+		- HER2(–)
+			- [S-1] ( / [capecitabine]) + [CDDP] (/ [oxalliplatin])
+		- HER2(+)
+			- [capecitabine] (/ [S-1]) + [CDDP] (/ [oxalliplatin]) + [trastuzumab]
+	- Secondary
+		- [paclitaxel]
+		- [irinotecan]
+		- [ramucirumab]
+	- Postope
+- RT
+
+<!-- <h6 id='gastric_cancer-prg'>Prognosis</h6> -->
+<!-- <h6 id='gastric_cancer-app'>Appendix</h6> -->
 
 ## Anastomotic Ulcer
 

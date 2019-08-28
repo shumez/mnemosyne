@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:52:2
+Modified: 	2019-08-28 17:55:8
 -----
 Copyright (c) 2019 shumez
 -->
@@ -440,6 +440,27 @@ cf. Leiomyoma (平滑筋腫): benign
 
 <!-- <h6 id='leiomyosarcoma-prg'>Prognosis</h6> -->
 <!-- <h6 id='leiomyosarcoma-app'>Appendix</h6> -->
+
+### ML
+
+悪性リンパ腫
+
+#### MALT lymphoma
+
+<!-- <h6 id='maltl-def'>Definition</h6> -->
+<!-- <h6 id='maltl-eti'>Etiology</h6> -->
+<!-- <h6 id='maltl-epi'>Epidemiology</h6> -->
+<!-- <h6 id='maltl-cls'>Classification</h6> -->
+<!-- <h6 id='maltl-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='maltl-ass'>Association</h6> -->
+<!-- <h6 id='maltl-ex'>Examination</h6> -->
+<!-- <h6 id='maltl-dx'>Diagnosis</h6> -->
+<h6 id='maltl-tx'>Treatment</h6>
+
+- *HP*除菌
+
+<!-- <h6 id='maltl-prg'>Prognosis</h6> -->
+<!-- <h6 id='maltl-app'>Appendix</h6> -->
 
 ## Gastric Cancer
 

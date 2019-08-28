@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:40:28
+Modified: 	2019-08-28 20:43:25
 -----
 Copyright (c) 2019 shumez
 -->
@@ -768,6 +768,21 @@ Metastasis
 <!-- <h6 id='postoperative_gerd-tx'>Treatment</h6> -->
 <!-- <h6 id='postoperative_gerd-prg'>Prognosis</h6> -->
 <!-- <h6 id='postoperative_gerd-app'>Appendix</h6> -->
+
+
+## Gastric / Duodenal Diverticulum
+
+<!-- <h6 id='gastric_duodenal_diverticulum-def'>Definition</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-eti'>Etiology</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-cls'>Classification</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-ass'>Association</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-ex'>Examination</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-dx'>Diagnosis</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-tx'>Treatment</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-prg'>Prognosis</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-app'>Appendix</h6> -->
 
 ## 
 

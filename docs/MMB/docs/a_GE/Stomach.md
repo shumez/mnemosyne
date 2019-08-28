@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 16:50:7
+Modified: 	2019-08-28 17:18:20
 -----
 Copyright (c) 2019 shumez
 -->
@@ -225,6 +225,33 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 		</tr>
 	</tbody>
 </table>
+
+<!-- <h6 id='gdu-def'>Definition</h6> -->
+<!-- <h6 id='gdu-eti'>Etiology</h6> -->
+<!-- <h6 id='gdu-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gdu-cls'>Classification</h6> -->
+<!-- <h6 id='gdu-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gdu-ass'>Association</h6> -->
+<h6 id='gdu-ex'>Examination</h6>
+
+- 内視鏡
+- 消化管造影
+	- niche
+	- **粘膜ひだの集中像** **fold convergency**
+	- 大弯の彎入 (陥入): B型砂時計胃
+	- 小弯の短縮: 嚢状胃
+
+<!-- <h6 id='gdu-dx'>Diagnosis</h6> -->
+<!-- <h6 id='gdu-tx'>Treatment</h6> -->
+<!-- <h6 id='gdu-prg'>Prognosis</h6> -->
+<h6 id='gdu-app'>Appendix</h6>
+
+- Dieulafoy潰瘍:  
+	胃体上部の血管異常により生じる表在性潰瘍
+
+### DUP
+
+十二指腸潰瘍穿孔
 
 <!-- <h6 id='-def'>Definition</h6> -->
 <!-- <h6 id='-eti'>Etiology</h6> -->

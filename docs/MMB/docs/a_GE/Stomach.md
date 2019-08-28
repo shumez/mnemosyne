@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 16:40:45
+Modified: 	2019-08-28 16:44:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -151,26 +151,22 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 
 ## FD
 
-**Definition**
+機能性ディスペプシア Functional dyspepsia
+
+<h6 id='fd-def'>Definition</h6>
 
 * FGID
 	* GERD
 	* FD
 	* IBS
-	
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-**Diagnosis**
+
+<!-- <h6 id='fd-eti'>Etiology</h6> -->
+<!-- <h6 id='fd-epi'>Epidemiology</h6> -->
+<!-- <h6 id='fd-cls'>Classification</h6> -->
+<!-- <h6 id='fd-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='fd-ass'>Association</h6> -->
+<!-- <h6 id='fd-ex'>Examination</h6> -->
+<h6 id='fd-dx'>Diagnosis</h6>
 
 [![][img_FD]][img_FD]
 
@@ -183,7 +179,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 	* –6moから起こる, ≥3mo症状が継続
 	* 器質的疾患が上部内視鏡検査で確認されない
 
-**Treatment**
+<h6 id='fd-tx'>Treatment</h6>
 
 * 初期
 	* PPI / H~2~RA
@@ -193,10 +189,11 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 	* 抗不安
 	* 漢方
 
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='fd-prg'>Prognosis</h6> -->
+<h6 id='fd-app'>Appendix</h6>
+
+- HP関連機能性ディスペプシア:  
+	HP除菌後 6-12moでSxが消失,改善する
 
 
 ## Gastric Cancer

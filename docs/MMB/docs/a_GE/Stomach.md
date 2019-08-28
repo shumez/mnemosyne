@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 17:18:20
+Modified: 	2019-08-28 17:28:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -264,6 +264,63 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
+
+## Gastric Polyp
+
+<!-- <h6 id='gastric_polyp-def'>Definition</h6> -->
+<!-- <h6 id='gastric_polyp-eti'>Etiology</h6> -->
+<!-- <h6 id='gastric_polyp-epi'>Epidemiology</h6> -->
+<h6 id='gastric_polyp-cls'>Classification</h6>
+
+<table>
+	<tbody>
+		<tr>
+			<th>過形成性</th>
+			<td></td>
+		</tr>
+		<tr>
+			<th>胃底腺</th>
+			<td>
+				<ul>
+					<li><u>胃底腺の過形成</u></li>
+					<li><u>嚢胞状拡張</u></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>腺腫性</th>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='gastric_polyp-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gastric_polyp-ass'>Association</h6> -->
+<h6 id='gastric_polyp-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/109G067_ima_020.jpg)](https://qb.medilink-study.com/images/109G067_ima_020.jpg)
+
+胃底腺ポリープ  
+胃底腺の過形成 / **嚢胞状拡張**
+
+
+<h6 id='gastric_polyp-dx'>Diagnosis</h6>
+
+胃腺腫 / IIa型早期胃癌
+
+|		| 胃腺腫	| 早期胃癌	|
+|-------|----------|----------|
+| 辺縁	|			|			|
+| 表面性状| | |
+| 色調| | |
+| 新生血管| | |
+
+<!-- <h6 id='gastric_polyp-tx'>Treatment</h6> -->
+<!-- <h6 id='gastric_polyp-prg'>Prognosis</h6> -->
+<h6 id='gastric_polyp-app'>Appendix</h6>
+
+- 胃底腺ポリープはPPIの長期内服との関連
+
 
 ## Gastric Cancer
 

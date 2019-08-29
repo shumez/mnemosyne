@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:03:46
+Modified: 	2019-08-29 20:09:29
 -----
 Copyright (c) 2019 shumez
 -->
@@ -291,6 +291,32 @@ Intestinal Behçet's Disease
 <!-- <h6 id='behcet-tx'>Treatment</h6> -->
 <!-- <h6 id='behcet-prg'>Prognosis</h6> -->
 <!-- <h6 id='behcet-app'>Appendix</h6> -->
+
+## Drug-induced Enteritis
+
+Enterocolitis 薬剤性腸炎
+
+<!-- <h6 id='drug-induced_enteritis-def'>Definition</h6> -->
+<!-- <h6 id='drug-induced_enteritis-eti'>Etiology</h6> -->
+<!-- <h6 id='drug-induced_enteritis-epi'>Epidemiology</h6> -->
+<h6 id='drug-induced_enteritis-cls'>Classification</h6>
+
+- NSAIDs起因性腸炎
+- ABx関連性腸炎
+- Cytotoxic起因性腸障害
+- コラーゲン大腸炎
+- 顕微鏡的腸炎
+- PPI起因性腸炎
+- K製剤起因性腸炎
+
+<!-- <h6 id='drug-induced_enteritis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='drug-induced_enteritis-ass'>Association</h6> -->
+<!-- <h6 id='drug-induced_enteritis-ex'>Examination</h6> -->
+<!-- <h6 id='drug-induced_enteritis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='drug-induced_enteritis-tx'>Treatment</h6> -->
+<!-- <h6 id='drug-induced_enteritis-prg'>Prognosis</h6> -->
+<!-- <h6 id='drug-induced_enteritis-app'>Appendix</h6> -->
+
 
 ## blind-loop
 

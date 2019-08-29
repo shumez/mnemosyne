@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 15:27:46
+Modified: 	2019-08-29 15:35:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -125,36 +125,53 @@ Crohn disese
 <!-- <h6 id='cd-app'>Appendix</h6> -->
 
 ## UC
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-**Association**
 
-* 腸管合併症
-	* [中毒性巨大結腸症]
-	* [大腸癌][CRC]
-	* [CMV腸炎][CMV]
-* 腸管外合併症
-	* [PSC]
-	* [壊疽性膿皮症]
+<!-- <h6 id='uc-def'>Definition</h6> -->
+<!-- <h6 id='uc-eti'>Etiology</h6> -->
+<!-- <h6 id='uc-epi'>Epidemiology</h6> -->
+<h6 id='uc-cls'>Classification</h6>
+
+1. 下痢 ≥ 6回/d
+2. 顕血便(++)
+3. 発熱 ≥ 37.5°C
+4. HR ≥ 90 bpm
+5. Hb ≤ 10g/dL
+6. ESR ≥ 30mm/hr
+
+<!-- <h6 id='uc-sx'>Sign and Symptom</h6> -->
+
+<h6 id='uc-ass'>Association</h6>
+
+- 腸管合併症
+	- [中毒性巨大結腸症]
+	- [大腸癌][CRC]
+	- **[CMV腸炎][CMV]**
+		- Steroid抵抗性 &xrArr; s/o
+- 腸管外合併症
+	- **[PSC]**
+	- 皮膚
+		- **[壊疽性膿皮症]**
+		- **[結節性紅斑]**
 	
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<h6 id='uc-ex'>Examination</h6>
+
+- XR
+	- 血管透見像
+- biopsy
+	- 炎症性細胞浸潤
+	- **crypt abscess** (陰窩膿瘍)
+	- **goble cell depletion** (杯細胞の減少)
+
+<!-- <h6 id='uc-dx'>Diagnosis</h6> -->
+<h6 id='uc-tx'>Treatment</h6>
+
+- 薬物
+	- 5-ASA: 軽症-中等症
+		- Sulfapyridine
+	- Steorid: 重症
+
+<!-- <h6 id='uc-prg'>Prognosis</h6> -->
+<!-- <h6 id='uc-app'>Appendix</h6> -->
 
 
 ## CMV 

@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:30:51
+Modified: 	2019-08-29 20:34:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -441,6 +441,34 @@ Antibiotic-associated Hemorrhagic Colitis 抗菌薬関連急性出血性腸炎
 <!-- <h6 id='mrsa_enteritis-prg'>Prognosis</h6> -->
 <!-- <h6 id='mrsa_enteritis-app'>Appendix</h6> -->
 
+
+## IBS
+
+Irritable Bowel Syndrome
+
+<!-- <h6 id=ibs-def'>Definition</h6> -->
+<!-- <h6 id='ibs-eti'>Etiology</h6> -->
+<!-- <h6 id='ibs-epi'>Epidemiology</h6> -->
+<h6 id='ibs-cls'>Classification</h6>
+
+- 便秘型 C
+- 下痢型 D
+- 混合型 M
+- 分類不能型 U
+
+<!-- <h6 id='ibs-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ibs-ass'>Association</h6> -->
+<!-- <h6 id='ibs-ex'>Examination</h6> -->
+<h6 id='ibs-dx'>Diagnosis</h6>
+
+- Rome IV
+	1. 排便により症状が軽快
+	2. 排便回数の変化
+	3. 便形状の変化
+
+<!-- <h6 id='ibs-tx'>Treatment</h6> -->
+<!-- <h6 id='ibs-prg'>Prognosis</h6> -->
+<!-- <h6 id='ibs-app'>Appendix</h6> -->
 
 ## blind-loop
 

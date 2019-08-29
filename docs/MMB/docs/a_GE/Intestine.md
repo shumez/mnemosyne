@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 16:07:59
+Modified: 	2019-08-29 16:36:5
 -----
 Copyright (c) 2019 shumez
 -->
@@ -196,6 +196,30 @@ Crohn disese
 
 <!-- <h6 id='cmv-prg'>Prognosis</h6> -->
 <!-- <h6 id='cmv-app'>Appendix</h6> -->
+
+### Pyoderma Gangrenosum
+
+壊疽性膿皮症
+
+<!-- <h6 id='pyoderma_gangrenosum-def'>Definition</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-eti'>Etiology</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-cls'>Classification</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-sx'>Sign and Symptom</h6> -->
+<h6 id='pyoderma_gangrenosum-ass'>Association</h6>
+
+- **UC**
+- Crohn
+- 大動脈炎症候群
+- RA
+- Leuk
+- **MDS**
+
+<!-- <h6 id='pyoderma_gangrenosum-ex'>Examination</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-tx'>Treatment</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-prg'>Prognosis</h6> -->
+<!-- <h6 id='pyoderma_gangrenosum-app'>Appendix</h6> -->
 
 ## blind-loop
 

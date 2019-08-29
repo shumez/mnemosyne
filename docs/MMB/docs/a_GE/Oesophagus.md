@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-28 15:17:7
+Modified: 	2019-08-29 16:46:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -685,6 +685,8 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 <!-- fig -->
 [fig_achalasia_class]: https://media.springernature.com/lw785/springer-static/image/art%3A10.1007%2Fs10388-019-00658-z/MediaObjects/10388_2019_658_Fig1_HTML.jpg
 
+<!--
 <style type="text/css">
 	img{width: 50%; float: right;}
 </style>
+-->

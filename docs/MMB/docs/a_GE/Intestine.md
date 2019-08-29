@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:25:11
+Modified: 	2019-08-29 20:30:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -415,6 +415,31 @@ Antibiotic-associated Hemorrhagic Colitis 抗菌薬関連急性出血性腸炎
 <!-- <h6 id='ahc-tx'>Treatment</h6> -->
 <!-- <h6 id='ahc-prg'>Prognosis</h6> -->
 <!-- <h6 id='ahc-app'>Appendix</h6> -->
+
+
+### MRSA enteritis
+
+<!-- <h6 id='mrsa_enteritis-def'>Definition</h6> -->
+<!-- <h6 id='mrsa_enteritis-eti'>Etiology</h6> -->
+<!-- <h6 id='mrsa_enteritis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mrsa_enteritis-cls'>Classification</h6> -->
+<h6 id='mrsa_enteritis-sx'>Sign and Symptom</h6>
+
+- 緑色下痢 (早期) / 米のとぎ汁様下痢
+
+<!-- <h6 id='mrsa_enteritis-ass'>Association</h6> -->
+<h6 id='mrsa_enteritis-ex'>Examination</h6>
+
+- 培養
+	- **コアグラーゼ産生 GPC**
+
+<!-- <h6 id='mrsa_enteritis-dx'>Diagnosis</h6> -->
+<h6 id='mrsa_enteritis-tx'>Treatment</h6>
+
+- **バンコマイシン**
+
+<!-- <h6 id='mrsa_enteritis-prg'>Prognosis</h6> -->
+<!-- <h6 id='mrsa_enteritis-app'>Appendix</h6> -->
 
 
 ## blind-loop

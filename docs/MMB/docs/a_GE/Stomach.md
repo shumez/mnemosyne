@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-28 20:50:23
+Modified: 	2019-08-29 15:03:33
 -----
 Copyright (c) 2019 shumez
 -->
@@ -775,12 +775,30 @@ Metastasis
 <!-- <h6 id='gastric_duodenal_diverticulum-def'>Definition</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-eti'>Etiology</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-epi'>Epidemiology</h6> -->
-<!-- <h6 id='gastric_duodenal_diverticulum-cls'>Classification</h6> -->
-<!-- <h6 id='gastric_duodenal_diverticulum-sx'>Sign and Symptom</h6> -->
+<h6 id='gastric_duodenal_diverticulum-cls'>Classification</h6>
+
+- 胃憩室
+- 十二指腸憩室
+	- **後天性**, **圧出性**の**仮性憩室**
+	- Vater乳頭部近傍 (**下行脚内側部**)
+
+<h6 id='gastric_duodenal_diverticulum-sx'>Sign and Symptom</h6>
+
+- **Lemmel syndrome**
+	- 十二指腸憩室炎が乳頭部に波及
+	- 胆汁うっ滞
+	- 膵炎
+	- **総胆管結石症**
+
 <!-- <h6 id='gastric_duodenal_diverticulum-ass'>Association</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-ex'>Examination</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-dx'>Diagnosis</h6> -->
-<!-- <h6 id='gastric_duodenal_diverticulum-tx'>Treatment</h6> -->
+<h6 id='gastric_duodenal_diverticulum-tx'>Treatment</h6>
+
+- Lemmel synd
+	- 内視鏡的経鼻胆道ドレナージ
+	- surg
+
 <!-- <h6 id='gastric_duodenal_diverticulum-prg'>Prognosis</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-app'>Appendix</h6> -->
 

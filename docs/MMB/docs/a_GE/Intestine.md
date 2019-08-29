@@ -3,13 +3,38 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-04-27 17:48:50
+Modified: 	2019-08-29 15:16:13
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Intestine
 
+## IBD
+
+Inflammatory Bowel Disease
+
+<!-- <h6 id='ibd-def'>Definition</h6> -->
+<!-- <h6 id='ibd-eti'>Etiology</h6> -->
+<!-- <h6 id='ibd-epi'>Epidemiology</h6> -->
+<h6 id='ibd-cls'>Classification</h6>
+
+- CD
+- UC
+- Intestinal Behçet
+- 単純性腸潰瘍
+- PMC
+- 抗菌薬関連性腸炎
+- ITB
+- アメーバ赤痢
+
+<!-- <h6 id='ibd-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ibd-ass'>Association</h6> -->
+<!-- <h6 id='ibd-ex'>Examination</h6> -->
+<!-- <h6 id='ibd-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ibd-tx'>Treatment</h6> -->
+<!-- <h6 id='ibd-prg'>Prognosis</h6> -->
+<!-- <h6 id='ibd-app'>Appendix</h6> -->
 
 ## UC
 <!-- **Definition** -->
@@ -89,31 +114,18 @@ Copyright (c) 2019 shumez
 ##
 
 <!-- ## -->
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
-<!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?\inline&space;x+\frac{1}{x}=1 -->
-<!-- [x+\frac{1}{x}=1]: https://latex.codecogs.com/gif.latex?x+\frac{1}{x}=1 -->
 
 <!-- <style type="text/css">
 	img{width: 50%; float: right;}

@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 16:36:5
+Modified: 	2019-08-29 16:56:18
 -----
 Copyright (c) 2019 shumez
 -->
@@ -220,6 +220,33 @@ Crohn disese
 <!-- <h6 id='pyoderma_gangrenosum-tx'>Treatment</h6> -->
 <!-- <h6 id='pyoderma_gangrenosum-prg'>Prognosis</h6> -->
 <!-- <h6 id='pyoderma_gangrenosum-app'>Appendix</h6> -->
+
+## ITB
+
+Intestinal TB
+
+<!-- <h6 id='itb-def'>Definition</h6> -->
+<!-- <h6 id='itb-eti'>Etiology</h6> -->
+<!-- <h6 id='itb-epi'>Epidemiology</h6> -->
+<!-- <h6 id='itb-cls'>Classification</h6> -->
+<!-- <h6 id='itb-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='itb-ass'>Association</h6> -->
+<h6 id='itb-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/84D033_ima_a_010.jpg)](https://qb.medilink-study.com/images/84D033_ima_a_010.jpg)
+
+- 注腸造影
+	- 輪状/帯状潰瘍
+	- **輪状狭窄**
+	- **string sign** (**瘢痕萎縮帯**)
+	- Stierlin sign  
+		回盲部でのBaの通過が早く, 十分に造影されない
+
+
+<!-- <h6 id='itb-dx'>Diagnosis</h6> -->
+<!-- <h6 id='itb-tx'>Treatment</h6> -->
+<!-- <h6 id='itb-prg'>Prognosis</h6> -->
+<!-- <h6 id='itb-app'>Appendix</h6> -->
 
 ## blind-loop
 

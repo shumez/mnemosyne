@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:34:10
+Modified: 	2019-08-29 20:41:54
 -----
 Copyright (c) 2019 shumez
 -->
@@ -469,6 +469,38 @@ Irritable Bowel Syndrome
 <!-- <h6 id='ibs-tx'>Treatment</h6> -->
 <!-- <h6 id='ibs-prg'>Prognosis</h6> -->
 <!-- <h6 id='ibs-app'>Appendix</h6> -->
+
+
+## Polyp
+
+<!-- <h6 id='polyp-def'>Definition</h6> -->
+<!-- <h6 id='polyp-eti'>Etiology</h6> -->
+<!-- <h6 id='polyp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='polyp-cls'>Classification</h6> -->
+<!-- <h6 id='polyp-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='polyp-ass'>Association</h6> -->
+<!-- <h6 id='polyp-ex'>Examination</h6> -->
+<!-- <h6 id='polyp-dx'>Diagnosis</h6> -->
+<h6 id='polyp-tx'>Treatment</h6>
+
+- **内視鏡的切除**
+	- ≥ 6mm
+	- 癌化リスク高い
+	- 癌との鑑別が困難
+	- 表面陥凹型 & ≤ 5mm
+
+<!-- <h6 id='polyp-prg'>Prognosis</h6> -->
+<h6 id='polyp-app'>Appendix</h6>
+
+- LST Laterally spreading tumor 側方発育型腫瘍
+- sessile serrated adenoma/polyp (SSA/P)  
+	- 右側結腸に好発
+	- 鋸歯状病変
+	- 遺伝子型
+		- *BRAF* mut
+		- CpG island methylator phenotype (CIMP)
+		- MSI
+
 
 ## blind-loop
 

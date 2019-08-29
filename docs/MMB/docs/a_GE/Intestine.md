@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 15:16:13
+Modified: 	2019-08-29 15:27:46
 -----
 Copyright (c) 2019 shumez
 -->
@@ -35,6 +35,94 @@ Inflammatory Bowel Disease
 <!-- <h6 id='ibd-tx'>Treatment</h6> -->
 <!-- <h6 id='ibd-prg'>Prognosis</h6> -->
 <!-- <h6 id='ibd-app'>Appendix</h6> -->
+
+## CD
+
+Crohn disese
+
+<!-- <h6 id='cd-def'>Definition</h6> -->
+<!-- <h6 id='cd-eti'>Etiology</h6> -->
+<h6 id='cd-epi'>Epidemiology</h6>
+
+- **late 10s - 20s** 
+
+<!-- <h6 id='cd-cls'>Classification</h6> -->
+<h6 id='cd-sx'>Sign and Symptom</h6>
+
+[![](https://qb.medilink-study.com/images/109E047_bas_010.jpg)](https://qb.medilink-study.com/images/109E047_bas_010.jpg)
+
+- 吸収不良症候群
+	- &darr;vit.B~12~
+	- &darr;胆汁酸
+	- &darr;ナイアシン
+- 蛋白漏出性胃腸症
+	- &darr;Alb
+- 器質的
+	- 内外腸瘻
+	- 腸狭窄
+- 肛門
+	- 痔瘻
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2"><u>SCA GF</u></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>S</td>
+			<td>Skip lesion</td>
+		</tr>
+		<tr>
+			<td>C</td>
+			<td>Cobble stone</td>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>Anal lesion<br>
+				All layer</td>
+		</tr>
+		<tr>
+			<td>G</td>
+			<td>Granuloma</td>
+		</tr>
+		<tr>
+			<td>F</td>
+			<td>Fistula</td>
+		</tr>
+	</tbody>
+</table>
+
+<h6 id='cd-ass'>Association</h6>
+
+- **関節炎** (**AS**)
+- 骨粗鬆症
+- 結節性紅斑
+- 壊疽性膿皮症
+- アフタ性口内炎
+- 虹彩炎
+- 膵炎
+- 胆石症
+- 胆管炎
+- 血栓性静脈炎
+- 悪性腫瘍
+	- 腸癌
+	- 痔瘻癌
+
+<!-- <h6 id='cd-ex'>Examination</h6> -->
+<h6 id='cd-dx'>Diagnosis</h6>
+
+- IOIBD assessment score
+- CDAI (Crohn's disease activity index)
+
+<h6 id='cd-tx'>Treatment</h6>
+
+- TNF-α  
+	C/I: ITB
+
+<!-- <h6 id='cd-prg'>Prognosis</h6> -->
+<!-- <h6 id='cd-app'>Appendix</h6> -->
 
 ## UC
 <!-- **Definition** -->

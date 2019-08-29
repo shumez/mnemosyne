@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 15:35:49
+Modified: 	2019-08-29 16:07:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -176,17 +176,26 @@ Crohn disese
 
 ## CMV 
 
-**Etiology**
+<!-- <h6 id='cmv-def'>Definition</h6> -->
+<h6 id='cmv-eti'>Etiology</h6>
 
-* steroid High-dose &rArr; CMV再活性化
+- steroid High-dose &rArr; CMV再活性化
 
-*　ステロイド抵抗性
+- ステロイド抵抗性
 
-**Treatment**
+<!-- <h6 id='cmv-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cmv-cls'>Classification</h6> -->
+<!-- <h6 id='cmv-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cmv-ass'>Association</h6> -->
+<!-- <h6 id='cmv-ex'>Examination</h6> -->
+<!-- <h6 id='cmv-dx'>Diagnosis</h6> -->
+<h6 id='cmv-tx'>Treatment</h6>
 
-* Gancyclovir
-* &gamma;-globlin
+- Gancyclovir
+- &gamma;-globlin
 
+<!-- <h6 id='cmv-prg'>Prognosis</h6> -->
+<!-- <h6 id='cmv-app'>Appendix</h6> -->
 
 ## blind-loop
 

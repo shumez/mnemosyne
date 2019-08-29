@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 16:56:18
+Modified: 	2019-08-29 20:00:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -247,6 +247,31 @@ Intestinal TB
 <!-- <h6 id='itb-tx'>Treatment</h6> -->
 <!-- <h6 id='itb-prg'>Prognosis</h6> -->
 <!-- <h6 id='itb-app'>Appendix</h6> -->
+
+## Infectious Enteritis 
+
+Enterocolitis 感染性胃腸炎, 感染性大腸炎
+
+<!-- <h6 id='infectious_enteritis-def'>Definition</h6> -->
+<!-- <h6 id='infectious_enteritis-eti'>Etiology</h6> -->
+<!-- <h6 id='infectious_enteritis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='infectious_enteritis-cls'>Classification</h6> -->
+<!-- <h6 id='infectious_enteritis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='infectious_enteritis-ass'>Association</h6> -->
+<h6 id='infectious_enteritis-ex'>Examination</h6>
+
+- 毒素の検出
+
+<!-- <h6 id='infectious_enteritis-dx'>Diagnosis</h6> -->
+<h6 id='infectious_enteritis-tx'>Treatment</h6>
+
+- 脱水の補正
+- 整腸薬
+- 抗菌薬
+
+<!-- <h6 id='infectious_enteritis-prg'>Prognosis</h6> -->
+<!-- <h6 id='infectious_enteritis-app'>Appendix</h6> -->
+
 
 ## blind-loop
 

@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:15:50
+Modified: 	2019-08-29 20:19:18
 -----
 Copyright (c) 2019 shumez
 -->
@@ -312,7 +312,45 @@ Enterocolitis 薬剤性腸炎
 <!-- <h6 id='drug-induced_enteritis-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='drug-induced_enteritis-ass'>Association</h6> -->
 <!-- <h6 id='drug-induced_enteritis-ex'>Examination</h6> -->
-<!-- <h6 id='drug-induced_enteritis-dx'>Diagnosis</h6> -->
+<h6 id='drug-induced_enteritis-dx'>Diagnosis</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">PMC</th>
+			<th width="40%">AHC</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>原因菌</th>
+			<td align="content"><u><i>C. difficile</i></u></td>
+			<td align="content"><u><i>Klebsiella</i></u>, <i>E. coli</i></td>
+		</tr>
+		<tr>
+			<th>原因ABx</th>
+			<td align="content">セフェム</td>
+			<td align="content"><u>合成ペニシリン</u></td>
+		</tr>
+		<tr>
+			<th>年齢</th>
+			<td align="content">高齢者</td>
+			<td align="content">若年者</td>
+		</tr>
+		<tr>
+			<th>潜伏期間</th>
+			<td align="content">10-20d</td>
+			<td align="content">days</td>
+		</tr>
+		<tr>
+			<th>S/S</th>
+			<td align="content">水様性下痢</td>
+			<td align="content">血性下痢</td>
+		</tr>
+	</tbody>
+</table>
+
 <!-- <h6 id='drug-induced_enteritis-tx'>Treatment</h6> -->
 <!-- <h6 id='drug-induced_enteritis-prg'>Prognosis</h6> -->
 <!-- <h6 id='drug-induced_enteritis-app'>Appendix</h6> -->

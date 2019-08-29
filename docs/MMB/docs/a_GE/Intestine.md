@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:09:29
+Modified: 	2019-08-29 20:15:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -317,6 +317,36 @@ Enterocolitis 薬剤性腸炎
 <!-- <h6 id='drug-induced_enteritis-prg'>Prognosis</h6> -->
 <!-- <h6 id='drug-induced_enteritis-app'>Appendix</h6> -->
 
+
+### PMC
+
+Pseudomembranous Colitis / Enteritis 偽膜性大腸炎
+
+<!-- <h6 id='pmc-def'>Definition</h6> -->
+<h6 id='pmc-eti'>Etiology</h6>
+
+- *C. difficile* (嫌気性GPB)
+
+<!-- <h6 id='pmc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pmc-cls'>Classification</h6> -->
+<!-- <h6 id='pmc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pmc-ass'>Association</h6> -->
+<h6 id='pmc-ex'>Examination</h6>
+
+- 糞便
+	- **A, B toxin**
+- Blood
+	- &uarr;WBC, &uarr;ESR, &uarr;CRP
+	- **&darr;K**
+
+<!-- <h6 id='pmc-dx'>Diagnosis</h6> -->
+<h6 id='pmc-tx'>Treatment</h6>
+
+- メトロニダゾール #1
+- バンコマイシン
+
+<!-- <h6 id='pmc-prg'>Prognosis</h6> -->
+<!-- <h6 id='pmc-app'>Appendix</h6> -->
 
 ## blind-loop
 

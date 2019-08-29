@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:19:18
+Modified: 	2019-08-29 20:25:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -385,6 +385,37 @@ Pseudomembranous Colitis / Enteritis 偽膜性大腸炎
 
 <!-- <h6 id='pmc-prg'>Prognosis</h6> -->
 <!-- <h6 id='pmc-app'>Appendix</h6> -->
+
+
+### AHC
+
+Antibiotic-associated Hemorrhagic Colitis 抗菌薬関連急性出血性腸炎
+
+<h6 id='ahc-def'>Definition</h6>
+
+- **合成ペニシリン系**などのABx投与数日で発症
+
+<h6 id='ahc-eti'>Etiology</h6>
+
+- ***Klebsiella oxytoca***
+
+<!-- <h6 id='ahc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ahc-cls'>Classification</h6> -->
+<h6 id='ahc-sx'>Sign and Symptom</h6>
+
+- **トマトジュース状の血性下痢**
+
+<!-- <h6 id='ahc-ass'>Association</h6> -->
+<h6 id='ahc-ex'>Examination</h6>
+
+- 内視鏡
+	- 横行結腸 - 右側結腸
+
+<!-- <h6 id='ahc-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ahc-tx'>Treatment</h6> -->
+<!-- <h6 id='ahc-prg'>Prognosis</h6> -->
+<!-- <h6 id='ahc-app'>Appendix</h6> -->
+
 
 ## blind-loop
 

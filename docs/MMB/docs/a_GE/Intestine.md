@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:22:25
+Modified: 	2019-08-30 16:28:20
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1288,14 +1288,45 @@ Protein-losing gastroenteropathy 蛋白漏出性胃腸症
 Ischemic Colitis 虚血性大腸炎
 
 <!-- <h6 id='ic-def'>Definition</h6> -->
-<!-- <h6 id='ic-eti'>Etiology</h6> -->
-<!-- <h6 id='ic-epi'>Epidemiology</h6> -->
-<!-- <h6 id='ic-cls'>Classification</h6> -->
-<!-- <h6 id='ic-sx'>Sign and Symptom</h6> -->
+<h6 id='ic-eti'>Etiology</h6>
+
+- 便秘が誘引
+
+<h6 id='ic-epi'>Epidemiology</h6>
+
+[![](https://qb.medilink-study.com/images/100H037_sup_a_010.jpg)](https://qb.medilink-study.com/images/100H037_sup_a_010.jpg)
+
+- SMA と IMAの吻合部:  
+	**左側結腸**
+	- **脾彎曲部**
+	- **下行結腸**
+	- **S状結腸**
+
+<h6 id='ic-cls'>Classification</h6>
+
+- 一過性型 #1
+- 狭窄型
+- 壊疽型
+
+<h6 id='ic-sx'>Sign and Symptom</h6>
+
+- **突然発症**
+
 <!-- <h6 id='ic-ass'>Association</h6> -->
-<!-- <h6 id='ic-ex'>Examination</h6> -->
+<h6 id='ic-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/111A031_ton_010.jpg)](https://qb.medilink-study.com/images/111A031_ton_010.jpg)
+
+- 注腸造影
+	- **finger pring sign** / **thumb printing** 拇指圧痕像
+
 <!-- <h6 id='ic-dx'>Diagnosis</h6> -->
-<!-- <h6 id='ic-tx'>Treatment</h6> -->
+<h6 id='ic-tx'>Treatment</h6>
+
+- **保存的**治療
+	- 絶食
+	- 補液
+
 <!-- <h6 id='ic-prg'>Prognosis</h6> -->
 <!-- <h6 id='ic-app'>Appendix</h6> -->
 

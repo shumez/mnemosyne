@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:52:2
+Modified: 	2019-08-30 15:54:34
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1104,6 +1104,25 @@ Juvenile Polyposis Sundrome 若年性ポリポーシス
 <!-- <h6 id='cowden-tx'>Treatment</h6> -->
 <!-- <h6 id='cowden-prg'>Prognosis</h6> -->
 <!-- <h6 id='cowden-app'>Appendix</h6> -->
+
+
+### Cronkhite-Canada
+
+<!-- <h6 id='cronkhite-canada-def'>Definition</h6> -->
+<!-- <h6 id='cronkhite-canada-eti'>Etiology</h6> -->
+<!-- <h6 id='cronkhite-canada-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cronkhite-canada-cls'>Classification</h6> -->
+<h6 id='cronkhite-canada-sx'>Sign and Symptom</h6>
+
+- **爪の萎縮**, 脱毛
+- **蛋白漏出性胃腸症** / **低蛋白血症**
+
+<!-- <h6 id='cronkhite-canada-ass'>Association</h6> -->
+<!-- <h6 id='cronkhite-canada-ex'>Examination</h6> -->
+<!-- <h6 id='cronkhite-canada-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cronkhite-canada-tx'>Treatment</h6> -->
+<!-- <h6 id='cronkhite-canada-prg'>Prognosis</h6> -->
+<!-- <h6 id='cronkhite-canada-app'>Appendix</h6> -->
 
 ## blind-loop
 

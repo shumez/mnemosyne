@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 14:21:34
+Modified: 	2019-08-30 14:26:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -668,6 +668,30 @@ Dukes classification
 <!-- <h6 id='schnitzler-tx'>Treatment</h6> -->
 <!-- <h6 id='schnitzler-prg'>Prognosis</h6> -->
 <!-- <h6 id='schnitzler-app'>Appendix</h6> -->
+
+
+## HNPCC
+
+Hereditary Non-Polyposis Colorectal Cancer, Lynch synd
+
+<!-- <h6 id='hnpcc-def'>Definition</h6> -->
+<h6 id='hnpcc-eti'>Etiology</h6>
+
+- Mismatch repair gene 
+
+<h6 id='hnpcc-epi'>Epidemiology</h6>
+
+- Rt結腸(++)
+
+<!-- <h6 id='hnpcc-cls'>Classification</h6> -->
+<!-- <h6 id='hnpcc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hnpcc-ass'>Association</h6> -->
+<!-- <h6 id='hnpcc-ex'>Examination</h6> -->
+<!-- <h6 id='hnpcc-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hnpcc-tx'>Treatment</h6> -->
+<!-- <h6 id='hnpcc-prg'>Prognosis</h6> -->
+<!-- <h6 id='hnpcc-app'>Appendix</h6> -->
+
 
 ## blind-loop
 

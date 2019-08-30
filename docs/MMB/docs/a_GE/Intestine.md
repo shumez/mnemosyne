@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 14:26:59
+Modified: 	2019-08-30 14:29:30
 -----
 Copyright (c) 2019 shumez
 -->
@@ -691,6 +691,29 @@ Hereditary Non-Polyposis Colorectal Cancer, Lynch synd
 <!-- <h6 id='hnpcc-tx'>Treatment</h6> -->
 <!-- <h6 id='hnpcc-prg'>Prognosis</h6> -->
 <!-- <h6 id='hnpcc-app'>Appendix</h6> -->
+
+## Sarcoma 
+
+大腸肉腫
+
+<!-- <h6 id='sarcoma-def'>Definition</h6> -->
+<!-- <h6 id='sarcoma-eti'>Etiology</h6> -->
+<!-- <h6 id='sarcoma-epi'>Epidemiology</h6> -->
+<h6 id='sarcoma-cls'>Classification</h6>
+
+- 平滑筋肉腫
+	- 直腸下部
+- 悪性黒色腫
+	- 直腸肛門管の歯状線近傍
+- GIST
+
+<!-- <h6 id='sarcoma-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='sarcoma-ass'>Association</h6> -->
+<!-- <h6 id='sarcoma-ex'>Examination</h6> -->
+<!-- <h6 id='sarcoma-dx'>Diagnosis</h6> -->
+<!-- <h6 id='sarcoma-tx'>Treatment</h6> -->
+<!-- <h6 id='sarcoma-prg'>Prognosis</h6> -->
+<!-- <h6 id='sarcoma-app'>Appendix</h6> -->
 
 
 ## blind-loop

@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:38:19
+Modified: 	2019-08-30 15:46:38
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1004,6 +1004,69 @@ Familial Adenomatous Polyposis 家族性大腸腺腫症
 <!-- <h6 id='turcot-tx'>Treatment</h6> -->
 <!-- <h6 id='turcot-prg'>Prognosis</h6> -->
 <!-- <h6 id='turcot-app'>Appendix</h6> -->
+
+
+### PJS
+
+Peutz-Jeghers synd
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2"><u>色っ ぽい 若い 女優、 少々 過保護</u></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>色っ</td>
+			<td>色素沈着</td>
+		</tr>
+		<tr>
+			<td>ぽい</td>
+			<td>Peutz-Jeghers症候群</td>
+		</tr>
+		<tr>
+			<td>若い</td>
+			<td>10～20代に好発</td>
+		</tr>
+		<tr>
+			<td>女優、</td>
+			<td>常・優遺伝</td>
+		</tr>
+		<tr>
+			<td>少々</td>
+			<td>小腸に好発</td>
+		</tr>
+		<tr>
+			<td>過保護</td>
+			<td>過誤腫</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='pjs-def'>Definition</h6> -->
+<h6 id='pjs-eti'>Etiology</h6>
+
+- **AD**
+- *LKB1/STK11* (supressor) mut
+- **過誤腫性ポリポーシス**
+
+<h6 id='pjs-epi'>Epidemiology</h6>
+
+- 10-20s
+- **小腸** (**全消化管**で)
+
+<!-- <h6 id='pjs-cls'>Classification</h6> -->
+<h6 id='pjs-sx'>Sign and Symptom</h6>
+
+- 色素沈着
+
+<!-- <h6 id='pjs-ass'>Association</h6> -->
+<!-- <h6 id='pjs-ex'>Examination</h6> -->
+<!-- <h6 id='pjs-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pjs-tx'>Treatment</h6> -->
+<!-- <h6 id='pjs-prg'>Prognosis</h6> -->
+<!-- <h6 id='pjs-app'>Appendix</h6> -->
 
 ## blind-loop
 

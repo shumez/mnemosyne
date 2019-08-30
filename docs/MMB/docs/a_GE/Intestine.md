@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:11:56
+Modified: 	2019-08-30 16:17:40
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1212,6 +1212,41 @@ Protein-losing gastroenteropathy 蛋白漏出性胃腸症
 
 <!-- <h6 id='intestinal_lymphangiectasia-prg'>Prognosis</h6> -->
 <!-- <h6 id='intestinal_lymphangiectasia-app'>Appendix</h6> -->
+
+
+### Ménétrier
+
+<h6 id='menetrier-def'>Definition</h6>
+
+- 主細胞 / 壁細胞の消失を伴う
+- HP, CMV感染によるものも
+
+<!-- <h6 id='menetrier-eti'>Etiology</h6> -->
+<!-- <h6 id='menetrier-epi'>Epidemiology</h6> -->
+<!-- <h6 id='menetrier-cls'>Classification</h6> -->
+<h6 id='menetrier-sx'>Sign and Symptom</h6>
+
+- **低酸 - 無酸症**
+- 低蛋白血症
+
+<!-- <h6 id='menetrier-ass'>Association</h6> -->
+<h6 id='menetrier-ex'>Examination</h6>
+
+- 内視鏡
+	- 大脳回様の**巨大皺襞像**
+
+<!-- <h6 id='menetrier-dx'>Diagnosis</h6> -->
+<!-- <h6 id='menetrier-tx'>Treatment</h6> -->
+<!-- <h6 id='menetrier-prg'>Prognosis</h6> -->
+<h6 id='menetrier-app'>Appendix</h6>
+
+胃巨大皺襞
+
+- 4型胃がん
+- 胃ML
+- Zollinger-Ellison
+- Ménétrier
+
 
 ## blind-loop
 

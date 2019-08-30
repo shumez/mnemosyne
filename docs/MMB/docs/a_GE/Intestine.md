@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 19:59:22
+Modified: 	2019-08-30 20:07:23
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1609,6 +1609,57 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 <!-- <h6 id='diverticulum-tx'>Treatment</h6> -->
 <!-- <h6 id='diverticulum-prg'>Prognosis</h6> -->
 <!-- <h6 id='diverticulum-app'>Appendix</h6> -->
+
+
+## AAP
+
+Acute appendicitis
+
+<!-- <h6 id='aap-def'>Definition</h6> -->
+<!-- <h6 id='aap-eti'>Etiology</h6> -->
+<!-- <h6 id='aap-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aap-cls'>Classification</h6> -->
+<h6 id='aap-sx'>Sign and Symptom</h6>
+
+- ↑BT
+	- 37°C
+	- ≥ 38°C ⇐ 穿孔
+
+<!-- <h6 id='aap-ass'>Association</h6> -->
+<h6 id='aap-ex'>Examination</h6>
+
+- PEx
+	- Rosenstein sign:   
+		McBurney圧迫時, 左側臥位の方が疼痛が増強
+	- Rovsing sign:  
+		背臥位で下行結腸を下から上へ押し上げると, 右下腹部痛が増強
+	- Blumberg sign (反跳痛):  
+		腹壁を深く圧迫した後離す
+	- 筋性防御:
+
+[![](https://qb.medilink-study.com/images/109A035_sup_010.jpg)](https://qb.medilink-study.com/images/109A035_sup_010.jpg)
+
+- McBurney点 :  
+	臍と右上前腸骨棘を結ぶ線上の右側1/3
+- Lanz点 :  
+	左右上前腸骨棘を結ぶ線上の右側1/3
+
+<!-- <h6 id='aap-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aap-tx'>Treatment</h6> -->
+<!-- <h6 id='aap-prg'>Prognosis</h6> -->
+<h6 id='aap-app'>Appendix</h6>
+
+- 乳幼児
+	- 急性腹症 #1
+	- 穿孔が多い  
+		⇒ 汎発性腹膜炎
+	- 高熱, 脱水, 嘔吐
+	- Rx: 輸液, 切除, 穿孔例は腹腔ドレナージ
+- 老人
+	- 穿孔が多い
+- 妊婦
+	- 虫垂が右側, 頭側に移動
+	- Rx: 早期に切除, LH (流産予防)
 
 
 ## blind-loop

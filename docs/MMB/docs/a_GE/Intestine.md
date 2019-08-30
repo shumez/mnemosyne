@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:34:47
+Modified: 	2019-08-30 15:37:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -968,6 +968,25 @@ Familial Adenomatous Polyposis 家族性大腸腺腫症
 <!-- <h6 id='fap-tx'>Treatment</h6> -->
 <!-- <h6 id='fap-prg'>Prognosis</h6> -->
 <!-- <h6 id='fap-app'>Appendix</h6> -->
+
+
+### Gardner
+
+<!-- <h6 id='gardner-def'>Definition</h6> -->
+<!-- <h6 id='gardner-eti'>Etiology</h6> -->
+<!-- <h6 id='gardner-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gardner-cls'>Classification</h6> -->
+<!-- <h6 id='gardner-sx'>Sign and Symptom</h6> -->
+<h6 id='gardner-ass'>Association</h6>
+
+- **軟部組織腫瘍** (**デスモイド腫瘍**)
+- **骨腫**
+
+<!-- <h6 id='gardner-ex'>Examination</h6> -->
+<!-- <h6 id='gardner-dx'>Diagnosis</h6> -->
+<!-- <h6 id='gardner-tx'>Treatment</h6> -->
+<!-- <h6 id='gardner-prg'>Prognosis</h6> -->
+<!-- <h6 id='gardner-app'>Appendix</h6> -->
 
 
 ## blind-loop

@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:41:20
+Modified: 	2019-08-30 20:43:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -186,6 +186,26 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='mucosal_prolapse_syndrome-tx'>Treatment</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-app'>Appendix</h6> -->
+
+
+## Pilonidal Sinus
+
+毛巣洞
+
+<h6 id='pilonidal_sinus-def'>Definition</h6>
+
+- 毛を内容とする皮膚嚢腫
+
+<!-- <h6 id='pilonidal_sinus-eti'>Etiology</h6> -->
+<!-- <h6 id='pilonidal_sinus-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pilonidal_sinus-cls'>Classification</h6> -->
+<!-- <h6 id='pilonidal_sinus-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pilonidal_sinus-ass'>Association</h6> -->
+<!-- <h6 id='pilonidal_sinus-ex'>Examination</h6> -->
+<!-- <h6 id='pilonidal_sinus-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pilonidal_sinus-tx'>Treatment</h6> -->
+<!-- <h6 id='pilonidal_sinus-prg'>Prognosis</h6> -->
+<!-- <h6 id='pilonidal_sinus-app'>Appendix</h6> -->
 
 ##
 

@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:20:58
+Modified: 	2019-08-30 20:29:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -92,6 +92,37 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='anal_fissure-tx'>Treatment</h6> -->
 <!-- <h6 id='anal_fissure-prg'>Prognosis</h6> -->
 <!-- <h6 id='anal_fissure-app'>Appendix</h6> -->
+
+
+## Perianal Abscess
+
+肛門周囲膿瘍 
+
+<!-- <h6 id='perianal_abscess-def'>Definition</h6> -->
+<h6 id='perianal_abscess-eti'>Etiology</h6>
+
+- 肛門陰窩からの感染
+- Crohn病の肛門病変
+
+<!-- <h6 id='perianal_abscess-epi'>Epidemiology</h6> -->
+<!-- <h6 id='perianal_abscess-cls'>Classification</h6> -->
+<!-- <h6 id='perianal_abscess-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='perianal_abscess-ass'>Association</h6> -->
+<!-- <h6 id='perianal_abscess-ex'>Examination</h6> -->
+<!-- <h6 id='perianal_abscess-dx'>Diagnosis</h6> -->
+<h6 id='perianal_abscess-tx'>Treatment</h6>
+
+- 切開 / 排膿
+
+<!-- <h6 id='perianal_abscess-prg'>Prognosis</h6> -->
+<h6 id='perianal_abscess-app'>Appendix</h6>
+
+- 小児の肛門周囲膿瘍
+	- **乳児**
+	- **自然治癒**
+	- 直腸肛門局所免疫の未熟性  
+		腸粘膜固有層に形質細胞(–)  
+		⇒ 分泌型IgA(–)
 
 ##
 

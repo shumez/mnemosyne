@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:36:31
+Modified: 	2019-08-30 20:38:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -146,6 +146,26 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='anal_fistula-prg'>Prognosis</h6> -->
 <!-- <h6 id='anal_fistula-app'>Appendix</h6> -->
+
+
+## Prolapse
+
+直腸脱
+
+<!-- <h6 id='prolapse-def'>Definition</h6> -->
+<!-- <h6 id='prolapse-eti'>Etiology</h6> -->
+<!-- <h6 id='prolapse-epi'>Epidemiology</h6> -->
+<!-- <h6 id='prolapse-cls'>Classification</h6> -->
+<h6 id='prolapse-sx'>Sign and Symptom</h6>
+
+- **疼痛(–)**
+
+<!-- <h6 id='prolapse-ass'>Association</h6> -->
+<!-- <h6 id='prolapse-ex'>Examination</h6> -->
+<!-- <h6 id='prolapse-dx'>Diagnosis</h6> -->
+<!-- <h6 id='prolapse-tx'>Treatment</h6> -->
+<!-- <h6 id='prolapse-prg'>Prognosis</h6> -->
+<!-- <h6 id='prolapse-app'>Appendix</h6> -->
 
 ##
 

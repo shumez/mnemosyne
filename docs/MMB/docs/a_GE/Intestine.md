@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:28:20
+Modified: 	2019-08-30 16:35:37
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1329,6 +1329,30 @@ Ischemic Colitis 虚血性大腸炎
 
 <!-- <h6 id='ic-prg'>Prognosis</h6> -->
 <!-- <h6 id='ic-app'>Appendix</h6> -->
+
+
+### AMAO
+
+Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
+
+<!-- <h6 id='amao-def'>Definition</h6> -->
+<!-- <h6 id='amao-eti'>Etiology</h6> -->
+<!-- <h6 id='amao-epi'>Epidemiology</h6> -->
+<!-- <h6 id='amao-cls'>Classification</h6> -->
+<!-- <h6 id='amao-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='amao-ass'>Association</h6> -->
+<!-- <h6 id='amao-ex'>Examination</h6> -->
+<!-- <h6 id='amao-dx'>Diagnosis</h6> -->
+<!-- <h6 id='amao-tx'>Treatment</h6> -->
+<!-- <h6 id='amao-prg'>Prognosis</h6> -->
+<h6 id='amao-app'>Appendix</h6>
+
+- **NOMI Nonocclusive mesenteric ischemia** **非閉塞性腸管虚血症**  
+	- 器質的な血管閉塞(–) 
+	- 腸管の虚血
+- 腸間膜静脈血栓症
+- 慢性腸間膜動脈閉塞症 (腹部アンギーナ)
+	- 血管雑音(+)
 
 ## blind-loop
 

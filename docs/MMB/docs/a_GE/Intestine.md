@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 19:52:47
+Modified: 	2019-08-30 19:54:14
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1366,7 +1366,7 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 <table>
 	<tbody>
 		<tr>
-			<th rowspan="3">機械的</th>
+			<th rowspan="3">機械的<br>Obstruction</th>
 			<td colspan="3">器質的疾患(+)</td>
 		</tr>
 		<tr>
@@ -1396,7 +1396,7 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 			</td>
 		</tr>
 		<tr>
-			<th rowspan="3">機能的</th>
+			<th rowspan="3">機能的<br>Ileus</th>
 			<td colspan="3">器質的疾患(–)</td>
 		</tr>
 		<tr>

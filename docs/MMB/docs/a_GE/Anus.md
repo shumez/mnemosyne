@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:38:1
+Modified: 	2019-08-30 20:41:20
 -----
 Copyright (c) 2019 shumez
 -->
@@ -166,6 +166,26 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='prolapse-tx'>Treatment</h6> -->
 <!-- <h6 id='prolapse-prg'>Prognosis</h6> -->
 <!-- <h6 id='prolapse-app'>Appendix</h6> -->
+
+
+## Mucosal Prolapse Syndrome
+
+直腸粘膜脱症候群 MPS
+
+<h6 id='mucosal_prolapse_syndrome-def'>Definition</h6>
+
+- 排便時のいきみなどで, 直腸粘膜に潰瘍や隆起性病変をきたす
+
+<!-- <h6 id='mucosal_prolapse_syndrome-eti'>Etiology</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-app'>Appendix</h6> -->
 
 ##
 

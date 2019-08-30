@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:35:37
+Modified: 	2019-08-30 16:41:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1353,6 +1353,72 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 - 腸間膜静脈血栓症
 - 慢性腸間膜動脈閉塞症 (腹部アンギーナ)
 	- 血管雑音(+)
+
+
+## Ileus
+
+
+<!-- <h6 id='ileus-def'>Definition</h6> -->
+<!-- <h6 id='ileus-eti'>Etiology</h6> -->
+<!-- <h6 id='ileus-epi'>Epidemiology</h6> -->
+<h6 id='ileus-cls'>Classification</h6>
+
+<table>
+	<tbody>
+		<tr>
+			<th rowspan="3">機械的</th>
+			<td colspan="3">器質的疾患(+)</td>
+		</tr>
+		<tr>
+			<th>単純性<br>
+				(閉塞性)</th>
+			<td>血行障害(–)</td>
+			<td>
+				<ul>
+					<li>術後の癒着性イレウス #1</li>
+					<li>腫瘍</li>
+					<li>異物（胃石など）</li>
+				</ul>
+				※腸管壁外からの圧排でも起こる．
+			</td>
+		</tr>
+		<tr>
+			<th>複雑性<br>
+				(絞扼性)</th>
+			<td>血行障害(+)</td>
+			<td>
+				<ul>
+					<li>腸重積</li>
+					<li>ヘルニア嵌頓</li>
+					<li>腸軸捻転</li>
+				</ul>
+				etc
+			</td>
+		</tr>
+		<tr>
+			<th rowspan="3">機能的</th>
+			<td colspan="3">器質的疾患(–)</td>
+		</tr>
+		<tr>
+			<th>麻痺性</th>
+			<td colspan="2">腸管の運動が麻痺した状態．</td>
+		</tr>
+		<tr>
+			<th>けいれん性</th>
+			<td colspan="2">腸管の一部がけいれん性に収縮した状態．</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='ileus-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ileus-ass'>Association</h6> -->
+<!-- <h6 id='ileus-ex'>Examination</h6> -->
+<!-- <h6 id='ileus-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ileus-tx'>Treatment</h6> -->
+<!-- <h6 id='ileus-prg'>Prognosis</h6> -->
+<!-- <h6 id='ileus-app'>Appendix</h6> -->
+
+
 
 ## blind-loop
 

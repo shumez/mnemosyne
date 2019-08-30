@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:19:6
+Modified: 	2019-08-30 16:22:25
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1247,6 +1247,41 @@ Protein-losing gastroenteropathy 蛋白漏出性胃腸症
 - Zollinger-Ellison
 - Ménétrier
 
+
+## Intestinal Ischemia
+
+阻血性腸疾患
+
+<!-- <h6 id='intestinal_ischemia-def'>Definition</h6> -->
+<!-- <h6 id='intestinal_ischemia-eti'>Etiology</h6> -->
+<!-- <h6 id='intestinal_ischemia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='intestinal_ischemia-cls'>Classification</h6> -->
+<!-- <h6 id='intestinal_ischemia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='intestinal_ischemia-ass'>Association</h6> -->
+<!-- <h6 id='intestinal_ischemia-ex'>Examination</h6> -->
+<!-- <h6 id='intestinal_ischemia-dx'>Diagnosis</h6> -->
+
+
+<table>
+	<thead>
+		<tr>
+			<th width=20%></th>
+			<th width=40%>虚血性大腸炎</th>
+			<th width=40%>急性腸間膜動脈閉塞症</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th></th>
+			<td></td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='intestinal_ischemia-tx'>Treatment</h6> -->
+<!-- <h6 id='intestinal_ischemia-prg'>Prognosis</h6> -->
+<!-- <h6 id='intestinal_ischemia-app'>Appendix</h6> -->
 
 ### IC
 

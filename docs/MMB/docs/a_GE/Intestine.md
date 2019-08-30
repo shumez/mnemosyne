@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-29 20:43:0
+Modified: 	2019-08-30 13:31:38
 -----
 Copyright (c) 2019 shumez
 -->
@@ -506,17 +506,80 @@ Irritable Bowel Syndrome
 
 Colorectal Cancer
 
-<!-- <h6 id='-def'>Definition</h6> -->
-<!-- <h6 id='-eti'>Etiology</h6> -->
-<!-- <h6 id='-epi'>Epidemiology</h6> -->
-<!-- <h6 id='-cls'>Classification</h6> -->
-<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
-<!-- <h6 id='-ex'>Examination</h6> -->
-<!-- <h6 id='-dx'>Diagnosis</h6> -->
-<!-- <h6 id='-tx'>Treatment</h6> -->
-<!-- <h6 id='-prg'>Prognosis</h6> -->
-<!-- <h6 id='-app'>Appendix</h6> -->
+<!-- <h6 id='crc-def'>Definition</h6> -->
+<!-- <h6 id='crc-eti'>Etiology</h6> -->
+<!-- <h6 id='crc-epi'>Epidemiology</h6> -->
+<h6 id='crc-cls'>Classification</h6>
+
+Dukes classification
+
+[![](https://qb.medilink-study.com/images/102E028_bas_a_010.jpg)](https://qb.medilink-study.com/images/102E028_bas_a_010.jpg)
+
+<table>
+	<tbody>
+		<tr>
+			<th>A</th>
+			<td>腫瘍が腸管壁内に限局するもの（MP層以内）</td>
+		</tr>
+		<tr>
+			<th>B</th>
+			<td>腫瘍が腸管壁を貫くが，リンパ節転移のないもの</td>
+		</tr>
+		<tr>
+			<th>C</th>
+			<td>リンパ節転移のあるもの※深達度には関係ない</td>
+		</tr>
+	</tbody>
+</table>
+
+<h6 id='crc-sx'>Sign and Symptom</h6>
+
+直腸癌 転移様式
+
+[![](https://qb.medilink-study.com/images/99A026_bas_a_010.jpg)](https://qb.medilink-study.com/images/99A026_bas_a_010.jpg)
+
+[![](https://qb.medilink-study.com/images/106A046_bas_a_010.jpg)](https://qb.medilink-study.com/images/106A046_bas_a_010.jpg)
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th></th>
+			<th>Ope</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>RS</th>
+			<td>岬角 - S2下縁</td>
+			<td>高位前方切除</td>
+		</tr>
+		<tr>
+			<th>Ra</th>
+			<td>S2下縁-S4(腹膜反転部)</td>
+			<td>低位前方切除</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>2ヒューストン弁<br>
+				&asymp; 腹膜反転部</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Rb</th>
+			<td>S4(腹膜反転部)-</td>
+			<td>低位前方切除<br>
+				腹会陰敷直腸切断 (Miles ope)</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='crc-ass'>Association</h6> -->
+<!-- <h6 id='crc-ex'>Examination</h6> -->
+<!-- <h6 id='crc-dx'>Diagnosis</h6> -->
+<!-- <h6 id='crc-tx'>Treatment</h6> -->
+<!-- <h6 id='crc-prg'>Prognosis</h6> -->
+<!-- <h6 id='crc-app'>Appendix</h6> -->
 
 ## blind-loop
 

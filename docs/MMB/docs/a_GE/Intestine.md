@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 14:52:13
+Modified: 	2019-08-30 15:01:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -821,6 +821,137 @@ Gastrointestinal Neuroendocrine Tumor
 <!-- <h6 id='cartinoid-tx'>Treatment</h6> -->
 <!-- <h6 id='cartinoid-prg'>Prognosis</h6> -->
 <!-- <h6 id='cartinoid-app'>Appendix</h6> -->
+
+
+## Polyposis
+
+<!-- <h6 id='polyposis-def'>Definition</h6> -->
+<!-- <h6 id='polyposis-eti'>Etiology</h6> -->
+<!-- <h6 id='polyposis-epi'>Epidemiology</h6> -->
+<h6 id='polyposis-cls'>Classification</h6>
+
+<table class="table table-condensed">
+	<thead>
+		<tr>
+			<th colspan="3"></th>
+			<th colspan="2">Genetics</th>
+			<th>Dist</th>
+			<th>Comp</th>
+			<th>Malignancy</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th rowspan="6">遺伝性<!-- Hereditory --></th>
+			<th rowspan="3">腺腫性<!-- Adenoma --></th>
+			<th><u>FAP</u></th>
+			<td>AD</td>
+			<td><i>APC</i></td>
+			<td rowspan="4">胃-大腸<!-- Stomach - Large --></td>
+			<td rowspan="2">
+				<ul>
+					<li><u>軟部組織腫</u></li>
+					<li><u>骨腫</u><!-- Osteoma/Desmoid --></li>
+				</ul>
+			</td>
+			<td rowspan="3">Hi</td>
+		</tr>
+		<tr>
+			<th>Gardner</th>
+			<td>AD</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>Turcot</th>
+			<td>AR</td>
+			<td></td>
+			<td>
+				<ul>
+					<li><u>中枢神経腫瘍</u><br>
+						(髄芽腫)<!-- CNS --></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th rowspan="3">過誤腫性<!-- Hemartoma --></th>
+			<th>Peutz-Jeghers</th>
+			<td><u>AD</u></td>
+			<td></td>
+			<td>
+				<ul>
+					<li>色素沈着<!-- Mucocutaneous pigmentation --></li>
+				</ul>
+			</td>
+			<td rowspan="3">Lo</td>
+		</tr>
+		<tr>
+			<th>Cowden</th>
+			<td>AD</td>
+			<td><i>PTEN</i></td>
+			<td>全消化管</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>JPS<br>
+				<small>若年性ポリーポーシス</small></th>
+			<td>AD</td>
+			<td></td>
+			<td rowspan="3">大腸</td>
+			<td>
+				<ul>
+					<li><u>下血</u></li>
+					<li>腸重積</li>
+				</ul>
+			</td>
+			<td><u>10-20%</u></td>
+		</tr>
+		<tr>
+			<th rowspan="4">孤発性<!-- Sporadic --></th>
+			<th rowspan="2">炎症性<!-- Inflammatory --></th>
+			<th>炎症性<!-- Inflammatory --></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>リンパ濾胞性<!-- Lymp follicle --></th>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th rowspan="2">Other</th>
+			<th>化生性ポリポーシス</th>
+			<td></td>
+			<td></td>
+			<td>大腸</td>
+		</tr>
+		<tr>
+			<th>Cronkhite-Canada</th>
+			<td></td>
+			<td></td>
+			<td>胃-大腸</td>
+			<td>外胚葉<!-- Ectoderm -->
+				<ul>
+					<li>皮膚色素沈着<!-- Mucocutaneous pigmentation --></li>
+					<li><u>爪の萎縮<!-- Atrophy of nails --></u></li>
+					<li><u>脱毛<?</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='polyposis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='polyposis-ass'>Association</h6> -->
+<!-- <h6 id='polyposis-ex'>Examination</h6> -->
+<!-- <h6 id='polyposis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='polyposis-tx'>Treatment</h6> -->
+<!-- <h6 id='polyposis-prg'>Prognosis</h6> -->
+<!-- <h6 id='polyposis-app'>Appendix</h6> -->
+
 
 ## blind-loop
 

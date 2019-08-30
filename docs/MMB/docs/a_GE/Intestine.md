@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:41:31
+Modified: 	2019-08-30 16:44:32
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1419,6 +1419,33 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 <!-- <h6 id='ileus-app'>Appendix</h6> -->
 
 
+### Obstruction
+
+<!-- <h6 id='obstruction-def'>Definition</h6> -->
+<!-- <h6 id='obstruction-eti'>Etiology</h6> -->
+<h6 id='obstruction-epi'>Epidemiology</h6>
+
+- 開腹後 腸管癒着 #1
+
+<!-- <h6 id='obstruction-cls'>Classification</h6> -->
+<!-- <h6 id='obstruction-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='obstruction-ass'>Association</h6> -->
+<h6 id='obstruction-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/90B038_ima_a_020.jpg "Kerckring皺襞 (Herring-bone)")](https://qb.medilink-study.com/images/90B038_ima_a_020.jpg)
+
+- PEx
+	- **振水音**
+- 内視鏡
+	- **大腸イレウス**　観察/生検
+- AXR
+	- 小腸
+		- **Kerckring皺襞** (**Herring-bone**)
+
+<!-- <h6 id='obstruction-dx'>Diagnosis</h6> -->
+<!-- <h6 id='obstruction-tx'>Treatment</h6> -->
+<!-- <h6 id='obstruction-prg'>Prognosis</h6> -->
+<!-- <h6 id='obstruction-app'>Appendix</h6> -->
 
 ## blind-loop
 

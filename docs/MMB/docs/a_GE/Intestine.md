@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 13:31:38
+Modified: 	2019-08-30 13:37:54
 -----
 Copyright (c) 2019 shumez
 -->
@@ -580,6 +580,20 @@ Dukes classification
 <!-- <h6 id='crc-tx'>Treatment</h6> -->
 <!-- <h6 id='crc-prg'>Prognosis</h6> -->
 <!-- <h6 id='crc-app'>Appendix</h6> -->
+
+### Schnitzler
+
+<!-- <h6 id='schnitzler-def'>Definition</h6> -->
+<!-- <h6 id='schnitzler-eti'>Etiology</h6> -->
+<!-- <h6 id='schnitzler-epi'>Epidemiology</h6> -->
+<!-- <h6 id='schnitzler-cls'>Classification</h6> -->
+<!-- <h6 id='schnitzler-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='schnitzler-ass'>Association</h6> -->
+<!-- <h6 id='schnitzler-ex'>Examination</h6> -->
+<!-- <h6 id='schnitzler-dx'>Diagnosis</h6> -->
+<!-- <h6 id='schnitzler-tx'>Treatment</h6> -->
+<!-- <h6 id='schnitzler-prg'>Prognosis</h6> -->
+<!-- <h6 id='schnitzler-app'>Appendix</h6> -->
 
 ## blind-loop
 

@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:59:41
+Modified: 	2019-08-30 16:06:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1141,6 +1141,47 @@ Malabsorption syndrome 吸収不良症候群
 <!-- <h6 id='mas-prg'>Prognosis</h6> -->
 <!-- <h6 id='mas-app'>Appendix</h6> -->
 
+
+## PLGE
+
+Protein-losing gastroenteropathy 蛋白漏出性胃腸症
+
+<!-- <h6 id='plge-def'>Definition</h6> -->
+<!-- <h6 id='plge-eti'>Etiology</h6> -->
+<!-- <h6 id='plge-epi'>Epidemiology</h6> -->
+<h6 id='plge-cls'>Classification</h6>
+
+- 粘膜からのタンパク質透過性&uarr;
+	- Ménétrier
+	- Crokhite-Canada
+	- SLE
+	- **Amyloidosis**
+	- Schönlein-Henoch  IgA血管炎
+	- Budd-Chiari
+- 消化管のびらん/潰瘍
+	- **Crohn**
+	- UC
+	- ...
+- 消化管リンパ系の異常
+	- **腸リンパ管拡張症** 
+	- **収縮性心膜炎**
+	- うっ血性心不全
+	- 悪性リンパ腫
+	- **肝硬変**
+
+<!-- <h6 id='plge-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='plge-ass'>Association</h6> -->
+<h6 id='plge-ex'>Examination</h6>
+
+- Blood
+	- &darr;Alb
+- **&alpha;~1~antitripsin**消化管クリアランス試験
+- **^99m^Tc-DTPA結合ヒト アルブミン シンチグラフィ**
+
+<!-- <h6 id='plge-dx'>Diagnosis</h6> -->
+<!-- <h6 id='plge-tx'>Treatment</h6> -->
+<!-- <h6 id='plge-prg'>Prognosis</h6> -->
+<!-- <h6 id='plge-app'>Appendix</h6> -->
 
 
 ## blind-loop

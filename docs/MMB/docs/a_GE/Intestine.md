@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 14:03:17
+Modified: 	2019-08-30 14:21:34
 -----
 Copyright (c) 2019 shumez
 -->
@@ -562,6 +562,32 @@ Dukes classification
 </table>
 
 <h6 id='crc-sx'>Sign and Symptom</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="50%">Rt</th>
+			<th width="50%">Lt</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>血便, 粘血便</li>
+					<li>便通異常, イレウス症状, 左下腹部痛, 腹部膨満感, しぶり腹</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 直腸癌 転移様式
 

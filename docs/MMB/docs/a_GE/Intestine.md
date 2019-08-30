@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:49:27
+Modified: 	2019-08-30 15:52:2
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1086,6 +1086,24 @@ Juvenile Polyposis Sundrome 若年性ポリポーシス
 <!-- <h6 id='jps-tx'>Treatment</h6> -->
 <!-- <h6 id='jps-prg'>Prognosis</h6> -->
 <!-- <h6 id='jps-app'>Appendix</h6> -->
+
+
+### Cowden
+
+<!-- <h6 id='cowden-def'>Definition</h6> -->
+<h6 id='cowden-eti'>Etiology</h6>
+
+- AD
+
+<!-- <h6 id='cowden-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cowden-cls'>Classification</h6> -->
+<!-- <h6 id='cowden-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cowden-ass'>Association</h6> -->
+<!-- <h6 id='cowden-ex'>Examination</h6> -->
+<!-- <h6 id='cowden-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cowden-tx'>Treatment</h6> -->
+<!-- <h6 id='cowden-prg'>Prognosis</h6> -->
+<!-- <h6 id='cowden-app'>Appendix</h6> -->
 
 ## blind-loop
 

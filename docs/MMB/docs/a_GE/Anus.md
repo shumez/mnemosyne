@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:16:48
+Modified: 	2019-08-30 20:20:58
 -----
 Copyright (c) 2019 shumez
 -->
@@ -67,6 +67,31 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='hemorrhoids-tx'>Treatment</h6> -->
 <!-- <h6 id='hemorrhoids-prg'>Prognosis</h6> -->
 <!-- <h6 id='hemorrhoids-app'>Appendix</h6> -->
+
+
+## Anal Fissure
+
+裂肛
+
+<!-- <h6 id='anal_fissure-def'>Definition</h6> -->
+<!-- <h6 id='anal_fissure-eti'>Etiology</h6> -->
+<!-- <h6 id='anal_fissure-epi'>Epidemiology</h6> -->
+<!-- <h6 id='anal_fissure-cls'>Classification</h6> -->
+<!-- <h6 id='anal_fissure-sx'>Sign and Symptom</h6> -->
+
+<!-- <h6 id='anal_fissure-ass'>Association</h6> -->
+<h6 id='anal_fissure-ex'>Examination</h6>
+
+[![](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)
+
+- PEx
+	- **6時方向**
+	- 肛門側 に**sentinel skin tag 見張りイボ**
+
+<!-- <h6 id='anal_fissure-dx'>Diagnosis</h6> -->
+<!-- <h6 id='anal_fissure-tx'>Treatment</h6> -->
+<!-- <h6 id='anal_fissure-prg'>Prognosis</h6> -->
+<!-- <h6 id='anal_fissure-app'>Appendix</h6> -->
 
 ##
 

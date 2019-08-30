@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:06:49
+Modified: 	2019-08-30 16:11:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1183,6 +1183,35 @@ Protein-losing gastroenteropathy 蛋白漏出性胃腸症
 <!-- <h6 id='plge-prg'>Prognosis</h6> -->
 <!-- <h6 id='plge-app'>Appendix</h6> -->
 
+
+### Intestinal Lymphangiectasia
+
+腸リンパ管拡張症
+
+<h6 id='intestinal_lymphangiectasia-def'>Definition</h6>
+
+腸リンパ管の形成異常 / 機能異常 &rArr; 蛋白漏出
+
+<!-- <h6 id='intestinal_lymphangiectasia-eti'>Etiology</h6> -->
+<!-- <h6 id='intestinal_lymphangiectasia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='intestinal_lymphangiectasia-cls'>Classification</h6> -->
+<h6 id='intestinal_lymphangiectasia-sx'>Sign and Symptom</h6>
+
+- **乳び様腹水** / **胸水**
+
+
+<!-- <h6 id='intestinal_lymphangiectasia-ass'>Association</h6> -->
+<h6 id='intestinal_lymphangiectasia-ex'>Examination</h6>
+
+- **&alpha;~1~antitripsin**消化管クリアランス試験
+
+<!-- <h6 id='intestinal_lymphangiectasia-dx'>Diagnosis</h6> -->
+<h6 id='intestinal_lymphangiectasia-tx'>Treatment</h6>
+ 
+- &darr;脂肪 食事
+
+<!-- <h6 id='intestinal_lymphangiectasia-prg'>Prognosis</h6> -->
+<!-- <h6 id='intestinal_lymphangiectasia-app'>Appendix</h6> -->
 
 ## blind-loop
 

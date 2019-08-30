@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 19:54:14
+Modified: 	2019-08-30 19:59:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1543,6 +1543,72 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 		- 術後, 全身疾患に続発
 	- 慢性型 (CIPO chronic intestinal pseudo-obstruction)
 
+
+## Diverticulum
+
+<!-- <h6 id='diverticulum-def'>Definition</h6> -->
+<h6 id='diverticulum-eti'>Etiology</h6>
+
+- **低残渣食** ⇒ 圧出性
+- 仮性憩室
+
+<h6 id='diverticulum-epi'>Epidemiology</h6>
+
+- **右側結腸**
+- 中高年
+- M > F
+
+<h6 id='diverticulum-cls'>Classification</h6>
+
+<table>
+	<tbody>
+		<tr>
+			<th colspan="2">先天性</th>
+			<td></td>
+			<td rowspan="2">真性</td>
+			<td>
+				<ul>
+					<li>Meckel</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th rowspan="2">後天性</th>
+			<th>牽引性</th>
+			<td></td>
+			<td>
+				<ul>
+					<li>Rokintansky</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>圧出性</th>
+			<td></td>
+			<td>仮性</td>
+			<td>
+				<ul>
+					<li><u>Zenker</u></li>
+					<li>横隔膜上</li>
+					<li><u>十二指腸</u></li>
+					<li><u>大腸憩室</u></li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='diverticulum-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='diverticulum-ass'>Association</h6> -->
+<h6 id='diverticulum-ex'>Examination</h6>
+
+- 注腸XR
+	- **tear drop** **壁より突出した類円形のBa**
+
+<!-- <h6 id='diverticulum-dx'>Diagnosis</h6> -->
+<!-- <h6 id='diverticulum-tx'>Treatment</h6> -->
+<!-- <h6 id='diverticulum-prg'>Prognosis</h6> -->
+<!-- <h6 id='diverticulum-app'>Appendix</h6> -->
 
 
 ## blind-loop

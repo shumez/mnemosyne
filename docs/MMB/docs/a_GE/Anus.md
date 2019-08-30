@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:29:49
+Modified: 	2019-08-30 20:36:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -123,6 +123,29 @@ Copyright (c) 2019 shumez
 	- 直腸肛門局所免疫の未熟性  
 		腸粘膜固有層に形質細胞(–)  
 		⇒ 分泌型IgA(–)
+
+
+## Anal Fistula
+
+痔瘻
+
+<!-- <h6 id='anal_fistula-def'>Definition</h6> -->
+<!-- <h6 id='anal_fistula-eti'>Etiology</h6> -->
+<!-- <h6 id='anal_fistula-epi'>Epidemiology</h6> -->
+<!-- <h6 id='anal_fistula-cls'>Classification</h6> -->
+<!-- <h6 id='anal_fistula-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='anal_fistula-ass'>Association</h6> -->
+<!-- <h6 id='anal_fistula-ex'>Examination</h6> -->
+<!-- <h6 id='anal_fistula-dx'>Diagnosis</h6> -->
+<h6 id='anal_fistula-tx'>Treatment</h6>
+
+- lay open 開放手術
+- 括約筋温存手術
+	- coring out くり抜き法
+- Seton法 (ヒモ法)
+
+<!-- <h6 id='anal_fistula-prg'>Prognosis</h6> -->
+<!-- <h6 id='anal_fistula-app'>Appendix</h6> -->
 
 ##
 

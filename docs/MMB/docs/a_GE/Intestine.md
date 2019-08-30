@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 13:37:54
+Modified: 	2019-08-30 14:03:17
 -----
 Copyright (c) 2019 shumez
 -->
@@ -507,9 +507,38 @@ Irritable Bowel Syndrome
 Colorectal Cancer
 
 <!-- <h6 id='crc-def'>Definition</h6> -->
-<!-- <h6 id='crc-eti'>Etiology</h6> -->
+<h6 id='crc-eti'>Etiology</h6>
+
+- genetics
+	- Oncogene
+		- *K-ras* (12p) 
+	- Supressor
+		- *APC* (5q)
+		- *p53* (17p)
+
+- **adenoma-carcinoma sequence**
+- ***de novo* pathway**
+
+
 <!-- <h6 id='crc-epi'>Epidemiology</h6> -->
 <h6 id='crc-cls'>Classification</h6>
+
+肉眼的
+
+- 0型 表在型
+	- I 隆起型
+		- Ip 有茎性
+		- Isp 亜有茎性
+		- Is 無茎性
+	- II 表面型
+		- IIa 表面隆起型
+		- IIb 表面平坦型
+		- IIc 表面陥凹型
+- 1型 隆起腫瘤型
+- 2型 **潰瘍限局型**
+- 3型 潰瘍浸潤型
+- 4型 びまん浸潤型
+- 5型 分類不能
 
 Dukes classification
 
@@ -577,7 +606,26 @@ Dukes classification
 <!-- <h6 id='crc-ass'>Association</h6> -->
 <!-- <h6 id='crc-ex'>Examination</h6> -->
 <!-- <h6 id='crc-dx'>Diagnosis</h6> -->
-<!-- <h6 id='crc-tx'>Treatment</h6> -->
+<h6 id='crc-tx'>Treatment</h6>
+
+- 大腸内視鏡的切除術 (Polypectomy, EMR, ESD)
+- 外科的切除
+- 姑息的手術
+- Chemo
+	- FOLFOX therapy
+		- 5-FU
+		- LV
+		- Oxaliplatin
+	- FOLFIRI therapy
+		- 5-FU
+		- LV
+		- Irinotecan
+	- CapeOX therapy
+		- Capecitabine 
+		- Oxaliplatin
+	- 
+- RT
+
 <!-- <h6 id='crc-prg'>Prognosis</h6> -->
 <!-- <h6 id='crc-app'>Appendix</h6> -->
 

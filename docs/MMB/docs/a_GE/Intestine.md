@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:37:1
+Modified: 	2019-08-30 15:38:19
 -----
 Copyright (c) 2019 shumez
 -->
@@ -988,6 +988,22 @@ Familial Adenomatous Polyposis 家族性大腸腺腫症
 <!-- <h6 id='gardner-prg'>Prognosis</h6> -->
 <!-- <h6 id='gardner-app'>Appendix</h6> -->
 
+
+### Turcot
+<!-- <h6 id='turcot-def'>Definition</h6> -->
+<!-- <h6 id='turcot-eti'>Etiology</h6> -->
+<!-- <h6 id='turcot-epi'>Epidemiology</h6> -->
+<!-- <h6 id='turcot-cls'>Classification</h6> -->
+<!-- <h6 id='turcot-sx'>Sign and Symptom</h6> -->
+<h6 id='turcot-ass'>Association</h6>
+
+- **中枢神経腫瘍** (**髄芽腫**)
+
+<!-- <h6 id='turcot-ex'>Examination</h6> -->
+<!-- <h6 id='turcot-dx'>Diagnosis</h6> -->
+<!-- <h6 id='turcot-tx'>Treatment</h6> -->
+<!-- <h6 id='turcot-prg'>Prognosis</h6> -->
+<!-- <h6 id='turcot-app'>Appendix</h6> -->
 
 ## blind-loop
 

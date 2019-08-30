@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 17:31:34
+Modified: 	2019-08-30 19:43:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1453,14 +1453,27 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 <!-- <h6 id='functional_ileus-def'>Definition</h6> -->
 <!-- <h6 id='functional_ileus-eti'>Etiology</h6> -->
 <!-- <h6 id='functional_ileus-epi'>Epidemiology</h6> -->
-<!-- <h6 id='functional_ileus-cls'>Classification</h6> -->
+<h6 id='functional_ileus-cls'>Classification</h6>
+
+- 麻痺性
+- けいれん性
+
 <!-- <h6 id='functional_ileus-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='functional_ileus-ass'>Association</h6> -->
 <!-- <h6 id='functional_ileus-ex'>Examination</h6> -->
 <!-- <h6 id='functional_ileus-dx'>Diagnosis</h6> -->
 <!-- <h6 id='functional_ileus-tx'>Treatment</h6> -->
 <!-- <h6 id='functional_ileus-prg'>Prognosis</h6> -->
-<!-- <h6 id='functional_ileus-app'>Appendix</h6> -->
+<h6 id='functional_ileus-app'>Appendix</h6>
+
+- 偽性腸閉塞
+	- 急性型 (Ogilvie症候群)  
+		- 大腸の通過障害
+		- 術後, 全身疾患に続発
+	- 慢性型 (CIPO chronic intestinal pseudo-obstruction)
+		- 
+
+
 
 ## blind-loop
 

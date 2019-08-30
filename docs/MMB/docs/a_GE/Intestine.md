@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:44:32
+Modified: 	2019-08-30 17:31:34
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1446,6 +1446,21 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 <!-- <h6 id='obstruction-tx'>Treatment</h6> -->
 <!-- <h6 id='obstruction-prg'>Prognosis</h6> -->
 <!-- <h6 id='obstruction-app'>Appendix</h6> -->
+
+
+### Functional Ileus
+
+<!-- <h6 id='functional_ileus-def'>Definition</h6> -->
+<!-- <h6 id='functional_ileus-eti'>Etiology</h6> -->
+<!-- <h6 id='functional_ileus-epi'>Epidemiology</h6> -->
+<!-- <h6 id='functional_ileus-cls'>Classification</h6> -->
+<!-- <h6 id='functional_ileus-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='functional_ileus-ass'>Association</h6> -->
+<!-- <h6 id='functional_ileus-ex'>Examination</h6> -->
+<!-- <h6 id='functional_ileus-dx'>Diagnosis</h6> -->
+<!-- <h6 id='functional_ileus-tx'>Treatment</h6> -->
+<!-- <h6 id='functional_ileus-prg'>Prognosis</h6> -->
+<!-- <h6 id='functional_ileus-app'>Appendix</h6> -->
 
 ## blind-loop
 

@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 14:31:14
+Modified: 	2019-08-30 14:47:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -744,6 +744,51 @@ Hereditary Non-Polyposis Colorectal Cancer, Lynch synd
 <!-- <h6 id='small_intestine_tumor-tx'>Treatment</h6> -->
 <!-- <h6 id='small_intestine_tumor-prg'>Prognosis</h6> -->
 <!-- <h6 id='small_intestine_tumor-app'>Appendix</h6> -->
+
+
+## GNET
+
+Gastrointestinal Neuroendocrine Tumor
+
+<h6 id='gnet-def'>Definition</h6>
+
+- **Kultschnitzky cell** 由来
+
+<!-- <h6 id='gnet-eti'>Etiology</h6> -->
+<!-- <h6 id='gnet-epi'>Epidemiology</h6> -->
+<h6 id='gnet-cls'>Classification</h6>
+
+- GEP-NET Gastroenteric Pancreatic
+	- GNET 
+		- G1
+		- G2
+	- Pancreatic NET
+		- insulinoma
+		- gastrinoma
+		- glucagonoma
+		- somatostatinoma
+		- VIPoma
+- Lung
+	- SCLC
+	- LCLC
+	- cartinoid
+
+<!-- <h6 id='gnet-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gnet-ass'>Association</h6> -->
+<h6 id='gnet-ex'>Examination</h6>
+
+- Patho
+	- **好銀反応(+)**
+	- 索状, リボン状, ロゼット状配列
+
+<!-- <h6 id='gnet-dx'>Diagnosis</h6> -->
+<h6 id='gnet-tx'>Treatment</h6>
+
+- 内視鏡的粘膜切除術
+- 外科的切除
+
+<!-- <h6 id='gnet-prg'>Prognosis</h6> -->
+<!-- <h6 id='gnet-app'>Appendix</h6> -->
 
 ## blind-loop
 

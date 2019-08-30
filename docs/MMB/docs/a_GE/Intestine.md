@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 20:07:23
+Modified: 	2019-08-30 20:09:29
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1664,30 +1664,22 @@ Acute appendicitis
 
 ## blind-loop
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-**Sign and Symptom**
+<!-- <h6 id='blind-loop-def'>Definition</h6> -->
+<!-- <h6 id='blind-loop-eti'>Etiology</h6> -->
+<!-- <h6 id='blind-loop-epi'>Epidemiology</h6> -->
+<!-- <h6 id='blind-loop-cls'>Classification</h6> -->
+<h6 id='blind-loop-sx'>Sign and Symptom</h6>
 
-* 脂肪便
-* [巨赤芽球性貧血][MBA] &lArr; Vit.B~12~消費
-* [&darr;Ca][HoCa]
+- 脂肪便
+- [巨赤芽球性貧血][MBA] &lArr; Vit.B~12~消費
+- [&darr;Ca][HoCa]
 
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='blind-loop-ass'>Association</h6> -->
+<!-- <h6 id='blind-loop-ex'>Examination</h6> -->
+<!-- <h6 id='blind-loop-dx'>Diagnosis</h6> -->
+<!-- <h6 id='blind-loop-tx'>Treatment</h6> -->
+<!-- <h6 id='blind-loop-prg'>Prognosis</h6> -->
+<!-- <h6 id='blind-loop-app'>Appendix</h6> -->
 
 
 ##

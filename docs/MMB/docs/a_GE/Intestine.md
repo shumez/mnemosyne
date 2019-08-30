@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 14:47:1
+Modified: 	2019-08-30 14:52:13
 -----
 Copyright (c) 2019 shumez
 -->
@@ -789,6 +789,38 @@ Gastrointestinal Neuroendocrine Tumor
 
 <!-- <h6 id='gnet-prg'>Prognosis</h6> -->
 <!-- <h6 id='gnet-app'>Appendix</h6> -->
+
+
+### Cartinoid
+
+<!-- <h6 id='cartinoid-def'>Definition</h6> -->
+<h6 id='cartinoid-eti'>Etiology</h6>
+
+- **serotonin** **5-HT**
+- histamin
+- bradykinin
+- PG
+
+<!-- <h6 id='cartinoid-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cartinoid-cls'>Classification</h6> -->
+<h6 id='cartinoid-sx'>Sign and Symptom</h6>
+
+- 皮膚の潮紅
+- **気管支喘息発作**
+- 水様性下痢  
+	&because; &uarr;蠕動運動
+- **右心不全**  
+	&because; PS / TR
+
+<!-- <h6 id='cartinoid-ass'>Association</h6> -->
+<h6 id='cartinoid-ex'>Examination</h6>
+
+- **&uarr;尿5-HIAA**
+
+<!-- <h6 id='cartinoid-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cartinoid-tx'>Treatment</h6> -->
+<!-- <h6 id='cartinoid-prg'>Prognosis</h6> -->
+<!-- <h6 id='cartinoid-app'>Appendix</h6> -->
 
 ## blind-loop
 

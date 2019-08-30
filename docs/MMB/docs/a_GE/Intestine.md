@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 15:01:11
+Modified: 	2019-08-30 15:34:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -951,6 +951,23 @@ Gastrointestinal Neuroendocrine Tumor
 <!-- <h6 id='polyposis-tx'>Treatment</h6> -->
 <!-- <h6 id='polyposis-prg'>Prognosis</h6> -->
 <!-- <h6 id='polyposis-app'>Appendix</h6> -->
+
+
+### FAP
+
+Familial Adenomatous Polyposis 家族性大腸腺腫症
+
+<!-- <h6 id='fap-def'>Definition</h6> -->
+<!-- <h6 id='fap-eti'>Etiology</h6> -->
+<!-- <h6 id='fap-epi'>Epidemiology</h6> -->
+<!-- <h6 id='fap-cls'>Classification</h6> -->
+<!-- <h6 id='fap-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='fap-ass'>Association</h6> -->
+<!-- <h6 id='fap-ex'>Examination</h6> -->
+<!-- <h6 id='fap-dx'>Diagnosis</h6> -->
+<!-- <h6 id='fap-tx'>Treatment</h6> -->
+<!-- <h6 id='fap-prg'>Prognosis</h6> -->
+<!-- <h6 id='fap-app'>Appendix</h6> -->
 
 
 ## blind-loop

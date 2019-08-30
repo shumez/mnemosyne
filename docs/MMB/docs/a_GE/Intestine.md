@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 19:43:11
+Modified: 	2019-08-30 19:52:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1427,7 +1427,78 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 
 - 開腹後 腸管癒着 #1
 
-<!-- <h6 id='obstruction-cls'>Classification</h6> -->
+<h6 id='obstruction-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width=20% rowspan=2></th>
+			<th width=40%>単純性</th>
+			<th width=40%>複雑性</th>
+		</tr>
+		<tr>
+			<th>閉塞性</th>
+			<th>絞扼性</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Onset</th>
+			<td>緩慢</td>
+			<td>急激</td>
+		</tr>
+		<tr>
+			<th>S/S</th>
+			<td>
+				<ul>
+					<li>排ガス</li>
+					<li>排便停止</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>ショック</li>
+					<!-- <li></li> -->
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>PEx</th>
+			<td>
+				<ul>
+					<li>腹部膨満感</li>
+					<li>&uarr;腸雑音 (金属音)</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>&darr;腸雑音</li>
+					<li>Wahl sign</li>
+					<li>腹膜刺激症状
+						<ul>
+							<li>筋性防御</li>
+							<li>反跳痛</li>
+						</ul>
+					</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Tx</th>
+			<td>
+				<ul>
+					<li>保存的</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>Ope</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 <!-- <h6 id='obstruction-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='obstruction-ass'>Association</h6> -->
 <h6 id='obstruction-ex'>Examination</h6>
@@ -1471,7 +1542,6 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 		- 大腸の通過障害
 		- 術後, 全身疾患に続発
 	- 慢性型 (CIPO chronic intestinal pseudo-obstruction)
-		- 
 
 
 

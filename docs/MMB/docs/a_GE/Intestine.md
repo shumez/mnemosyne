@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-08-30 16:17:40
+Modified: 	2019-08-30 16:19:6
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1247,6 +1247,22 @@ Protein-losing gastroenteropathy 蛋白漏出性胃腸症
 - Zollinger-Ellison
 - Ménétrier
 
+
+### IC
+
+Ischemic Colitis 虚血性大腸炎
+
+<!-- <h6 id='ic-def'>Definition</h6> -->
+<!-- <h6 id='ic-eti'>Etiology</h6> -->
+<!-- <h6 id='ic-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ic-cls'>Classification</h6> -->
+<!-- <h6 id='ic-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ic-ass'>Association</h6> -->
+<!-- <h6 id='ic-ex'>Examination</h6> -->
+<!-- <h6 id='ic-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ic-tx'>Treatment</h6> -->
+<!-- <h6 id='ic-prg'>Prognosis</h6> -->
+<!-- <h6 id='ic-app'>Appendix</h6> -->
 
 ## blind-loop
 

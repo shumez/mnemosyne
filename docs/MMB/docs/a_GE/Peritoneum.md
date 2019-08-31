@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 16:58:7
+Modified: 	2019-08-31 17:02:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -582,6 +582,36 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='peritonitis-tx'>Treatment</h6> -->
 <!-- <h6 id='peritonitis-prg'>Prognosis</h6> -->
 <!-- <h6 id='peritonitis-app'>Appendix</h6> -->
+
+
+### APP
+
+Acute Panperitonitis 急性汎発性腹膜炎
+
+<!-- <h6 id='app-def'>Definition</h6> -->
+<!-- <h6 id='app-eti'>Etiology</h6> -->
+<!-- <h6 id='app-epi'>Epidemiology</h6> -->
+<!-- <h6 id='app-cls'>Classification</h6> -->
+<!-- <h6 id='app-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='app-ass'>Association</h6> -->
+<h6 id='app-ex'>Examination</h6>
+
+- 炎症
+	- 発熱
+	- 腹痛
+	- 頻脈
+- 血液
+	- ↑WBC
+	- ↑CRP
+	- ↑FBG
+	- ↑ハプトグロビン
+- 画像
+	- 腸管ガス(++)
+
+<!-- <h6 id='app-dx'>Diagnosis</h6> -->
+<!-- <h6 id='app-tx'>Treatment</h6> -->
+<!-- <h6 id='app-prg'>Prognosis</h6> -->
+<!-- <h6 id='app-app'>Appendix</h6> -->
 
 
 ## 

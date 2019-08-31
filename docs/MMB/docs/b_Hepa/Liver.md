@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:05:29
+Modified: 	2019-08-31 20:09:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -270,6 +270,33 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='hb-prg'>Prognosis</h6> -->
 <!-- <h6 id='hb-app'>Appendix</h6> -->
+
+
+### *de novo* HB
+
+<h6 id='de_novo_hb-def'>Definition</h6>
+
+- HBV既往感染者で
+	- HBs Ag(–)
+	- HBc Ab(+) (IgG)
+	- HBs Ab(+)
+
+<!-- <h6 id='de_novo_hb-eti'>Etiology</h6> -->
+<!-- <h6 id='de_novo_hb-epi'>Epidemiology</h6> -->
+<!-- <h6 id='de_novo_hb-cls'>Classification</h6> -->
+<!-- <h6 id='de_novo_hb-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='de_novo_hb-ass'>Association</h6> -->
+<h6 id='de_novo_hb-ex'>Examination</h6>
+
+- HBs抗原 再活性化
+
+<!-- <h6 id='de_novo_hb-dx'>Diagnosis</h6> -->
+<!-- <h6 id='de_novo_hb-tx'>Treatment</h6> -->
+<h6 id='de_novo_hb-prg'>Prognosis</h6>
+
+- 予後不良
+
+<!-- <h6 id='de_novo_hb-app'>Appendix</h6> -->
 
 
 ## HC

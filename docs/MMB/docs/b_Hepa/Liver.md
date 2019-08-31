@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:42:19
+Modified: 	2019-08-31 20:46:37
 -----
 Copyright (c) 2019 shumez
 -->
@@ -463,9 +463,9 @@ Drug-induced Liver Disease 薬剤性肝障害
 <table>
 	<thead>
 		<tr>
-			<th></th>
-			<th>肝細胞障害</th>
-			<th>胆汁うっ滞</th>
+			<th width=20%></th>
+			<th width=40%>肝細胞障害</th>
+			<th width=40%>胆汁うっ滞</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -513,18 +513,18 @@ Drug-induced Liver Disease 薬剤性肝障害
 		</tr>
 		<tr>
 			<th>逸脱酵素</th>
-			<td>&uarr;&uarr;&uarr;</td>
-			<td>&uarr;</td>
+			<td align='center'>&uarr;&uarr;&uarr;</td>
+			<td align='center'>&uarr;</td>
 		</tr>
 		<tr>
 			<th>胆道系酵素</th>
-			<td>&uarr;</td>
-			<td>&uarr;&uarr;&uarr;</td>
+			<td align='center'>&uarr;</td>
+			<td align='center'>&uarr;&uarr;&uarr;</td>
 		</tr>
 		<tr>
 			<th>黄疸</th>
-			<td>&uarr;</td>
-			<td>&uarr;&uarr;&uarr;</td>
+			<td align='center'>&uarr;</td>
+			<td align='center'>&uarr;&uarr;&uarr;</td>
 		</tr>
 		<tr>
 			<th>薬剤中止後</th>

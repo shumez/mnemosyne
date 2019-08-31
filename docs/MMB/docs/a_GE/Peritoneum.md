@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 16:52:23
+Modified: 	2019-08-31 16:58:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -541,6 +541,48 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='bochdalek-tx'>Treatment</h6> -->
 <!-- <h6 id='bochdalek-prg'>Prognosis</h6> -->
 <!-- <h6 id='bochdalek-app'>Appendix</h6> -->
+
+
+## Peritonitis
+
+腹膜炎
+
+<!-- <h6 id='peritonitis-def'>Definition</h6> -->
+<!-- <h6 id='peritonitis-eti'>Etiology</h6> -->
+<!-- <h6 id='peritonitis-epi'>Epidemiology</h6> -->
+<h6 id='peritonitis-cls'>Classification</h6>
+
+発症時期/経過
+
+- 急性腹膜炎
+- 慢性腹膜炎
+- 癌性腹膜炎
+
+原因
+
+- 原発性腹膜炎
+	- 特発性細菌性腹膜炎
+- 続発性腹膜炎
+	- 消化管穿孔
+	- 急性虫垂炎
+	- 急性胆嚢炎
+- 癌性腹膜炎
+- 結核性腹膜炎
+- カテーテル留置 (腹膜透析)
+
+<h6 id='peritonitis-sx'>Sign and Symptom</h6>
+
+- Blumberg sign (反跳痛)
+- 板状硬:  
+	**LR+ 高い**
+
+<!-- <h6 id='peritonitis-ass'>Association</h6> -->
+<!-- <h6 id='peritonitis-ex'>Examination</h6> -->
+<!-- <h6 id='peritonitis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='peritonitis-tx'>Treatment</h6> -->
+<!-- <h6 id='peritonitis-prg'>Prognosis</h6> -->
+<!-- <h6 id='peritonitis-app'>Appendix</h6> -->
+
 
 ## 
 

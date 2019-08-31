@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:37:11
+Modified: 	2019-08-31 20:39:20
 -----
 Copyright (c) 2019 shumez
 -->
@@ -428,6 +428,27 @@ Acute Viral Hepatitis
 <!-- <h6 id='avh-tx'>Treatment</h6> -->
 <!-- <h6 id='avh-prg'>Prognosis</h6> -->
 <!-- <h6 id='avh-app'>Appendix</h6> -->
+
+
+## CVH
+
+Chronic Viral Hepatitis
+
+<!-- <h6 id='cvh-def'>Definition</h6> -->
+<h6 id='cvh-eti'>Etiology</h6>
+
+1. HCV 80%
+2. HBV 20%
+
+<!-- <h6 id='cvh-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cvh-cls'>Classification</h6> -->
+<!-- <h6 id='cvh-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cvh-ass'>Association</h6> -->
+<!-- <h6 id='cvh-ex'>Examination</h6> -->
+<!-- <h6 id='cvh-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cvh-tx'>Treatment</h6> -->
+<!-- <h6 id='cvh-prg'>Prognosis</h6> -->
+<!-- <h6 id='cvh-app'>Appendix</h6> -->
 
 ## LC
 

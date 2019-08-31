@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 16:42:21
+Modified: 	2019-08-31 16:52:23
 -----
 Copyright (c) 2019 shumez
 -->
@@ -515,6 +515,32 @@ Inguinal Hernia 鼠径ヘルニア
 
 <!-- <h6 id='esophageal_hiatal_hernia-prg'>Prognosis</h6> -->
 <!-- <h6 id='esophageal_hiatal_hernia-app'>Appendix</h6> -->
+
+
+### Bochdalek
+
+胸腹裂孔ヘルニア
+
+<!-- <h6 id='bochdalek-def'>Definition</h6> -->
+<!-- <h6 id='bochdalek-eti'>Etiology</h6> -->
+<!-- <h6 id='bochdalek-epi'>Epidemiology</h6> -->
+<!-- <h6 id='bochdalek-cls'>Classification</h6> -->
+<h6 id='bochdalek-sx'>Sign and Symptom</h6>
+
+- 出生直後から
+- **cyanosis**
+- 呼吸困難
+- **患側肺低形成**
+
+<h6 id='bochdalek-ass'>Association</h6>
+
+- **腸回転異常症**
+
+<!-- <h6 id='bochdalek-ex'>Examination</h6> -->
+<!-- <h6 id='bochdalek-dx'>Diagnosis</h6> -->
+<!-- <h6 id='bochdalek-tx'>Treatment</h6> -->
+<!-- <h6 id='bochdalek-prg'>Prognosis</h6> -->
+<!-- <h6 id='bochdalek-app'>Appendix</h6> -->
 
 ## 
 

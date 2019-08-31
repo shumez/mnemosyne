@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:46:37
+Modified: 	2019-08-31 20:48:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -541,6 +541,22 @@ Drug-induced Liver Disease 薬剤性肝障害
 <!-- <h6 id='dild-tx'>Treatment</h6> -->
 <!-- <h6 id='dild-prg'>Prognosis</h6> -->
 <!-- <h6 id='dild-app'>Appendix</h6> -->
+
+## FH / ALF
+
+Fulminant Hepatitis 劇症肝炎 / Acute Liver Failure 急性肝不全
+
+<!-- <h6 id='fh_alf-def'>Definition</h6> -->
+<!-- <h6 id='fh_alf-eti'>Etiology</h6> -->
+<!-- <h6 id='fh_alf-epi'>Epidemiology</h6> -->
+<!-- <h6 id='fh_alf-cls'>Classification</h6> -->
+<!-- <h6 id='fh_alf-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='fh_alf-ass'>Association</h6> -->
+<!-- <h6 id='fh_alf-ex'>Examination</h6> -->
+<!-- <h6 id='fh_alf-dx'>Diagnosis</h6> -->
+<!-- <h6 id='fh_alf-tx'>Treatment</h6> -->
+<!-- <h6 id='fh_alf-prg'>Prognosis</h6> -->
+<!-- <h6 id='fh_alf-app'>Appendix</h6> -->
 
 ## LC
 

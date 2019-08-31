@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 15:50:52
+Modified: 	2019-08-31 16:14:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -395,10 +395,19 @@ Inguinal Hernia 鼠径ヘルニア
 <h6 id='omphalocele-ass'>Association</h6>
 
 - 重症合併奇形
+- Canterell 5 sign
+	1. 胸骨形成不全
+	2. 横隔膜欠損
+	3. 心膜欠損
+	4. 心奇形
+- 総排泄腔外反症
 
 <!-- <h6 id='omphalocele-ex'>Examination</h6> -->
 <!-- <h6 id='omphalocele-dx'>Diagnosis</h6> -->
-<!-- <h6 id='omphalocele-tx'>Treatment</h6> -->
+<h6 id='omphalocele-tx'>Treatment</h6>
+
+- 緊急Ope
+
 <!-- <h6 id='omphalocele-prg'>Prognosis</h6> -->
 <!-- <h6 id='omphalocele-app'>Appendix</h6> -->
 

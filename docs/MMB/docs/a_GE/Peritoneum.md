@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 15:47:5
+Modified: 	2019-08-31 15:50:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -381,6 +381,26 @@ Inguinal Hernia 鼠径ヘルニア
 
 <!-- <h6 id='umbilical_hernia-prg'>Prognosis</h6> -->
 <!-- <h6 id='umbilical_hernia-app'>Appendix</h6> -->
+
+
+## Omphalocele
+
+臍帯ヘルニア
+
+<!-- <h6 id='omphalocele-def'>Definition</h6> -->
+<!-- <h6 id='omphalocele-eti'>Etiology</h6> -->
+<!-- <h6 id='omphalocele-epi'>Epidemiology</h6> -->
+<!-- <h6 id='omphalocele-cls'>Classification</h6> -->
+<!-- <h6 id='omphalocele-sx'>Sign and Symptom</h6> -->
+<h6 id='omphalocele-ass'>Association</h6>
+
+- 重症合併奇形
+
+<!-- <h6 id='omphalocele-ex'>Examination</h6> -->
+<!-- <h6 id='omphalocele-dx'>Diagnosis</h6> -->
+<!-- <h6 id='omphalocele-tx'>Treatment</h6> -->
+<!-- <h6 id='omphalocele-prg'>Prognosis</h6> -->
+<!-- <h6 id='omphalocele-app'>Appendix</h6> -->
 
 ## 
 

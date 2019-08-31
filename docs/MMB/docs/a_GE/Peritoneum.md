@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 15:36:22
+Modified: 	2019-08-31 15:44:12
 -----
 Copyright (c) 2019 shumez
 -->
@@ -338,6 +338,25 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='oburator_hernia-prg'>Prognosis</h6> -->
 <!-- <h6 id='oburator_hernia-app'>Appendix</h6> -->
 
+
+## Abdominal Incision Hernia
+
+腹壁瘢痕ヘルニア
+
+<!-- <h6 id='abdominal_incision_hernia-def'>Definition</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-eti'>Etiology</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-cls'>Classification</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-ass'>Association</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-ex'>Examination</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-dx'>Diagnosis</h6> -->
+<h6 id='abdominal_incision_hernia-tx'>Treatment</h6>
+
+- 腹壁修復
+
+<!-- <h6 id='abdominal_incision_hernia-prg'>Prognosis</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-app'>Appendix</h6> -->
 
 ## 
 

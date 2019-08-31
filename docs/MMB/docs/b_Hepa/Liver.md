@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 17:28:52
+Modified: 	2019-08-31 17:35:55
 -----
 Copyright (c) 2019 shumez
 -->
@@ -134,6 +134,31 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='viral_hepetitis-tx'>Treatment</h6> -->
 <!-- <h6 id='viral_hepetitis-prg'>Prognosis</h6> -->
 <!-- <h6 id='viral_hepetitis-app'>Appendix</h6> -->
+
+
+## HA
+
+<!-- <h6 id='ha-def'>Definition</h6> -->
+<!-- <h6 id='ha-eti'>Etiology</h6> -->
+<!-- <h6 id='ha-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ha-cls'>Classification</h6> -->
+<h6 id='ha-sx'>Sign and Symptom</h6>
+
+- 発熱, 全身倦怠感
+
+<!-- <h6 id='ha-ass'>Association</h6> -->
+<h6 id='ha-ex'>Examination</h6>
+
+- IgM HA-Ab
+
+<!-- <h6 id='ha-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ha-tx'>Treatment</h6> -->
+<!-- <h6 id='ha-prg'>Prognosis</h6> -->
+<h6 id='ha-app'>Appendix</h6>
+
+- Vaccine
+	- HAV
+	- HBV
 
 
 ## HB

@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 14:57:44
+Modified: 	2019-08-31 15:14:9
 -----
 Copyright (c) 2019 shumez
 -->
@@ -80,6 +80,86 @@ Copyright (c) 2019 shumez
 	</tbody>
 </table>
 
+
+## IH
+
+Inguinal Hernia 鼠径ヘルニア
+
+<!-- <h6 id='ih-def'>Definition</h6> -->
+<!-- <h6 id='ih-eti'>Etiology</h6> -->
+<h6 id='ih-epi'>Epidemiology</h6>
+
+- 外鼠径: 小児
+- 内鼠径: 高齢
+
+<h6 id='ih-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="50%">外鼠径ヘルニア<br>Indirect</th>
+			<th width="50%">内鼠径ヘルニア<br>Direct</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!-- <tr>
+			<td>
+				<img src="https://qb.medilink-study.com/images/103A040_bas_o_010.jpg" class="card-img-top img-fluid">
+			</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/103A040_bas_o_020.jpg" class="card-img-top img-fluid">
+			</td>
+		</tr> -->
+		<tr>
+			<td>外側鼠径窩<br>
+				Lateral</td>
+			<td align="right">内側鼠径窩<br>
+				Medial</td>
+		</tr>
+		<tr>
+			<td>&darr;</td>
+			<td align="right">&darr;</td>
+		</tr>
+		<tr>
+			<td>内鼠径輪<br>
+				Deep </td>
+			<td align="right">&darr;<br>&darr;</td>
+		</tr>
+		<tr>
+			<td align="center">&darr; &rarr; &rarr; &rarr; &rarr; &darr;</td>
+			<td align="right">&darr;</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td align="right">外鼠径輪<br>
+				Superficial</td>
+		</tr>
+	</tbody>
+</table>
+
+
+[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/inguinal_hernia.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/inguinal_hernia.jpg)
+
+
+<!-- <h6 id='ih-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ih-ass'>Association</h6> -->
+<h6 id='ih-ex'>Examination</h6>
+
+- silk sign
+- 用手還納
+- 透光性(–)
+
+<!-- <h6 id='ih-dx'>Diagnosis</h6> -->
+<h6 id='ih-tx'>Treatment</h6>
+
+- 用手還納  
+	発赤(-). しわ(+)
+- 緊急手術  
+	嵌頓
+- 腸管壊死 ⟹ C/I 用手還納
+
+<!-- <h6 id='ih-prg'>Prognosis</h6> -->
+<!-- <h6 id='ih-app'>Appendix</h6> -->
 
 
 ## 

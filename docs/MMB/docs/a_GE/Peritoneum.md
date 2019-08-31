@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 17:05:41
+Modified: 	2019-08-31 17:09:19
 -----
 Copyright (c) 2019 shumez
 -->
@@ -637,6 +637,26 @@ Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
 
 <!-- <h6 id='sbp-prg'>Prognosis</h6> -->
 <!-- <h6 id='sbp-app'>Appendix</h6> -->
+
+
+### Cancerous Peritonitis
+
+癌性腹膜炎
+
+<!-- <h6 id='cancerous_peritonitis-def'>Definition</h6> -->
+<!-- <h6 id='cancerous_peritonitis-eti'>Etiology</h6> -->
+<!-- <h6 id='cancerous_peritonitis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cancerous_peritonitis-cls'>Classification</h6> -->
+<!-- <h6 id='cancerous_peritonitis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cancerous_peritonitis-ass'>Association</h6> -->
+<!-- <h6 id='cancerous_peritonitis-ex'>Examination</h6> -->
+<!-- <h6 id='cancerous_peritonitis-dx'>Diagnosis</h6> -->
+<h6 id='cancerous_peritonitis-tx'>Treatment</h6>
+
+- **利尿薬に反応しにくい**
+
+<!-- <h6 id='cancerous_peritonitis-prg'>Prognosis</h6> -->
+<!-- <h6 id='cancerous_peritonitis-app'>Appendix</h6> -->
 
 ## 
 

@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:11:44
+Modified: 	2019-08-31 20:16:58
 -----
 Copyright (c) 2019 shumez
 -->
@@ -257,7 +257,20 @@ Copyright (c) 2019 shumez
 	</tbody>
 </table>
 
-<!-- <h6 id='hb-dx'>Diagnosis</h6> -->
+- **seroconversion**:  
+	- Agが陰性化, Abが陽性化する
+	- HBeAg(–) &rarr; HBeAb(+)
+- **seronegative**:
+	- HBAg (s,e) 陰性化
+	- HBAb 陰性でとどまっている
+
+
+<h6 id='hb-dx'>Diagnosis</h6>
+
+- ≤ 1mo の血中HBs Ag
+- ペア血清による &uarr;HBc Ab
+- 発症早期 血中IgM-HBc Ab
+
 <h6 id='hb-tx'>Treatment</h6>
 
 - エンテカビル

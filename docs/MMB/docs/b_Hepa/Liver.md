@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:26:4
+Modified: 	2019-08-31 20:28:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -388,6 +388,23 @@ IFN AE:
 
 <!-- <h6 id='hc-prg'>Prognosis</h6> -->
 <!-- <h6 id='hc-app'>Appendix</h6> -->
+
+
+## HD
+
+Hepatitis D
+
+<!-- <h6 id='hd-def'>Definition</h6> -->
+<!-- <h6 id='hd-eti'>Etiology</h6> -->
+<!-- <h6 id='hd-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hd-cls'>Classification</h6> -->
+<!-- <h6 id='hd-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hd-ass'>Association</h6> -->
+<!-- <h6 id='hd-ex'>Examination</h6> -->
+<!-- <h6 id='hd-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hd-tx'>Treatment</h6> -->
+<!-- <h6 id='hd-prg'>Prognosis</h6> -->
+<!-- <h6 id='hd-app'>Appendix</h6> -->
 
 
 ## LC

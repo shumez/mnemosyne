@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 18:04:50
+Modified: 	2019-08-31 19:17:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -151,7 +151,10 @@ Copyright (c) 2019 shumez
 
 - IgM HA-Ab
 
-<!-- <h6 id='ha-dx'>Diagnosis</h6> -->
+<h6 id='ha-dx'>Diagnosis</h6>
+
+[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/ha.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/ha.jpg)
+
 <!-- <h6 id='ha-tx'>Treatment</h6> -->
 <!-- <h6 id='ha-prg'>Prognosis</h6> -->
 <h6 id='ha-app'>Appendix</h6>

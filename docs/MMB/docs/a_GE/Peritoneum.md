@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 17:02:51
+Modified: 	2019-08-31 17:05:41
 -----
 Copyright (c) 2019 shumez
 -->
@@ -613,6 +613,30 @@ Acute Panperitonitis 急性汎発性腹膜炎
 <!-- <h6 id='app-prg'>Prognosis</h6> -->
 <!-- <h6 id='app-app'>Appendix</h6> -->
 
+
+### SBP
+
+Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
+
+<!-- <h6 id='sbp-def'>Definition</h6> -->
+<h6 id='sbp-eti'>Etiology</h6>
+
+- GNB
+	- *E. coli*
+	- *Klebsiella pneumoniae*
+
+<!-- <h6 id='sbp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='sbp-cls'>Classification</h6> -->
+<!-- <h6 id='sbp-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='sbp-ass'>Association</h6> -->
+<!-- <h6 id='sbp-ex'>Examination</h6> -->
+<!-- <h6 id='sbp-dx'>Diagnosis</h6> -->
+<h6 id='sbp-tx'>Treatment</h6>
+
+- ABx
+
+<!-- <h6 id='sbp-prg'>Prognosis</h6> -->
+<!-- <h6 id='sbp-app'>Appendix</h6> -->
 
 ## 
 

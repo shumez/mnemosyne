@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 14:51:47
+Modified: 	2019-08-31 14:57:44
 -----
 Copyright (c) 2019 shumez
 -->
@@ -43,7 +43,10 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='hernia-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='hernia-ass'>Association</h6> -->
-<!-- <h6 id='hernia-ex'>Examination</h6> -->
+<h6 id='hernia-ex'>Examination</h6>
+
+- 腹部ヘルニアの診断, **立位**
+
 <!-- <h6 id='hernia-dx'>Diagnosis</h6> -->
 <!-- <h6 id='hernia-tx'>Treatment</h6> -->
 <!-- <h6 id='hernia-prg'>Prognosis</h6> -->

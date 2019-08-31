@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 16:17:48
+Modified: 	2019-08-31 16:28:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -373,7 +373,10 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='umbilical_hernia-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='umbilical_hernia-ass'>Association</h6> -->
 <!-- <h6 id='umbilical_hernia-ex'>Examination</h6> -->
-<!-- <h6 id='umbilical_hernia-dx'>Diagnosis</h6> -->
+<h6 id='umbilical_hernia-dx'>Diagnosis</h6>
+
+[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/dx_abdominal_hernia.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/dx_abdominal_hernia.jpg)
+
 <h6 id='umbilical_hernia-tx'>Treatment</h6>
 
 - f/u  
@@ -429,6 +432,61 @@ Inguinal Hernia 鼠径ヘルニア
 <h6 id='gastroscisis-app'>Appendix</h6>
 
 - 先天性腹壁筋欠損症 Prune belly syndrome
+
+
+## Diaphragmatic Hernia
+
+横隔膜ヘルニア
+
+<!-- <h6 id='diaphragmatic_hernia-def'>Definition</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-eti'>Etiology</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-epi'>Epidemiology</h6> -->
+<h6 id='diaphragmatic_hernia-cls'>Classification</h6>
+
+[![](https://qb.medilink-study.com/images/107E010_bas_a_010.jpg)](https://qb.medilink-study.com/images/107E010_bas_a_010.jpg)
+
+<table>
+	<tbody>
+		<tr>
+			<td>大動脈裂孔</td>
+			<td>
+				<ul>
+					<li>Ao</li>
+					<li>胸管</li>
+					<li>奇V</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>食道裂孔</td>
+			<td>
+				<ul>
+					<li>食道</li>
+					<li>迷走N</li>
+					<li>左胃A/V 食道枝</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>大静脈孔</td>
+			<td>
+				<ul>
+					<li>IVC</li>
+					<li>右横隔N</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='diaphragmatic_hernia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-ass'>Association</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-ex'>Examination</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-dx'>Diagnosis</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-tx'>Treatment</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-prg'>Prognosis</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-app'>Appendix</h6> -->
+
 
 ## 
 

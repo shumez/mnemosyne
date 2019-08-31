@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 17:35:55
+Modified: 	2019-08-31 18:04:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -160,6 +160,27 @@ Copyright (c) 2019 shumez
 	- HAV
 	- HBV
 
+
+## HE
+
+<!-- <h6 id='he-def'>Definition</h6> -->
+<h6 id='he-eti'>Etiology</h6>
+
+- 生肉
+	- イノシシ ⟹ E
+
+<!-- <h6 id='he-epi'>Epidemiology</h6> -->
+<!-- <h6 id='he-cls'>Classification</h6> -->
+<h6 id='he-sx'>Sign and Symptom</h6>
+
+- 妊娠後期: 10-20% 重症化 / 劇症化
+
+<!-- <h6 id='he-ass'>Association</h6> -->
+<!-- <h6 id='he-ex'>Examination</h6> -->
+<!-- <h6 id='he-dx'>Diagnosis</h6> -->
+<!-- <h6 id='he-tx'>Treatment</h6> -->
+<!-- <h6 id='he-prg'>Prognosis</h6> -->
+<!-- <h6 id='he-app'>Appendix</h6> -->
 
 ## HB
 

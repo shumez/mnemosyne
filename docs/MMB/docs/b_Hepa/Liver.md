@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:09:7
+Modified: 	2019-08-31 20:11:44
 -----
 Copyright (c) 2019 shumez
 -->
@@ -297,6 +297,25 @@ Copyright (c) 2019 shumez
 - 予後不良
 
 <!-- <h6 id='de_novo_hb-app'>Appendix</h6> -->
+
+
+### Gianotti
+
+<h6 id='gianotti-def'>Definition</h6>
+
+- HB急性肝炎
+- 乳幼児
+
+<!-- <h6 id='gianotti-eti'>Etiology</h6> -->
+<!-- <h6 id='gianotti-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gianotti-cls'>Classification</h6> -->
+<!-- <h6 id='gianotti-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gianotti-ass'>Association</h6> -->
+<!-- <h6 id='gianotti-ex'>Examination</h6> -->
+<!-- <h6 id='gianotti-dx'>Diagnosis</h6> -->
+<!-- <h6 id='gianotti-tx'>Treatment</h6> -->
+<!-- <h6 id='gianotti-prg'>Prognosis</h6> -->
+<!-- <h6 id='gianotti-app'>Appendix</h6> -->
 
 
 ## HC

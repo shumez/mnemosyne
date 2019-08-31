@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-29 15:09:35
+Modified: 	2019-08-31 17:15:17
 -----
 Copyright (c) 2019 shumez
 -->
@@ -854,16 +854,16 @@ Superior Mesenteric Artery Syndrome 上腸間膜動脈症候群 (上腸間膜動
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
 
-[acotimide]: .
+[acotimide]: #
 
-[S-1]: . 
-[capecitabine]: . 
-[CDDP]: .
-[oxalliplatin]: .
-[trastuzumab]: .
-[paclitaxel]: .
-[irinotecan]: .
-[ramucirumab]: .
+[S-1]: #
+[capecitabine]: #
+[CDDP]: #
+[oxalliplatin]: #
+[trastuzumab]: #
+[paclitaxel]: #
+[irinotecan]: #
+[ramucirumab]: #
 
 
 [img_FD]: ../img/a_GE/FD.jpg

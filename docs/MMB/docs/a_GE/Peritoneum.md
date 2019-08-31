@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 17:09:19
+Modified: 	2019-08-31 17:14:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -657,6 +657,43 @@ Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
 
 <!-- <h6 id='cancerous_peritonitis-prg'>Prognosis</h6> -->
 <!-- <h6 id='cancerous_peritonitis-app'>Appendix</h6> -->
+
+
+## Peudomyxoma Peritonei
+
+腹膜偽粘液腫
+
+<!-- <h6 id='peudomyxoma_peritonei-def'>Definition</h6> -->
+<h6 id='peudomyxoma_peritonei-eti'>Etiology</h6>
+
+- 原発
+	- **虫垂**
+	- **卵巣**
+
+<!-- <h6 id='peudomyxoma_peritonei-epi'>Epidemiology</h6> -->
+<!-- <h6 id='peudomyxoma_peritonei-cls'>Classification</h6> -->
+<h6 id='peudomyxoma_peritonei-sx'>Sign and Symptom</h6>
+
+- 腹部膨満感
+
+<!-- <h6 id='peudomyxoma_peritonei-ass'>Association</h6> -->
+<h6 id='peudomyxoma_peritonei-ex'>Examination</h6>
+
+- 腹腔穿刺
+	- 粘液性腫瘍細胞(+) ムチン性腹水
+- Patho
+	- 高円柱状粘液上皮の浮遊
+
+<!-- <h6 id='peudomyxoma_peritonei-dx'>Diagnosis</h6> -->
+<h6 id='peudomyxoma_peritonei-tx'>Treatment</h6>
+
+- **全摘出**
+
+<h6 id='peudomyxoma_peritonei-prg'>Prognosis</h6>
+
+- 慢性の悪性経過
+
+<!-- <h6 id='peudomyxoma_peritonei-app'>Appendix</h6> -->
 
 ## 
 

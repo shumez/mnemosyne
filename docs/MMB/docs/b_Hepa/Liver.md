@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 19:17:28
+Modified: 	2019-08-31 20:05:29
 -----
 Copyright (c) 2019 shumez
 -->
@@ -185,30 +185,91 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='he-prg'>Prognosis</h6> -->
 <!-- <h6 id='he-app'>Appendix</h6> -->
 
+
 ## HB
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='hb-def'>Definition</h6> -->
+<h6 id='hb-eti'>Etiology</h6>
+
+- DNA virus
+
+<h6 id='hb-epi'>Epidemiology</h6>
+
+- **劇症肝炎 #1**
+
+<!-- <h6 id='hb-cls'>Classification</h6> -->
+<h6 id='hb-sx'>Sign and Symptom</h6>
+
+持続感染
+[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_persistent.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_persistent.jpg)
+
+一過性感染
+[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_transient.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_transient.jpg)
+
+<!-- <h6 id='hb-ass'>Association</h6> -->
+<h6 id='hb-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/93F016_bas_b_010.jpg)](https://qb.medilink-study.com/images/93F016_bas_b_010.jpg)
+
+- IgM HBc Ab:
+	- 急性肝炎
+	- 慢性肝炎急性増悪
+- IgG HBc Ab
+	- 慢性
+- HBe Ab
+	- セロコンバージョン
+
+
+<table>
+	<tbody>
+		<tr>
+			<th width="10%" rowspan="2">Ag</th>
+			<td width="18%">HBs</td>
+			<td width="18%">HBe</td>
+			<td width="18%"></td>
+			<td width="18%"></td>
+			<td width="18%">HBc</td>
+		</tr>
+		<tr>
+			<td>感染状態</td>
+			<td>活動期</td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th rowspan="2">Ab</th>
+			<td>IgM-HBc</td>
+			<td></td>
+			<td>HBe</td>
+			<td>IgG-HBc</td>
+			<td>HBs</td>
+		</tr>
+		<tr>
+			<td>&uarr;&uarr;&uarr;: 発症早期<br>
+				&uarr;: <u>慢性肝炎の急性増悪</u></td>
+			<td></td>
+			<td>回復期</td>
+			<td>発症後期-既往<br>
+				&uarr;: 慢性肝炎の急性増悪</td>
+			<td>既往 (治癒)</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='hb-dx'>Diagnosis</h6> -->
+<h6 id='hb-tx'>Treatment</h6>
+
+- エンテカビル
+- ラミブジン
+
+- vaccine がある  
+	cf.
+	- HAV
+	- HBV
+
+<!-- <h6 id='hb-prg'>Prognosis</h6> -->
+<!-- <h6 id='hb-app'>Appendix</h6> -->
 
 
 ## HC
@@ -420,6 +481,8 @@ Liver Cirrhosis
 
 [img_Budd-Chiari]: ../img/b_Hepa/Budd-Chiari.jpg
 
+<!--
 <style type="text/css">
 	img{width: 50%; float: right;}
 </style>
+-->

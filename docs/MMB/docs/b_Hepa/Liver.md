@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:16:58
+Modified: 	2019-08-31 20:26:4
 -----
 Copyright (c) 2019 shumez
 -->
@@ -333,39 +333,61 @@ Copyright (c) 2019 shumez
 
 ## HC
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-**Treatment**
+<!-- <h6 id='hc-def'>Definition</h6> -->
+<!-- <h6 id='hc-eti'>Etiology</h6> -->
+<h6 id='hc-epi'>Epidemiology</h6>
 
-* DAAs ~Direct Acting Antivirals~ (IFN free)
-* IFN base
+<table>
+	<thead>
+		<tr>
+			<th colspan="2">#1</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><u>C</u>irrhosis</td>
+			<td>肝硬変</td>
+		</tr>
+		<tr>
+			<td><u>C</u>arcinoma</td>
+			<td>癌化</td>
+		</tr>
+		<tr>
+			<td><u>C</u>hronic</td>
+			<td>慢性化</td>
+		</tr>
+	</tbody>
+</table>
 
-* genotype 1
-	* エルバスビル + グラゾプレビル
-	* ソホスブビル + レジパスビル
-	* オムビタスビル + パリタプレビル
-* genotype 2
-	* ソホスブビル + リバビリン
-	* オムビタスビル + パリタプレビル　+ リトナビル + リバビリン
+<!-- <h6 id='hc-cls'>Classification</h6> -->
+<!-- <h6 id='hc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hc-ass'>Association</h6> -->
+<!-- <h6 id='hc-ex'>Examination</h6> -->
+<!-- <h6 id='hc-dx'>Diagnosis</h6> -->
+<h6 id='hc-tx'>Treatment</h6>
 
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+- DAAs Direct Acting Antivirals (IFN free)
+- IFN base
+　　
+　　
+- genotype 1
+	- エルバスビル + グラゾプレビル
+	- ソホスブビル + レジパスビル
+	- オムビタスビル + パリタプレビル
+- genotype 2
+	- ソホスブビル + リバビリン
+	- オムビタスビル + パリタプレビル　+ リトナビル + リバビリン
+
+IFN AE:
+
+- インフルエンザ様
+- うつ病
+- 間質性肺炎
+- 出血傾向 ⇐ ↓Plt
+- 眼底出血
+
+<!-- <h6 id='hc-prg'>Prognosis</h6> -->
+<!-- <h6 id='hc-app'>Appendix</h6> -->
 
 
 ## LC

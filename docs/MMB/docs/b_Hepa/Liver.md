@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:39:20
+Modified: 	2019-08-31 20:42:19
 -----
 Copyright (c) 2019 shumez
 -->
@@ -449,6 +449,98 @@ Chronic Viral Hepatitis
 <!-- <h6 id='cvh-tx'>Treatment</h6> -->
 <!-- <h6 id='cvh-prg'>Prognosis</h6> -->
 <!-- <h6 id='cvh-app'>Appendix</h6> -->
+
+
+## DILD
+
+Drug-induced Liver Disease 薬剤性肝障害
+
+<!-- <h6 id='dild-def'>Definition</h6> -->
+<!-- <h6 id='dild-eti'>Etiology</h6> -->
+<!-- <h6 id='dild-epi'>Epidemiology</h6> -->
+<h6 id='dild-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>肝細胞障害</th>
+			<th>胆汁うっ滞</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>原因</th>
+			<td>
+				<ul>
+					<li><u>Acetaminophen<!-- アセトアミノフェン --></u></li>
+					<li>ハロセン</li>
+					<li>四塩化炭素</li>
+					<li><u>INH</u></li>
+					<li>α-メチルドパ</li>
+					<li><u>Tetracycline<!-- テトラサイクリン --></u></li>
+					<li><u>RFP</u></li>
+					<li>MTX<!-- メトトレキサート --></li>
+					<li><u>Azathioprine<!-- アザチオプリン --></u></li>
+					<!-- <li>P</li>
+					<li>ジフェニルヒダトイン</li>
+					<li>ケトコナゾール</li>
+					<li><u>クロロホルム（CHCl3）</u></li>
+					<li>Vit. A</li>
+					<li>バルプロ酸ニトロフラントイン</li>
+					<li>アスピリン</li> -->
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li><u>クロルプロマジン</u></li>
+					<li>エリスロマイシン</li>
+					<li><u>蛋白同化ホルモン</u><br>
+						(<u>メチルテストステロン</u>)</li>
+					<li>経口避妊薬</li>
+					<li><u>PTU<!-- プロピルチオウラシル --></u></li>
+					<!-- <li>サルファ薬</li>
+					<li>RFP</li>
+					<li>テオプロミン</li>
+					<li>アジマリン</li>
+					<li>セフェム系</li>
+					<li>ペニシリン系</li>
+					<li>シクロスポリン</li>
+					<li>アセトアミノフェン<br>
+						(肝細胞障害が主)</li> -->
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>逸脱酵素</th>
+			<td>&uarr;&uarr;&uarr;</td>
+			<td>&uarr;</td>
+		</tr>
+		<tr>
+			<th>胆道系酵素</th>
+			<td>&uarr;</td>
+			<td>&uarr;&uarr;&uarr;</td>
+		</tr>
+		<tr>
+			<th>黄疸</th>
+			<td>&uarr;</td>
+			<td>&uarr;&uarr;&uarr;</td>
+		</tr>
+		<tr>
+			<th>薬剤中止後</th>
+			<td>速やかに改善</td>
+			<td>遅延</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='dild-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='dild-ass'>Association</h6> -->
+<!-- <h6 id='dild-ex'>Examination</h6> -->
+<!-- <h6 id='dild-dx'>Diagnosis</h6> -->
+<!-- <h6 id='dild-tx'>Treatment</h6> -->
+<!-- <h6 id='dild-prg'>Prognosis</h6> -->
+<!-- <h6 id='dild-app'>Appendix</h6> -->
 
 ## LC
 

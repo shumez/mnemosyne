@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:28:56
+Modified: 	2019-08-31 20:37:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -406,6 +406,28 @@ Hepatitis D
 <!-- <h6 id='hd-prg'>Prognosis</h6> -->
 <!-- <h6 id='hd-app'>Appendix</h6> -->
 
+
+## AVH
+
+Acute Viral Hepatitis
+
+<!-- <h6 id='avh-def'>Definition</h6> -->
+<!-- <h6 id='avh-eti'>Etiology</h6> -->
+<!-- <h6 id='avh-epi'>Epidemiology</h6> -->
+<!-- <h6 id='avh-cls'>Classification</h6> -->
+<!-- <h6 id='avh-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='avh-ass'>Association</h6> -->
+<h6 id='avh-ex'>Examination</h6>
+
+- &uarr;AST &uarr;ALT
+	- 極期 AST > ALT
+	- 回復期 AST < ALT
+- **PT** ≤ 40% &xrArr; 重症
+
+<!-- <h6 id='avh-dx'>Diagnosis</h6> -->
+<!-- <h6 id='avh-tx'>Treatment</h6> -->
+<!-- <h6 id='avh-prg'>Prognosis</h6> -->
+<!-- <h6 id='avh-app'>Appendix</h6> -->
 
 ## LC
 

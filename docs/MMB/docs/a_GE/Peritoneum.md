@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 15:44:12
+Modified: 	2019-08-31 15:47:5
 -----
 Copyright (c) 2019 shumez
 -->
@@ -357,6 +357,30 @@ Inguinal Hernia 鼠径ヘルニア
 
 <!-- <h6 id='abdominal_incision_hernia-prg'>Prognosis</h6> -->
 <!-- <h6 id='abdominal_incision_hernia-app'>Appendix</h6> -->
+
+
+## Umbilical Hernia
+
+臍ヘルニア
+
+<h6 id='umbilical_hernia-def'>Definition</h6>
+
+- "でべそ"
+
+<!-- <h6 id='umbilical_hernia-eti'>Etiology</h6> -->
+<!-- <h6 id='umbilical_hernia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='umbilical_hernia-cls'>Classification</h6> -->
+<!-- <h6 id='umbilical_hernia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='umbilical_hernia-ass'>Association</h6> -->
+<!-- <h6 id='umbilical_hernia-ex'>Examination</h6> -->
+<!-- <h6 id='umbilical_hernia-dx'>Diagnosis</h6> -->
+<h6 id='umbilical_hernia-tx'>Treatment</h6>
+
+- f/u  
+	小児: 自然治癒
+
+<!-- <h6 id='umbilical_hernia-prg'>Prognosis</h6> -->
+<!-- <h6 id='umbilical_hernia-app'>Appendix</h6> -->
 
 ## 
 

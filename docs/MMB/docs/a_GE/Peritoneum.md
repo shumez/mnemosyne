@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 15:24:11
+Modified: 	2019-08-31 15:25:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -177,6 +177,23 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='indirect_ih-tx'>Treatment</h6> -->
 <!-- <h6 id='indirect_ih-prg'>Prognosis</h6> -->
 <!-- <h6 id='indirect_ih-app'>Appendix</h6> -->
+
+
+### Direct IH
+
+内鼠径ヘルニア
+
+<!-- <h6 id='direct_ih-def'>Definition</h6> -->
+<!-- <h6 id='direct_ih-eti'>Etiology</h6> -->
+<!-- <h6 id='direct_ih-epi'>Epidemiology</h6> -->
+<!-- <h6 id='direct_ih-cls'>Classification</h6> -->
+<!-- <h6 id='direct_ih-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='direct_ih-ass'>Association</h6> -->
+<!-- <h6 id='direct_ih-ex'>Examination</h6> -->
+<!-- <h6 id='direct_ih-dx'>Diagnosis</h6> -->
+<!-- <h6 id='direct_ih-tx'>Treatment</h6> -->
+<!-- <h6 id='direct_ih-prg'>Prognosis</h6> -->
+<!-- <h6 id='direct_ih-app'>Appendix</h6> -->
 
 
 ## 

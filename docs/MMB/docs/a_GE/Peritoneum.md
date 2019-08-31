@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 15:31:49
+Modified: 	2019-08-31 15:36:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -310,6 +310,33 @@ Inguinal Hernia 鼠径ヘルニア
 
 <!-- <h6 id='femoral_hernia-prg'>Prognosis</h6> -->
 <!-- <h6 id='femoral_hernia-app'>Appendix</h6> -->
+
+
+## Oburator Hernia
+
+閉鎖孔ヘルニア
+
+<!-- <h6 id='oburator_hernia-def'>Definition</h6> -->
+<!-- <h6 id='oburator_hernia-eti'>Etiology</h6> -->
+<!-- <h6 id='oburator_hernia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='oburator_hernia-cls'>Classification</h6> -->
+<h6 id='oburator_hernia-sx'>Sign and Symptom</h6>
+
+- Howship-Romberg sign:  
+	大腿内側-膝にかけて疼痛
+
+<!-- <h6 id='oburator_hernia-ass'>Association</h6> -->
+<h6 id='oburator_hernia-ex'>Examination</h6>
+
+[![](https://qb.medilink-study.com/images/107D036.jpg)](https://qb.medilink-study.com/images/107D036.jpg)
+
+<!-- <h6 id='oburator_hernia-dx'>Diagnosis</h6> -->
+<h6 id='oburator_hernia-tx'>Treatment</h6>
+
+- Ope
+
+<!-- <h6 id='oburator_hernia-prg'>Prognosis</h6> -->
+<!-- <h6 id='oburator_hernia-app'>Appendix</h6> -->
 
 
 ## 

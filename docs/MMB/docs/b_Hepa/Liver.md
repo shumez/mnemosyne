@@ -3,36 +3,138 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 17:19:0
+Modified: 	2019-08-31 17:28:52
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Liver
 
-## VH
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+## Viral Hepetitis
+
+<!-- <h6 id='viral_hepetitis-def'>Definition</h6> -->
+<!-- <h6 id='viral_hepetitis-eti'>Etiology</h6> -->
+<!-- <h6 id='viral_hepetitis-epi'>Epidemiology</h6> -->
+<h6 id='viral_hepetitis-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="10%"></th>
+			<th width="18%">HAV</th>
+			<th width="18%">HBV</th>
+			<th width="18%">HCV</th>
+			<th width="18%">HDV</th>
+			<th width="18%">HEV</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>核酸</th>
+			<td>RNA</td>
+			<td><u>DNA</u></td>
+			<td>RNA</td>
+			<td>RNA</td>
+			<td>RNA</td>
+		</tr>
+		<tr>
+			<th>主な感染様式</th>
+			<td>経口</td>
+			<td>血液，性交</td>
+			<td>血液</td>
+			<td>血液</td>
+			<td>経口</td>
+		</tr>
+		<tr>
+			<th>急性肝炎<br>
+				での占有率（％）</th>
+			<td align='right'><u>40-50%</u></td>
+			<td align='right'>20-30%</td>
+			<td align='right'>15%</td>
+			<td>極めてまれ</td>
+			<td>まれ</td>
+		</tr>
+		<tr>
+			<th>慢性肝炎<br>
+				での占有率（％）</th>
+			<td align='right'>0%</td>
+			<td align='right'>20%</td>
+			<td align='right'><u>70%</u></td>
+			<td>極めてまれ</td>
+			<td align='right'>0%</td>
+		</tr>
+		<tr>
+			<th>肝硬変 / 肝細胞癌<br>
+				での占有率（％）</th>
+			<td align='right'>0%</td>
+			<td align='right'>15%</td>
+			<td align='right'><u>80%</u></td>
+			<td>極めてまれ</td>
+			<td align='right'>0%</td>
+		</tr>
+		<tr>
+			<th>診断</th>
+			<td>
+				<ul>
+					<li>IgM型HA Ab</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>HBs Ag</li>
+					<li>IgM HBc Ab</li>
+					<li>HBV-DNA</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>HCV-RNA</li>
+					<li>HCV Ab</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>HDV Ab</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>HEV Ab</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>予防</th>
+			<td>
+				<ul>
+					<li><u>ワクチン</u></li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li><u>ワクチン</u></li>
+					<li>HBIg</li>
+				</ul>
+			</td>
+			<td align='center'>(–)</td>
+			<td>
+				<ul>
+					<li>HBワクチン</li>
+				</ul>
+			</td>
+			<td align='center'>(–)</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='viral_hepetitis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='viral_hepetitis-ass'>Association</h6> -->
+<!-- <h6 id='viral_hepetitis-ex'>Examination</h6> -->
+<!-- <h6 id='viral_hepetitis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='viral_hepetitis-tx'>Treatment</h6> -->
+<!-- <h6 id='viral_hepetitis-prg'>Prognosis</h6> -->
+<!-- <h6 id='viral_hepetitis-app'>Appendix</h6> -->
+
 
 ## HB
 

@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 19:24:33
+Modified: 	2019-09-01 19:27:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1269,6 +1269,68 @@ Polucyctic Liver Disease 多発性肝嚢胞
 <!-- <h6 id='pcld-tx'>Treatment</h6> -->
 <!-- <h6 id='pcld-prg'>Prognosis</h6> -->
 <!-- <h6 id='pcld-app'>Appendix</h6> -->
+
+
+## Liver Abscess
+
+
+<!-- <h6 id='liver_abscess-def'>Definition</h6> -->
+<h6 id='liver_abscess-eti'>Etiology</h6>
+
+- 細菌性
+	- 大腸菌
+	- クレブシエラ
+	- ブドウ球菌
+	- 連鎖球菌
+- アメーバ性
+
+<!-- <h6 id='liver_abscess-epi'>Epidemiology</h6> -->
+<!-- <h6 id='liver_abscess-cls'>Classification</h6> -->
+<!-- <h6 id='liver_abscess-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='liver_abscess-cmp'>Complication</h6> -->
+<h6 id='liver_abscess-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/111I060_ima_010.jpg)
+
+- U/S
+	- 低エコー
+- CT
+	- 低吸収
+	- リング状造影
+
+<h6 id='liver_abscess-dx'>Diagnosis</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">細菌性</th>
+			<th width="40%">アメーバ性</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Etio</th>
+			<td>GNB<br>
+				<i>E. coli</i></td>
+			<td>赤痢アメーバ</td>
+		</tr>
+		<tr>
+			<th>経路</th>
+			<td>経胆道, 経門脈</td>
+			<td>経門脈</td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><u>多発性</u></td>
+			<td>単発性</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='liver_abscess-tx'>Treatment</h6> -->
+<!-- <h6 id='liver_abscess-prg'>Prognosis</h6> -->
+<!-- <h6 id='liver_abscess-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

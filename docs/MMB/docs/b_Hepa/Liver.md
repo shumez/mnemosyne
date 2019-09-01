@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:05:18
+Modified: 	2019-09-01 15:06:57
 -----
 Copyright (c) 2019 shumez
 -->
@@ -596,6 +596,22 @@ Late Onset Hepatic Failure 遅発性肝不全
 <!-- <h6 id='lohf-tx'>Treatment</h6> -->
 <!-- <h6 id='lohf-prg'>Prognosis</h6> -->
 <!-- <h6 id='lohf-app'>Appendix</h6> -->
+
+
+### Acute on Chronic
+
+<!-- <h6 id='acute_on_chronic-def'>Definition</h6> -->
+<!-- <h6 id='acute_on_chronic-eti'>Etiology</h6> -->
+<!-- <h6 id='acute_on_chronic-epi'>Epidemiology</h6> -->
+<!-- <h6 id='acute_on_chronic-cls'>Classification</h6> -->
+<!-- <h6 id='acute_on_chronic-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='acute_on_chronic-ass'>Association</h6> -->
+<!-- <h6 id='acute_on_chronic-ex'>Examination</h6> -->
+<!-- <h6 id='acute_on_chronic-dx'>Diagnosis</h6> -->
+<!-- <h6 id='acute_on_chronic-tx'>Treatment</h6> -->
+<!-- <h6 id='acute_on_chronic-prg'>Prognosis</h6> -->
+<!-- <h6 id='acute_on_chronic-app'>Appendix</h6> -->
+
 
 ## LC
 

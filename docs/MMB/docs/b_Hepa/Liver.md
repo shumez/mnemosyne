@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:25:29
+Modified: 	2019-09-01 17:34:9
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1112,6 +1112,28 @@ HCC / 転移性肝癌
 		</tr>
 	</tbody>
 </table>
+
+
+## CCC 
+
+<!-- <h6 id='ccc-def'>Definition</h6> -->
+<!-- <h6 id='ccc-eti'>Etiology</h6> -->
+<!-- <h6 id='ccc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ccc-cls'>Classification</h6> -->
+<!-- <h6 id='ccc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ccc-cmp'>Complication</h6> -->
+<h6 id='ccc-ex'>Examination</h6>
+
+- **↑CA19-9**
+- リンパ節転移(++)
+
+<!-- <h6 id='ccc-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ccc-tx'>Treatment</h6> -->
+<h6 id='ccc-prg'>Prognosis</h6>
+
+- 予後不良 5YSR: 20%
+
+<!-- <h6 id='ccc-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

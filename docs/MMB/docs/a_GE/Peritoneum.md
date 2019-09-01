@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-08-31 17:14:1
+Modified: 	2019-09-01 16:24:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -42,7 +42,7 @@ Copyright (c) 2019 shumez
 </table>
 
 <!-- <h6 id='hernia-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='hernia-ass'>Association</h6> -->
+<!-- <h6 id='hernia-cmp'>Complication</h6> -->
 <h6 id='hernia-ex'>Examination</h6>
 
 - 腹部ヘルニアの診断, **立位**
@@ -142,7 +142,7 @@ Inguinal Hernia 鼠径ヘルニア
 
 
 <!-- <h6 id='ih-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='ih-ass'>Association</h6> -->
+<!-- <h6 id='ih-cmp'>Complication</h6> -->
 <h6 id='ih-ex'>Examination</h6>
 
 - silk sign
@@ -171,7 +171,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='indirect_ih-epi'>Epidemiology</h6> -->
 <!-- <h6 id='indirect_ih-cls'>Classification</h6> -->
 <!-- <h6 id='indirect_ih-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='indirect_ih-ass'>Association</h6> -->
+<!-- <h6 id='indirect_ih-cmp'>Complication</h6> -->
 <!-- <h6 id='indirect_ih-ex'>Examination</h6> -->
 <!-- <h6 id='indirect_ih-dx'>Diagnosis</h6> -->
 <!-- <h6 id='indirect_ih-tx'>Treatment</h6> -->
@@ -188,7 +188,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='direct_ih-epi'>Epidemiology</h6> -->
 <!-- <h6 id='direct_ih-cls'>Classification</h6> -->
 <!-- <h6 id='direct_ih-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='direct_ih-ass'>Association</h6> -->
+<!-- <h6 id='direct_ih-cmp'>Complication</h6> -->
 <!-- <h6 id='direct_ih-ex'>Examination</h6> -->
 <!-- <h6 id='direct_ih-dx'>Diagnosis</h6> -->
 <!-- <h6 id='direct_ih-tx'>Treatment</h6> -->
@@ -208,7 +208,7 @@ Inguinal Hernia 鼠径ヘルニア
 
 <!-- <h6 id='femoral_hernia-cls'>Classification</h6> -->
 <!-- <h6 id='femoral_hernia-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='femoral_hernia-ass'>Association</h6> -->
+<!-- <h6 id='femoral_hernia-cmp'>Complication</h6> -->
 <!-- <h6 id='femoral_hernia-ex'>Examination</h6> -->
 <h6 id='femoral_hernia-dx'>Diagnosis</h6>
 
@@ -325,7 +325,7 @@ Inguinal Hernia 鼠径ヘルニア
 - Howship-Romberg sign:  
 	大腿内側-膝にかけて疼痛
 
-<!-- <h6 id='oburator_hernia-ass'>Association</h6> -->
+<!-- <h6 id='oburator_hernia-cmp'>Complication</h6> -->
 <h6 id='oburator_hernia-ex'>Examination</h6>
 
 [![](https://qb.medilink-study.com/images/107D036.jpg)](https://qb.medilink-study.com/images/107D036.jpg)
@@ -348,7 +348,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='abdominal_incision_hernia-epi'>Epidemiology</h6> -->
 <!-- <h6 id='abdominal_incision_hernia-cls'>Classification</h6> -->
 <!-- <h6 id='abdominal_incision_hernia-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='abdominal_incision_hernia-ass'>Association</h6> -->
+<!-- <h6 id='abdominal_incision_hernia-cmp'>Complication</h6> -->
 <!-- <h6 id='abdominal_incision_hernia-ex'>Examination</h6> -->
 <!-- <h6 id='abdominal_incision_hernia-dx'>Diagnosis</h6> -->
 <h6 id='abdominal_incision_hernia-tx'>Treatment</h6>
@@ -371,7 +371,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='umbilical_hernia-epi'>Epidemiology</h6> -->
 <!-- <h6 id='umbilical_hernia-cls'>Classification</h6> -->
 <!-- <h6 id='umbilical_hernia-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='umbilical_hernia-ass'>Association</h6> -->
+<!-- <h6 id='umbilical_hernia-cmp'>Complication</h6> -->
 <!-- <h6 id='umbilical_hernia-ex'>Examination</h6> -->
 <h6 id='umbilical_hernia-dx'>Diagnosis</h6>
 
@@ -395,7 +395,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='omphalocele-epi'>Epidemiology</h6> -->
 <!-- <h6 id='omphalocele-cls'>Classification</h6> -->
 <!-- <h6 id='omphalocele-sx'>Sign and Symptom</h6> -->
-<h6 id='omphalocele-ass'>Association</h6>
+<h6 id='omphalocele-cmp'>Complication</h6>
 
 - 重症合併奇形
 - Canterell 5 sign
@@ -424,7 +424,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='gastroscisis-epi'>Epidemiology</h6> -->
 <!-- <h6 id='gastroscisis-cls'>Classification</h6> -->
 <!-- <h6 id='gastroscisis-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gastroscisis-ass'>Association</h6> -->
+<!-- <h6 id='gastroscisis-cmp'>Complication</h6> -->
 <!-- <h6 id='gastroscisis-ex'>Examination</h6> -->
 <!-- <h6 id='gastroscisis-dx'>Diagnosis</h6> -->
 <!-- <h6 id='gastroscisis-tx'>Treatment</h6> -->
@@ -480,7 +480,7 @@ Inguinal Hernia 鼠径ヘルニア
 </table>
 
 <!-- <h6 id='diaphragmatic_hernia-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='diaphragmatic_hernia-ass'>Association</h6> -->
+<!-- <h6 id='diaphragmatic_hernia-cmp'>Complication</h6> -->
 <!-- <h6 id='diaphragmatic_hernia-ex'>Examination</h6> -->
 <!-- <h6 id='diaphragmatic_hernia-dx'>Diagnosis</h6> -->
 <!-- <h6 id='diaphragmatic_hernia-tx'>Treatment</h6> -->
@@ -506,7 +506,7 @@ Inguinal Hernia 鼠径ヘルニア
 - 混合型 mixed
 
 <!-- <h6 id='esophageal_hiatal_hernia-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='esophageal_hiatal_hernia-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_hiatal_hernia-cmp'>Complication</h6> -->
 <!-- <h6 id='esophageal_hiatal_hernia-ex'>Examination</h6> -->
 <!-- <h6 id='esophageal_hiatal_hernia-dx'>Diagnosis</h6> -->
 <h6 id='esophageal_hiatal_hernia-tx'>Treatment</h6>
@@ -532,7 +532,7 @@ Inguinal Hernia 鼠径ヘルニア
 - 呼吸困難
 - **患側肺低形成**
 
-<h6 id='bochdalek-ass'>Association</h6>
+<h6 id='bochdalek-cmp'>Complication</h6>
 
 - **腸回転異常症**
 
@@ -576,7 +576,7 @@ Inguinal Hernia 鼠径ヘルニア
 - 板状硬:  
 	**LR+ 高い**
 
-<!-- <h6 id='peritonitis-ass'>Association</h6> -->
+<!-- <h6 id='peritonitis-cmp'>Complication</h6> -->
 <!-- <h6 id='peritonitis-ex'>Examination</h6> -->
 <!-- <h6 id='peritonitis-dx'>Diagnosis</h6> -->
 <!-- <h6 id='peritonitis-tx'>Treatment</h6> -->
@@ -593,7 +593,7 @@ Acute Panperitonitis 急性汎発性腹膜炎
 <!-- <h6 id='app-epi'>Epidemiology</h6> -->
 <!-- <h6 id='app-cls'>Classification</h6> -->
 <!-- <h6 id='app-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='app-ass'>Association</h6> -->
+<!-- <h6 id='app-cmp'>Complication</h6> -->
 <h6 id='app-ex'>Examination</h6>
 
 - 炎症
@@ -628,7 +628,7 @@ Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
 <!-- <h6 id='sbp-epi'>Epidemiology</h6> -->
 <!-- <h6 id='sbp-cls'>Classification</h6> -->
 <!-- <h6 id='sbp-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='sbp-ass'>Association</h6> -->
+<!-- <h6 id='sbp-cmp'>Complication</h6> -->
 <!-- <h6 id='sbp-ex'>Examination</h6> -->
 <!-- <h6 id='sbp-dx'>Diagnosis</h6> -->
 <h6 id='sbp-tx'>Treatment</h6>
@@ -648,7 +648,7 @@ Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
 <!-- <h6 id='cancerous_peritonitis-epi'>Epidemiology</h6> -->
 <!-- <h6 id='cancerous_peritonitis-cls'>Classification</h6> -->
 <!-- <h6 id='cancerous_peritonitis-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='cancerous_peritonitis-ass'>Association</h6> -->
+<!-- <h6 id='cancerous_peritonitis-cmp'>Complication</h6> -->
 <!-- <h6 id='cancerous_peritonitis-ex'>Examination</h6> -->
 <!-- <h6 id='cancerous_peritonitis-dx'>Diagnosis</h6> -->
 <h6 id='cancerous_peritonitis-tx'>Treatment</h6>
@@ -676,7 +676,7 @@ Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
 
 - 腹部膨満感
 
-<!-- <h6 id='peudomyxoma_peritonei-ass'>Association</h6> -->
+<!-- <h6 id='peudomyxoma_peritonei-cmp'>Complication</h6> -->
 <h6 id='peudomyxoma_peritonei-ex'>Examination</h6>
 
 - 腹腔穿刺
@@ -703,7 +703,7 @@ Spontaneous Bacterial Peritonitis 特発性細菌性腹膜炎
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->

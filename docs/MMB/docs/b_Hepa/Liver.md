@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 19:37:1
+Modified: 	2019-09-01 20:09:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1373,16 +1373,49 @@ Polucyctic Liver Disease 多発性肝嚢胞
 <!-- <h6 id='entamoeba_histolytica-app'>Appendix</h6> -->
 
 
+## PoH
 
-## Portal Hypertension
+Portal Hypertension
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-**Classification**
+<!-- <h6 id='poh-def'>Definition</h6> -->
+<!-- <h6 id='poh-eti'>Etiology</h6> -->
+<!-- <h6 id='poh-epi'>Epidemiology</h6> -->
+<h6 id='poh-cls'>Classification</h6>
+
+![](https://static1.squarespace.com/static/54ebbf42e4b0c686e91e4f76/t/5aa6e53b0d92971cd142926d/1520887105749/temp.jpeg?format=1000w)
+
+[ref](http://www.imrespdx.com/imrespdx-blog/2018/3/12/ascites-non-cirrhotic-portal-hypertension)
+
+
+<table>
+	<tbody>
+		<tr>
+			<td class="center">&darr;</td>
+			<td>肝外PoV</td>
+			<td>EHPVO</td>
+		</tr>
+		<tr>
+			<td class="center">&darr;</td>
+			<td>肝内PoV</td>
+			<td>IPH</td>
+		</tr>
+		<tr>
+			<td class="center">肝</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td class="center">&darr;</td>
+			<td>肝V</td>
+			<td rowspan="2">Budd-Chiari</td>
+		</tr>
+		<tr>
+			<td class="center">&darr;</td>
+			<td>IVC</td>
+		</tr>
+	</tbody>
+</table>
+
 
 | Lesion		|				| Dx 					|
 |---------------|---------------|-----------------------|
@@ -1394,20 +1427,15 @@ Polucyctic Liver Disease 多発性肝嚢胞
 | PV / spleen	| Pre-hepatic	| [先天性門脈形成異常], [門脈血栓症]|
 
 
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+
+
+<!-- <h6 id='poh-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='poh-cmp'>Complication</h6> -->
+<!-- <h6 id='poh-ex'>Examination</h6> -->
+<!-- <h6 id='poh-dx'>Diagnosis</h6> -->
+<!-- <h6 id='poh-tx'>Treatment</h6> -->
+<!-- <h6 id='poh-prg'>Prognosis</h6> -->
+<!-- <h6 id='poh-app'>Appendix</h6> -->
 
 ## IPH
 

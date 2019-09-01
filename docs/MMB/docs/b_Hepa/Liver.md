@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:47:21
+Modified: 	2019-09-01 17:48:13
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1208,6 +1208,25 @@ HCC / 転移性肝癌
 
 <!-- <h6 id='kasabach-merrit-prg'>Prognosis</h6> -->
 <!-- <h6 id='kasabach-merrit-app'>Appendix</h6> -->
+
+
+## Hepatoblastoma
+
+
+<!-- <h6 id='hepatoblastoma-def'>Definition</h6> -->
+<!-- <h6 id='hepatoblastoma-eti'>Etiology</h6> -->
+<!-- <h6 id='hepatoblastoma-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hepatoblastoma-cls'>Classification</h6> -->
+<!-- <h6 id='hepatoblastoma-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hepatoblastoma-cmp'>Complication</h6> -->
+<h6 id='hepatoblastoma-ex'>Examination</h6>
+
+- ↑AFP
+
+<!-- <h6 id='hepatoblastoma-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hepatoblastoma-tx'>Treatment</h6> -->
+<!-- <h6 id='hepatoblastoma-prg'>Prognosis</h6> -->
+<!-- <h6 id='hepatoblastoma-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

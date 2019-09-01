@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-08-31 17:15:17
+Modified: 	2019-09-01 16:22:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -48,7 +48,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 - 異物
 
 <!-- <h6 id='agml-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='agml-ass'>Association</h6> -->
+<!-- <h6 id='agml-cmp'>Complication</h6> -->
 <!-- <h6 id='agml-ex'>Examination</h6> -->
 <!-- <h6 id='agml-dx'>Diagnosis</h6> -->
 <!-- <h6 id='agml-tx'>Treatment</h6> -->
@@ -96,7 +96,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 </table>
 
 <!-- <h6 id='chronic_gastritis-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='chronic_gastritis-ass'>Association</h6> -->
+<!-- <h6 id='chronic_gastritis-cmp'>Complication</h6> -->
 <h6 id='chronic_gastritis-ex'>Examination</h6>
 
 - 内視鏡
@@ -122,7 +122,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 <!-- <h6 id='helicobacter_pylori-epi'>Epidemiology</h6> -->
 <!-- <h6 id='helicobacter_pylori-cls'>Classification</h6> -->
 <!-- <h6 id='helicobacter_pylori-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='helicobacter_pylori-ass'>Association</h6> -->
+<!-- <h6 id='helicobacter_pylori-cmp'>Complication</h6> -->
 
 <h6 id='helicobacter_pylori-ex'>Examination</h6>
 
@@ -164,7 +164,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 <!-- <h6 id='fd-epi'>Epidemiology</h6> -->
 <!-- <h6 id='fd-cls'>Classification</h6> -->
 <!-- <h6 id='fd-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='fd-ass'>Association</h6> -->
+<!-- <h6 id='fd-cmp'>Complication</h6> -->
 <!-- <h6 id='fd-ex'>Examination</h6> -->
 <h6 id='fd-dx'>Diagnosis</h6>
 
@@ -231,7 +231,7 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <!-- <h6 id='gdu-epi'>Epidemiology</h6> -->
 <!-- <h6 id='gdu-cls'>Classification</h6> -->
 <!-- <h6 id='gdu-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gdu-ass'>Association</h6> -->
+<!-- <h6 id='gdu-cmp'>Complication</h6> -->
 <h6 id='gdu-ex'>Examination</h6>
 
 - 内視鏡
@@ -258,7 +258,7 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->
@@ -295,7 +295,7 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 </table>
 
 <!-- <h6 id='gastric_polyp-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gastric_polyp-ass'>Association</h6> -->
+<!-- <h6 id='gastric_polyp-cmp'>Complication</h6> -->
 <h6 id='gastric_polyp-ex'>Examination</h6>
 
 [![](https://qb.medilink-study.com/images/109G067_ima_020.jpg)](https://qb.medilink-study.com/images/109G067_ima_020.jpg)
@@ -341,7 +341,7 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 - 転移性腫瘍
 
 <!-- <h6 id='submucosal_tumor-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='submucosal_tumor-ass'>Association</h6> -->
+<!-- <h6 id='submucosal_tumor-cmp'>Complication</h6> -->
 <h6 id='submucosal_tumor-ex'>Examination</h6>
 
 [![](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)
@@ -400,7 +400,7 @@ gastrointestinal stromal tumor 消化管間質腫瘍
 <!-- <h6 id='gist-epi'>Epidemiology</h6> -->
 <!-- <h6 id='gist-cls'>Classification</h6> -->
 <!-- <h6 id='gist-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gist-ass'>Association</h6> -->
+<!-- <h6 id='gist-cmp'>Complication</h6> -->
 <h6 id='gist-ex'>Examination</h6>
 
 - KIT(+)
@@ -427,7 +427,7 @@ cf. Leiomyoma (平滑筋腫): benign
 <!-- <h6 id='leiomyosarcoma-epi'>Epidemiology</h6> -->
 <!-- <h6 id='leiomyosarcoma-cls'>Classification</h6> -->
 <!-- <h6 id='leiomyosarcoma-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='leiomyosarcoma-ass'>Association</h6> -->
+<!-- <h6 id='leiomyosarcoma-cmp'>Complication</h6> -->
 <h6 id='leiomyosarcoma-ex'>Examination</h6>
 
 - 消化管造影 / 内視鏡
@@ -452,7 +452,7 @@ cf. Leiomyoma (平滑筋腫): benign
 <!-- <h6 id='maltl-epi'>Epidemiology</h6> -->
 <!-- <h6 id='maltl-cls'>Classification</h6> -->
 <!-- <h6 id='maltl-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='maltl-ass'>Association</h6> -->
+<!-- <h6 id='maltl-cmp'>Complication</h6> -->
 <!-- <h6 id='maltl-ex'>Examination</h6> -->
 <!-- <h6 id='maltl-dx'>Diagnosis</h6> -->
 <h6 id='maltl-tx'>Treatment</h6>
@@ -472,7 +472,7 @@ cf. Leiomyoma (平滑筋腫): benign
 <!-- <h6 id='aberrent_pancreas-epi'>Epidemiology</h6> -->
 <!-- <h6 id='aberrent_pancreas-cls'>Classification</h6> -->
 <!-- <h6 id='aberrent_pancreas-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='aberrent_pancreas-ass'>Association</h6> -->
+<!-- <h6 id='aberrent_pancreas-cmp'>Complication</h6> -->
 <h6 id='aberrent_pancreas-ex'>Examination</h6>
 
 [![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)
@@ -499,7 +499,7 @@ cf. Leiomyoma (平滑筋腫): benign
 [![](https://qb.medilink-study.com/images/108I009_bas_010.jpg)](https://qb.medilink-study.com/images/108I009_bas_010.jpg)
 
 <!-- <h6 id='gastric_cancer-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gastric_cancer-ass'>Association</h6> -->
+<!-- <h6 id='gastric_cancer-cmp'>Complication</h6> -->
 <h6 id='gastric_cancer-ex'>Examination</h6>
 
 [![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)
@@ -593,7 +593,7 @@ Metastasis
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->
@@ -622,7 +622,7 @@ Metastasis
 <!-- <h6 id='postgastrectomy_syndrome-epi'>Epidemiology</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-cls'>Classification</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='postgastrectomy_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='postgastrectomy_syndrome-cmp'>Complication</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-ex'>Examination</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-dx'>Diagnosis</h6> -->
 <!-- <h6 id='postgastrectomy_syndrome-tx'>Treatment</h6> -->
@@ -650,7 +650,7 @@ Metastasis
 	&rArr; ↓↓BS  
 
 <!-- <h6 id='dumping_syndrome-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='dumping_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='dumping_syndrome-cmp'>Complication</h6> -->
 <!-- <h6 id='dumping_syndrome-ex'>Examination</h6> -->
 <!-- <h6 id='dumping_syndrome-dx'>Diagnosis</h6> -->
 <h6 id='dumping_syndrome-tx'>Treatment</h6>
@@ -677,7 +677,7 @@ Metastasis
 <!-- <h6 id='postgastrectomy_bone_disease-epi'>Epidemiology</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-cls'>Classification</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='postgastrectomy_bone_disease-ass'>Association</h6> -->
+<!-- <h6 id='postgastrectomy_bone_disease-cmp'>Complication</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-ex'>Examination</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-dx'>Diagnosis</h6> -->
 <!-- <h6 id='postgastrectomy_bone_disease-tx'>Treatment</h6> -->
@@ -700,7 +700,7 @@ Metastasis
 <!-- <h6 id='postgatrectomy_gallstone_disease-epi'>Epidemiology</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-cls'>Classification</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='postgatrectomy_gallstone_disease-ass'>Association</h6> -->
+<!-- <h6 id='postgatrectomy_gallstone_disease-cmp'>Complication</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-ex'>Examination</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-dx'>Diagnosis</h6> -->
 <!-- <h6 id='postgatrectomy_gallstone_disease-tx'>Treatment</h6> -->
@@ -722,7 +722,7 @@ Metastasis
 <!-- <h6 id='afferent_loop_syndrome-epi'>Epidemiology</h6> -->
 <!-- <h6 id='afferent_loop_syndrome-cls'>Classification</h6> -->
 <!-- <h6 id='afferent_loop_syndrome-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='afferent_loop_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='afferent_loop_syndrome-cmp'>Complication</h6> -->
 <!-- <h6 id='afferent_loop_syndrome-ex'>Examination</h6> -->
 <!-- <h6 id='afferent_loop_syndrome-dx'>Diagnosis</h6> -->
 <!-- <h6 id='afferent_loop_syndrome-tx'>Treatment</h6> -->
@@ -742,7 +742,7 @@ Metastasis
 <!-- <h6 id='anastomotic_ulcer-epi'>Epidemiology</h6> -->
 <!-- <h6 id='anastomotic_ulcer-cls'>Classification</h6> -->
 <!-- <h6 id='anastomotic_ulcer-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='anastomotic_ulcer-ass'>Association</h6> -->
+<!-- <h6 id='anastomotic_ulcer-cmp'>Complication</h6> -->
 <!-- <h6 id='anastomotic_ulcer-ex'>Examination</h6> -->
 <!-- <h6 id='anastomotic_ulcer-dx'>Diagnosis</h6> -->
 
@@ -762,7 +762,7 @@ Metastasis
 <!-- <h6 id='postoperative_gerd-epi'>Epidemiology</h6> -->
 <!-- <h6 id='postoperative_gerd-cls'>Classification</h6> -->
 <!-- <h6 id='postoperative_gerd-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='postoperative_gerd-ass'>Association</h6> -->
+<!-- <h6 id='postoperative_gerd-cmp'>Complication</h6> -->
 <!-- <h6 id='postoperative_gerd-ex'>Examination</h6> -->
 <!-- <h6 id='postoperative_gerd-dx'>Diagnosis</h6> -->
 <!-- <h6 id='postoperative_gerd-tx'>Treatment</h6> -->
@@ -790,7 +790,7 @@ Metastasis
 	- 膵炎
 	- **総胆管結石症**
 
-<!-- <h6 id='gastric_duodenal_diverticulum-ass'>Association</h6> -->
+<!-- <h6 id='gastric_duodenal_diverticulum-cmp'>Complication</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-ex'>Examination</h6> -->
 <!-- <h6 id='gastric_duodenal_diverticulum-dx'>Diagnosis</h6> -->
 <h6 id='gastric_duodenal_diverticulum-tx'>Treatment</h6>
@@ -826,7 +826,7 @@ Superior Mesenteric Artery Syndrome 上腸間膜動脈症候群 (上腸間膜動
 	&rArr; 症状軽減
 - 頻回嘔吐
 
-<!-- <h6 id='smas-ass'>Association</h6> -->
+<!-- <h6 id='smas-cmp'>Complication</h6> -->
 <h6 id='smas-ex'>Examination</h6>
 
 - AXR
@@ -847,7 +847,7 @@ Superior Mesenteric Artery Syndrome 上腸間膜動脈症候群 (上腸間膜動
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->

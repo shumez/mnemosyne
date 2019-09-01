@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:06:57
+Modified: 	2019-09-01 15:29:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -612,6 +612,49 @@ Late Onset Hepatic Failure 遅発性肝不全
 <!-- <h6 id='acute_on_chronic-prg'>Prognosis</h6> -->
 <!-- <h6 id='acute_on_chronic-app'>Appendix</h6> -->
 
+
+## FL
+
+Fatty Liver 脂肪肝
+
+<!-- <h6 id='fl-def'>Definition</h6> -->
+<h6 id='fl-eti'>Etiology</h6>
+
+↓insulin感受性  
+Adipocyte → レジスチン
+
+<h6 id='fl-epi'>Epidemiology</h6>
+
+- DM合併
+
+<h6 id='fl-cls'>Classification</h6>
+
+- 脂肪肝
+	- アルコール性
+	- NAFLD 肝疾患
+		- NAFL 非アルコール性脂肪肝
+		- NASH 非アルコール性脂肪肝炎
+
+<!-- <h6 id='fl-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='fl-ass'>Association</h6> -->
+<h6 id='fl-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/102D014_sup_b_010.jpg "肝障害 / AST/ALT")]
+
+- L/D
+	- **↑ALT優位**: 非アルコール性
+	- ↑AST優位: アルコール性
+
+![](https://qb.medilink-study.com/images/99G027.jpg)]
+
+
+- U/S
+	- 肝腎コントラスト (Bright liver)
+
+<!-- <h6 id='fl-dx'>Diagnosis</h6> -->
+<!-- <h6 id='fl-tx'>Treatment</h6> -->
+<!-- <h6 id='fl-prg'>Prognosis</h6> -->
+<!-- <h6 id='fl-app'>Appendix</h6> -->
 
 ## LC
 

@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:49:28
+Modified: 	2019-09-01 16:01:0
 -----
 Copyright (c) 2019 shumez
 -->
@@ -674,7 +674,24 @@ Non Alcoholic Fatty Liver Disease 非アルコール性脂肪性肝疾患
 <!-- <h6 id='nafld-app'>Appendix</h6> -->
 
 
+### NASH
 
+Non-Alcoholic SteatoHepatitis 非アルコール性脂肪性肝炎
+
+<!-- <h6 id='nash-def'>Definition</h6> -->
+<!-- <h6 id='nash-eti'>Etiology</h6> -->
+<!-- <h6 id='nash-epi'>Epidemiology</h6> -->
+<!-- <h6 id='nash-cls'>Classification</h6> -->
+<!-- <h6 id='nash-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='nash-ass'>Association</h6> -->
+<h6 id='nash-ex'>Examination</h6>
+
+- 風船様膨化
+
+<!-- <h6 id='nash-dx'>Diagnosis</h6> -->
+<!-- <h6 id='nash-tx'>Treatment</h6> -->
+<!-- <h6 id='nash-prg'>Prognosis</h6> -->
+<!-- <h6 id='nash-app'>Appendix</h6> -->
 
 ## LC
 

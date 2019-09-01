@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:36:7
+Modified: 	2019-09-01 17:41:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1025,7 +1025,7 @@ C/I
 	- ≤ 3cm ⟹ RFA
 	- &gt; 3cm ⟹ TACE
 
-![](https://qb.medilink-study.com/images/103D031_bas_b_010.jpg" class="card-img-top img-fluid)
+![](https://qb.medilink-study.com/images/103D031_bas_b_010.jpg)
 
 肝切除
 

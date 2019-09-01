@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 19:35:48
+Modified: 	2019-09-01 19:37:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1352,6 +1352,26 @@ Polucyctic Liver Disease 多発性肝嚢胞
 <!-- <h6 id='bacterial_liver_abscess-tx'>Treatment</h6> -->
 <!-- <h6 id='bacterial_liver_abscess-prg'>Prognosis</h6> -->
 <!-- <h6 id='bacterial_liver_abscess-app'>Appendix</h6> -->
+
+### Entamoeba Histolytica
+
+赤痢アメーバ
+
+<!-- <h6 id='entamoeba_histolytica-def'>Definition</h6> -->
+<!-- <h6 id='entamoeba_histolytica-eti'>Etiology</h6> -->
+<!-- <h6 id='entamoeba_histolytica-epi'>Epidemiology</h6> -->
+<!-- <h6 id='entamoeba_histolytica-cls'>Classification</h6> -->
+<!-- <h6 id='entamoeba_histolytica-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='entamoeba_histolytica-cmp'>Complication</h6> -->
+<h6 id='entamoeba_histolytica-ex'>Examination</h6>
+
+- チョコレート状膿
+
+<!-- <h6 id='entamoeba_histolytica-dx'>Diagnosis</h6> -->
+<!-- <h6 id='entamoeba_histolytica-tx'>Treatment</h6> -->
+<!-- <h6 id='entamoeba_histolytica-prg'>Prognosis</h6> -->
+<!-- <h6 id='entamoeba_histolytica-app'>Appendix</h6> -->
+
 
 
 ## Portal Hypertension

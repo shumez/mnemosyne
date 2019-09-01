@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:34:9
+Modified: 	2019-09-01 17:36:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1135,6 +1135,34 @@ HCC / 転移性肝癌
 
 <!-- <h6 id='ccc-app'>Appendix</h6> -->
 
+
+## Metastatic Liver Cancer
+
+<!-- <h6 id='metastatic_liver_cancer-def'>Definition</h6> -->
+<h6 id='metastatic_liver_cancer-eti'>Etiology</h6>
+
+- 大腸癌(++)
+
+<!-- <h6 id='metastatic_liver_cancer-epi'>Epidemiology</h6> -->
+<!-- <h6 id='metastatic_liver_cancer-cls'>Classification</h6> -->
+<!-- <h6 id='metastatic_liver_cancer-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='metastatic_liver_cancer-cmp'>Complication</h6> -->
+<h6 id='metastatic_liver_cancer-ex'>Examination</h6>
+
+- **Hypovascular**
+- ↑CEA (大腸)
+
+<!-- <h6 id='metastatic_liver_cancer-dx'>Diagnosis</h6> -->
+<h6 id='metastatic_liver_cancer-tx'>Treatment</h6>
+
+- 切除
+	- 腫瘍少数
+	- 肝外転移(-)
+	- 大腸癌原発
+- CCT
+
+<!-- <h6 id='metastatic_liver_cancer-prg'>Prognosis</h6> -->
+<!-- <h6 id='metastatic_liver_cancer-app'>Appendix</h6> -->
 
 ## Portal Hypertension
 

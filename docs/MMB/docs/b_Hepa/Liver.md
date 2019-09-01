@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 16:52:37
+Modified: 	2019-09-01 17:02:17
 -----
 Copyright (c) 2019 shumez
 -->
@@ -800,6 +800,134 @@ SBP 特発性細菌性腹膜炎
 	- 下痢
 	- 脳症
 	- 腎不全
+
+
+## AIH
+
+
+
+<!-- <h6 id='aih-def'>Definition</h6> -->
+<!-- <h6 id='aih-eti'>Etiology</h6> -->
+<!-- <h6 id='aih-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aih-cls'>Classification</h6> -->
+<!-- <h6 id='aih-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aih-cmp'>Complication</h6> -->
+<h6 id='aih-ex'>Examination</h6>
+
+- 抗平滑筋Ab
+
+<h6 id='aih-dx'>Diagnosis</h6>
+
+AIH / PBC / PSC
+
+<table>
+	<tbody>
+		<tr>
+			<th>AIH</th>
+			<td>
+				<ul>
+					<li>&uarr;IgG</li>
+					<li>抗核抗体</li>
+					<li>抗平滑筋抗体</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>PBC</th>
+			<td>
+				<ul>
+					<li>&uarr;IgM</li>
+					<li>抗ミトコンドリア抗体</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>PSC</th>
+			<td>
+				<ul>
+					<li>P-ANCA</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+AIH / PBC
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">AIH</th>
+			<th width="40%">PBC</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Epid</th>
+			<td>中年 F<br>
+				HLA-DR4(+)</td>
+			<td>中年 F<br>
+				HLA-DR8(+)</td>
+		</tr>
+		<tr>
+			<th>AutoAb</th>
+			<td>
+				<ul>
+					<li>抗核抗体</li>
+					<li>抗平滑筋</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>AMA</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Ig</th>
+			<td>IgG</td>
+			<td>IgM</td>
+		</tr>
+		<tr>
+			<th>Comp</th>
+			<td>
+				<ul>
+					<li>自己免疫疾患</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>自己免疫疾患</li>
+					<li>骨粗鬆症</li>
+					<li>脂質異常症</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Rx</th>
+			<td>
+				<ul>
+					<li>ステロイド</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>UDCA</li>
+					<li>肝移植</li>
+				</ul>
+				C/I ステロイド
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<h6 id='aih-tx'>Treatment</h6>
+
+- PSL
+
+<!-- <h6 id='aih-prg'>Prognosis</h6> -->
+<!-- <h6 id='aih-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

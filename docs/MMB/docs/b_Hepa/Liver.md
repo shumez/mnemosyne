@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 20:27:48
+Modified: 	2019-09-01 20:30:37
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1491,32 +1491,29 @@ Portal Hypertension
 
 ## Budd-Chiari
 
-**Definition**
+<h6 id='budd-chiari-def'>Definition</h6>
 
 [![][img_Budd-Chiari]][img_Budd-Chiari]
 
-* IVCの閉塞
+* IVC / 肝V の閉塞
 
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='budd-chiari-eti'>Etiology</h6> -->
+<!-- <h6 id='budd-chiari-epi'>Epidemiology</h6> -->
+<!-- <h6 id='budd-chiari-cls'>Classification</h6> -->
+<!-- <h6 id='budd-chiari-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='budd-chiari-cmp'>Complication</h6> -->
+<h6 id='budd-chiari-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/94F020A.jpg)
+
+腹部側副血行路
+
+![](https://qb.medilink-study.com/images/96A023_sup_b_010.jpg)
+
+<!-- <h6 id='budd-chiari-dx'>Diagnosis</h6> -->
+<!-- <h6 id='budd-chiari-tx'>Treatment</h6> -->
+<!-- <h6 id='budd-chiari-prg'>Prognosis</h6> -->
+<!-- <h6 id='budd-chiari-app'>Appendix</h6> -->
 
 ##
 

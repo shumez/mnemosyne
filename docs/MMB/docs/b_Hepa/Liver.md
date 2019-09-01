@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 16:19:56
+Modified: 	2019-09-01 16:20:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -128,7 +128,7 @@ Copyright (c) 2019 shumez
 </table>
 
 <!-- <h6 id='viral_hepetitis-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='viral_hepetitis-ass'>Association</h6> -->
+<!-- <h6 id='viral_hepetitis-cmp'>Complication</h6> -->
 <!-- <h6 id='viral_hepetitis-ex'>Examination</h6> -->
 <!-- <h6 id='viral_hepetitis-dx'>Diagnosis</h6> -->
 <!-- <h6 id='viral_hepetitis-tx'>Treatment</h6> -->
@@ -146,7 +146,7 @@ Copyright (c) 2019 shumez
 
 - 発熱, 全身倦怠感
 
-<!-- <h6 id='ha-ass'>Association</h6> -->
+<!-- <h6 id='ha-cmp'>Complication</h6> -->
 <h6 id='ha-ex'>Examination</h6>
 
 - IgM HA-Ab
@@ -178,7 +178,7 @@ Copyright (c) 2019 shumez
 
 - 妊娠後期: 10-20% 重症化 / 劇症化
 
-<!-- <h6 id='he-ass'>Association</h6> -->
+<!-- <h6 id='he-cmp'>Complication</h6> -->
 <!-- <h6 id='he-ex'>Examination</h6> -->
 <!-- <h6 id='he-dx'>Diagnosis</h6> -->
 <!-- <h6 id='he-tx'>Treatment</h6> -->
@@ -206,7 +206,7 @@ Copyright (c) 2019 shumez
 一過性感染
 ![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_transient.jpg)
 
-<!-- <h6 id='hb-ass'>Association</h6> -->
+<!-- <h6 id='hb-cmp'>Complication</h6> -->
 <h6 id='hb-ex'>Examination</h6>
 
 ![](https://qb.medilink-study.com/images/93F016_bas_b_010.jpg)
@@ -298,7 +298,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='de_novo_hb-epi'>Epidemiology</h6> -->
 <!-- <h6 id='de_novo_hb-cls'>Classification</h6> -->
 <!-- <h6 id='de_novo_hb-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='de_novo_hb-ass'>Association</h6> -->
+<!-- <h6 id='de_novo_hb-cmp'>Complication</h6> -->
 <h6 id='de_novo_hb-ex'>Examination</h6>
 
 - HBs抗原 再活性化
@@ -323,7 +323,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='gianotti-epi'>Epidemiology</h6> -->
 <!-- <h6 id='gianotti-cls'>Classification</h6> -->
 <!-- <h6 id='gianotti-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gianotti-ass'>Association</h6> -->
+<!-- <h6 id='gianotti-cmp'>Complication</h6> -->
 <!-- <h6 id='gianotti-ex'>Examination</h6> -->
 <!-- <h6 id='gianotti-dx'>Diagnosis</h6> -->
 <!-- <h6 id='gianotti-tx'>Treatment</h6> -->
@@ -361,7 +361,7 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='hc-cls'>Classification</h6> -->
 <!-- <h6 id='hc-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='hc-ass'>Association</h6> -->
+<!-- <h6 id='hc-cmp'>Complication</h6> -->
 <!-- <h6 id='hc-ex'>Examination</h6> -->
 <!-- <h6 id='hc-dx'>Diagnosis</h6> -->
 <h6 id='hc-tx'>Treatment</h6>
@@ -399,7 +399,7 @@ Hepatitis D
 <!-- <h6 id='hd-epi'>Epidemiology</h6> -->
 <!-- <h6 id='hd-cls'>Classification</h6> -->
 <!-- <h6 id='hd-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='hd-ass'>Association</h6> -->
+<!-- <h6 id='hd-cmp'>Complication</h6> -->
 <!-- <h6 id='hd-ex'>Examination</h6> -->
 <!-- <h6 id='hd-dx'>Diagnosis</h6> -->
 <!-- <h6 id='hd-tx'>Treatment</h6> -->
@@ -416,7 +416,7 @@ Acute Viral Hepatitis
 <!-- <h6 id='avh-epi'>Epidemiology</h6> -->
 <!-- <h6 id='avh-cls'>Classification</h6> -->
 <!-- <h6 id='avh-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='avh-ass'>Association</h6> -->
+<!-- <h6 id='avh-cmp'>Complication</h6> -->
 <h6 id='avh-ex'>Examination</h6>
 
 - &uarr;AST &uarr;ALT
@@ -443,7 +443,7 @@ Chronic Viral Hepatitis
 <!-- <h6 id='cvh-epi'>Epidemiology</h6> -->
 <!-- <h6 id='cvh-cls'>Classification</h6> -->
 <!-- <h6 id='cvh-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='cvh-ass'>Association</h6> -->
+<!-- <h6 id='cvh-cmp'>Complication</h6> -->
 <!-- <h6 id='cvh-ex'>Examination</h6> -->
 <!-- <h6 id='cvh-dx'>Diagnosis</h6> -->
 <!-- <h6 id='cvh-tx'>Treatment</h6> -->
@@ -535,7 +535,7 @@ Drug-induced Liver Disease 薬剤性肝障害
 </table>
 
 <!-- <h6 id='dild-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='dild-ass'>Association</h6> -->
+<!-- <h6 id='dild-cmp'>Complication</h6> -->
 <!-- <h6 id='dild-ex'>Examination</h6> -->
 <!-- <h6 id='dild-dx'>Diagnosis</h6> -->
 <!-- <h6 id='dild-tx'>Treatment</h6> -->
@@ -562,7 +562,7 @@ Fulminant Hepatitis 劇症肝炎 / Acute Liver Failure 急性肝不全
 - **肝萎縮** / 肝濁音界縮小
 - **意識障害** (**↑頭蓋内圧**)
 
-<!-- <h6 id='fh_alf-ass'>Association</h6> -->
+<!-- <h6 id='fh_alf-cmp'>Complication</h6> -->
 <h6 id='fh_alf-ex'>Examination</h6>
 
 - PT ≤ 40%
@@ -590,7 +590,7 @@ Late Onset Hepatic Failure 遅発性肝不全
 <!-- <h6 id='lohf-epi'>Epidemiology</h6> -->
 <!-- <h6 id='lohf-cls'>Classification</h6> -->
 <!-- <h6 id='lohf-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='lohf-ass'>Association</h6> -->
+<!-- <h6 id='lohf-cmp'>Complication</h6> -->
 <!-- <h6 id='lohf-ex'>Examination</h6> -->
 <!-- <h6 id='lohf-dx'>Diagnosis</h6> -->
 <!-- <h6 id='lohf-tx'>Treatment</h6> -->
@@ -605,7 +605,7 @@ Late Onset Hepatic Failure 遅発性肝不全
 <!-- <h6 id='acute_on_chronic-epi'>Epidemiology</h6> -->
 <!-- <h6 id='acute_on_chronic-cls'>Classification</h6> -->
 <!-- <h6 id='acute_on_chronic-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='acute_on_chronic-ass'>Association</h6> -->
+<!-- <h6 id='acute_on_chronic-cmp'>Complication</h6> -->
 <!-- <h6 id='acute_on_chronic-ex'>Examination</h6> -->
 <!-- <h6 id='acute_on_chronic-dx'>Diagnosis</h6> -->
 <!-- <h6 id='acute_on_chronic-tx'>Treatment</h6> -->
@@ -636,7 +636,7 @@ Adipocyte → レジスチン
 		- NASH 非アルコール性脂肪肝炎
 
 <!-- <h6 id='fl-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='fl-ass'>Association</h6> -->
+<!-- <h6 id='fl-cmp'>Complication</h6> -->
 <h6 id='fl-ex'>Examination</h6>
 
 ![](https://qb.medilink-study.com/images/102D014_sup_b_010.jpg "肝障害 / AST/ALT")
@@ -666,7 +666,7 @@ Non Alcoholic Fatty Liver Disease 非アルコール性脂肪性肝疾患
 <!-- <h6 id='nafld-epi'>Epidemiology</h6> -->
 <!-- <h6 id='nafld-cls'>Classification</h6> -->
 <!-- <h6 id='nafld-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='nafld-ass'>Association</h6> -->
+<!-- <h6 id='nafld-cmp'>Complication</h6> -->
 <!-- <h6 id='nafld-ex'>Examination</h6> -->
 <!-- <h6 id='nafld-dx'>Diagnosis</h6> -->
 <!-- <h6 id='nafld-tx'>Treatment</h6> -->
@@ -683,7 +683,7 @@ Non-Alcoholic SteatoHepatitis 非アルコール性脂肪性肝炎
 <!-- <h6 id='nash-epi'>Epidemiology</h6> -->
 <!-- <h6 id='nash-cls'>Classification</h6> -->
 <!-- <h6 id='nash-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='nash-ass'>Association</h6> -->
+<!-- <h6 id='nash-cmp'>Complication</h6> -->
 <h6 id='nash-ex'>Examination</h6>
 
 - 風船様膨化
@@ -888,7 +888,7 @@ Liver Cirrhosis
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->

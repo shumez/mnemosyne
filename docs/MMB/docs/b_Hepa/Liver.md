@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:02:17
+Modified: 	2019-09-01 17:08:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -928,6 +928,68 @@ AIH / PBC
 
 <!-- <h6 id='aih-prg'>Prognosis</h6> -->
 <!-- <h6 id='aih-app'>Appendix</h6> -->
+
+
+## PBC
+
+Primary Billary Cholangitis / Cirrhosis
+
+<!-- <h6 id='pbc-def'>Definition</h6> -->
+<!-- <h6 id='pbc-eti'>Etiology</h6> -->
+<!-- <h6 id='pbc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pbc-cls'>Classification</h6> -->
+<h6 id='pbc-sx'>Sign and Symptom</h6>
+
+- 皮膚掻痒感
+- 黄色腫
+
+<h6 id='pbc-cmp'>Complication</h6>
+
+- 自己免疫
+	- Sjögren
+	- 慢性甲状腺炎
+	- RA
+	- CREST
+- 門脈圧亢進
+	- 食道静脈瘤
+- 骨軟化症 / 骨粗鬆症
+- 脂質異常症
+	- 皮膚黄色腫
+
+<h6 id='pbc-ex'>Examination</h6>
+
+- Ig
+	- 抗ミトコンドリアAb (AMA)
+	- **↑IgM**  
+		A**M**A / Ig**M**
+- 病理:
+	- CNSDC 破壊性胆管炎 **胆管消失**
+	- 続発性PBC:
+		- **Glisson sheath fibrosis**
+		- **胆管の拡張**
+![](https://qb.medilink-study.com/images/96C010_ref_b_010.jpg)
+	
+	- 胆管上皮の重層化
+	- 胆管基底膜の破壊
+	- 胆管周囲のリンパ球浸潤
+	- 慢性非化膿性破壊性胆管炎 (CNSDC)
+
+<!-- <h6 id='pbc-dx'>Diagnosis</h6> -->
+<h6 id='pbc-tx'>Treatment</h6>
+
+- ウルソデオキシコール酸
+- 肝移植
+
+C/I
+
+- ステロイド  
+	骨粗鬆症 増悪
+
+<h6 id='pbc-prg'>Prognosis</h6>
+
+- 胆道癌にはならない
+
+<!-- <h6 id='pbc-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

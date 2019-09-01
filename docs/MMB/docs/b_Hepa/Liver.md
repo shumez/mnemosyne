@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:41:47
+Modified: 	2019-09-01 17:45:57
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1163,6 +1163,30 @@ HCC / 転移性肝癌
 
 <!-- <h6 id='metastatic_liver_cancer-prg'>Prognosis</h6> -->
 <!-- <h6 id='metastatic_liver_cancer-app'>Appendix</h6> -->
+
+
+## Hemangioma
+
+肝血管腫
+
+<!-- <h6 id='hemangioma-def'>Definition</h6> -->
+<!-- <h6 id='hemangioma-eti'>Etiology</h6> -->
+<!-- <h6 id='hemangioma-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hemangioma-cls'>Classification</h6> -->
+<!-- <h6 id='hemangioma-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hemangioma-cmp'>Complication</h6> -->
+<h6 id='hemangioma-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/105A026_bas_b_010.jpg)
+
+<!-- <h6 id='hemangioma-dx'>Diagnosis</h6> -->
+<h6 id='hemangioma-tx'>Treatment</h6>
+
+- **経過観察**
+
+<!-- <h6 id='hemangioma-prg'>Prognosis</h6> -->
+<!-- <h6 id='hemangioma-app'>Appendix</h6> -->
+
 
 ## Portal Hypertension
 

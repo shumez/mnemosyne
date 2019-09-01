@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:31:32
+Modified: 	2019-09-01 15:41:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -639,13 +639,13 @@ Adipocyte → レジスチン
 <!-- <h6 id='fl-ass'>Association</h6> -->
 <h6 id='fl-ex'>Examination</h6>
 
-![](https://qb.medilink-study.com/images/102D014_sup_b_010.jpg "肝障害 / AST/ALT")]
+![](https://qb.medilink-study.com/images/102D014_sup_b_010.jpg "肝障害 / AST/ALT")
 
 - L/D
 	- **↑ALT優位**: 非アルコール性
 	- ↑AST優位: アルコール性
 
-![](https://qb.medilink-study.com/images/99G027.jpg)]
+![](https://qb.medilink-study.com/images/99G027.jpg)
 
 
 - U/S

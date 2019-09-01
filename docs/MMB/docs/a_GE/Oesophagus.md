@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-08-29 16:46:47
+Modified: 	2019-09-01 16:22:0
 -----
 Copyright (c) 2019 shumez
 -->
@@ -38,7 +38,7 @@ Copyright (c) 2019 shumez
 - **食道残渣の口腔内逆流**
 - 胸痛, 胸焼け
 
-<!-- <h6 id='achalasia-ass'>Association</h6> -->
+<!-- <h6 id='achalasia-cmp'>Complication</h6> -->
 <h6 id='achalasia-ex'>Examination</h6>
 
 [![](https://qb.medilink-study.com/images/109F020_ima_010.jpg)](https://qb.medilink-study.com/images/109F020_ima_010.jpg)
@@ -101,7 +101,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
@@ -156,7 +156,7 @@ Copyright (c) 2019 shumez
 - 咽頭症状
 - 歯牙酸蝕 (上顎内側)
 
-<h6 id='gerd-ass'>Association</h6>
+<h6 id='gerd-cmp'>Complication</h6>
 
 - **Barrett食道**
 
@@ -198,7 +198,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
@@ -216,7 +216,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <h6 id='eoe-ex'>Examination</h6>
 
 - 内視鏡
@@ -253,7 +253,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='esophageal_candidiasis-epi'>Epidemiology</h6> -->
 <!-- <h6 id='esophageal_candidiasis-cls'>Classification</h6> -->
 <!-- <h6 id='esophageal_candidiasis-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='esophageal_candidiasis-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_candidiasis-cmp'>Complication</h6> -->
 <h6 id='esophageal_candidiasis-ex'>Examination</h6>
 
 - 消化管造影
@@ -284,7 +284,7 @@ Mallory-Weiss syndrome
 <!-- <h6 id='mws-epi'>Epidemiology</h6> -->
 <!-- <h6 id='mws-cls'>Classification</h6> -->
 <!-- <h6 id='mws-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='mws-ass'>Association</h6> -->
+<!-- <h6 id='mws-cmp'>Complication</h6> -->
 <!-- <h6 id='mws-ex'>Examination</h6> -->
 <!-- <h6 id='mws-dx'>Diagnosis</h6> -->
 <h6 id='mws-tx'>Treatment</h6>
@@ -382,7 +382,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <!-- <h6 id='sre-cls'>Classification</h6> -->
 <!-- <h6 id='sre-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='sre-ass'>Association</h6> -->
+<!-- <h6 id='sre-cmp'>Complication</h6> -->
 <h6 id='sre-ex'>Examination</h6>
 
 - &darr;肺呼吸音
@@ -412,7 +412,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 - 血管腫
 
 <!-- <h6 id='esophageal_benign_tumor-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='esophageal_benign_tumor-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_benign_tumor-cmp'>Complication</h6> -->
 <!-- <h6 id='esophageal_benign_tumor-ex'>Examination</h6> -->
 <!-- <h6 id='esophageal_benign_tumor-dx'>Diagnosis</h6> -->
 <!-- <h6 id='esophageal_benign_tumor-tx'>Treatment</h6> -->
@@ -484,7 +484,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 	- 胸部, **縦隔**, **頸部**, 腹部リンパ節
 	- **リンパ節**, **粘膜下リンパ管**を介して, **壁内転移**(intramural metastasis 飛石転移)
 
-<!-- <h6 id='esophageal_cancer-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_cancer-cmp'>Complication</h6> -->
 
 <h6 id='esophageal_cancer-ex'>Examination</h6>
 
@@ -547,7 +547,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 <!-- <h6 id='esophageal_varices-epi'>Epidemiology</h6> -->
 <!-- <h6 id='esophageal_varices-cls'>Classification</h6> -->
 <!-- <h6 id='esophageal_varices-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='esophageal_varices-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_varices-cmp'>Complication</h6> -->
 
 <h6 id='esophageal_varices-ex'>Examination</h6>
 
@@ -653,7 +653,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 
 <!-- <h6 id='esophageal_diverticulum-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='esophageal_diverticulum-ass'>Association</h6> -->
+<!-- <h6 id='esophageal_diverticulum-cmp'>Complication</h6> -->
 <!-- <h6 id='esophageal_diverticulum-ex'>Examination</h6> -->
 <!-- <h6 id='esophageal_diverticulum-dx'>Diagnosis</h6> -->
 <!-- <h6 id='esophageal_diverticulum-tx'>Treatment</h6> -->
@@ -669,7 +669,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->

@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 20:20:48
+Modified: 	2019-09-01 20:24:18
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1439,30 +1439,29 @@ Portal Hypertension
 
 ## IPH
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
+特発性門脈圧亢進症
 
-**Epidemiology**
+<!-- <h6 id='iph-def'>Definition</h6> -->
+<!-- <h6 id='iph-eti'>Etiology</h6> -->
+<h6 id='iph-epi'>Epidemiology</h6>
 
 * 中年F (40-50s) (M:F = 1:3)
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+
+<!-- <h6 id='iph-cls'>Classification</h6> -->
+<!-- <h6 id='iph-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='iph-cmp'>Complication</h6> -->
+<h6 id='iph-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/83E034.jpg)
+
+- Patho
+	- 肝小葉構造の改築(–)
+	- 門脈線維性拡大, 門脈枝↑
+
+<!-- <h6 id='iph-dx'>Diagnosis</h6> -->
+<!-- <h6 id='iph-tx'>Treatment</h6> -->
+<!-- <h6 id='iph-prg'>Prognosis</h6> -->
+<!-- <h6 id='iph-app'>Appendix</h6> -->
 
 ## EHO
 

@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:09:41
+Modified: 	2019-09-01 17:25:29
 -----
 Copyright (c) 2019 shumez
 -->
@@ -994,7 +994,124 @@ C/I
 - AIH-PBC overlap syndrome
 
 
+## HCC
 
+<!-- <h6 id='hcc-def'>Definition</h6> -->
+<h6 id='hcc-eti'>Etiology</h6>
+
+- **アフラトキシン** (ピーナッツのカビが産生)
+- OC
+
+<!-- <h6 id='hcc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hcc-cls'>Classification</h6> -->
+<!-- <h6 id='hcc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hcc-cmp'>Complication</h6> -->
+<h6 id='hcc-ex'>Examination</h6>
+
+- AFP
+- 肝内転移
+- Hyper-vascular
+- US
+	- **モザイクパターン**
+	- **辺縁低エコー** (**halo**)
+
+<!-- <h6 id='hcc-dx'>Diagnosis</h6> -->
+<h6 id='hcc-tx'>Treatment</h6>
+
+![](https://shumez.github.io/mnemosyne/Fornix/b_Hepa/fig/HCC_treatment.jpeg)
+
+- ICG < 30
+- ICG ≥ 30
+	- ≤ 3cm ⟹ RFA
+	- &gt; 3cm ⟹ TACE
+
+![](https://qb.medilink-study.com/images/103D031_bas_b_010.jpg" class="card-img-top img-fluid)
+
+肝切除
+
+- 肝癌 単発, 同一区域
+- 症状(–)
+	- 黄疸(–)
+	- 腹水(–)
+	- 肝性脳症(–)
+- ICG ≤ 30%
+
+TACE / TAE
+
+- IND
+	- 門脈本幹に閉塞(-)
+	- T-Bil ≤ 3が好まれる
+	- 大きさ/個数は問わない
+- C/I
+	- 高度黄疸
+	- 難治性腹水
+	-門脈本幹に狭窄
+
+<h6 id='hcc-prg'>Prognosis</h6>
+
+- Good (HCC)  
+	cf. CCC
+
+<h6 id='hcc-app'>Appendix</h6>
+
+HCC / 転移性肝癌
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>超音波像</th>
+			<th colspan="2">CTスキャン</th>
+			<th>選択的肝動脈造影</th>
+		</tr>
+		<tr>
+			<th></th>
+			<th></th>
+			<th>単純</th>
+			<th>造影</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>肝内結石症</th>
+			<td>高エコー<br>
+				（acoustic shadowを伴う）</td>
+			<td>HD</td>
+			<td>（−）</td>
+			<td>所見（−）</td>
+		</tr>
+		<tr>
+			<th>肝細胞癌</th>
+			<td>低エコー<br>
+				高エコー<br>
+				モザイクエコーetc．<br>
+				(大きくなればhalo)</td>
+			<td>LD</td>
+			<td>（＋）</td>
+			<td>
+				<ul>
+					<li>hypervascular stainは静脈相以後直ちに消える</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>転移性肝癌</th>
+			<td>低エコー<br>
+				高エコー<br>
+				など様々．<br>
+				bull’s eye</td>
+			<td>LD</td>
+			<td>（＋）〜（−）</td>
+			<td>
+				<ul>
+					<li>hypovascular</li>
+					<li>多発性</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
 
 
 ## Portal Hypertension

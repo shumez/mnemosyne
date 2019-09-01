@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 16:01:0
+Modified: 	2019-09-01 16:19:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -692,6 +692,38 @@ Non-Alcoholic SteatoHepatitis 非アルコール性脂肪性肝炎
 <!-- <h6 id='nash-tx'>Treatment</h6> -->
 <!-- <h6 id='nash-prg'>Prognosis</h6> -->
 <!-- <h6 id='nash-app'>Appendix</h6> -->
+
+
+## ALD 
+
+Alcoholic Liver Disease アルコール性肝障害
+
+<!-- <h6 id='ald-def'>Definition</h6> -->
+<!-- <h6 id='ald-eti'>Etiology</h6> -->
+<!-- <h6 id='ald-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ald-cls'>Classification</h6> -->
+<!-- <h6 id='ald-sx'>Sign and Symptom</h6> -->
+<h6 id='ald-cmp'>Complication</h6>
+
+- アルコール性心筋症
+- Wernicke
+
+<h6 id='ald-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/101G028.jpg)
+
+- Patho
+	- 肝細胞の風船様変化 (Balooning)  
+		cf. 急性肝炎 風船細胞 (baloon cell)
+	- アルコール硝子体 (**Mallory body**)
+	- **Neut浸潤**
+	- 脂肪変性
+	- **肝細胞周囲性線維化** (Pericellular fibrosis)
+
+<!-- <h6 id='ald-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ald-tx'>Treatment</h6> -->
+<!-- <h6 id='ald-prg'>Prognosis</h6> -->
+<!-- <h6 id='ald-app'>Appendix</h6> -->
 
 ## LC
 

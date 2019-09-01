@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:41:59
+Modified: 	2019-09-01 15:49:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -655,6 +655,26 @@ Adipocyte → レジスチン
 <!-- <h6 id='fl-tx'>Treatment</h6> -->
 <!-- <h6 id='fl-prg'>Prognosis</h6> -->
 <!-- <h6 id='fl-app'>Appendix</h6> -->
+
+
+## NAFLD
+
+Non Alcoholic Fatty Liver Disease 非アルコール性脂肪性肝疾患
+
+<!-- <h6 id='nafld-def'>Definition</h6> -->
+<!-- <h6 id='nafld-eti'>Etiology</h6> -->
+<!-- <h6 id='nafld-epi'>Epidemiology</h6> -->
+<!-- <h6 id='nafld-cls'>Classification</h6> -->
+<!-- <h6 id='nafld-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='nafld-ass'>Association</h6> -->
+<!-- <h6 id='nafld-ex'>Examination</h6> -->
+<!-- <h6 id='nafld-dx'>Diagnosis</h6> -->
+<!-- <h6 id='nafld-tx'>Treatment</h6> -->
+<!-- <h6 id='nafld-prg'>Prognosis</h6> -->
+<!-- <h6 id='nafld-app'>Appendix</h6> -->
+
+
+
 
 ## LC
 

@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-08-31 20:48:10
+Modified: 	2019-09-01 15:03:15
 -----
 Copyright (c) 2019 shumez
 -->
@@ -546,16 +546,38 @@ Drug-induced Liver Disease 薬剤性肝障害
 
 Fulminant Hepatitis 劇症肝炎 / Acute Liver Failure 急性肝不全
 
-<!-- <h6 id='fh_alf-def'>Definition</h6> -->
-<!-- <h6 id='fh_alf-eti'>Etiology</h6> -->
+<h6 id='fh_alf-def'>Definition</h6>
+
+- 初発症状出現から ≤ 8w (56d)に, PT ≤ 40% / INR ≥ 1.5
+
+<h6 id='fh_alf-eti'>Etiology</h6>
+
+1. HBV
+
 <!-- <h6 id='fh_alf-epi'>Epidemiology</h6> -->
 <!-- <h6 id='fh_alf-cls'>Classification</h6> -->
-<!-- <h6 id='fh_alf-sx'>Sign and Symptom</h6> -->
+<h6 id='fh_alf-sx'>Sign and Symptom</h6>
+
+- **腎不全** / 出血傾向 / 腹水
+- **肝萎縮** / 肝濁音界縮小
+- **意識障害** (**↑頭蓋内圧**)
+
 <!-- <h6 id='fh_alf-ass'>Association</h6> -->
-<!-- <h6 id='fh_alf-ex'>Examination</h6> -->
+<h6 id='fh_alf-ex'>Examination</h6>
+
+- PT ≤ 40%
+- L/D
+	- ↓Chol / ↓Alb / ↓ChE
+	- ↑Bil / ↑HN3 / ↑AAA
+
 <!-- <h6 id='fh_alf-dx'>Diagnosis</h6> -->
 <!-- <h6 id='fh_alf-tx'>Treatment</h6> -->
-<!-- <h6 id='fh_alf-prg'>Prognosis</h6> -->
+<h6 id='fh_alf-prg'>Prognosis</h6>
+
+- 亜急性型 予後不良
+	- 急性: 50%
+	- 亜急性: 10%
+
 <!-- <h6 id='fh_alf-app'>Appendix</h6> -->
 
 ## LC

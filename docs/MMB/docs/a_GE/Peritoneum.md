@@ -3,7 +3,7 @@ Filename: 	Peritoneum.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:6
-Modified: 	2019-09-01 16:24:22
+Modified: 	2019-09-01 16:33:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -138,7 +138,7 @@ Inguinal Hernia 鼠径ヘルニア
 </table>
 
 
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/inguinal_hernia.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/inguinal_hernia.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/inguinal_hernia.jpg)
 
 
 <!-- <h6 id='ih-sx'>Sign and Symptom</h6> -->
@@ -328,7 +328,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='oburator_hernia-cmp'>Complication</h6> -->
 <h6 id='oburator_hernia-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/107D036.jpg)](https://qb.medilink-study.com/images/107D036.jpg)
+![](https://qb.medilink-study.com/images/107D036.jpg)
 
 <!-- <h6 id='oburator_hernia-dx'>Diagnosis</h6> -->
 <h6 id='oburator_hernia-tx'>Treatment</h6>
@@ -375,7 +375,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='umbilical_hernia-ex'>Examination</h6> -->
 <h6 id='umbilical_hernia-dx'>Diagnosis</h6>
 
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/dx_abdominal_hernia.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/dx_abdominal_hernia.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/dx_abdominal_hernia.jpg)
 
 <h6 id='umbilical_hernia-tx'>Treatment</h6>
 
@@ -443,7 +443,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='diaphragmatic_hernia-epi'>Epidemiology</h6> -->
 <h6 id='diaphragmatic_hernia-cls'>Classification</h6>
 
-[![](https://qb.medilink-study.com/images/107E010_bas_a_010.jpg)](https://qb.medilink-study.com/images/107E010_bas_a_010.jpg)
+![](https://qb.medilink-study.com/images/107E010_bas_a_010.jpg)
 
 <table>
 	<tbody>
@@ -497,7 +497,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='esophageal_hiatal_hernia-epi'>Epidemiology</h6> -->
 <h6 id='esophageal_hiatal_hernia-cls'>Classification</h6>
 
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/esophageal_hiatal_hernia.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/esophageal_hiatal_hernia.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/esophageal_hiatal_hernia.jpg)
 
 - 滑脱型 sliding  
 	- 90%
@@ -511,7 +511,7 @@ Inguinal Hernia 鼠径ヘルニア
 <!-- <h6 id='esophageal_hiatal_hernia-dx'>Diagnosis</h6> -->
 <h6 id='esophageal_hiatal_hernia-tx'>Treatment</h6>
 
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nissen_ope.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nissen_ope.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nissen_ope.jpg)
 
 <!-- <h6 id='esophageal_hiatal_hernia-prg'>Prognosis</h6> -->
 <!-- <h6 id='esophageal_hiatal_hernia-app'>Appendix</h6> -->

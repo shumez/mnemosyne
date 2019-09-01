@@ -3,7 +3,7 @@ Filename: 	Intestine.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:5
-Modified: 	2019-09-01 16:23:22
+Modified: 	2019-09-01 16:31:43
 -----
 Copyright (c) 2019 shumez
 -->
@@ -49,7 +49,7 @@ Crohn disese
 <!-- <h6 id='cd-cls'>Classification</h6> -->
 <h6 id='cd-sx'>Sign and Symptom</h6>
 
-[![](https://qb.medilink-study.com/images/109E047_bas_010.jpg)](https://qb.medilink-study.com/images/109E047_bas_010.jpg)
+![](https://qb.medilink-study.com/images/109E047_bas_010.jpg)
 
 - 吸収不良症候群
 	- &darr;vit.B~12~
@@ -233,7 +233,7 @@ Intestinal TB
 <!-- <h6 id='itb-cmp'>Complication</h6> -->
 <h6 id='itb-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/84D033_ima_a_010.jpg)](https://qb.medilink-study.com/images/84D033_ima_a_010.jpg)
+![](https://qb.medilink-study.com/images/84D033_ima_a_010.jpg)
 
 - 注腸造影
 	- 輪状/帯状潰瘍
@@ -542,7 +542,7 @@ Colorectal Cancer
 
 Dukes classification
 
-[![](https://qb.medilink-study.com/images/102E028_bas_a_010.jpg)](https://qb.medilink-study.com/images/102E028_bas_a_010.jpg)
+![](https://qb.medilink-study.com/images/102E028_bas_a_010.jpg)
 
 <table>
 	<tbody>
@@ -591,9 +591,9 @@ Dukes classification
 
 直腸癌 転移様式
 
-[![](https://qb.medilink-study.com/images/99A026_bas_a_010.jpg)](https://qb.medilink-study.com/images/99A026_bas_a_010.jpg)
+![](https://qb.medilink-study.com/images/99A026_bas_a_010.jpg)
 
-[![](https://qb.medilink-study.com/images/106A046_bas_a_010.jpg)](https://qb.medilink-study.com/images/106A046_bas_a_010.jpg)
+![](https://qb.medilink-study.com/images/106A046_bas_a_010.jpg)
 
 <table>
 	<thead>
@@ -1294,7 +1294,7 @@ Ischemic Colitis 虚血性大腸炎
 
 <h6 id='ic-epi'>Epidemiology</h6>
 
-[![](https://qb.medilink-study.com/images/100H037_sup_a_010.jpg)](https://qb.medilink-study.com/images/100H037_sup_a_010.jpg)
+![](https://qb.medilink-study.com/images/100H037_sup_a_010.jpg)
 
 - SMA と IMAの吻合部:  
 	**左側結腸**
@@ -1315,7 +1315,7 @@ Ischemic Colitis 虚血性大腸炎
 <!-- <h6 id='ic-cmp'>Complication</h6> -->
 <h6 id='ic-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/111A031_ton_010.jpg)](https://qb.medilink-study.com/images/111A031_ton_010.jpg)
+![](https://qb.medilink-study.com/images/111A031_ton_010.jpg)
 
 - 注腸造影
 	- **finger pring sign** / **thumb printing** 拇指圧痕像
@@ -1503,7 +1503,7 @@ Acute Mesenteric Artery Occlusion 急性腸間膜動脈閉塞症
 <!-- <h6 id='obstruction-cmp'>Complication</h6> -->
 <h6 id='obstruction-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/90B038_ima_a_020.jpg "Kerckring皺襞 (Herring-bone)")](https://qb.medilink-study.com/images/90B038_ima_a_020.jpg)
+![](https://qb.medilink-study.com/images/90B038_ima_a_020.jpg "Kerckring皺襞 (Herring-bone)")
 
 - PEx
 	- **振水音**
@@ -1637,7 +1637,7 @@ Acute appendicitis
 		腹壁を深く圧迫した後離す
 	- 筋性防御:
 
-[![](https://qb.medilink-study.com/images/109A035_sup_010.jpg)](https://qb.medilink-study.com/images/109A035_sup_010.jpg)
+![](https://qb.medilink-study.com/images/109A035_sup_010.jpg)
 
 - McBurney点 :  
 	臍と右上前腸骨棘を結ぶ線上の右側1/3

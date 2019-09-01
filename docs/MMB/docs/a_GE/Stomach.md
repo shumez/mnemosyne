@@ -3,7 +3,7 @@ Filename: 	Stomach.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:7
-Modified: 	2019-09-01 16:22:50
+Modified: 	2019-09-01 16:29:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -126,7 +126,7 @@ Acute Gastric Mucosal Lesion 急性胃粘膜病変
 
 <h6 id='helicobacter_pylori-ex'>Examination</h6>
 
-[![](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)
+![](https://upload.wikimedia.org/wikipedia/commons/a/af/Immunohistochemical_detection_of_Helicobacter_%281%29_histopatholgy.jpg)
 
 - **迅速ウレアーゼ試験**
 - **^13^C尿素呼気試験**
@@ -298,7 +298,7 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <!-- <h6 id='gastric_polyp-cmp'>Complication</h6> -->
 <h6 id='gastric_polyp-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/109G067_ima_020.jpg)](https://qb.medilink-study.com/images/109G067_ima_020.jpg)
+![](https://qb.medilink-study.com/images/109G067_ima_020.jpg)
 
 胃底腺ポリープ  
 胃底腺の過形成 / **嚢胞状拡張**
@@ -344,7 +344,7 @@ Gastro-duodenal ulcer 胃十二指腸潰瘍 (消化性潰瘍)
 <!-- <h6 id='submucosal_tumor-cmp'>Complication</h6> -->
 <h6 id='submucosal_tumor-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)
+![](https://qb.medilink-study.com/images/92B033_bas_a_010.jpg)
 
 - 内視鏡
 	- なだらかな隆起
@@ -475,7 +475,7 @@ cf. Leiomyoma (平滑筋腫): benign
 <!-- <h6 id='aberrent_pancreas-cmp'>Complication</h6> -->
 <h6 id='aberrent_pancreas-ex'>Examination</h6>
 
-[![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)
+![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/aberrent_pancreas.jpg)
 
 <!-- <h6 id='aberrent_pancreas-dx'>Diagnosis</h6> -->
 <!-- <h6 id='aberrent_pancreas-tx'>Treatment</h6> -->
@@ -496,15 +496,15 @@ cf. Leiomyoma (平滑筋腫): benign
 
 胃癌 深達度
 
-[![](https://qb.medilink-study.com/images/108I009_bas_010.jpg)](https://qb.medilink-study.com/images/108I009_bas_010.jpg)
+![](https://qb.medilink-study.com/images/108I009_bas_010.jpg)
 
 <!-- <h6 id='gastric_cancer-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='gastric_cancer-cmp'>Complication</h6> -->
 <h6 id='gastric_cancer-ex'>Examination</h6>
 
-[![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)
+![](https://shumez.github.io/mnemosyne/Fornix/a_GE/fig/gastric_cancer.jpeg)
 
-[![](https://qb.medilink-study.com/images/107I057_sup_a_010.jpg)](https://qb.medilink-study.com/images/107I057_sup_a_010.jpg)
+![](https://qb.medilink-study.com/images/107I057_sup_a_010.jpg)
 
 - 肉眼所見
 	- 皺襞
@@ -602,7 +602,7 @@ Metastasis
 
 ## Postgastrectomy Syndrome
 
-[![](https://qb.medilink-study.com/images/98G101_sup_a_010.jpg)](https://qb.medilink-study.com/images/98G101_sup_a_010.jpg)
+![](https://qb.medilink-study.com/images/98G101_sup_a_010.jpg)
 
 <h6 id='postgastrectomy_syndrome-def'>Definition</h6>
 
@@ -640,7 +640,7 @@ Metastasis
 <!-- <h6 id='dumping_syndrome-epi'>Epidemiology</h6> -->
 <h6 id='dumping_syndrome-cls'>Classification</h6>
 
-[![](https://qb.medilink-study.com/images/108I047_bas_010.jpg)](https://qb.medilink-study.com/images/108I047_bas_010.jpg)
+![](https://qb.medilink-study.com/images/108I047_bas_010.jpg)
 
 - 早期Dumping
 - 後期Dumping:  

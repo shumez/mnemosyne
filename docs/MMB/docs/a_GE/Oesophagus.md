@@ -3,7 +3,7 @@ Filename: 	Oesophagus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:15:7
-Modified: 	2019-09-01 16:22:0
+Modified: 	2019-09-01 16:26:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -41,7 +41,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='achalasia-cmp'>Complication</h6> -->
 <h6 id='achalasia-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/109F020_ima_010.jpg)](https://qb.medilink-study.com/images/109F020_ima_010.jpg)
+![](https://qb.medilink-study.com/images/109F020_ima_010.jpg)
 
 - 食道造影
 	- **狭窄より口側の辺縁平滑な拡張**
@@ -469,7 +469,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <h6 id='esophageal_cancer-sx'>Sign and Symptom</h6>
 
-[![](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)
+![](https://accesssurgery.mhmedical.com/data/books/963/hop002_fig_84-10.png)
 
 - 直接浸潤
 	- 下行大動脈
@@ -557,7 +557,7 @@ Spontaneous rupture of esophagus 特発性食道破裂 (Boehaave)
 
 <h6 id='esophageal_varices-tx'>Treatment</h6>
 
-[![](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)
+![](https://qb.medilink-study.com/images/105B026_sup_a_010.jpg)
 
 - 内視鏡
 	1. EIS 硬化療法  

@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-09-01 16:24:0
+Modified: 	2019-09-01 16:32:13
 -----
 Copyright (c) 2019 shumez
 -->
@@ -55,7 +55,7 @@ Copyright (c) 2019 shumez
 
 <h6 id='hemorrhoids-sx'>Sign and Symptom</h6>
 
-[![](https://qb.medilink-study.com/images/90D008_bas_a_010.jpg)](https://qb.medilink-study.com/images/90D008_bas_a_010.jpg)
+![](https://qb.medilink-study.com/images/90D008_bas_a_010.jpg)
 
 <!-- <h6 id='hemorrhoids-cmp'>Complication</h6> -->
 <!-- <h6 id='hemorrhoids-ex'>Examination</h6> -->
@@ -82,7 +82,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='anal_fissure-cmp'>Complication</h6> -->
 <h6 id='anal_fissure-ex'>Examination</h6>
 
-[![](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)
+![](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)
 
 - PEx
 	- **6時方向**

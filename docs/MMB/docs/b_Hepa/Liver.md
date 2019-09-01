@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 16:36:16
+Modified: 	2019-09-01 16:52:37
 -----
 Copyright (c) 2019 shumez
 -->
@@ -733,40 +733,75 @@ Alcoholic Liver Disease アルコール性肝障害
 
 Liver Cirrhosis
 
-<!-- **Definition** -->
-<!-- *  -->
-**Etiology**
+<!-- <h6 id='lc-def'>Definition</h6> -->
+<h6 id='lc-eti'>Etiology</h6>
 
 * &darr;Alb  
 	&rArr; &darr;循環血漿量  
 	&rArr; &darr;腎血流量  
 	&rArr; &uarr;RAAs, &uarr;ADH  
-	&rArr; &darr;水排泄
+	&rArr; &uarr;Na &darr;K &darr;水排泄
 
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
+<!-- <h6 id='lc-epi'>Epidemiology</h6> -->
+<h6 id='lc-cls'>Classification</h6>
 
-**Treatment**
+- 機能的:
+	- 代償期
+	- 非代償期
+		- 漏出性腹水
+		- 出血傾向
+
+<!-- <h6 id='lc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='lc-cmp'>Complication</h6> -->
+<h6 id='lc-ex'>Examination</h6>
+
+- PEx
+	- - ≥ II 羽ばたき振戦
+
+![](https://shumez.github.io/mnemosyne/Fornix/b_Hepa/fig/flying_bat.jpeg)
+
+- CT
+	- Flying bat pattern
+
+<!-- <h6 id='lc-dx'>Diagnosis</h6> -->
+<h6 id='lc-tx'>Treatment</h6>
+
+- 腹水・浮腫の治療:
+	- 塩分制限
+	- 水分除去
+		- 利尿薬
+		- 腹腔穿刺
+	- アルブミン補充
+- 肝性脳症:
+	- 低蛋白食
+	- 腸内細菌を整える
+		- 下剤
+		- 非吸収性抗菌薬  
+			(アンモニアの上昇を抑えるため)
+	- 消化管出血
 
 1. 抗アルドステロン薬 
 2. ループ利尿薬
 
-* トルバプタン (V~2~ ant)
 
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+- トルバプタン (V~2~ ant)
+
+<!-- <h6 id='lc-prg'>Prognosis</h6> -->
+<h6 id='lc-app'>Appendix</h6>
+
+SBP 特発性細菌性腹膜炎
+
+- Etiology
+	- GNB
+		- E. coli
+- Symptom
+	- 発熱/悪寒
+	- 腹痛
+	- 下痢
+	- 脳症
+	- 腎不全
+
+
 ## Portal Hypertension
 
 <!-- **Definition** -->

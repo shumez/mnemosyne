@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:03:15
+Modified: 	2019-09-01 15:05:18
 -----
 Copyright (c) 2019 shumez
 -->
@@ -579,6 +579,23 @@ Fulminant Hepatitis 劇症肝炎 / Acute Liver Failure 急性肝不全
 	- 亜急性: 10%
 
 <!-- <h6 id='fh_alf-app'>Appendix</h6> -->
+
+
+### LOHF
+
+Late Onset Hepatic Failure 遅発性肝不全
+
+<!-- <h6 id='lohf-def'>Definition</h6> -->
+<!-- <h6 id='lohf-eti'>Etiology</h6> -->
+<!-- <h6 id='lohf-epi'>Epidemiology</h6> -->
+<!-- <h6 id='lohf-cls'>Classification</h6> -->
+<!-- <h6 id='lohf-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='lohf-ass'>Association</h6> -->
+<!-- <h6 id='lohf-ex'>Examination</h6> -->
+<!-- <h6 id='lohf-dx'>Diagnosis</h6> -->
+<!-- <h6 id='lohf-tx'>Treatment</h6> -->
+<!-- <h6 id='lohf-prg'>Prognosis</h6> -->
+<!-- <h6 id='lohf-app'>Appendix</h6> -->
 
 ## LC
 

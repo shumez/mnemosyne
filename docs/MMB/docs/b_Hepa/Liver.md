@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 20:09:27
+Modified: 	2019-09-01 20:20:48
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1390,27 +1390,27 @@ Portal Hypertension
 <table>
 	<tbody>
 		<tr>
-			<td class="center">&darr;</td>
+			<td align="center">&darr;</td>
 			<td>肝外PoV</td>
 			<td>EHPVO</td>
 		</tr>
 		<tr>
-			<td class="center">&darr;</td>
+			<td align="center">&darr;</td>
 			<td>肝内PoV</td>
 			<td>IPH</td>
 		</tr>
 		<tr>
-			<td class="center">肝</td>
+			<td align="center">肝</td>
 			<td></td>
 			<td></td>
 		</tr>
 		<tr>
-			<td class="center">&darr;</td>
+			<td align="center">&darr;</td>
 			<td>肝V</td>
 			<td rowspan="2">Budd-Chiari</td>
 		</tr>
 		<tr>
-			<td class="center">&darr;</td>
+			<td align="center">&darr;</td>
 			<td>IVC</td>
 		</tr>
 	</tbody>

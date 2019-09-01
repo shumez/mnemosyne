@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 20:24:18
+Modified: 	2019-09-01 20:27:48
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1463,31 +1463,31 @@ Portal Hypertension
 <!-- <h6 id='iph-prg'>Prognosis</h6> -->
 <!-- <h6 id='iph-app'>Appendix</h6> -->
 
-## EHO
+## EHPVO
 
-**Definition**
+肝外門脈閉塞症
+
+<h6 id='ehpvo-def'>Definition</h6>
 
 * 肝外門脈閉塞 &rArr; 求肝性側副血行路
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+
+<!-- <h6 id='ehpvo-eti'>Etiology</h6> -->
+<!-- <h6 id='ehpvo-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ehpvo-cls'>Classification</h6> -->
+<!-- <h6 id='ehpvo-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ehpvo-cmp'>Complication</h6> -->
+<h6 id='ehpvo-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/95G022B.jpg)
+
+- 画像
+	- 肝外門脈閉塞
+	- 海綿状血管増生
+
+<!-- <h6 id='ehpvo-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ehpvo-tx'>Treatment</h6> -->
+<!-- <h6 id='ehpvo-prg'>Prognosis</h6> -->
+<!-- <h6 id='ehpvo-app'>Appendix</h6> -->
 
 ## Budd-Chiari
 

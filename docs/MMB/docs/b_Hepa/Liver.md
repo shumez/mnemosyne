@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 15:29:52
+Modified: 	2019-09-01 15:31:32
 -----
 Copyright (c) 2019 shumez
 -->
@@ -153,7 +153,7 @@ Copyright (c) 2019 shumez
 
 <h6 id='ha-dx'>Diagnosis</h6>
 
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/ha.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/ha.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/ha.jpg)
 
 <!-- <h6 id='ha-tx'>Treatment</h6> -->
 <!-- <h6 id='ha-prg'>Prognosis</h6> -->
@@ -201,15 +201,15 @@ Copyright (c) 2019 shumez
 <h6 id='hb-sx'>Sign and Symptom</h6>
 
 持続感染
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_persistent.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_persistent.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_persistent.jpg)
 
 一過性感染
-[![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_transient.jpg)](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_transient.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hb_transient.jpg)
 
 <!-- <h6 id='hb-ass'>Association</h6> -->
 <h6 id='hb-ex'>Examination</h6>
 
-[![](https://qb.medilink-study.com/images/93F016_bas_b_010.jpg)](https://qb.medilink-study.com/images/93F016_bas_b_010.jpg)
+![](https://qb.medilink-study.com/images/93F016_bas_b_010.jpg)
 
 - IgM HBc Ab:
 	- 急性肝炎

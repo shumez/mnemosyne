@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:08:27
+Modified: 	2019-09-01 17:09:41
 -----
 Copyright (c) 2019 shumez
 -->
@@ -989,7 +989,12 @@ C/I
 
 - 胆道癌にはならない
 
-<!-- <h6 id='pbc-app'>Appendix</h6> -->
+<h6 id='pbc-app'>Appendix</h6>
+
+- AIH-PBC overlap syndrome
+
+
+
 
 
 ## Portal Hypertension

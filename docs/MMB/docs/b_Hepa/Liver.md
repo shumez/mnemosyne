@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:48:13
+Modified: 	2019-09-01 19:22:17
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1227,6 +1227,31 @@ HCC / 転移性肝癌
 <!-- <h6 id='hepatoblastoma-tx'>Treatment</h6> -->
 <!-- <h6 id='hepatoblastoma-prg'>Prognosis</h6> -->
 <!-- <h6 id='hepatoblastoma-app'>Appendix</h6> -->
+
+
+## Hepatic Cyst 
+
+肝嚢胞
+
+<!-- <h6 id='hepatic_cyst-def'>Definition</h6> -->
+<h6 id='hepatic_cyst-eti'>Etiology</h6>
+
+- **エキノコックス**
+
+<!-- <h6 id='hepatic_cyst-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hepatic_cyst-cls'>Classification</h6> -->
+<!-- <h6 id='hepatic_cyst-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hepatic_cyst-cmp'>Complication</h6> -->
+<h6 id='hepatic_cyst-ex'>Examination</h6>
+
+- CT / MR
+	- **enhance(–)**  
+		腫瘍とのDDx
+
+<!-- <h6 id='hepatic_cyst-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hepatic_cyst-tx'>Treatment</h6> -->
+<!-- <h6 id='hepatic_cyst-prg'>Prognosis</h6> -->
+<!-- <h6 id='hepatic_cyst-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

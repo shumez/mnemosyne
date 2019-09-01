@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-04-28 16:00:26
+Modified: 	2019-05-15 20:11:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -62,6 +62,9 @@ Copyright (c) 2019 shumez
 **Classification**
 
 [![][img_billary_tract_cancer]][img_billary_tract_cancer]
+
+<table>
+</table>
 
 **Sign and Symptom**
 

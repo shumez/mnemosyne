@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 19:27:16
+Modified: 	2019-09-01 19:35:48
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1331,6 +1331,27 @@ Polucyctic Liver Disease 多発性肝嚢胞
 <!-- <h6 id='liver_abscess-tx'>Treatment</h6> -->
 <!-- <h6 id='liver_abscess-prg'>Prognosis</h6> -->
 <!-- <h6 id='liver_abscess-app'>Appendix</h6> -->
+
+
+### Bacterial Liver Abscess
+
+
+<!-- <h6 id='bacterial_liver_abscess-def'>Definition</h6> -->
+<h6 id='bacterial_liver_abscess-eti'>Etiology</h6>
+
+- GNB
+	- 大腸菌
+	- Klebsiela
+
+<!-- <h6 id='bacterial_liver_abscess-epi'>Epidemiology</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-cls'>Classification</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-cmp'>Complication</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-ex'>Examination</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-dx'>Diagnosis</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-tx'>Treatment</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-prg'>Prognosis</h6> -->
+<!-- <h6 id='bacterial_liver_abscess-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

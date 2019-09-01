@@ -3,7 +3,7 @@ Filename: 	Anus.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/a_GE
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:16:4
-Modified: 	2019-08-30 20:43:47
+Modified: 	2019-09-01 16:24:0
 -----
 Copyright (c) 2019 shumez
 -->
@@ -57,7 +57,7 @@ Copyright (c) 2019 shumez
 
 [![](https://qb.medilink-study.com/images/90D008_bas_a_010.jpg)](https://qb.medilink-study.com/images/90D008_bas_a_010.jpg)
 
-<!-- <h6 id='hemorrhoids-ass'>Association</h6> -->
+<!-- <h6 id='hemorrhoids-cmp'>Complication</h6> -->
 <!-- <h6 id='hemorrhoids-ex'>Examination</h6> -->
 <h6 id='hemorrhoids-dx'>Diagnosis</h6>
 
@@ -79,7 +79,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='anal_fissure-cls'>Classification</h6> -->
 <!-- <h6 id='anal_fissure-sx'>Sign and Symptom</h6> -->
 
-<!-- <h6 id='anal_fissure-ass'>Association</h6> -->
+<!-- <h6 id='anal_fissure-cmp'>Complication</h6> -->
 <h6 id='anal_fissure-ex'>Examination</h6>
 
 [![](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)](https://www.surgery.ae/wp-content/uploads/2018/04/p17.png)
@@ -107,7 +107,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='perianal_abscess-epi'>Epidemiology</h6> -->
 <!-- <h6 id='perianal_abscess-cls'>Classification</h6> -->
 <!-- <h6 id='perianal_abscess-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='perianal_abscess-ass'>Association</h6> -->
+<!-- <h6 id='perianal_abscess-cmp'>Complication</h6> -->
 <!-- <h6 id='perianal_abscess-ex'>Examination</h6> -->
 <!-- <h6 id='perianal_abscess-dx'>Diagnosis</h6> -->
 <h6 id='perianal_abscess-tx'>Treatment</h6>
@@ -134,7 +134,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='anal_fistula-epi'>Epidemiology</h6> -->
 <!-- <h6 id='anal_fistula-cls'>Classification</h6> -->
 <!-- <h6 id='anal_fistula-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='anal_fistula-ass'>Association</h6> -->
+<!-- <h6 id='anal_fistula-cmp'>Complication</h6> -->
 <!-- <h6 id='anal_fistula-ex'>Examination</h6> -->
 <!-- <h6 id='anal_fistula-dx'>Diagnosis</h6> -->
 <h6 id='anal_fistula-tx'>Treatment</h6>
@@ -160,7 +160,7 @@ Copyright (c) 2019 shumez
 
 - **疼痛(–)**
 
-<!-- <h6 id='prolapse-ass'>Association</h6> -->
+<!-- <h6 id='prolapse-cmp'>Complication</h6> -->
 <!-- <h6 id='prolapse-ex'>Examination</h6> -->
 <!-- <h6 id='prolapse-dx'>Diagnosis</h6> -->
 <!-- <h6 id='prolapse-tx'>Treatment</h6> -->
@@ -180,7 +180,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='mucosal_prolapse_syndrome-epi'>Epidemiology</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-cls'>Classification</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='mucosal_prolapse_syndrome-ass'>Association</h6> -->
+<!-- <h6 id='mucosal_prolapse_syndrome-cmp'>Complication</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-ex'>Examination</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-dx'>Diagnosis</h6> -->
 <!-- <h6 id='mucosal_prolapse_syndrome-tx'>Treatment</h6> -->
@@ -200,7 +200,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='pilonidal_sinus-epi'>Epidemiology</h6> -->
 <!-- <h6 id='pilonidal_sinus-cls'>Classification</h6> -->
 <!-- <h6 id='pilonidal_sinus-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='pilonidal_sinus-ass'>Association</h6> -->
+<!-- <h6 id='pilonidal_sinus-cmp'>Complication</h6> -->
 <!-- <h6 id='pilonidal_sinus-ex'>Examination</h6> -->
 <!-- <h6 id='pilonidal_sinus-dx'>Diagnosis</h6> -->
 <!-- <h6 id='pilonidal_sinus-tx'>Treatment</h6> -->
@@ -215,7 +215,7 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='-epi'>Epidemiology</h6> -->
 <!-- <h6 id='-cls'>Classification</h6> -->
 <!-- <h6 id='-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='-ass'>Association</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
 <!-- <h6 id='-ex'>Examination</h6> -->
 <!-- <h6 id='-dx'>Diagnosis</h6> -->
 <!-- <h6 id='-tx'>Treatment</h6> -->

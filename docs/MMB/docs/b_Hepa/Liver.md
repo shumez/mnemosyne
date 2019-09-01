@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 16:20:59
+Modified: 	2019-09-01 16:36:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -723,7 +723,11 @@ Alcoholic Liver Disease アルコール性肝障害
 <!-- <h6 id='ald-dx'>Diagnosis</h6> -->
 <!-- <h6 id='ald-tx'>Treatment</h6> -->
 <!-- <h6 id='ald-prg'>Prognosis</h6> -->
-<!-- <h6 id='ald-app'>Appendix</h6> -->
+<h6 id='ald-app'>Appendix</h6>
+
+- SAH Severe alcoholic hepatitis (重症アルコール性肝炎)
+- Zieve synd
+
 
 ## LC
 

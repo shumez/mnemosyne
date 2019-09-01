@@ -3,7 +3,7 @@ Filename: 	Liver.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:3
-Modified: 	2019-09-01 17:45:57
+Modified: 	2019-09-01 17:47:21
 -----
 Copyright (c) 2019 shumez
 -->
@@ -1186,6 +1186,28 @@ HCC / 転移性肝癌
 
 <!-- <h6 id='hemangioma-prg'>Prognosis</h6> -->
 <!-- <h6 id='hemangioma-app'>Appendix</h6> -->
+
+
+### Kasabach-Merrit
+
+<!-- <h6 id='kasabach-merrit-def'>Definition</h6> -->
+<!-- <h6 id='kasabach-merrit-eti'>Etiology</h6> -->
+<!-- <h6 id='kasabach-merrit-epi'>Epidemiology</h6> -->
+<!-- <h6 id='kasabach-merrit-cls'>Classification</h6> -->
+<h6 id='kasabach-merrit-sx'>Sign and Symptom</h6>
+
+- DIC
+
+<!-- <h6 id='kasabach-merrit-cmp'>Complication</h6> -->
+<!-- <h6 id='kasabach-merrit-ex'>Examination</h6> -->
+<!-- <h6 id='kasabach-merrit-dx'>Diagnosis</h6> -->
+<h6 id='kasabach-merrit-tx'>Treatment</h6>
+
+- **ヘパリン**
+- **FFP**
+
+<!-- <h6 id='kasabach-merrit-prg'>Prognosis</h6> -->
+<!-- <h6 id='kasabach-merrit-app'>Appendix</h6> -->
 
 
 ## Portal Hypertension

@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 17:29:49
+Modified: 	2019-09-02 17:31:32
 -----
 Copyright (c) 2019 shumez
 -->
@@ -134,6 +134,22 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='choleithiasis-prg'>Prognosis</h6> -->
 <!-- <h6 id='choleithiasis-app'>Appendix</h6> -->
+
+
+### Mirizzi syndrome
+
+<!-- <h6 id='mirizzi_syndrome-def'>Definition</h6> -->
+<!-- <h6 id='mirizzi_syndrome-eti'>Etiology</h6> -->
+<!-- <h6 id='mirizzi_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mirizzi_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='mirizzi_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='mirizzi_syndrome-cmp'>Complication</h6> -->
+<!-- <h6 id='mirizzi_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='mirizzi_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='mirizzi_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='mirizzi_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='mirizzi_syndrome-app'>Appendix</h6> -->
+
 
 ## PSC
 

@@ -3,26 +3,70 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 11:45:16
+Modified: 	2019-09-02 17:27:25
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Cholangio
 
-## Gallstone
+## Choleithiasis
 
-<!-- <h6 id='gallstone-def'>Definition</h6> -->
-<!-- <h6 id='gallstone-eti'>Etiology</h6> -->
-<!-- <h6 id='gallstone-epi'>Epidemiology</h6> -->
-<!-- <h6 id='gallstone-cls'>Classification</h6> -->
-<!-- <h6 id='gallstone-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='gallstone-cmp'>Complication</h6> -->
-<!-- <h6 id='gallstone-ex'>Examination</h6> -->
-<!-- <h6 id='gallstone-dx'>Diagnosis</h6> -->
-<!-- <h6 id='gallstone-tx'>Treatment</h6> -->
-<!-- <h6 id='gallstone-prg'>Prognosis</h6> -->
-<!-- <h6 id='gallstone-app'>Appendix</h6> -->
+胆石症 Gallstone
+
+<!-- <h6 id='choleithiasis-def'>Definition</h6> -->
+<!-- <h6 id='choleithiasis-eti'>Etiology</h6> -->
+<h6 id='choleithiasis-epi'>Epidemiology</h6>
+
+- 5Fs:
+	- *Female* 女性
+	- *Forty* ≥ 40yo
+	- *Fatty* 肥満
+	- *Fertile* 多産
+	- *Fair* 白人
+
+<h6 id='choleithiasis-cls'>Classification</h6>
+
+胆石 組成による分類
+
+![](https://qb.medilink-study.com/images/98H037_bas_b_020.jpg)
+
+
+- 純コレステロール :
+	- 放射状
+	- 白色 - 黄白色
+- ビリルビンCa :
+	- 層状
+	- 茶褐色
+- 混合石 / 混成石
+
+<h6 id='choleithiasis-sx'>Sign and Symptom</h6>
+
+- Rt背部 - Rt**肩**への放散痛
+
+<h6 id='choleithiasis-cmp'>Complication</h6>
+
+- AOSC
+
+<!-- <h6 id='choleithiasis-ex'>Examination</h6> -->
+<!-- <h6 id='choleithiasis-dx'>Diagnosis</h6> -->
+<h6 id='choleithiasis-tx'>Treatment</h6>
+
+- 胆嚢
+	1. Lap-C #1  
+		C/I : AOSC, 胆道消化管瘻, 癌の合併, 肝硬変 etc
+	- 経口胆石溶解薬  
+		- IND :  
+			- ≤ 1cm
+			- XR(-)
+			- コレステロール結石
+		- 胆嚢機能nl
+	- ESWL  
+		IND : 単発, < 20cm, 石灰化(–)純コレステロール, 胆嚢機能nl
+- 総胆管
+
+<!-- <h6 id='choleithiasis-prg'>Prognosis</h6> -->
+<!-- <h6 id='choleithiasis-app'>Appendix</h6> -->
 
 ## PSC
 

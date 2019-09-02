@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 11:41:15
+Modified: 	2019-09-02 11:42:40
 -----
 Copyright (c) 2019 shumez
 -->
@@ -57,37 +57,29 @@ Copyright (c) 2019 shumez
 
 ## Billary Tract Cancer
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-**Classification**
+<!-- <h6 id='billary_tract_cancer-def'>Definition</h6> -->
+<!-- <h6 id='billary_tract_cancer-eti'>Etiology</h6> -->
+<!-- <h6 id='billary_tract_cancer-epi'>Epidemiology</h6> -->
+<h6 id='billary_tract_cancer-cls'>Classification</h6>
 
 [![][img_billary_tract_cancer]][img_billary_tract_cancer]
 
 <table>
 </table>
 
-**Sign and Symptom**
+<h6 id='billary_tract_cancer-sx'>Sign and Symptom</h6>
 
 * **Courvoisier sign**
 	* 無痛性の胆嚢腫大
 	* 3管合流部以下の胆管閉塞
 
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='billary_tract_cancer-cmp'>Complication</h6> -->
+<!-- <h6 id='billary_tract_cancer-ex'>Examination</h6> -->
+<!-- <h6 id='billary_tract_cancer-dx'>Diagnosis</h6> -->
+<!-- <h6 id='billary_tract_cancer-tx'>Treatment</h6> -->
+<!-- <h6 id='billary_tract_cancer-prg'>Prognosis</h6> -->
+<!-- <h6 id='billary_tract_cancer-app'>Appendix</h6> -->
+
 
 ## Gallbladder Cancer
 <!-- **Definition** -->

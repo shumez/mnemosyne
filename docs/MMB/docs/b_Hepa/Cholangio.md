@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 11:44:23
+Modified: 	2019-09-02 11:45:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -112,28 +112,19 @@ Copyright (c) 2019 shumez
 
 
 ## Cancer of Papilla of Vater
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+
+<!-- <h6 id='cancer_of_papilla_of_vater-def'>Definition</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-eti'>Etiology</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-cls'>Classification</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-cmp'>Complication</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-ex'>Examination</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-tx'>Treatment</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-prg'>Prognosis</h6> -->
+<!-- <h6 id='cancer_of_papilla_of_vater-app'>Appendix</h6> -->
+
 
 ## 
 

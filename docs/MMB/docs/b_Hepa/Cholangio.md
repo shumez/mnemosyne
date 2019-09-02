@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 11:43:39
+Modified: 	2019-09-02 11:44:23
 -----
 Copyright (c) 2019 shumez
 -->
@@ -98,28 +98,17 @@ Copyright (c) 2019 shumez
 
 ## Cholangiocarcinoma
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='cholangiocarcinoma-def'>Definition</h6> -->
+<!-- <h6 id='cholangiocarcinoma-eti'>Etiology</h6> -->
+<!-- <h6 id='cholangiocarcinoma-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cholangiocarcinoma-cls'>Classification</h6> -->
+<!-- <h6 id='cholangiocarcinoma-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cholangiocarcinoma-cmp'>Complication</h6> -->
+<!-- <h6 id='cholangiocarcinoma-ex'>Examination</h6> -->
+<!-- <h6 id='cholangiocarcinoma-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cholangiocarcinoma-tx'>Treatment</h6> -->
+<!-- <h6 id='cholangiocarcinoma-prg'>Prognosis</h6> -->
+<!-- <h6 id='cholangiocarcinoma-app'>Appendix</h6> -->
 
 
 ## Cancer of Papilla of Vater

@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-01 20:37:32
+Modified: 	2019-09-02 11:41:15
 -----
 Copyright (c) 2019 shumez
 -->
@@ -26,38 +26,29 @@ Copyright (c) 2019 shumez
 
 ## PSC
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-
-**Sign and Symptom**
+<!-- <h6 id='psc-def'>Definition</h6> -->
+<!-- <h6 id='psc-eti'>Etiology</h6> -->
+<!-- <h6 id='psc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='psc-cls'>Classification</h6> -->
+<h6 id='psc-sx'>Sign and Symptom</h6>
 
 * 消長する黄疸
 * 掻痒感
 
-**Association**
+<h6 id='psc-cmp'>Complication</h6>
 
 * [UC]
 
-**Examination**
+<h6 id='psc-ex'>Examination</h6>
 
 [![][img_PSC]][img_PSC]
 
 * 胆管のびまん性の狭窄, 硬化
 
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-
-**Appendix**
+<!-- <h6 id='psc-dx'>Diagnosis</h6> -->
+<!-- <h6 id='psc-tx'>Treatment</h6> -->
+<!-- <h6 id='psc-prg'>Prognosis</h6> -->
+<h6 id='psc-app'>Appendix</h6>
 
 [![][img_IgG4RD]][img_IgG4RD]
 

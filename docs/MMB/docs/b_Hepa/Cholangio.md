@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 17:27:25
+Modified: 	2019-09-02 17:29:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -49,7 +49,74 @@ Copyright (c) 2019 shumez
 - AOSC
 
 <!-- <h6 id='choleithiasis-ex'>Examination</h6> -->
-<!-- <h6 id='choleithiasis-dx'>Diagnosis</h6> -->
+<h6 id='choleithiasis-dx'>Diagnosis</h6>
+
+結石
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">コレステロール系<!-- 結石 --></th>
+			<th width="40%">ビリルビン系<!-- 結石 --></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>発生パターン</th>
+			<td><u>単発</u><!-- のものが多い --></td>
+			<td>多発<!-- のものが多い --></td>
+		</tr>
+		<tr>
+			<th>好発部位</th>
+			<td>
+				<ul>
+					<li><u>胆囊</u> <!-- 胆石 --></li>
+				</ul>
+				<!-- に多い -->
+			</td>
+			<td>
+				<ul>
+					<li><u>肝内</u></li>
+					<li>胆管</li>
+					<li>胆囊壁内</li>
+				</ul>
+				<!-- ※に多い -->
+			</td>
+		</tr>
+		<tr>
+			<th>合併しやすい<br>
+				基礎疾患</th>
+			<td>
+				<ul>
+					<li>糖尿病</li>
+					<li>肥満</li>
+					<li><u>高脂血症</u></li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>溶血性貧血</li>
+					<li>胃全摘術後</li>
+					<li><u>肝硬変</u></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>超音波検査</th>
+			<td>音響陰影強い</td>
+			<td>音響陰影弱い</td>
+		</tr>
+		<tr>
+			<th>単純X線</th>
+			<td>石灰を含まず<br>
+				結石を描出できないものも多い．</td>
+			<td>石灰を含む結石が多く<br>
+				高吸収域として描出されやすい．</td>
+		</tr>
+	</tbody>
+</table>
+
 <h6 id='choleithiasis-tx'>Treatment</h6>
 
 - 胆嚢

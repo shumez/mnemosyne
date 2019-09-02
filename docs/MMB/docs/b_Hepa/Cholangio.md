@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 11:42:40
+Modified: 	2019-09-02 11:43:39
 -----
 Copyright (c) 2019 shumez
 -->
@@ -82,28 +82,18 @@ Copyright (c) 2019 shumez
 
 
 ## Gallbladder Cancer
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-<!-- **Classification** -->
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Diagnosis** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+
+<!-- <h6 id='gallbladder_cancer-def'>Definition</h6> -->
+<!-- <h6 id='gallbladder_cancer-eti'>Etiology</h6> -->
+<!-- <h6 id='gallbladder_cancer-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gallbladder_cancer-cls'>Classification</h6> -->
+<!-- <h6 id='gallbladder_cancer-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gallbladder_cancer-cmp'>Complication</h6> -->
+<!-- <h6 id='gallbladder_cancer-ex'>Examination</h6> -->
+<!-- <h6 id='gallbladder_cancer-dx'>Diagnosis</h6> -->
+<!-- <h6 id='gallbladder_cancer-tx'>Treatment</h6> -->
+<!-- <h6 id='gallbladder_cancer-prg'>Prognosis</h6> -->
+<!-- <h6 id='gallbladder_cancer-app'>Appendix</h6> -->
 
 
 ## Cholangiocarcinoma

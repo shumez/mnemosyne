@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:30:37
+Modified: 	2019-09-03 14:34:53
 -----
 Copyright (c) 2019 shumez
 -->
@@ -302,6 +302,37 @@ C/I:
 <!-- <h6 id='lemmel_syndrome-tx'>Treatment</h6> -->
 <!-- <h6 id='lemmel_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='lemmel_syndrome-app'>Appendix</h6> -->
+
+
+### Acute Cholecystitis
+
+急性胆嚢炎
+
+<!-- <h6 id='acute_cholecystitis-def'>Definition</h6> -->
+<!-- <h6 id='acute_cholecystitis-eti'>Etiology</h6> -->
+<!-- <h6 id='acute_cholecystitis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='acute_cholecystitis-cls'>Classification</h6> -->
+<h6 id='acute_cholecystitis-sx'>Sign and Symptom</h6>
+
+- Murphy
+
+<!-- <h6 id='acute_cholecystitis-cmp'>Complication</h6> -->
+<h6 id='acute_cholecystitis-ex'>Examination</h6>
+
+- 胆道シンチ
+	- **胆嚢描出(–)**
+
+<!-- <h6 id='acute_cholecystitis-dx'>Diagnosis</h6> -->
+<h6 id='acute_cholecystitis-tx'>Treatment</h6>
+
+![](https://qb.medilink-study.com/images/109E028_bas_010.jpg)
+
+- Lap-C
+- 胆嚢ドレナージ
+	- PTGBD (経皮的経肝胆嚢ドレナージ )
+
+<!-- <h6 id='acute_cholecystitis-prg'>Prognosis</h6> -->
+<!-- <h6 id='acute_cholecystitis-app'>Appendix</h6> -->
 
 
 ## PSC

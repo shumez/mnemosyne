@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-02 17:31:32
+Modified: 	2019-09-03 13:56:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -19,11 +19,11 @@ Copyright (c) 2019 shumez
 <h6 id='choleithiasis-epi'>Epidemiology</h6>
 
 - 5Fs:
-	- *Female* 女性
-	- *Forty* ≥ 40yo
-	- *Fatty* 肥満
-	- *Fertile* 多産
-	- *Fair* 白人
+	- **F**emale: 女性
+	- **F**orty: ≥ 40yo
+	- **F**atty: 肥満
+	- **F**ertile: 多産
+	- **F**air: 白人
 
 <h6 id='choleithiasis-cls'>Classification</h6>
 

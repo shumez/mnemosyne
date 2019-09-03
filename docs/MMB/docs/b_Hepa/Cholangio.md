@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 13:58:22
+Modified: 	2019-09-03 14:13:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -160,6 +160,33 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='mirizzi_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='mirizzi_syndrome-app'>Appendix</h6> -->
+
+
+### Postcholecystectomy Syndrome
+
+胆嚢摘除後症候群
+
+<h6 id='postcholecystectomy_syndrome-def'>Definition</h6>
+
+- 胆摘後に Rt hypochondriac 季肋部 痛を繰り返す
+
+<h6 id='postcholecystectomy_syndrome-eti'>Etiology</h6>
+
+- 胆嚢頸部遺残
+- **胆石遺残**
+- 瘢痕化
+
+による総肝管の狭窄
+
+<!-- <h6 id='postcholecystectomy_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-cmp'>Complication</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='postcholecystectomy_syndrome-app'>Appendix</h6> -->
 
 
 ## PSC

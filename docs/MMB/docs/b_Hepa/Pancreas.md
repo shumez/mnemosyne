@@ -3,15 +3,150 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 15:39:28
+Modified: 	2019-09-03 15:57:51
 -----
 Copyright (c) 2019 shumez
 -->
 
 # Pancreas
 
-
 <!-- ### ToC -->
+
+## AP
+
+急性膵炎
+
+<!-- <h6 id='ap-def'>Definition</h6> -->
+<h6 id='ap-eti'>Etiology</h6>
+
+1. アルコール 35％
+	- 男性に多い
+2. 胆石症 30％
+	- 女性に多い
+	- 乳頭部への嵌頓による．
+3. 特発性 (原因不明) 20％
+	- 女性に多い
+4. 医原性
+	- 診断的ERCP
+	- 内視鏡的乳頭処置
+	- 手術
+
+<!-- <h6 id='ap-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ap-cls'>Classification</h6> -->
+<!-- <h6 id='ap-sx'>Sign and Symptom</h6> -->
+<h6 id='ap-cmp'>Complication</h6>
+
+- MODS
+- 膵仮性嚢胞
+
+<h6 id='ap-ex'>Examination</h6>
+
+- L/D
+	- ↑AMY 遷延   
+		⟹ 仮性膵嚢胞の合併  
+		↑ACCR AMY Cr Clearance Ratio  
+	- ↑BS ∴ insulin(–)
+- AXR: Colon cut-off sign  
+	腸管麻痺
+	
+\( \text{ACCR} = \frac{\text{AMY}_{\text{Urine}}}{\text{AMY}_{\text{Serum}}} / \frac{\text{Cr}_{\text{Urine}}}{\text{Cr}_{\text{Serum}}} \)
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2"><u>C-TOP</u></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2">C</td>
+			<td>Ca</td>
+		</tr>
+		<tr>
+			<td>Chol</td>
+		</tr>
+		<tr>
+			<td>T</td>
+			<td>TProtein</td>
+		</tr>
+		<tr>
+			<td>O</td>
+			<td>O<sub>2</sub></td>
+		</tr>
+		<tr>
+			<td>P</td>
+			<td>Plt</td>
+		</tr>
+	</tbody>
+</table>
+
+![](https://qb.medilink-study.com/images/111I079_sup_010.jpg)
+造影CT Grade：  
+炎症の膵外進展度と造影不良域から重症度を判定する．  
+※造影不良域：膵を膵頭部，膵体部，膵尾部の3つの区域に分けて判定する．
+
+<!-- <h6 id='ap-dx'>Diagnosis</h6> -->
+<h6 id='ap-tx'>Treatment</h6>
+
+![](https://qb.medilink-study.com/images/111I079_bas_010.jpg)
+
+- 基本的
+	- 輸液
+	- 呼吸/循環管理
+	- タンパク分解酵素阻害薬
+	- NG Tube  
+		腸管閉塞, N/Vを伴う場合
+- 重症例
+	- 膵動注療法 ABx
+- 感染性膵壊死 / WON
+- 胆石性膵炎
+
+<!-- <h6 id='ap-prg'>Prognosis</h6> -->
+<h6 id='ap-app'>Appendix</h6>
+
+重症度判定
+
+- 予後因子：  
+	以下の項目を各1点とする．
+	1. Base Excess（BE）≦－3mEq/Lまたはショック（収縮期血圧≦80mmHg）
+	2. PaO2≦60mmHgまたは呼吸不全（人工呼吸を必要とする）
+	3. BUN≧40mg/dL（またはCr≧2.0mg/dL） または乏尿（輸液後も一日尿量≦400mL）
+	4. LDH基準値上限2倍以上
+	5. 血小板数≦10万/mm3
+	6. 低Ca血症（総Ca値≦7.5mg/dL）
+	7. CRP≧15mg/dL
+	8. SIRS診断基準陽性項目数≧3
+	9. 年齢70歳以上
+
+SIRS（全身性炎症反応症候群）診断基準項目
+
+- 体温＞38℃または＜36℃
+- 脈拍＞90回/分
+- 呼吸数＞20回/分またはPaCO2＜32mmHg
+- 白血球数＞12,000/mm3または＜4,000/mm3または10％超の幼若球出現
+
+膵炎の合併症
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>壊死(–)</th>
+			<th>壊死(+)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>≤ 4w</th>
+			<td>急性膵周囲液体貯留</td>
+			<td>急性壊死性貯留</td>
+		</tr>
+		<tr>
+			<th>> 4w</th>
+			<td>膵仮性嚢胞</td>
+			<td>被包化壊死 (WON)</td>
+		</tr>
+	</tbody>
+</table>
 
 ## Cystic disease of pancreas
 

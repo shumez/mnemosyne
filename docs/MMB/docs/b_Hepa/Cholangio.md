@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:50:1
+Modified: 	2019-09-03 14:55:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -430,6 +430,37 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 		</tr>
 	</tbody>
 </table>
+
+
+## Gallbladder Adenomyomatosis
+
+胆囊腺筋腫症
+
+<!-- <h6 id='gallbladder_adenomyomatosis-def'>Definition</h6> -->
+<h6 id='gallbladder_adenomyomatosis-eti'>Etiology</h6>
+
+- Rokitansky-Aschoff洞が増殖  
+	⇒ 胆囊壁の肥厚 / 上皮の過形成
+
+<!-- <h6 id='gallbladder_adenomyomatosis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gallbladder_adenomyomatosis-cls'>Classification</h6> -->
+<!-- <h6 id='gallbladder_adenomyomatosis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gallbladder_adenomyomatosis-cmp'>Complication</h6> -->
+<h6 id='gallbladder_adenomyomatosis-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/101A029_ima_b_010.jpg)
+
+- U/S
+	- **コメット（彗星）様エコー**
+
+<!-- <h6 id='gallbladder_adenomyomatosis-dx'>Diagnosis</h6> -->
+<h6 id='gallbladder_adenomyomatosis-tx'>Treatment</h6>
+
+- f/u
+- s/o 癌 ⟹ 胆嚢摘出術
+
+<!-- <h6 id='gallbladder_adenomyomatosis-prg'>Prognosis</h6> -->
+<!-- <h6 id='gallbladder_adenomyomatosis-app'>Appendix</h6> -->
 
 
 ## Billary Tract Cancer

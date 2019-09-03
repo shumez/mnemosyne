@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 16:20:3
+Modified: 	2019-09-03 16:25:38
 -----
 Copyright (c) 2019 shumez
 -->
@@ -288,16 +288,14 @@ Pancreatic NeuroEndocine Tumor 膵神経内分泌腫瘍
 <!-- <h6 id='pnet-app'>Appendix</h6> -->
 
 
-## Cystic disease of pancreas
+## Cystic Disease of Pancreas
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
+<!-- <h6 id='cystic_disease_of_pancreas-def'>Definition</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-eti'>Etiology</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-epi'>Epidemiology</h6> -->
+<h6 id='cystic_disease_of_pancreas-cls'>Classification</h6>
 
-**Classification**
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/cystic_disease_of_pancreas.jpg)
 
 <table>
 	<tbody>
@@ -332,19 +330,13 @@ Pancreatic NeuroEndocine Tumor 膵神経内分泌腫瘍
 	</tbody>
 </table>
 
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='cystic_disease_of_pancreas-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-cmp'>Complication</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-ex'>Examination</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-tx'>Treatment</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-prg'>Prognosis</h6> -->
+<!-- <h6 id='cystic_disease_of_pancreas-app'>Appendix</h6> -->
 
 
 ## Cystic Neoplasm

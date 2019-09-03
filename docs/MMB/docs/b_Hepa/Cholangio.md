@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 15:34:11
+Modified: 	2019-09-03 15:36:15
 -----
 Copyright (c) 2019 shumez
 -->
@@ -614,6 +614,26 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 <!-- <h6 id='congenital_billary_dillation-prg'>Prognosis</h6> -->
 <!-- <h6 id='congenital_billary_dillation-app'>Appendix</h6> -->
+
+
+### PancreaticoBiliary Maljunction
+
+膵・胆管合流異常
+
+<!-- <h6 id='pancreaticobiliary_maljunction-def'>Definition</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-eti'>Etiology</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-cls'>Classification</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-sx'>Sign and Symptom</h6> -->
+<h6 id='pancreaticobiliary_maljunction-cmp'>Complication</h6>
+
+- 先天性胆道拡張症
+
+<!-- <h6 id='pancreaticobiliary_maljunction-ex'>Examination</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-tx'>Treatment</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-prg'>Prognosis</h6> -->
+<!-- <h6 id='pancreaticobiliary_maljunction-app'>Appendix</h6> -->
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 16:08:1
+Modified: 	2019-09-03 16:17:4
 -----
 Copyright (c) 2019 shumez
 -->
@@ -224,6 +224,52 @@ SIRS（全身性炎症反応症候群）診断基準項目
 
 <!-- <h6 id='aip-prg'>Prognosis</h6> -->
 <!-- <h6 id='aip-app'>Appendix</h6> -->
+
+
+## Pancreas Cancer
+
+
+
+<!-- <h6 id='pancreas_cancer-def'>Definition</h6> -->
+<!-- <h6 id='pancreas_cancer-eti'>Etiology</h6> -->
+<h6 id='pancreas_cancer-epi'>Epidemiology</h6>
+
+- 膵頭部 60%
+
+<!-- <h6 id='pancreas_cancer-cls'>Classification</h6> -->
+<!-- <h6 id='pancreas_cancer-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pancreas_cancer-cmp'>Complication</h6> -->
+<h6 id='pancreas_cancer-ex'>Examination</h6>
+
+- L/D
+	- CA19-9(+)
+- Contrast-enhanced
+	- 膵管拡張
+- MRCP
+	- ERCPでは見えない 主膵管閉塞部上流を描出
+- ERCP
+	- **主膵管 閉塞/狭窄**
+
+<!-- <h6 id='pancreas_cancer-dx'>Diagnosis</h6> -->
+<h6 id='pancreas_cancer-tx'>Treatment</h6>
+
+![](https://qb.medilink-study.com/images/88D048_bas_b_010.jpg '膵頭十二指腸切除術 (PD)')
+
+- Resectable
+	- PD 
+	- 膵体尾部/脾合併切除
+- Borderline resectable
+- Unresectable
+
+<!-- <h6 id='pancreas_cancer-prg'>Prognosis</h6> -->
+<h6 id='pancreas_cancer-app'>Appendix</h6>
+
+主膵管/総胆管 壁不整/途絶
+
+1. 膵頭部癌
+2. 下部胆管癌
+3. 十二指腸乳頭部癌
+
 
 
 ## Cystic disease of pancreas

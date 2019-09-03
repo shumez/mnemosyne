@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:41:27
+Modified: 	2019-09-03 14:42:57
 -----
 Copyright (c) 2019 shumez
 -->
@@ -350,7 +350,11 @@ C/I:
 ![](https://qb.medilink-study.com/images/109D035A.jpg)
 
 <!-- <h6 id='torsion_of_gallbladder-dx'>Diagnosis</h6> -->
-<!-- <h6 id='torsion_of_gallbladder-tx'>Treatment</h6> -->
+<h6 id='torsion_of_gallbladder-tx'>Treatment</h6>
+
+- **Emergency**
+	- 胆嚢摘出術
+
 <!-- <h6 id='torsion_of_gallbladder-prg'>Prognosis</h6> -->
 <!-- <h6 id='torsion_of_gallbladder-app'>Appendix</h6> -->
 

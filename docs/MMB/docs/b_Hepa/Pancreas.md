@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 16:17:4
+Modified: 	2019-09-03 16:20:3
 -----
 Copyright (c) 2019 shumez
 -->
@@ -270,6 +270,22 @@ SIRS（全身性炎症反応症候群）診断基準項目
 2. 下部胆管癌
 3. 十二指腸乳頭部癌
 
+
+## pNET
+
+Pancreatic NeuroEndocine Tumor 膵神経内分泌腫瘍
+
+<!-- <h6 id='pnet-def'>Definition</h6> -->
+<!-- <h6 id='pnet-eti'>Etiology</h6> -->
+<!-- <h6 id='pnet-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pnet-cls'>Classification</h6> -->
+<!-- <h6 id='pnet-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pnet-cmp'>Complication</h6> -->
+<!-- <h6 id='pnet-ex'>Examination</h6> -->
+<!-- <h6 id='pnet-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pnet-tx'>Treatment</h6> -->
+<!-- <h6 id='pnet-prg'>Prognosis</h6> -->
+<!-- <h6 id='pnet-app'>Appendix</h6> -->
 
 
 ## Cystic disease of pancreas

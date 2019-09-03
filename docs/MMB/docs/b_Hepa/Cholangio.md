@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:13:1
+Modified: 	2019-09-03 14:16:20
 -----
 Copyright (c) 2019 shumez
 -->
@@ -188,6 +188,29 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='postcholecystectomy_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='postcholecystectomy_syndrome-app'>Appendix</h6> -->
 
+
+## Billary Tract Infection
+
+胆道感染症
+
+<!-- <h6 id='billary_tract_infection-def'>Definition</h6> -->
+<h6 id='billary_tract_infection-eti'>Etiology</h6>
+
+- **大腸菌 *E. coli* **
+- ***Klebsiela***
+- 嫌気性菌
+
+- **上行感染**
+
+<!-- <h6 id='billary_tract_infection-epi'>Epidemiology</h6> -->
+<!-- <h6 id='billary_tract_infection-cls'>Classification</h6> -->
+<!-- <h6 id='billary_tract_infection-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='billary_tract_infection-cmp'>Complication</h6> -->
+<!-- <h6 id='billary_tract_infection-ex'>Examination</h6> -->
+<!-- <h6 id='billary_tract_infection-dx'>Diagnosis</h6> -->
+<!-- <h6 id='billary_tract_infection-tx'>Treatment</h6> -->
+<!-- <h6 id='billary_tract_infection-prg'>Prognosis</h6> -->
+<!-- <h6 id='billary_tract_infection-app'>Appendix</h6> -->
 
 ## PSC
 

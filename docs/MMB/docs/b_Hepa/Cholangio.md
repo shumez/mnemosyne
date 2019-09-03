@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:57:22
+Modified: 	2019-09-03 15:25:17
 -----
 Copyright (c) 2019 shumez
 -->
@@ -487,8 +487,20 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 ## Billary Tract Cancer
 
+胆道癌
+
 <!-- <h6 id='billary_tract_cancer-def'>Definition</h6> -->
-<!-- <h6 id='billary_tract_cancer-eti'>Etiology</h6> -->
+<h6 id='billary_tract_cancer-eti'>Etiology</h6>
+
+- 胆嚢癌:
+	- 膵胆管合流異常 (胆道非拡張型)
+	- 陶磁器様胆嚢
+- 胆管癌
+	- 膵胆管合流異常 (胆道拡張型)
+	- PSC
+	- 肝内結石
+- 乳頭部癌: (–)
+
 <!-- <h6 id='billary_tract_cancer-epi'>Epidemiology</h6> -->
 <h6 id='billary_tract_cancer-cls'>Classification</h6>
 
@@ -499,9 +511,12 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 <h6 id='billary_tract_cancer-sx'>Sign and Symptom</h6>
 
-* **Courvoisier sign**
-	* 無痛性の胆嚢腫大
-	* 3管合流部以下の胆管閉塞
+- **Courvoisier sign**
+	- 無痛性の胆嚢腫大
+	- 3管合流部以下の胆管閉塞
+	- e.g.
+		- 膵頭部癌
+		- 遠位胆管癌
 
 <!-- <h6 id='billary_tract_cancer-cmp'>Complication</h6> -->
 <!-- <h6 id='billary_tract_cancer-ex'>Examination</h6> -->

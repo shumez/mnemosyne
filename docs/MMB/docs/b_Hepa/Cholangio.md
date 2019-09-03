@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:34:53
+Modified: 	2019-09-03 14:39:12
 -----
 Copyright (c) 2019 shumez
 -->
@@ -333,6 +333,26 @@ C/I:
 
 <!-- <h6 id='acute_cholecystitis-prg'>Prognosis</h6> -->
 <!-- <h6 id='acute_cholecystitis-app'>Appendix</h6> -->
+
+
+### Torsion of the Gallbladder
+
+胆嚢捻転症
+
+<!-- <h6 id='torsion_of_gallbladder-def'>Definition</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-eti'>Etiology</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-epi'>Epidemiology</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-cls'>Classification</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-cmp'>Complication</h6> -->
+<h6 id='torsion_of_gallbladder-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/109D035A.jpg)
+
+<!-- <h6 id='torsion_of_gallbladder-dx'>Diagnosis</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-tx'>Treatment</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-prg'>Prognosis</h6> -->
+<!-- <h6 id='torsion_of_gallbladder-app'>Appendix</h6> -->
 
 
 ## PSC

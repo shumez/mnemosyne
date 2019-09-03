@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 16:25:38
+Modified: 	2019-09-03 17:23:44
 -----
 Copyright (c) 2019 shumez
 -->
@@ -341,14 +341,10 @@ Pancreatic NeuroEndocine Tumor 膵神経内分泌腫瘍
 
 ## Cystic Neoplasm
 
-<!-- **Definition** -->
-<!-- *  -->
-<!-- **Etiology** -->
-<!-- *  -->
-<!-- **Epidemiology** -->
-<!-- *  -->
-
-**Classification**
+<!-- <h6 id='cystic_neoplasm-def'>Definition</h6> -->
+<!-- <h6 id='cystic_neoplasm-eti'>Etiology</h6> -->
+<!-- <h6 id='cystic_neoplasm-epi'>Epidemiology</h6> -->
+<h6 id='cystic_neoplasm-cls'>Classification</h6>
 
 
 <table>
@@ -400,23 +396,16 @@ Pancreatic NeuroEndocine Tumor 膵神経内分泌腫瘍
 </table>
 
 
-<!-- *  -->
-<!-- **Sign and Symptom** -->
-<!-- *  -->
-<!-- **Association** -->
-<!-- *  -->
-<!-- **Examination** -->
-<!-- *  -->
-**Diagnosis**
+<!-- <h6 id='cystic_neoplasm-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cystic_neoplasm-cmp'>Complication</h6> -->
+<!-- <h6 id='cystic_neoplasm-ex'>Examination</h6> -->
+<h6 id='cystic_neoplasm-dx'>Diagnosis</h6>
 
 [Tanaka, M., et al., 2012][2012_YamaoKenji_CastilloCarlosFernandez-del_TanakaMasao]
 
-<!-- **Treatment** -->
-<!-- *  -->
-<!-- **Prognosis** -->
-<!-- *  -->
-<!-- **Appendix** -->
-<!-- *  -->
+<!-- <h6 id='cystic_neoplasm-tx'>Treatment</h6> -->
+<!-- <h6 id='cystic_neoplasm-prg'>Prognosis</h6> -->
+<!-- <h6 id='cystic_neoplasm-app'>Appendix</h6> -->
 
 
 ### IPMN

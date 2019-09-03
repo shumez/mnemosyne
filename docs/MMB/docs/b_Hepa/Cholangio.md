@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:40:46
+Modified: 	2019-09-03 14:41:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -335,7 +335,7 @@ C/I:
 <!-- <h6 id='acute_cholecystitis-app'>Appendix</h6> -->
 
 
-### Torsion of the Gallbladder
+## Torsion of the Gallbladder
 
 胆嚢捻転症
 

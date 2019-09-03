@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:18:59
+Modified: 	2019-09-03 14:26:44
 -----
 Copyright (c) 2019 shumez
 -->
@@ -236,6 +236,53 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='acute_cholangitis-prg'>Prognosis</h6> -->
 <!-- <h6 id='acute_cholangitis-app'>Appendix</h6> -->
+
+
+#### AOSC
+
+重症急性胆管炎
+
+Acute Obstructive Suppurative Cholangitis 急性閉塞性化膿性胆管炎
+
+<!-- <h6 id='aosc-def'>Definition</h6> -->
+<h6 id='aosc-eti'>Etiology</h6>
+
+- &uarr;胆道内圧  
+	&rArr; endotoxin を含む胆汁が血管内に逆流  
+	&rArr; 敗血症  
+	&rArr; DIC  
+	&rArr; MODS
+
+
+<!-- <h6 id='aosc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aosc-cls'>Classification</h6> -->
+<h6 id='aosc-sx'>Sign and Symptom</h6>
+
+- Raynolds 5徴 :
+	- Charcot 3
+		1. 黄疸
+		2. 発熱
+		3. 腹痛
+	- 意識障害
+	- ショック
+
+<!-- <h6 id='aosc-cmp'>Complication</h6> -->
+<!-- <h6 id='aosc-ex'>Examination</h6> -->
+<!-- <h6 id='aosc-dx'>Diagnosis</h6> -->
+<h6 id='aosc-tx'>Treatment</h6>
+
+- 輸液
+- ABx
+- 呼吸循環管理
+- drainage
+
+C/I:
+
+- Lap-C
+- PTBD
+
+<!-- <h6 id='aosc-prg'>Prognosis</h6> -->
+<!-- <h6 id='aosc-app'>Appendix</h6> -->
 
 
 ## PSC

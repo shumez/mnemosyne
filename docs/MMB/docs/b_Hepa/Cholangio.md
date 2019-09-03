@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 15:29:52
+Modified: 	2019-09-03 15:34:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -586,6 +586,34 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 <!-- <h6 id='cancer_of_papilla_of_vater-tx'>Treatment</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-prg'>Prognosis</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-app'>Appendix</h6> -->
+
+
+## Congenital Billary Dillation
+
+先天性胆道拡張症
+
+<!-- <h6 id='congenital_billary_dillation-def'>Definition</h6> -->
+<!-- <h6 id='congenital_billary_dillation-eti'>Etiology</h6> -->
+<!-- <h6 id='congenital_billary_dillation-epi'>Epidemiology</h6> -->
+<!-- <h6 id='congenital_billary_dillation-cls'>Classification</h6> -->
+<!-- <h6 id='congenital_billary_dillation-sx'>Sign and Symptom</h6> -->
+<h6 id='congenital_billary_dillation-cmp'>Complication</h6>
+
+- 膵胆管合流異常症
+- **胆道癌**
+
+<h6 id='congenital_billary_dillation-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/101G029_ima_b_010.jpg)
+
+<!-- <h6 id='congenital_billary_dillation-dx'>Diagnosis</h6> -->
+<h6 id='congenital_billary_dillation-tx'>Treatment</h6>
+
+- **肝外拡張胆管切除**  
+	&because; **癌化しやすい**
+
+<!-- <h6 id='congenital_billary_dillation-prg'>Prognosis</h6> -->
+<!-- <h6 id='congenital_billary_dillation-app'>Appendix</h6> -->
 
 
 ## 

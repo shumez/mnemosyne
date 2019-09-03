@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:55:27
+Modified: 	2019-09-03 14:57:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -461,6 +461,28 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 <!-- <h6 id='gallbladder_adenomyomatosis-prg'>Prognosis</h6> -->
 <!-- <h6 id='gallbladder_adenomyomatosis-app'>Appendix</h6> -->
+
+
+### Gallbladder Polyp
+
+胆嚢ポリープ
+
+<!-- <h6 id='gallbladder_polyp-def'>Definition</h6> -->
+<!-- <h6 id='gallbladder_polyp-eti'>Etiology</h6> -->
+<!-- <h6 id='gallbladder_polyp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gallbladder_polyp-cls'>Classification</h6> -->
+<!-- <h6 id='gallbladder_polyp-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gallbladder_polyp-cmp'>Complication</h6> -->
+<!-- <h6 id='gallbladder_polyp-ex'>Examination</h6> -->
+<!-- <h6 id='gallbladder_polyp-dx'>Diagnosis</h6> -->
+<h6 id='gallbladder_polyp-tx'>Treatment</h6>
+
+- f/u
+- 開腹下胆嚢摘出術  
+	NOT Lap-C
+
+<!-- <h6 id='gallbladder_polyp-prg'>Prognosis</h6> -->
+<!-- <h6 id='gallbladder_polyp-app'>Appendix</h6> -->
 
 
 ## Billary Tract Cancer

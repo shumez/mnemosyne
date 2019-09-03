@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 15:25:17
+Modified: 	2019-09-03 15:26:8
 -----
 Copyright (c) 2019 shumez
 -->
@@ -528,13 +528,18 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 ## Gallbladder Cancer
 
+胆嚢癌 
+
 <!-- <h6 id='gallbladder_cancer-def'>Definition</h6> -->
 <!-- <h6 id='gallbladder_cancer-eti'>Etiology</h6> -->
 <!-- <h6 id='gallbladder_cancer-epi'>Epidemiology</h6> -->
 <!-- <h6 id='gallbladder_cancer-cls'>Classification</h6> -->
 <!-- <h6 id='gallbladder_cancer-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='gallbladder_cancer-cmp'>Complication</h6> -->
-<!-- <h6 id='gallbladder_cancer-ex'>Examination</h6> -->
+<h6 id='gallbladder_cancer-ex'>Examination</h6>
+
+- 腫瘍径 ≥ 1 cm
+
 <!-- <h6 id='gallbladder_cancer-dx'>Diagnosis</h6> -->
 <!-- <h6 id='gallbladder_cancer-tx'>Treatment</h6> -->
 <!-- <h6 id='gallbladder_cancer-prg'>Prognosis</h6> -->

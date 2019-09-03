@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:42:57
+Modified: 	2019-09-03 14:50:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -378,33 +378,58 @@ C/I:
 
 ## PSC
 
+Primary Sclerosing Cholangitis 原発性硬化性胆管炎
+
 <!-- <h6 id='psc-def'>Definition</h6> -->
 <!-- <h6 id='psc-eti'>Etiology</h6> -->
-<!-- <h6 id='psc-epi'>Epidemiology</h6> -->
+<h6 id='psc-epi'>Epidemiology</h6>
+
+- 20s, 60s
+- **M**
+
 <!-- <h6 id='psc-cls'>Classification</h6> -->
 <h6 id='psc-sx'>Sign and Symptom</h6>
 
-* 消長する黄疸
-* 掻痒感
+- 消長する黄疸
+- 掻痒感
 
 <h6 id='psc-cmp'>Complication</h6>
 
-* [UC]
+- [UC]
 
 <h6 id='psc-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/89D020_ima_b_010.jpg)
 
 [![][img_PSC]][img_PSC]
 
 * 胆管のびまん性の狭窄, 硬化
 
 <!-- <h6 id='psc-dx'>Diagnosis</h6> -->
-<!-- <h6 id='psc-tx'>Treatment</h6> -->
+<h6 id='psc-tx'>Treatment</h6>
+
+- 胆道 dranage
+- 肝移植
+
 <!-- <h6 id='psc-prg'>Prognosis</h6> -->
 <h6 id='psc-app'>Appendix</h6>
 
 [![][img_IgG4RD]][img_IgG4RD]
 
-* SC with AIP
+- SC with AIP (自己免疫膵炎を伴う硬化性胆管炎)
+
+<table>
+	<tbody>
+		<tr>
+			<td>PSC</td>
+			<td>UC</td>
+		</tr>
+		<tr>
+			<td>PBC</td>
+			<td>Sjögren</td>
+		</tr>
+	</tbody>
+</table>
 
 
 ## Billary Tract Cancer

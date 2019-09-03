@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 13:56:1
+Modified: 	2019-09-03 13:58:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -138,15 +138,26 @@ Copyright (c) 2019 shumez
 
 ### Mirizzi syndrome
 
-<!-- <h6 id='mirizzi_syndrome-def'>Definition</h6> -->
-<!-- <h6 id='mirizzi_syndrome-eti'>Etiology</h6> -->
+<h6 id='mirizzi_syndrome-def'>Definition</h6>
+
+![](https://qb.medilink-study.com/images/108H035_sup_010.jpg)
+
+<h6 id='mirizzi_syndrome-eti'>Etiology</h6>
+
+- 胆石の胆囊頸部嵌頓
+- 炎症の波及  
+	⇒ 総肝管 / 総胆管の狭窄
+
 <!-- <h6 id='mirizzi_syndrome-epi'>Epidemiology</h6> -->
 <!-- <h6 id='mirizzi_syndrome-cls'>Classification</h6> -->
 <!-- <h6 id='mirizzi_syndrome-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='mirizzi_syndrome-cmp'>Complication</h6> -->
 <!-- <h6 id='mirizzi_syndrome-ex'>Examination</h6> -->
 <!-- <h6 id='mirizzi_syndrome-dx'>Diagnosis</h6> -->
-<!-- <h6 id='mirizzi_syndrome-tx'>Treatment</h6> -->
+<h6 id='mirizzi_syndrome-tx'>Treatment</h6>
+
+- 経皮経肝胆道ドレナージ (PTBD)
+
 <!-- <h6 id='mirizzi_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='mirizzi_syndrome-app'>Appendix</h6> -->
 

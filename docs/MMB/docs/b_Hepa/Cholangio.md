@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:28:50
+Modified: 	2019-09-03 14:30:37
 -----
 Copyright (c) 2019 shumez
 -->
@@ -283,6 +283,25 @@ C/I:
 
 <!-- <h6 id='aosc-prg'>Prognosis</h6> -->
 <!-- <h6 id='aosc-app'>Appendix</h6> -->
+
+
+#### Lemmel Syndrome
+
+<!-- <h6 id='lemmel_syndrome-def'>Definition</h6> -->
+<h6 id='lemmel_syndrome-eti'>Etiology</h6>
+
+十二指腸　傍乳頭　憩室炎  
+⇒ 胆管炎 / 膵炎
+
+<!-- <h6 id='lemmel_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='lemmel_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='lemmel_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='lemmel_syndrome-cmp'>Complication</h6> -->
+<!-- <h6 id='lemmel_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='lemmel_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='lemmel_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='lemmel_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='lemmel_syndrome-app'>Appendix</h6> -->
 
 
 ## PSC

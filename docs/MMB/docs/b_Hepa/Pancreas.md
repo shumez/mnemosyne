@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 16:05:56
+Modified: 	2019-09-03 16:08:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -192,6 +192,38 @@ SIRS（全身性炎症反応症候群）診断基準項目
 
 <!-- <h6 id='cp-prg'>Prognosis</h6> -->
 <!-- <h6 id='cp-app'>Appendix</h6> -->
+
+
+## AIP
+
+自己免疫性膵炎
+
+<!-- <h6 id='aip-def'>Definition</h6> -->
+<!-- <h6 id='aip-eti'>Etiology</h6> -->
+<!-- <h6 id='aip-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aip-cls'>Classification</h6> -->
+<!-- <h6 id='aip-sx'>Sign and Symptom</h6> -->
+<h6 id='aip-cmp'>Complication</h6>
+
+- IgG4
+	- 涙腺 / 唾液腺炎
+	- PSC
+
+<h6 id='aip-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/105D025C.jpg)
+
+- ↑IgG4
+- MRCP
+	- 主膵管の狭細
+
+<!-- <h6 id='aip-dx'>Diagnosis</h6> -->
+<h6 id='aip-tx'>Treatment</h6>
+
+- 内視鏡的ドレナージ
+
+<!-- <h6 id='aip-prg'>Prognosis</h6> -->
+<!-- <h6 id='aip-app'>Appendix</h6> -->
 
 
 ## Cystic disease of pancreas

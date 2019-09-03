@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 14:16:56
+Modified: 	2019-09-03 14:18:59
 -----
 Copyright (c) 2019 shumez
 -->
@@ -212,6 +212,31 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='billary_tract_infection-tx'>Treatment</h6> -->
 <!-- <h6 id='billary_tract_infection-prg'>Prognosis</h6> -->
 <!-- <h6 id='billary_tract_infection-app'>Appendix</h6> -->
+
+
+### Acute Cholangitis
+
+急性胆菅炎
+
+<!-- <h6 id='acute_cholangitis-def'>Definition</h6> -->
+<!-- <h6 id='acute_cholangitis-eti'>Etiology</h6> -->
+<!-- <h6 id='acute_cholangitis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='acute_cholangitis-cls'>Classification</h6> -->
+<!-- <h6 id='acute_cholangitis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='acute_cholangitis-cmp'>Complication</h6> -->
+<!-- <h6 id='acute_cholangitis-ex'>Examination</h6> -->
+<!-- <h6 id='acute_cholangitis-dx'>Diagnosis</h6> -->
+<h6 id='acute_cholangitis-tx'>Treatment</h6>
+
+- 保存的
+- 胆道ドレナージ
+	1. 内視鏡的胆道ドレナージ (EBD, ENBD)  
+		内視鏡的乳頭括約筋切開術
+	- 経皮経肝胆道ドレナージ
+
+<!-- <h6 id='acute_cholangitis-prg'>Prognosis</h6> -->
+<!-- <h6 id='acute_cholangitis-app'>Appendix</h6> -->
+
 
 ## PSC
 

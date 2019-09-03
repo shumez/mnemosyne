@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 15:57:51
+Modified: 	2019-09-03 16:05:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -147,6 +147,52 @@ SIRS（全身性炎症反応症候群）診断基準項目
 		</tr>
 	</tbody>
 </table>
+
+
+## CP
+
+慢性膵炎
+
+<!-- <h6 id='cp-def'>Definition</h6> -->
+<!-- <h6 id='cp-eti'>Etiology</h6> -->
+<!-- <h6 id='cp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cp-cls'>Classification</h6> -->
+<h6 id='cp-sx'>Sign and Symptom</h6>
+
+- DM
+- **局所門脈圧亢進症**  
+	∵ CP →脾Vに及んで ⇒ 左側PoV 圧↑
+
+<!-- <h6 id='cp-cmp'>Complication</h6> -->
+<h6 id='cp-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/96A030.jpg)
+
+- BT-PABA ≤ 70%
+- MRCP / ERCP
+	- 狭窄 / 拡張
+	- 数珠状拡張
+- 石灰化
+
+<!-- <h6 id='cp-dx'>Diagnosis</h6> -->
+<h6 id='cp-tx'>Treatment</h6>
+
+- 代償期
+- 移行期
+	- 生活指導
+		- 低脂肪食  
+			∵ 脂肪　⇒ ↑膵液
+	- 薬物
+		- PPI / H2B  
+			∵ 胃酸 ⇒ ↑膵液
+		-   
+			∵ 胆汁酸 ⇒ ↑膵液
+- 非代償期
+- 合併症
+
+<!-- <h6 id='cp-prg'>Prognosis</h6> -->
+<!-- <h6 id='cp-app'>Appendix</h6> -->
+
 
 ## Cystic disease of pancreas
 

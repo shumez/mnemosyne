@@ -3,7 +3,7 @@ Filename: 	Cholangio.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:17:4
-Modified: 	2019-09-03 15:26:8
+Modified: 	2019-09-03 15:29:52
 -----
 Copyright (c) 2019 shumez
 -->
@@ -548,8 +548,15 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 ## Cholangiocarcinoma
 
+胆管癌
+
 <!-- <h6 id='cholangiocarcinoma-def'>Definition</h6> -->
-<!-- <h6 id='cholangiocarcinoma-eti'>Etiology</h6> -->
+<h6 id='cholangiocarcinoma-eti'>Etiology</h6>
+
+- Risk factor:
+	- **膵胆管合流異常症** (**先天性胆道拡張症**)
+	- **PSC**
+
 <!-- <h6 id='cholangiocarcinoma-epi'>Epidemiology</h6> -->
 <!-- <h6 id='cholangiocarcinoma-cls'>Classification</h6> -->
 <!-- <h6 id='cholangiocarcinoma-sx'>Sign and Symptom</h6> -->
@@ -563,11 +570,16 @@ Primary Sclerosing Cholangitis 原発性硬化性胆管炎
 
 ## Cancer of Papilla of Vater
 
+乳頭部癌
+
 <!-- <h6 id='cancer_of_papilla_of_vater-def'>Definition</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-eti'>Etiology</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-epi'>Epidemiology</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-cls'>Classification</h6> -->
-<!-- <h6 id='cancer_of_papilla_of_vater-sx'>Sign and Symptom</h6> -->
+<h6 id='cancer_of_papilla_of_vater-sx'>Sign and Symptom</h6>
+
+- **動揺性黄疸**
+
 <!-- <h6 id='cancer_of_papilla_of_vater-cmp'>Complication</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-ex'>Examination</h6> -->
 <!-- <h6 id='cancer_of_papilla_of_vater-dx'>Diagnosis</h6> -->

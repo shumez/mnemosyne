@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 15:59:35
+Modified: 	2019-09-04 16:02:41
 -----
 Copyright (c) 2019 shumez
 -->
@@ -150,6 +150,29 @@ Interferon
 <!-- <h6 id='neocleotide_analog-tx'>Treatment</h6> -->
 <!-- <h6 id='neocleotide_analog-prg'>Prognosis</h6> -->
 <!-- <h6 id='neocleotide_analog-app'>Appendix</h6> -->
+
+
+### Ribavirin
+
+レベトール&reg;, マイラン&reg;
+
+<!-- <h6 id='ribavirin-def'>Definition</h6> -->
+<h6 id='ribavirin-ind'>Indication</h6>
+
+- 高ウイルス量のHC
+
+<!-- <h6 id='ribavirin-def'>Definition</h6> -->
+<!-- <h6 id='ribavirin-eti'>Etiology</h6> -->
+<!-- <h6 id='ribavirin-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ribavirin-cls'>Classification</h6> -->
+<!-- <h6 id='ribavirin-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ribavirin-cmp'>Complication</h6> -->
+<!-- <h6 id='ribavirin-ex'>Examination</h6> -->
+<!-- <h6 id='ribavirin-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ribavirin-tx'>Treatment</h6> -->
+<!-- <h6 id='ribavirin-prg'>Prognosis</h6> -->
+<!-- <h6 id='ribavirin-app'>Appendix</h6> -->
+
 
 ##
 <!-- ## -->

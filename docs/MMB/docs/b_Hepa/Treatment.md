@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 16:15:49
+Modified: 	2019-09-04 16:18:4
 -----
 Copyright (c) 2019 shumez
 -->
@@ -233,6 +233,36 @@ Direct Acting Antivirals 直接作用型抗ウイルス薬
 <!-- <h6 id='glycyrrhizin-tx'>Treatment</h6> -->
 <!-- <h6 id='glycyrrhizin-prg'>Prognosis</h6> -->
 <!-- <h6 id='glycyrrhizin-app'>Appendix</h6> -->
+
+
+## Lactulose 
+
+(モニラック&reg;)
+
+<h6 id='lactulose-ph'>Pharmacology</h6>
+
+
+<h6 id='lactulose-ind'>Indication</h6>
+
+- **肝性脳症**
+- 便秘
+
+
+
+<!-- <h6 id='lactulose-def'>Definition</h6> -->
+<!-- <h6 id='lactulose-def'>Definition</h6> -->
+<!-- <h6 id='lactulose-def'>Definition</h6> -->
+<!-- <h6 id='lactulose-def'>Definition</h6> -->
+<!-- <h6 id='lactulose-eti'>Etiology</h6> -->
+<!-- <h6 id='lactulose-epi'>Epidemiology</h6> -->
+<!-- <h6 id='lactulose-cls'>Classification</h6> -->
+<!-- <h6 id='lactulose-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='lactulose-cmp'>Complication</h6> -->
+<!-- <h6 id='lactulose-ex'>Examination</h6> -->
+<!-- <h6 id='lactulose-dx'>Diagnosis</h6> -->
+<!-- <h6 id='lactulose-tx'>Treatment</h6> -->
+<!-- <h6 id='lactulose-prg'>Prognosis</h6> -->
+<!-- <h6 id='lactulose-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

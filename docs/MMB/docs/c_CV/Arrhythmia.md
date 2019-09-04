@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 17:38:13
+Modified: 	2019-09-04 17:53:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -312,6 +312,23 @@ AV 伝導抑制
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
+
+
+## Bradycardia
+
+
+
+<!-- <h6 id='bradycardia-def'>Definition</h6> -->
+<!-- <h6 id='bradycardia-eti'>Etiology</h6> -->
+<!-- <h6 id='bradycardia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='bradycardia-cls'>Classification</h6> -->
+<!-- <h6 id='bradycardia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='bradycardia-cmp'>Complication</h6> -->
+<!-- <h6 id='bradycardia-ex'>Examination</h6> -->
+<!-- <h6 id='bradycardia-dx'>Diagnosis</h6> -->
+<!-- <h6 id='bradycardia-tx'>Treatment</h6> -->
+<!-- <h6 id='bradycardia-prg'>Prognosis</h6> -->
+<!-- <h6 id='bradycardia-app'>Appendix</h6> -->
 
 
 ##

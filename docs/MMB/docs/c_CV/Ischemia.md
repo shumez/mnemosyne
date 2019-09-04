@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:43:28
+Modified: 	2019-09-04 20:44:20
 -----
 Copyright (c) 2019 shumez
 -->
@@ -453,6 +453,22 @@ STEMI
 <!-- <h6 id='omi-tx'>Treatment</h6> -->
 <!-- <h6 id='omi-prg'>Prognosis</h6> -->
 <!-- <h6 id='omi-app'>Appendix</h6> -->
+
+
+## NSTEMI
+
+
+<!-- <h6 id='nstemi-def'>Definition</h6> -->
+<!-- <h6 id='nstemi-eti'>Etiology</h6> -->
+<!-- <h6 id='nstemi-epi'>Epidemiology</h6> -->
+<!-- <h6 id='nstemi-cls'>Classification</h6> -->
+<!-- <h6 id='nstemi-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='nstemi-cmp'>Complication</h6> -->
+<!-- <h6 id='nstemi-ex'>Examination</h6> -->
+<!-- <h6 id='nstemi-dx'>Diagnosis</h6> -->
+<!-- <h6 id='nstemi-tx'>Treatment</h6> -->
+<!-- <h6 id='nstemi-prg'>Prognosis</h6> -->
+<!-- <h6 id='nstemi-app'>Appendix</h6> -->
 
 
 

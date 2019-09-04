@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:30:26
+Modified: 	2019-09-04 20:32:58
 -----
 Copyright (c) 2019 shumez
 -->
@@ -212,6 +212,45 @@ Silent MI
 <!-- <h6 id='smi-tx'>Treatment</h6> -->
 <!-- <h6 id='smi-prg'>Prognosis</h6> -->
 <!-- <h6 id='smi-app'>Appendix</h6> -->
+
+
+## ACS
+
+
+
+<!-- <h6 id='acs-def'>Definition</h6> -->
+<!-- <h6 id='acs-eti'>Etiology</h6> -->
+<!-- <h6 id='acs-epi'>Epidemiology</h6> -->
+<h6 id='acs-cls'>Classification</h6>
+
+![](https://qb.medilink-study.com/images/111E063_bas_010.jpg)
+
+<!-- <h6 id='acs-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='acs-cmp'>Complication</h6> -->
+<!-- <h6 id='acs-ex'>Examination</h6> -->
+<!-- <h6 id='acs-dx'>Diagnosis</h6> -->
+<!-- <h6 id='acs-tx'>Treatment</h6> -->
+<h6 id='acs-prg'>Prognosis</h6>
+
+虚血性心疾患 予後
+
+- 心機能
+    - ↓CI
+    - 肺うっ血
+    - ↓EF
+- 心室性不整脈
+- 冠動脈枝病変数
+    - 多枝病変
+- 年齢
+- 合併症
+    - DM
+- 心原性ショック
+    - SBP ≤ 90mmHg
+- 心不全
+    - 肺水腫
+
+
+<!-- <h6 id='acs-app'>Appendix</h6> -->
 
 
 ## 

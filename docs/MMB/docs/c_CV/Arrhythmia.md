@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 19:42:31
+Modified: 	2019-09-04 19:52:18
 -----
 Copyright (c) 2019 shumez
 -->
@@ -716,6 +716,66 @@ Atrial Tachycardia 心房頻拍
 <!-- <h6 id='afl-tx'>Treatment</h6> -->
 <!-- <h6 id='afl-prg'>Prognosis</h6> -->
 <!-- <h6 id='afl-app'>Appendix</h6> -->
+
+
+
+## AFib
+
+
+
+<!-- <h6 id='afib-def'>Definition</h6> -->
+<h6 id='afib-eti'>Etiology</h6>
+
+- AF, ≥ 48hrs  
+	⇒ 左房内で血栓形成
+- 抗凝固療法がない状況下でAADsやDC  
+	⇒ 洞調律回復後に血栓とぶ
+
+<!-- <h6 id='afib-epi'>Epidemiology</h6> -->
+<!-- <h6 id='afib-cls'>Classification</h6> -->
+<!-- <h6 id='afib-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='afib-cmp'>Complication</h6> -->
+<!-- <h6 id='afib-ex'>Examination</h6> -->
+<h6 id='afib-dx'>Diagnosis</h6>
+
+CHADS~2~
+
+<table>
+	<tbody>
+		<tr>
+			<td>C</td>
+			<td>Congestive HF</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>H</td>
+			<td>HTN</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>Age > 75</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>DM</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>S</td>
+			<td>Stroke / TIA</td>
+			<td>2</td>
+		</tr>
+	</tbody>
+</table>
+
+<h6 id='afib-tx'>Treatment</h6>
+
+- 抗凝固薬
+
+<!-- <h6 id='afib-prg'>Prognosis</h6> -->
+<!-- <h6 id='afib-app'>Appendix</h6> -->
 
 
 ##

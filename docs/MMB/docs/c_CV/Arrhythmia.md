@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 17:32:24
+Modified: 	2019-09-04 17:35:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -213,6 +213,53 @@ AV 伝導抑制
 - S/S
 	- めまい
 	- 失神
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
+
+
+## K
+
+### HrK
+
+![](https://qb.medilink-study.com/images/96B040_bas_c_010.jpg)
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2"><u>借り上げ テントで 長く暮らす 北京</u></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>借り上げ</td>
+			<td>&uarr;K</td>
+		</tr>
+		<tr>
+			<td>テントで</td>
+			<td>テント状T</td>
+		</tr>
+		<tr>
+			<td>長く暮らす</td>
+			<td>延長QRS</td>
+		</tr>
+		<tr>
+			<td>北京</td>
+			<td>P消失</td>
+		</tr>
+	</tbody>
+</table>
+
+### HoK
 
 <!-- <h6 id='-def'>Definition</h6> -->
 <!-- <h6 id='-eti'>Etiology</h6> -->

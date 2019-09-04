@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:37:58
+Modified: 	2019-09-04 20:42:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -331,12 +331,82 @@ STEMI
 <!-- <h6 id='ami-epi'>Epidemiology</h6> -->
 <!-- <h6 id='ami-cls'>Classification</h6> -->
 <!-- <h6 id='ami-sx'>Sign and Symptom</h6> -->
-<!-- <h6 id='ami-cmp'>Complication</h6> -->
+<h6 id='ami-cmp'>Complication</h6>
+
+<table>
+    <tbody>
+        <tr>
+            <td>Hr24</td>
+            <td>
+                <ul>
+                    <li>不整脈</li>
+                    <li>心不全</li>
+                    <li>心原性ショック</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>- W2</td>
+            <td>
+                <ul>
+                    <li>乳頭筋断裂</li>
+                    <li>心破裂</li>
+                    <li>心室中隔穿孔</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>W2 -</td>
+            <td>
+                <ul>
+                    <li>心室瘤 (W2-4)</li>
+                    <li><u>Dressler synd</u> (W2-6)</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 <!-- <h6 id='ami-ex'>Examination</h6> -->
 <!-- <h6 id='ami-dx'>Diagnosis</h6> -->
-<!-- <h6 id='ami-tx'>Treatment</h6> -->
-<!-- <h6 id='ami-prg'>Prognosis</h6> -->
-<!-- <h6 id='ami-app'>Appendix</h6> -->
+<h6 id='ami-tx'>Treatment</h6>
+
+- MONA
+    - Morphine
+    - O~2~
+    - NTG
+    - Aspirin
+
+<h6 id='ami-prg'>Prognosis</h6>
+
+- 左室駆出率
+- CKの最大値
+- 広範なST上昇
+- Forrester分類
+
+<h6 id='ami-app'>Appendix</h6>
+
+乳頭筋断裂
+
+- 前乳頭筋
+    - 対角枝
+    - LCX
+- 後乳頭筋
+    - RCA  
+    RCAが原因が圧倒的に多い
+
+巨大v波 <small>乳頭筋断裂</small>
+
+![](https://qb.medilink-study.com/images/98B012.jpg)
+
+- MR  
+    巨大v波  
+    ⇐ LV →LA に逆流 vR
+
+
+心室瘤
+
+![](https://qb.medilink-study.com/images/98D021_ima_c_010.jpg)
 
 
 ### IWMI

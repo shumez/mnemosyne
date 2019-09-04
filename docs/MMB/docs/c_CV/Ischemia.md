@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:28:8
+Modified: 	2019-09-04 20:30:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -185,6 +185,33 @@ SPECT
 
 <!-- <h6 id='vsa-prg'>Prognosis</h6> -->
 <!-- <h6 id='vsa-app'>Appendix</h6> -->
+
+
+## SMI
+
+Silent MI
+
+<!-- <h6 id='smi-def'>Definition</h6> -->
+<h6 id='smi-eti'>Etiology</h6>
+
+- Neuropathy :
+    - DM
+    - 高齢者
+    - 徐脈性心筋梗塞
+    - 血液透析
+
+<!-- <h6 id='smi-epi'>Epidemiology</h6> -->
+<!-- <h6 id='smi-cls'>Classification</h6> -->
+<!-- <h6 id='smi-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='smi-cmp'>Complication</h6> -->
+<!-- <h6 id='smi-ex'>Examination</h6> -->
+<h6 id='smi-dx'>Diagnosis</h6>
+
+- **胸痛の強さは予後指標とならない**
+
+<!-- <h6 id='smi-tx'>Treatment</h6> -->
+<!-- <h6 id='smi-prg'>Prognosis</h6> -->
+<!-- <h6 id='smi-app'>Appendix</h6> -->
 
 
 ## 

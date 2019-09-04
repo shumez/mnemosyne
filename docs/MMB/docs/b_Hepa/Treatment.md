@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 15:47:14
+Modified: 	2019-09-04 15:59:35
 -----
 Copyright (c) 2019 shumez
 -->
@@ -119,6 +119,37 @@ Interferon
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
+
+
+### Nucleotide Analog
+
+核酸アナログ
+
+- Entecavir ETV (エンテカビル&reg; バラクルード&reg;)
+- **Lamivudine LMV** (ゼフィックス&reg;)
+- Adefovir ADV (ヘプセラ&reg;)
+- Tenofovir TDF (テノゼット&reg; ベムリディ&reg;)
+
+<h6 id='neocleotide_analog-ph'>Pharmacology</h6>
+
+逆転写酵素阻害 &rArr; ウイルス複製の抑制
+
+<h6 id='neocleotide_analog-ind'>Indication</h6>
+
+- HBV-DNA(+) HB慢性肝炎
+
+<!-- <h6 id='neocleotide_analog-def'>Definition</h6> -->
+
+<!-- <h6 id='neocleotide_analog-eti'>Etiology</h6> -->
+<!-- <h6 id='neocleotide_analog-epi'>Epidemiology</h6> -->
+<!-- <h6 id='neocleotide_analog-cls'>Classification</h6> -->
+<!-- <h6 id='neocleotide_analog-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='neocleotide_analog-cmp'>Complication</h6> -->
+<!-- <h6 id='neocleotide_analog-ex'>Examination</h6> -->
+<!-- <h6 id='neocleotide_analog-dx'>Diagnosis</h6> -->
+<!-- <h6 id='neocleotide_analog-tx'>Treatment</h6> -->
+<!-- <h6 id='neocleotide_analog-prg'>Prognosis</h6> -->
+<!-- <h6 id='neocleotide_analog-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

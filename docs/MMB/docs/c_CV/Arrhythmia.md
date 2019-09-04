@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 20:06:23
+Modified: 	2019-09-04 20:07:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -835,6 +835,24 @@ Premature Ventrial Contraction 心室期外収縮
 
 <!-- <h6 id='vt-prg'>Prognosis</h6> -->
 <!-- <h6 id='vt-app'>Appendix</h6> -->
+
+
+## VF
+
+<!-- <h6 id='vf-def'>Definition</h6> -->
+<!-- <h6 id='vf-eti'>Etiology</h6> -->
+<!-- <h6 id='vf-epi'>Epidemiology</h6> -->
+<!-- <h6 id='vf-cls'>Classification</h6> -->
+<!-- <h6 id='vf-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='vf-cmp'>Complication</h6> -->
+<!-- <h6 id='vf-ex'>Examination</h6> -->
+<!-- <h6 id='vf-dx'>Diagnosis</h6> -->
+<h6 id='vf-tx'>Treatment</h6>
+
+- 電気除細動
+
+<!-- <h6 id='vf-prg'>Prognosis</h6> -->
+<!-- <h6 id='vf-app'>Appendix</h6> -->
 
 
 ##

@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 19:52:18
+Modified: 	2019-09-04 19:55:2
 -----
 Copyright (c) 2019 shumez
 -->
@@ -776,6 +776,23 @@ CHADS~2~
 
 <!-- <h6 id='afib-prg'>Prognosis</h6> -->
 <!-- <h6 id='afib-app'>Appendix</h6> -->
+
+
+## PAC
+
+Premature Atrial Construction 心房期外収縮
+
+<!-- <h6 id='pac-def'>Definition</h6> -->
+<!-- <h6 id='pac-eti'>Etiology</h6> -->
+<!-- <h6 id='pac-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pac-cls'>Classification</h6> -->
+<!-- <h6 id='pac-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pac-cmp'>Complication</h6> -->
+<!-- <h6 id='pac-ex'>Examination</h6> -->
+<!-- <h6 id='pac-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pac-tx'>Treatment</h6> -->
+<!-- <h6 id='pac-prg'>Prognosis</h6> -->
+<!-- <h6 id='pac-app'>Appendix</h6> -->
 
 
 ##

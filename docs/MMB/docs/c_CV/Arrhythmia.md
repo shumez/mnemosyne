@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 20:09:34
+Modified: 	2019-09-04 20:10:46
 -----
 Copyright (c) 2019 shumez
 -->
@@ -883,6 +883,28 @@ Long QT Syndrome
 
 <!-- <h6 id='lqts-prg'>Prognosis</h6> -->
 <!-- <h6 id='lqts-app'>Appendix</h6> -->
+
+
+## Brugada
+
+
+<!-- <h6 id='brugada-def'>Definition</h6> -->
+<!-- <h6 id='brugada-eti'>Etiology</h6> -->
+<!-- <h6 id='brugada-epi'>Epidemiology</h6> -->
+<!-- <h6 id='brugada-cls'>Classification</h6> -->
+<!-- <h6 id='brugada-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='brugada-cmp'>Complication</h6> -->
+<h6 id='brugada-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/103A020_bas_c_010.jpg)
+
+<!-- <h6 id='brugada-dx'>Diagnosis</h6> -->
+<h6 id='brugada-tx'>Treatment</h6>
+
+- ICD
+
+<!-- <h6 id='brugada-prg'>Prognosis</h6> -->
+<!-- <h6 id='brugada-app'>Appendix</h6> -->
 
 
 ##

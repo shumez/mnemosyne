@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 16:18:4
+Modified: 	2019-09-04 16:18:55
 -----
 Copyright (c) 2019 shumez
 -->
@@ -263,6 +263,23 @@ Direct Acting Antivirals 直接作用型抗ウイルス薬
 <!-- <h6 id='lactulose-tx'>Treatment</h6> -->
 <!-- <h6 id='lactulose-prg'>Prognosis</h6> -->
 <!-- <h6 id='lactulose-app'>Appendix</h6> -->
+
+
+## UDCA
+
+Ursodeoxycholic Acid (ウルソ&reg;)
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

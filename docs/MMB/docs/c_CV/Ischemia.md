@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:37:12
+Modified: 	2019-09-04 20:37:58
 -----
 Copyright (c) 2019 shumez
 -->
@@ -352,6 +352,21 @@ STEMI
 <!-- <h6 id='iwmi-tx'>Treatment</h6> -->
 <!-- <h6 id='iwmi-prg'>Prognosis</h6> -->
 <!-- <h6 id='iwmi-app'>Appendix</h6> -->
+
+### AWMI
+
+<!-- <h6 id='awmi-def'>Definition</h6> -->
+<!-- <h6 id='awmi-eti'>Etiology</h6> -->
+<!-- <h6 id='awmi-epi'>Epidemiology</h6> -->
+<!-- <h6 id='awmi-cls'>Classification</h6> -->
+<!-- <h6 id='awmi-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='awmi-cmp'>Complication</h6> -->
+<!-- <h6 id='awmi-ex'>Examination</h6> -->
+<!-- <h6 id='awmi-dx'>Diagnosis</h6> -->
+<!-- <h6 id='awmi-tx'>Treatment</h6> -->
+<!-- <h6 id='awmi-prg'>Prognosis</h6> -->
+<!-- <h6 id='awmi-app'>Appendix</h6> -->
+
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 19:37:49
+Modified: 	2019-09-04 19:40:9
 -----
 Copyright (c) 2019 shumez
 -->
@@ -633,6 +633,32 @@ RR間隔が不規則な頻拍．副伝導路を介して順行伝導するため
 
 <!-- <h6 id='wpw-prg'>Prognosis</h6> -->
 <!-- <h6 id='wpw-app'>Appendix</h6> -->
+
+
+### Pseudo VT
+
+<!-- <h6 id='pseudo_vt-def'>Definition</h6> -->
+<!-- <h6 id='pseudo_vt-eti'>Etiology</h6> -->
+<!-- <h6 id='pseudo_vt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pseudo_vt-cls'>Classification</h6> -->
+<!-- <h6 id='pseudo_vt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pseudo_vt-cmp'>Complication</h6> -->
+<!-- <h6 id='pseudo_vt-ex'>Examination</h6> -->
+<!-- <h6 id='pseudo_vt-dx'>Diagnosis</h6> -->
+<h6 id='pseudo_vt-tx'>Treatment</h6>
+
+- AAD Ia (NaB)
+	- Disoperamide ジソピラミド
+	- Procainamide  
+		副伝導路の伝導に対して抑制的
+
+C/I :
+
+- CCB
+- **Digitalis**
+
+<!-- <h6 id='pseudo_vt-prg'>Prognosis</h6> -->
+<!-- <h6 id='pseudo_vt-app'>Appendix</h6> -->
 
 
 

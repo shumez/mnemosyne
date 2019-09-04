@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:23:16
+Modified: 	2019-09-04 20:28:8
 -----
 Copyright (c) 2019 shumez
 -->
@@ -155,6 +155,37 @@ SPECT
 <!-- <h6 id='ap-tx'>Treatment</h6> -->
 <!-- <h6 id='ap-prg'>Prognosis</h6> -->
 <!-- <h6 id='ap-app'>Appendix</h6> -->
+
+
+### VSA
+
+冠攣縮性 / 異型性
+
+<!-- <h6 id='vsa-def'>Definition</h6> -->
+<h6 id='vsa-eti'>Etiology</h6>
+
+- 誘発因子 :
+    - ACh
+    - 過換気  
+    ⇒ **↓CO~2~**
+
+<h6 id='vsa-epi'>Epidemiology</h6>
+
+- 発症: 
+    - **深夜-朝**
+
+<!-- <h6 id='vsa-cls'>Classification</h6> -->
+<!-- <h6 id='vsa-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='vsa-cmp'>Complication</h6> -->
+<!-- <h6 id='vsa-ex'>Examination</h6> -->
+<!-- <h6 id='vsa-dx'>Diagnosis</h6> -->
+<h6 id='vsa-tx'>Treatment</h6>
+
+- CCB
+
+<!-- <h6 id='vsa-prg'>Prognosis</h6> -->
+<!-- <h6 id='vsa-app'>Appendix</h6> -->
+
 
 ## 
 

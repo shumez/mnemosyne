@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:19:52
+Modified: 	2019-09-04 20:23:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -74,6 +74,87 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='intro-prg'>Prognosis</h6> -->
 <!-- <h6 id='intro-app'>Appendix</h6> -->
 
+
+## AP
+
+Angina Pectoris
+
+<!-- <h6 id='ap-def'>Definition</h6> -->
+<!-- <h6 id='ap-eti'>Etiology</h6> -->
+<!-- <h6 id='ap-epi'>Epidemiology</h6> -->
+<h6 id='ap-cls'>Classification</h6>
+
+<table>
+    <tbody>
+        <tr>
+            <td rowspan="2">発作発現</td>
+            <td>労作性</td>
+        </tr>
+        <tr>
+            <td>安定性</td>
+        </tr>
+        <tr>
+            <td rowspan="3">機序</td>
+            <td>器質性</td>
+        </tr>
+        <tr>
+            <td>冠攣縮性</td>
+        </tr>
+        <tr>
+            <td>冠血栓性 ACS</td>
+        </tr>
+        <tr>
+            <td rowspan="2">経過</td>
+            <td>安定</td>
+        </tr>
+        <tr>
+            <td>不安定</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <h6 id='ap-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ap-cmp'>Complication</h6> -->
+<h6 id='ap-ex'>Examination</h6>
+
+Adenosine 細動脈拡張作用  
+有意狭窄(+) ⇒   
+狭窄より末梢は通常から拡張しているため, 拡張しない
+
+
+SPECT
+
+<table>
+    <thead>
+        <tr>
+            <th width="40%"></th>
+            <th width="30%">負荷後</th>
+            <th width="30%">安静時</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>nl</th>
+            <td align="center">&rarr;</td>
+            <td align="center">&rarr;</td>
+        </tr>
+        <tr>
+            <th>Stenosis</th>
+            <td align="center">&darr;</td>
+            <td align="center"><u>&rarr;</u></td>
+        </tr>
+        <tr>
+            <th>MI</th>
+            <td align="center">&darr;</td>
+            <td align="center">&darr;</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <h6 id='ap-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ap-tx'>Treatment</h6> -->
+<!-- <h6 id='ap-prg'>Prognosis</h6> -->
+<!-- <h6 id='ap-app'>Appendix</h6> -->
 
 ## 
 

@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 16:02:41
+Modified: 	2019-09-04 16:12:39
 -----
 Copyright (c) 2019 shumez
 -->
@@ -173,6 +173,38 @@ Interferon
 <!-- <h6 id='ribavirin-prg'>Prognosis</h6> -->
 <!-- <h6 id='ribavirin-app'>Appendix</h6> -->
 
+
+### DAAs
+
+Direct Acting Antivirals 直接作用型抗ウイルス薬
+
+<h6 id='daas-ph'>Pharmacology</h6>
+
+
+
+<!-- <h6 id='daas-def'>Definition</h6> -->
+<!-- <h6 id='daas-def'>Definition</h6> -->
+<!-- <h6 id='daas-def'>Definition</h6> -->
+<!-- <h6 id='daas-eti'>Etiology</h6> -->
+<!-- <h6 id='daas-epi'>Epidemiology</h6> -->
+<h6 id='daas-cls'>Classification</h6>
+
+![](https://www.pharmaceutical-journal.com/Pictures/580xAny/6/0/1/1073601_therapeutic-targets-in-hcv-replication-cycle-17V2.png)
+
+
+- NS3/4A protease inhibitors
+- NS5A inhibitors
+- NS5B polymerase inhibitors
+
+[Dost Sarpel, 2017](https://www.pharmaceutical-journal.com/research/an-update-on-the-management-of-chronic-hepatitis-b-and-c-infection/20203306.article?firstPass=false)
+
+<!-- <h6 id='daas-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='daas-cmp'>Complication</h6> -->
+<!-- <h6 id='daas-ex'>Examination</h6> -->
+<!-- <h6 id='daas-dx'>Diagnosis</h6> -->
+<!-- <h6 id='daas-tx'>Treatment</h6> -->
+<!-- <h6 id='daas-prg'>Prognosis</h6> -->
+<!-- <h6 id='daas-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:44:20
+Modified: 	2019-09-04 20:46:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -470,6 +470,29 @@ STEMI
 <!-- <h6 id='nstemi-prg'>Prognosis</h6> -->
 <!-- <h6 id='nstemi-app'>Appendix</h6> -->
 
+
+## PCI
+
+<h6 id='pci-ind'>Indication</h6>
+
+- ステント: 再狭窄少ない
+
+<h6 id='pci-ci'>Contraindication</h6>
+
+- LMT
+- 冠動脈2枝 / 3枝病変
+
+<!-- <h6 id='pci-def'>Definition</h6> -->
+<!-- <h6 id='pci-eti'>Etiology</h6> -->
+<!-- <h6 id='pci-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pci-cls'>Classification</h6> -->
+<!-- <h6 id='pci-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pci-cmp'>Complication</h6> -->
+<!-- <h6 id='pci-ex'>Examination</h6> -->
+<!-- <h6 id='pci-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pci-tx'>Treatment</h6> -->
+<!-- <h6 id='pci-prg'>Prognosis</h6> -->
+<!-- <h6 id='pci-app'>Appendix</h6> -->
 
 
 ## 

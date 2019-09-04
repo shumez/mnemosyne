@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 20:10:46
+Modified: 	2019-09-04 20:11:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -905,6 +905,28 @@ Long QT Syndrome
 
 <!-- <h6 id='brugada-prg'>Prognosis</h6> -->
 <!-- <h6 id='brugada-app'>Appendix</h6> -->
+
+
+## TdP
+
+
+<!-- <h6 id='tdp-def'>Definition</h6> -->
+<!-- <h6 id='tdp-eti'>Etiology</h6> -->
+<!-- <h6 id='tdp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='tdp-cls'>Classification</h6> -->
+<h6 id='tdp-sx'>Sign and Symptom</h6>
+
+- 多形性心室頻拍
+
+<!-- <h6 id='tdp-cmp'>Complication</h6> -->
+<!-- <h6 id='tdp-ex'>Examination</h6> -->
+<!-- <h6 id='tdp-dx'>Diagnosis</h6> -->
+<!-- <h6 id='tdp-tx'>Treatment</h6> -->
+<h6 id='tdp-prg'>Prognosis</h6>
+
+- VFに移行
+
+<!-- <h6 id='tdp-app'>Appendix</h6> -->
 
 
 ##

@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 16:47:59
+Modified: 	2019-09-04 17:22:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -11,10 +11,132 @@ Copyright (c) 2019 shumez
 # Arrhythmia
 
 
-## 
+## Intro
+
+![](https://qb.medilink-study.com/images/108I020_sup_010.jpg)
+
+- 5mm / マス
+- 0.2sec/マス
 
 
+Vaughan Williams Clssification
 
+<table>
+	<thead>
+		<tr>
+			<th colspan="3"></th>
+			<th></th>
+			<th>洞性頻脈</th>
+			<th>心房性不整脈</th>
+			<th>心室性不整脈</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th rowspan="3">I</th>
+			<th rowspan="3">NaB</th>
+			<th>Ia</th>
+			<td>
+				<ul>
+					<li>キニジン</li>
+					<li>プロカインアミド</li>
+					<li>ジソピラミド</li>
+				</ul>
+			</td>
+			<td></td>
+			<td>(++)</td>
+			<td>(+)</td>
+		</tr>
+		<tr>
+			<th>Ib</th>
+			<td>
+				<ul>
+					<li>リドカイン</li>
+					<li>アプリンジン</li>
+					<li>メキシレチン</li>
+				</ul>
+			</td>
+			<td></td>
+			<td></td>
+			<td>(++)</td>
+		</tr>
+		<tr>
+			<th>Ic</th>
+			<td>
+				<ul>
+					<li>フレカイニド</li>
+					<li>ピルジカイニド</li>
+				</ul>
+			</td>
+			<td></td>
+			<td>(+)</td>
+			<td></td>
+		</tr>
+		<tr>
+			<th>II</th>
+			<th colspan="2">&beta;B</th>
+			<td>
+				<ul>
+					<li>プロプラノロール</li>
+				</ul>
+			</td>
+			<td>(++)</td>
+			<td>(+)</td>
+			<td>(+)</td>
+		</tr>
+		<tr>
+			<th>III</th>
+			<th colspan="2">KBlc</th>
+			<td>
+				<ul>
+					<li>アミオダロン</li>
+					<li>ソタロール</li>
+				</ul>
+			</td>
+			<td></td>
+			<td>(+)</td>
+			<td>(++)</td>
+		</tr>
+		<tr>
+			<th>IV</th>
+			<th colspan="2">CCB</th>
+			<td>
+				<ul>
+					<li>ベラパミル</li>
+					<li>ジルチアゼム</li>
+				</ul>
+			</td>
+			<td>(++)</td>
+			<td>(+)</td>
+			<td>(+)</td>
+		</tr>
+	</tbody>
+</table>
+
+
+AV 伝導抑制
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2">B C D</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>B</td>
+			<td>&beta;B</td>
+		</tr>
+		<tr>
+			<td>C</td>
+			<td>CCB</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>Digitalis</td>
+		</tr>
+	</tbody>
+</table>
 
 ##
 <!-- ## -->

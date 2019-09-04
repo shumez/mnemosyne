@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 17:53:43
+Modified: 	2019-09-04 17:55:8
 -----
 Copyright (c) 2019 shumez
 -->
@@ -350,6 +350,66 @@ Sick Sinus Syndrome
 
 <!-- <h6 id='sss-prg'>Prognosis</h6> -->
 <!-- <h6 id='sss-app'>Appendix</h6> -->
+
+
+## AVB
+
+AV Block
+
+<!-- <h6 id='avb-def'>Definition</h6> -->
+<!-- <h6 id='avb-eti'>Etiology</h6> -->
+<!-- <h6 id='avb-epi'>Epidemiology</h6> -->
+<h6 id='avb-cls'>Classification</h6>
+
+<table>
+	<tbody>
+		<tr>
+			<th>1&deg;</th>
+			<th></th>
+			<td>PR > 0.2s</td>
+			<td rowspan="2">f/u</td>
+		</tr>
+		<tr>
+			<th rowspan="2">2&deg;</th>
+			<th>Wenckebach</th>
+			<td>
+				<ul>
+					<li>徐々にPR延長</li>
+					<li>QRS drop</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Mobitz II</th>
+			<td>
+				<ul>
+					<li>QRS drop</li>
+				</ul>
+			</td>
+			<td rowspan="2">PPM</td>
+		</tr>
+		<tr>
+			<th>3&deg;</th>
+			<th></th>
+			<td>
+				<ul>
+					<li>Cannon sound</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='avb-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='avb-cmp'>Complication</h6> -->
+<!-- <h6 id='avb-ex'>Examination</h6> -->
+<!-- <h6 id='avb-dx'>Diagnosis</h6> -->
+<h6 id='avb-tx'>Treatment</h6>
+
+- Weckenbach ⟹ f/u
+
+<!-- <h6 id='avb-prg'>Prognosis</h6> -->
+<!-- <h6 id='avb-app'>Appendix</h6> -->
 
 
 ##

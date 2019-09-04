@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:32:58
+Modified: 	2019-09-04 20:35:33
 -----
 Copyright (c) 2019 shumez
 -->
@@ -251,6 +251,92 @@ Silent MI
 
 
 <!-- <h6 id='acs-app'>Appendix</h6> -->
+
+
+## AMI
+
+STEMI
+
+![](https://qb.medilink-study.com/images/108I076_bas_010.jpg)
+
+<table>
+    <tbody>
+        <tr>
+            <th>min</th>
+            <td><ul>
+                <li>&uarr;T</li>
+                <li>&uarr;ST</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <th>30min -</th>
+            <td><ul>
+                <li>abnl Q</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <th>1d-</th>
+            <td><ul>
+                <li>T波の陰転化</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <th>1w</th>
+            <td><ul>
+                <li>coronary T</li>
+            </ul></td>
+        </tr>
+    </tbody>
+</table>
+
+<table>
+    <thead>
+        <tr>
+            <th>Lesion</th>
+            <th>AbnlQ</th>
+            <th>Coronary</th>
+            <th>ECG</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>AW</th>
+            <td>V1-4</td>
+            <td>LAD</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>LW</th>
+            <td>I, aVL, V5-6</td>
+            <td>LCX</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>IW</th>
+            <td>II, III, aVF</td>
+            <td>RCA</td>
+            <td>Long PQ</td>
+        </tr>
+        <tr>
+            <th>PW</th>
+            <td></td>
+            <td>LCX, RCA</td>
+            <td>mirror image</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <h6 id='ami-def'>Definition</h6> -->
+<!-- <h6 id='ami-eti'>Etiology</h6> -->
+<!-- <h6 id='ami-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ami-cls'>Classification</h6> -->
+<!-- <h6 id='ami-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ami-cmp'>Complication</h6> -->
+<!-- <h6 id='ami-ex'>Examination</h6> -->
+<!-- <h6 id='ami-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ami-tx'>Treatment</h6> -->
+<!-- <h6 id='ami-prg'>Prognosis</h6> -->
+<!-- <h6 id='ami-app'>Appendix</h6> -->
 
 
 ## 

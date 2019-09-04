@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 15:36:52
+Modified: 	2019-09-04 15:47:14
 -----
 Copyright (c) 2019 shumez
 -->
@@ -83,6 +83,11 @@ Interferon
 </table>
 
 <h6 id='inf-ph'>Pharmacology</h6>
+
+![](https://ars.els-cdn.com/content/image/1-s2.0-S2211383514000628-gr1.jpg)
+
+[Menghao Huang, 2014](https://www.sciencedirect.com/science/article/pii/S2211383514000628)
+
 <h6 id='inf-ind'>Indication</h6>
 
 - HB 慢性肝炎

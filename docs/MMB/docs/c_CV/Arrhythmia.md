@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 19:56:54
+Modified: 	2019-09-04 20:06:23
 -----
 Copyright (c) 2019 shumez
 -->
@@ -813,6 +813,29 @@ Premature Ventrial Contraction 心室期外収縮
 
 <!-- <h6 id='pvc-prg'>Prognosis</h6> -->
 <!-- <h6 id='pvc-app'>Appendix</h6> -->
+
+
+## VT
+
+<!-- <h6 id='vt-def'>Definition</h6> -->
+<!-- <h6 id='vt-eti'>Etiology</h6> -->
+<!-- <h6 id='vt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='vt-cls'>Classification</h6> -->
+<!-- <h6 id='vt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='vt-cmp'>Complication</h6> -->
+<!-- <h6 id='vt-ex'>Examination</h6> -->
+<!-- <h6 id='vt-dx'>Diagnosis</h6> -->
+<h6 id='vt-tx'>Treatment</h6>
+
+- 血行動態安定
+	- NaB: **リドカイン**
+	- KB: アミオダロン
+- 血行動態不安定
+	- カルディオバージョン
+
+<!-- <h6 id='vt-prg'>Prognosis</h6> -->
+<!-- <h6 id='vt-app'>Appendix</h6> -->
+
 
 ##
 <!-- ## -->

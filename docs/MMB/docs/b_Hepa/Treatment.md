@@ -3,7 +3,7 @@ Filename: 	Treatment.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-04 15:07:6
-Modified: 	2019-09-04 16:12:39
+Modified: 	2019-09-04 16:15:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -205,6 +205,34 @@ Direct Acting Antivirals 直接作用型抗ウイルス薬
 <!-- <h6 id='daas-tx'>Treatment</h6> -->
 <!-- <h6 id='daas-prg'>Prognosis</h6> -->
 <!-- <h6 id='daas-app'>Appendix</h6> -->
+
+
+### Glycyrrhizin 
+
+グリチルリチン (強力ネオミノファーゲンシー&reg;)
+
+<h6 id='glycyrrhizin-ph'>Pharmacology</h6>
+
+甘草
+
+<h6 id='glycyrrhizin-ae'>Adverse Effect</h6>
+
+- **偽性アルドステロン症**
+    - &darr;K
+    - HTN
+
+<!-- <h6 id='glycyrrhizin-def'>Definition</h6> -->
+<!-- <h6 id='glycyrrhizin-def'>Definition</h6> -->
+<!-- <h6 id='glycyrrhizin-eti'>Etiology</h6> -->
+<!-- <h6 id='glycyrrhizin-epi'>Epidemiology</h6> -->
+<!-- <h6 id='glycyrrhizin-cls'>Classification</h6> -->
+<!-- <h6 id='glycyrrhizin-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='glycyrrhizin-cmp'>Complication</h6> -->
+<!-- <h6 id='glycyrrhizin-ex'>Examination</h6> -->
+<!-- <h6 id='glycyrrhizin-dx'>Diagnosis</h6> -->
+<!-- <h6 id='glycyrrhizin-tx'>Treatment</h6> -->
+<!-- <h6 id='glycyrrhizin-prg'>Prognosis</h6> -->
+<!-- <h6 id='glycyrrhizin-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

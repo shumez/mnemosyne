@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:46:27
+Modified: 	2019-09-04 20:48:5
 -----
 Copyright (c) 2019 shumez
 -->
@@ -493,6 +493,40 @@ STEMI
 <!-- <h6 id='pci-tx'>Treatment</h6> -->
 <!-- <h6 id='pci-prg'>Prognosis</h6> -->
 <!-- <h6 id='pci-app'>Appendix</h6> -->
+
+
+## CABG
+
+<h6 id='cabg-ind'>Indication</h6>
+
+![](https://qb.medilink-study.com/images/102D007_sup_c_010.jpg)
+
+- LMT 狭窄 ≥ 50%
+- 3枝病変, 病変の長さ ≥ 1cm
+- 冠動脈末梢枝 run-offが良好 径 ≥ 1.5mm
+- 左心機能 EF ≥ 20%; LVEDP ≤ 20mmHg
+- PCI後 再狭窄
+
+グラフト :
+
+- 内胸動脈
+- 橈骨動脈
+- 大伏在静脈
+- 右胃大網動脈
+
+
+<!-- <h6 id='cabg-def'>Definition</h6> -->
+<!-- <h6 id='cabg-def'>Definition</h6> -->
+<!-- <h6 id='cabg-eti'>Etiology</h6> -->
+<!-- <h6 id='cabg-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cabg-cls'>Classification</h6> -->
+<!-- <h6 id='cabg-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cabg-cmp'>Complication</h6> -->
+<!-- <h6 id='cabg-ex'>Examination</h6> -->
+<!-- <h6 id='cabg-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cabg-tx'>Treatment</h6> -->
+<!-- <h6 id='cabg-prg'>Prognosis</h6> -->
+<!-- <h6 id='cabg-app'>Appendix</h6> -->
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 20:07:22
+Modified: 	2019-09-04 20:09:34
 -----
 Copyright (c) 2019 shumez
 -->
@@ -853,6 +853,36 @@ Premature Ventrial Contraction 心室期外収縮
 
 <!-- <h6 id='vf-prg'>Prognosis</h6> -->
 <!-- <h6 id='vf-app'>Appendix</h6> -->
+
+
+## LQTS
+
+Long QT Syndrome
+
+<!-- <h6 id='lqts-def'>Definition</h6> -->
+<h6 id='lqts-eti'>Etiology</h6>
+
+- AADs
+- ABx
+	- **ニューキノロン**
+	- **マクロライド**
+	- ST合剤
+- 向精神薬
+- 電解質異常
+
+<!-- <h6 id='lqts-epi'>Epidemiology</h6> -->
+<!-- <h6 id='lqts-cls'>Classification</h6> -->
+<!-- <h6 id='lqts-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='lqts-cmp'>Complication</h6> -->
+<!-- <h6 id='lqts-ex'>Examination</h6> -->
+<!-- <h6 id='lqts-dx'>Diagnosis</h6> -->
+<h6 id='lqts-tx'>Treatment</h6>
+
+- **βB**
+- ICD
+
+<!-- <h6 id='lqts-prg'>Prognosis</h6> -->
+<!-- <h6 id='lqts-app'>Appendix</h6> -->
 
 
 ##

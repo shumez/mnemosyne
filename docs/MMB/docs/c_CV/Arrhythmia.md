@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 17:27:45
+Modified: 	2019-09-04 17:30:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -158,6 +158,35 @@ AV 伝導抑制
 - 上室性頻脈
 	- PSVT
 	- AFib
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
+
+
+### ICD
+
+<h6 id='icd-def'>Indication</h6>
+
+- VF
+- 器質的心疾患に伴う持続性心室性頻拍  
+	&
+	- 失神
+	- 血圧低下
+	- 脳虚血症状
+	- 胸痛
+- 冠動脈疾患 / 拡張型心筋症 ⇒ 低左心機能 (EF≤35%) & 非持続性心室性頻拍
+- 
+	- Brugada
+	- LQTS
 
 <!-- <h6 id='-def'>Definition</h6> -->
 <!-- <h6 id='-eti'>Etiology</h6> -->

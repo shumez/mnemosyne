@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 17:59:28
+Modified: 	2019-09-04 18:01:5
 -----
 Copyright (c) 2019 shumez
 -->
@@ -543,6 +543,23 @@ Bundle Branch Block
 <!-- <h6 id='tachycardia-tx'>Treatment</h6> -->
 <!-- <h6 id='tachycardia-prg'>Prognosis</h6> -->
 <!-- <h6 id='tachycardia-app'>Appendix</h6> -->
+
+
+## Sinus Tachycardia
+
+洞性頻脈
+
+<!-- <h6 id='sinus_tachycardia-def'>Definition</h6> -->
+<!-- <h6 id='sinus_tachycardia-eti'>Etiology</h6> -->
+<!-- <h6 id='sinus_tachycardia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='sinus_tachycardia-cls'>Classification</h6> -->
+<!-- <h6 id='sinus_tachycardia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='sinus_tachycardia-cmp'>Complication</h6> -->
+<!-- <h6 id='sinus_tachycardia-ex'>Examination</h6> -->
+<!-- <h6 id='sinus_tachycardia-dx'>Diagnosis</h6> -->
+<!-- <h6 id='sinus_tachycardia-tx'>Treatment</h6> -->
+<!-- <h6 id='sinus_tachycardia-prg'>Prognosis</h6> -->
+<!-- <h6 id='sinus_tachycardia-app'>Appendix</h6> -->
 
 
 ##

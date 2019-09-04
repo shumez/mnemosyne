@@ -3,7 +3,7 @@ Filename: 	Pancreas.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/b_Hepa
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:18:0
-Modified: 	2019-09-03 17:23:44
+Modified: 	2019-09-04 18:08:47
 -----
 Copyright (c) 2019 shumez
 -->
@@ -44,12 +44,11 @@ Copyright (c) 2019 shumez
 - L/D
 	- ↑AMY 遷延   
 		⟹ 仮性膵嚢胞の合併  
-		↑ACCR AMY Cr Clearance Ratio  
+		↑ACCR (AMY Cr Clearance Ratio)  
+		\( \text{ACCR} = \frac{\text{AMY}_{\text{Urine}}}{\text{AMY}_{\text{Serum}}} / \frac{\text{Cr}_{\text{Urine}}}{\text{Cr}_{\text{Serum}}} \)
 	- ↑BS ∴ insulin(–)
 - AXR: Colon cut-off sign  
 	腸管麻痺
-	
-\( \text{ACCR} = \frac{\text{AMY}_{\text{Urine}}}{\text{AMY}_{\text{Serum}}} / \frac{\text{Cr}_{\text{Urine}}}{\text{Cr}_{\text{Serum}}} \)
 
 <table>
 	<thead>

@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 17:57:37
+Modified: 	2019-09-04 17:59:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -459,6 +459,90 @@ Bundle Branch Block
 <!-- <h6 id='lbbb-tx'>Treatment</h6> -->
 <!-- <h6 id='lbbb-prg'>Prognosis</h6> -->
 <!-- <h6 id='lbbb-app'>Appendix</h6> -->
+
+
+## Tachycardia
+
+<!-- <h6 id='tachycardia-def'>Definition</h6> -->
+<!-- <h6 id='tachycardia-eti'>Etiology</h6> -->
+<!-- <h6 id='tachycardia-epi'>Epidemiology</h6> -->
+<h6 id='tachycardia-cls'>Classification</h6>
+
+頻拍性不整脈
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>P</th>
+			<th>QRS</th>
+			<th>RR</th>
+			<th>ECG</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>洞性頻脈</th>
+			<td>洞性</td>
+			<td>wide</td>
+			<td>reg</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/98A018_bas_c_010.jpg" width="80px">
+			</td>
+		</tr>
+		<tr>
+			<th>上室頻拍 PSVT</th>
+			<td></td>
+			<td>wide</td>
+			<td>reg/irr</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/98A018_bas_c_020.jpg" width="80px">
+			</td>
+		</tr>
+		<tr>
+			<th>心室頻拍 VT</th>
+			<td></td>
+			<td>wide</td>
+			<td>reg</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/98A018_bas_c_030.jpg" width="80px">
+			</td>
+		</tr>
+		<tr>
+			<th>AFL</th>
+			<td>Flatter</td>
+			<td>wide</td>
+			<td>reg/irr</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/98A018_bas_c_040.jpg" width="80px">
+			</td>
+		</tr>
+		<tr>
+			<th>AFib</th>
+			<td>f wave</td>
+			<td>wide</td>
+			<td>irr</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/98A018_bas_c_050.jpg" width="80px">
+			</td>
+		</tr>
+		<tr>
+			<th>VF</th>
+			<td colspan="3">irregularity of irregularity</td>
+			<td>
+				<img src="https://qb.medilink-study.com/images/98A018_bas_c_010.jpg" width="80px">
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='tachycardia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='tachycardia-cmp'>Complication</h6> -->
+<!-- <h6 id='tachycardia-ex'>Examination</h6> -->
+<!-- <h6 id='tachycardia-dx'>Diagnosis</h6> -->
+<!-- <h6 id='tachycardia-tx'>Treatment</h6> -->
+<!-- <h6 id='tachycardia-prg'>Prognosis</h6> -->
+<!-- <h6 id='tachycardia-app'>Appendix</h6> -->
 
 
 ##

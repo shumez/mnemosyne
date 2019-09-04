@@ -3,7 +3,7 @@ Filename: 	Arrhythmia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:25:6
-Modified: 	2019-09-04 18:02:48
+Modified: 	2019-09-04 19:37:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -586,6 +586,53 @@ Paroxysmal Supraventricular Tchycardia 発作性上室性頻拍
 
 <!-- <h6 id='psvt-prg'>Prognosis</h6> -->
 <!-- <h6 id='psvt-app'>Appendix</h6> -->
+
+
+
+## WPW
+
+Woff-Parkinson-White Syndrome
+
+<!-- <h6 id='wpw-def'>Definition</h6> -->
+<!-- <h6 id='wpw-eti'>Etiology</h6> -->
+<!-- <h6 id='wpw-epi'>Epidemiology</h6> -->
+<!-- <h6 id='wpw-cls'>Classification</h6> -->
+<!-- <h6 id='wpw-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='wpw-cmp'>Complication</h6> -->
+<!-- <h6 id='wpw-ex'>Examination</h6> -->
+<h6 id='wpw-dx'>Diagnosis</h6>
+
+![](https://qb.medilink-study.com/images/111D021_bas_010.jpg)
+
+WPW &rArr; PSVT
+
+- RR reg
+- narrow QRS  
+
+RR間隔が規則的な頻拍．房室結節を順行伝導し副伝導路を逆行伝導するためQRS幅は狭い
+
+![](https://qb.medilink-study.com/images/111D021_bas_020.jpg)
+
+WPW &rArr; pAF
+
+- RR irreg
+- wide QRS  
+
+RR間隔が不規則な頻拍．副伝導路を介して順行伝導するためδ波を伴った幅の広いQRS波形になる
+
+<h6 id='wpw-tx'>Treatment</h6>
+
+- PSVT
+	- ATP
+	- CCB
+- pAF
+	- AAD Ia
+		- **Disoperamide**
+		- Procainamide  
+			副伝導路の伝導に対して抑制的
+
+<!-- <h6 id='wpw-prg'>Prognosis</h6> -->
+<!-- <h6 id='wpw-app'>Appendix</h6> -->
 
 
 

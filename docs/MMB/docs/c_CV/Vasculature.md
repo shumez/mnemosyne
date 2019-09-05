@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:46:55
+Modified: 	2019-09-05 20:48:13
 -----
 Copyright (c) 2019 shumez
 -->
@@ -604,6 +604,82 @@ Thrombo
 <!-- <h6 id='dvt-tx'>Treatment</h6> -->
 <!-- <h6 id='dvt-prg'>Prognosis</h6> -->
 <!-- <h6 id='dvt-app'>Appendix</h6> -->
+
+
+## VV
+
+静脈瘤
+
+<!-- <h6 id='vv-def'>Definition</h6> -->
+<!-- <h6 id='vv-eti'>Etiology</h6> -->
+<!-- <h6 id='vv-epi'>Epidemiology</h6> -->
+<h6 id='vv-cls'>Classification</h6>
+
+![](https://qb.medilink-study.com/images/103D053_bas_c_010.jpg)
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">一次静脈瘤</th>
+			<th width="40%">二次静脈瘤</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>成因</th>
+			<td>静脈弁不全</td>
+			<td>DVT</td>
+		</tr>
+		<tr>
+			<th>誘因</th>
+			<td><ul>
+				<li>肥満</li>
+				<li>妊娠</li>
+				<li>立位</li>
+			</ul></td>
+			<td><ul>
+				<li>手術</li>
+				<li>臥床</li>
+			</ul></td>
+		</tr>
+		<tr>
+			<th>臨床所見</th>
+			<td><ul>
+				<li>患肢挙上で消失する</li>
+				<li>Tredelenburg(+)</li>
+			</ul></td>
+			<td><ul>
+				<li>患肢挙上で消失しない</li>
+				<li>Perthes(+)</li>
+			</ul></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td><ul>
+				<li>表在静脈の拡張/蛇行</li>
+				<li>深部静脈開存</li>
+			</ul></td>
+			<td><ul>
+				<li>表在静脈の拡張/蛇行</li>
+				<li>深部静脈閉塞</li>
+			</ul></td>
+		</tr>
+		<tr>
+			<th>頻度</th>
+			<td align="center">(++)</td>
+			<td align="center">(–)</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='vv-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='vv-cmp'>Complication</h6> -->
+<!-- <h6 id='vv-ex'>Examination</h6> -->
+<!-- <h6 id='vv-dx'>Diagnosis</h6> -->
+<!-- <h6 id='vv-tx'>Treatment</h6> -->
+<!-- <h6 id='vv-prg'>Prognosis</h6> -->
+<!-- <h6 id='vv-app'>Appendix</h6> -->
 
 
 ## 

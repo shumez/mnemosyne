@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 14:50:2
+Modified: 	2019-09-05 14:53:14
 -----
 Copyright (c) 2019 shumez
 -->
@@ -187,6 +187,54 @@ Wafarin が必要ない
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
+
+
+## MS
+
+Mitral Stenosis
+
+<!-- <h6 id='ms-def'>Definition</h6> -->
+<!-- <h6 id='ms-eti'>Etiology</h6> -->
+<!-- <h6 id='ms-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ms-cls'>Classification</h6> -->
+<!-- <h6 id='ms-sx'>Sign and Symptom</h6> -->
+<h6 id='ms-cmp'>Complication</h6>
+
+- 脳塞栓
+
+<h6 id='ms-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/104E056_bas_c_010.jpg)
+
+[ref](https://www.healio.com/cardiology/learn-the-heart/cardiology-review/topic-reviews/heart-murmurs)
+![](https://www.healio.com/%7E/media/learningsites/learntheheart/assets/1/4/0/c/ms.png?h=148&w=430)
+
+- Murmur
+	- ↑S1
+	- Opening Snap
+	- 拡張期ランブル
+	- **前収縮期雑音**
+	- 重症例で**Graham-Steell** (拡張期灌水様雑音 肺高血圧になった場合のPR音)
+
+<!-- <h6 id='ms-dx'>Diagnosis</h6> -->
+<h6 id='ms-tx'>Treatment</h6>
+
+MS ope適応
+
+- NYHA:
+	- PTMC: NYHA ≥ II°
+	- OMC, MVR: NYHA ≥ III°
+- M弁弁口面積 ≥ 1.5cm2
+- 塞栓症の既往, 左房内血栓
+- LA平均圧 ≥ 15mmHg
+
+<!-- <h6 id='ms-prg'>Prognosis</h6> -->
+<h6 id='ms-app'>Appendix</h6>
+
+- LAP ≈ PAWP ≈ LVEDP ≤ 12mmHg
+- 肺動脈P ≤ 20mmHg
+- RAP ≤ 5mmHg
+
 
 
 ##

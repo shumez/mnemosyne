@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:16:12
+Modified: 	2019-09-05 20:17:24
 -----
 Copyright (c) 2019 shumez
 -->
@@ -95,6 +95,21 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='intro-tx'>Treatment</h6> -->
 <!-- <h6 id='intro-prg'>Prognosis</h6> -->
 <!-- <h6 id='intro-app'>Appendix</h6> -->
+
+
+## Artery
+
+<!-- <h6 id='artery-def'>Definition</h6> -->
+<!-- <h6 id='artery-eti'>Etiology</h6> -->
+<!-- <h6 id='artery-epi'>Epidemiology</h6> -->
+<!-- <h6 id='artery-cls'>Classification</h6> -->
+<!-- <h6 id='artery-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='artery-cmp'>Complication</h6> -->
+<!-- <h6 id='artery-ex'>Examination</h6> -->
+<!-- <h6 id='artery-dx'>Diagnosis</h6> -->
+<!-- <h6 id='artery-tx'>Treatment</h6> -->
+<!-- <h6 id='artery-prg'>Prognosis</h6> -->
+<!-- <h6 id='artery-app'>Appendix</h6> -->
 
 
 ## 

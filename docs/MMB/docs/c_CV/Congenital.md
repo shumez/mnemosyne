@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:27:50
+Modified: 	2019-09-05 17:28:44
 -----
 Copyright (c) 2019 shumez
 -->
@@ -306,6 +306,23 @@ Tricuspid valve Stenosis
 <!-- <h6 id='ts-tx'>Treatment</h6> -->
 <!-- <h6 id='ts-prg'>Prognosis</h6> -->
 <!-- <h6 id='ts-app'>Appendix</h6> -->
+
+
+## PS
+
+肺動脈狭窄症
+
+<!-- <h6 id='ps-def'>Definition</h6> -->
+<!-- <h6 id='ps-eti'>Etiology</h6> -->
+<!-- <h6 id='ps-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ps-cls'>Classification</h6> -->
+<!-- <h6 id='ps-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ps-cmp'>Complication</h6> -->
+<!-- <h6 id='ps-ex'>Examination</h6> -->
+<!-- <h6 id='ps-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ps-tx'>Treatment</h6> -->
+<!-- <h6 id='ps-prg'>Prognosis</h6> -->
+<!-- <h6 id='ps-app'>Appendix</h6> -->
 
 
 ## 

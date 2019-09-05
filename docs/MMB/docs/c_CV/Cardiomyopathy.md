@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:41:40
+Modified: 	2019-09-05 17:44:14
 -----
 Copyright (c) 2019 shumez
 -->
@@ -72,6 +72,43 @@ Dilated CardioMyopathy
 <!-- <h6 id='dcm-tx'>Treatment</h6> -->
 <!-- <h6 id='dcm-prg'>Prognosis</h6> -->
 <!-- <h6 id='dcm-app'>Appendix</h6> -->
+
+
+## HCM
+
+Hypertrophic CardioMyopathy
+
+<!-- <h6 id='hcm-def'>Definition</h6> -->
+<!-- <h6 id='hcm-eti'>Etiology</h6> -->
+<!-- <h6 id='hcm-epi'>Epidemiology</h6> -->
+<h6 id='hcm-cls'>Classification</h6>
+
+![](https://qb.medilink-study.com/images/91B021_bas_c_010.jpg)
+
+<!-- <h6 id='hcm-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hcm-cmp'>Complication</h6> -->
+<h6 id='hcm-ex'>Examination</h6>
+
+- ↓COp
+- **→EF**
+	- →
+	- 末期: ↓
+
+<!-- <h6 id='hcm-dx'>Diagnosis</h6> -->
+<h6 id='hcm-tx'>Treatment</h6>
+
+- βB
+- CCB
+- AAD Ia
+
+C/I :
+
+- βS
+- NTG
+- 利尿薬
+
+<!-- <h6 id='hcm-prg'>Prognosis</h6> -->
+<!-- <h6 id='hcm-app'>Appendix</h6> -->
 
 
 ## 

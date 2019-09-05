@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:36:15
+Modified: 	2019-09-05 20:39:38
 -----
 Copyright (c) 2019 shumez
 -->
@@ -376,6 +376,93 @@ Myonephropathic metabolic syndrome 血行再建術後症候群
 <!-- <h6 id='mnms-tx'>Treatment</h6> -->
 <!-- <h6 id='mnms-prg'>Prognosis</h6> -->
 <!-- <h6 id='mnms-app'>Appendix</h6> -->
+
+
+## CAOD
+
+Chronic Arterial Occlusion Disease 慢性動脈閉塞症
+
+<!-- <h6 id='caod-def'>Definition</h6> -->
+<!-- <h6 id='caod-eti'>Etiology</h6> -->
+<!-- <h6 id='caod-epi'>Epidemiology</h6> -->
+<h6 id='caod-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="20%"></th>
+			<th width="40%">ASO</th>
+			<th width="40%">TAO</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>Epid</th>
+			<td align="center">中高年 M</td>
+			<td align="center">若年 M</td>
+		</tr>
+		<tr>
+			<th>Lesion</th>
+			<td align="center">Ao分枝 - 大腿A<br>
+				下肢<u>中枢</u></td>
+			<td align="center">膝窩A -<br>
+				下肢<u>末梢</u></td>
+		</tr>
+		<tr>
+			<th>遊走性静脈炎</th>
+			<td align="center">(–)</td>
+			<td align="center">(+)</td>
+		</tr>
+		<tr>
+			<th>側副血行路</th>
+			<td align="center">(–)</td>
+			<td align="center">(+)</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='caod-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='caod-cmp'>Complication</h6> -->
+<h6 id='caod-ex'>Examination</h6>
+
+ABI (Ankle Branchial Index)
+                
+<table>
+	<tbody>
+		<tr>
+			<td align="right" colspan="2">≥ 1.40</td>
+			<td colspan="2">動脈の高度石灰化</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="2">1.00-1.40</td>
+			<td colspan="2">nl</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="2">≤ 0.90</td>
+			<td colspan="2">下肢主幹動脈の狭窄/閉塞</td>
+		</tr>
+		<tr>
+			<td rowspan=3></td>
+			<td align="right">≥ .70</td>
+			<td rowspan=3></td>
+			<td>軽度</td>
+		</tr>
+		<tr>
+			<td align="right">≥ .30</td>
+			<td>中度</td>
+		</tr>
+		<tr>
+			<td align="right">≤ .30</td>
+			<td>重度</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+<!-- <h6 id='caod-dx'>Diagnosis</h6> -->
+<!-- <h6 id='caod-tx'>Treatment</h6> -->
+<!-- <h6 id='caod-prg'>Prognosis</h6> -->
+<!-- <h6 id='caod-app'>Appendix</h6> -->
 
 
 ## 

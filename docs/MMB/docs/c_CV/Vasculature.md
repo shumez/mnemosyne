@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:20:40
+Modified: 	2019-09-05 20:22:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -154,6 +154,35 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='aa-tx'>Treatment</h6> -->
 <!-- <h6 id='aa-prg'>Prognosis</h6> -->
 <!-- <h6 id='aa-app'>Appendix</h6> -->
+
+
+## AAA
+
+Abdominal AA
+
+<!-- <h6 id='aaa-def'>Definition</h6> -->
+<!-- <h6 id='aaa-eti'>Etiology</h6> -->
+<h6 id='aaa-epi'>Epidemiology</h6>
+
+![](https://www.fairview.org/hlimg/krames/353691.jpg)
+
+- **腎A以下**が好発
+
+<!-- <h6 id='aaa-cls'>Classification</h6> -->
+<!-- <h6 id='aaa-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aaa-cmp'>Complication</h6> -->
+<!-- <h6 id='aaa-ex'>Examination</h6> -->
+<!-- <h6 id='aaa-dx'>Diagnosis</h6> -->
+<h6 id='aaa-tx'>Treatment</h6>
+
+Indication
+
+- M: ≥ 55mm
+- F: ≥ 50mm
+
+<!-- <h6 id='aaa-prg'>Prognosis</h6> -->
+<!-- <h6 id='aaa-app'>Appendix</h6> -->
+
 
 ## 
 

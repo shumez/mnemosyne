@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:55:26
+Modified: 	2019-09-05 17:56:28
 -----
 Copyright (c) 2019 shumez
 -->
@@ -237,6 +237,29 @@ Brockenbrough pheno
 <!-- <h6 id='rcm-tx'>Treatment</h6> -->
 <!-- <h6 id='rcm-prg'>Prognosis</h6> -->
 <!-- <h6 id='rcm-app'>Appendix</h6> -->
+
+
+## Takotsubo-type
+
+たこつぼ型心筋症
+
+<!-- <h6 id='takotsubo-type-def'>Definition</h6> -->
+<!-- <h6 id='takotsubo-type-eti'>Etiology</h6> -->
+<!-- <h6 id='takotsubo-type-epi'>Epidemiology</h6> -->
+<!-- <h6 id='takotsubo-type-cls'>Classification</h6> -->
+<!-- <h6 id='takotsubo-type-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='takotsubo-type-cmp'>Complication</h6> -->
+<!-- <h6 id='takotsubo-type-ex'>Examination</h6> -->
+<!-- <h6 id='takotsubo-type-dx'>Diagnosis</h6> -->
+<h6 id='takotsubo-type-tx'>Treatment</h6>
+
+- 対症療法
+
+<h6 id='takotsubo-type-prg'>Prognosis</h6>
+
+- ≤ 1mo 壁運動正常化
+
+<!-- <h6 id='takotsubo-type-app'>Appendix</h6> -->
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:23:10
+Modified: 	2019-09-05 17:24:30
 -----
 Copyright (c) 2019 shumez
 -->
@@ -238,6 +238,28 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='eisenmenger-prg'>Prognosis</h6> -->
 <!-- <h6 id='eisenmenger-app'>Appendix</h6> -->
+
+
+## PDA
+
+<!-- <h6 id='pda-def'>Definition</h6> -->
+<!-- <h6 id='pda-eti'>Etiology</h6> -->
+<!-- <h6 id='pda-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pda-cls'>Classification</h6> -->
+<h6 id='pda-sx'>Sign and Symptom</h6>
+
+![](https://qb.medilink-study.com/images/103I009_bas_c_010.jpg)
+
+<!-- <h6 id='pda-cmp'>Complication</h6> -->
+<h6 id='pda-ex'>Examination</h6>
+
+- ↑RV容量負荷
+
+<!-- <h6 id='pda-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pda-tx'>Treatment</h6> -->
+<!-- <h6 id='pda-prg'>Prognosis</h6> -->
+<!-- <h6 id='pda-app'>Appendix</h6> -->
+
 
 
 ## 

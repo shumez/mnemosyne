@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:05:19
+Modified: 	2019-09-05 17:07:58
 -----
 Copyright (c) 2019 shumez
 -->
@@ -130,6 +130,42 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='intro-tx'>Treatment</h6> -->
 <!-- <h6 id='intro-prg'>Prognosis</h6> -->
 <!-- <h6 id='intro-app'>Appendix</h6> -->
+
+
+## ASD
+
+<!-- <h6 id='asd-def'>Definition</h6> -->
+<h6 id='asd-eti'>Etiology</h6>
+
+![](https://qb.medilink-study.com/images/93E023_bas_c_010.jpg)
+
+- ↑RV 容量  
+	⇒  
+	- 相対的PS
+	- RBBB
+	- AFib
+
+<!-- <h6 id='asd-epi'>Epidemiology</h6> -->
+<!-- <h6 id='asd-cls'>Classification</h6> -->
+<h6 id='asd-sx'>Sign and Symptom</h6>
+
+- 乳幼児: 無症状
+
+<!-- <h6 id='asd-cmp'>Complication</h6> -->
+<h6 id='asd-ex'>Examination</h6>
+
+- S~2~固定性分裂
+- 心室中隔期異性運動  
+	∵ RV容量負荷
+
+<!-- <h6 id='asd-dx'>Diagnosis</h6> -->
+<h6 id='asd-tx'>Treatment</h6>
+
+- **自然閉鎖 (–)** cf. VSD 自然閉鎖
+	- **就学期** ≤ 20yo　**心内修復**
+
+<!-- <h6 id='asd-prg'>Prognosis</h6> -->
+<!-- <h6 id='asd-app'>Appendix</h6> -->
 
 ## 
 

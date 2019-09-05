@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:47:39
+Modified: 	2019-09-05 17:54:11
 -----
 Copyright (c) 2019 shumez
 -->
@@ -124,6 +124,8 @@ C/I :
 <!-- <h6 id='hocm-cmp'>Complication</h6> -->
 <h6 id='hocm-ex'>Examination</h6>
 
+![](https://qb.medilink-study.com/images/91B021_bas_c_020.jpg)
+
 - **二峰性 頸動脈脈**
 - PVC直後 収縮期雑音
 - U/S
@@ -131,10 +133,73 @@ C/I :
 	- ASH
 	- **AoV 収縮中期半閉鎖**
 
-<!-- <h6 id='hocm-dx'>Diagnosis</h6> -->
+<h6 id='hocm-dx'>Diagnosis</h6>
+
+DDx: HOCM / AS
+![](https://qb.medilink-study.com/images/106D033_bas_c_010.jpg)
+
 <!-- <h6 id='hocm-tx'>Treatment</h6> -->
 <!-- <h6 id='hocm-prg'>Prognosis</h6> -->
-<!-- <h6 id='hocm-app'>Appendix</h6> -->
+<h6 id='hocm-app'>Appendix</h6>
+
+HOCM / 血行動態の変化
+
+<table>
+	<tbody>
+		<tr>
+			<th rowspan="2">HOCM雑音&uarr;<br>
+				: 狭窄増大</th>
+			<td><u>&darr;静脈還流量</u></td>
+			<td>
+				<ul>
+					<li>立位</li>
+					<li>Valsalva法呼吸</li>
+					<li>亜硝酸薬</li>
+					<li><u>心室期外収縮直後</u><br>
+						Brockenbrough pheno</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>&uarr;心収縮力</td>
+			<td>
+				<ul>
+					<li>運動</li>
+					<li>イソプロテレノール<br>
+						（βS）</li>
+					<li>ジギタリス</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th rowspan="2">HOCM雑音&darr;<br>
+				: 狭窄低下</th>
+			<td>&uarr;静脈還流量</td>
+			<td>
+				<ul>
+					<li>坐位</li>
+					<li>臥位</li>
+					<li>下肢挙上</li>
+					<li>大量輸液</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>&darr;心収縮力</td>
+			<td>
+				<ul>
+					<li>βB</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+Brockenbrough pheno
+
+心室期外収縮直後の大動脈圧↓
+
+[](https://qb.medilink-study.com/images/95B026_sup_c_010.jpg)
 
 
 ### APH

@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:22:51
+Modified: 	2019-09-05 20:24:45
 -----
 Copyright (c) 2019 shumez
 -->
@@ -182,6 +182,38 @@ Indication
 
 <!-- <h6 id='aaa-prg'>Prognosis</h6> -->
 <!-- <h6 id='aaa-app'>Appendix</h6> -->
+
+
+## TAA
+
+Thoracic AA
+
+<!-- <h6 id='taa-def'>Definition</h6> -->
+<h6 id='taa-eti'>Etiology</h6>
+
+- **嚢胞状中膜壊死**
+	- Marfan
+- Atherosclerosis
+
+<!-- <h6 id='taa-epi'>Epidemiology</h6> -->
+<!-- <h6 id='taa-cls'>Classification</h6> -->
+<h6 id='taa-sx'>Sign and Symptom</h6>
+
+- 上行Ao
+	- AR
+	- 冠動脈障害
+	- 心タンポナーデ
+- 下行Ao
+	- 対麻痺
+	- 腎虚血
+	- イレウス
+
+<!-- <h6 id='taa-cmp'>Complication</h6> -->
+<!-- <h6 id='taa-ex'>Examination</h6> -->
+<!-- <h6 id='taa-dx'>Diagnosis</h6> -->
+<!-- <h6 id='taa-tx'>Treatment</h6> -->
+<!-- <h6 id='taa-prg'>Prognosis</h6> -->
+<!-- <h6 id='taa-app'>Appendix</h6> -->
 
 
 ## 

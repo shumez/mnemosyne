@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:25:19
+Modified: 	2019-09-05 17:26:40
 -----
 Copyright (c) 2019 shumez
 -->
@@ -275,6 +275,20 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='pda-prg'>Prognosis</h6> -->
 <!-- <h6 id='pda-app'>Appendix</h6> -->
 
+
+## CoA
+
+<!-- <h6 id='coa-def'>Definition</h6> -->
+<!-- <h6 id='coa-eti'>Etiology</h6> -->
+<!-- <h6 id='coa-epi'>Epidemiology</h6> -->
+<!-- <h6 id='coa-cls'>Classification</h6> -->
+<!-- <h6 id='coa-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='coa-cmp'>Complication</h6> -->
+<!-- <h6 id='coa-ex'>Examination</h6> -->
+<!-- <h6 id='coa-dx'>Diagnosis</h6> -->
+<!-- <h6 id='coa-tx'>Treatment</h6> -->
+<!-- <h6 id='coa-prg'>Prognosis</h6> -->
+<!-- <h6 id='coa-app'>Appendix</h6> -->
 
 
 ## 

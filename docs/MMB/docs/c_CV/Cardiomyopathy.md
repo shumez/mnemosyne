@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:57:54
+Modified: 	2019-09-05 17:59:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -287,6 +287,35 @@ Brockenbrough pheno
 <!-- <h6 id='2mcd-tx'>Treatment</h6> -->
 <!-- <h6 id='2mcd-prg'>Prognosis</h6> -->
 <!-- <h6 id='2mcd-app'>Appendix</h6> -->
+
+
+## Myocarditis
+
+心内膜炎
+
+<!-- <h6 id='myocarditis-def'>Definition</h6> -->
+<h6 id='myocarditis-eti'>Etiology</h6>
+
+- **Coxasie B**
+
+<!-- <h6 id='myocarditis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='myocarditis-cls'>Classification</h6> -->
+<h6 id='myocarditis-sx'>Sign and Symptom</h6>
+
+- 先行する感染徴候
+- 急激なLV機能↓ ⇒ HF
+
+<!-- <h6 id='myocarditis-cmp'>Complication</h6> -->
+<h6 id='myocarditis-ex'>Examination</h6>
+
+- **非特異的ST-T変化**
+- ↑LDH1
+- 比較的短期間なLV機能改善
+
+<!-- <h6 id='myocarditis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='myocarditis-tx'>Treatment</h6> -->
+<!-- <h6 id='myocarditis-prg'>Prognosis</h6> -->
+<!-- <h6 id='myocarditis-app'>Appendix</h6> -->
 
 
 ## 

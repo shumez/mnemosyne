@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:22:14
+Modified: 	2019-09-05 15:25:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -358,6 +358,14 @@ S/S :
 - 失神発作
 - NYHA ≥ II°
 - EF ≤ 50%
+
+
+TAVI (Transcatheter Aortic Valve Implantation)
+
+- Indication
+	- ≥ 80y/o
+	- 以前に開胸手術, 再開胸を避けるべき症例
+	- COPDなどの基礎疾患, 開胸AVRより侵襲の少ない方法を選ぶ場合
 
 <!-- <h6 id='as-prg'>Prognosis</h6> -->
 <!-- <h6 id='as-app'>Appendix</h6> -->

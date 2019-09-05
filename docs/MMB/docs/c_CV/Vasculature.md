@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:33:16
+Modified: 	2019-09-05 20:34:29
 -----
 Copyright (c) 2019 shumez
 -->
@@ -335,6 +335,23 @@ Stanford A
 
 <!-- <h6 id='intramural_hematoma-prg'>Prognosis</h6> -->
 <!-- <h6 id='intramural_hematoma-app'>Appendix</h6> -->
+
+
+## AAOD
+
+急性動脈閉塞症
+
+<!-- <h6 id='aaod-def'>Definition</h6> -->
+<!-- <h6 id='aaod-eti'>Etiology</h6> -->
+<!-- <h6 id='aaod-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aaod-cls'>Classification</h6> -->
+<!-- <h6 id='aaod-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aaod-cmp'>Complication</h6> -->
+<!-- <h6 id='aaod-ex'>Examination</h6> -->
+<!-- <h6 id='aaod-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aaod-tx'>Treatment</h6> -->
+<!-- <h6 id='aaod-prg'>Prognosis</h6> -->
+<!-- <h6 id='aaod-app'>Appendix</h6> -->
 
 
 ## 

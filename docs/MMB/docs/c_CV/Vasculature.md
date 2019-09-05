@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:43:7
+Modified: 	2019-09-05 20:44:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -520,6 +520,33 @@ Thrombo
 
 <!-- <h6 id='tao-prg'>Prognosis</h6> -->
 <!-- <h6 id='tao-app'>Appendix</h6> -->
+
+
+## Aortitis
+
+<!-- <h6 id='aortitis-def'>Definition</h6> -->
+<!-- <h6 id='aortitis-eti'>Etiology</h6> -->
+<!-- <h6 id='aortitis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aortitis-cls'>Classification</h6> -->
+<h6 id='aortitis-sx'>Sign and Symptom</h6>
+
+- 頸A狭窄
+	- めまい
+	- 失神
+	- 脳梗塞
+- 腎A狭窄
+	- RVHT
+- Ao
+	- Ao瘤
+- PA
+	- PHTN
+
+<!-- <h6 id='aortitis-cmp'>Complication</h6> -->
+<!-- <h6 id='aortitis-ex'>Examination</h6> -->
+<!-- <h6 id='aortitis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aortitis-tx'>Treatment</h6> -->
+<!-- <h6 id='aortitis-prg'>Prognosis</h6> -->
+<!-- <h6 id='aortitis-app'>Appendix</h6> -->
 
 
 ## 

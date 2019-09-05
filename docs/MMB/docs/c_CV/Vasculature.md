@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:17:24
+Modified: 	2019-09-05 20:18:21
 -----
 Copyright (c) 2019 shumez
 -->
@@ -110,6 +110,23 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='artery-tx'>Treatment</h6> -->
 <!-- <h6 id='artery-prg'>Prognosis</h6> -->
 <!-- <h6 id='artery-app'>Appendix</h6> -->
+
+
+## Arteriosclerosis
+
+動脈硬化
+
+<!-- <h6 id='arteriosclerosis-def'>Definition</h6> -->
+<!-- <h6 id='arteriosclerosis-eti'>Etiology</h6> -->
+<!-- <h6 id='arteriosclerosis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='arteriosclerosis-cls'>Classification</h6> -->
+<!-- <h6 id='arteriosclerosis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='arteriosclerosis-cmp'>Complication</h6> -->
+<!-- <h6 id='arteriosclerosis-ex'>Examination</h6> -->
+<!-- <h6 id='arteriosclerosis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='arteriosclerosis-tx'>Treatment</h6> -->
+<!-- <h6 id='arteriosclerosis-prg'>Prognosis</h6> -->
+<!-- <h6 id='arteriosclerosis-app'>Appendix</h6> -->
 
 
 ## 

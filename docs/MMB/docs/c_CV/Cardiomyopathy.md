@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:45:50
+Modified: 	2019-09-05 17:47:39
 -----
 Copyright (c) 2019 shumez
 -->
@@ -135,6 +135,26 @@ C/I :
 <!-- <h6 id='hocm-tx'>Treatment</h6> -->
 <!-- <h6 id='hocm-prg'>Prognosis</h6> -->
 <!-- <h6 id='hocm-app'>Appendix</h6> -->
+
+
+### APH
+
+心尖部HCM
+
+<!-- <h6 id='aph-def'>Definition</h6> -->
+<!-- <h6 id='aph-eti'>Etiology</h6> -->
+<!-- <h6 id='aph-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aph-cls'>Classification</h6> -->
+<!-- <h6 id='aph-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aph-cmp'>Complication</h6> -->
+<h6 id='aph-ex'>Examination</h6>
+
+- **巨大T波**
+
+<!-- <h6 id='aph-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aph-tx'>Treatment</h6> -->
+<!-- <h6 id='aph-prg'>Prognosis</h6> -->
+<!-- <h6 id='aph-app'>Appendix</h6> -->
 
 
 ## 

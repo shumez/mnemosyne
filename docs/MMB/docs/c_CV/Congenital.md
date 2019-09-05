@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:26:40
+Modified: 	2019-09-05 17:27:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -289,6 +289,23 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='coa-tx'>Treatment</h6> -->
 <!-- <h6 id='coa-prg'>Prognosis</h6> -->
 <!-- <h6 id='coa-app'>Appendix</h6> -->
+
+
+## TS
+
+Tricuspid valve Stenosis
+
+<!-- <h6 id='ts-def'>Definition</h6> -->
+<!-- <h6 id='ts-eti'>Etiology</h6> -->
+<!-- <h6 id='ts-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ts-cls'>Classification</h6> -->
+<!-- <h6 id='ts-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ts-cmp'>Complication</h6> -->
+<!-- <h6 id='ts-ex'>Examination</h6> -->
+<!-- <h6 id='ts-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ts-tx'>Treatment</h6> -->
+<!-- <h6 id='ts-prg'>Prognosis</h6> -->
+<!-- <h6 id='ts-app'>Appendix</h6> -->
 
 
 ## 

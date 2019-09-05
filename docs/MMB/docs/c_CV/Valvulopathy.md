@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:06:27
+Modified: 	2019-09-05 15:12:21
 -----
 Copyright (c) 2019 shumez
 -->
@@ -287,6 +287,81 @@ Mitral Valve Prolapse
 <!-- <h6 id='mvp-tx'>Treatment</h6> -->
 <!-- <h6 id='mvp-prg'>Prognosis</h6> -->
 <!-- <h6 id='mvp-app'>Appendix</h6> -->
+
+
+## AS
+
+Atrial Stenosis
+
+<!-- <h6 id='as-def'>Definition</h6> -->
+<h6 id='as-eti'>Etiology</h6>
+
+- 動脈硬化
+- **二尖弁**
+
+<!-- <h6 id='as-epi'>Epidemiology</h6> -->
+<!-- <h6 id='as-cls'>Classification</h6> -->
+<h6 id='as-sx'>Sign and Symptom</h6>
+
+- 狭心痛
+	- 心筋肥大 ⇒ ↑O2需要 ⇒ 狭心痛
+	- 平均余命: 5yrs
+- 失神
+	- ↓Ao圧 ⇒ ↓脳血流量 ⇒ 失神
+	- 平均余命: 3yrs
+- 心不全
+	- ↓LVのコンプライアンス ⇒ 心不全
+	- 平均余命: 2yrs
+
+<!-- <h6 id='as-cmp'>Complication</h6> -->
+<h6 id='as-ex'>Examination</h6>
+
+弁口面積
+
+<table>
+	<tbody>
+		<tr>
+			<th>正常</th>
+			<td>3 cm<sup>2</sup></td>
+		</tr>
+		<tr>
+			<th>軽度</th>
+			<td>≤ <u>1.5 cm</u><sup>2</sup>s</td>
+		</tr>
+		<tr>
+			<th>中等度</th>
+			<td>≤ 1.0 cm<sup>2</sup><br>
+				弁置換適応</td>
+		</tr>
+		<tr>
+			<th>高度</th>
+			<td>≤ 0.5 cm<sup>2</sup></td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='as-dx'>Diagnosis</h6> -->
+<h6 id='as-tx'>Treatment</h6>
+
+1. 高度AS & S/S
+2. 高度AS & Ope予定
+
+
+高度AS :
+
+- **圧較差 ≥ 40mHg**
+- 弁口面積 ≤ 1.0
+
+S/S :
+
+- **狭心痛**
+- 失神発作
+- NYHA ≥ II°
+- EF ≤ 50%
+
+<!-- <h6 id='as-prg'>Prognosis</h6> -->
+<!-- <h6 id='as-app'>Appendix</h6> -->
+
 
 ##
 <!-- ## -->

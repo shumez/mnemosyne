@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:41:45
+Modified: 	2019-09-05 20:43:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -493,6 +493,33 @@ ArterioSclerosis Obliterans
 
 <!-- <h6 id='aso-prg'>Prognosis</h6> -->
 <!-- <h6 id='aso-app'>Appendix</h6> -->
+
+
+## TAO
+
+Thrombo
+
+<!-- <h6 id='tao-def'>Definition</h6> -->
+<!-- <h6 id='tao-eti'>Etiology</h6> -->
+<!-- <h6 id='tao-epi'>Epidemiology</h6> -->
+<!-- <h6 id='tao-cls'>Classification</h6> -->
+<h6 id='tao-sx'>Sign and Symptom</h6>
+
+- **遊走性静脈炎**
+
+<!-- <h6 id='tao-cmp'>Complication</h6> -->
+<h6 id='tao-ex'>Examination</h6>
+
+- Patho
+	- **全層性血管炎**
+
+<!-- <h6 id='tao-dx'>Diagnosis</h6> -->
+<h6 id='tao-tx'>Treatment</h6>
+
+- **腰部交感神経節ブロック**
+
+<!-- <h6 id='tao-prg'>Prognosis</h6> -->
+<!-- <h6 id='tao-app'>Appendix</h6> -->
 
 
 ## 

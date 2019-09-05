@@ -3,7 +3,7 @@ Filename: 	Pericardium.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:2
-Modified: 	2019-09-05 20:06:42
+Modified: 	2019-09-05 20:09:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -151,6 +151,37 @@ ST上昇の鑑別
         </tr>
     </tbody>
 </table>
+
+
+## CP
+
+収縮性心膜炎
+
+<!-- <h6 id='cp-def'>Definition</h6> -->
+<!-- <h6 id='cp-eti'>Etiology</h6> -->
+<!-- <h6 id='cp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='cp-cls'>Classification</h6> -->
+<h6 id='cp-sx'>Sign and Symptom</h6>
+
+- **Rt HF**  
+    ∵ RVが, LVに圧排される
+
+<!-- <h6 id='cp-cmp'>Complication</h6> -->
+<h6 id='cp-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/95H004_ima_c_010.jpg)
+
+![](https://qb.medilink-study.com/images/97A021_ref_c_020.jpg)
+
+- murmur
+    - **心膜knock**
+- **Dip & Plateau**
+- RV EDV ≈ LV EDV
+
+<!-- <h6 id='cp-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cp-tx'>Treatment</h6> -->
+<!-- <h6 id='cp-prg'>Prognosis</h6> -->
+<!-- <h6 id='cp-app'>Appendix</h6> -->
 
 
 ## 

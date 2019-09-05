@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:27:33
+Modified: 	2019-09-05 15:48:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -546,6 +546,165 @@ Tricuspid Regurgitation
 <!-- <h6 id='tr-tx'>Treatment</h6> -->
 <!-- <h6 id='tr-prg'>Prognosis</h6> -->
 <!-- <h6 id='tr-app'>Appendix</h6> -->
+
+
+## IE
+
+Infectious Endocarditis 感染性心内膜炎
+
+<!-- <h6 id='ie-def'>Definition</h6> -->
+<h6 id='ie-eti'>Etiology</h6>
+
+- 誘引 :
+	- 弁膜症
+		- **MR** / MVP
+		- AR
+		- AS
+		- PS
+	- 先天性
+		- VSD
+		- PDA
+		- ToF  
+			**ASD : IEきたしにくい**
+	- 心筋症
+		- HOCM
+	- 開心術後
+		- 人口弁置換術後
+
+
+- 急性 :
+	- 黄色ブドウ球菌
+- 亜急性 :
+	- **緑色レンサ球菌** #1
+	- **腸球菌**
+- 慢性 :
+	- 非細菌性
+
+<!-- <h6 id='ie-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ie-cls'>Classification</h6> -->
+<h6 id='ie-sx'>Sign and Symptom</h6>
+
+- Murmur
+	- MR
+- 塞栓
+	- Osler結節 / 眼底**Roth斑** / 出血斑 / **爪下線状出血**
+	- Janeway病変
+
+<!-- <h6 id='ie-cmp'>Complication</h6> -->
+<h6 id='ie-ex'>Examination</h6>
+
+- L/D
+	- γ-globlin
+	- ↑FBG
+- 血液培養
+- MRI 
+	- 感染性脳動脈瘤
+
+<!-- <h6 id='ie-dx'>Diagnosis</h6> -->
+<h6 id='ie-tx'>Treatment</h6>
+
+- 緑連菌
+	- **PG**
+
+手術適応
+
+- 頻発塞栓
+- 心不全悪化
+- 内科的コントロール不能状態
+- 真菌性心内膜炎
+- 人工弁に伴う心内膜炎
+- **膿瘍の形成**
+
+
+<!-- <h6 id='ie-prg'>Prognosis</h6> -->
+<h6 id='ie-app'>Appendix</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2"><u>そうか ロス じゃ お寿 司　ない</u></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>そうか</td>
+			<td>爪下線状出血</td>
+		</tr>
+		<tr>
+			<td>ロス</td>
+			<td>Roth 斑</td>
+		</tr>
+		<tr>
+			<td>じゃ</td>
+			<td>Janeway 病変</td>
+		</tr>
+		<tr>
+			<td>お寿</td>
+			<td>Osler結節</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>感染性心内膜炎</td>
+		</tr>
+	</tbody>
+</table>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>起因菌</th>
+			<th>age</th>
+			<th>onset</th>
+			<th>基礎疾患</th>
+			<th>合併症</th>
+			<th>死亡率</th>
+			<th>治療</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>院内感染</th>
+			<td><ul>
+				<li>黄色ブドウ球菌</li>
+				<li>表皮ブドウ球菌</li>
+				<li>溶連菌</li>
+			</ul></td>
+			<td>高齢</td>
+			<td>急性</td>
+			<td><ul>
+				<li>人工弁 (≤ 2mo)</li>
+				<li>静脈内カテ</li>
+			</ul></td>
+			<td><ul>
+				<li>心筋炎</li>
+				<li>細菌塞栓</li>
+			</ul></td>
+			<td>(+++)</td>
+			<td>バンコマイシン</td>
+		</tr>
+		<tr>
+			<th>院外感染</th>
+			<td><ul>
+				<li>緑膿菌</li>
+				<li>腸球菌</li>
+				<li>大腸菌</li>
+			</ul></td>
+			<td>若年</td>
+			<td>亜急性</td>
+			<td><ul>
+				<li>人工弁 (≥ 2mo)</li>
+				<li>先天性心疾患</li>
+			</ul></td>
+			<td><ul>
+				<li>血栓塞栓症</li>
+				<li>FSGS</li>
+			</ul></td>
+			<td>(–)</td>
+			<td>PC-G</td>
+		</tr>
+	</tbody>
+</table>
 
 
 ##

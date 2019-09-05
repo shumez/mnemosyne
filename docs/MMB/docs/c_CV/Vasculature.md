@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:44:10
+Modified: 	2019-09-05 20:46:6
 -----
 Copyright (c) 2019 shumez
 -->
@@ -547,6 +547,48 @@ Thrombo
 <!-- <h6 id='aortitis-tx'>Treatment</h6> -->
 <!-- <h6 id='aortitis-prg'>Prognosis</h6> -->
 <!-- <h6 id='aortitis-app'>Appendix</h6> -->
+
+
+## Vein
+
+表在腹壁V
+
+<table>
+	<thead>
+		<tr>
+			<th width=10%></th>
+			<th width=30%>Ref</th>
+			<th width=30%>SVC閉塞</th>
+			<th width=30%>IVC閉塞</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>臍上</th>
+			<td align="center">&uarr;</td>
+			<td align="center">&darr;</td>
+			<td align="center">&uarr;</td>
+		</tr>
+		<tr>
+			<td>臍下</td>
+			<td align="center">&darr;</td>
+			<td align="center">&darr;</td>
+			<td align="center">&uarr;</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
 
 
 ## 

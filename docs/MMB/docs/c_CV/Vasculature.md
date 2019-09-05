@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:34:29
+Modified: 	2019-09-05 20:36:15
 -----
 Copyright (c) 2019 shumez
 -->
@@ -352,6 +352,30 @@ Stanford A
 <!-- <h6 id='aaod-tx'>Treatment</h6> -->
 <!-- <h6 id='aaod-prg'>Prognosis</h6> -->
 <!-- <h6 id='aaod-app'>Appendix</h6> -->
+
+
+### MNMS
+
+Myonephropathic metabolic syndrome 血行再建術後症候群
+
+<!-- <h6 id='mnms-def'>Definition</h6> -->
+<!-- <h6 id='mnms-eti'>Etiology</h6> -->
+<!-- <h6 id='mnms-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mnms-cls'>Classification</h6> -->
+<h6 id='mnms-sx'>Sign and Symptom</h6>
+
+- 腎不全
+
+<!-- <h6 id='mnms-cmp'>Complication</h6> -->
+<h6 id='mnms-ex'>Examination</h6>
+
+- ミオグロビン血症
+- Acidosis
+
+<!-- <h6 id='mnms-dx'>Diagnosis</h6> -->
+<!-- <h6 id='mnms-tx'>Treatment</h6> -->
+<!-- <h6 id='mnms-prg'>Prognosis</h6> -->
+<!-- <h6 id='mnms-app'>Appendix</h6> -->
 
 
 ## 

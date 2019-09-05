@@ -3,7 +3,7 @@ Filename: 	Ischemia.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:2
-Modified: 	2019-09-04 20:48:5
+Modified: 	2019-09-05 14:42:30
 -----
 Copyright (c) 2019 shumez
 -->
@@ -407,6 +407,16 @@ STEMI
 心室瘤
 
 ![](https://qb.medilink-study.com/images/98D021_ima_c_010.jpg)
+
+
+###### Viability 心筋生存性
+
+壁運動が異常な心筋が生存しているか, 壊死しているのか
+
+1. stunned myocardium (気絶心筋)
+    - 虚血に曝された心筋が, 再灌流後に壊死には陥らずに,  収縮性が低下した状態
+2. hivernating myocardium (冬眠心筋)
+    - 心筋血流が慢性的に低下して, 心室機能を低下させて, 心筋酸素需要を低下させた適応状態
 
 
 ### IWMI

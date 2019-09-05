@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:25:27
+Modified: 	2019-09-05 15:26:41
 -----
 Copyright (c) 2019 shumez
 -->
@@ -515,6 +515,8 @@ TAVI (Transcatheter Aortic Valve Implantation)
 
 
 ## TS
+
+Tricuspid Stenosis
 
 <!-- <h6 id='ts-def'>Definition</h6> -->
 <!-- <h6 id='ts-eti'>Etiology</h6> -->

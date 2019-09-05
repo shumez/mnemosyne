@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:56:28
+Modified: 	2019-09-05 17:57:54
 -----
 Copyright (c) 2019 shumez
 -->
@@ -260,6 +260,33 @@ Brockenbrough pheno
 - ≤ 1mo 壁運動正常化
 
 <!-- <h6 id='takotsubo-type-app'>Appendix</h6> -->
+
+
+## 2MCD
+
+二次性心筋疾患
+
+<!-- <h6 id='2mcd-def'>Definition</h6> -->
+<h6 id='2mcd-eti'>Etiology</h6>
+
+- 代謝性 :
+	- Amyloidosis
+- 遺伝性
+	- 筋dystrophy
+		- DMD
+		- MYD
+	- 変性疾患
+		- Friefreich 運動失調症
+
+<!-- <h6 id='2mcd-epi'>Epidemiology</h6> -->
+<!-- <h6 id='2mcd-cls'>Classification</h6> -->
+<!-- <h6 id='2mcd-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='2mcd-cmp'>Complication</h6> -->
+<!-- <h6 id='2mcd-ex'>Examination</h6> -->
+<!-- <h6 id='2mcd-dx'>Diagnosis</h6> -->
+<!-- <h6 id='2mcd-tx'>Treatment</h6> -->
+<!-- <h6 id='2mcd-prg'>Prognosis</h6> -->
+<!-- <h6 id='2mcd-app'>Appendix</h6> -->
 
 
 ## 

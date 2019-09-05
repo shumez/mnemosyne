@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:25:50
+Modified: 	2019-09-05 20:29:25
 -----
 Copyright (c) 2019 shumez
 -->
@@ -240,6 +240,58 @@ Thoracic AA
 
 <!-- <h6 id='aae-prg'>Prognosis</h6> -->
 <!-- <h6 id='aae-app'>Appendix</h6> -->
+
+
+## AAD
+
+急性大動脈解離
+
+<!-- <h6 id='aad-def'>Definition</h6> -->
+<h6 id='aad-eti'>Etiology</h6>
+
+- Marfan
+
+<!-- <h6 id='aad-epi'>Epidemiology</h6> -->
+<h6 id='aad-cls'>Classification</h6>
+
+![](https://www.researchgate.net/profile/Subhi_Alaref/publication/283276961/figure/fig1/AS:289355416522752@1445999115842/Acute-aortic-syndrome-subtypes-A-Aortic-dissection-with-an-associated-intimal-flap.png)
+
+[ref](https://www.researchgate.net/figure/Acute-aortic-syndrome-subtypes-A-Aortic-dissection-with-an-associated-intimal-flap_fig1_283276961)
+
+- Intramural hematoma 偽腔閉鎖型
+- Ulcer-like Projection (潰瘍様突出)
+
+<h6 id='aad-sx'>Sign and Symptom</h6>
+
+- 疼痛 / 臓器虚血
+
+Stanford A
+
+- 急性AS
+- ACS
+- 脳梗塞
+- 腹腔臓器虚血
+- 下肢虚血
+
+<h6 id='aad-cmp'>Complication</h6>
+
+- Adam-Kewiz
+- 血胸
+- イレウス
+- 脳虚血症状 / 脳梗塞
+
+<!-- <h6 id='aad-ex'>Examination</h6> -->
+<!-- <h6 id='aad-dx'>Diagnosis</h6> -->
+<h6 id='aad-tx'>Treatment</h6>
+
+- 急性期
+	- Stan-A: 緊急ope
+	- Stan-B: 降圧
+	- **偽腔閉鎖型: 降圧**
+- 慢性期
+
+<!-- <h6 id='aad-prg'>Prognosis</h6> -->
+<!-- <h6 id='aad-app'>Appendix</h6> -->
 
 
 ## 

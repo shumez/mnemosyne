@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:00:7
+Modified: 	2019-09-05 15:06:27
 -----
 Copyright (c) 2019 shumez
 -->
@@ -262,6 +262,31 @@ MS ope適応
 <!-- <h6 id='mr-app'>Appendix</h6> -->
 
 
+## MVP
+
+Mitral Valve Prolapse
+
+<!-- <h6 id='mvp-def'>Definition</h6> -->
+<!-- <h6 id='mvp-eti'>Etiology</h6> -->
+<!-- <h6 id='mvp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mvp-cls'>Classification</h6> -->
+<!-- <h6 id='mvp-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='mvp-cmp'>Complication</h6> -->
+<h6 id='mvp-ex'>Examination</h6>
+
+![](https://m1.healio.com/~/media/learningsites/learntheheart/assets/1/e/4/6/mvp.png)
+
+- Murmur
+	- 収縮中期 高音クリック音  
+		∵ MV逸脱による高調
+	- SRM 後期
+
+[ref](https://www.healio.com/cardiology/learn-the-heart/cardiology-review/topic-reviews/heart-murmurs)
+
+<!-- <h6 id='mvp-dx'>Diagnosis</h6> -->
+<!-- <h6 id='mvp-tx'>Treatment</h6> -->
+<!-- <h6 id='mvp-prg'>Prognosis</h6> -->
+<!-- <h6 id='mvp-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

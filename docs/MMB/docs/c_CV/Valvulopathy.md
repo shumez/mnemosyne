@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:26:41
+Modified: 	2019-09-05 15:27:33
 -----
 Copyright (c) 2019 shumez
 -->
@@ -530,6 +530,22 @@ Tricuspid Stenosis
 <!-- <h6 id='ts-prg'>Prognosis</h6> -->
 <!-- <h6 id='ts-app'>Appendix</h6> -->
 
+
+## TR
+
+Tricuspid Regurgitation
+
+<!-- <h6 id='tr-def'>Definition</h6> -->
+<!-- <h6 id='tr-eti'>Etiology</h6> -->
+<!-- <h6 id='tr-epi'>Epidemiology</h6> -->
+<!-- <h6 id='tr-cls'>Classification</h6> -->
+<!-- <h6 id='tr-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='tr-cmp'>Complication</h6> -->
+<!-- <h6 id='tr-ex'>Examination</h6> -->
+<!-- <h6 id='tr-dx'>Diagnosis</h6> -->
+<!-- <h6 id='tr-tx'>Treatment</h6> -->
+<!-- <h6 id='tr-prg'>Prognosis</h6> -->
+<!-- <h6 id='tr-app'>Appendix</h6> -->
 
 
 ##

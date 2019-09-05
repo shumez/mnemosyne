@@ -3,7 +3,7 @@ Filename: 	Tumor.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 16:53:31
+Modified: 	2019-09-05 16:56:53
 -----
 Copyright (c) 2019 shumez
 -->
@@ -37,6 +37,48 @@ Copyright (c) 2019 shumez
 		予後不良
 
 <!-- <h6 id='intro-app'>Appendix</h6> -->
+
+
+## Cardiac Myxoma
+
+心臓粘液腫
+
+<!-- <h6 id='cardiac_myxoma-def'>Definition</h6> -->
+<!-- <h6 id='cardiac_myxoma-eti'>Etiology</h6> -->
+<h6 id='cardiac_myxoma-epi'>Epidemiology</h6>
+
+- 90% LA内
+
+<!-- <h6 id='cardiac_myxoma-cls'>Classification</h6> -->
+<h6 id='cardiac_myxoma-sx'>Sign and Symptom</h6>
+
+- 全身症状
+	- FUO
+	- ↓体重
+	- 炎症所見
+		- **関節痛**
+	- ↑γ-globlin
+- 腫瘍塞栓
+	- 脳 / 腎 / 四肢
+- 弁口閉塞
+
+<!-- <h6 id='cardiac_myxoma-cmp'>Complication</h6> -->
+<h6 id='cardiac_myxoma-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/99A022.jpg)
+
+- ↑IL-6
+- Murmur
+	- MS 様
+	- **体位によって変化**
+
+<!-- <h6 id='cardiac_myxoma-dx'>Diagnosis</h6> -->
+<h6 id='cardiac_myxoma-tx'>Treatment</h6>
+
+- **早期に Ope**
+
+<!-- <h6 id='cardiac_myxoma-prg'>Prognosis</h6> -->
+<!-- <h6 id='cardiac_myxoma-app'>Appendix</h6> -->
 
 
 ## 

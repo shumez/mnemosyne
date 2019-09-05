@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:54:11
+Modified: 	2019-09-05 17:55:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -220,6 +220,23 @@ Brockenbrough pheno
 <!-- <h6 id='aph-tx'>Treatment</h6> -->
 <!-- <h6 id='aph-prg'>Prognosis</h6> -->
 <!-- <h6 id='aph-app'>Appendix</h6> -->
+
+
+## RCM
+
+拘束型心筋症
+
+<!-- <h6 id='rcm-def'>Definition</h6> -->
+<!-- <h6 id='rcm-eti'>Etiology</h6> -->
+<!-- <h6 id='rcm-epi'>Epidemiology</h6> -->
+<!-- <h6 id='rcm-cls'>Classification</h6> -->
+<!-- <h6 id='rcm-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='rcm-cmp'>Complication</h6> -->
+<!-- <h6 id='rcm-ex'>Examination</h6> -->
+<!-- <h6 id='rcm-dx'>Diagnosis</h6> -->
+<!-- <h6 id='rcm-tx'>Treatment</h6> -->
+<!-- <h6 id='rcm-prg'>Prognosis</h6> -->
+<!-- <h6 id='rcm-app'>Appendix</h6> -->
 
 
 ## 

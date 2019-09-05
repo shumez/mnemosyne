@@ -3,7 +3,7 @@ Filename: 	Pericardium.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:2
-Modified: 	2019-09-05 20:00:55
+Modified: 	2019-09-05 20:01:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -73,6 +73,21 @@ ST上昇の鑑別
 <!-- <h6 id='pcard-tx'>Treatment</h6> -->
 <!-- <h6 id='pcard-prg'>Prognosis</h6> -->
 <!-- <h6 id='pcard-app'>Appendix</h6> -->
+
+
+### Dressler
+
+<!-- <h6 id='dressler-def'>Definition</h6> -->
+<!-- <h6 id='dressler-eti'>Etiology</h6> -->
+<!-- <h6 id='dressler-epi'>Epidemiology</h6> -->
+<!-- <h6 id='dressler-cls'>Classification</h6> -->
+<!-- <h6 id='dressler-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='dressler-cmp'>Complication</h6> -->
+<!-- <h6 id='dressler-ex'>Examination</h6> -->
+<!-- <h6 id='dressler-dx'>Diagnosis</h6> -->
+<!-- <h6 id='dressler-tx'>Treatment</h6> -->
+<!-- <h6 id='dressler-prg'>Prognosis</h6> -->
+<!-- <h6 id='dressler-app'>Appendix</h6> -->
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 14:53:14
+Modified: 	2019-09-05 15:00:7
 -----
 Copyright (c) 2019 shumez
 -->
@@ -234,6 +234,32 @@ MS ope適応
 - LAP ≈ PAWP ≈ LVEDP ≤ 12mmHg
 - 肺動脈P ≤ 20mmHg
 - RAP ≤ 5mmHg
+
+
+## MR
+
+<!-- <h6 id='mr-def'>Definition</h6> -->
+<h6 id='mr-eti'>Etiology</h6>
+
+1. MVP / Marfan
+2. 腱索断裂 / 乳頭筋断裂
+3. RF
+4. IE
+5. ECD
+6. 外傷性
+
+<!-- <h6 id='mr-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mr-cls'>Classification</h6> -->
+<!-- <h6 id='mr-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='mr-cmp'>Complication</h6> -->
+<h6 id='mr-ex'>Examination</h6>
+
+- Murmur
+
+<!-- <h6 id='mr-dx'>Diagnosis</h6> -->
+<!-- <h6 id='mr-tx'>Treatment</h6> -->
+<!-- <h6 id='mr-prg'>Prognosis</h6> -->
+<!-- <h6 id='mr-app'>Appendix</h6> -->
 
 
 

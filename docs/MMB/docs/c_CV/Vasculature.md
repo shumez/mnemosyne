@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:19:0
+Modified: 	2019-09-05 20:20:40
 -----
 Copyright (c) 2019 shumez
 -->
@@ -133,6 +133,27 @@ Copyright (c) 2019 shumez
 
 粥状硬化
 
+
+## AA
+
+<!-- <h6 id='aa-def'>Definition</h6> -->
+<!-- <h6 id='aa-eti'>Etiology</h6> -->
+<!-- <h6 id='aa-epi'>Epidemiology</h6> -->
+<h6 id='aa-cls'>Classification</h6>
+
+![](https://qb.medilink-study.com/images/100F017_bas_c_010.jpg)
+
+- 真性動脈瘤
+- 仮性動脈瘤
+- 解離性動脈瘤
+
+<!-- <h6 id='aa-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aa-cmp'>Complication</h6> -->
+<!-- <h6 id='aa-ex'>Examination</h6> -->
+<!-- <h6 id='aa-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aa-tx'>Treatment</h6> -->
+<!-- <h6 id='aa-prg'>Prognosis</h6> -->
+<!-- <h6 id='aa-app'>Appendix</h6> -->
 
 ## 
 

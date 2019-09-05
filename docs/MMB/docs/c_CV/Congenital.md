@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:07:58
+Modified: 	2019-09-05 17:17:44
 -----
 Copyright (c) 2019 shumez
 -->
@@ -166,6 +166,52 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='asd-prg'>Prognosis</h6> -->
 <!-- <h6 id='asd-app'>Appendix</h6> -->
+
+
+## VSD
+
+<!-- <h6 id='vsd-def'>Definition</h6> -->
+<h6 id='vsd-eti'>Etiology</h6>
+
+![](https://qb.medilink-study.com/images/102G050_bas_c_010.jpg)
+
+- ↑肺血流量
+
+<h6 id='vsd-epi'>Epidemiology</h6>
+
+- 先天性心疾患 #1
+
+<!-- <h6 id='vsd-cls'>Classification</h6> -->
+<h6 id='vsd-sx'>Sign and Symptom</h6>
+
+- 小児期
+	- 無症状
+
+<!-- <h6 id='vsd-cmp'>Complication</h6> -->
+<h6 id='vsd-ex'>Examination</h6>
+
+- 聴診
+	- 全収縮期逆流性雑音
+	- **拡張中期ランブル**
+
+<h6 id='vsd-dx'>Diagnosis</h6>
+
+- 手術適応 :
+	- Qp/Qs ≥ 2.0
+
+<!-- <h6 id='vsd-tx'>Treatment</h6> -->
+<h6 id='vsd-prg'>Prognosis</h6>
+
+- 自然閉鎖
+
+<h6 id='vsd-app'>Appendix</h6>
+
+- R→L shunt
+	- Cyanosis
+	- ばち指
+- PHTN
+	- 単一S2 IIpのみ
+
 
 ## 
 

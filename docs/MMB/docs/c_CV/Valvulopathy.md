@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 14:45:55
+Modified: 	2019-09-05 14:50:2
 -----
 Copyright (c) 2019 shumez
 -->
@@ -127,6 +127,69 @@ Copyright (c) 2019 shumez
 	</tbody>
 </table>
 
+
+### VR
+
+Valve Replacement 人工弁置換
+
+<h6 id='vr-ind'>Indication</h6>
+
+生体弁の適応
+
+Wafarin が必要ない
+
+- 易出血性(+)
+- ≥ 70 y/o
+- 挙児希望
+
+生体弁 / 機械弁
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>生体弁</th>
+			<th>機械弁</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>耐久性</th>
+			<td align="center">(-)</td>
+			<td align="center">(+++)</td>
+		</tr>
+		<tr>
+			<th>Warfarin</th>
+			<td align="center">(+)<br>
+				3moのみ投与</td>
+			<td align="center">(++)</td>
+		</tr>
+	</tbody>
+</table>
+
+脳塞栓をきたしやすい心疾患
+
+- **MS**
+- AMI
+- 感染性心内膜炎 IE
+- AFib
+
+
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-def'>Definition</h6> -->
+<!-- <h6 id='-eti'>Etiology</h6> -->
+<!-- <h6 id='-epi'>Epidemiology</h6> -->
+<!-- <h6 id='-cls'>Classification</h6> -->
+<!-- <h6 id='-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='-cmp'>Complication</h6> -->
+<!-- <h6 id='-ex'>Examination</h6> -->
+<!-- <h6 id='-dx'>Diagnosis</h6> -->
+<!-- <h6 id='-tx'>Treatment</h6> -->
+<!-- <h6 id='-prg'>Prognosis</h6> -->
+<!-- <h6 id='-app'>Appendix</h6> -->
+
+
+##
 <!-- ## -->
 <!-- <h6 id='-def'>Definition</h6> -->
 <!-- <h6 id='-eti'>Etiology</h6> -->

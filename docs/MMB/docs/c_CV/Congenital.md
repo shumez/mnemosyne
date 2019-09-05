@@ -3,7 +3,7 @@ Filename: 	Congenital.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:1
-Modified: 	2019-09-05 17:17:44
+Modified: 	2019-09-05 17:23:10
 -----
 Copyright (c) 2019 shumez
 -->
@@ -211,6 +211,33 @@ Copyright (c) 2019 shumez
 	- ばち指
 - PHTN
 	- 単一S2 IIpのみ
+
+
+## Eisenmenger
+
+<h6 id='eisenmenger-def'>Definition</h6>
+
+- PDA
+- ASD
+- VSD
+- APW
+- 総動脈幹症
+- TGA + VSD
+- 単心室
+
+<!-- <h6 id='eisenmenger-eti'>Etiology</h6> -->
+<!-- <h6 id='eisenmenger-epi'>Epidemiology</h6> -->
+<!-- <h6 id='eisenmenger-cls'>Classification</h6> -->
+<!-- <h6 id='eisenmenger-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='eisenmenger-cmp'>Complication</h6> -->
+<!-- <h6 id='eisenmenger-ex'>Examination</h6> -->
+<!-- <h6 id='eisenmenger-dx'>Diagnosis</h6> -->
+<h6 id='eisenmenger-tx'>Treatment</h6>
+
+- **手術適応なし**
+
+<!-- <h6 id='eisenmenger-prg'>Prognosis</h6> -->
+<!-- <h6 id='eisenmenger-app'>Appendix</h6> -->
 
 
 ## 

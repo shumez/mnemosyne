@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:31:19
+Modified: 	2019-09-05 20:33:16
 -----
 Copyright (c) 2019 shumez
 -->
@@ -310,6 +310,31 @@ Stanford A
 <!-- <h6 id='marfan-tx'>Treatment</h6> -->
 <!-- <h6 id='marfan-prg'>Prognosis</h6> -->
 <!-- <h6 id='marfan-app'>Appendix</h6> -->
+
+
+### Intramural Hematoma
+
+偽腔閉塞型
+
+<!-- <h6 id='intramural_hematoma-def'>Definition</h6> -->
+<!-- <h6 id='intramural_hematoma-eti'>Etiology</h6> -->
+<!-- <h6 id='intramural_hematoma-epi'>Epidemiology</h6> -->
+<!-- <h6 id='intramural_hematoma-cls'>Classification</h6> -->
+<!-- <h6 id='intramural_hematoma-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='intramural_hematoma-cmp'>Complication</h6> -->
+<h6 id='intramural_hematoma-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/105I059A.jpg)
+
+- 偽腔 : 造影(–)
+
+<!-- <h6 id='intramural_hematoma-dx'>Diagnosis</h6> -->
+<h6 id='intramural_hematoma-tx'>Treatment</h6>
+
+- **降圧**
+
+<!-- <h6 id='intramural_hematoma-prg'>Prognosis</h6> -->
+<!-- <h6 id='intramural_hematoma-app'>Appendix</h6> -->
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:24:45
+Modified: 	2019-09-05 20:25:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -214,6 +214,32 @@ Thoracic AA
 <!-- <h6 id='taa-tx'>Treatment</h6> -->
 <!-- <h6 id='taa-prg'>Prognosis</h6> -->
 <!-- <h6 id='taa-app'>Appendix</h6> -->
+
+
+### AAE
+
+大動脈弁輪拡大
+
+<!-- <h6 id='aae-def'>Definition</h6> -->
+<h6 id='aae-eti'>Etiology</h6>
+
+- **嚢胞状中膜壊死**
+
+<!-- <h6 id='aae-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aae-cls'>Classification</h6> -->
+<h6 id='aae-sx'>Sign and Symptom</h6>
+
+- AR
+
+<!-- <h6 id='aae-cmp'>Complication</h6> -->
+<!-- <h6 id='aae-ex'>Examination</h6> -->
+<!-- <h6 id='aae-dx'>Diagnosis</h6> -->
+<h6 id='aae-tx'>Treatment</h6>
+
+- **Bentall ope**
+
+<!-- <h6 id='aae-prg'>Prognosis</h6> -->
+<!-- <h6 id='aae-app'>Appendix</h6> -->
 
 
 ## 

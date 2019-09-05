@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:16:29
+Modified: 	2019-09-05 15:22:14
 -----
 Copyright (c) 2019 shumez
 -->
@@ -504,6 +504,21 @@ S/S :
 <!-- <h6 id='ar-tx'>Treatment</h6> -->
 <!-- <h6 id='ar-prg'>Prognosis</h6> -->
 <!-- <h6 id='ar-app'>Appendix</h6> -->
+
+
+## TS
+
+<!-- <h6 id='ts-def'>Definition</h6> -->
+<!-- <h6 id='ts-eti'>Etiology</h6> -->
+<!-- <h6 id='ts-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ts-cls'>Classification</h6> -->
+<!-- <h6 id='ts-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ts-cmp'>Complication</h6> -->
+<!-- <h6 id='ts-ex'>Examination</h6> -->
+<!-- <h6 id='ts-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ts-tx'>Treatment</h6> -->
+<!-- <h6 id='ts-prg'>Prognosis</h6> -->
+<!-- <h6 id='ts-app'>Appendix</h6> -->
 
 
 

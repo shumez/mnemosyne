@@ -3,7 +3,7 @@ Filename: 	Cardiomyopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:8
-Modified: 	2019-09-05 17:59:10
+Modified: 	2019-09-05 18:00:19
 -----
 Copyright (c) 2019 shumez
 -->
@@ -316,6 +316,27 @@ Brockenbrough pheno
 <!-- <h6 id='myocarditis-tx'>Treatment</h6> -->
 <!-- <h6 id='myocarditis-prg'>Prognosis</h6> -->
 <!-- <h6 id='myocarditis-app'>Appendix</h6> -->
+
+
+## Sarcoidosis
+
+<!-- <h6 id='sarcoidosis-def'>Definition</h6> -->
+<!-- <h6 id='sarcoidosis-eti'>Etiology</h6> -->
+<!-- <h6 id='sarcoidosis-epi'>Epidemiology</h6> -->
+<!-- <h6 id='sarcoidosis-cls'>Classification</h6> -->
+<!-- <h6 id='sarcoidosis-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='sarcoidosis-cmp'>Complication</h6> -->
+<h6 id='sarcoidosis-ex'>Examination</h6>
+
+- BBB / AVB
+- PVC / VT
+- 局所/びまん性LV壁運動↓ / 壁菲薄化
+- **^67^Gaシンチ**
+
+<!-- <h6 id='sarcoidosis-dx'>Diagnosis</h6> -->
+<!-- <h6 id='sarcoidosis-tx'>Treatment</h6> -->
+<!-- <h6 id='sarcoidosis-prg'>Prognosis</h6> -->
+<!-- <h6 id='sarcoidosis-app'>Appendix</h6> -->
 
 
 ## 

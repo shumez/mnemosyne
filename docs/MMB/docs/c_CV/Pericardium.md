@@ -3,7 +3,7 @@ Filename: 	Pericardium.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:2
-Modified: 	2019-09-05 20:01:49
+Modified: 	2019-09-05 20:06:42
 -----
 Copyright (c) 2019 shumez
 -->
@@ -88,6 +88,69 @@ ST上昇の鑑別
 <!-- <h6 id='dressler-tx'>Treatment</h6> -->
 <!-- <h6 id='dressler-prg'>Prognosis</h6> -->
 <!-- <h6 id='dressler-app'>Appendix</h6> -->
+
+
+## Tamponade
+
+<!-- <h6 id='tamponade-def'>Definition</h6> -->
+<!-- <h6 id='tamponade-eti'>Etiology</h6> -->
+<!-- <h6 id='tamponade-epi'>Epidemiology</h6> -->
+<!-- <h6 id='tamponade-cls'>Classification</h6> -->
+<!-- <h6 id='tamponade-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='tamponade-cmp'>Complication</h6> -->
+<h6 id='tamponade-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/111A040A.jpg)
+
+- Beck triad :
+    1. ↑CVP
+    2. ↓心音
+    3. ↓BP
+- 静脈還流量障害 ⇒ ↑CVP
+    - 頸静脈怒張
+    - 肝腫大
+    - **↓RV EDV**
+- ↓COp
+    - 奇脈 : **吸気時: ↓↓BP**
+    - 頻脈
+    - 呼吸困難
+- CXR
+    - きんちゃく型
+
+<!-- <h6 id='tamponade-dx'>Diagnosis</h6> -->
+<!-- <h6 id='tamponade-tx'>Treatment</h6> -->
+<!-- <h6 id='tamponade-prg'>Prognosis</h6> -->
+<h6 id='tamponade-app'>Appendix</h6>
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"><u>刑事、 ベッキーと 静かに 決 心</u></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>刑事、</td>
+            <td>頸静脈怒張</td>
+        </tr>
+        <tr>
+            <td>ベッキーと</td>
+            <td>BECKの三徴候</td>
+        </tr>
+        <tr>
+            <td>静かに</td>
+            <td>静脈圧上昇</td>
+        </tr>
+        <tr>
+            <td>決</td>
+            <td>血圧低下</td>
+        </tr>
+        <tr>
+            <td>心</td>
+            <td>心音微弱</td>
+        </tr>
+    </tbody>
+</table>
 
 
 ## 

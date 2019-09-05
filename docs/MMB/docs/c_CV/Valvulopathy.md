@@ -3,7 +3,7 @@ Filename: 	Valvulopathy.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:26:4
-Modified: 	2019-09-05 15:12:21
+Modified: 	2019-09-05 15:16:29
 -----
 Copyright (c) 2019 shumez
 -->
@@ -361,6 +361,150 @@ S/S :
 
 <!-- <h6 id='as-prg'>Prognosis</h6> -->
 <!-- <h6 id='as-app'>Appendix</h6> -->
+
+
+## AR
+
+<!-- <h6 id='ar-def'>Definition</h6> -->
+<!-- <h6 id='ar-eti'>Etiology</h6> -->
+<!-- <h6 id='ar-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ar-cls'>Classification</h6> -->
+<h6 id='ar-sx'>Sign and Symptom</h6>
+
+- LV容量負荷↑ ⇒ 遠心性肥大
+	- 拡張期雑音
+	- 脈圧↑
+	- **心尖拍動の外側偏位**
+
+<table>
+	<thead>
+		<tr>
+			<th colspan="2"><u>ある 昼, とあるママ, 出店で 不倫し, たい そう 愉快</u></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>ある </td>
+			<td>AR（大動脈弁閉鎖不全症）</td>
+		</tr>
+		<tr>
+			<td>昼、 </td>
+			<td>Hill's sign</td>
+		</tr>
+		<tr>
+			<td>とあるママ、 </td>
+			<td>to and fro murmur</td>
+		</tr>
+		<tr>
+			<td>出店で </td>
+			<td>de Musset's sign（頭部のゆれ）</td>
+		</tr>
+		<tr>
+			<td>不倫し、 </td>
+			<td>Austin Flint雑音</td>
+		</tr>
+		<tr>
+			<td>たい </td>
+			<td>大脈</td>
+		</tr>
+		<tr>
+			<td>そう </td>
+			<td>速脈</td>
+		</tr>
+		<tr>
+			<td>愉快 </td>
+			<td>床→爪床部の毛細血管拍動（Quincke徴候）</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='ar-cmp'>Complication</h6> -->
+<h6 id='ar-ex'>Examination</h6>
+
+- Physical Examination
+	- 聴診
+		- **to-and-fro**
+			- 拡張期逆流性 DRM
+			- 収縮期駆出性 SEM
+		- **Austin-Flint** (MS)
+
+
+<table>
+	<tbody>
+		<tr>
+			<th>速脈/大脈</th>
+			<td>
+				<ul>
+					<li>Corrigan's pulse</li>
+					<li>Water Hammer Pulse</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Quincke sign</th>
+			<td>
+				<ul>
+					<li>毛細血管の拍動</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Pistol shot</th>
+			<td>
+				<ul>
+					<li>大腿Aの速脈/大脈</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>Taube 重複音</th>
+			<td>
+				<ul>
+					<li>大腿Aの雑音</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>de Musset's sign</th>
+			<td>
+				<ul>
+					<li>拍動毎に頷くような所見</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>拡張期漸減性雑音</th>
+			<td>
+				<ul>
+					<li>AoからLVに逆流</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>拡張中期雑音</th>
+			<td>
+				<ul>
+					<li>逆流した血液によってMVが挙上<br>
+						&rArr; <u>Austin Flint</u></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>S<sub>3</sub></th>
+			<td>
+				<ul>
+					<li>LV容量負荷</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='ar-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ar-tx'>Treatment</h6> -->
+<!-- <h6 id='ar-prg'>Prognosis</h6> -->
+<!-- <h6 id='ar-app'>Appendix</h6> -->
+
 
 
 ##

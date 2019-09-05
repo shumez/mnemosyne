@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:46:6
+Modified: 	2019-09-05 20:46:55
 -----
 Copyright (c) 2019 shumez
 -->
@@ -589,6 +589,21 @@ Thrombo
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
+
+
+## DVT
+
+<!-- <h6 id='dvt-def'>Definition</h6> -->
+<!-- <h6 id='dvt-eti'>Etiology</h6> -->
+<!-- <h6 id='dvt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='dvt-cls'>Classification</h6> -->
+<!-- <h6 id='dvt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='dvt-cmp'>Complication</h6> -->
+<!-- <h6 id='dvt-ex'>Examination</h6> -->
+<!-- <h6 id='dvt-dx'>Diagnosis</h6> -->
+<!-- <h6 id='dvt-tx'>Treatment</h6> -->
+<!-- <h6 id='dvt-prg'>Prognosis</h6> -->
+<!-- <h6 id='dvt-app'>Appendix</h6> -->
 
 
 ## 

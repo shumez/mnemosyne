@@ -3,7 +3,7 @@ Filename: 	Vasculature.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:27:4
-Modified: 	2019-09-05 20:39:38
+Modified: 	2019-09-05 20:41:45
 -----
 Copyright (c) 2019 shumez
 -->
@@ -463,6 +463,36 @@ ABI (Ankle Branchial Index)
 <!-- <h6 id='caod-tx'>Treatment</h6> -->
 <!-- <h6 id='caod-prg'>Prognosis</h6> -->
 <!-- <h6 id='caod-app'>Appendix</h6> -->
+
+
+## ASO
+
+ArterioSclerosis Obliterans
+
+<!-- <h6 id='aso-def'>Definition</h6> -->
+<!-- <h6 id='aso-eti'>Etiology</h6> -->
+<!-- <h6 id='aso-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aso-cls'>Classification</h6> -->
+<!-- <h6 id='aso-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aso-cmp'>Complication</h6> -->
+<h6 id='aso-ex'>Examination</h6>
+
+![](https://cdn-ak.f.st-hatena.com/images/fotolife/t/the_white_room/20171030/20171030225302.jpg)
+
+<!-- <h6 id='aso-dx'>Diagnosis</h6> -->
+<h6 id='aso-tx'>Treatment</h6>
+
+- 内科
+	- DM / HTN / 脂質異常症
+	- 禁煙
+	- 運動
+	- anti PLT, 血管拡張薬, statin
+- 外科
+	- 経皮的血管形成術
+	- 血管バイパス
+
+<!-- <h6 id='aso-prg'>Prognosis</h6> -->
+<!-- <h6 id='aso-app'>Appendix</h6> -->
 
 
 ## 

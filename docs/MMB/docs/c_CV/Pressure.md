@@ -3,7 +3,7 @@ Filename: 	Pressure.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:28:8
-Modified: 	2019-09-06 13:54:37
+Modified: 	2019-09-06 14:04:46
 -----
 Copyright (c) 2019 shumez
 -->
@@ -27,7 +27,29 @@ Copyright (c) 2019 shumez
 
 ### Diet
 
+![](https://qb.medilink-study.com/images/109G046_bas_010.jpg)
 
+![](https://qb.medilink-study.com/images/109G046_bas_020.jpg)
+
+![](https://qb.medilink-study.com/images/109C014_bas_010.jpg)
+
+\(
+	\text{推定エネルギー必要量 (EER)} \\
+	= \text{基礎代謝量 (BMR)} \times \text{身体活動レベル} \\
+	= \text{基礎代謝基準値} \times \text{基準体重} \times \text{身体活動レベル} \\
+	= 21.5 _{\text{(kcal/kg/day)}} \times 22_{\text{(kg/m/m)}} \times \text{BH}^2 
+	\begin{cases} 
+		1.50 &\text{(I)} \\ 
+		1.75 &\text{(II)} \\ 
+		2.00 &\text{(III)} 
+	\end{cases} \\
+	\approx 22 \times \text{BH}^2 \times 
+	\begin{cases}
+		30 & \text{(I)}\\
+		37.5 & \text{(II)} \\
+		40 & \text{(III)}
+	\end{cases}
+\)
 
 ## 
 

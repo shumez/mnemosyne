@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 16:51:1
+Modified: 	2019-09-06 16:52:18
 -----
 Copyright (c) 2019 shumez
 -->
@@ -88,10 +88,10 @@ UBG
 
 (Acute Abdomen 急性腹症)
 
-![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location.jpg)
-![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location2.jpg)
-![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_physiology.jpg)
-![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_referencial_pain.jpg)
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location.jpg' class='lt'>
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location2.jpg' class='lt'>
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_physiology.jpg' class='lt'>
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_referencial_pain.jpg' class='lt'>
 
 
 ## N/V

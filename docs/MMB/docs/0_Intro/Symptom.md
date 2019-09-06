@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 17:12:25
+Modified: 	2019-09-06 17:13:50
 -----
 Copyright (c) 2019 shumez
 -->
@@ -139,6 +139,8 @@ Nausea / Vomiting
 <!-- <h6 id='-tx'>Treatment</h6> -->
 <!-- <h6 id='-prg'>Prognosis</h6> -->
 <!-- <h6 id='-app'>Appendix</h6> -->
+
+<!-- <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/_/.jpg' class='t'> -->
 
 <!-- toc -->
 [01]: #

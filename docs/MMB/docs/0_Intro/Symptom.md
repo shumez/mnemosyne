@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 16:11:26
+Modified: 	2019-09-06 16:22:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -92,6 +92,16 @@ UBG
 ![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location2.jpg)
 ![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_physiology.jpg)
 ![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_referencial_pain.jpg)
+
+
+## N/V
+
+Nausea / Vomiting
+
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_1.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_2.jpg)
+
+
 
 
 ##

@@ -3,7 +3,7 @@ Filename: 	Pressure.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:28:8
-Modified: 	2019-09-06 14:04:46
+Modified: 	2019-09-06 14:06:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -50,6 +50,22 @@ Copyright (c) 2019 shumez
 		40 & \text{(III)}
 	\end{cases}
 \)
+
+
+## HTN
+
+<!-- <h6 id='htn-def'>Definition</h6> -->
+<!-- <h6 id='htn-eti'>Etiology</h6> -->
+<!-- <h6 id='htn-epi'>Epidemiology</h6> -->
+<!-- <h6 id='htn-cls'>Classification</h6> -->
+<!-- <h6 id='htn-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='htn-cmp'>Complication</h6> -->
+<!-- <h6 id='htn-ex'>Examination</h6> -->
+<!-- <h6 id='htn-dx'>Diagnosis</h6> -->
+<!-- <h6 id='htn-tx'>Treatment</h6> -->
+<!-- <h6 id='htn-prg'>Prognosis</h6> -->
+<!-- <h6 id='htn-app'>Appendix</h6> -->
+
 
 ## 
 

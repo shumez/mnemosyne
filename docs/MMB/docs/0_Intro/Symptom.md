@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 15:32:5
+Modified: 	2019-09-06 15:41:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -51,8 +51,37 @@ e.g.,
 
 [腸チフス][]
 
+## Jaundice
 
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/jaundice.jpg)
 
+UBG
+
+<table>
+    <tbody>
+        <tr>
+            <td>&uarr;UBG</td>
+            <td>
+                <ul>
+                    <li>溶血</li>
+                    <li>肝細胞障害 (肝炎, 肝硬変)</li>
+                    <li>肝内輸送障害 (DJS, Rotor)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>&darr;UBG</td>
+            <td>
+                <ul>
+                    <li>胆道完全閉塞</li>
+                    <li>急性肝炎極期</li>
+                    <li>ABx投与時</li>
+                    <li>腎不全</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 ##
 

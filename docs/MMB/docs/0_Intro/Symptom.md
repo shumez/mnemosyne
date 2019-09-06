@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 15:41:1
+Modified: 	2019-09-06 16:11:26
 -----
 Copyright (c) 2019 shumez
 -->
@@ -83,8 +83,18 @@ UBG
     </tbody>
 </table>
 
-##
 
+## Abdominal Pain
+
+(Acute Abdomen 急性腹症)
+
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_location2.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_pain_physiology.jpg)
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/abdominal_referencial_pain.jpg)
+
+
+##
 <!-- ## -->
 <!-- <h6 id='-def'>Definition</h6> -->
 <!-- <h6 id='-eti'>Etiology</h6> -->

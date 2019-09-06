@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 15:15:40
+Modified: 	2019-09-06 15:22:9
 -----
 Copyright (c) 2019 shumez
 -->
@@ -31,6 +31,13 @@ Neuroleptic Malignant Syndrome 悪性症候群
 [#AOSC Sx][charcot]
 
 
+### Malignant Hyperthermia
+
+悪性高熱症
+
+[#MH][MH]
+
+
 ##
 
 <!-- ## -->
@@ -53,6 +60,7 @@ Neuroleptic Malignant Syndrome 悪性症候群
 <!-- ref -->
 [NMS]: ../../j_Neuro/Neurodegenerative/#NMS
 [charcot]: ../../b_Hepa/Cholangio/#aosc-sx
+[MH]: ../../m_Ans/General.md/#mh
 
 <!-- fig -->
 

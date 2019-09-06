@@ -3,7 +3,7 @@ Filename: 	Pressure.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:28:8
-Modified: 	2019-09-06 14:18:7
+Modified: 	2019-09-06 14:19:31
 -----
 Copyright (c) 2019 shumez
 -->
@@ -261,6 +261,32 @@ Masked HT
 <!-- <h6 id='hotn-tx'>Treatment</h6> -->
 <!-- <h6 id='hotn-prg'>Prognosis</h6> -->
 <!-- <h6 id='hotn-app'>Appendix</h6> -->
+
+
+## OH
+
+Orthostatic HoTN
+
+<!-- <h6 id='oh-def'>Definition</h6> -->
+<!-- <h6 id='oh-eti'>Etiology</h6> -->
+<!-- <h6 id='oh-epi'>Epidemiology</h6> -->
+<!-- <h6 id='oh-cls'>Classification</h6> -->
+<!-- <h6 id='oh-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='oh-cmp'>Complication</h6> -->
+<h6 id='oh-ex'>Examination</h6>
+
+![](https://qb.medilink-study.com/images/102G047_ima_c_010.jpg)
+
+- 起立試験
+	- 脈圧 ≥ 16mmHg
+	- **Δ SBP 低下 ≥ 21mHg**
+	- **Δ HR ≥ 21mmHg**
+	- TII ≥ .2mV
+
+<!-- <h6 id='oh-dx'>Diagnosis</h6> -->
+<!-- <h6 id='oh-tx'>Treatment</h6> -->
+<!-- <h6 id='oh-prg'>Prognosis</h6> -->
+<!-- <h6 id='oh-app'>Appendix</h6> -->
 
 
 ## 

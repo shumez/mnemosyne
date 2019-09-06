@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 17:29:56
+Modified: 	2019-09-06 17:37:6
 -----
 Copyright (c) 2019 shumez
 -->
@@ -136,6 +136,13 @@ Nausea / Vomiting
 ## Constipation
 
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/constipation.jpg' class='rt'>
+
+
+## Diarrhea
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/diarrhea.jpg' class='lt'>
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/diarrhea_chronic.jpg' class='lt'>
 
 
 

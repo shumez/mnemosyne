@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 20:40:48
+Modified: 	2019-09-06 20:47:45
 -----
 Copyright (c) 2019 shumez
 -->
@@ -271,6 +271,13 @@ Nausea / Vomiting
 ## Palmar Erythema
 
 手掌紅斑
+
+
+## Ascites
+
+腹水
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/0_Intro/ascites.jpg' class='rt'>
 
 
 

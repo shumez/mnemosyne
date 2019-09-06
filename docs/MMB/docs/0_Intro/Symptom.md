@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 17:43:24
+Modified: 	2019-09-06 17:44:49
 -----
 Copyright (c) 2019 shumez
 -->
@@ -140,7 +140,7 @@ Nausea / Vomiting
 
 ## Diarrhea
 
-<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/diarrhea.jpg' class='lt'>
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/diarrhea_acute.jpg' class='lt'>
 
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/diarrhea_chronic.jpg' class='lt'>
 

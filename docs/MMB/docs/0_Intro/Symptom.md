@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 16:56:13
+Modified: 	2019-09-06 17:04:24
 -----
 Copyright (c) 2019 shumez
 -->
@@ -112,6 +112,11 @@ Nausea / Vomiting
 ## Heartburn
 
 胸焼け (pyrosis) 
+
+
+## Hicus
+
+吃逆 ~きつぎゃく~ Singultus
 
 
 ##

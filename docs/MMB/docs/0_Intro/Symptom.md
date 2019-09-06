@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 20:37:15
+Modified: 	2019-09-06 20:39:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -261,6 +261,15 @@ Nausea / Vomiting
 <!-- <h6 id='abdominal_distension-tx'>Treatment</h6> -->
 <!-- <h6 id='abdominal_distension-prg'>Prognosis</h6> -->
 <!-- <h6 id='abdominal_distension-app'>Appendix</h6> -->
+
+
+## Vascular Spider
+
+くも状血管腫
+
+
+
+
 
 ##
 <!-- ## -->

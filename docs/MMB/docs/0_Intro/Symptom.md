@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 17:21:51
+Modified: 	2019-09-06 17:29:56
 -----
 Copyright (c) 2019 shumez
 -->
@@ -131,6 +131,11 @@ Nausea / Vomiting
 嚥下困難
 
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/dysphagia.jpg' class='rt'>
+
+
+## Constipation
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/constipation.jpg' class='rt'>
 
 
 

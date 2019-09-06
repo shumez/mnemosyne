@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 17:44:49
+Modified: 	2019-09-06 17:52:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -149,6 +149,8 @@ Nausea / Vomiting
 
 吐血
 
+
+## Melena
 
 
 ##

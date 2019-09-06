@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 15:31:22
+Modified: 	2019-09-06 15:32:5
 -----
 Copyright (c) 2019 shumez
 -->
@@ -49,7 +49,7 @@ Neuroleptic Malignant Syndrome 悪性症候群
 
 e.g., 
 
-腸チフス
+[腸チフス][]
 
 
 

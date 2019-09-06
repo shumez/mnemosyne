@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 19:57:34
+Modified: 	2019-09-06 20:12:51
 -----
 Copyright (c) 2019 shumez
 -->
@@ -228,6 +228,11 @@ Nausea / Vomiting
 
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/0_Intro/lymphadenopathy.jpg' class='rt'>
 
+
+
+## Edema
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/0_Intro/edema.jpg' class='rt'>
 
 
 

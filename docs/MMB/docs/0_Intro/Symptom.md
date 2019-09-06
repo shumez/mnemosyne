@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 19:51:39
+Modified: 	2019-09-06 19:57:34
 -----
 Copyright (c) 2019 shumez
 -->
@@ -220,6 +220,13 @@ Nausea / Vomiting
     </tbody>
 </table>
 -->
+
+
+## Lymphadenopathy
+
+リンパ節腫脹
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/0_Intro/lymphadenopathy.jpg' class='rt'>
 
 
 

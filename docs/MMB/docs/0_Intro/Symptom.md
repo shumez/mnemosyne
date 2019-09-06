@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 19:37:58
+Modified: 	2019-09-06 19:51:39
 -----
 Copyright (c) 2019 shumez
 -->
@@ -158,6 +158,69 @@ Nausea / Vomiting
 肝腫大
 
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/b_Hepa/hepatomegaly.jpg' class='rt'>
+
+
+## Splenomegaly
+
+脾腫
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/g_Heme/splenomegaly.jpg' class='rt'>
+
+<!--
+<table>
+    <tbody>
+        <tr>
+            <th>感染症</th>
+            <td>
+                <ul>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>造血器腫瘍</th>
+            <td>
+                <ul>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>うっ血脾</th>
+            <td>
+                <ul>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>炎症性疾患</th>
+            <td>
+                <ul>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>溶血性貧血</th>
+            <td>
+                <ul>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>その他</th>
+            <td>
+                <ul>
+                    <li></li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+-->
+
 
 
 

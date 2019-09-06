@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 15:22:9
+Modified: 	2019-09-06 15:31:22
 -----
 Copyright (c) 2019 shumez
 -->
@@ -36,6 +36,22 @@ Neuroleptic Malignant Syndrome 悪性症候群
 悪性高熱症
 
 [#MH][MH]
+
+
+### Funeral Cross
+
+死の交差
+
+<h6 id='funeral_cross-def'>Definition</h6>
+
+- 末梢循環不全 &rArr; &uarr;BT, &darr;HRが交差する
+- 稽留熱の波形が低下, HRが上昇
+
+e.g., 
+
+腸チフス
+
+
 
 
 ##

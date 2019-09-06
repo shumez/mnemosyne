@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 20:12:51
+Modified: 	2019-09-06 20:37:15
 -----
 Copyright (c) 2019 shumez
 -->
@@ -235,6 +235,32 @@ Nausea / Vomiting
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/0_Intro/edema.jpg' class='rt'>
 
 
+## Abdominal Distension
+
+腹部膨隆
+
+<!-- <h6 id='abdominal_distension-def'>Definition</h6> -->
+<!-- <h6 id='abdominal_distension-eti'>Etiology</h6> -->
+<!-- <h6 id='abdominal_distension-epi'>Epidemiology</h6> -->
+<!-- <h6 id='abdominal_distension-cls'>Classification</h6> -->
+<!-- <h6 id='abdominal_distension-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='abdominal_distension-cmp'>Complication</h6> -->
+<!-- <h6 id='abdominal_distension-ex'>Examination</h6> -->
+<h6 id='abdominal_distension-dx'>Diagnosis</h6>
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/0_Intro/abdominal_distension.jpg' class='rt'>
+
+
+- 6Fs
+    - **F**latus (meteorism 鼓腸)
+    - **F**luid (ascites 腹水)
+    - **F**etus 胎児
+    - **F**eces 宿便
+    - **F**ibroid (tumor 腫瘍)
+
+<!-- <h6 id='abdominal_distension-tx'>Treatment</h6> -->
+<!-- <h6 id='abdominal_distension-prg'>Prognosis</h6> -->
+<!-- <h6 id='abdominal_distension-app'>Appendix</h6> -->
 
 ##
 <!-- ## -->

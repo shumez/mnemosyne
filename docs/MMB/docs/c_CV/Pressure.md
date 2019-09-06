@@ -3,7 +3,7 @@ Filename: 	Pressure.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:28:8
-Modified: 	2019-09-06 14:12:0
+Modified: 	2019-09-06 14:15:9
 -----
 Copyright (c) 2019 shumez
 -->
@@ -189,6 +189,29 @@ Copyright (c) 2019 shumez
 
 <!-- <h6 id='eht-prg'>Prognosis</h6> -->
 <!-- <h6 id='eht-app'>Appendix</h6> -->
+
+
+### SysHT
+
+Systolic HT
+
+<!-- <h6 id='sysht-def'>Definition</h6> -->
+<h6 id='sysht-eti'>Etiology</h6>
+
+高齢 :  
+動脈硬化  
+⇒ 大動脈脈波伝搬速度が速い  
+⇒ ↑SBP ↓DBP
+
+<!-- <h6 id='sysht-epi'>Epidemiology</h6> -->
+<!-- <h6 id='sysht-cls'>Classification</h6> -->
+<!-- <h6 id='sysht-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='sysht-cmp'>Complication</h6> -->
+<!-- <h6 id='sysht-ex'>Examination</h6> -->
+<!-- <h6 id='sysht-dx'>Diagnosis</h6> -->
+<!-- <h6 id='sysht-tx'>Treatment</h6> -->
+<!-- <h6 id='sysht-prg'>Prognosis</h6> -->
+<!-- <h6 id='sysht-app'>Appendix</h6> -->
 
 
 ## 

@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 17:04:24
+Modified: 	2019-09-06 17:12:25
 -----
 Copyright (c) 2019 shumez
 -->
@@ -117,6 +117,13 @@ Nausea / Vomiting
 ## Hicus
 
 吃逆 ~きつぎゃく~ Singultus
+
+
+## Thirst
+
+口渇
+
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/d_Endo/thirst.jpg' class='rt'>
 
 
 ##

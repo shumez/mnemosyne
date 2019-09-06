@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 16:53:35
+Modified: 	2019-09-06 16:56:13
 -----
 Copyright (c) 2019 shumez
 -->
@@ -108,6 +108,10 @@ Nausea / Vomiting
 
 <img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/anorexia.jpg' class='rt'>
 
+
+## Heartburn
+
+胸焼け (pyrosis) 
 
 
 ##

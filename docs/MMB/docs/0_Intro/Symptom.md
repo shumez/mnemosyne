@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 16:22:1
+Modified: 	2019-09-06 16:36:5
 -----
 Copyright (c) 2019 shumez
 -->
@@ -102,6 +102,12 @@ Nausea / Vomiting
 ![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_2.jpg)
 
 
+## Anorexia
+
+食欲不振
+
+![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/anorexia.jpg)
+
 
 
 ##
@@ -131,6 +137,8 @@ Nausea / Vomiting
 
 <!-- term -->
 
+<!--
 <style type="text/css">
 	img{width: 51%; float: right;}
 </style>
+-->

@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 15:12:9
+Modified: 	2019-09-06 15:15:40
 -----
 Copyright (c) 2019 shumez
 -->
@@ -24,6 +24,11 @@ Fever of Unknown Origin 不明熱
 Neuroleptic Malignant Syndrome 悪性症候群
 
 [#NMS][NMS]
+
+
+### Charcot fever
+
+[#AOSC Sx][charcot]
 
 
 ##
@@ -47,6 +52,7 @@ Neuroleptic Malignant Syndrome 悪性症候群
 
 <!-- ref -->
 [NMS]: ../../j_Neuro/Neurodegenerative/#NMS
+[charcot]: ../../b_Hepa/Cholangio/#aosc-sx
 
 <!-- fig -->
 

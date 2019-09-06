@@ -3,7 +3,7 @@ Filename: 	Pressure.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-04-03 17:28:8
-Modified: 	2019-09-06 14:06:31
+Modified: 	2019-09-06 14:12:0
 -----
 Copyright (c) 2019 shumez
 -->
@@ -65,6 +65,130 @@ Copyright (c) 2019 shumez
 <!-- <h6 id='htn-tx'>Treatment</h6> -->
 <!-- <h6 id='htn-prg'>Prognosis</h6> -->
 <!-- <h6 id='htn-app'>Appendix</h6> -->
+
+
+### EHT
+
+本態性高血圧
+
+<!-- <h6 id='eht-def'>Definition</h6> -->
+<!-- <h6 id='eht-eti'>Etiology</h6> -->
+<!-- <h6 id='eht-epi'>Epidemiology</h6> -->
+<h6 id='eht-cls'>Classification</h6>
+
+![](https://qb.medilink-study.com/images/109I008_bas_010.jpg)
+
+![](https://qb.medilink-study.com/images/109I008_bas_020.jpg)
+
+<table>
+	<tbody>
+		<tr>
+			<th>若年<br>
+				中年<br>
+				前期高齢者(65-74)</th>
+			<td align="right">< 140/90</td>
+		</tr>
+		<tr>
+			<th>後期高齢者 (≥75)</th>
+			<td align="right">< 150/90</td>
+		</tr>
+		<tr>
+			<th>DM</th>
+			<td align="right">< 130/80</td>
+		</tr>
+		<tr>
+			<th>CKD</th>
+			<td align="right">< 130/80</td>
+		</tr>
+		<tr>
+			<th>脳血管障害<br>
+				冠動脈疾患</th>
+			<td align="right">< 140/90</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='eht-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='eht-cmp'>Complication</h6> -->
+<!-- <h6 id='eht-ex'>Examination</h6> -->
+<!-- <h6 id='eht-dx'>Diagnosis</h6> -->
+<h6 id='eht-tx'>Treatment</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>C/I</th>
+			<th>慎重投与</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>CCB</th>
+			<td>
+				<ul>
+					<li>徐脈</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>HF</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>ARB</th>
+			<td rowspan="2">
+				<ul>
+					<li><u>妊娠</u></li>
+					<li><u>&uarr;K</u></li>
+				</ul>
+			</td>
+			<td rowspan="2">
+				<ul>
+					<li><u>腎動脈狭窄</u></li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>ACEI</th>
+		</tr>
+		<tr>
+			<th>サイアザイド</th>
+			<td>
+				<ul>
+					<li>&darr;K</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>痛風</li>
+					<li>妊娠</li>
+					<li>耐糖能異常</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<th>&beta;B</th>
+			<td>
+				<ul>
+					<li><u>喘息</u></li>
+					<li>高度徐脈</li>
+				</ul>
+			</td>
+			<td>
+				<ul>
+					<li>耐糖能異常</li>
+					<li>閉塞性肺疾患</li>
+					<li>末梢動脈疾患</li>
+				</ul>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='eht-prg'>Prognosis</h6> -->
+<!-- <h6 id='eht-app'>Appendix</h6> -->
 
 
 ## 

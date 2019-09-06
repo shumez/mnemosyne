@@ -3,7 +3,7 @@ Filename: 	Symptom.md
 Project: 	/Users/shume/Developer/mnemosyne/docs/MMB/docs/0_Intro
 Author: 	shumez <https://github.com/shumez>
 Created: 	2019-09-06 14:35:6
-Modified: 	2019-09-06 16:49:37
+Modified: 	2019-09-06 16:51:1
 -----
 Copyright (c) 2019 shumez
 -->
@@ -98,8 +98,8 @@ UBG
 
 Nausea / Vomiting
 
-![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_1.jpg)
-![](https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_2.jpg)
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_1.jpg' class='lt'>
+<img src='https://raw.githubusercontent.com/shumez/mnemosyne/master/docs/MMB/docs/img/a_GE/nv_2.jpg' class='lt'>
 
 
 ## Anorexia

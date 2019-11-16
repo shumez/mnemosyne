@@ -3,7 +3,7 @@ Filename:	Pharmacology.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/c_CV
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-11-16 15:38:40
-Modified:	2019-11-16 15:51:13
+Modified:	2019-11-16 15:53:01
 -----
 Copyright (c) 2019 shumez
 -->
@@ -17,6 +17,42 @@ Copyright (c) 2019 shumez
 ## Cardiotonic 
 
 ## AADs
+
+### Amiodarone
+
+<h6 id='amiodarone-moa'>Mechanism of Action</h6>
+
+- K ch blocker
+
+<h6 id='amiodarone-ind'>Indication</h6>
+
+- pAF
+- VF
+- VT
+
+<h6 id='amiodarone-ae'>Adverse Effect</h6>
+
+- 間質性肺炎
+- 肝障害
+- 甲状腺機能異常
+- 角膜色素沈着
+
+- 6Ps
+    - Prolong APD
+    - Photosensitivity 
+    - Pigmentation
+    - Pulonary fibrosis (間質性肺炎)
+    - Peripheral neuropathy
+    - Peripheral conversion of T~4~-T~3~ blocked (甲状腺機能障害)
+- 肝障害
+
+<h6 id='amiodarone-ci'>Contraindication</h6>
+
+- SSS
+- 高度AVB
+
+<!-- <h6 id='-'></h6> -->
+
 
 ## Antianginal 
 

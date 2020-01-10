@@ -3,7 +3,7 @@ Filename:	MEN.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:30:13
-Modified:	2020-01-10 14:35:04
+Modified:	2020-01-10 14:35:57
 -----
 Copyright (c) 2020 shumez
 -->
@@ -130,6 +130,25 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='men2b-prg'>Prognosis</h6> -->
 <!-- <h6 id='men2b-app'>Appendix</h6> -->
 
+
+## FMTC
+
+Familial medullary thyroid carcinoma
+
+<!-- <h6 id='fmtc-def'>Definition</h6> -->
+<h6 id='fmtc-eti'>Etiology</h6>
+
+- AD
+
+<!-- <h6 id='fmtc-epi'>Epidemiology</h6> -->
+<!-- <h6 id='fmtc-cls'>Classification</h6> -->
+<!-- <h6 id='fmtc-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='fmtc-cmp'>Complication</h6> -->
+<!-- <h6 id='fmtc-ex'>Examination</h6> -->
+<!-- <h6 id='fmtc-dx'>Diagnosis</h6> -->
+<!-- <h6 id='fmtc-tx'>Treatment</h6> -->
+<!-- <h6 id='fmtc-prg'>Prognosis</h6> -->
+<!-- <h6 id='fmtc-app'>Appendix</h6> -->
 
 ## 
 

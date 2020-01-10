@@ -3,7 +3,7 @@ Filename:	MEN.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:30:13
-Modified:	2020-01-10 14:30:11
+Modified:	2020-01-10 14:31:56
 -----
 Copyright (c) 2020 shumez
 -->
@@ -74,6 +74,25 @@ Copyright (c) 2020 shumez
 
 ![](https://prdscholarrxcdn.blob.core.windows.net/dam/Image/178850.png)
 
+## MEN1
+
+<!-- <h6 id='men1-def'>Definition</h6> -->
+<h6 id='men1-eti'>Etiology</h6>
+
+- AD
+
+<!-- <h6 id='men1-epi'>Epidemiology</h6> -->
+<!-- <h6 id='men1-cls'>Classification</h6> -->
+<!-- <h6 id='men1-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='men1-cmp'>Complication</h6> -->
+<!-- <h6 id='men1-ex'>Examination</h6> -->
+<h6 id='men1-dx'>Diagnosis</h6>
+
+- **副腎皮質腫瘍**
+
+<!-- <h6 id='men1-tx'>Treatment</h6> -->
+<!-- <h6 id='men1-prg'>Prognosis</h6> -->
+<!-- <h6 id='men1-app'>Appendix</h6> -->
 
 ## 
 

@@ -3,7 +3,7 @@ Filename:	MEN.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:30:13
-Modified:	2020-01-10 14:31:56
+Modified:	2020-01-10 14:34:14
 -----
 Copyright (c) 2020 shumez
 -->
@@ -93,6 +93,25 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='men1-tx'>Treatment</h6> -->
 <!-- <h6 id='men1-prg'>Prognosis</h6> -->
 <!-- <h6 id='men1-app'>Appendix</h6> -->
+
+
+## MEN2A
+
+<!-- <h6 id='men2a-def'>Definition</h6> -->
+<!-- <h6 id='men2a-eti'>Etiology</h6> -->
+<!-- <h6 id='men2a-epi'>Epidemiology</h6> -->
+<!-- <h6 id='men2a-cls'>Classification</h6> -->
+<!-- <h6 id='men2a-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='men2a-cmp'>Complication</h6> -->
+<!-- <h6 id='men2a-ex'>Examination</h6> -->
+<h6 id='men2a-dx'>Diagnosis</h6>
+
+- 甲状腺髄様癌 Medullary thyroid carcinoma (MTC)
+
+<!-- <h6 id='men2a-tx'>Treatment</h6> -->
+<!-- <h6 id='men2a-prg'>Prognosis</h6> -->
+<!-- <h6 id='men2a-app'>Appendix</h6> -->
+
 
 ## 
 

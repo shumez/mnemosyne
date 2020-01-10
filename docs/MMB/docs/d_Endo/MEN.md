@@ -3,7 +3,7 @@ Filename:	MEN.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:30:13
-Modified:	2020-01-10 14:34:14
+Modified:	2020-01-10 14:35:04
 -----
 Copyright (c) 2020 shumez
 -->
@@ -111,6 +111,24 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='men2a-tx'>Treatment</h6> -->
 <!-- <h6 id='men2a-prg'>Prognosis</h6> -->
 <!-- <h6 id='men2a-app'>Appendix</h6> -->
+
+
+## MEN2B
+
+<!-- <h6 id='men2b-def'>Definition</h6> -->
+<!-- <h6 id='men2b-eti'>Etiology</h6> -->
+<!-- <h6 id='men2b-epi'>Epidemiology</h6> -->
+<!-- <h6 id='men2b-cls'>Classification</h6> -->
+<!-- <h6 id='men2b-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='men2b-cmp'>Complication</h6> -->
+<!-- <h6 id='men2b-ex'>Examination</h6> -->
+<h6 id='men2b-dx'>Diagnosis</h6>
+
+- 甲状腺髄様癌
+
+<!-- <h6 id='men2b-tx'>Treatment</h6> -->
+<!-- <h6 id='men2b-prg'>Prognosis</h6> -->
+<!-- <h6 id='men2b-app'>Appendix</h6> -->
 
 
 ## 

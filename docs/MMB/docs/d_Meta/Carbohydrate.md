@@ -3,7 +3,7 @@ Filename:	Carbohydrate.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Meta
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:30:38
-Modified:	2020-01-11 16:29:37
+Modified:	2020-01-11 16:33:15
 -----
 Copyright (c) 2020 shumez
 -->
@@ -47,6 +47,23 @@ Diabetic Ketoacidosis
 <!-- <h6 id='dka-tx'>Treatment</h6> -->
 <!-- <h6 id='dka-prg'>Prognosis</h6> -->
 <!-- <h6 id='dka-app'>Appendix</h6> -->
+
+
+## HHS
+
+Hyperosmolar Hyperglycemic State
+
+<!-- <h6 id='hhs-def'>Definition</h6> -->
+<!-- <h6 id='hhs-eti'>Etiology</h6> -->
+<!-- <h6 id='hhs-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hhs-cls'>Classification</h6> -->
+<!-- <h6 id='hhs-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hhs-cmp'>Complication</h6> -->
+<!-- <h6 id='hhs-ex'>Examination</h6> -->
+<!-- <h6 id='hhs-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hhs-tx'>Treatment</h6> -->
+<!-- <h6 id='hhs-prg'>Prognosis</h6> -->
+<!-- <h6 id='hhs-app'>Appendix</h6> -->
 
 
 <!-- ## -->

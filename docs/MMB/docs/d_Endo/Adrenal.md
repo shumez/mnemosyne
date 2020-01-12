@@ -3,7 +3,7 @@ Filename:	Adrenal.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:34
-Modified:	2020-01-12 16:11:45
+Modified:	2020-01-12 16:14:45
 -----
 Copyright (c) 2020 shumez
 -->
@@ -18,6 +18,7 @@ Copyright (c) 2020 shumez
 - SHAC
 - PHA
 - Addison
+- Acute Adrenal Insufficiency (AI) / Adrenal Crisis
 
 ## Intro
 
@@ -389,6 +390,30 @@ Pseudo
 <!-- <h6 id='addison-tx'>Treatment</h6> -->
 <!-- <h6 id='addison-prg'>Prognosis</h6> -->
 <!-- <h6 id='addison-app'>Appendix</h6> -->
+
+
+## Acute Adrenal Insufficiency / Adrenal Crisis
+
+Acute Adrenal Insufficiency
+
+<!-- <h6 id='ai-def'>Definition</h6> -->
+<h6 id='ai-eti'>Etiology</h6>
+
+1. 
+2. 
+3. 
+4. **Waterhouse-Friderichsen syndrome**
+	
+
+<!-- <h6 id='ai-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ai-cls'>Classification</h6> -->
+<!-- <h6 id='ai-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ai-cmp'>Complication</h6> -->
+<!-- <h6 id='ai-ex'>Examination</h6> -->
+<!-- <h6 id='ai-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ai-tx'>Treatment</h6> -->
+<!-- <h6 id='ai-prg'>Prognosis</h6> -->
+<!-- <h6 id='ai-app'>Appendix</h6> -->
 
 ## 
 

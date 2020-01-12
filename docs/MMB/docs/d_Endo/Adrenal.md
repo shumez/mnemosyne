@@ -3,7 +3,7 @@ Filename:	Adrenal.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:34
-Modified:	2020-01-12 16:14:45
+Modified:	2020-01-12 16:19:01
 -----
 Copyright (c) 2020 shumez
 -->
@@ -19,6 +19,7 @@ Copyright (c) 2020 shumez
 - PHA
 - Addison
 - Acute Adrenal Insufficiency (AI) / Adrenal Crisis
+- CAH
 
 ## Intro
 
@@ -414,6 +415,69 @@ Acute Adrenal Insufficiency
 <!-- <h6 id='ai-tx'>Treatment</h6> -->
 <!-- <h6 id='ai-prg'>Prognosis</h6> -->
 <!-- <h6 id='ai-app'>Appendix</h6> -->
+
+
+## CAH
+
+<!-- <h6 id='cah-def'>Definition</h6> -->
+<!-- <h6 id='cah-eti'>Etiology</h6> -->
+<!-- <h6 id='cah-epi'>Epidemiology</h6> -->
+<h6 id='cah-cls'>Classification</h6>
+
+- #1: "一"
+	- ↓/→Ald
+	- ↑Test / E
+- 1#: "十"
+	- ↑Ald
+	- ↓Test / E
+
+
+<table>
+	<thead>
+		<tr>
+			<th rowspan="2"></th>
+			<th colspan="2">21-欠損</th>
+			<th>11β-欠損</th>
+			<th>17α-欠損</th>
+		</tr>
+		<tr>
+			<th>単純男性</th>
+			<th>塩類喪失</th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th>頻度</th>
+			<td>0.1%</td>
+			<td>0.9%</td>
+			<td>30％</td>
+			<td>60％</td>
+		</tr>
+		<tr>
+			<th>男性化</th>
+			<td>＋</td>
+			<td>＋</td>
+			<td>＋</td>
+			<td>－</td>
+		</tr>
+		<tr>
+			<th>血圧</th>
+			<td>→</td>
+			<td>↓</td>
+			<td>↑</td>
+			<td>↑</td>
+		</tr>
+	</tbody>
+</table>
+
+<!-- <h6 id='cah-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='cah-cmp'>Complication</h6> -->
+<!-- <h6 id='cah-ex'>Examination</h6> -->
+<!-- <h6 id='cah-dx'>Diagnosis</h6> -->
+<!-- <h6 id='cah-tx'>Treatment</h6> -->
+<!-- <h6 id='cah-prg'>Prognosis</h6> -->
+<!-- <h6 id='cah-app'>Appendix</h6> -->
 
 ## 
 

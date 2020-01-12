@@ -3,7 +3,7 @@ Filename:	Adrenal.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:34
-Modified:	2020-01-12 16:09:17
+Modified:	2020-01-12 16:11:45
 -----
 Copyright (c) 2020 shumez
 -->
@@ -17,6 +17,7 @@ Copyright (c) 2020 shumez
 - PA
 - SHAC
 - PHA
+- Addison
 
 ## Intro
 
@@ -361,6 +362,33 @@ Pseudo
 <!-- <h6 id='pha-tx'>Treatment</h6> -->
 <!-- <h6 id='pha-prg'>Prognosis</h6> -->
 <!-- <h6 id='pha-app'>Appendix</h6> -->
+
+
+## Addison 
+
+<!-- <h6 id='addison-def'>Definition</h6> -->
+<h6 id='addison-eti'>Etiology</h6>
+
+- Idiopathic
+	- **Schmidt**
+- TB
+
+<!-- <h6 id='addison-epi'>Epidemiology</h6> -->
+<!-- <h6 id='addison-cls'>Classification</h6> -->
+<h6 id='addison-sx'>Sign and Symptom</h6>
+
+- ↓Gluco
+- ↓Mineral
+- ↓副腎アンドロゲン
+- ↑ACTH
+- 色素沈着
+
+<!-- <h6 id='addison-cmp'>Complication</h6> -->
+<!-- <h6 id='addison-ex'>Examination</h6> -->
+<!-- <h6 id='addison-dx'>Diagnosis</h6> -->
+<!-- <h6 id='addison-tx'>Treatment</h6> -->
+<!-- <h6 id='addison-prg'>Prognosis</h6> -->
+<!-- <h6 id='addison-app'>Appendix</h6> -->
 
 ## 
 

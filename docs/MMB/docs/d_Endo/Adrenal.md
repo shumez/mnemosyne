@@ -3,7 +3,7 @@ Filename:	Adrenal.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:34
-Modified:	2020-01-12 16:08:19
+Modified:	2020-01-12 16:09:17
 -----
 Copyright (c) 2020 shumez
 -->
@@ -16,6 +16,7 @@ Copyright (c) 2020 shumez
 - Cushing Syndrome
 - PA
 - SHAC
+- PHA
 
 ## Intro
 
@@ -343,6 +344,23 @@ Secondary
 <!-- <h6 id='shac-tx'>Treatment</h6> -->
 <!-- <h6 id='shac-prg'>Prognosis</h6> -->
 <!-- <h6 id='shac-app'>Appendix</h6> -->
+
+
+## PHA
+
+Pseudo
+
+<!-- <h6 id='pha-def'>Definition</h6> -->
+<!-- <h6 id='pha-eti'>Etiology</h6> -->
+<!-- <h6 id='pha-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pha-cls'>Classification</h6> -->
+<!-- <h6 id='pha-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pha-cmp'>Complication</h6> -->
+<!-- <h6 id='pha-ex'>Examination</h6> -->
+<!-- <h6 id='pha-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pha-tx'>Treatment</h6> -->
+<!-- <h6 id='pha-prg'>Prognosis</h6> -->
+<!-- <h6 id='pha-app'>Appendix</h6> -->
 
 ## 
 

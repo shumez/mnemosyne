@@ -3,7 +3,7 @@ Filename:	Adrenal.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:34
-Modified:	2020-01-12 16:19:01
+Modified:	2020-01-12 16:21:06
 -----
 Copyright (c) 2020 shumez
 -->
@@ -20,6 +20,7 @@ Copyright (c) 2020 shumez
 - Addison
 - Acute Adrenal Insufficiency (AI) / Adrenal Crisis
 - CAH
+- PHEO
 
 ## Intro
 
@@ -478,6 +479,48 @@ Acute Adrenal Insufficiency
 <!-- <h6 id='cah-tx'>Treatment</h6> -->
 <!-- <h6 id='cah-prg'>Prognosis</h6> -->
 <!-- <h6 id='cah-app'>Appendix</h6> -->
+
+
+## PHEO
+
+<!-- <h6 id='pheo-def'>Definition</h6> -->
+<!-- <h6 id='pheo-eti'>Etiology</h6> -->
+<!-- <h6 id='pheo-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pheo-cls'>Classification</h6> -->
+<h6 id='pheo-sx'>Sign and Symptom</h6>
+
+5Hs
+
+- HTN
+	- 起立性低血圧
+	∵ 血管収縮 ⇒ ↓循環血漿量
+- HrMetabolism
+- HrGlycemia
+- Headache
+- HrHidrosis
+
+<!-- <h6 id='pheo-cmp'>Complication</h6> -->
+<h6 id='pheo-ex'>Examination</h6>
+
+- 尿
+	- ↑VMA
+	- ↑メタネフリン
+	- ↑ノルメタネフリン
+
+<h6 id='pheo-dx'>Diagnosis</h6>
+
+部位診断
+
+- 123I-MIBG uptake
+
+<h6 id='pheo-tx'>Treatment</h6>
+
+- αB (フェントラミン)
+	C/I βB単剤投与
+	αB → αβB
+
+<!-- <h6 id='pheo-prg'>Prognosis</h6> -->
+<!-- <h6 id='pheo-app'>Appendix</h6> -->
 
 ## 
 

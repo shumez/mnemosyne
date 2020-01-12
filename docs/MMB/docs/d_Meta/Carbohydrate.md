@@ -3,7 +3,7 @@ Filename:	Carbohydrate.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Meta
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:30:38
-Modified:	2020-01-11 16:38:26
+Modified:	2020-01-12 14:27:39
 -----
 Copyright (c) 2020 shumez
 -->
@@ -66,12 +66,19 @@ Diabetic Ketoacidosis
 <h6 id='dka-ex'>Examination</h6>
 
 - **KB(+)**
-- ↑K 
+- &darr;K 
 	∵ ketosis
-	↑H ⇒ ↑infH / ↑EffK
+	&uarr;H &rArr; &darr;K
 
 <!-- <h6 id='dka-dx'>Diagnosis</h6> -->
-<!-- <h6 id='dka-tx'>Treatment</h6> -->
+<h6 id='dka-tx'>Treatment</h6>
+
+1. &darr;H_2_O
+2. BS
+3. **K supplementation**
+4. &uarr;H
+5. infxn
+
 <!-- <h6 id='dka-prg'>Prognosis</h6> -->
 <!-- <h6 id='dka-app'>Appendix</h6> -->
 

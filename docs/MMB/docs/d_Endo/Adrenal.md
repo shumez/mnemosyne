@@ -3,7 +3,7 @@ Filename:	Adrenal.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:34
-Modified:	2020-01-12 16:01:46
+Modified:	2020-01-12 16:06:51
 -----
 Copyright (c) 2020 shumez
 -->
@@ -14,7 +14,7 @@ Copyright (c) 2020 shumez
 
 - Intro
 - Cushing Syndrome
-
+- PA
 
 ## Intro
 
@@ -296,6 +296,35 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='subclinical_cushing-prg'>Prognosis</h6> -->
 <!-- <h6 id='subclinical_cushing-app'>Appendix</h6> -->
 
+
+## PA
+
+Primary Aldosteronism
+
+<!-- <h6 id='pa-def'>Definition</h6> -->
+<h6 id='pa-eti'>Etiology</h6>
+
+- Ald は ACTHにfeedbackしない
+
+<!-- <h6 id='pa-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pa-cls'>Classification</h6> -->
+<!-- <h6 id='pa-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pa-cmp'>Complication</h6> -->
+<h6 id='pa-ex'>Examination</h6>
+
+- 立位負荷試験
+	立位 ⇒ ↑RAAs
+	
+<!-- <h6 id='pa-dx'>Diagnosis</h6> -->
+<h6 id='pa-tx'>Treatment</h6>
+
+- 内科的
+	1. Spironolactone
+	2. αB
+- Lapro
+
+<!-- <h6 id='pa-prg'>Prognosis</h6> -->
+<!-- <h6 id='pa-app'>Appendix</h6> -->
 
 ## 
 

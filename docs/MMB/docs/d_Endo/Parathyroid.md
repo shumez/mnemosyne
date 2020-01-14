@@ -3,7 +3,7 @@ Filename:	Parathyroid.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:51
-Modified:	2020-01-14 16:19:50
+Modified:	2020-01-14 16:21:19
 -----
 Copyright (c) 2020 shumez
 -->
@@ -141,6 +141,25 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='hrca-tx'>Treatment</h6> -->
 <!-- <h6 id='hrca-prg'>Prognosis</h6> -->
 <!-- <h6 id='hrca-app'>Appendix</h6> -->
+
+
+## &darr;Mg
+
+<!-- <h6 id='homg-def'>Definition</h6> -->
+<!-- <h6 id='homg-eti'>Etiology</h6> -->
+<!-- <h6 id='homg-epi'>Epidemiology</h6> -->
+<!-- <h6 id='homg-cls'>Classification</h6> -->
+<!-- <h6 id='homg-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='homg-cmp'>Complication</h6> -->
+<h6 id='homg-ex'>Examination</h6>
+
+- **↓K** / **↓Ca**
+- Wide QT
+
+<!-- <h6 id='homg-dx'>Diagnosis</h6> -->
+<!-- <h6 id='homg-tx'>Treatment</h6> -->
+<!-- <h6 id='homg-prg'>Prognosis</h6> -->
+<!-- <h6 id='homg-app'>Appendix</h6> -->
 
 
 ##

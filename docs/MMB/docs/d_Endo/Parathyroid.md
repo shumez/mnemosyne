@@ -3,7 +3,7 @@ Filename:	Parathyroid.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:51
-Modified:	2020-01-14 16:30:13
+Modified:	2020-01-14 16:33:18
 -----
 Copyright (c) 2020 shumez
 -->
@@ -196,6 +196,61 @@ Primary Hyperparathyroidism
 <!-- <h6 id='phrpt-app'>Appendix</h6> -->
 
 
+## SHrPT
+
+Seconday Hyperparathyroidism
+
+<!-- <h6 id='shrpt-def'>Definition</h6> -->
+<h6 id='shrpt-eti'>Etiology</h6>
+
+- **CKD**
+- **vit.D欠乏**
+- PTH不応
+- **横紋筋融解症**
+
+<!-- <h6 id='shrpt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='shrpt-cls'>Classification</h6> -->
+<!-- <h6 id='shrpt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='shrpt-cmp'>Complication</h6> -->
+<!-- <h6 id='shrpt-ex'>Examination</h6> -->
+<!-- <h6 id='shrpt-dx'>Diagnosis</h6> -->
+<!-- <h6 id='shrpt-tx'>Treatment</h6> -->
+<!-- <h6 id='shrpt-prg'>Prognosis</h6> -->
+<!-- <h6 id='shrpt-app'>Appendix</h6> -->
+
+
+### rHPT
+
+Renal Hyperparathyroidism
+
+<!-- <h6 id='rhpt-def'>Definition</h6> -->
+<!-- <h6 id='rhpt-eti'>Etiology</h6> -->
+<!-- <h6 id='rhpt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='rhpt-cls'>Classification</h6> -->
+<!-- <h6 id='rhpt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='rhpt-cmp'>Complication</h6> -->
+<!-- <h6 id='rhpt-ex'>Examination</h6> -->
+<!-- <h6 id='rhpt-dx'>Diagnosis</h6> -->
+<!-- <h6 id='rhpt-tx'>Treatment</h6> -->
+<!-- <h6 id='rhpt-prg'>Prognosis</h6> -->
+<!-- <h6 id='rhpt-app'>Appendix</h6> -->
+
+
+### MAH
+
+Malignancy-associated Hypercalcemia
+
+<!-- <h6 id='mah-def'>Definition</h6> -->
+<!-- <h6 id='mah-eti'>Etiology</h6> -->
+<!-- <h6 id='mah-epi'>Epidemiology</h6> -->
+<!-- <h6 id='mah-cls'>Classification</h6> -->
+<!-- <h6 id='mah-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='mah-cmp'>Complication</h6> -->
+<!-- <h6 id='mah-ex'>Examination</h6> -->
+<!-- <h6 id='mah-dx'>Diagnosis</h6> -->
+<!-- <h6 id='mah-tx'>Treatment</h6> -->
+<!-- <h6 id='mah-prg'>Prognosis</h6> -->
+<!-- <h6 id='mah-app'>Appendix</h6> -->
 
 ##
 

@@ -3,7 +3,7 @@ Filename:	Parathyroid.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:51
-Modified:	2020-01-14 16:33:18
+Modified:	2020-01-14 16:37:24
 -----
 Copyright (c) 2020 shumez
 -->
@@ -251,6 +251,46 @@ Malignancy-associated Hypercalcemia
 <!-- <h6 id='mah-tx'>Treatment</h6> -->
 <!-- <h6 id='mah-prg'>Prognosis</h6> -->
 <!-- <h6 id='mah-app'>Appendix</h6> -->
+
+
+## &darr;PT
+
+<!-- <h6 id='hopt-def'>Definition</h6> -->
+<!-- <h6 id='hopt-eti'>Etiology</h6> -->
+<!-- <h6 id='hopt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hopt-cls'>Classification</h6> -->
+<!-- <h6 id='hopt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hopt-cmp'>Complication</h6> -->
+<!-- <h6 id='hopt-ex'>Examination</h6> -->
+<!-- <h6 id='hopt-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hopt-tx'>Treatment</h6> -->
+<!-- <h6 id='hopt-prg'>Prognosis</h6> -->
+<!-- <h6 id='hopt-app'>Appendix</h6> -->
+
+
+### HAM
+
+Hypoparathyroid-Addison Moniliasis
+
+<h6 id='ham-def'>Definition</h6>
+
+- Hypoparathyroidism ↓PT
+- Addison
+- Moniliais(モニリア病) 症候群
+
+<h6 id='ham-eti'>Etiology</h6>
+
+- 自己免疫性
+
+<!-- <h6 id='ham-epi'>Epidemiology</h6> -->
+<!-- <h6 id='ham-cls'>Classification</h6> -->
+<!-- <h6 id='ham-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='ham-cmp'>Complication</h6> -->
+<!-- <h6 id='ham-ex'>Examination</h6> -->
+<!-- <h6 id='ham-dx'>Diagnosis</h6> -->
+<!-- <h6 id='ham-tx'>Treatment</h6> -->
+<!-- <h6 id='ham-prg'>Prognosis</h6> -->
+<!-- <h6 id='ham-app'>Appendix</h6> -->
 
 ##
 

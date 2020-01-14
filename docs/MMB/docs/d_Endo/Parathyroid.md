@@ -3,7 +3,7 @@ Filename:	Parathyroid.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:51
-Modified:	2020-01-14 16:37:24
+Modified:	2020-01-14 17:06:52
 -----
 Copyright (c) 2020 shumez
 -->
@@ -291,6 +291,112 @@ Hypoparathyroid-Addison Moniliasis
 <!-- <h6 id='ham-tx'>Treatment</h6> -->
 <!-- <h6 id='ham-prg'>Prognosis</h6> -->
 <!-- <h6 id='ham-app'>Appendix</h6> -->
+
+
+## PHP
+
+Pseudohypoparathyroidism
+
+<!-- <h6 id='php-def'>Definition</h6> -->
+<!-- <h6 id='php-eti'>Etiology</h6> -->
+<!-- <h6 id='php-epi'>Epidemiology</h6> -->
+<h6 id='php-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th width="40%" colspan="2"></th>
+			<th width="15%">Ia</th>
+			<th width="15%">PPHP</th>
+			<th width="15%">Ib</th>
+			<th width="15%">II</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th colspan="2">Etio</th>
+			<td colspan="2"></td>
+			<td colspan="2"></td>
+		</tr>
+		<tr>
+			<th colspan="2">AHO</th>
+			<td align="center">(+)</td>
+			<td align="center">(+)</td>
+			<td align="center">(–)</td>
+			<td align="center">(–)</td>
+		</tr>
+		<tr>
+			<th rowspan="2">PTH</th>
+			<th>尿cAMP</th>
+			<td align="center">&darr;</td>
+			<td align="center">&rarr;</td>
+			<td align="center">&darr;</td>
+			<td align="center">&rarr;</td>
+		</tr>
+		<tr>
+			<th>尿P</th>
+			<td align="center">&darr;</td>
+			<td align="center">&rarr;</td>
+			<td align="center">&darr;</td>
+			<td align="center">&darr;</td>
+		</tr>
+	</tbody>
+</table>
+
+- I : 
+	PTH-R → cAMP
+	にシグナル伝達障害
+- II : 
+	cAMP → 
+	にシグナル伝達障害
+
+<!-- <h6 id='php-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='php-cmp'>Complication</h6> -->
+<h6 id='php-ex'>Examination</h6>
+
+- Ellsworth-Howard試験
+	PTH IV ⟹
+	- P
+	- cAMP
+	尿中排泄
+
+<!-- <h6 id='php-dx'>Diagnosis</h6> -->
+<!-- <h6 id='php-tx'>Treatment</h6> -->
+<!-- <h6 id='php-prg'>Prognosis</h6> -->
+<!-- <h6 id='php-app'>Appendix</h6> -->
+
+### PPHP
+
+PseudoPseudoHypoparathyroidism 偽性偽性副甲状腺機能低下症
+
+<!-- <h6 id='pphp-def'>Definition</h6> -->
+<!-- <h6 id='pphp-eti'>Etiology</h6> -->
+<!-- <h6 id='pphp-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pphp-cls'>Classification</h6> -->
+<!-- <h6 id='pphp-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pphp-cmp'>Complication</h6> -->
+<!-- <h6 id='pphp-ex'>Examination</h6> -->
+<!-- <h6 id='pphp-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pphp-tx'>Treatment</h6> -->
+<!-- <h6 id='pphp-prg'>Prognosis</h6> -->
+<!-- <h6 id='pphp-app'>Appendix</h6> -->
+
+
+### AHO
+
+Albright Hereditary Osteodystrophy
+
+<!-- <h6 id='aho-def'>Definition</h6> -->
+<!-- <h6 id='aho-eti'>Etiology</h6> -->
+<!-- <h6 id='aho-epi'>Epidemiology</h6> -->
+<!-- <h6 id='aho-cls'>Classification</h6> -->
+<!-- <h6 id='aho-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='aho-cmp'>Complication</h6> -->
+<!-- <h6 id='aho-ex'>Examination</h6> -->
+<!-- <h6 id='aho-dx'>Diagnosis</h6> -->
+<!-- <h6 id='aho-tx'>Treatment</h6> -->
+<!-- <h6 id='aho-prg'>Prognosis</h6> -->
+<!-- <h6 id='aho-app'>Appendix</h6> -->
 
 ##
 

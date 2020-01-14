@@ -3,7 +3,7 @@ Filename:	Parathyroid.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:51
-Modified:	2020-01-14 16:16:57
+Modified:	2020-01-14 16:19:50
 -----
 Copyright (c) 2020 shumez
 -->
@@ -126,6 +126,21 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='intro-tx'>Treatment</h6> -->
 <!-- <h6 id='intro-prg'>Prognosis</h6> -->
 <!-- <h6 id='intro-app'>Appendix</h6> -->
+
+
+## &uarr;Ca
+
+<!-- <h6 id='hrca-def'>Definition</h6> -->
+<!-- <h6 id='hrca-eti'>Etiology</h6> -->
+<!-- <h6 id='hrca-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hrca-cls'>Classification</h6> -->
+<!-- <h6 id='hrca-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hrca-cmp'>Complication</h6> -->
+<!-- <h6 id='hrca-ex'>Examination</h6> -->
+<!-- <h6 id='hrca-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hrca-tx'>Treatment</h6> -->
+<!-- <h6 id='hrca-prg'>Prognosis</h6> -->
+<!-- <h6 id='hrca-app'>Appendix</h6> -->
 
 
 ##

@@ -3,7 +3,7 @@ Filename:	Parathyroid.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/d_Endo
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:29:51
-Modified:	2020-01-14 16:21:19
+Modified:	2020-01-14 16:22:38
 -----
 Copyright (c) 2020 shumez
 -->
@@ -161,6 +161,22 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='homg-prg'>Prognosis</h6> -->
 <!-- <h6 id='homg-app'>Appendix</h6> -->
 
+
+## &uarr;PT
+
+Hyperparathyroidism
+
+<!-- <h6 id='hrpt-def'>Definition</h6> -->
+<!-- <h6 id='hrpt-eti'>Etiology</h6> -->
+<!-- <h6 id='hrpt-epi'>Epidemiology</h6> -->
+<!-- <h6 id='hrpt-cls'>Classification</h6> -->
+<!-- <h6 id='hrpt-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='hrpt-cmp'>Complication</h6> -->
+<!-- <h6 id='hrpt-ex'>Examination</h6> -->
+<!-- <h6 id='hrpt-dx'>Diagnosis</h6> -->
+<!-- <h6 id='hrpt-tx'>Treatment</h6> -->
+<!-- <h6 id='hrpt-prg'>Prognosis</h6> -->
+<!-- <h6 id='hrpt-app'>Appendix</h6> -->
 
 ##
 

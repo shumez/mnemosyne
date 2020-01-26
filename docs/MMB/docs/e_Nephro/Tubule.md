@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:49:47
+Modified:	2020-01-26 15:51:14
 -----
 Copyright (c) 2020 shumez
 -->
@@ -17,6 +17,7 @@ Copyright (c) 2020 shumez
 - Renal Hypouricemia
 - Bartter
 - Pseudo-Bartter's Syndrome
+- Gitelman
 
 
 ## Fanconi
@@ -92,6 +93,21 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='pseudo-bartter_syndrome-tx'>Treatment</h6> -->
 <!-- <h6 id='pseudo-bartter_syndrome-prg'>Prognosis</h6> -->
 <!-- <h6 id='pseudo-bartter_syndrome-app'>Appendix</h6> -->
+
+
+## Gitelman's Syndrome
+
+<!-- <h6 id='gitelman-def'>Definition</h6> -->
+<!-- <h6 id='gitelman-eti'>Etiology</h6> -->
+<!-- <h6 id='gitelman-epi'>Epidemiology</h6> -->
+<!-- <h6 id='gitelman-cls'>Classification</h6> -->
+<!-- <h6 id='gitelman-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='gitelman-cmp'>Complication</h6> -->
+<!-- <h6 id='gitelman-ex'>Examination</h6> -->
+<!-- <h6 id='gitelman-dx'>Diagnosis</h6> -->
+<!-- <h6 id='gitelman-tx'>Treatment</h6> -->
+<!-- <h6 id='gitelman-prg'>Prognosis</h6> -->
+<!-- <h6 id='gitelman-app'>Appendix</h6> -->
 
 ##
 

@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:58:56
+Modified:	2020-01-26 16:00:05
 -----
 Copyright (c) 2020 shumez
 -->
@@ -21,6 +21,7 @@ Copyright (c) 2020 shumez
 - Liddle
 - Nephrogenic Diabetes Insipidus
 - RTA
+- TIN
 
 
 ## Fanconi
@@ -158,6 +159,23 @@ Renal Tubular Acidosis
 <!-- <h6 id='rta-tx'>Treatment</h6> -->
 <!-- <h6 id='rta-prg'>Prognosis</h6> -->
 <!-- <h6 id='rta-app'>Appendix</h6> -->
+
+
+## TIN
+
+Tubulointenstinal Nephritis
+
+<!-- <h6 id='tin-def'>Definition</h6> -->
+<!-- <h6 id='tin-eti'>Etiology</h6> -->
+<!-- <h6 id='tin-epi'>Epidemiology</h6> -->
+<!-- <h6 id='tin-cls'>Classification</h6> -->
+<!-- <h6 id='tin-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='tin-cmp'>Complication</h6> -->
+<!-- <h6 id='tin-ex'>Examination</h6> -->
+<!-- <h6 id='tin-dx'>Diagnosis</h6> -->
+<!-- <h6 id='tin-tx'>Treatment</h6> -->
+<!-- <h6 id='tin-prg'>Prognosis</h6> -->
+<!-- <h6 id='tin-app'>Appendix</h6> -->
 
 ##
 

@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:57:42
+Modified:	2020-01-26 15:58:56
 -----
 Copyright (c) 2020 shumez
 -->
@@ -20,6 +20,7 @@ Copyright (c) 2020 shumez
 - Gitelman
 - Liddle
 - Nephrogenic Diabetes Insipidus
+- RTA
 
 
 ## Fanconi
@@ -140,6 +141,23 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='ndi-tx'>Treatment</h6> -->
 <!-- <h6 id='ndi-prg'>Prognosis</h6> -->
 <!-- <h6 id='ndi-app'>Appendix</h6> -->
+
+
+## RTA
+
+Renal Tubular Acidosis
+
+<!-- <h6 id='rta-def'>Definition</h6> -->
+<!-- <h6 id='rta-eti'>Etiology</h6> -->
+<!-- <h6 id='rta-epi'>Epidemiology</h6> -->
+<!-- <h6 id='rta-cls'>Classification</h6> -->
+<!-- <h6 id='rta-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='rta-cmp'>Complication</h6> -->
+<!-- <h6 id='rta-ex'>Examination</h6> -->
+<!-- <h6 id='rta-dx'>Diagnosis</h6> -->
+<!-- <h6 id='rta-tx'>Treatment</h6> -->
+<!-- <h6 id='rta-prg'>Prognosis</h6> -->
+<!-- <h6 id='rta-app'>Appendix</h6> -->
 
 ##
 

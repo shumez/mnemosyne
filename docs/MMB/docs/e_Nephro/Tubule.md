@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:45:45
+Modified:	2020-01-26 15:46:59
 -----
 Copyright (c) 2020 shumez
 -->
@@ -14,6 +14,7 @@ Copyright (c) 2020 shumez
 
 - Fanconi
 - Dent
+- Renal Hypouricemia
 
 ## Fanconi
 
@@ -44,6 +45,20 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='dent-prg'>Prognosis</h6> -->
 <!-- <h6 id='dent-app'>Appendix</h6> -->
 
+
+## Renal Hypouricemia
+
+<!-- <h6 id='renal_hypouricemia-def'>Definition</h6> -->
+<!-- <h6 id='renal_hypouricemia-eti'>Etiology</h6> -->
+<!-- <h6 id='renal_hypouricemia-epi'>Epidemiology</h6> -->
+<!-- <h6 id='renal_hypouricemia-cls'>Classification</h6> -->
+<!-- <h6 id='renal_hypouricemia-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='renal_hypouricemia-cmp'>Complication</h6> -->
+<!-- <h6 id='renal_hypouricemia-ex'>Examination</h6> -->
+<!-- <h6 id='renal_hypouricemia-dx'>Diagnosis</h6> -->
+<!-- <h6 id='renal_hypouricemia-tx'>Treatment</h6> -->
+<!-- <h6 id='renal_hypouricemia-prg'>Prognosis</h6> -->
+<!-- <h6 id='renal_hypouricemia-app'>Appendix</h6> -->
 
 
 ##

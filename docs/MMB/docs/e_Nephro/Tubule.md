@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:44:52
+Modified:	2020-01-26 15:45:45
 -----
 Copyright (c) 2020 shumez
 -->
@@ -13,6 +13,7 @@ Copyright (c) 2020 shumez
 ## Contents
 
 - Fanconi
+- Dent
 
 ## Fanconi
 
@@ -28,6 +29,20 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='fanconi-prg'>Prognosis</h6> -->
 <!-- <h6 id='fanconi-app'>Appendix</h6> -->
 
+
+## Dent
+
+<!-- <h6 id='dent-def'>Definition</h6> -->
+<!-- <h6 id='dent-eti'>Etiology</h6> -->
+<!-- <h6 id='dent-epi'>Epidemiology</h6> -->
+<!-- <h6 id='dent-cls'>Classification</h6> -->
+<!-- <h6 id='dent-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='dent-cmp'>Complication</h6> -->
+<!-- <h6 id='dent-ex'>Examination</h6> -->
+<!-- <h6 id='dent-dx'>Diagnosis</h6> -->
+<!-- <h6 id='dent-tx'>Treatment</h6> -->
+<!-- <h6 id='dent-prg'>Prognosis</h6> -->
+<!-- <h6 id='dent-app'>Appendix</h6> -->
 
 
 

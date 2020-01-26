@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:51:14
+Modified:	2020-01-26 15:52:32
 -----
 Copyright (c) 2020 shumez
 -->
@@ -18,6 +18,7 @@ Copyright (c) 2020 shumez
 - Bartter
 - Pseudo-Bartter's Syndrome
 - Gitelman
+- Liddle
 
 
 ## Fanconi
@@ -108,6 +109,21 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='gitelman-tx'>Treatment</h6> -->
 <!-- <h6 id='gitelman-prg'>Prognosis</h6> -->
 <!-- <h6 id='gitelman-app'>Appendix</h6> -->
+
+
+## Liddle Syndrome
+
+<!-- <h6 id='liddle-def'>Definition</h6> -->
+<!-- <h6 id='liddle-eti'>Etiology</h6> -->
+<!-- <h6 id='liddle-epi'>Epidemiology</h6> -->
+<!-- <h6 id='liddle-cls'>Classification</h6> -->
+<!-- <h6 id='liddle-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='liddle-cmp'>Complication</h6> -->
+<!-- <h6 id='liddle-ex'>Examination</h6> -->
+<!-- <h6 id='liddle-dx'>Diagnosis</h6> -->
+<!-- <h6 id='liddle-tx'>Treatment</h6> -->
+<!-- <h6 id='liddle-prg'>Prognosis</h6> -->
+<!-- <h6 id='liddle-app'>Appendix</h6> -->
 
 ##
 

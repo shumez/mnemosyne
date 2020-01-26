@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 16:00:05
+Modified:	2020-01-26 16:00:44
 -----
 Copyright (c) 2020 shumez
 -->
@@ -19,7 +19,7 @@ Copyright (c) 2020 shumez
 - Pseudo-Bartter's Syndrome
 - Gitelman
 - Liddle
-- Nephrogenic Diabetes Insipidus
+- NDI (Nephrogenic Diabetes Insipidus)
 - RTA
 - TIN
 
@@ -129,7 +129,9 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='liddle-app'>Appendix</h6> -->
 
 
-## Nephrogenic Diabetes insipidus
+## NDI
+
+Nephrogenic Diabetes insipidus
 
 <!-- <h6 id='ndi-def'>Definition</h6> -->
 <!-- <h6 id='ndi-eti'>Etiology</h6> -->

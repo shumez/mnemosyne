@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:47:55
+Modified:	2020-01-26 15:49:47
 -----
 Copyright (c) 2020 shumez
 -->
@@ -16,6 +16,7 @@ Copyright (c) 2020 shumez
 - Dent
 - Renal Hypouricemia
 - Bartter
+- Pseudo-Bartter's Syndrome
 
 
 ## Fanconi
@@ -76,6 +77,21 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='bartter-tx'>Treatment</h6> -->
 <!-- <h6 id='bartter-prg'>Prognosis</h6> -->
 <!-- <h6 id='bartter-app'>Appendix</h6> -->
+
+
+## Pseudo-Bartter's Syndrome
+
+<!-- <h6 id='pseudo-bartter_syndrome-def'>Definition</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-eti'>Etiology</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-epi'>Epidemiology</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-cls'>Classification</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-cmp'>Complication</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-ex'>Examination</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-dx'>Diagnosis</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-tx'>Treatment</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-prg'>Prognosis</h6> -->
+<!-- <h6 id='pseudo-bartter_syndrome-app'>Appendix</h6> -->
 
 ##
 

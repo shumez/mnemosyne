@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 15:46:59
+Modified:	2020-01-26 15:47:55
 -----
 Copyright (c) 2020 shumez
 -->
@@ -15,6 +15,8 @@ Copyright (c) 2020 shumez
 - Fanconi
 - Dent
 - Renal Hypouricemia
+- Bartter
+
 
 ## Fanconi
 
@@ -60,6 +62,20 @@ Copyright (c) 2020 shumez
 <!-- <h6 id='renal_hypouricemia-prg'>Prognosis</h6> -->
 <!-- <h6 id='renal_hypouricemia-app'>Appendix</h6> -->
 
+
+## Bartter
+
+<!-- <h6 id='bartter-def'>Definition</h6> -->
+<!-- <h6 id='bartter-eti'>Etiology</h6> -->
+<!-- <h6 id='bartter-epi'>Epidemiology</h6> -->
+<!-- <h6 id='bartter-cls'>Classification</h6> -->
+<!-- <h6 id='bartter-sx'>Sign and Symptom</h6> -->
+<!-- <h6 id='bartter-cmp'>Complication</h6> -->
+<!-- <h6 id='bartter-ex'>Examination</h6> -->
+<!-- <h6 id='bartter-dx'>Diagnosis</h6> -->
+<!-- <h6 id='bartter-tx'>Treatment</h6> -->
+<!-- <h6 id='bartter-prg'>Prognosis</h6> -->
+<!-- <h6 id='bartter-app'>Appendix</h6> -->
 
 ##
 

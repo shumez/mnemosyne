@@ -3,7 +3,7 @@ Filename:	Tubule.md
 Project:	/Users/shume/Developer/mnemosyne/docs/MMB/docs/e_Nephro
 Authors:	shumez <https://github.com/shumez>
 Created:	2019-04-03 17:32:17
-Modified:	2020-01-26 16:00:44
+Modified:	2020-01-26 16:17:21
 -----
 Copyright (c) 2020 shumez
 -->
@@ -150,13 +150,80 @@ Nephrogenic Diabetes insipidus
 
 Renal Tubular Acidosis
 
-<!-- <h6 id='rta-def'>Definition</h6> -->
-<!-- <h6 id='rta-eti'>Etiology</h6> -->
+<h6 id='rta-def'>Definition</h6>
+
+- **nl AG**
+- **↑Cl**
+- **Met Acid** 代謝性アシドーシス
+
+<h6 id='rta-eti'>Etiology</h6>
+
+- HCO~3~^-^ 再吸収障害
+- H^+^ 分泌障害
+
+&rArr; &uarr;Cl (AG nl) 
+
+- RTA I: Sjögren
+- RTA II: Fanconi
+
 <!-- <h6 id='rta-epi'>Epidemiology</h6> -->
-<!-- <h6 id='rta-cls'>Classification</h6> -->
+<h6 id='rta-cls'>Classification</h6>
+
+<table>
+	<thead>
+		<tr>
+			<th></th>
+			<th>I</th>
+			<th>II</th>
+			<th>III</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th></th>
+			<td>遠位</td>
+			<td>近位</td>
+			<td>&uarr;K</td>
+		</tr>
+		<tr>
+			<th>K</th>
+			<td><u>&darr;&darr;</u></td>
+			<td>&darr;</td>
+			<td>&uarr;</td>
+		</tr>
+		<tr>
+			<th>NH<sub>4</sub>Cl負荷<br>
+				尿pH</th>
+			<td><u>> 5.5</u></td>
+			<td>≤ 5.5</td>
+			<td>< 5.5</td>
+		</tr>
+		<!-- <tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<th></th>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr> -->
+	</tbody>
+</table>
+
 <!-- <h6 id='rta-sx'>Sign and Symptom</h6> -->
 <!-- <h6 id='rta-cmp'>Complication</h6> -->
-<!-- <h6 id='rta-ex'>Examination</h6> -->
+<h6 id='rta-ex'>Examination</h6>
+
+- nl AG
+- ↑Cl
+- Met Acid
+- NH4Cl負荷試験
+	- 尿pH > 5.5: I 遠位
+	- 尿pH ≤ 5.5: II 近位
+
 <!-- <h6 id='rta-dx'>Diagnosis</h6> -->
 <!-- <h6 id='rta-tx'>Treatment</h6> -->
 <!-- <h6 id='rta-prg'>Prognosis</h6> -->
